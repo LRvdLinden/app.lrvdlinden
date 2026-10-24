@@ -1,0 +1,382 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1471e3c42ec503ecd9bd0f17/script.js"></script> <!-- End cookieyes banner -->
+<title>LRvdLinden Apps</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="iOS- en Homey-apps gemaakt door Léon van der Linden.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: één kolom — intro, uitgelichte nieuwkomers, filterbare iOS-grid, Homey-sectie. Alle inhoud komt uit apps.json. */
+:root{
+  --bg:#F3F5F9;--surface:#FFFFFF;--ink:#121726;--muted:#5D6578;--line:#DDE2EC;
+  --accent:#2747E8;--accent-soft:#E6EBFF;--build:#B4530D;--build-soft:#FFF0E3;
+  --beta:#0F766E;--beta-soft:#E0F4F1;--star:#E3A008;--on-accent:#FFFFFF;
+  --f-display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;
+  --accent:#8A9DFF;--accent-soft:#1D2547;--build:#F2A15E;--build-soft:#2E2016;
+  --beta:#5EC8B8;--beta-soft:#13302C;--star:#F5C04A;--on-accent:#0D1018;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;
+  --accent:#8A9DFF;--accent-soft:#1D2547;--build:#F2A15E;--build-soft:#2E2016;
+  --beta:#5EC8B8;--beta-soft:#13302C;--star:#F5C04A;--on-accent:#0D1018;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+.mono{font-family:var(--f-mono);font-size:12.5px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+header.top{padding-block:24px 8px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:18px}
+.brand svg{width:36px;height:36px;display:block}
+.right{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.right nav{display:flex;gap:18px;font-size:14.5px;color:var(--muted)}
+.right nav a{text-decoration:none}
+.right nav a:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface)}
+.lang button{font:600 12.5px var(--f-body);letter-spacing:.04em;border:0;background:none;color:var(--muted);padding:5px 11px;border-radius:99px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+.intro{padding-block:52px 36px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:end}
+.intro h1{font-size:clamp(40px,6.4vw,76px);line-height:.98;font-weight:800;letter-spacing:-.035em;margin-top:14px}
+.intro h1 em{font-style:normal;color:var(--accent)}
+.intro p{color:var(--muted);max-width:44ch;margin:0 0 6px}
+.stats{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap}
+.stats div{display:flex;flex-direction:column}
+.stats b{font-family:var(--f-display);font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.stats span{font-size:13px;color:var(--muted)}
+
+.section{padding-block:40px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.sec-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.02em}
+.sec-head p{margin:0;color:var(--muted);font-size:14.5px}
+
+.lab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.lab-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.lab-card h3{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.lab-card p{margin:0;color:var(--muted);font-size:15px}
+.lab-card .plat{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.lab-card .btn{align-self:flex-start}
+.lab-top{display:flex;align-items:center;gap:14px}
+
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:99px;background:var(--build-soft);color:var(--build)}
+.pill.live{background:var(--accent-soft);color:var(--accent)}
+.pill.beta{background:var(--beta-soft);color:var(--beta)}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+@media (prefers-reduced-motion:no-preference){.pill.dev::before,.pill.beta::before{animation:blink 2.4s ease-in-out infinite}}
+@keyframes blink{50%{opacity:.25}}
+.tag{font-size:12px;padding:3px 9px;border-radius:7px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+
+.icon{width:60px;height:60px;border-radius:14px;flex:none;position:relative;overflow:hidden;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:22px;color:#fff;background:var(--ink);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.icon img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.icon.lg{width:72px;height:72px;border-radius:17px;font-size:26px}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:99px;cursor:pointer}
+.chip:hover{border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .n{font-family:var(--f-mono);font-size:11.5px;opacity:.6;margin-left:4px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.app{display:grid;grid-template-columns:60px minmax(0,1fr);gap:14px;padding:16px;border-radius:16px;background:var(--surface);border:1px solid var(--line);text-align:left;font:inherit;color:inherit;cursor:pointer;width:100%}
+.app:hover{border-color:var(--muted)}
+.app[aria-expanded="true"]{border-color:var(--accent)}
+.app h3{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.app .cat{font-size:13px;color:var(--muted)}
+.app .meta{display:flex;gap:12px;align-items:center;margin-top:8px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.stars{color:var(--star);letter-spacing:1px}
+
+.detail{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.detail.single{grid-template-columns:minmax(0,1fr)}
+.detail h3{font-size:28px;font-weight:700;letter-spacing:-.02em}
+.detail .lead{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.detail p{margin:0 0 14px;color:var(--muted);max-width:60ch}
+.detail .plat{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 16px}
+.facts div{background:var(--surface);padding:10px 12px}
+.facts dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:2px 0 0;font-weight:600;font-variant-numeric:tabular-nums}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14.5px var(--f-body);padding:10px 18px;border-radius:99px;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.history h4{font-family:var(--f-display);font-size:16px;margin:0 0 10px}
+.history ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.history li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;font-size:14px}
+.history .d{color:var(--muted);font-size:12px}
+.history li p{margin:0;color:var(--muted)}
+
+.homey{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px}
+.homey h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin-top:10px}
+.homey > div > p{color:var(--muted);margin:12px 0 18px;max-width:42ch}
+.homey > div > .icon{background:#fff;margin-bottom:16px}
+.homey ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;align-self:start}
+.homey li{background:var(--surface);min-width:0}
+.homey li a{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;padding:14px 16px;text-decoration:none;height:100%}
+.homey li a:hover{background:var(--bg)}
+.homey li .icon{width:40px;height:40px;border-radius:10px;margin:0;font-size:14px}
+.homey li b{font-family:var(--f-display);font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.homey li span{font-size:13.5px;color:var(--muted);display:block}
+.homey li .mono{overflow-wrap:anywhere;margin-top:4px}
+.homey li .pill{font-size:11px;padding:2px 8px}
+
+.notice{padding:20px;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}
+footer{padding-block:48px 40px;color:var(--muted);font-size:14px}
+footer .bar{border-top:1px solid var(--line);padding-top:22px}
+footer nav{display:flex;gap:18px}
+
+@media (max-width:860px){
+  .intro{grid-template-columns:1fr;gap:16px;padding-block:32px 24px}
+  .lab{grid-template-columns:1fr}
+  .detail,.homey{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .homey ul{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .right nav{display:none}
+}
+</style>
+
+<header class="top wrap">
+  <div class="bar">
+    <a class="brand" href="https://lrvdlinden.app">
+      <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="116" fill="#121726"/><g fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"><path d="M132 146V370H232"/><path d="M292 370V146H340A62 62 0 0 1 340 270H292"/><path d="M338 270L390 370"/></g><circle cx="404" cy="126" r="34" fill="#4C6BFF" stroke="#121726" stroke-width="14"/></svg>
+      lrvdlinden.app
+    </a>
+    <div class="right">
+      <nav aria-label="Menu">
+        <a href="#nieuw" data-t="navNew"></a>
+        <a href="#apps" data-t="navApps"></a>
+        <a href="#homey">Homey</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Taal / Language">
+        <button type="button" data-lang="nl">NL</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="intro wrap">
+    <div>
+      <div class="eyebrow">Léon van der Linden · Apeldoorn</div>
+      <h1 data-t="h1" data-html></h1>
+    </div>
+    <div>
+      <p data-t="intro"></p>
+      <div class="stats">
+        <div><b id="stLive">–</b><span data-t="stLive"></span></div>
+        <div><b id="stDev">–</b><span data-t="stDev"></span></div>
+        <div><b id="stHomey">–</b><span data-t="stHomey"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="nieuw">
+    <div class="sec-head"><h2 data-t="newTitle"></h2><p data-t="newSub"></p></div>
+    <div class="lab" id="lab"></div>
+  </section>
+
+  <section class="section wrap" id="apps">
+    <div class="sec-head"><h2 data-t="storeTitle"></h2><p data-t="storeSub"></p></div>
+    <div class="filters" id="filters" role="group"></div>
+    <div class="grid" id="grid"></div>
+    <div id="detailSlot"></div>
+  </section>
+
+  <section class="section wrap" id="homey">
+    <div class="homey">
+      <div>
+        <span class="icon lg" aria-hidden="true"><img src="img/homey.webp" alt=""></span>
+        <div class="eyebrow">Homey &amp; Homey Pro</div>
+        <h2 data-t="homeyTitle"></h2>
+        <p data-t="homeySub"></p>
+        <div class="btns">
+          <a class="btn primary" href="https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/" target="_blank" rel="noopener" data-t="homeyStore"></a>
+          <a class="btn" href="https://homey.app/nl-nl/apps/author/6ac4bc064c7de6266bbdb73e/page/0/" target="_blank" rel="noopener">PixelForges</a>
+          <a class="btn" href="https://community.homey.app/t/apps-made-by-lrvdlinden/85452" target="_blank" rel="noopener">Community Forum</a>
+        </div>
+      </div>
+      <ul id="homeyList"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="bar">
+    <span>© lrvdlinden.app · Powered by élo consultancy</span>
+    <nav>
+      <a href="https://lrvdlinden.app/privacy.html" target="_blank" rel="noopener">Privacy</a>
+      <a href="https://lrvdlinden.app/donate.html" target="_blank" rel="noopener" data-t="donate"></a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const T = {
+  nl:{ navNew:"Nieuw", navApps:"iOS-apps",
+    h1:"Apps voor je buurt, je huis en <em>je dag</em>.",
+    intro:"Ik bouw apps voor lokale initiatieven en handige tools, plus Homey-apps die je smart home slimmer maken. Allemaal gratis.",
+    stLive:"apps live", stDev:"in beta of ontwikkeling", stHomey:"Homey-apps",
+    newTitle:"Nieuw en onderweg", newSub:"Net uit, in beta of nog op de werkbank.",
+    storeTitle:"In de App Store", storeSub:"Tik op een app voor details en versiegeschiedenis.",
+    all:"Alles", homeyTitle:"Apps voor je smart home",
+    homeySub:"Koppelingen met diensten die je dagelijks gebruikt, verdeeld over twee ontwikkelaarsaccounts. Versies en releasenotes vind je in de Homey App Store en op het Community Forum.",
+    homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In ontwikkeling",
+    donate:"Doneren", live:"Nieuw in de App Store", beta:"Open beta", dev:"In ontwikkeling",
+    appstore:"Gratis in de App Store", testflight:"Doe mee via TestFlight", website:"Website",
+    rating:"Beoordeling", reviews:"Reviews", age:"Leeftijd", category:"Categorie", language:"Taal", size:"Grootte",
+    history:"Versiegeschiedenis", noRating:"Nog geen beoordeling", dev_by:"Léon van der Linden",
+    loadError:"De apps konden niet worden geladen. Controleer of apps.json naast index.html staat.",
+    cats:{utilities:"Hulpmiddelen",entertainment:"Amusement",news:"Nieuws",business:"Zakelijk",lifestyle:"Lifestyle",games:"Games",music:"Muziek",productivity:"Productiviteit",health:"Gezondheid",education:"Onderwijs",travel:"Reizen",weather:"Weer"}},
+  en:{ navNew:"New", navApps:"iOS apps",
+    h1:"Apps for your neighbourhood, your home and <em>your day</em>.",
+    intro:"I build apps for local initiatives and handy tools, plus Homey apps that make your smart home smarter. All free.",
+    stLive:"apps live", stDev:"in beta or development", stHomey:"Homey apps",
+    newTitle:"New and upcoming", newSub:"Just released, in beta or still on the workbench.",
+    storeTitle:"On the App Store", storeSub:"Tap an app for details and version history.",
+    all:"All", homeyTitle:"Apps for your smart home",
+    homeySub:"Integrations with services you use every day, spread across two developer accounts. Versions and release notes are in the Homey App Store and on the Community Forum.",
+    homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In development",
+    donate:"Donate", live:"New on the App Store", beta:"Open beta", dev:"In development",
+    appstore:"Free on the App Store", testflight:"Join on TestFlight", website:"Website",
+    rating:"Rating", reviews:"Reviews", age:"Age", category:"Category", language:"Language", size:"Size",
+    history:"Version history", noRating:"No ratings yet", dev_by:"Léon van der Linden",
+    loadError:"The apps could not be loaded. Check that apps.json sits next to index.html.",
+    cats:{utilities:"Utilities",entertainment:"Entertainment",news:"News",business:"Business",lifestyle:"Lifestyle",games:"Games",music:"Music",productivity:"Productivity",health:"Health",education:"Education",travel:"Travel",weather:"Weather"}}
+};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let APPS = [], lang = "nl", cat = "all", open = null;
+
+try { lang = localStorage.getItem("lr-lang") || (navigator.language||"nl").slice(0,2); } catch(e){}
+if (location.hash === "#en") lang = "en";
+if (!T[lang]) lang = "nl";
+
+const t = k => T[lang][k];
+const L = v => v == null ? "" : (typeof v === "string" ? v : (v[lang] ?? v.nl ?? v.en ?? ""));
+const catName = c => T[lang].cats[c] || c;
+const num = n => n.toFixed(1).replace(".", lang==="nl" ? "," : ".");
+function date(d){
+  if (!d || d.length === 4) return d || "";
+  const x = new Date(d + "T12:00:00");
+  return isNaN(x) ? d : new Intl.DateTimeFormat(lang==="nl"?"nl-NL":"en-GB",{day:"numeric",month:"short",year:"numeric"}).format(x);
+}
+function icon(a, cls=""){
+  const init = esc(a.name.replace(/[^A-Za-z0-9]/g,"").slice(0,2));
+  return `<span class="icon ${cls}" aria-hidden="true">${init}${a.icon?`<img src="${esc(a.icon)}" alt="" onerror="this.remove()">`:""}</span>`;
+}
+function ctas(a, max=9){
+  const l = a.links || {}, out = [];
+  if (l.appstore)   out.push([l.appstore, t("appstore")]);
+  if (l.testflight) out.push([l.testflight, t("testflight")]);
+  if (l.website)    out.push([l.website, t("website")]);
+  return out.slice(0,max).map(([u,label],i)=>`<a class="btn ${i===0?"primary":""}" href="${esc(u)}" target="_blank" rel="noopener">${esc(label)}</a>`).join("");
+}
+
+function renderStatic(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const v = t(el.dataset.t); if (v == null) return;
+    if (el.hasAttribute("data-html")) el.innerHTML = v; else el.textContent = v;
+  });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  $("#filters").setAttribute("aria-label", lang==="nl" ? "Filter op categorie" : "Filter by category");
+}
+
+function render(){
+  renderStatic();
+  if (!APPS.length) return;
+  const ios = APPS.filter(a => a.section === "ios");
+  const live = ios.filter(a => a.status === "live");
+  const homey = APPS.filter(a => a.section === "homey");
+  $("#stLive").textContent = live.length;
+  $("#stDev").textContent = ios.filter(a => a.status !== "live").length;
+  $("#stHomey").textContent = homey.length;
+
+  // Uitgelicht: featured, of alles wat nog niet live is
+  const feat = ios.filter(a => a.featured || a.status !== "live");
+  $("#nieuw").hidden = !feat.length;
+  $("#lab").innerHTML = feat.map(a => `
+    <article class="lab-card">
+      <span class="pill ${a.status}">${esc(t(a.status))}</span>
+      <div class="lab-top">${icon(a,"lg")}<div><h3>${esc(a.name)}</h3>${a.subtitle?`<div class="eyebrow" style="margin-top:2px">${esc(L(a.subtitle))}</div>`:""}</div></div>
+      <p>${esc(L(a.description))}</p>
+      <div class="plat">${(a.platforms||[]).map(p=>`<span class="tag">${esc(p)}</span>`).join("")}</div>
+      ${ctas(a,1)}
+    </article>`).join("");
+
+  const cats = ["all", ...new Set(live.map(a => a.category))];
+  if (!cats.includes(cat)) cat = "all";
+  $("#filters").innerHTML = cats.map(c => {
+    const n = c==="all" ? live.length : live.filter(a=>a.category===c).length;
+    return `<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c===cat}">${esc(c==="all"?t("all"):catName(c))}<span class="n">${n}</span></button>`;
+  }).join("");
+
+  const list = live.filter(a => cat==="all" || a.category===cat);
+  $("#grid").innerHTML = list.map(a => `
+    <button class="app" type="button" data-id="${esc(a.id)}" aria-expanded="${open===a.id}" aria-controls="detailSlot">
+      ${icon(a)}
+      <div style="min-width:0">
+        <h3>${esc(a.name)}</h3>
+        <div class="cat">${esc(catName(a.category))}${a.badge?` · ${esc(L(a.badge))}`:""}</div>
+        <div class="meta"><span>${a.rating?`<span class="stars" aria-hidden="true">★★★★★</span> ${num(a.rating)}`:esc(t("noRating"))}</span>${a.history&&a.history.length?`<span class="mono">v${esc(a.history[0].version)}</span>`:""}</div>
+      </div>
+    </button>`).join("");
+
+  const a = list.find(x => x.id === open);
+  $("#detailSlot").innerHTML = !a ? "" : `
+    <div class="detail ${a.history&&a.history.length?"":"single"}">
+      <div>
+        <div class="lead">${icon(a,"lg")}<div><h3>${esc(a.name)}</h3><div style="color:var(--muted);font-size:14px">${esc(t("dev_by"))}</div></div></div>
+        <p>${esc(L(a.description))}</p>
+        <div class="plat">${(a.platforms||[]).map(p=>`<span class="tag">${esc(p)}</span>`).join("")}</div>
+        <dl class="facts">
+          <div><dt>${esc(t("rating"))}</dt><dd>${a.rating?num(a.rating)+" ★":"–"}</dd></div>
+          <div><dt>${esc(t("reviews"))}</dt><dd>${a.reviews||0}</dd></div>
+          <div><dt>${esc(t("age"))}</dt><dd>4+</dd></div>
+          <div><dt>${esc(t("category"))}</dt><dd>${esc(catName(a.category))}</dd></div>
+          <div><dt>${esc(t("language"))}</dt><dd>${esc(a.languages||"–")}</dd></div>
+          <div><dt>${esc(t("size"))}</dt><dd>${esc(a.size||"–")}</dd></div>
+        </dl>
+        <div class="btns">${ctas(a)}</div>
+      </div>
+      ${a.history&&a.history.length?`<div class="history"><h4>${esc(t("history"))}</h4><ol>${a.history.map(h=>`<li><div><div class="mono">${esc(h.version)}</div><div class="d">${esc(date(h.date))}</div></div><p>${esc(L(h.notes))}</p></li>`).join("")}</ol></div>`:""}
+    </div>`;
+
+  $("#homeyList").innerHTML = homey.map(h => {
+    const url = (h.links && h.links.homey ? h.links.homey : "").replace("/nl-nl/", lang==="nl" ? "/nl-nl/" : "/en-us/");
+    const inner = `${icon(h)}<div style="min-width:0"><b>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</b><span>${esc(L(h.description))}</span>${h.bundleId?`<span class="mono">${esc(h.bundleId)}</span>`:""}</div>`;
+    return `<li>${url?`<a href="${esc(url)}" target="_blank" rel="noopener">${inner}</a>`:`<a>${inner}</a>`}</li>`;
+  }).join("");
+}
+
+document.addEventListener("click", e => {
+  const lb = e.target.closest(".lang button");
+  if (lb){ lang = lb.dataset.lang; try{localStorage.setItem("lr-lang",lang)}catch(_){} render(); return; }
+  const ch = e.target.closest(".chip");
+  if (ch){ cat = ch.dataset.cat; render(); return; }
+  const ap = e.target.closest(".app");
+  if (ap){ open = open===ap.dataset.id ? null : ap.dataset.id; render();
+    if (open) $("#detailSlot").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"nearest"}); }
+});
+
+renderStatic();
+fetch("apps.json", {cache:"no-cache"})
+  .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => { APPS = d.apps || []; open = (APPS.find(a=>a.section==="ios"&&a.status==="live"&&!a.featured)||{}).id || null; render(); })
+  .catch(() => { $("#grid").innerHTML = `<div class="notice">${esc(t("loadError"))}</div>`; });
+</script>

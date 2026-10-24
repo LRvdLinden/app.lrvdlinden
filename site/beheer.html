@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>LRvdLinden Beheer</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: werkbalk bovenaan, links de lijst met apps, rechts het formulier van de gekozen app. */
+:root{
+  --bg:#F3F5F9;--surface:#FFFFFF;--ink:#121726;--muted:#5D6578;--line:#DDE2EC;
+  --accent:#2747E8;--accent-soft:#E6EBFF;--on-accent:#FFFFFF;--danger:#B42318;--danger-soft:#FDECEA;
+  --live:#2747E8;--beta:#0F766E;--dev:#B4530D;
+  --f-display:"Bricolage Grotesque",system-ui,sans-serif;--f-body:"Hanken Grotesk",system-ui,sans-serif;--f-mono:"JetBrains Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;--accent:#8A9DFF;--accent-soft:#1D2547;--on-accent:#0D1018;
+  --danger:#F48A80;--danger-soft:#3A1A17;--live:#8A9DFF;--beta:#5EC8B8;--dev:#F2A15E;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;--accent:#8A9DFF;--accent-soft:#1D2547;--on-accent:#0D1018;
+  --danger:#F48A80;--danger-soft:#3A1A17;--live:#8A9DFF;--beta:#5EC8B8;--dev:#F2A15E;color-scheme:dark}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 var(--f-body)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--f-display);margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+header{padding-block:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header .brand{display:flex;align-items:center;gap:10px}
+header img{width:34px;height:34px}
+header h1{font-size:20px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px var(--f-body);padding:9px 15px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.danger{color:var(--danger);border-color:var(--danger)}
+.btn.small{padding:5px 10px;font-size:13px}
+.help{background:var(--accent-soft);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:14px}
+.help ol{margin:6px 0 0;padding-left:20px}
+.layout{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:16px;padding-bottom:40px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;min-width:0}
+.list{display:flex;flex-direction:column;gap:4px;max-height:75vh;overflow:auto}
+.list h3{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:12px 4px 4px}
+.item{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 8px;border-radius:10px;cursor:pointer;border:1px solid transparent;background:none;color:inherit;font:inherit;text-align:left;width:100%}
+.item:hover{background:var(--bg)}
+.item[aria-current="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.item img,.item .ph{width:32px;height:32px;border-radius:8px;object-fit:cover;background:var(--line)}
+.item b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dot{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid currentColor}
+.dot.live{color:var(--live)}.dot.beta{color:var(--beta)}.dot.dev{color:var(--dev)}
+form{display:flex;flex-direction:column;gap:18px}
+fieldset{border:0;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+legend{font-family:var(--f-display);font-size:16px;font-weight:700;margin-bottom:8px;grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:600;color:var(--muted);min-width:0}
+label.full{grid-column:1/-1}
+input,select,textarea{font:400 15px var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%}
+textarea{min-height:84px;resize:vertical}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg label{flex-direction:row;align-items:center;gap:6px;font-weight:500;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:6px 12px;cursor:pointer;background:var(--bg)}
+.seg input{width:auto;margin:0}
+.seg label:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hist{grid-column:1/-1;display:flex;flex-direction:column;gap:8px}
+.hist .h{display:grid;grid-template-columns:90px 130px minmax(0,1fr) minmax(0,1fr) auto;gap:8px;align-items:start}
+.confirm{display:flex;gap:8px;align-items:center;background:var(--danger-soft);border-radius:12px;padding:10px 12px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:600;font-size:14px}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;font:12px/1.5 var(--f-mono);max-height:320px;overflow:auto;white-space:pre-wrap;word-break:break-all}
+.muted{color:var(--muted);font-size:13px}
+@media (max-width:820px){.layout{grid-template-columns:1fr}.list{max-height:none}fieldset{grid-template-columns:1fr}.hist .h{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><img src="logo.svg" alt=""><h1>Apps beheren</h1></div>
+    <div class="tools">
+      <button class="btn" type="button" id="btnNew">+ Nieuwe app</button>
+      <label class="btn" for="fileIn" style="flex-direction:row">Bestand openen<input type="file" id="fileIn" accept=".json,application/json" hidden></label>
+      <button class="btn" type="button" id="btnCopy">Kopieer JSON</button>
+      <button class="btn primary" type="button" id="btnDownload">Download apps.json</button>
+    </div>
+  </header>
+
+  <div class="help">
+    <b>Zo werkt het</b>
+    <ol>
+      <li>Kies links een app of maak een nieuwe aan. Pas status, platformen en teksten aan.</li>
+      <li>Klik <b>Download apps.json</b> (of <b>Kopieer JSON</b> en plak het in het bestand).</li>
+      <li>Upload <span class="mono">apps.json</span> naar je server, naast <span class="mono">index.html</span>. Klaar.</li>
+    </ol>
+    <div class="muted" style="margin-top:6px">Je wijzigingen worden in deze browser bewaard tot je ze downloadt. Nieuw icoon? Zet het in de map <span class="mono">img/</span> en vul het pad in.</div>
+  </div>
+
+  <div class="layout">
+    <aside class="panel"><div class="list" id="list"></div></aside>
+    <section class="panel" id="editor"></section>
+  </div>
+</div>
+
+<script>
+const PLATFORMS = ["iPhone","iPad","Mac","Apple TV","Apple Watch","Vision Pro","Android","Android TV","Samsung TV","Windows","Web"];
+const CATS = {utilities:"Hulpmiddelen",entertainment:"Amusement",news:"Nieuws",business:"Zakelijk",lifestyle:"Lifestyle",games:"Games",music:"Muziek",productivity:"Productiviteit",health:"Gezondheid",education:"Onderwijs",travel:"Reizen",weather:"Weer"};
+const STATUS = {live:"Live", beta:"Beta / TestFlight", dev:"In ontwikkeling"};
+const KEY = "lr-beheer-draft";
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let DATA = { apps: [] }, sel = null, confirmDel = false, dirty = false;
+
+function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }
+function save(){ dirty = true; try{ localStorage.setItem(KEY, JSON.stringify(DATA)); }catch(e){} }
+function cur(){ return DATA.apps.find(a => a.id === sel); }
+
+function renderList(){
+  const groups = [["ios","iOS & andere platformen"],["homey","Homey"]];
+  $("#list").innerHTML = groups.map(([sec,label]) => {
+    const items = DATA.apps.filter(a => (a.section||"ios") === sec);
+    return `<h3>${label} · ${items.length}</h3>` + items.map(a => `
+      <button type="button" class="item" data-id="${esc(a.id)}" aria-current="${a.id===sel}">
+        ${a.icon?`<img src="${esc(a.icon)}" alt="" onerror="this.outerHTML='<span class=ph></span>'">`:`<span class="ph"></span>`}
+        <b>${esc(a.name||"(naamloos)")}</b>
+        <span class="dot ${esc(a.status)}">${esc(a.status)}</span>
+      </button>`).join("");
+  }).join("");
+}
+
+function field(label, path, val, opts={}){
+  const id = "f_"+path.replace(/\W/g,"_");
+  if (opts.area) return `<label class="${opts.full?"full":""}" for="${id}">${label}<textarea id="${id}" data-p="${path}">${esc(val)}</textarea></label>`;
+  return `<label class="${opts.full?"full":""}" for="${id}">${label}<input id="${id}" data-p="${path}" type="${opts.type||"text"}" ${opts.step?`step="${opts.step}"`:""} value="${esc(val)}" placeholder="${esc(opts.ph||"")}"></label>`;
+}
+
+function renderEditor(){
+  const a = cur();
+  if (!a){ $("#editor").innerHTML = `<p class="muted">Kies links een app om te bewerken, of klik <b>+ Nieuwe app</b>.</p>`; return; }
+  const L = a.links || {}, isIos = (a.section||"ios") === "ios";
+  $("#editor").innerHTML = `
+  <form id="form" autocomplete="off">
+    <fieldset>
+      <legend>${esc(a.name||"Nieuwe app")}</legend>
+      ${field("Naam","name",a.name)}
+      ${field("ID (uniek, zonder spaties)","id",a.id)}
+      <label for="f_section">Sectie<select id="f_section" data-p="section"><option value="ios" ${isIos?"selected":""}>iOS & andere platformen</option><option value="homey" ${!isIos?"selected":""}>Homey</option></select></label>
+      <label for="f_cat">Categorie<select id="f_cat" data-p="category">${Object.entries(CATS).map(([k,v])=>`<option value="${k}" ${a.category===k?"selected":""}>${v}</option>`).join("")}</select></label>
+      <div class="full" style="grid-column:1/-1">
+        <div class="muted" style="font-weight:600;margin-bottom:6px">Status</div>
+        <div class="seg">${Object.entries(STATUS).map(([k,v])=>`<label><input type="radio" name="status" value="${k}" ${a.status===k?"checked":""}> ${v}</label>`).join("")}
+          <label><input type="checkbox" id="f_featured" ${a.featured?"checked":""}> Uitlichten bovenaan</label></div>
+      </div>
+      <div class="full" style="grid-column:1/-1">
+        <div class="muted" style="font-weight:600;margin-bottom:6px">Platformen / apparaten</div>
+        <div class="seg" id="plats">${[...new Set([...PLATFORMS, ...(a.platforms||[])])].map(p=>`<label><input type="checkbox" value="${esc(p)}" ${(a.platforms||[]).includes(p)?"checked":""}> ${esc(p)}</label>`).join("")}</div>
+        <div class="row" style="margin-top:8px"><input id="newPlat" placeholder="Ander apparaat, bijv. LG TV" style="max-width:260px"><button type="button" class="btn small" id="addPlat">Toevoegen</button></div>
+      </div>
+      ${field("Icoon (pad of URL)","icon",a.icon,{ph:"img/mijnapp.webp",full:true})}
+    </fieldset>
+
+    <fieldset>
+      <legend>Teksten</legend>
+      ${field("Ondertitel NL","subtitle.nl",(a.subtitle||{}).nl)}
+      ${field("Subtitle EN","subtitle.en",(a.subtitle||{}).en)}
+      ${field("Omschrijving NL","description.nl",(a.description||{}).nl,{area:1})}
+      ${field("Description EN","description.en",(a.description||{}).en,{area:1})}
+      ${field("Label NL (optioneel)","badge.nl",(a.badge||{}).nl,{ph:"Nr. 26 in Nieuws"})}
+      ${field("Badge EN (optional)","badge.en",(a.badge||{}).en,{ph:"No. 26 in News"})}
+    </fieldset>
+
+    <fieldset>
+      <legend>Links</legend>
+      ${field("App Store","links.appstore",L.appstore,{ph:"https://apps.apple.com/…"})}
+      ${field("TestFlight","links.testflight",L.testflight,{ph:"https://testflight.apple.com/join/…"})}
+      ${field("Website","links.website",L.website,{ph:"https://…"})}
+      ${field("Homey App Store","links.homey",L.homey,{ph:"https://homey.app/nl-nl/app/…"})}
+      ${field("Bundle ID (Homey)","bundleId",a.bundleId,{ph:"nl.lrvdlinden.…",full:true})}
+    </fieldset>
+
+    <fieldset>
+      <legend>App Store-gegevens</legend>
+      ${field("Beoordeling","rating",a.rating,{type:"number",step:"0.1"})}
+      ${field("Aantal reviews","reviews",a.reviews,{type:"number"})}
+      ${field("Grootte","size",a.size,{ph:"14,8 MB"})}
+      ${field("Talen","languages",a.languages,{ph:"NL + 10"})}
+    </fieldset>
+
+    <fieldset>
+      <legend>Versiegeschiedenis</legend>
+      <div class="hist" id="hist">
+        ${(a.history||[]).map((h,i)=>`
+          <div class="h" data-i="${i}">
+            <input data-h="version" value="${esc(h.version)}" placeholder="1.0.0" aria-label="Versie">
+            <input data-h="date" type="date" value="${esc(h.date&&h.date.length===10?h.date:"")}" aria-label="Datum">
+            <input data-h="nl" value="${esc((h.notes||{}).nl)}" placeholder="Wat is nieuw (NL)" aria-label="Notities NL">
+            <input data-h="en" value="${esc((h.notes||{}).en)}" placeholder="What's new (EN)" aria-label="Notes EN">
+            <button type="button" class="btn small danger" data-delh="${i}">×</button>
+          </div>`).join("")}
+        <div><button type="button" class="btn small" id="addHist">+ Nieuwe versie bovenaan</button></div>
+      </div>
+    </fieldset>
+
+    <div class="row">
+      <button type="button" class="btn small" id="up">↑ Hoger</button>
+      <button type="button" class="btn small" id="down">↓ Lager</button>
+      <span style="flex:1"></span>
+      ${confirmDel ? `<div class="confirm"><span>${esc(a.name)} echt verwijderen?</span><button type="button" class="btn small danger" id="delYes">Verwijderen</button><button type="button" class="btn small" id="delNo">Annuleren</button></div>`
+                   : `<button type="button" class="btn small danger" id="del">Verwijder app</button>`}
+    </div>
+  </form>
+  <details style="margin-top:18px"><summary class="muted" style="cursor:pointer">Bekijk JSON van deze app</summary><pre>${esc(JSON.stringify(a,null,2))}</pre></details>`;
+}
+
+function setPath(obj, path, val){
+  const k = path.split("."); let o = obj;
+  for (let i=0;i<k.length-1;i++){ o[k[i]] = o[k[i]] || {}; o = o[k[i]]; }
+  const last = k[k.length-1];
+  if (val === "" || val == null) delete o[last]; else o[last] = val;
+  if (k.length > 1 && Object.keys(o).length === 0) delete obj[k[0]];
+}
+function render(){ renderList(); renderEditor(); }
+
+document.addEventListener("input", e => {
+  const a = cur(); if (!a) return;
+  const el = e.target;
+  if (el.dataset.p){
+    let v = el.value;
+    if (el.type === "number") v = v === "" ? "" : Number(v);
+    if (el.dataset.p === "id"){ v = v.trim().toLowerCase().replace(/[^a-z0-9-]+/g,"-"); if (!v || DATA.apps.some(x=>x!==a&&x.id===v)) return; sel = v; }
+    setPath(a, el.dataset.p, v); save();
+    if (["name","id","icon","section"].includes(el.dataset.p)) renderList();
+    if (el.dataset.p === "section") renderList();
+    return;
+  }
+  if (el.name === "status"){ a.status = el.value; save(); renderList(); return; }
+  if (el.id === "f_featured"){ if (el.checked) a.featured = true; else delete a.featured; save(); return; }
+  if (el.closest("#plats")){ a.platforms = [...document.querySelectorAll("#plats input:checked")].map(i=>i.value); save(); return; }
+  const h = el.closest(".h");
+  if (h){ const i = +h.dataset.i, item = a.history[i];
+    if (el.dataset.h === "nl" || el.dataset.h === "en"){ item.notes = item.notes || {}; item.notes[el.dataset.h] = el.value; }
+    else item[el.dataset.h] = el.value;
+    save(); }
+});
+
+document.addEventListener("click", e => {
+  const it = e.target.closest(".item");
+  if (it){ sel = it.dataset.id; confirmDel = false; render(); return; }
+  const a = cur(), id = e.target.id;
+  if (id === "btnNew"){
+    let n = 1, nid; do { nid = "nieuwe-app-"+n++; } while (DATA.apps.some(x=>x.id===nid));
+    DATA.apps.unshift({ id:nid, name:"Nieuwe app", section:"ios", status:"dev", featured:true, category:"utilities", platforms:["iPhone"], description:{nl:"",en:""}, links:{}, history:[] });
+    sel = nid; confirmDel = false; save(); render(); setTimeout(()=>$("#f_name")?.select(),0); return;
+  }
+  if (id === "btnCopy") return copyJson();
+  if (id === "btnDownload") return download();
+  if (!a) return;
+  if (id === "addPlat"){ const v = $("#newPlat").value.trim(); if (!v) return; a.platforms = [...new Set([...(a.platforms||[]), v])]; save(); renderEditor(); return; }
+  if (id === "addHist"){ a.history = a.history || []; a.history.unshift({version:"", date:new Date().toISOString().slice(0,10), notes:{nl:"",en:""}}); save(); renderEditor(); return; }
+  if (e.target.dataset.delh != null){ a.history.splice(+e.target.dataset.delh,1); save(); renderEditor(); return; }
+  if (id === "up" || id === "down"){
+    const i = DATA.apps.indexOf(a), j = i + (id==="up"?-1:1);
+    if (j<0 || j>=DATA.apps.length) return;
+    [DATA.apps[i], DATA.apps[j]] = [DATA.apps[j], DATA.apps[i]]; save(); renderList(); return;
+  }
+  if (id === "del"){ confirmDel = true; renderEditor(); return; }
+  if (id === "delNo"){ confirmDel = false; renderEditor(); return; }
+  if (id === "delYes"){ const name = a.name; DATA.apps = DATA.apps.filter(x=>x!==a); sel = null; confirmDel = false; save(); render(); toast(name+" verwijderd"); return; }
+});
+
+function json(){ return JSON.stringify(DATA, null, 2) + "\n"; }
+function copyJson(){
+  const txt = json();
+  navigator.clipboard.writeText(txt).then(()=>toast("JSON gekopieerd"), ()=>{
+    $("#editor").insertAdjacentHTML("afterbegin", `<p class="muted">Kopiëren lukte niet. Selecteer de tekst hieronder en kopieer handmatig.</p><pre id="raw">${esc(txt)}</pre>`);
+    const r = document.createRange(); r.selectNodeContents($("#raw")); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  });
+}
+function download(){
+  const url = URL.createObjectURL(new Blob([json()], {type:"application/json"}));
+  const l = document.createElement("a"); l.href = url; l.download = "apps.json"; document.body.appendChild(l); l.click(); l.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+  dirty = false; try{ localStorage.removeItem(KEY); }catch(e){} toast("apps.json gedownload");
+}
+$("#fileIn").addEventListener("change", e => {
+  const f = e.target.files[0]; if (!f) return;
+  f.text().then(t => { DATA = JSON.parse(t); sel = null; save(); render(); toast(f.name+" geladen"); })
+   .catch(() => toast("Dit bestand is geen geldige apps.json"));
+});
+
+let draft = null;
+try { draft = JSON.parse(localStorage.getItem(KEY) || "null"); } catch(e){}
+fetch("apps.json", {cache:"no-cache"}).then(r => r.json()).then(d => {
+  DATA = draft && draft.apps ? draft : d;
+  if (draft) toast("Je laatste niet-gedownloade wijzigingen zijn teruggezet");
+  sel = DATA.apps[0] && DATA.apps[0].id; render();
+}).catch(() => { DATA = draft || {apps:[]}; render(); toast("apps.json niet gevonden. Open het bestand via de knop."); });
+</script>
+</body>
+</html>

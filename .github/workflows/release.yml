@@ -1,0 +1,111 @@
+name: Release site
+
+# Elke wijziging in site/ (of handmatig starten) levert een zip-release op
+# met de complete site, inclusief .htaccess en .htpasswd voor beheer.html.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Controleer secrets
+        env:
+          BEHEER_USER: ${{ secrets.BEHEER_USER }}
+          BEHEER_PASSWORD: ${{ secrets.BEHEER_PASSWORD }}
+          BEHEER_HTPASSWD_PATH: ${{ secrets.BEHEER_HTPASSWD_PATH }}
+        run: |
+          missing=""
+          [ -z "$BEHEER_USER" ] && missing="$missing BEHEER_USER"
+          [ -z "$BEHEER_PASSWORD" ] && missing="$missing BEHEER_PASSWORD"
+          [ -z "$BEHEER_HTPASSWD_PATH" ] && missing="$missing BEHEER_HTPASSWD_PATH"
+          if [ -n "$missing" ]; then
+            echo "::error::Ontbrekende secrets:$missing. Voeg ze toe onder Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          case "$BEHEER_HTPASSWD_PATH" in
+            /*) ;;
+            *) echo "::error::BEHEER_HTPASSWD_PATH moet een absoluut pad zijn, bijv. /home/gebruiker/domains/lrvdlinden.app/public_html/.htpasswd"; exit 1 ;;
+          esac
+
+      - name: Installeer htpasswd
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq apache2-utils zip
+
+      - name: Bouw site
+        env:
+          BEHEER_USER: ${{ secrets.BEHEER_USER }}
+          BEHEER_PASSWORD: ${{ secrets.BEHEER_PASSWORD }}
+          BEHEER_HTPASSWD_PATH: ${{ secrets.BEHEER_HTPASSWD_PATH }}
+        run: |
+          python3 -c "import json; json.load(open('site/apps.json'))" || { echo "::error::site/apps.json is geen geldige JSON"; exit 1; }
+          rm -rf build && mkdir build
+          cp -r site/. build/
+
+          # Wachtwoord via stdin, zodat het niet in de proceslijst verschijnt. bcrypt-hash.
+          printf '%s' "$BEHEER_PASSWORD" | htpasswd -niB "$BEHEER_USER" | sed '/^$/d' > build/.htpasswd
+
+          cat > build/.htaccess <<EOF
+          AddDefaultCharset UTF-8
+          AddCharset UTF-8 .html .json .svg
+
+          # Beheerpagina alleen met gebruikersnaam en wachtwoord
+          <Files "beheer.html">
+            AuthType Basic
+            AuthName "LRvdLinden beheer"
+            AuthUserFile "${BEHEER_HTPASSWD_PATH}"
+            Require valid-user
+          </Files>
+
+          # .htaccess en .htpasswd nooit uitleveren
+          <FilesMatch "^\.ht">
+            Require all denied
+          </FilesMatch>
+
+          # apps.json altijd vers ophalen na een update
+          <IfModule mod_headers.c>
+            <Files "apps.json">
+              Header set Cache-Control "no-cache"
+            </Files>
+          </IfModule>
+          EOF
+          sed -i 's/^          //' build/.htaccess
+
+      - name: Maak zip
+        id: zip
+        run: |
+          TAG="v$(date -u +%Y.%m.%d)-${GITHUB_RUN_NUMBER}"
+          NAME="lrvdlinden-site-${TAG}.zip"
+          (cd build && zip -qr "../${NAME}" .)
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "name=${NAME}" >> "$GITHUB_OUTPUT"
+          unzip -l "${NAME}" | tail -1
+
+      - name: Publiceer release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MSG: ${{ github.event.head_commit.message || 'Handmatige release' }}
+        run: |
+          {
+            echo "${MSG}"
+            echo
+            echo "Upload de inhoud van de zip naar de webroot van lrvdlinden.app (overschrijf bestaande bestanden)."
+          } > notes.md
+          gh release create "${{ steps.zip.outputs.tag }}" "${{ steps.zip.outputs.name }}" \
+            --target "${GITHUB_SHA}" \
+            --title "Site ${{ steps.zip.outputs.tag }}" \
+            --notes-file notes.md
