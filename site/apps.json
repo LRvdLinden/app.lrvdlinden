@@ -36,6 +36,52 @@
       "history": []
     },
     {
+      "id": "healthsync",
+      "name": "HealthSync",
+      "section": "ios",
+      "status": "live",
+      "featured": true,
+      "icon": "img/healthsync.webp",
+      "category": "utilities",
+      "platforms": [
+        "iPhone",
+        "Mac",
+        "Vision Pro"
+      ],
+      "subtitle": {
+        "nl": "Gezondheidsdata naar Homey",
+        "en": "Health data to Homey"
+      },
+      "description": {
+        "nl": "Stuurt gezondheidsdata van je iPhone naar je Homey: stappen, hartslag, slaap, workouts, bloedzuurstof en meer dan 180 andere typen. Alleen-lezen en rechtstreeks via HTTPS naar je eigen Homey. Werkt samen met de gratis Apple Health-app voor Homey Pro en Homey Cloud.",
+        "en": "Sends health data from your iPhone to your Homey: steps, heart rate, sleep, workouts, blood oxygen and over 180 other types. Read-only and sent directly over HTTPS to your own Homey. Works with the free Apple Health app for Homey Pro and Homey Cloud."
+      },
+      "size": "2,5 MB",
+      "languages": "EN",
+      "links": {
+        "appstore": "https://apps.apple.com/nl/app/healthsync/id6820227732",
+        "website": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/"
+      },
+      "history": [
+        {
+          "version": "1.0.1",
+          "date": "2026-10-14",
+          "notes": {
+            "nl": "Verbeterde slaapregistratie.",
+            "en": "Improved sleep tracking."
+          }
+        },
+        {
+          "version": "1.0.0",
+          "date": "2026-10-11",
+          "notes": {
+            "nl": "Eerste release.",
+            "en": "First release."
+          }
+        }
+      ]
+    },
+    {
       "id": "tunr",
       "name": "Tunr",
       "section": "ios",
