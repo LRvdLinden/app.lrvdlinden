@@ -214,12 +214,14 @@ function renderEditor(){
     <fieldset>
       <legend>Promo-banner (Nieuw en onderweg)</legend>
       <label class="switch" for="f_promo"><input type="checkbox" id="f_promo" ${a.promo&&a.promo.show?"checked":""}> Toon een grote banner voor deze app, zoals in de App Store</label>
+      ${["nl","en"].map(lg => { const im = bannerOf(a, lg); return `
       <div class="bannerrow">
-        ${a.promo&&a.promo.image?`<img class="prev" src="${esc(iconSrc({icon:a.promo.image}))}" alt="Banner van ${esc(a.name)}">`:`<div class="prev">Geen afbeelding: de banner gebruikt het icoon als achtergrond</div>`}
-        <label class="btn" for="bannerIn" style="flex-direction:row;color:var(--ink)">Banner uploaden<input type="file" id="bannerIn" accept="image/png,image/jpeg,image/webp" hidden></label>
-        ${a.promo&&a.promo.image?`<button type="button" class="btn small danger" id="bannerDel">Afbeelding verwijderen</button>`:""}
-      </div>
-      <div class="muted" style="grid-column:1/-1">Liggend beeld, ideaal 1600 × 900 pixels. Laat titel leeg om de appnaam te tonen.</div>
+        <b style="width:28px">${lg.toUpperCase()}</b>
+        ${im?`<img class="prev" src="${esc(iconSrc({icon:im}))}" alt="Banner ${lg.toUpperCase()} van ${esc(a.name)}">`:`<div class="prev">${lg==="en"&&bannerOf(a,"nl")?"Geen Engelse banner: de Nederlandse wordt gebruikt":lg==="nl"&&bannerOf(a,"en")?"Geen Nederlandse banner: de Engelse wordt gebruikt":"Geen afbeelding: de banner gebruikt het icoon als achtergrond"}</div>`}
+        <label class="btn" for="bannerIn-${lg}" style="flex-direction:row;color:var(--ink)">Banner ${lg.toUpperCase()} uploaden<input type="file" id="bannerIn-${lg}" data-lang="${lg}" class="bannerIn" accept="image/png,image/jpeg,image/webp" hidden></label>
+        ${im?`<button type="button" class="btn small danger" data-bannerdel="${lg}">Verwijderen</button>`:""}
+      </div>`; }).join("")}
+      <div class="muted" style="grid-column:1/-1">Liggend beeld, ideaal 1600 × 900 pixels. Upload per taal een eigen banner, of één voor beide. Laat de titel leeg om de appnaam te tonen.</div>
       ${field("Bovenregel NL","promo.eyebrow.nl",((a.promo||{}).eyebrow||{}).nl,{ph:"NIEUWE APP"})}
       ${field("Eyebrow EN","promo.eyebrow.en",((a.promo||{}).eyebrow||{}).en,{ph:"NEW APP"})}
       ${field("Titel NL","promo.title.nl",((a.promo||{}).title||{}).nl,{ph:"Al je tv op één plek"})}
@@ -271,6 +273,12 @@ function renderEditor(){
   <details style="margin-top:18px"><summary class="muted" style="cursor:pointer">Bekijk JSON van deze app</summary><pre>${esc(JSON.stringify(a,null,2))}</pre></details>`;
 }
 
+function bannerOf(a, lg){
+  const im = a.promo && a.promo.image;
+  if (!im) return "";
+  if (typeof im === "string") return lg === "nl" ? im : "";
+  return im[lg] || "";
+}
 function setPath(obj, path, val){
   const k = path.split("."), chain = [obj]; let o = obj;
   for (let i=0;i<k.length-1;i++){ o[k[i]] = o[k[i]] || {}; o = o[k[i]]; chain.push(o); }
@@ -319,7 +327,15 @@ document.addEventListener("click", e => {
   if (id === "btnCopy") return copyJson();
   if (id === "btnDownload") return download();
   if (!a) return;
-  if (id === "bannerDel"){ if (a.promo){ Object.keys(PENDING).forEach(k => { if (k === a.promo.image) delete PENDING[k]; }); delete a.promo.image; } save(); renderEditor(); return; }
+  const bd = e.target.dataset && e.target.dataset.bannerdel;
+  if (bd){
+    if (a.promo && a.promo.image){
+      if (typeof a.promo.image === "string") a.promo.image = { nl: a.promo.image };
+      delete PENDING[a.promo.image[bd]]; delete a.promo.image[bd];
+      if (!Object.keys(a.promo.image).length) delete a.promo.image;
+    }
+    save(); renderEditor(); return;
+  }
   if (id === "addPlat"){ const v = $("#newPlat").value.trim(); if (!v) return; a.platforms = [...new Set([...(a.platforms||[]), v])]; save(); renderEditor(); return; }
   if (id === "addHist"){ a.history = a.history || []; a.history.unshift({version:"", date:new Date().toISOString().slice(0,10), notes:{nl:"",en:""}}); save(); renderEditor(); return; }
   if (e.target.dataset.delh != null){ a.history.splice(+e.target.dataset.delh,1); save(); renderEditor(); return; }
@@ -382,14 +398,18 @@ function resizeIcon(file, W=256, H=256, q=0.85){
   });
 }
 document.addEventListener("change", async e => {
-  if (e.target.id === "bannerIn") {
-    const a = cur(), f = e.target.files[0]; if (!a || !f) return;
+  if (e.target.classList.contains("bannerIn")) {
+    const a = cur(), f = e.target.files[0], lg = e.target.dataset.lang; if (!a || !f) return;
     try {
       const { url, ext } = await resizeIcon(f, 1600, 900, 0.8);
-      const path = `img/promo-${a.id}.${ext}`;
-      Object.keys(PENDING).forEach(k => { if (k.startsWith(`img/promo-${a.id}.`)) delete PENDING[k]; });
-      PENDING[path] = { url }; a.promo = a.promo || {}; a.promo.image = path; a.promo.show = true;
-      save(); render(); toast("Banner klaar. Klik Publiceren om hem live te zetten.");
+      const path = `img/promo-${a.id}-${lg}.${ext}`;
+      Object.keys(PENDING).forEach(k => { if (k.startsWith(`img/promo-${a.id}-${lg}.`)) delete PENDING[k]; });
+      PENDING[path] = { url };
+      a.promo = a.promo || {};
+      if (typeof a.promo.image === "string") a.promo.image = { nl: a.promo.image };
+      a.promo.image = { ...(a.promo.image || {}), [lg]: path };
+      a.promo.show = true;
+      save(); render(); toast(`Banner ${lg.toUpperCase()} klaar. Klik Publiceren om hem live te zetten.`);
     } catch(err) { toast(err.message); }
     return;
   }

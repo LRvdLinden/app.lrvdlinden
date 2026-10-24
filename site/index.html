@@ -350,7 +350,8 @@ function render(){
   $("#promo").innerHTML = promos.map(a => {
     const p = a.promo, l = a.links || {};
     const [url, label] = l.appstore ? [l.appstore, t("getStore")] : l.testflight ? [l.testflight, t("getBeta")] : l.website ? [l.website, t("getSite")] : [null, null];
-    const bg = p.image ? `<div class="bg"><img src="${esc(p.image)}" alt="" loading="lazy"></div>`
+    const img = typeof p.image === "string" ? p.image : L(p.image);
+    const bg = img ? `<div class="bg"><img src="${esc(img)}" alt="" loading="lazy"></div>`
                        : (a.icon ? `<div class="bg fromicon"><img src="${esc(a.icon)}" alt=""></div>` : `<div class="bg"></div>`);
     return `<article class="promo" aria-label="${esc(a.name)}">
       ${bg}
