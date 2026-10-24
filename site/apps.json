@@ -49,6 +49,7 @@
             "category": "utilities",
             "platforms": [
                 "iPhone",
+                "iPad",
                 "Mac",
                 "Vision Pro"
             ],
