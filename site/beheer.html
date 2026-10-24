@@ -129,7 +129,7 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding
 const PLATFORMS = ["iPhone","iPad","Mac","Apple TV","Apple Watch","Vision Pro","Android","Android TV","Samsung TV","Windows","Web"];
 const CATS = {utilities:"Hulpmiddelen",entertainment:"Amusement",news:"Nieuws",business:"Zakelijk",lifestyle:"Lifestyle",games:"Games",music:"Muziek",productivity:"Productiviteit",health:"Gezondheid",education:"Onderwijs",travel:"Reizen",weather:"Weer"};
 const STATUS = {live:"Live", beta:"Beta / TestFlight", dev:"In ontwikkeling"};
-const KEY = "lr-beheer-draft";
+const KEY = "lr-beheer-concept";  // { base: apps.json waarop het concept gebaseerd is, data: concept }
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const PKEY = "lr-beheer-files";
@@ -146,7 +146,7 @@ function updateState(){
 window.addEventListener("beforeunload", e => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
 
 function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }
-function save(){ try{ localStorage.setItem(KEY, JSON.stringify(DATA)); localStorage.setItem(PKEY, JSON.stringify(PENDING)); }catch(e){} updateState(); }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify({ base: ORIGINAL, data: DATA })); localStorage.setItem(PKEY, JSON.stringify(PENDING)); }catch(e){} updateState(); }
 function cur(){ return DATA.apps.find(a => a.id === sel); }
 
 function renderList(){
@@ -387,14 +387,47 @@ $("#fileIn").addEventListener("change", e => {
    .catch(() => toast("Dit bestand is geen geldige apps.json"));
 });
 
+// Concept samenvoegen met de nieuwste versie op de server:
+// alleen apps die jij in je concept hebt gewijzigd, toegevoegd of verwijderd worden overgenomen,
+// al het andere komt van de server. Zo gaat werk van een andere sessie nooit verloren.
+function mergeDraft(base, draft, server){
+  const B = new Map((base.apps||[]).map(a => [a.id, JSON.stringify(a)]));
+  const D = new Map((draft.apps||[]).map(a => [a.id, a]));
+  const out = [], kept = [];
+  for (const a of server.apps || []) {
+    if (B.has(a.id) && !D.has(a.id)) { kept.push(a.name + " (verwijderd)"); continue; }
+    const mine = D.get(a.id);
+    if (mine && B.has(a.id) && B.get(a.id) !== JSON.stringify(mine)) { out.push(mine); kept.push(mine.name); }
+    else out.push(a);
+  }
+  (draft.apps||[]).forEach((a, i) => {
+    if (!B.has(a.id) && !out.some(x => x.id === a.id)) { out.splice(Math.min(i, out.length), 0, a); kept.push(a.name + " (nieuw)"); }
+  });
+  return { data: { ...server, apps: out }, kept };
+}
+
 let draft = null;
-try { draft = JSON.parse(localStorage.getItem(KEY) || "null"); PENDING = JSON.parse(localStorage.getItem(PKEY) || "{}") || {}; } catch(e){ PENDING = {}; }
-fetch("apps.json", {cache:"no-cache"}).then(r => r.json()).then(d => {
+try {
+  localStorage.removeItem("lr-beheer-draft"); // oude conceptvorm zonder basis: kan verouderd zijn
+  draft = JSON.parse(localStorage.getItem(KEY) || "null");
+  PENDING = JSON.parse(localStorage.getItem(PKEY) || "{}") || {};
+} catch(e){ PENDING = {}; }
+fetch("apps.json", {cache:"no-store"}).then(r => r.json()).then(d => {
   ORIGINAL = JSON.stringify(d);
-  DATA = draft && draft.apps ? draft : d;
-  if (draft && JSON.stringify(draft) !== ORIGINAL) toast("Je niet-gepubliceerde wijzigingen zijn teruggezet");
-  sel = DATA.apps[0] && DATA.apps[0].id; updateState(); render();
-}).catch(() => { DATA = draft || {apps:[]}; ORIGINAL = JSON.stringify({apps:[]}); updateState(); render(); toast("apps.json niet gevonden. Open het bestand via Meer."); });
+  DATA = d;
+  if (draft && draft.data && draft.data.apps) {
+    if (draft.base === ORIGINAL) {
+      DATA = draft.data;
+      if (JSON.stringify(DATA) !== ORIGINAL) toast("Je niet-gepubliceerde wijzigingen zijn teruggezet");
+    } else {
+      let base = {apps:[]}; try { base = JSON.parse(draft.base); } catch(e){}
+      const m = mergeDraft(base, draft.data, d);
+      DATA = m.data;
+      if (m.kept.length) showResult("warn", `<b>De site is intussen gewijzigd.</b> Je concept is samengevoegd met de nieuwste versie. Behouden uit je concept: ${esc(m.kept.join(", "))}. Controleer en klik Publiceren, of kies Meer → Wijzigingen weggooien.`);
+    }
+  }
+  sel = DATA.apps[0] && DATA.apps[0].id; save(); render();
+}).catch(() => { DATA = (draft && draft.data) || {apps:[]}; ORIGINAL = JSON.stringify({apps:[]}); updateState(); render(); toast("apps.json niet gevonden. Open het bestand via Meer."); });
 </script>
 </body>
 </html>
