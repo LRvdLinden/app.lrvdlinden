@@ -61,6 +61,7 @@ jobs:
 
       - name: Bouw site
         env:
+          PUBLISH_GITHUB_TOKEN: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
           BEHEER_USER: ${{ secrets.BEHEER_USER }}
           BEHEER_PASSWORD: ${{ secrets.BEHEER_PASSWORD }}
           BEHEER_HTPASSWD_PATH: ${{ secrets.BEHEER_HTPASSWD_PATH }}
@@ -74,20 +75,29 @@ jobs:
           # Wachtwoord via stdin, zodat het niet in de proceslijst verschijnt. bcrypt-hash.
           printf '%s' "$BEHEER_PASSWORD" | htpasswd -niB -C 12 "$BEHEER_USER" | sed '/^$/d' > build/.htpasswd
 
+          # GitHub-token voor de Publiceren-knop (alleen op de server, nooit in repo of zip)
+          if [ -n "$PUBLISH_GITHUB_TOKEN" ]; then
+            TOKEN=$(printf '%s' "$PUBLISH_GITHUB_TOKEN" | tr -d '[:space:]')
+            printf '%s' "$TOKEN" | grep -Eq '^[A-Za-z0-9_]+$' || { echo "::error::PUBLISH_GITHUB_TOKEN bevat ongeldige tekens."; exit 1; }
+            printf "<?php\nreturn ['token' => '%s', 'repo' => '%s', 'branch' => 'main'];\n" "$TOKEN" "$GITHUB_REPOSITORY" > build/.publish-config.php
+          else
+            echo "::warning::Secret PUBLISH_GITHUB_TOKEN ontbreekt. De Publiceren-knop zet wijzigingen wel live, maar slaat ze niet op in GitHub."
+          fi
+
           cat > build/.htaccess <<EOF
           AddDefaultCharset UTF-8
           AddCharset UTF-8 .html .json .svg
 
-          # Beheerpagina alleen met gebruikersnaam en wachtwoord
-          <Files "beheer.html">
+          # Beheerpagina en publiceren alleen met gebruikersnaam en wachtwoord
+          <FilesMatch "^(beheer\.html|publish\.php)$">
             AuthType Basic
             AuthName "LRvdLinden beheer"
             AuthUserFile "${BEHEER_HTPASSWD_PATH}"
             Require valid-user
-          </Files>
+          </FilesMatch>
 
-          # .htaccess en .htpasswd nooit uitleveren
-          <FilesMatch "^\.ht">
+          # .htaccess, .htpasswd en de token-config nooit uitleveren
+          <FilesMatch "^\.(ht|publish-config)">
             Require all denied
           </FilesMatch>
 
@@ -145,13 +155,18 @@ jobs:
           b=$(curl -s -o /dev/null -w '%{http_code}' https://lrvdlinden.app/beheer.html)
           echo "beheer.html zonder login: HTTP $b"
           [ "$b" = "401" ] || echo "::warning::beheer.html geeft HTTP $b in plaats van 401 (inloggen vereist)."
+          for f in publish.php .publish-config.php .htpasswd; do
+            c=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$f")
+            echo "$f zonder login: HTTP $c"
+            case "$c" in 401|403) ;; *) echo "::error::$f is bereikbaar zonder login (HTTP $c)."; exit 1 ;; esac
+          done
 
       - name: Maak zip
         id: zip
         run: |
           TAG="v$(date -u +%Y.%m.%d)-${GITHUB_RUN_NUMBER}"
           NAME="lrvdlinden-site-${TAG}.zip"
-          (cd build && zip -qr "../${NAME}" . -x .htpasswd)
+          (cd build && zip -qr "../${NAME}" . -x .htpasswd .publish-config.php)
           echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
           echo "name=${NAME}" >> "$GITHUB_OUTPUT"
           unzip -l "${NAME}" | tail -1

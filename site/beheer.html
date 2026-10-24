@@ -66,6 +66,21 @@ textarea{min-height:84px;resize:vertical}
 .hist{grid-column:1/-1;display:flex;flex-direction:column;gap:8px}
 .hist .h{display:grid;grid-template-columns:90px 130px minmax(0,1fr) minmax(0,1fr) auto;gap:8px;align-items:start}
 .confirm{display:flex;gap:8px;align-items:center;background:var(--danger-soft);border-radius:12px;padding:10px 12px;flex-wrap:wrap}
+.tools{align-items:center}
+.more{position:relative}
+.more summary{list-style:none}
+.more summary::-webkit-details-marker{display:none}
+.more .menu{position:absolute;right:0;top:calc(100% + 6px);z-index:5;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.state{font-size:13px;font-weight:600;color:var(--muted)}
+.state.dirty{color:var(--dev)}
+.btn[disabled]{opacity:.55;cursor:default}
+.result{border-radius:14px;padding:12px 14px;margin-bottom:16px;font-size:14px;border:1px solid var(--line);background:var(--surface)}
+.result.good{border-color:var(--beta)}
+.result.warn{border-color:var(--dev)}
+.result.bad{border-color:var(--danger);background:var(--danger-soft)}
+.iconrow{grid-column:1/-1;display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.iconrow img,.iconrow .ph{width:64px;height:64px;border-radius:15px;object-fit:cover;background:var(--line);flex:none}
+.iconrow label{flex:1;min-width:200px}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:600;font-size:14px}
 pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;font:12px/1.5 var(--f-mono);max-height:320px;overflow:auto;white-space:pre-wrap;word-break:break-all}
 .muted{color:var(--muted);font-size:13px}
@@ -78,21 +93,31 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding
     <div class="brand"><img src="logo.svg" alt=""><h1>Apps beheren</h1></div>
     <div class="tools">
       <button class="btn" type="button" id="btnNew">+ Nieuwe app</button>
-      <label class="btn" for="fileIn" style="flex-direction:row">Bestand openen<input type="file" id="fileIn" accept=".json,application/json" hidden></label>
-      <button class="btn" type="button" id="btnCopy">Kopieer JSON</button>
-      <button class="btn primary" type="button" id="btnDownload">Download apps.json</button>
+      <details class="more">
+        <summary class="btn">Meer</summary>
+        <div class="menu">
+          <label class="btn small" for="fileIn" style="flex-direction:row">Bestand openen<input type="file" id="fileIn" accept=".json,application/json" hidden></label>
+          <button class="btn small" type="button" id="btnCopy">Kopieer JSON</button>
+          <button class="btn small" type="button" id="btnDownload">Download apps.json</button>
+          <button class="btn small danger" type="button" id="btnDiscard">Wijzigingen weggooien</button>
+        </div>
+      </details>
+      <span class="state" id="state" aria-live="polite"></span>
+      <button class="btn primary" type="button" id="btnPublish">Publiceren</button>
     </div>
   </header>
 
   <div class="help">
     <b>Zo werkt het</b>
     <ol>
-      <li>Kies links een app of maak een nieuwe aan. Pas status, platformen en teksten aan.</li>
-      <li>Klik <b>Download apps.json</b> (of <b>Kopieer JSON</b> en plak het in het bestand).</li>
-      <li>Upload <span class="mono">apps.json</span> naar je server, naast <span class="mono">index.html</span>. Klaar.</li>
+      <li>Kies links een app of maak een nieuwe aan. Pas status, platformen, teksten en icoon aan.</li>
+      <li>Klik <b>Publiceren</b>. Je wijzigingen staan direct live en worden opgeslagen in GitHub.</li>
+      <li>GitHub zet daarna de hele site opnieuw neer en maakt een zip-release als back-up.</li>
     </ol>
-    <div class="muted" style="margin-top:6px">Je wijzigingen worden in deze browser bewaard tot je ze downloadt. Nieuw icoon? Zet het in de map <span class="mono">img/</span> en vul het pad in.</div>
+    <div class="muted" style="margin-top:6px">Tot je publiceert, worden je wijzigingen in deze browser bewaard.</div>
   </div>
+
+  <div id="result"></div>
 
   <div class="layout">
     <aside class="panel"><div class="list" id="list"></div></aside>
@@ -107,10 +132,21 @@ const STATUS = {live:"Live", beta:"Beta / TestFlight", dev:"In ontwikkeling"};
 const KEY = "lr-beheer-draft";
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const PKEY = "lr-beheer-files";
 let DATA = { apps: [] }, sel = null, confirmDel = false, dirty = false;
+let ORIGINAL = "", PENDING = {}, publishing = false;
+function iconSrc(a){ return a.icon && PENDING[a.icon] ? PENDING[a.icon].url : a.icon; }
+function updateState(){
+  dirty = JSON.stringify(DATA) !== ORIGINAL || Object.keys(PENDING).length > 0;
+  const st = $("#state");
+  st.textContent = publishing ? "Bezig met publiceren…" : (dirty ? "Niet-gepubliceerde wijzigingen" : "Alles gepubliceerd");
+  st.className = "state" + (dirty && !publishing ? " dirty" : "");
+  $("#btnPublish").disabled = publishing || !dirty;
+}
+window.addEventListener("beforeunload", e => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
 
 function toast(msg){ const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2200); }
-function save(){ dirty = true; try{ localStorage.setItem(KEY, JSON.stringify(DATA)); }catch(e){} }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(DATA)); localStorage.setItem(PKEY, JSON.stringify(PENDING)); }catch(e){} updateState(); }
 function cur(){ return DATA.apps.find(a => a.id === sel); }
 
 function renderList(){
@@ -119,7 +155,7 @@ function renderList(){
     const items = DATA.apps.filter(a => (a.section||"ios") === sec);
     return `<h3>${label} · ${items.length}</h3>` + items.map(a => `
       <button type="button" class="item" data-id="${esc(a.id)}" aria-current="${a.id===sel}">
-        ${a.icon?`<img src="${esc(a.icon)}" alt="" onerror="this.outerHTML='<span class=ph></span>'">`:`<span class="ph"></span>`}
+        ${a.icon?`<img src="${esc(iconSrc(a))}" alt="" onerror="this.outerHTML='<span class=ph></span>'">`:`<span class="ph"></span>`}
         <b>${esc(a.name||"(naamloos)")}</b>
         <span class="dot ${esc(a.status)}">${esc(a.status)}</span>
       </button>`).join("");
@@ -154,7 +190,11 @@ function renderEditor(){
         <div class="seg" id="plats">${[...new Set([...PLATFORMS, ...(a.platforms||[])])].map(p=>`<label><input type="checkbox" value="${esc(p)}" ${(a.platforms||[]).includes(p)?"checked":""}> ${esc(p)}</label>`).join("")}</div>
         <div class="row" style="margin-top:8px"><input id="newPlat" placeholder="Ander apparaat, bijv. LG TV" style="max-width:260px"><button type="button" class="btn small" id="addPlat">Toevoegen</button></div>
       </div>
-      ${field("Icoon (pad of URL)","icon",a.icon,{ph:"img/mijnapp.webp",full:true})}
+      <div class="iconrow">
+        ${a.icon?`<img src="${esc(iconSrc(a))}" alt="Icoon van ${esc(a.name)}" onerror="this.outerHTML='<span class=ph></span>'">`:`<span class="ph"></span>`}
+        ${field("Icoon (pad)","icon",a.icon,{ph:"img/mijnapp.webp"})}
+        <label class="btn" for="iconIn" style="flex:none;min-width:0;flex-direction:row;color:var(--ink)">Icoon uploaden<input type="file" id="iconIn" accept="image/png,image/jpeg,image/webp" hidden></label>
+      </div>
     </fieldset>
 
     <fieldset>
@@ -250,6 +290,10 @@ document.addEventListener("click", e => {
     DATA.apps.unshift({ id:nid, name:"Nieuwe app", section:"ios", status:"dev", featured:true, category:"utilities", platforms:["iPhone"], description:{nl:"",en:""}, links:{}, history:[] });
     sel = nid; confirmDel = false; save(); render(); setTimeout(()=>$("#f_name")?.select(),0); return;
   }
+  if (id === "btnPublish") return publish();
+  if (id === "btnDiscard"){ if (!dirty) return toast("Er zijn geen wijzigingen");
+    DATA = JSON.parse(ORIGINAL); PENDING = {}; sel = DATA.apps[0] && DATA.apps[0].id; try{ localStorage.removeItem(KEY); localStorage.removeItem(PKEY); }catch(e){}
+    e.target.closest("details").open = false; updateState(); render(); toast("Wijzigingen weggegooid"); return; }
   if (id === "btnCopy") return copyJson();
   if (id === "btnDownload") return download();
   if (!a) return;
@@ -267,6 +311,63 @@ document.addEventListener("click", e => {
 });
 
 function json(){ return JSON.stringify(DATA, null, 2) + "\n"; }
+function changedNames(){
+  let before = []; try { before = JSON.parse(ORIGINAL).apps || []; } catch(e){}
+  const map = new Map(before.map(a => [a.id, JSON.stringify(a)]));
+  const now = DATA.apps.map(a => a.id);
+  const changed = DATA.apps.filter(a => map.get(a.id) !== JSON.stringify(a)).map(a => a.name);
+  const removed = before.filter(a => !now.includes(a.id)).map(a => a.name + " (verwijderd)");
+  return [...changed, ...removed];
+}
+function showResult(kind, html){ $("#result").innerHTML = `<div class="result ${kind}">${html}</div>`; $("#result").scrollIntoView?.({block:"nearest"}); }
+async function publish(){
+  if (publishing || !dirty) return;
+  const names = changedNames();
+  const message = "Beheer: " + (names.length ? names.slice(0,5).join(", ") + (names.length>5?` en ${names.length-5} meer`:"") : "volgorde of iconen") + " bijgewerkt";
+  const files = Object.entries(PENDING).map(([path,f]) => ({ path, data: f.url.split(",")[1] }));
+  publishing = true; updateState(); $("#result").innerHTML = "";
+  try {
+    const r = await fetch("publish.php", { method:"POST", credentials:"same-origin",
+      headers:{ "Content-Type":"application/json", "X-LR-Beheer":"1" },
+      body: JSON.stringify({ data: DATA, files, message }) });
+    let res = {}; try { res = await r.json(); } catch(e){}
+    if (!r.ok || !res.ok) throw new Error(res.error || ("De server gaf HTTP " + r.status + ". Staat publish.php op de server?"));
+    ORIGINAL = JSON.stringify(DATA); PENDING = {};
+    try{ localStorage.removeItem(KEY); localStorage.removeItem(PKEY); }catch(e){}
+    if (res.github === false) showResult("warn", `<b>Live gezet.</b> ${esc(res.warning||"")}`);
+    else if (res.unchanged) showResult("good", "<b>Live gezet.</b> Er was niets veranderd ten opzichte van GitHub.");
+    else showResult("good", `<b>Live gezet en opgeslagen in GitHub</b> (commit <span class="mono">${esc(res.commit)}</span>). GitHub zet de site nu opnieuw neer en maakt een zip-release. <a href="${esc(res.actions)}" target="_blank" rel="noopener">Volg de voortgang</a>.`);
+    toast("Gepubliceerd");
+  } catch(err) {
+    showResult("bad", `<b>Publiceren mislukt.</b> ${esc(err.message)} Je wijzigingen staan nog in deze browser, probeer het opnieuw.`);
+  } finally { publishing = false; updateState(); renderList(); }
+}
+function resizeIcon(file){
+  return new Promise((resolve, reject) => {
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const c = document.createElement("canvas"); c.width = c.height = 256;
+      const x = c.getContext("2d"), s = Math.max(256/img.naturalWidth, 256/img.naturalHeight);
+      const w = img.naturalWidth*s, h = img.naturalHeight*s;
+      x.drawImage(img, (256-w)/2, (256-h)/2, w, h); URL.revokeObjectURL(url);
+      let d = c.toDataURL("image/webp", 0.85), ext = "webp";
+      if (!d.startsWith("data:image/webp")) { d = c.toDataURL("image/png"); ext = "png"; }
+      resolve({ url: d, ext });
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("Dit bestand is geen afbeelding")); };
+    img.src = url;
+  });
+}
+document.addEventListener("change", async e => {
+  if (e.target.id !== "iconIn") return;
+  const a = cur(), f = e.target.files[0]; if (!a || !f) return;
+  try {
+    const { url, ext } = await resizeIcon(f);
+    const path = `img/${a.id}.${ext}`;
+    Object.keys(PENDING).forEach(k => { if (k.startsWith(`img/${a.id}.`)) delete PENDING[k]; });
+    PENDING[path] = { url }; a.icon = path; save(); render(); toast("Icoon klaar. Klik Publiceren om het live te zetten.");
+  } catch(err) { toast(err.message); }
+});
 function copyJson(){
   const txt = json();
   navigator.clipboard.writeText(txt).then(()=>toast("JSON gekopieerd"), ()=>{
@@ -278,7 +379,7 @@ function download(){
   const url = URL.createObjectURL(new Blob([json()], {type:"application/json"}));
   const l = document.createElement("a"); l.href = url; l.download = "apps.json"; document.body.appendChild(l); l.click(); l.remove();
   setTimeout(()=>URL.revokeObjectURL(url), 1000);
-  dirty = false; try{ localStorage.removeItem(KEY); }catch(e){} toast("apps.json gedownload");
+  toast("apps.json gedownload");
 }
 $("#fileIn").addEventListener("change", e => {
   const f = e.target.files[0]; if (!f) return;
@@ -287,12 +388,13 @@ $("#fileIn").addEventListener("change", e => {
 });
 
 let draft = null;
-try { draft = JSON.parse(localStorage.getItem(KEY) || "null"); } catch(e){}
+try { draft = JSON.parse(localStorage.getItem(KEY) || "null"); PENDING = JSON.parse(localStorage.getItem(PKEY) || "{}") || {}; } catch(e){ PENDING = {}; }
 fetch("apps.json", {cache:"no-cache"}).then(r => r.json()).then(d => {
+  ORIGINAL = JSON.stringify(d);
   DATA = draft && draft.apps ? draft : d;
-  if (draft) toast("Je laatste niet-gedownloade wijzigingen zijn teruggezet");
-  sel = DATA.apps[0] && DATA.apps[0].id; render();
-}).catch(() => { DATA = draft || {apps:[]}; render(); toast("apps.json niet gevonden. Open het bestand via de knop."); });
+  if (draft && JSON.stringify(draft) !== ORIGINAL) toast("Je niet-gepubliceerde wijzigingen zijn teruggezet");
+  sel = DATA.apps[0] && DATA.apps[0].id; updateState(); render();
+}).catch(() => { DATA = draft || {apps:[]}; ORIGINAL = JSON.stringify({apps:[]}); updateState(); render(); toast("apps.json niet gevonden. Open het bestand via Meer."); });
 </script>
 </body>
 </html>
