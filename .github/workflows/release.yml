@@ -114,7 +114,8 @@ jobs:
           HOST=$(printf '%s' "$FTP_SERVER" | tr -d '[:space:]' | sed -E 's#^[a-z]+://##; s#/.*$##')
           PORT=$(printf '%s' "${FTP_PORT:-21}" | tr -cd '0-9'); PORT=${PORT:-21}
           # Wachtwoord via omgevingsvariabele, zodat het niet in de opdrachtregel of logs staat
-          export LFTP_PASSWORD="$FTP_PASSWORD"
+          FTP_USER=$(printf '%s' "$FTP_USER" | tr -d '[:space:]')
+          export LFTP_PASSWORD="$(printf '%s' "$FTP_PASSWORD" | tr -d '\r\n')"
 
           if [ "$PORT" = "22" ]; then URL="sftp://$HOST"; else URL="ftp://$HOST"; fi
           SETTINGS="set sftp:auto-confirm yes; set ftp:ssl-allow yes; set ssl:verify-certificate no; set ftp:passive-mode yes; set net:timeout 25; set net:max-retries 2; set net:reconnect-interval-base 5"
