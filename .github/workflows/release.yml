@@ -1,7 +1,9 @@
 name: Release site
 
-# Elke wijziging in site/ (of handmatig starten) levert een zip-release op
-# met de complete site, inclusief .htaccess en .htpasswd voor beheer.html.
+# Elke wijziging in site/ (of handmatig starten):
+# 1. bouwt de site met .htaccess en .htpasswd voor beheer.html,
+# 2. zet hem via FTP direct live op lrvdlinden.app,
+# 3. maakt een zip-release (zonder .htpasswd, want releases zijn publiek).
 
 on:
   push:
@@ -55,7 +57,7 @@ jobs:
           esac
 
       - name: Installeer htpasswd
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq apache2-utils zip
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq apache2-utils zip lftp
 
       - name: Bouw site
         env:
@@ -98,12 +100,58 @@ jobs:
           EOF
           sed -i 's/^          //' build/.htaccess
 
+      - name: Zet live via FTP
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+          FTP_DIR: ${{ secrets.FTP_DIR }}
+        run: |
+          for v in FTP_SERVER FTP_USER FTP_PASSWORD; do
+            [ -z "${!v}" ] && { echo "::error::Secret $v ontbreekt."; exit 1; }
+          done
+          HOST=$(printf '%s' "$FTP_SERVER" | tr -d '[:space:]' | sed -E 's#^[a-z]+://##; s#/.*$##')
+          PORT=$(printf '%s' "${FTP_PORT:-21}" | tr -cd '0-9'); PORT=${PORT:-21}
+          # Inloggegevens via .netrc, zodat ze niet in de opdrachtregel of logs staan
+          umask 077
+          printf 'machine %s\nlogin %s\npassword %s\n' "$HOST" "$FTP_USER" "$FTP_PASSWORD" > ~/.netrc
+
+          SETTINGS="set ftp:ssl-allow yes; set ssl:verify-certificate no; set ftp:passive-mode yes; set net:timeout 25; set net:max-retries 2; set net:reconnect-interval-base 5"
+
+          # Doelmap bepalen: secret FTP_DIR, anders public_html/lrvdlinden.app als het account in de thuismap begint
+          if [ -n "$FTP_DIR" ]; then
+            TARGET="$FTP_DIR"
+          else
+            ROOT=$(lftp -p "$PORT" -e "$SETTINGS; cls -1; bye" "$HOST" 2>&1) || { echo "::error::Kan niet verbinden met FTP-server $HOST:$PORT. Controleer FTP_SERVER, FTP_USER, FTP_PASSWORD en FTP_PORT."; echo "$ROOT" | tail -5; exit 1; }
+            if printf '%s\n' "$ROOT" | grep -qx 'public_html/\?'; then
+              TARGET="public_html/lrvdlinden.app"
+            else
+              TARGET="."
+            fi
+          fi
+          echo "Uploaden naar: $TARGET"
+
+          lftp -p "$PORT" -e "$SETTINGS; mkdir -p -f '$TARGET'; cd '$TARGET'; mirror --reverse --verbose=1 --parallel=4 --no-perms --exclude-glob .git* ./build/ ./; bye" "$HOST"
+          rm -f ~/.netrc
+
+      - name: Controleer live site
+        run: |
+          sleep 3
+          code=$(curl -s -o /tmp/live.html -w '%{http_code}' "https://lrvdlinden.app/index.html?v=${GITHUB_RUN_NUMBER}")
+          echo "index.html: HTTP $code"
+          [ "$code" = "200" ] || { echo "::error::lrvdlinden.app/index.html geeft HTTP $code na upload. Klopt de doelmap? Zet eventueel secret FTP_DIR."; exit 1; }
+          curl -s "https://lrvdlinden.app/apps.json?v=${GITHUB_RUN_NUMBER}" | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d['apps']), 'apps live')"
+          b=$(curl -s -o /dev/null -w '%{http_code}' https://lrvdlinden.app/beheer.html)
+          echo "beheer.html zonder login: HTTP $b"
+          [ "$b" = "401" ] || echo "::warning::beheer.html geeft HTTP $b in plaats van 401 (inloggen vereist)."
+
       - name: Maak zip
         id: zip
         run: |
           TAG="v$(date -u +%Y.%m.%d)-${GITHUB_RUN_NUMBER}"
           NAME="lrvdlinden-site-${TAG}.zip"
-          (cd build && zip -qr "../${NAME}" .)
+          (cd build && zip -qr "../${NAME}" . -x .htpasswd)
           echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
           echo "name=${NAME}" >> "$GITHUB_OUTPUT"
           unzip -l "${NAME}" | tail -1
@@ -116,7 +164,7 @@ jobs:
           {
             echo "${MSG}"
             echo
-            echo "Upload de inhoud van de zip naar de webroot van lrvdlinden.app (overschrijf bestaande bestanden)."
+            echo "Deze versie is automatisch live gezet op https://lrvdlinden.app. De zip is een back-up (zonder .htpasswd)."
           } > notes.md
           gh release create "${{ steps.zip.outputs.tag }}" "${{ steps.zip.outputs.name }}" \
             --target "${GITHUB_SHA}" \
