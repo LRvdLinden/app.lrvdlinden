@@ -360,7 +360,7 @@ function render(){
 
   $("#homeyList").innerHTML = homey.map(h => {
     const url = (h.links && h.links.homey ? h.links.homey : "").replace("/nl-nl/", lang==="nl" ? "/nl-nl/" : "/en-us/");
-    const inner = `${icon(h)}<div style="min-width:0"><b>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</b><span>${esc(L(h.description))}</span>${h.bundleId?`<span class="mono">${esc(h.bundleId)}</span>`:""}</div>`;
+    const inner = `${icon(h)}<div style="min-width:0"><b>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</b><span>${esc(L(h.description))}</span></div>`;
     return `<li>${url?`<a href="${esc(url)}" target="_blank" rel="noopener">${inner}</a>`:`<a>${inner}</a>`}</li>`;
   }).join("");
 }
