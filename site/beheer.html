@@ -81,6 +81,10 @@ textarea{min-height:84px;resize:vertical}
 .iconrow{grid-column:1/-1;display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
 .iconrow img,.iconrow .ph{width:64px;height:64px;border-radius:15px;object-fit:cover;background:var(--line);flex:none}
 .iconrow label{flex:1;min-width:200px}
+.bannerrow{grid-column:1/-1;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bannerrow .prev{width:240px;max-width:100%;aspect-ratio:16/9;border-radius:12px;object-fit:cover;background:var(--line);display:grid;place-items:center;font-size:12px;color:var(--muted);text-align:center;padding:6px}
+.switch{grid-column:1/-1;flex-direction:row !important;align-items:center;gap:8px !important;color:var(--ink) !important;font-weight:600}
+.switch input{width:auto}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:600;font-size:14px}
 pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;font:12px/1.5 var(--f-mono);max-height:320px;overflow:auto;white-space:pre-wrap;word-break:break-all}
 .muted{color:var(--muted);font-size:13px}
@@ -208,6 +212,23 @@ function renderEditor(){
     </fieldset>
 
     <fieldset>
+      <legend>Promo-banner (Nieuw en onderweg)</legend>
+      <label class="switch" for="f_promo"><input type="checkbox" id="f_promo" ${a.promo&&a.promo.show?"checked":""}> Toon een grote banner voor deze app, zoals in de App Store</label>
+      <div class="bannerrow">
+        ${a.promo&&a.promo.image?`<img class="prev" src="${esc(iconSrc({icon:a.promo.image}))}" alt="Banner van ${esc(a.name)}">`:`<div class="prev">Geen afbeelding: de banner gebruikt het icoon als achtergrond</div>`}
+        <label class="btn" for="bannerIn" style="flex-direction:row;color:var(--ink)">Banner uploaden<input type="file" id="bannerIn" accept="image/png,image/jpeg,image/webp" hidden></label>
+        ${a.promo&&a.promo.image?`<button type="button" class="btn small danger" id="bannerDel">Afbeelding verwijderen</button>`:""}
+      </div>
+      <div class="muted" style="grid-column:1/-1">Liggend beeld, ideaal 1600 × 900 pixels. Laat titel leeg om de appnaam te tonen.</div>
+      ${field("Bovenregel NL","promo.eyebrow.nl",((a.promo||{}).eyebrow||{}).nl,{ph:"NIEUWE APP"})}
+      ${field("Eyebrow EN","promo.eyebrow.en",((a.promo||{}).eyebrow||{}).en,{ph:"NEW APP"})}
+      ${field("Titel NL","promo.title.nl",((a.promo||{}).title||{}).nl,{ph:"Al je tv op één plek"})}
+      ${field("Title EN","promo.title.en",((a.promo||{}).title||{}).en,{ph:"All your TV in one place"})}
+      ${field("Tekst NL","promo.text.nl",((a.promo||{}).text||{}).nl)}
+      ${field("Text EN","promo.text.en",((a.promo||{}).text||{}).en)}
+    </fieldset>
+
+    <fieldset>
       <legend>Links</legend>
       ${field("App Store","links.appstore",L.appstore,{ph:"https://apps.apple.com/…"})}
       ${field("TestFlight","links.testflight",L.testflight,{ph:"https://testflight.apple.com/join/…"})}
@@ -251,11 +272,11 @@ function renderEditor(){
 }
 
 function setPath(obj, path, val){
-  const k = path.split("."); let o = obj;
-  for (let i=0;i<k.length-1;i++){ o[k[i]] = o[k[i]] || {}; o = o[k[i]]; }
+  const k = path.split("."), chain = [obj]; let o = obj;
+  for (let i=0;i<k.length-1;i++){ o[k[i]] = o[k[i]] || {}; o = o[k[i]]; chain.push(o); }
   const last = k[k.length-1];
   if (val === "" || val == null) delete o[last]; else o[last] = val;
-  if (k.length > 1 && Object.keys(o).length === 0) delete obj[k[0]];
+  for (let i=k.length-2;i>=0;i--){ if (Object.keys(chain[i+1]).length === 0) delete chain[i][k[i]]; else break; }
 }
 function render(){ renderList(); renderEditor(); }
 
@@ -272,6 +293,7 @@ document.addEventListener("input", e => {
     return;
   }
   if (el.name === "status"){ a.status = el.value; save(); renderList(); return; }
+  if (el.id === "f_promo"){ a.promo = a.promo || {}; if (el.checked) a.promo.show = true; else delete a.promo.show; if (!Object.keys(a.promo).length) delete a.promo; save(); return; }
   if (el.id === "f_featured"){ if (el.checked) a.featured = true; else delete a.featured; save(); return; }
   if (el.closest("#plats")){ a.platforms = [...document.querySelectorAll("#plats input:checked")].map(i=>i.value); save(); return; }
   const h = el.closest(".h");
@@ -297,6 +319,7 @@ document.addEventListener("click", e => {
   if (id === "btnCopy") return copyJson();
   if (id === "btnDownload") return download();
   if (!a) return;
+  if (id === "bannerDel"){ if (a.promo){ Object.keys(PENDING).forEach(k => { if (k === a.promo.image) delete PENDING[k]; }); delete a.promo.image; } save(); renderEditor(); return; }
   if (id === "addPlat"){ const v = $("#newPlat").value.trim(); if (!v) return; a.platforms = [...new Set([...(a.platforms||[]), v])]; save(); renderEditor(); return; }
   if (id === "addHist"){ a.history = a.history || []; a.history.unshift({version:"", date:new Date().toISOString().slice(0,10), notes:{nl:"",en:""}}); save(); renderEditor(); return; }
   if (e.target.dataset.delh != null){ a.history.splice(+e.target.dataset.delh,1); save(); renderEditor(); return; }
@@ -342,16 +365,16 @@ async function publish(){
     showResult("bad", `<b>Publiceren mislukt.</b> ${esc(err.message)} Je wijzigingen staan nog in deze browser, probeer het opnieuw.`);
   } finally { publishing = false; updateState(); renderList(); }
 }
-function resizeIcon(file){
+function resizeIcon(file, W=256, H=256, q=0.85){
   return new Promise((resolve, reject) => {
     const img = new Image(), url = URL.createObjectURL(file);
     img.onload = () => {
-      const c = document.createElement("canvas"); c.width = c.height = 256;
-      const x = c.getContext("2d"), s = Math.max(256/img.naturalWidth, 256/img.naturalHeight);
+      const c = document.createElement("canvas"); c.width = W; c.height = H;
+      const x = c.getContext("2d"), s = Math.max(W/img.naturalWidth, H/img.naturalHeight);
       const w = img.naturalWidth*s, h = img.naturalHeight*s;
-      x.drawImage(img, (256-w)/2, (256-h)/2, w, h); URL.revokeObjectURL(url);
-      let d = c.toDataURL("image/webp", 0.85), ext = "webp";
-      if (!d.startsWith("data:image/webp")) { d = c.toDataURL("image/png"); ext = "png"; }
+      x.drawImage(img, (W-w)/2, (H-h)/2, w, h); URL.revokeObjectURL(url);
+      let d = c.toDataURL("image/webp", q), ext = "webp";
+      if (!d.startsWith("data:image/webp")) { d = c.toDataURL("image/jpeg", 0.85); ext = "jpg"; }
       resolve({ url: d, ext });
     };
     img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("Dit bestand is geen afbeelding")); };
@@ -359,6 +382,17 @@ function resizeIcon(file){
   });
 }
 document.addEventListener("change", async e => {
+  if (e.target.id === "bannerIn") {
+    const a = cur(), f = e.target.files[0]; if (!a || !f) return;
+    try {
+      const { url, ext } = await resizeIcon(f, 1600, 900, 0.8);
+      const path = `img/promo-${a.id}.${ext}`;
+      Object.keys(PENDING).forEach(k => { if (k.startsWith(`img/promo-${a.id}.`)) delete PENDING[k]; });
+      PENDING[path] = { url }; a.promo = a.promo || {}; a.promo.image = path; a.promo.show = true;
+      save(); render(); toast("Banner klaar. Klik Publiceren om hem live te zetten.");
+    } catch(err) { toast(err.message); }
+    return;
+  }
   if (e.target.id !== "iconIn") return;
   const a = cur(), f = e.target.files[0]; if (!a || !f) return;
   try {

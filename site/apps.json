@@ -37,7 +37,22 @@
                 "website": "https://bingr.online",
                 "testflight": "https://testflight.apple.com/join/JW915fdA"
             },
-            "history": []
+            "history": [],
+            "promo": {
+                "show": true,
+                "eyebrow": {
+                    "nl": "Nieuwe app",
+                    "en": "New app"
+                },
+                "title": {
+                    "nl": "Al je tv op één plek",
+                    "en": "All your TV in one place"
+                },
+                "text": {
+                    "nl": "Live tv, films en series uit je eigen bron, op iPhone, iPad, Mac en Apple TV.",
+                    "en": "Live TV, movies and series from your own source, on iPhone, iPad, Mac and Apple TV."
+                }
+            }
         },
         {
             "id": "healthsync",

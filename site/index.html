@@ -136,9 +136,38 @@ footer{padding-block:48px 40px;color:var(--muted);font-size:14px}
 footer .bar{border-top:1px solid var(--line);padding-top:22px}
 footer nav{display:flex;gap:18px}
 
+/* Promo-banner, zoals de grote kaarten in de App Store */
+.promo-wrap{margin-bottom:18px}
+.promo-rail{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:24px}
+.promo-rail::-webkit-scrollbar{display:none}
+.promo-rail.multi{grid-auto-columns:min(100%,880px)}
+.promo{position:relative;isolation:isolate;border-radius:24px;overflow:hidden;aspect-ratio:16/8;min-height:300px;max-height:460px;max-width:100%;scroll-snap-align:start;background:#121726;color:#fff}
+.promo .bg{position:absolute;inset:0;z-index:-2}
+.promo .bg img{width:100%;height:100%;object-fit:cover;display:block}
+.promo .bg.fromicon img{transform:scale(1.7);filter:blur(42px) saturate(1.5)}
+.promo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,0) 38%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+.promo .head{position:absolute;top:0;left:0;right:0;padding:24px 26px;display:flex;flex-direction:column;gap:6px;max-width:640px}
+.promo .head .eyebrow{color:rgba(255,255,255,.82)}
+.promo .head h3{font-size:clamp(28px,4.2vw,46px);line-height:1.02;font-weight:800;letter-spacing:-.03em;color:#fff}
+.promo .head p{margin:4px 0 0;font-size:16px;color:rgba(255,255,255,.88);max-width:46ch}
+.promo .bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(18,23,38,.38);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4)}
+.promo .bar .icon{width:48px;height:48px;border-radius:11px;font-size:16px;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+.promo .bar .txt{flex:1;min-width:0}
+.promo .bar b{display:block;font-family:var(--f-display);font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.promo .bar span{display:block;font-size:13px;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.promo .get{flex:none;font:700 14px var(--f-body);padding:8px 18px;border-radius:99px;background:#fff;color:#0B57D0;text-decoration:none}
+.promo .get:hover{background:#EEF2FF}
+.promo-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.promo-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}
+.promo-dots button[aria-current="true"]{background:var(--ink)}
+
 @media (max-width:860px){
   .intro{grid-template-columns:1fr;gap:16px;padding-block:32px 24px}
   .detail,.homey{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .promo{aspect-ratio:4/5;max-height:none;min-height:0}
+  .promo .head{padding:20px}
 }
 @media (max-width:480px){
   .homey{padding:20px;border-radius:20px}
@@ -187,6 +216,10 @@ footer nav{display:flex;gap:18px}
 
   <section class="section wrap" id="nieuw">
     <div class="sec-head"><h2 data-t="newTitle"></h2><p data-t="newSub"></p></div>
+    <div class="promo-wrap" id="promoWrap" hidden>
+      <div class="promo-rail" id="promo"></div>
+      <div class="promo-dots" id="promoDots" role="group" aria-label="Banners"></div>
+    </div>
     <div class="lab" id="lab"></div>
   </section>
 
@@ -238,6 +271,7 @@ const T = {
     homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In ontwikkeling",
     donate:"Doneren", live:"Nieuw in de App Store", beta:"Open beta", dev:"In ontwikkeling",
     appstore:"Gratis in de App Store", testflight:"Doe mee via TestFlight", website:"Website",
+    getStore:"Downloaden", getBeta:"Probeer beta", getSite:"Bekijk",
     rating:"Beoordeling", reviews:"Reviews", age:"Leeftijd", category:"Categorie", language:"Taal", size:"Grootte",
     history:"Versiegeschiedenis", noRating:"Nog geen beoordeling", dev_by:"Léon van der Linden",
     loadError:"De apps konden niet worden geladen. Controleer of apps.json naast index.html staat.",
@@ -253,6 +287,7 @@ const T = {
     homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In development",
     donate:"Donate", live:"New on the App Store", beta:"Open beta", dev:"In development",
     appstore:"Free on the App Store", testflight:"Join on TestFlight", website:"Website",
+    getStore:"Get", getBeta:"Try beta", getSite:"View",
     rating:"Rating", reviews:"Reviews", age:"Age", category:"Category", language:"Language", size:"Size",
     history:"Version history", noRating:"No ratings yet", dev_by:"Léon van der Linden",
     loadError:"The apps could not be loaded. Check that apps.json sits next to index.html.",
@@ -307,6 +342,31 @@ function render(){
   $("#stLive").textContent = live.length;
   $("#stDev").textContent = ios.filter(a => a.status !== "live").length;
   $("#stHomey").textContent = homey.length;
+
+  // Promo-banners
+  const promos = ios.filter(a => a.promo && a.promo.show);
+  $("#promoWrap").hidden = !promos.length;
+  $("#promo").classList.toggle("multi", promos.length > 1);
+  $("#promo").innerHTML = promos.map(a => {
+    const p = a.promo, l = a.links || {};
+    const [url, label] = l.appstore ? [l.appstore, t("getStore")] : l.testflight ? [l.testflight, t("getBeta")] : l.website ? [l.website, t("getSite")] : [null, null];
+    const bg = p.image ? `<div class="bg"><img src="${esc(p.image)}" alt="" loading="lazy"></div>`
+                       : (a.icon ? `<div class="bg fromicon"><img src="${esc(a.icon)}" alt=""></div>` : `<div class="bg"></div>`);
+    return `<article class="promo" aria-label="${esc(a.name)}">
+      ${bg}
+      <div class="head">
+        <span class="eyebrow">${esc(L(p.eyebrow) || t(a.status))}</span>
+        <h3>${esc(L(p.title) || a.name)}</h3>
+        ${L(p.text) ? `<p>${esc(L(p.text))}</p>` : ""}
+      </div>
+      <div class="bar">
+        ${icon(a)}
+        <div class="txt"><b>${esc(a.name)}</b><span>${esc(L(a.subtitle) || catName(a.category))}</span></div>
+        ${url ? `<a class="get" href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>` : ""}
+      </div>
+    </article>`;
+  }).join("");
+  $("#promoDots").innerHTML = promos.length > 1 ? promos.map((a,i) => `<button type="button" data-promo="${i}" aria-label="${esc(a.name)}" aria-current="${i===0}"></button>`).join("") : "";
 
   // Uitgelicht: featured, of alles wat nog niet live is
   const feat = ios.filter(a => a.featured || a.status !== "live");
@@ -365,7 +425,15 @@ function render(){
   }).join("");
 }
 
+$("#promo").addEventListener("scroll", () => {
+  const r = $("#promo"), cards = [...r.children]; if (cards.length < 2) return;
+  const i = Math.round(r.scrollLeft / (cards[0].offsetWidth + 16));
+  document.querySelectorAll("#promoDots button").forEach((b,j) => b.setAttribute("aria-current", j===i));
+}, {passive:true});
+
 document.addEventListener("click", e => {
+  const pd = e.target.closest("[data-promo]");
+  if (pd){ const c = $("#promo").children[+pd.dataset.promo]; if (c) $("#promo").scrollTo({left: c.offsetLeft - $("#promo").offsetLeft, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}); return; }
   const lb = e.target.closest(".lang button");
   if (lb){ lang = lb.dataset.lang; try{localStorage.setItem("lr-lang",lang)}catch(_){} render(); return; }
   const ch = e.target.closest(".chip");

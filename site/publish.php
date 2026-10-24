@@ -65,7 +65,7 @@ foreach (($req['files'] ?? []) as $f) {
         reply(400, ['ok' => false, 'error' => 'Ongeldig bestandspad: ' . $path]);
     }
     $bin = base64_decode($f['data'] ?? '', true);
-    if ($bin === false || strlen($bin) > 1024 * 1024 || @getimagesizefromstring($bin) === false) {
+    if ($bin === false || strlen($bin) > 2 * 1024 * 1024 || @getimagesizefromstring($bin) === false) {
         reply(400, ['ok' => false, 'error' => 'Ongeldige afbeelding: ' . $path]);
     }
     $files[$path] = $bin;
