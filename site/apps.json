@@ -6,7 +6,6 @@
             "name": "Bingr",
             "section": "ios",
             "status": "live",
-            "featured": true,
             "icon": "img/bingr.webp",
             "category": "entertainment",
             "platforms": [
@@ -51,6 +50,10 @@
                 "text": {
                     "nl": "Live tv, films en series uit je eigen bron, op iPhone, iPad, Mac en Apple TV.",
                     "en": "Live TV, movies and series from your own source, on iPhone, iPad, Mac and Apple TV."
+                },
+                "image": {
+                    "nl": "img/promo-bingr-nl.webp",
+                    "en": "img/promo-bingr-en.webp"
                 }
             }
         },
