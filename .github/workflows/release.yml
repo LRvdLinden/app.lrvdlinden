@@ -117,13 +117,14 @@ jobs:
           umask 077
           printf 'machine %s\nlogin %s\npassword %s\n' "$HOST" "$FTP_USER" "$FTP_PASSWORD" > ~/.netrc
 
-          SETTINGS="set ftp:ssl-allow yes; set ssl:verify-certificate no; set ftp:passive-mode yes; set net:timeout 25; set net:max-retries 2; set net:reconnect-interval-base 5"
+          if [ "$PORT" = "22" ]; then URL="sftp://$HOST"; else URL="ftp://$HOST"; fi
+          SETTINGS="set sftp:auto-confirm yes; set ftp:ssl-allow yes; set ssl:verify-certificate no; set ftp:passive-mode yes; set net:timeout 25; set net:max-retries 2; set net:reconnect-interval-base 5"
 
           # Doelmap bepalen: secret FTP_DIR, anders public_html/lrvdlinden.app als het account in de thuismap begint
           if [ -n "$FTP_DIR" ]; then
             TARGET="$FTP_DIR"
           else
-            ROOT=$(lftp -p "$PORT" -e "$SETTINGS; cls -1; bye" "$HOST" 2>&1) || { echo "::error::Kan niet verbinden met FTP-server $HOST:$PORT. Controleer FTP_SERVER, FTP_USER, FTP_PASSWORD en FTP_PORT."; echo "$ROOT" | tail -5; exit 1; }
+            ROOT=$(lftp -p "$PORT" -e "$SETTINGS; cls -1; bye" "$URL" 2>&1) || { MSG=$(printf '%s' "$ROOT" | tail -3 | tr '\n' ' ' | cut -c1-300); echo "::error::Kan niet verbinden met de FTP-server (poort $PORT, ${URL%%://*}). Melding: $MSG"; exit 1; }
             if printf '%s\n' "$ROOT" | grep -qx 'public_html/\?'; then
               TARGET="public_html/lrvdlinden.app"
             else
@@ -132,7 +133,7 @@ jobs:
           fi
           echo "Uploaden naar: $TARGET"
 
-          lftp -p "$PORT" -e "$SETTINGS; mkdir -p -f '$TARGET'; cd '$TARGET'; mirror --reverse --verbose=1 --parallel=4 --no-perms --exclude-glob .git* ./build/ ./; bye" "$HOST"
+          lftp -p "$PORT" -e "$SETTINGS; mkdir -p -f '$TARGET'; cd '$TARGET'; mirror --reverse --verbose=1 --parallel=4 --no-perms --exclude-glob .git* ./build/ ./; bye" "$URL"
           rm -f ~/.netrc
 
       - name: Controleer live site
