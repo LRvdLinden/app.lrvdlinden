@@ -20,9 +20,9 @@ concurrency:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Controleer secrets
         env:
@@ -38,9 +38,20 @@ jobs:
             echo "::error::Ontbrekende secrets:$missing. Voeg ze toe onder Settings > Secrets and variables > Actions."
             exit 1
           fi
-          case "$BEHEER_HTPASSWD_PATH" in
+          # Spaties, enters en aanhalingstekens rond het pad weghalen
+          P=$(printf '%s' "$BEHEER_HTPASSWD_PATH" | tr -d '\r\n' | sed -e 's/^[[:space:]"'"'"']*//' -e 's/[[:space:]"'"'"']*$//')
+          case "$P" in
             /*) ;;
-            *) echo "::error::BEHEER_HTPASSWD_PATH moet een absoluut pad zijn, bijv. /home/gebruiker/domains/lrvdlinden.app/public_html/.htpasswd"; exit 1 ;;
+            *)
+              echo "::error::BEHEER_HTPASSWD_PATH moet beginnen met een / (nu ${#P} tekens, eerste teken is niet /). Voorbeelden: /home/GEBRUIKER/domains/lrvdlinden.app/public_html/.htpasswd (DirectAdmin), /home/GEBRUIKER/public_html/.htpasswd (cPanel), /var/www/vhosts/lrvdlinden.app/httpdocs/.htpasswd (Plesk)."
+              exit 1 ;;
+          esac
+          case "$P" in
+            */) P="${P}.htpasswd" ;;
+          esac
+          case "$P" in
+            */.htpasswd) ;;
+            *) echo "::warning::BEHEER_HTPASSWD_PATH eindigt niet op /.htpasswd. Het pad moet naar het bestand .htpasswd in je webroot wijzen." ;;
           esac
 
       - name: Installeer htpasswd
@@ -52,12 +63,14 @@ jobs:
           BEHEER_PASSWORD: ${{ secrets.BEHEER_PASSWORD }}
           BEHEER_HTPASSWD_PATH: ${{ secrets.BEHEER_HTPASSWD_PATH }}
         run: |
+          BEHEER_HTPASSWD_PATH=$(printf '%s' "$BEHEER_HTPASSWD_PATH" | tr -d '\r\n' | sed -e 's/^[[:space:]"'"'"']*//' -e 's/[[:space:]"'"'"']*$//')
+          case "$BEHEER_HTPASSWD_PATH" in */) BEHEER_HTPASSWD_PATH="${BEHEER_HTPASSWD_PATH}.htpasswd" ;; esac
           python3 -c "import json; json.load(open('site/apps.json'))" || { echo "::error::site/apps.json is geen geldige JSON"; exit 1; }
           rm -rf build && mkdir build
           cp -r site/. build/
 
           # Wachtwoord via stdin, zodat het niet in de proceslijst verschijnt. bcrypt-hash.
-          printf '%s' "$BEHEER_PASSWORD" | htpasswd -niB "$BEHEER_USER" | sed '/^$/d' > build/.htpasswd
+          printf '%s' "$BEHEER_PASSWORD" | htpasswd -niB -C 12 "$BEHEER_USER" | sed '/^$/d' > build/.htpasswd
 
           cat > build/.htaccess <<EOF
           AddDefaultCharset UTF-8
