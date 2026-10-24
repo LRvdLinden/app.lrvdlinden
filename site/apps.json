@@ -1,687 +1,653 @@
 {
-  "_uitleg": "Pas dit bestand aan om apps toe te voegen, platformen te wijzigen of de status te veranderen. status: live | beta | dev. section: ios | homey. featured: true zet een live app bovenaan in 'Nieuw en onderweg'. Makkelijker: open beheer.html.",
-  "apps": [
-    {
-      "id": "bingr",
-      "name": "Bingr",
-      "section": "ios",
-      "status": "live",
-      "featured": true,
-      "icon": "img/bingr.webp",
-      "category": "entertainment",
-      "platforms": [
-        "iPhone",
-        "iPad",
-        "Mac",
-        "Apple TV",
-        "Android",
-        "Samsung TV",
-        "Windows"
-      ],
-      "subtitle": {
-        "nl": "IPTV-speler",
-        "en": "IPTV player"
-      },
-      "description": {
-        "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
-        "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
-      },
-      "rating": 5.0,
-      "reviews": 1,
-      "size": "114,3 MB",
-      "languages": "NL + 10",
-      "links": {
-        "appstore": "https://apps.apple.com/nl/app/bingr/id6821401598"
-      },
-      "history": []
-    },
-    {
-      "id": "healthsync",
-      "name": "HealthSync",
-      "section": "ios",
-      "status": "live",
-      "featured": true,
-      "icon": "img/healthsync.webp",
-      "category": "utilities",
-      "platforms": [
-        "iPhone",
-        "Mac",
-        "Vision Pro"
-      ],
-      "subtitle": {
-        "nl": "Gezondheidsdata naar Homey",
-        "en": "Health data to Homey"
-      },
-      "description": {
-        "nl": "Stuurt gezondheidsdata van je iPhone naar je Homey: stappen, hartslag, slaap, workouts, bloedzuurstof en meer dan 180 andere typen. Alleen-lezen en rechtstreeks via HTTPS naar je eigen Homey. Werkt samen met de gratis Apple Health-app voor Homey Pro en Homey Cloud.",
-        "en": "Sends health data from your iPhone to your Homey: steps, heart rate, sleep, workouts, blood oxygen and over 180 other types. Read-only and sent directly over HTTPS to your own Homey. Works with the free Apple Health app for Homey Pro and Homey Cloud."
-      },
-      "size": "2,5 MB",
-      "languages": "EN",
-      "links": {
-        "appstore": "https://apps.apple.com/nl/app/healthsync/id6820227732",
-        "website": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/"
-      },
-      "history": [
+    "_uitleg": "Pas dit bestand aan om apps toe te voegen, platformen te wijzigen of de status te veranderen. status: live | beta | dev. section: ios | homey. featured: true zet een live app bovenaan in 'Nieuw en onderweg'. Makkelijker: open beheer.html.",
+    "apps": [
         {
-          "version": "1.0.1",
-          "date": "2026-10-14",
-          "notes": {
-            "nl": "Verbeterde slaapregistratie.",
-            "en": "Improved sleep tracking."
-          }
+            "id": "bingr",
+            "name": "Bingr",
+            "section": "ios",
+            "status": "live",
+            "featured": true,
+            "icon": "img/bingr.webp",
+            "category": "entertainment",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac",
+                "Apple TV",
+                "Android",
+                "Android TV",
+                "Samsung TV",
+                "Windows",
+                "Web"
+            ],
+            "subtitle": {
+                "nl": "IPTV-speler",
+                "en": "IPTV player"
+            },
+            "description": {
+                "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
+                "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
+            },
+            "rating": 5,
+            "reviews": 1,
+            "size": "114,3 MB",
+            "languages": "NL + 10",
+            "links": {
+                "appstore": "https://apps.apple.com/nl/app/bingr/id6821401598",
+                "website": "https://bingr.online",
+                "testflight": "https://testflight.apple.com/join/JW915fdA"
+            },
+            "history": []
         },
         {
-          "version": "1.0.0",
-          "date": "2026-10-11",
-          "notes": {
-            "nl": "Eerste release.",
-            "en": "First release."
-          }
-        }
-      ]
-    },
-    {
-      "id": "tunr",
-      "name": "Tunr",
-      "section": "ios",
-      "status": "beta",
-      "featured": true,
-      "icon": "img/tunr.webp",
-      "category": "music",
-      "platforms": [
-        "iPhone",
-        "iPad",
-        "Mac",
-        "Apple TV",
-        "Android",
-        "Samsung TV",
-        "Windows"
-      ],
-      "subtitle": {
-        "nl": "Radio & podcasts",
-        "en": "Radio & podcasts"
-      },
-      "description": {
-        "nl": "Tienduizenden radiozenders uit meer dan 200 landen, plus podcasts. Kies je land, zoek op naam, genre of taal en luister direct.",
-        "en": "Tens of thousands of radio stations from over 200 countries, plus podcasts. Pick your country, search by name, genre or language and start listening."
-      },
-      "links": {
-        "testflight": "https://testflight.apple.com/join/Fvr4DAP6"
-      },
-      "history": []
-    },
-    {
-      "id": "devtools",
-      "name": "DevTools",
-      "section": "ios",
-      "status": "dev",
-      "featured": true,
-      "icon": "img/devtools.webp",
-      "category": "business",
-      "platforms": [
-        "iPhone",
-        "iPad"
-      ],
-      "subtitle": {
-        "nl": "App Store Connect",
-        "en": "App Store Connect"
-      },
-      "description": {
-        "nl": "Je App Store Connect op zak: downloads, App Review-status, builds, TestFlight en reviews van al je iOS-apps in één dashboard. Ook als Homey-app.",
-        "en": "App Store Connect in your pocket: downloads, App Review status, builds, TestFlight and reviews of all your iOS apps in one dashboard. Also available as a Homey app."
-      },
-      "links": {},
-      "history": []
-    },
-    {
-      "id": "samenzuidbroek",
-      "name": "Samen Zuidbroek",
-      "section": "ios",
-      "status": "live",
-      "icon": "img/samenzuidbroek.webp",
-      "category": "news",
-      "platforms": [
-        "iPhone"
-      ],
-      "badge": {
-        "nl": "Nr. 26 in Nieuws",
-        "en": "No. 26 in News"
-      },
-      "description": {
-        "nl": "Wijkparticipatie-initiatief dat fungeert als klankbord tussen wijkbewoners en de gemeente Apeldoorn.",
-        "en": "Neighbourhood participation initiative that acts as a sounding board between residents and the municipality of Apeldoorn."
-      },
-      "rating": 5.0,
-      "reviews": 3,
-      "size": "14,8 MB",
-      "languages": "NL",
-      "links": {
-        "appstore": "https://apps.apple.com/nl/app/samen-zuidbroek/id6739449160",
-        "website": "https://samenzuidbroek.nl"
-      },
-      "history": [
-        {
-          "version": "1.1.1",
-          "date": "2025-09-27",
-          "notes": {
-            "nl": "Nieuwe huisstijl, logo en app-icoon, ontworpen door Merkbaar Reclamemakers.",
-            "en": "New branding, logo and app icon, designed by Merkbaar Reclamemakers."
-          }
+            "id": "tunr",
+            "name": "Tunr",
+            "section": "ios",
+            "status": "beta",
+            "featured": true,
+            "icon": "img/tunr.webp",
+            "category": "music",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac",
+                "Apple TV",
+                "Apple Watch",
+                "Android",
+                "Android TV",
+                "Samsung TV",
+                "Windows",
+                "CarPlay"
+            ],
+            "subtitle": {
+                "nl": "Radio & podcasts",
+                "en": "Radio & podcasts"
+            },
+            "description": {
+                "nl": "Tienduizenden radiozenders uit meer dan 200 landen, plus podcasts. Kies je land, zoek op naam, genre of taal en luister direct.",
+                "en": "Tens of thousands of radio stations from over 200 countries, plus podcasts. Pick your country, search by name, genre or language and start listening."
+            },
+            "links": {
+                "testflight": "https://testflight.apple.com/join/Fvr4DAP6",
+                "website": "https://tunr.online"
+            },
+            "history": []
         },
         {
-          "version": "1.0.2",
-          "date": "2025-01-10",
-          "notes": {
-            "nl": "Bugfixes en kleine verbeteringen.",
-            "en": "Bug fixes and small improvements."
-          }
+            "id": "devtools",
+            "name": "DevTools",
+            "section": "ios",
+            "status": "beta",
+            "featured": true,
+            "icon": "img/devtools.webp",
+            "category": "business",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac",
+                "Apple Watch"
+            ],
+            "subtitle": {
+                "nl": "App Store Connect",
+                "en": "App Store Connect"
+            },
+            "description": {
+                "nl": "Je App Store Connect op zak: downloads, App Review-status, builds, TestFlight en reviews van al je iOS-apps in één dashboard. Ook als Homey-app.",
+                "en": "App Store Connect in your pocket: downloads, App Review status, builds, TestFlight and reviews of all your iOS apps in one dashboard. Also available as a Homey app."
+            },
+            "links": {
+                "testflight": "https://testflight.apple.com/join/x2H6vgKe"
+            },
+            "history": []
         },
         {
-          "version": "1.0.0",
-          "date": "2024-12-16",
-          "notes": {
-            "nl": "Eerste release.",
-            "en": "First release."
-          }
-        }
-      ]
-    },
-    {
-      "id": "thepark",
-      "name": "@ThePark",
-      "section": "ios",
-      "status": "live",
-      "icon": "img/thepark.webp",
-      "category": "entertainment",
-      "platforms": [
-        "iPhone"
-      ],
-      "description": {
-        "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
-        "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
-      },
-      "rating": 5.0,
-      "reviews": 1,
-      "size": "23,1 MB",
-      "languages": "NL",
-      "links": {
-        "appstore": "https://apps.apple.com/us/app/thepark/id6753913040",
-        "website": "https://zuidbroekatthepark.nl"
-      },
-      "history": [
-        {
-          "version": "1.0.0",
-          "date": "2025-10-14",
-          "notes": {
-            "nl": "Eerste release.",
-            "en": "First release."
-          }
-        }
-      ]
-    },
-    {
-      "id": "cablemaps",
-      "name": "Cable Maps",
-      "section": "ios",
-      "status": "live",
-      "icon": "img/cablemaps.webp",
-      "category": "business",
-      "platforms": [
-        "iPhone"
-      ],
-      "description": {
-        "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
-        "en": "Browse submarine cables worldwide with detailed network and provider profiles."
-      },
-      "rating": 4.9,
-      "reviews": 12,
-      "size": "15,3 MB",
-      "languages": "EN",
-      "links": {
-        "appstore": "https://apps.apple.com/zw/app/cable-maps/id1583422149",
-        "website": "https://www.submarinecablemap.com/"
-      },
-      "history": [
-        {
-          "version": "2.0.0",
-          "date": "2025-01-05",
-          "notes": {
-            "nl": "Compatibel met iOS 18 en kleine verbeteringen.",
-            "en": "Compatible with iOS 18 and small improvements."
-          }
+            "id": "samenzuidbroek",
+            "name": "Samen Zuidbroek",
+            "section": "ios",
+            "status": "live",
+            "icon": "img/samenzuidbroek.webp",
+            "category": "news",
+            "platforms": [
+                "iPhone"
+            ],
+            "badge": {
+                "nl": "Nr. 26 in Nieuws",
+                "en": "No. 26 in News"
+            },
+            "description": {
+                "nl": "Wijkparticipatie-initiatief dat fungeert als klankbord tussen wijkbewoners en de gemeente Apeldoorn.",
+                "en": "Neighbourhood participation initiative that acts as a sounding board between residents and the municipality of Apeldoorn."
+            },
+            "rating": 5,
+            "reviews": 3,
+            "size": "14,8 MB",
+            "languages": "NL",
+            "links": {
+                "appstore": "https://apps.apple.com/nl/app/samen-zuidbroek/id6739449160",
+                "website": "https://samenzuidbroek.nl"
+            },
+            "history": [
+                {
+                    "version": "1.1.1",
+                    "date": "2025-09-27",
+                    "notes": {
+                        "nl": "Nieuwe huisstijl, logo en app-icoon, ontworpen door Merkbaar Reclamemakers.",
+                        "en": "New branding, logo and app icon, designed by Merkbaar Reclamemakers."
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2025-01-10",
+                    "notes": {
+                        "nl": "Bugfixes en kleine verbeteringen.",
+                        "en": "Bug fixes and small improvements."
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2024-12-16",
+                    "notes": {
+                        "nl": "Eerste release.",
+                        "en": "First release."
+                    }
+                }
+            ]
         },
         {
-          "version": "1.3",
-          "date": "2021-10-19",
-          "notes": {
-            "nl": "Prestaties en bugfixes.",
-            "en": "Performance and bug fixes."
-          }
+            "id": "thepark",
+            "name": "@ThePark",
+            "section": "ios",
+            "status": "live",
+            "icon": "img/thepark.webp",
+            "category": "entertainment",
+            "platforms": [
+                "iPhone"
+            ],
+            "description": {
+                "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
+                "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
+            },
+            "rating": 5,
+            "reviews": 1,
+            "size": "23,1 MB",
+            "languages": "NL",
+            "links": {
+                "appstore": "https://apps.apple.com/us/app/thepark/id6753913040",
+                "website": "https://zuidbroekatthepark.nl"
+            },
+            "history": [
+                {
+                    "version": "1.0.0",
+                    "date": "2025-10-14",
+                    "notes": {
+                        "nl": "Eerste release.",
+                        "en": "First release."
+                    }
+                }
+            ]
         },
         {
-          "version": "1.0",
-          "date": "2021-08-28",
-          "notes": {
-            "nl": "Eerste release.",
-            "en": "First release."
-          }
-        }
-      ]
-    },
-    {
-      "id": "digimate",
-      "name": "DigiMate",
-      "section": "ios",
-      "status": "live",
-      "icon": "img/digimate.webp",
-      "category": "utilities",
-      "platforms": [
-        "iPhone"
-      ],
-      "description": {
-        "nl": "Een rekenmachine zonder afleiding, met rekengeschiedenis en optionele twee decimalen.",
-        "en": "A distraction-free calculator with calculation history and optional two decimals."
-      },
-      "rating": 5.0,
-      "reviews": 1,
-      "size": "23 MB",
-      "languages": "EN",
-      "links": {
-        "appstore": "https://apps.apple.com/nl/app/digitmate/id6740402186"
-      },
-      "history": [
-        {
-          "version": "1.0.2",
-          "date": "2025-01-15",
-          "notes": {
-            "nl": "Nieuw app-icoon en je rekengeschiedenis terugvinden.",
-            "en": "New app icon and calculation history."
-          }
+            "id": "cablemaps",
+            "name": "Cable Maps",
+            "section": "ios",
+            "status": "live",
+            "icon": "img/cablemaps.webp",
+            "category": "business",
+            "platforms": [
+                "iPhone"
+            ],
+            "description": {
+                "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
+                "en": "Browse submarine cables worldwide with detailed network and provider profiles."
+            },
+            "rating": 4.9,
+            "reviews": 12,
+            "size": "15,3 MB",
+            "languages": "EN",
+            "links": {
+                "appstore": "https://apps.apple.com/zw/app/cable-maps/id1583422149",
+                "website": "https://www.submarinecablemap.com/"
+            },
+            "history": [
+                {
+                    "version": "2.0.0",
+                    "date": "2025-01-05",
+                    "notes": {
+                        "nl": "Compatibel met iOS 18 en kleine verbeteringen.",
+                        "en": "Compatible with iOS 18 and small improvements."
+                    }
+                },
+                {
+                    "version": "1.3",
+                    "date": "2021-10-19",
+                    "notes": {
+                        "nl": "Prestaties en bugfixes.",
+                        "en": "Performance and bug fixes."
+                    }
+                },
+                {
+                    "version": "1.0",
+                    "date": "2021-08-28",
+                    "notes": {
+                        "nl": "Eerste release.",
+                        "en": "First release."
+                    }
+                }
+            ]
         },
         {
-          "version": "1.0.1",
-          "date": "2025-01-14",
-          "notes": {
-            "nl": "Optie voor twee decimalen en app beoordelen.",
-            "en": "Two-decimal option and rate the app."
-          }
+            "id": "digimate",
+            "name": "DigiMate",
+            "section": "ios",
+            "status": "live",
+            "icon": "img/digimate.webp",
+            "category": "utilities",
+            "platforms": [
+                "iPhone"
+            ],
+            "description": {
+                "nl": "Een rekenmachine zonder afleiding, met rekengeschiedenis en optionele twee decimalen.",
+                "en": "A distraction-free calculator with calculation history and optional two decimals."
+            },
+            "rating": 5,
+            "reviews": 1,
+            "size": "23 MB",
+            "languages": "EN",
+            "links": {
+                "appstore": "https://apps.apple.com/nl/app/digitmate/id6740402186"
+            },
+            "history": [
+                {
+                    "version": "1.0.2",
+                    "date": "2025-01-15",
+                    "notes": {
+                        "nl": "Nieuw app-icoon en je rekengeschiedenis terugvinden.",
+                        "en": "New app icon and calculation history."
+                    }
+                },
+                {
+                    "version": "1.0.1",
+                    "date": "2025-01-14",
+                    "notes": {
+                        "nl": "Optie voor twee decimalen en app beoordelen.",
+                        "en": "Two-decimal option and rate the app."
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2025-01-13",
+                    "notes": {
+                        "nl": "Eerste release.",
+                        "en": "First release."
+                    }
+                }
+            ]
         },
         {
-          "version": "1.0.0",
-          "date": "2025-01-13",
-          "notes": {
-            "nl": "Eerste release.",
-            "en": "First release."
-          }
-        }
-      ]
-    },
-    {
-      "id": "techinside",
-      "name": "TechInside",
-      "section": "ios",
-      "status": "live",
-      "icon": "img/techinside.webp",
-      "category": "news",
-      "platforms": [
-        "iPhone"
-      ],
-      "description": {
-        "nl": "Technieuws, reviews en innovaties over gadgets en technologie.",
-        "en": "Tech news, reviews and innovations about gadgets and technology."
-      },
-      "size": "12,5 MB",
-      "languages": "NL",
-      "links": {
-        "appstore": "https://apps.apple.com/nl/app/techinside/id6740749788",
-        "website": "https://techinside.nu"
-      },
-      "history": [
-        {
-          "version": "1.0.0",
-          "date": "2025-01-22",
-          "notes": {
-            "nl": "Eerste release.",
-            "en": "First release."
-          }
-        }
-      ]
-    },
-    {
-      "id": "vlagdagen",
-      "name": "VlagDagen",
-      "section": "ios",
-      "status": "live",
-      "icon": "img/vlagdagen.webp",
-      "category": "lifestyle",
-      "platforms": [
-        "iPhone"
-      ],
-      "description": {
-        "nl": "Officiële vlagdagen in Nederland met herinneringen, weeradvies en agenda-integratie.",
-        "en": "Official Dutch flag days with reminders, weather advice and calendar integration."
-      },
-      "size": "15,1 MB",
-      "languages": "NL",
-      "links": {
-        "appstore": "https://apps.apple.com/nl/app/vlagdagen/id6739980379",
-        "website": "https://vlagdagen.nl"
-      },
-      "history": [
-        {
-          "version": "1.0.1",
-          "date": "2025-01-10",
-          "notes": {
-            "nl": "Eerste publieke release.",
-            "en": "First public release."
-          }
+            "id": "techinside",
+            "name": "TechInside",
+            "section": "ios",
+            "status": "live",
+            "icon": "img/techinside.webp",
+            "category": "news",
+            "platforms": [
+                "iPhone"
+            ],
+            "description": {
+                "nl": "Technieuws, reviews en innovaties over gadgets en technologie.",
+                "en": "Tech news, reviews and innovations about gadgets and technology."
+            },
+            "size": "12,5 MB",
+            "languages": "NL",
+            "links": {
+                "appstore": "https://apps.apple.com/nl/app/techinside/id6740749788",
+                "website": "https://techinside.nu"
+            },
+            "history": [
+                {
+                    "version": "1.0.0",
+                    "date": "2025-01-22",
+                    "notes": {
+                        "nl": "Eerste release.",
+                        "en": "First release."
+                    }
+                }
+            ]
         },
         {
-          "version": "1.0.0",
-          "date": "2025-01-07",
-          "notes": {
-            "nl": "Eerste release.",
-            "en": "First release."
-          }
-        }
-      ]
-    },
-    {
-      "id": "vlagdagen-be",
-      "name": "VlagDagen BE",
-      "section": "ios",
-      "status": "live",
-      "icon": "img/vlagdagen-be.webp",
-      "category": "lifestyle",
-      "platforms": [
-        "iPhone"
-      ],
-      "description": {
-        "nl": "Dezelfde vlagdagen-app, voor België.",
-        "en": "The same flag days app, for Belgium."
-      },
-      "size": "14,2 MB",
-      "languages": "NL + FR",
-      "links": {
-        "appstore": "https://apps.apple.com/nl/app/vlagdagen-be/id6740135147",
-        "website": "https://vlagdagen.be"
-      },
-      "history": [
-        {
-          "version": "1.0.0",
-          "date": "2025-01-07",
-          "notes": {
-            "nl": "Eerste release.",
-            "en": "First release."
-          }
-        }
-      ]
-    },
-    {
-      "id": "simple-chess",
-      "name": "Simple Chess",
-      "section": "ios",
-      "status": "live",
-      "icon": "img/simple-chess.webp",
-      "category": "games",
-      "platforms": [
-        "iPhone"
-      ],
-      "description": {
-        "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
-        "en": "Learn chess the easy way. With dark mode and several board themes."
-      },
-      "rating": 5.0,
-      "reviews": 2,
-      "size": "891 kB",
-      "languages": "EN",
-      "links": {
-        "appstore": "https://apps.apple.com/nl/app/simple-chess/id1583471443"
-      },
-      "history": [
-        {
-          "version": "2.0.0",
-          "date": "2025-01-08",
-          "notes": {
-            "nl": "Nieuw icoon, dark mode en bordthema's.",
-            "en": "New icon, dark mode and board themes."
-          }
+            "id": "vlagdagen",
+            "name": "VlagDagen",
+            "section": "ios",
+            "status": "live",
+            "icon": "img/vlagdagen.webp",
+            "category": "lifestyle",
+            "platforms": [
+                "iPhone"
+            ],
+            "description": {
+                "nl": "Officiële vlagdagen in Nederland met herinneringen, weeradvies en agenda-integratie.",
+                "en": "Official Dutch flag days with reminders, weather advice and calendar integration."
+            },
+            "size": "15,1 MB",
+            "languages": "NL",
+            "links": {
+                "appstore": "https://apps.apple.com/nl/app/vlagdagen/id6739980379",
+                "website": "https://vlagdagen.nl"
+            },
+            "history": [
+                {
+                    "version": "1.0.1",
+                    "date": "2025-01-10",
+                    "notes": {
+                        "nl": "Eerste publieke release.",
+                        "en": "First public release."
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2025-01-07",
+                    "notes": {
+                        "nl": "Eerste release.",
+                        "en": "First release."
+                    }
+                }
+            ]
         },
         {
-          "version": "1.1",
-          "date": "2021-11-11",
-          "notes": {
-            "nl": "Bugfixes.",
-            "en": "Bug fixes."
-          }
+            "id": "vlagdagen-be",
+            "name": "VlagDagen BE",
+            "section": "ios",
+            "status": "live",
+            "icon": "img/vlagdagen-be.webp",
+            "category": "lifestyle",
+            "platforms": [
+                "iPhone"
+            ],
+            "description": {
+                "nl": "Dezelfde vlagdagen-app, voor België.",
+                "en": "The same flag days app, for Belgium."
+            },
+            "size": "14,2 MB",
+            "languages": "NL + FR",
+            "links": {
+                "appstore": "https://apps.apple.com/nl/app/vlagdagen-be/id6740135147",
+                "website": "https://vlagdagen.be"
+            },
+            "history": [
+                {
+                    "version": "1.0.0",
+                    "date": "2025-01-07",
+                    "notes": {
+                        "nl": "Eerste release.",
+                        "en": "First release."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "simple-chess",
+            "name": "Simple Chess",
+            "section": "ios",
+            "status": "live",
+            "icon": "img/simple-chess.webp",
+            "category": "games",
+            "platforms": [
+                "iPhone"
+            ],
+            "description": {
+                "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
+                "en": "Learn chess the easy way. With dark mode and several board themes."
+            },
+            "rating": 5,
+            "reviews": 2,
+            "size": "891 kB",
+            "languages": "EN",
+            "links": {
+                "appstore": "https://apps.apple.com/nl/app/simple-chess/id1583471443"
+            },
+            "history": [
+                {
+                    "version": "2.0.0",
+                    "date": "2025-01-08",
+                    "notes": {
+                        "nl": "Nieuw icoon, dark mode en bordthema's.",
+                        "en": "New icon, dark mode and board themes."
+                    }
+                },
+                {
+                    "version": "1.1",
+                    "date": "2021-11-11",
+                    "notes": {
+                        "nl": "Bugfixes.",
+                        "en": "Bug fixes."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "homey-appstoreconnect",
+            "name": "App Store Connect",
+            "section": "homey",
+            "status": "beta",
+            "icon": "img/homey-appstoreconnect.webp",
+            "bundleId": "nl.lrvdlinden.appstoreconnect",
+            "description": {
+                "nl": "Downloads, App Review-status, builds en reviews van je iOS-apps in Homey.",
+                "en": "Downloads, App Review status, builds and reviews of your iOS apps in Homey."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/App-Store-Connect/test/"
+            }
+        },
+        {
+            "id": "homey-p2000",
+            "name": "P2000",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-p2000.webp",
+            "bundleId": "nl.lrvdlinden.p2000",
+            "description": {
+                "nl": "Actuele 112-meldingen van brandweer, ambulance en politie uit heel Nederland.",
+                "en": "Live 112 alerts from fire, ambulance and police across the Netherlands."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/"
+            }
+        },
+        {
+            "id": "homey-nlalert-widget",
+            "name": "NL-Alert",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-nlalert-widget.webp",
+            "bundleId": "nl.lrvdlinden.nlalert-widget",
+            "description": {
+                "nl": "Blijf op de hoogte wanneer een NL-Alert voor jouw omgeving geldt.",
+                "en": "Know when an NL-Alert applies to your area."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.nlalert-widget/"
+            }
+        },
+        {
+            "id": "homey-burgernet",
+            "name": "Burgernet",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-burgernet.webp",
+            "bundleId": "nl.lrvdlinden.burgernet",
+            "description": {
+                "nl": "Actuele Burgernetmeldingen in Homey.",
+                "en": "Current Burgernet alerts in Homey."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.burgernet/"
+            }
+        },
+        {
+            "id": "homey-vermist",
+            "name": "Vermiste personen",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-vermist.webp",
+            "bundleId": "nl.lrvdlinden.vermist",
+            "description": {
+                "nl": "Actuele meldingen van vermiste personen in Homey.",
+                "en": "Current missing person alerts in Homey."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.vermist/"
+            }
+        },
+        {
+            "id": "homey-lifeliner",
+            "name": "Lifeliner",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-lifeliner.webp",
+            "bundleId": "nl.lrvdlinden.lifeliner",
+            "description": {
+                "nl": "Actuele 112-meldingen van de Lifeliner uit heel Nederland.",
+                "en": "Live 112 alerts from the Lifeliner across the Netherlands."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/"
+            }
+        },
+        {
+            "id": "homey-knmi-weerwaarschuwing",
+            "name": "KNMI",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-knmi-weerwaarschuwing.webp",
+            "bundleId": "nl.lrvdlinden.knmi-weerwaarschuwing",
+            "description": {
+                "nl": "Nederlandse KNMI-weersomstandigheden en voorspellingen.",
+                "en": "Dutch KNMI weather conditions and forecasts."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
+            }
+        },
+        {
+            "id": "homey-kmi",
+            "name": "KMI",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-kmi.webp",
+            "bundleId": "nl.lrvdlinden.KMI",
+            "description": {
+                "nl": "Belgische KMI-weersomstandigheden en voorspellingen.",
+                "en": "Belgian KMI weather conditions and forecasts."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.KMI/"
+            }
+        },
+        {
+            "id": "homey-postnl",
+            "name": "PostNL",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-postnl.webp",
+            "bundleId": "nl.lrvdlinden.postnl",
+            "description": {
+                "nl": "Verwachte post en pakketten in Homey, met widgets en Flow-kaarten.",
+                "en": "Expected mail and parcels in Homey, with widgets and Flow cards."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/"
+            }
+        },
+        {
+            "id": "homey-birthdays",
+            "name": "Verjaardagen",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-birthdays.webp",
+            "bundleId": "nl.lrvdlinden.birthdays",
+            "description": {
+                "nl": "Verjaardagsherinneringen instellen of verjaardagswensen sturen.",
+                "en": "Set birthday reminders or send birthday wishes."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.birthdays/"
+            }
+        },
+        {
+            "id": "homey-custom-tokens",
+            "name": "Custom Logic",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-custom-tokens.webp",
+            "bundleId": "nl.lrvdlinden.custom-tokens",
+            "description": {
+                "nl": "Alles-in-één logica-app.",
+                "en": "All-in-one logic app."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.custom-tokens/"
+            }
+        },
+        {
+            "id": "homey-rss-feed-reader",
+            "name": "RSS Feed Reader",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-rss-feed-reader.webp",
+            "bundleId": "nl.lrvdlinden.rss-feed-reader",
+            "description": {
+                "nl": "Meldingen voor nieuwe artikelen van elke RSS-feed.",
+                "en": "Notifications for new articles from any RSS feed."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.rss-feed-reader/"
+            }
+        },
+        {
+            "id": "homey-applehealth",
+            "name": "Apple Health",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-applehealth.webp",
+            "bundleId": "nl.lrvdlinden.applehealth",
+            "description": {
+                "nl": "Je Apple Health- en Apple Watch-gegevens in Homey.",
+                "en": "Your Apple Health and Apple Watch data in Homey."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/"
+            }
+        },
+        {
+            "id": "homey-hyxi-cloud",
+            "name": "HYXI Cloud",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-hyxi-cloud.webp",
+            "bundleId": "nl.lrvdlinden.hyxi-cloud",
+            "description": {
+                "nl": "Je HYXI Halo-thuisbatterij verbonden met Homey.",
+                "en": "Your HYXI Halo home battery connected to Homey."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.hyxi-cloud/"
+            }
+        },
+        {
+            "id": "homey-hyves",
+            "name": "Hyves",
+            "section": "homey",
+            "status": "live",
+            "icon": "img/homey-hyves.webp",
+            "bundleId": "nl.lrvdlinden.hyves",
+            "description": {
+                "nl": "Je Hyves-wereld als onderdeel van je slimme huis.",
+                "en": "Your Hyves world as part of your smart home."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.hyves/"
+            }
         }
-      ]
-    },
-    {
-      "id": "homey-appstoreconnect",
-      "name": "App Store Connect",
-      "section": "homey",
-      "status": "beta",
-      "icon": "img/homey-appstoreconnect.webp",
-      "bundleId": "nl.lrvdlinden.appstoreconnect",
-      "description": {
-        "nl": "Downloads, App Review-status, builds en reviews van je iOS-apps in Homey.",
-        "en": "Downloads, App Review status, builds and reviews of your iOS apps in Homey."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/App-Store-Connect/test/"
-      }
-    },
-    {
-      "id": "homey-p2000",
-      "name": "P2000",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-p2000.webp",
-      "bundleId": "nl.lrvdlinden.p2000",
-      "description": {
-        "nl": "Actuele 112-meldingen van brandweer, ambulance en politie uit heel Nederland.",
-        "en": "Live 112 alerts from fire, ambulance and police across the Netherlands."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/"
-      }
-    },
-    {
-      "id": "homey-nlalert-widget",
-      "name": "NL-Alert",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-nlalert-widget.webp",
-      "bundleId": "nl.lrvdlinden.nlalert-widget",
-      "description": {
-        "nl": "Blijf op de hoogte wanneer een NL-Alert voor jouw omgeving geldt.",
-        "en": "Know when an NL-Alert applies to your area."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.nlalert-widget/"
-      }
-    },
-    {
-      "id": "homey-burgernet",
-      "name": "Burgernet",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-burgernet.webp",
-      "bundleId": "nl.lrvdlinden.burgernet",
-      "description": {
-        "nl": "Actuele Burgernetmeldingen in Homey.",
-        "en": "Current Burgernet alerts in Homey."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.burgernet/"
-      }
-    },
-    {
-      "id": "homey-vermist",
-      "name": "Vermiste personen",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-vermist.webp",
-      "bundleId": "nl.lrvdlinden.vermist",
-      "description": {
-        "nl": "Actuele meldingen van vermiste personen in Homey.",
-        "en": "Current missing person alerts in Homey."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.vermist/"
-      }
-    },
-    {
-      "id": "homey-lifeliner",
-      "name": "Lifeliner",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-lifeliner.webp",
-      "bundleId": "nl.lrvdlinden.lifeliner",
-      "description": {
-        "nl": "Actuele 112-meldingen van de Lifeliner uit heel Nederland.",
-        "en": "Live 112 alerts from the Lifeliner across the Netherlands."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/"
-      }
-    },
-    {
-      "id": "homey-knmi-weerwaarschuwing",
-      "name": "KNMI",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-knmi-weerwaarschuwing.webp",
-      "bundleId": "nl.lrvdlinden.knmi-weerwaarschuwing",
-      "description": {
-        "nl": "Nederlandse KNMI-weersomstandigheden en voorspellingen.",
-        "en": "Dutch KNMI weather conditions and forecasts."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
-      }
-    },
-    {
-      "id": "homey-kmi",
-      "name": "KMI",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-kmi.webp",
-      "bundleId": "nl.lrvdlinden.KMI",
-      "description": {
-        "nl": "Belgische KMI-weersomstandigheden en voorspellingen.",
-        "en": "Belgian KMI weather conditions and forecasts."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.KMI/"
-      }
-    },
-    {
-      "id": "homey-postnl",
-      "name": "PostNL",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-postnl.webp",
-      "bundleId": "nl.lrvdlinden.postnl",
-      "description": {
-        "nl": "Verwachte post en pakketten in Homey, met widgets en Flow-kaarten.",
-        "en": "Expected mail and parcels in Homey, with widgets and Flow cards."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/"
-      }
-    },
-    {
-      "id": "homey-birthdays",
-      "name": "Verjaardagen",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-birthdays.webp",
-      "bundleId": "nl.lrvdlinden.birthdays",
-      "description": {
-        "nl": "Verjaardagsherinneringen instellen of verjaardagswensen sturen.",
-        "en": "Set birthday reminders or send birthday wishes."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.birthdays/"
-      }
-    },
-    {
-      "id": "homey-custom-tokens",
-      "name": "Custom Logic",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-custom-tokens.webp",
-      "bundleId": "nl.lrvdlinden.custom-tokens",
-      "description": {
-        "nl": "Alles-in-één logica-app.",
-        "en": "All-in-one logic app."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.custom-tokens/"
-      }
-    },
-    {
-      "id": "homey-rss-feed-reader",
-      "name": "RSS Feed Reader",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-rss-feed-reader.webp",
-      "bundleId": "nl.lrvdlinden.rss-feed-reader",
-      "description": {
-        "nl": "Meldingen voor nieuwe artikelen van elke RSS-feed.",
-        "en": "Notifications for new articles from any RSS feed."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.rss-feed-reader/"
-      }
-    },
-    {
-      "id": "homey-applehealth",
-      "name": "Apple Health",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-applehealth.webp",
-      "bundleId": "nl.lrvdlinden.applehealth",
-      "description": {
-        "nl": "Je Apple Health- en Apple Watch-gegevens in Homey.",
-        "en": "Your Apple Health and Apple Watch data in Homey."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/"
-      }
-    },
-    {
-      "id": "homey-hyxi-cloud",
-      "name": "HYXI Cloud",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-hyxi-cloud.webp",
-      "bundleId": "nl.lrvdlinden.hyxi-cloud",
-      "description": {
-        "nl": "Je HYXI Halo-thuisbatterij verbonden met Homey.",
-        "en": "Your HYXI Halo home battery connected to Homey."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.hyxi-cloud/"
-      }
-    },
-    {
-      "id": "homey-hyves",
-      "name": "Hyves",
-      "section": "homey",
-      "status": "live",
-      "icon": "img/homey-hyves.webp",
-      "bundleId": "nl.lrvdlinden.hyves",
-      "description": {
-        "nl": "Je Hyves-wereld als onderdeel van je slimme huis.",
-        "en": "Your Hyves world as part of your smart home."
-      },
-      "links": {
-        "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.hyves/"
-      }
-    }
-  ]
+    ]
 }
