@@ -2,6 +2,53 @@
     "_uitleg": "Pas dit bestand aan om apps toe te voegen, platformen te wijzigen of de status te veranderen. status: live | beta | dev. section: ios | homey. featured: true zet een live app bovenaan in 'Nieuw en onderweg'. Makkelijker: open beheer.html.",
     "apps": [
         {
+            "id": "nl-lrvdlinden-weekdot",
+            "name": "Weekdot",
+            "section": "ios",
+            "status": "beta",
+            "featured": true,
+            "category": "utilities",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac",
+                "Apple Watch"
+            ],
+            "description": {
+                "nl": "Je hele week in één oogopslag. Een overzichtelijk weekraster plus dag-, maand- en jaarweergave, met eigen agenda’s via iCloud of je bestaande agenda’s van iCloud, Google en Outlook. Eigen kleuren, sjablonen, slepen en herinneringen.",
+                "en": "Your whole week at a glance. A clear week grid plus day, month and year views, with Weekdot calendars synced through iCloud or the calendars you already use in iCloud, Google and Outlook. Own colours, templates, drag & drop and reminders."
+            },
+            "links": {
+                "testflight": "https://testflight.apple.com/join/kaFEvrXd",
+                "website": "https://weekdot.com"
+            },
+            "history": [],
+            "icon": "img/nl-lrvdlinden-weekdot.webp",
+            "subtitle": {
+                "nl": "Agenda",
+                "en": "Calendar"
+            },
+            "promo": {
+                "eyebrow": {
+                    "nl": "Weekdot",
+                    "en": "Weekdot"
+                },
+                "title": {
+                    "nl": "Je hele week in één oogopslag",
+                    "en": "Your whole week at a glance"
+                },
+                "text": {
+                    "nl": "Een snelle, overzichtelijke agenda voor iPhone, iPad, Mac en Apple Watch.",
+                    "en": "A fast, clear calendar for iPhone, iPad, Mac and Apple Watch."
+                }
+            },
+            "badge": {
+                "nl": "Nieuw",
+                "en": "New"
+            },
+            "languages": "NL + 33"
+        },
+        {
             "id": "bingr",
             "name": "Bingr",
             "section": "ios",
