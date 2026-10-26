@@ -138,7 +138,9 @@
                         "en": "First release."
                     }
                 }
-            ]
+            ],
+            "rating": 5,
+            "reviews": 1
         },
         {
             "id": "tunr",
