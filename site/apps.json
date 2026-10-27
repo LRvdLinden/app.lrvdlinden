@@ -211,7 +211,9 @@
                 "testflight": "https://testflight.apple.com/join/x2H6vgKe",
                 "appstore": "https://apps.apple.com/us/app/devtools/id6826116132"
             },
-            "history": []
+            "history": [],
+            "rating": 5,
+            "reviews": 1
         },
         {
             "id": "samenzuidbroek",
