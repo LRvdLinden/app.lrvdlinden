@@ -189,7 +189,7 @@
             "id": "devtools",
             "name": "DevTools",
             "section": "ios",
-            "status": "beta",
+            "status": "live",
             "featured": true,
             "icon": "img/devtools.webp",
             "category": "business",
@@ -208,7 +208,8 @@
                 "en": "App Store Connect in your pocket: downloads, App Review status, builds, TestFlight and reviews of all your iOS apps in one dashboard. Also available as a Homey app."
             },
             "links": {
-                "testflight": "https://testflight.apple.com/join/x2H6vgKe"
+                "testflight": "https://testflight.apple.com/join/x2H6vgKe",
+                "appstore": "https://apps.apple.com/us/app/devtools/id6826116132"
             },
             "history": []
         },
