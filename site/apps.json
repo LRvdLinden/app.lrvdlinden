@@ -189,7 +189,7 @@
             "id": "devtools",
             "name": "DevTools",
             "section": "ios",
-            "status": "live",
+            "status": "beta",
             "featured": true,
             "icon": "img/devtools.webp",
             "category": "business",
@@ -211,7 +211,16 @@
                 "testflight": "https://testflight.apple.com/join/x2H6vgKe",
                 "appstore": "https://apps.apple.com/us/app/devtools/id6826116132"
             },
-            "history": [],
+            "history": [
+                {
+                    "version": "1.0.1",
+                    "date": "2026-10-27",
+                    "notes": {
+                        "nl": "We werken voortdurend aan het verbeteren van DevTools, zodat jij je kunt richten op wat echt belangrijk is: bouwen, debuggen en je ideeën tot leven brengen. Met elke update maken we de app soepeler, sneller en betrouwbaarder. Want goede tools maken goed werk makkelijker.",
+                        "en": "We're hard at work improving DevTools, so you can focus on what matters most: building, debugging, and bringing your ideas to life. We're making the experience smoother, faster, and more reliable with every update. Because great tools should make great work easier.."
+                    }
+                }
+            ],
             "rating": 5,
             "reviews": 1
         },
