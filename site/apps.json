@@ -189,7 +189,7 @@
             "id": "devtools",
             "name": "DevTools",
             "section": "ios",
-            "status": "beta",
+            "status": "live",
             "featured": true,
             "icon": "img/devtools.webp",
             "category": "business",
