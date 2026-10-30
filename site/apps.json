@@ -564,6 +564,21 @@
             }
         },
         {
+            "id": "homey-weekdot",
+            "name": "Weekdot",
+            "section": "homey",
+            "status": "beta",
+            "icon": "img/homey-weekdot.webp",
+            "bundleId": "nl.lrvdlinden.weekdot",
+            "description": {
+                "nl": "Je Weekdot-agenda in Homey: Flows voor je afspraken en je dagagenda, plus een agendawidget.",
+                "en": "Your Weekdot calendar in Homey: Flows for your appointments and daily agenda, plus a calendar widget."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
+            }
+        },
+        {
             "id": "homey-p2000",
             "name": "P2000",
             "section": "homey",
