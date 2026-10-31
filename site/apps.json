@@ -553,7 +553,7 @@
             "id": "homey-appstoreconnect",
             "name": "App Store Connect",
             "section": "homey",
-            "status": "beta",
+            "status": "live",
             "icon": "img/homey-appstoreconnect.webp",
             "bundleId": "nl.lrvdlinden.appstoreconnect",
             "description": {
@@ -561,7 +561,9 @@
                 "en": "Downloads, App Review status, builds and reviews of your iOS apps in Homey."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/App-Store-Connect/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/App-Store-Connect/test/",
+                "appstore": "https://apps.apple.com/us/app/devtools/id6826116132",
+                "testflight": "https://testflight.apple.com/join/x2H6vgKe"
             }
         },
         {
