@@ -79,8 +79,16 @@
             },
             "history": [
                 {
-                    "version": "1.0.1",
-                    "date": "2026-10-26",
+                    "version": "",
+                    "date": "2026-10-31",
+                    "notes": {
+                        "nl": "",
+                        "en": ""
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2026-10-30",
                     "notes": {
                         "nl": "We werken hard aan het verbeteren van de app, zodat jij je kunt richten op wat je wilt kijken, wanneer je wilt kijken en hoe je wilt kijken. Dat is minstens zo belangrijk.  We weten dat er veel is om uit te kiezen. In deze versie hebben we de galerij op verschillende punten verbeterd, zodat je nog makkelijker kunt vinden wat je graag wilt kijken.",
                         "en": "We’re hard at work improving the app, so you can focus on what you want to watch, when you want to watch it, and how you want to enjoy it. That’s just as important.  We know there’s a lot to choose from. In this version, we’ve made several improvements to the gallery to help you find what you love to watch more easily."
