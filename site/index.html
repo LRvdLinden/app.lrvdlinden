@@ -157,6 +157,16 @@ footer nav{display:flex;gap:18px}
 .promo .bar span{display:block;font-size:13px;color:rgba(255,255,255,.75);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .promo .get{flex:none;font:700 14px var(--f-body);padding:8px 18px;border-radius:99px;background:#fff;color:#0B57D0;text-decoration:none}
 .promo .get:hover{background:#EEF2FF}
+/* Banner met eigen ontwerp: volledig beeld op elk scherm, geen tekst eroverheen, balk eronder */
+.promo.has-img{aspect-ratio:auto;min-height:0;max-height:none;display:flex;flex-direction:column;background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.promo.has-img::after{display:none}
+.promo.has-img .bg{position:static;z-index:auto;aspect-ratio:16/9;background:#121726}
+.promo.has-img .bg img{object-fit:cover}
+.promo.has-img .bar{position:static;background:var(--surface);-webkit-backdrop-filter:none;backdrop-filter:none;padding:12px 16px}
+.promo.has-img .bar .icon{box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.promo.has-img .bar span{color:var(--muted)}
+.promo.has-img .get{background:var(--accent);color:var(--on-accent)}
+.promo.has-img .get:hover{background:var(--accent);opacity:.9}
 .promo-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
 .promo-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}
 .promo-dots button[aria-current="true"]{background:var(--ink)}
@@ -166,7 +176,10 @@ footer nav{display:flex;gap:18px}
   .detail,.homey{grid-template-columns:1fr}
 }
 @media (max-width:600px){
-  .promo{aspect-ratio:4/5;max-height:none;min-height:0}
+  .promo:not(.has-img){aspect-ratio:4/5;max-height:none;min-height:0}
+  .promo.has-img{border-radius:18px}
+  .promo.has-img .bar{padding:10px 12px;gap:10px}
+  .promo.has-img .bar .icon{width:40px;height:40px;border-radius:9px}
   .promo .head{padding:20px}
 }
 @media (max-width:480px){
@@ -351,15 +364,16 @@ function render(){
     const p = a.promo, l = a.links || {};
     const [url, label] = l.appstore ? [l.appstore, t("getStore")] : l.testflight ? [l.testflight, t("getBeta")] : l.website ? [l.website, t("getSite")] : [null, null];
     const img = typeof p.image === "string" ? p.image : L(p.image);
-    const bg = img ? `<div class="bg"><img src="${esc(img)}" alt="" loading="lazy"></div>`
+    const bg = img ? `<div class="bg"><img src="${esc(img)}" alt="" width="1600" height="900"></div>`
                        : (a.icon ? `<div class="bg fromicon"><img src="${esc(a.icon)}" alt=""></div>` : `<div class="bg"></div>`);
-    return `<article class="promo" aria-label="${esc(a.name)}">
+    const title = L(p.title) || a.name;
+    return `<article class="promo${img ? " has-img" : ""}" aria-label="${esc(img ? (title + (L(p.text) ? ". " + L(p.text) : "")) : a.name)}">
       ${bg}
-      <div class="head">
+      ${img ? "" : `<div class="head">
         <span class="eyebrow">${esc(L(p.eyebrow) || t(a.status))}</span>
-        <h3>${esc(L(p.title) || a.name)}</h3>
+        <h3>${esc(title)}</h3>
         ${L(p.text) ? `<p>${esc(L(p.text))}</p>` : ""}
-      </div>
+      </div>`}
       <div class="bar">
         ${icon(a)}
         <div class="txt"><b>${esc(a.name)}</b><span>${esc(L(a.subtitle) || catName(a.category))}</span></div>
@@ -368,6 +382,7 @@ function render(){
     </article>`;
   }).join("");
   $("#promoDots").innerHTML = promos.length > 1 ? promos.map((a,i) => `<button type="button" data-promo="${i}" aria-label="${esc(a.name)}" aria-current="${i===0}"></button>`).join("") : "";
+  startPromoTimer();
 
   // Uitgelicht: featured, of alles wat nog niet live is
   const feat = ios.filter(a => a.featured || a.status !== "live");
@@ -426,15 +441,40 @@ function render(){
   }).join("");
 }
 
+// Promo-banners: elke 8 seconden automatisch naar de volgende.
+// Pauzeert bij muis erop, toetsenbordfocus, aanraken en als de pagina niet zichtbaar is.
+const PROMO_MS = 8000;
+let promoTimer = null, promoPaused = false;
+function promoIndex(){
+  const r = $("#promo"), cards = [...r.children]; if (!cards.length) return 0;
+  return Math.min(cards.length - 1, Math.round(r.scrollLeft / (cards[0].offsetWidth + 16)));
+}
+function goPromo(i){
+  const r = $("#promo"), c = r.children[i]; if (!c) return;
+  r.scrollTo({ left: c.offsetLeft - r.offsetLeft, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+}
+function startPromoTimer(){
+  clearInterval(promoTimer); promoTimer = null;
+  if ($("#promo").children.length < 2) return;
+  promoTimer = setInterval(() => {
+    if (promoPaused || document.hidden) return;
+    const n = $("#promo").children.length;
+    goPromo((promoIndex() + 1) % n);
+  }, PROMO_MS);
+}
+["mouseenter","focusin","touchstart"].forEach(ev => $("#promo").addEventListener(ev, () => { promoPaused = true; }, {passive:true}));
+["mouseleave","focusout"].forEach(ev => $("#promo").addEventListener(ev, () => { promoPaused = false; startPromoTimer(); }));
+$("#promo").addEventListener("touchend", () => { promoPaused = false; startPromoTimer(); }, {passive:true});
+
 $("#promo").addEventListener("scroll", () => {
-  const r = $("#promo"), cards = [...r.children]; if (cards.length < 2) return;
-  const i = Math.round(r.scrollLeft / (cards[0].offsetWidth + 16));
+  if ($("#promo").children.length < 2) return;
+  const i = promoIndex();
   document.querySelectorAll("#promoDots button").forEach((b,j) => b.setAttribute("aria-current", j===i));
 }, {passive:true});
 
 document.addEventListener("click", e => {
   const pd = e.target.closest("[data-promo]");
-  if (pd){ const c = $("#promo").children[+pd.dataset.promo]; if (c) $("#promo").scrollTo({left: c.offsetLeft - $("#promo").offsetLeft, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}); return; }
+  if (pd){ goPromo(+pd.dataset.promo); startPromoTimer(); return; }
   const lb = e.target.closest(".lang button");
   if (lb){ lang = lb.dataset.lang; try{localStorage.setItem("lr-lang",lang)}catch(_){} render(); return; }
   const ch = e.target.closest(".chip");
