@@ -480,8 +480,7 @@
             "promo": {
                 "image": {
                     "nl": "img/promo-vlagdagen-nl.webp"
-                },
-                "show": true
+                }
             }
         },
         {
