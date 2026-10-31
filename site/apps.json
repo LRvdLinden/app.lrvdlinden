@@ -30,18 +30,6 @@
                 "en": "Calendar"
             },
             "promo": {
-                "eyebrow": {
-                    "nl": "Weekdot",
-                    "en": "Weekdot"
-                },
-                "title": {
-                    "nl": "Je hele week in één oogopslag",
-                    "en": "Your whole week at a glance"
-                },
-                "text": {
-                    "nl": "Een snelle, overzichtelijke agenda voor iPhone, iPad, Mac en Apple Watch.",
-                    "en": "A fast, clear calendar for iPhone, iPad, Mac and Apple Watch."
-                },
                 "image": {
                     "nl": "img/promo-nl-lrvdlinden-weekdot-nl.webp",
                     "en": "img/promo-nl-lrvdlinden-weekdot-en.webp"
