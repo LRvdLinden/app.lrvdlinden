@@ -41,7 +41,12 @@
                 "text": {
                     "nl": "Een snelle, overzichtelijke agenda voor iPhone, iPad, Mac en Apple Watch.",
                     "en": "A fast, clear calendar for iPhone, iPad, Mac and Apple Watch."
-                }
+                },
+                "image": {
+                    "nl": "img/promo-nl-lrvdlinden-weekdot-nl.webp",
+                    "en": "img/promo-nl-lrvdlinden-weekdot-en.webp"
+                },
+                "show": true
             },
             "badge": {
                 "nl": "Nieuw",
