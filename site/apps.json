@@ -20,7 +20,8 @@
             },
             "links": {
                 "testflight": "https://testflight.apple.com/join/kaFEvrXd",
-                "website": "https://weekdot.com"
+                "website": "https://weekdot.com",
+                "homey": "https://homey.app/en-us/app/nl.lrvdlinden.weekdot/Weekdot/test/"
             },
             "history": [],
             "icon": "img/nl-lrvdlinden-weekdot.webp",
