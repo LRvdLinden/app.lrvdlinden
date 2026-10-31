@@ -528,9 +528,18 @@
             "size": "891 kB",
             "languages": "EN",
             "links": {
-                "appstore": "https://apps.apple.com/nl/app/simple-chess/id1583471443"
+                "appstore": "https://apps.apple.com/nl/app/simple-chess/id1583471443",
+                "testflight": "https://testflight.apple.com/join/8YvYNvsy"
             },
             "history": [
+                {
+                    "version": "3.0.0",
+                    "date": "2026-10-31",
+                    "notes": {
+                        "nl": "Simple Chess 3 is een helemaal nieuwe app: • Fris, vrolijk ontwerp met vier bordkleuren en donkere modus • Een coach die uitlegt hoe elk stuk beweegt • Tips met een pijl en een korte uitleg • Zie waar stukken heen kunnen en welke stukken in gevaar zijn • Elke zet terugnemen • Lessen voor elk stuk, schaak, rokeren, promotie en en passant • Samen spelen of tegen een vriendelijke robot • Nu in het Nederlands, Engels, Duits en Frans",
+                        "en": "Simple Chess 3 is a whole new app: • Fresh, friendly design with four board colors and dark mode • A coach that explains how every piece moves • Hints with an arrow and a short explanation • See where pieces can go and which pieces are in danger • Undo any move • Lessons for every piece, check, castling, promotion and en passant • Play together or against a friendly robot • Now in English, Dutch, German and French"
+                    }
+                },
                 {
                     "version": "2.0.0",
                     "date": "2025-01-08",
