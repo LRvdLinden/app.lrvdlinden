@@ -594,6 +594,13 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
+            },
+            "promo": {
+                "image": {
+                    "nl": "img/promo-homey-weekdot-nl.webp",
+                    "en": "img/promo-homey-weekdot-en.webp"
+                },
+                "show": true
             }
         },
         {
