@@ -485,6 +485,28 @@
             }
         },
         {
+            "id": "homey-weekdot",
+            "name": "Weekdot",
+            "section": "homey",
+            "status": "beta",
+            "icon": "img/homey-weekdot.webp",
+            "bundleId": "nl.lrvdlinden.weekdot",
+            "description": {
+                "nl": "Je Weekdot-agenda in Homey: Flows voor je afspraken en je dagagenda, plus een agendawidget.",
+                "en": "Your Weekdot calendar in Homey: Flows for your appointments and daily agenda, plus a calendar widget."
+            },
+            "links": {
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
+            },
+            "promo": {
+                "image": {
+                    "nl": "img/promo-homey-weekdot-nl.webp",
+                    "en": "img/promo-homey-weekdot-en.webp"
+                },
+                "show": true
+            }
+        },
+        {
             "id": "vlagdagen-be",
             "name": "VlagDagen BE",
             "section": "ios",
@@ -579,28 +601,6 @@
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/App-Store-Connect/test/",
                 "appstore": "https://apps.apple.com/us/app/devtools/id6826116132",
                 "testflight": "https://testflight.apple.com/join/x2H6vgKe"
-            }
-        },
-        {
-            "id": "homey-weekdot",
-            "name": "Weekdot",
-            "section": "homey",
-            "status": "beta",
-            "icon": "img/homey-weekdot.webp",
-            "bundleId": "nl.lrvdlinden.weekdot",
-            "description": {
-                "nl": "Je Weekdot-agenda in Homey: Flows voor je afspraken en je dagagenda, plus een agendawidget.",
-                "en": "Your Weekdot calendar in Homey: Flows for your appointments and daily agenda, plus a calendar widget."
-            },
-            "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
-            },
-            "promo": {
-                "image": {
-                    "nl": "img/promo-homey-weekdot-nl.webp",
-                    "en": "img/promo-homey-weekdot-en.webp"
-                },
-                "show": true
             }
         },
         {
