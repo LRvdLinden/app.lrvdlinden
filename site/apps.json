@@ -151,7 +151,14 @@
                 }
             ],
             "rating": 5,
-            "reviews": 1
+            "reviews": 1,
+            "promo": {
+                "image": {
+                    "nl": "img/promo-healthsync-nl.webp",
+                    "en": "img/promo-healthsync-en.webp"
+                },
+                "show": true
+            }
         },
         {
             "id": "tunr",
