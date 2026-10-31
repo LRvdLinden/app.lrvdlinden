@@ -476,7 +476,13 @@
                         "en": "First release."
                     }
                 }
-            ]
+            ],
+            "promo": {
+                "image": {
+                    "nl": "img/promo-vlagdagen-nl.webp"
+                },
+                "show": true
+            }
         },
         {
             "id": "vlagdagen-be",
