@@ -224,7 +224,14 @@
                 }
             ],
             "rating": 5,
-            "reviews": 1
+            "reviews": 1,
+            "promo": {
+                "image": {
+                    "nl": "img/promo-devtools-nl.webp",
+                    "en": "img/promo-devtools-en.webp"
+                },
+                "show": true
+            }
         },
         {
             "id": "samenzuidbroek",
