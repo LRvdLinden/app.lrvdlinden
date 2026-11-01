@@ -91,7 +91,8 @@
                     "version": "1.0.3",
                     "date": "2026-10-31",
                     "notes": {
-                        "en": "We're hard at work improving the app, so you can focus on what you want to watch, when you want to watch it, and how you want to enjoy it. That's just as important.\n\nWe know there's a lot to choose from. In this version, we've made several improvements to the gallery to help you find what you love to watch more easily."
+                        "en": "We're hard at work improving the app, so you can focus on what you want to watch, when you want to watch it, and how you want to enjoy it. That's just as important.\n\nWe know there's a lot to choose from. In this version, we've made several improvements to the gallery to help you find what you love to watch more easily.",
+                        "nl": "We zijn hard bezig met het verbeteren van de app, zodat jij kunt focussen op wat je wilt kijken, wanneer je wilt kijken en hoe je ervan wilt genieten. Dat is net zo belangrijk.\n\nWe weten dat er veel te kiezen is. In deze versie hebben we de galerij op verschillende punten verbeterd, zodat je makkelijker vindt waar je van houdt om te kijken."
                     },
                     "_src": {
                         "en": "We're hard at work improving the app, so you can focus on what you want to watch, when you want to watch it, and how you want to enjoy it. That's just as important.\n\nWe know there's a lot to choose from. In this version, we've made several improvements to the gallery to help you find what you love to watch more easily."
@@ -341,7 +342,8 @@
                     "version": "1.0.1",
                     "date": "2025-10-20",
                     "notes": {
-                        "nl": "We hebben hard aan de App gewerkt. We hebben bugs opgelost en kleine verbeteringen. Daardoor doet de App het nu appsoluut beter."
+                        "nl": "We hebben hard aan de App gewerkt. We hebben bugs opgelost en kleine verbeteringen. Daardoor doet de App het nu appsoluut beter.",
+                        "en": "We have worked hard on the App. We fixed bugs and made small improvements. As a result, the App now appsolutely works better."
                     },
                     "_src": {
                         "nl": "We hebben hard aan de App gewerkt. We hebben bugs opgelost en kleine verbeteringen. Daardoor doet de App het nu appsoluut beter."
@@ -517,7 +519,8 @@
                     "version": "2.0.0",
                     "date": "2026-10-31",
                     "notes": {
-                        "nl": "Vlagdagen 2.0.0 is een compleet nieuwe app!\n• Nieuw ontwerp met een geanimeerd openingsscherm\n• Groot Ja. of Nee. en precies hoe de vlag vandaag hangt\n• Ochtendmelding op een tijd naar keuze, ook de avond ervoor\n• 4 mei: herinnering om 17:45 en de tijd van zonsondergang\n• Aftelklok tot de volgende vlagdag\n• Agenda-abonnement voor Apple, Google en Outlook\n• Widgets voor het beginscherm en het toegangsscherm\n• Handleiding: hijsen, halfstok en de wimpel\n• Nu ook voor iPad, en met donkere modus\n• Altijd de juiste datums: de app rekent zelf uit wanneer een vlagdag op een zondag of feestdag doorschuift"
+                        "nl": "Vlagdagen 2.0.0 is een compleet nieuwe app!\n• Nieuw ontwerp met een geanimeerd openingsscherm\n• Groot Ja. of Nee. en precies hoe de vlag vandaag hangt\n• Ochtendmelding op een tijd naar keuze, ook de avond ervoor\n• 4 mei: herinnering om 17:45 en de tijd van zonsondergang\n• Aftelklok tot de volgende vlagdag\n• Agenda-abonnement voor Apple, Google en Outlook\n• Widgets voor het beginscherm en het toegangsscherm\n• Handleiding: hijsen, halfstok en de wimpel\n• Nu ook voor iPad, en met donkere modus\n• Altijd de juiste datums: de app rekent zelf uit wanneer een vlagdag op een zondag of feestdag doorschuift",
+                        "en": "Vlagdagen 2.0.0 is a completely new app!\n• New design with an animated splash screen\n• Big Yes. or No. and exactly how the flag is flying today\n• Morning notification at a time of your choice, also the evening before\n• 4 May: reminder at 17:45 and the time of sunset\n• Countdown to the next flag day\n• Calendar subscription for Apple, Google and Outlook\n• Widgets for the home screen and lock screen\n• Guide: hoisting, half-mast and the pennant\n• Now also for iPad, and with dark mode\n• Always the right dates: the app works out by itself when a flag day shifts because it falls on a Sunday or public holiday"
                     },
                     "_src": {
                         "nl": "Vlagdagen 2.0.0 is een compleet nieuwe app!\n• Nieuw ontwerp met een geanimeerd openingsscherm\n• Groot Ja. of Nee. en precies hoe de vlag vandaag hangt\n• Ochtendmelding op een tijd naar keuze, ook de avond ervoor\n• 4 mei: herinnering om 17:45 en de tijd van zonsondergang\n• Aftelklok tot de volgende vlagdag\n• Agenda-abonnement voor Apple, Google en Outlook\n• Widgets voor het beginscherm en het toegangsscherm\n• Handleiding: hijsen, halfstok en de wimpel\n• Nu ook voor iPad, en met donkere modus\n• Altijd de juiste datums: de app rekent zelf uit wanneer een vlagdag op een zondag of feestdag doorschuift"
@@ -572,7 +575,8 @@
                     "version": "0.0.7",
                     "date": "2026-10-31",
                     "notes": {
-                        "en": "Support Homey internationalization"
+                        "en": "Support Homey internationalization",
+                        "nl": "Ondersteuning voor Homey-internationalisering"
                     },
                     "_src": {
                         "en": "Support Homey internationalization"
@@ -582,7 +586,8 @@
                     "version": "0.0.4",
                     "date": "2026-10-30",
                     "notes": {
-                        "en": "App icon"
+                        "en": "App icon",
+                        "nl": "App-icoon"
                     },
                     "_src": {
                         "en": "App icon"
@@ -592,7 +597,8 @@
                     "version": "0.0.3",
                     "date": "2026-10-30",
                     "notes": {
-                        "en": "Fix homey auth"
+                        "en": "Fix homey auth",
+                        "nl": "Homey-authenticatie repareren"
                     },
                     "_src": {
                         "en": "Fix homey auth"
@@ -706,7 +712,8 @@
                     "version": "1.0.1",
                     "date": "2026-10-28",
                     "notes": {
-                        "en": "New device images and rebrand settings page"
+                        "en": "New device images and rebrand settings page",
+                        "nl": "Nieuwe apparaatafbeeldingen en instellingenpagina opnieuw ontworpen"
                     },
                     "_src": {
                         "en": "New device images and rebrand settings page"
@@ -716,7 +723,8 @@
                     "version": "1.0.2",
                     "date": "2026-10-23",
                     "notes": {
-                        "en": "First release"
+                        "en": "First release",
+                        "nl": "Eerste release"
                     },
                     "_src": {
                         "en": "First release"
@@ -757,7 +765,8 @@
                     "version": "6.2.4",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "app improvement"
+                        "en": "app improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "app improvement"
@@ -767,7 +776,8 @@
                     "version": "6.2.3",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "app improvement"
+                        "en": "app improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "app improvement"
@@ -777,7 +787,8 @@
                     "version": "6.2.2",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -787,7 +798,8 @@
                     "version": "6.2.1",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -797,7 +809,8 @@
                     "version": "6.2.0",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "new device per service"
+                        "en": "new device per service",
+                        "nl": "nieuw apparaat per service"
                     },
                     "_src": {
                         "en": "new device per service"
@@ -807,7 +820,8 @@
                     "version": "6.1.12",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "bugfix widgets"
+                        "en": "bugfix widgets",
+                        "nl": "bugfix widgets"
                     },
                     "_src": {
                         "en": "bugfix widgets"
@@ -817,7 +831,8 @@
                     "version": "6.1.11",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "New: change widget title within the new widget settings"
+                        "en": "New: change widget title within the new widget settings",
+                        "nl": "Nieuw: wijzig de widgettitel in de nieuwe widgetinstellingen"
                     },
                     "_src": {
                         "en": "New: change widget title within the new widget settings"
@@ -827,7 +842,8 @@
                     "version": "6.1.10",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "app improvement"
+                        "en": "app improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "app improvement"
@@ -837,7 +853,8 @@
                     "version": "6.1.9",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "app improvement"
+                        "en": "app improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "app improvement"
@@ -847,7 +864,8 @@
                     "version": "6.1.8",
                     "date": "2026-05-15",
                     "notes": {
-                        "en": "Bug fix"
+                        "en": "Bug fix",
+                        "nl": "Bugfix"
                     },
                     "_src": {
                         "en": "Bug fix"
@@ -898,7 +916,8 @@
                     "version": "1.0.2",
                     "date": "2026-09-02",
                     "notes": {
-                        "en": "Correction widget images"
+                        "en": "Correction widget images",
+                        "nl": "Correctie widgetafbeeldingen"
                     },
                     "_src": {
                         "en": "Correction widget images"
@@ -908,7 +927,8 @@
                     "version": "1.0.1",
                     "date": "2026-09-02",
                     "notes": {
-                        "en": "New app store information"
+                        "en": "New app store information",
+                        "nl": "Nieuwe app store-informatie"
                     },
                     "_src": {
                         "en": "New app store information"
@@ -918,7 +938,8 @@
                     "version": "1.0.0",
                     "date": "2026-09-02",
                     "notes": {
-                        "en": "First release"
+                        "en": "First release",
+                        "nl": "Eerste release"
                     },
                     "_src": {
                         "en": "First release"
@@ -928,7 +949,8 @@
                     "version": "0.0.31",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "dark mode map widget"
+                        "en": "dark mode map widget",
+                        "nl": "donkere modus voor kaartwidget"
                     },
                     "_src": {
                         "en": "dark mode map widget"
@@ -938,7 +960,8 @@
                     "version": "0.0.30",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "addad dark mode to widget map"
+                        "en": "addad dark mode to widget map",
+                        "nl": "donkere modus toegevoegd aan kaartwidget"
                     },
                     "_src": {
                         "en": "addad dark mode to widget map"
@@ -948,7 +971,8 @@
                     "version": "0.0.29",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "bugfix"
+                        "en": "bugfix",
+                        "nl": "bugfix"
                     },
                     "_src": {
                         "en": "bugfix"
@@ -958,7 +982,8 @@
                     "version": "0.0.28",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "bugfix"
+                        "en": "bugfix",
+                        "nl": "bugfix"
                     },
                     "_src": {
                         "en": "bugfix"
@@ -968,7 +993,8 @@
                     "version": "0.0.27",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "bugfix"
+                        "en": "bugfix",
+                        "nl": "bugfix"
                     },
                     "_src": {
                         "en": "bugfix"
@@ -995,7 +1021,8 @@
                     "version": "2.0.0",
                     "date": "2026-05-18",
                     "notes": {
-                        "en": "Official Release"
+                        "en": "Official Release",
+                        "nl": "Officiële release"
                     },
                     "_src": {
                         "en": "Official Release"
@@ -1022,7 +1049,8 @@
                     "version": "2.0.0",
                     "date": "2026-05-18",
                     "notes": {
-                        "en": "Official Release"
+                        "en": "Official Release",
+                        "nl": "Officiële release"
                     },
                     "_src": {
                         "en": "Official Release"
@@ -1050,7 +1078,8 @@
                     "version": "6.1.1",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "app improvement"
+                        "en": "app improvement",
+                        "nl": "app-verbetering"
                     },
                     "_src": {
                         "en": "app improvement"
@@ -1060,7 +1089,8 @@
                     "version": "6.1.0",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "app improvement"
+                        "en": "app improvement",
+                        "nl": "app-verbetering"
                     },
                     "_src": {
                         "en": "app improvement"
@@ -1070,7 +1100,8 @@
                     "version": "6.0.23",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "Little default zoom out mapLast login: Fri May 15 17:16:28 on ttys001"
+                        "en": "Little default zoom out mapLast login: Fri May 15 17:16:28 on ttys001",
+                        "nl": "Kleiner standaard uitzoomen op kaartLast login: Fri May 15 17:16:28 on ttys001"
                     },
                     "_src": {
                         "en": "Little default zoom out mapLast login: Fri May 15 17:16:28 on ttys001"
@@ -1080,7 +1111,8 @@
                     "version": "6.0.22",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "app improvement"
+                        "en": "app improvement",
+                        "nl": "app-verbetering"
                     },
                     "_src": {
                         "en": "app improvement"
@@ -1090,7 +1122,8 @@
                     "version": "6.0.21",
                     "date": "2026-05-16",
                     "notes": {
-                        "en": "Map widget improvement"
+                        "en": "Map widget improvement",
+                        "nl": "Verbetering kaartwidget"
                     },
                     "_src": {
                         "en": "Map widget improvement"
@@ -1100,7 +1133,8 @@
                     "version": "6.0.20",
                     "date": "2026-05-15",
                     "notes": {
-                        "en": "bug fix"
+                        "en": "bug fix",
+                        "nl": "bugfix"
                     },
                     "_src": {
                         "en": "bug fix"
@@ -1110,7 +1144,8 @@
                     "version": "6.0.19",
                     "date": "2026-05-13",
                     "notes": {
-                        "en": "bugfix"
+                        "en": "bugfix",
+                        "nl": "bugfix"
                     },
                     "_src": {
                         "en": "bugfix"
@@ -1120,7 +1155,8 @@
                     "version": "6.0.18",
                     "date": "2026-05-13",
                     "notes": {
-                        "en": "bugfix"
+                        "en": "bugfix",
+                        "nl": "bugfix"
                     },
                     "_src": {
                         "en": "bugfix"
@@ -1130,7 +1166,8 @@
                     "version": "6.0.17",
                     "date": "2026-05-13",
                     "notes": {
-                        "en": "Reset button for widgets"
+                        "en": "Reset button for widgets",
+                        "nl": "Resetknop voor widgets"
                     },
                     "_src": {
                         "en": "Reset button for widgets"
@@ -1140,7 +1177,8 @@
                     "version": "6.0.16",
                     "date": "2026-05-13",
                     "notes": {
-                        "en": "Widget reset buttons capabilities"
+                        "en": "Widget reset buttons capabilities",
+                        "nl": "Mogelijkheden van resetknoppen voor widgets"
                     },
                     "_src": {
                         "en": "Widget reset buttons capabilities"
@@ -1192,7 +1230,8 @@
                     "version": "4.2.0",
                     "date": "2026-10-07",
                     "notes": {
-                        "en": "Expanded weather data with wind speed in knots, timestamps and weather icons for live, daily and hourly forecasts. Added a manual data refresh button and improved forecast image and solar radiation naming. Includes new weather capabilities, improved capability migration for existing devices, and various performance and logging improvements."
+                        "en": "Expanded weather data with wind speed in knots, timestamps and weather icons for live, daily and hourly forecasts. Added a manual data refresh button and improved forecast image and solar radiation naming. Includes new weather capabilities, improved capability migration for existing devices, and various performance and logging improvements.",
+                        "nl": "Uitgebreide weerdata met windsnelheid in knopen, tijdstempels en weericonen voor live, dagelijkse en uurlijkse voorspellingen. Er is een knop voor handmatig vernieuwen van data toegevoegd en de naamgeving van voorspellingsafbeeldingen en zonnestraling is verbeterd. Bevat nieuwe weermogelijkheden, betere migratie van mogelijkheden voor bestaande apparaten en diverse verbeteringen aan prestaties en logging."
                     },
                     "_src": {
                         "en": "Expanded weather data with wind speed in knots, timestamps and weather icons for live, daily and hourly forecasts. Added a manual data refresh button and improved forecast image and solar radiation naming. Includes new weather capabilities, improved capability migration for existing devices, and various performance and logging improvements."
@@ -1202,7 +1241,8 @@
                     "version": "4.2.1",
                     "date": "2026-05-18",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -1212,7 +1252,8 @@
                     "version": "4.1.8",
                     "date": "2026-05-18",
                     "notes": {
-                        "en": "App Improvement"
+                        "en": "App Improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "App Improvement"
@@ -1222,7 +1263,8 @@
                     "version": "4.1.7",
                     "date": "2026-05-18",
                     "notes": {
-                        "en": "app improvement"
+                        "en": "app improvement",
+                        "nl": "app-verbetering"
                     },
                     "_src": {
                         "en": "app improvement"
@@ -1232,7 +1274,8 @@
                     "version": "4.1.6",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "fix buienradar image"
+                        "en": "fix buienradar image",
+                        "nl": "buienradar-afbeelding repareren"
                     },
                     "_src": {
                         "en": "fix buienradar image"
@@ -1242,7 +1285,8 @@
                     "version": "4.1.5",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data.",
+                        "nl": "Toegevoegd: uitgebreide weerdata, inclusief tijdstempels, weericonen, windsnelheid in knopen, verbeterde voorspellingsvelden en een nieuwe mogelijkheid voor een knop om handmatig te vernieuwen, zodat je direct de nieuwste KNMI-/weerdata ophaalt."
                     },
                     "_src": {
                         "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
@@ -1252,7 +1296,8 @@
                     "version": "4.1.4",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data.",
+                        "nl": "Toegevoegd: uitgebreide weerdata, inclusief tijdstempels, weericonen, windsnelheid in knopen, verbeterde voorspellingsvelden en een nieuwe mogelijkheid voor een knop om handmatig te vernieuwen, zodat je direct de nieuwste KNMI-/weerdata ophaalt."
                     },
                     "_src": {
                         "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
@@ -1262,7 +1307,8 @@
                     "version": "4.1.3",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "Added expanded weather data support inc"
+                        "en": "Added expanded weather data support inc",
+                        "nl": "Ondersteuning voor uitgebreide weerdata toegevoegd, inc"
                     },
                     "_src": {
                         "en": "Added expanded weather data support inc"
@@ -1289,7 +1335,8 @@
                     "version": "2.2.1",
                     "date": "2026-05-18",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -1299,7 +1346,8 @@
                     "version": "2.2.0",
                     "date": "2026-05-17",
                     "notes": {
-                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KMI/weather data."
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KMI/weather data.",
+                        "nl": "Toegevoegd: uitgebreide weerdata, inclusief tijdstempels, weericonen, windsnelheid in knopen, verbeterde voorspellingsvelden en een nieuwe mogelijkheid voor een knop om handmatig te vernieuwen, zodat je direct de nieuwste KMI-/weerdata ophaalt."
                     },
                     "_src": {
                         "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KMI/weather data."
@@ -1309,7 +1357,8 @@
                     "version": "2.1.7",
                     "date": "2024-03-24",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -1319,7 +1368,8 @@
                     "version": "2.1.6",
                     "date": "2024-03-22",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "App-verbetering"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -1329,7 +1379,8 @@
                     "version": "2.1.5",
                     "date": "2024-03-22",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "Verbeteringen in de app"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -1339,7 +1390,8 @@
                     "version": "2.1.4",
                     "date": "2024-03-21",
                     "notes": {
-                        "en": "Bug fix"
+                        "en": "Bug fix",
+                        "nl": "Bugfix"
                     },
                     "_src": {
                         "en": "Bug fix"
@@ -1349,7 +1401,8 @@
                     "version": "2.1.3",
                     "date": "2024-03-20",
                     "notes": {
-                        "en": "Added  extra logging"
+                        "en": "Added  extra logging",
+                        "nl": "Extra logging toegevoegd"
                     },
                     "_src": {
                         "en": "Added  extra logging"
@@ -1359,7 +1412,8 @@
                     "version": "2.1.2",
                     "date": "2024-03-20",
                     "notes": {
-                        "en": "Added extra logging"
+                        "en": "Added extra logging",
+                        "nl": "Extra logging toegevoegd"
                     },
                     "_src": {
                         "en": "Added extra logging"
@@ -1369,7 +1423,8 @@
                     "version": "2.1.1",
                     "date": "2024-03-20",
                     "notes": {
-                        "en": "Added extra logging"
+                        "en": "Added extra logging",
+                        "nl": "Extra logging toegevoegd"
                     },
                     "_src": {
                         "en": "Added extra logging"
@@ -1379,7 +1434,8 @@
                     "version": "2.1.0",
                     "date": "2024-03-13",
                     "notes": {
-                        "en": "Added capabilities for day 4 and 5 in the future and fix condition card"
+                        "en": "Added capabilities for day 4 and 5 in the future and fix condition card",
+                        "nl": "Mogelijkheden toegevoegd voor dag 4 en 5 in de toekomst en bugfix voor de voorwaarde-kaart"
                     },
                     "_src": {
                         "en": "Added capabilities for day 4 and 5 in the future and fix condition card"
@@ -1603,7 +1659,8 @@
                     "version": "2.1.1",
                     "date": "2026-05-10",
                     "notes": {
-                        "en": "Restyle homey dashboard widgets"
+                        "en": "Restyle homey dashboard widgets",
+                        "nl": "Widgets voor het Homey-dashboard opnieuw ontworpen"
                     },
                     "_src": {
                         "en": "Restyle homey dashboard widgets"
@@ -1613,7 +1670,8 @@
                     "version": "2.1.0",
                     "date": "2026-05-10",
                     "notes": {
-                        "en": "New: Import and export CSV files, dashboard widgets"
+                        "en": "New: Import and export CSV files, dashboard widgets",
+                        "nl": "Nieuw: CSV-bestanden importeren en exporteren, dashboardwidgets"
                     },
                     "_src": {
                         "en": "New: Import and export CSV files, dashboard widgets"
@@ -1623,7 +1681,8 @@
                     "version": "2.0.2",
                     "date": "2026-05-10",
                     "notes": {
-                        "en": "Test version for new widgets"
+                        "en": "Test version for new widgets",
+                        "nl": "Testversie voor nieuwe widgets"
                     },
                     "_src": {
                         "en": "Test version for new widgets"
@@ -1633,7 +1692,8 @@
                     "version": "2.0.1",
                     "date": "2024-03-15",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "Verbeteringen in de app"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -1643,7 +1703,8 @@
                     "version": "2.0.0",
                     "date": "2024-03-15",
                     "notes": {
-                        "en": "New: settings page"
+                        "en": "New: settings page",
+                        "nl": "Nieuw: instellingenpagina"
                     },
                     "_src": {
                         "en": "New: settings page"
@@ -1670,7 +1731,8 @@
                     "version": "2.0.3",
                     "date": "2026-06-03",
                     "notes": {
-                        "en": "crash fix"
+                        "en": "crash fix",
+                        "nl": "Crashfix"
                     },
                     "_src": {
                         "en": "crash fix"
@@ -1680,7 +1742,8 @@
                     "version": "1.0.6",
                     "date": "2023-10-24",
                     "notes": {
-                        "en": "Fix: Action card generate random number"
+                        "en": "Fix: Action card generate random number",
+                        "nl": "Fix: actiekaart voor willekeurig getal genereren"
                     },
                     "_src": {
                         "en": "Fix: Action card generate random number"
@@ -1690,7 +1753,8 @@
                     "version": "1.0.5",
                     "date": "2023-10-23",
                     "notes": {
-                        "en": "Fix boolean condition card"
+                        "en": "Fix boolean condition card",
+                        "nl": "Fix voor de booleaanse voorwaarde-kaart"
                     },
                     "_src": {
                         "en": "Fix boolean condition card"
@@ -1700,7 +1764,8 @@
                     "version": "1.0.4",
                     "date": "2023-10-23",
                     "notes": {
-                        "en": "Changing brand color and move all day cards to a upcoming app Better Days"
+                        "en": "Changing brand color and move all day cards to a upcoming app Better Days",
+                        "nl": "Merkkleur aangepast en alle dagkaarten verplaatst naar de komende app Better Days"
                     },
                     "_src": {
                         "en": "Changing brand color and move all day cards to a upcoming app Better Days"
@@ -1710,7 +1775,8 @@
                     "version": "1.0.3",
                     "date": "2023-10-22",
                     "notes": {
-                        "en": "New: 5 condition card: Dutch Public Holiday, Dutch Flag Day, Today is a..., Today is a working day and today is a weekendday"
+                        "en": "New: 5 condition card: Dutch Public Holiday, Dutch Flag Day, Today is a..., Today is a working day and today is a weekendday",
+                        "nl": "Nieuw: 5 voorwaardekaarten: Nederlandse feestdag, Nederlandse vlaggendag, Vandaag is een..., Vandaag is een werkdag en vandaag is een weekenddag"
                     },
                     "_src": {
                         "en": "New: 5 condition card: Dutch Public Holiday, Dutch Flag Day, Today is a..., Today is a working day and today is a weekendday"
@@ -1720,7 +1786,8 @@
                     "version": "1.0.2",
                     "date": "2023-10-22",
                     "notes": {
-                        "en": "Added Boolean Temp Variable"
+                        "en": "Added Boolean Temp Variable",
+                        "nl": "Booleaanse tijdelijke variabele toegevoegd"
                     },
                     "_src": {
                         "en": "Added Boolean Temp Variable"
@@ -1730,7 +1797,8 @@
                     "version": "1.0.1",
                     "date": "2023-10-22",
                     "notes": {
-                        "en": "Updated Readme"
+                        "en": "Updated Readme",
+                        "nl": "Readme bijgewerkt"
                     },
                     "_src": {
                         "en": "Updated Readme"
@@ -1740,7 +1808,8 @@
                     "version": "1.0.0",
                     "date": "2023-10-22",
                     "notes": {
-                        "en": "Initial release"
+                        "en": "Initial release",
+                        "nl": "Eerste release"
                     },
                     "_src": {
                         "en": "Initial release"
@@ -1750,7 +1819,8 @@
                     "version": "0.1.0",
                     "date": "2023-10-22",
                     "notes": {
-                        "en": "Firt Relese"
+                        "en": "Firt Relese",
+                        "nl": "Eerste release"
                     },
                     "_src": {
                         "en": "Firt Relese"
@@ -1760,7 +1830,8 @@
                     "version": "0.0.9",
                     "date": "2023-10-21",
                     "notes": {
-                        "en": "New app name: Custom Logic"
+                        "en": "New app name: Custom Logic",
+                        "nl": "Nieuwe appnaam: Custom Logic"
                     },
                     "_src": {
                         "en": "New app name: Custom Logic"
@@ -1787,7 +1858,8 @@
                     "version": "1.1.3",
                     "date": "2024-03-22",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "Verbeteringen in de app"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -1797,7 +1869,8 @@
                     "version": "1.1.1",
                     "date": "2024-03-22",
                     "notes": {
-                        "en": "App improvement"
+                        "en": "App improvement",
+                        "nl": "Verbeteringen in de app"
                     },
                     "_src": {
                         "en": "App improvement"
@@ -2021,7 +2094,8 @@
                     "version": "1.1.4",
                     "date": "2026-08-14",
                     "notes": {
-                        "en": "Change app decripstion app store page"
+                        "en": "Change app decripstion app store page",
+                        "nl": "Beschrijving van de app op de app-storepagina gewijzigd"
                     },
                     "_src": {
                         "en": "Change app decripstion app store page"
@@ -2031,7 +2105,8 @@
                     "version": "1.1.3",
                     "date": "2026-08-14",
                     "notes": {
-                        "en": "Bugfix app settings"
+                        "en": "Bugfix app settings",
+                        "nl": "Bugfix voor app-instellingen"
                     },
                     "_src": {
                         "en": "Bugfix app settings"
@@ -2065,7 +2140,8 @@
                     "version": "1.1.0",
                     "date": "2026-08-08",
                     "notes": {
-                        "en": "First release"
+                        "en": "First release",
+                        "nl": "Eerste release"
                     },
                     "_src": {
                         "en": "First release"
@@ -2087,7 +2163,8 @@
                     "version": "1.0.3",
                     "date": "2026-08-08",
                     "notes": {
-                        "en": "Clean-up readme"
+                        "en": "Clean-up readme",
+                        "nl": "Readme opgeruimd"
                     },
                     "_src": {
                         "en": "Clean-up readme"
@@ -2097,7 +2174,8 @@
                     "version": "1.0.2",
                     "date": "2026-08-08",
                     "notes": {
-                        "en": "Deleted permission"
+                        "en": "Deleted permission",
+                        "nl": "Toestemming verwijderd"
                     },
                     "_src": {
                         "en": "Deleted permission"
@@ -2107,7 +2185,8 @@
                     "version": "1.0.1",
                     "date": "2026-08-08",
                     "notes": {
-                        "en": "More condition and trigger cards"
+                        "en": "More condition and trigger cards",
+                        "nl": "Meer conditie- en triggerkaarten"
                     },
                     "_src": {
                         "en": "More condition and trigger cards"
