@@ -27,6 +27,7 @@ Zet deze onder **Settings → Secrets and variables → Actions → New reposito
 | `FTP_DIR` | Optioneel: doelmap als die niet automatisch klopt |
 | `PUBLISH_GITHUB_TOKEN` | Fine-grained token, alleen voor deze repo, met *Contents: Read and write* |
 | `ANTHROPIC_API_KEY` | Optioneel: API-sleutel om wat-is-nieuw-teksten naar NL/EN te vertalen |
+| `ANTHROPIC_WORKSPACE_ID` | Alleen nodig als de API-sleutel niet aan een workspace gekoppeld is (`wrkspc_…`) |
 
 Wachtwoord en token komen alleen op de server terecht, nooit in de repo of in de (publieke) zip-releases.
 
@@ -45,7 +46,7 @@ Handmatig opnieuw uitrollen: **Actions → Release site → Run workflow**.
 Elke dag om 08:00 loopt **Actions → Store-check** de App Store en de Homey App Store na:
 
 - **App Store** (apps met een App Store-link): versie, wat-is-nieuw, sterren en aantal beoordelingen
-  (opgeteld over NL, BE, VS, VK, DE, FR, ES, IT, CA en AU), grootte en talen.
+  (opgeteld over 44 landen), grootte en talen.
 - **Homey**: live- of testversie (status Live/Test), de laatste 10 changelog-regels en sterren.
   Homey toont geen aantal beoordelingen.
 

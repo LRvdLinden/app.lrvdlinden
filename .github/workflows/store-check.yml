@@ -46,6 +46,7 @@ jobs:
         if: steps.when.outputs.run == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
         run: |
           python3 scripts/store_check.py site/apps.json
           cat store-check-summary.md >> "$GITHUB_STEP_SUMMARY"

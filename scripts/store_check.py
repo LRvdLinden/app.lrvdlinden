@@ -82,8 +82,11 @@ def translate_batch(items):
     )
     body = json.dumps({"model": MODEL, "max_tokens": 8000,
                        "messages": [{"role": "user", "content": prompt}]}).encode()
-    req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=body, method="POST", headers={
-        "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
+    headers = {"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"}
+    ws = os.environ.get("ANTHROPIC_WORKSPACE_ID", "").strip()
+    if ws:  # nodig bij een sleutel die niet aan een workspace gekoppeld is
+        headers["anthropic-workspace-id"] = ws
+    req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=body, method="POST", headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=120) as r:
             res = json.loads(r.read().decode())
