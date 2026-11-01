@@ -604,7 +604,105 @@
                         "en": "Fix homey auth"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "widgets": [
+                    {
+                        "id": "agenda",
+                        "name": {
+                            "nl": "Agenda",
+                            "en": "Agenda"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/7/3a092024-2108-48d9-8ffa-93ea6b0b9715/widgets/agenda/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/7/3a092024-2108-48d9-8ffa-93ea6b0b9715/widgets/agenda/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "agenda_at_time",
+                            "title": {
+                                "nl": "Dagagenda op een vast tijdstip",
+                                "en": "Daily agenda at a set time"
+                            }
+                        },
+                        {
+                            "id": "event_ended",
+                            "title": {
+                                "nl": "Een afspraak eindigt",
+                                "en": "An event ends"
+                            }
+                        },
+                        {
+                            "id": "event_started",
+                            "title": {
+                                "nl": "Een afspraak begint",
+                                "en": "An event starts"
+                            }
+                        },
+                        {
+                            "id": "event_starts_in",
+                            "title": {
+                                "nl": "Een afspraak begint over … minuten",
+                                "en": "An event starts in … minutes"
+                            }
+                        },
+                        {
+                            "id": "schedule_received",
+                            "title": {
+                                "nl": "Weekdot heeft nieuwe afspraken gestuurd",
+                                "en": "Weekdot sent new events"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "event_now",
+                            "title": {
+                                "nl": "Er is nu een afspraak",
+                                "en": "There is an event right now"
+                            }
+                        },
+                        {
+                            "id": "event_today",
+                            "title": {
+                                "nl": "Er is vandaag een afspraak",
+                                "en": "There is an event today"
+                            }
+                        },
+                        {
+                            "id": "event_tomorrow",
+                            "title": {
+                                "nl": "Er is morgen een afspraak",
+                                "en": "There is an event tomorrow"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "get_agenda",
+                            "title": {
+                                "nl": "Haal de agenda op",
+                                "en": "Get the agenda"
+                            }
+                        },
+                        {
+                            "id": "get_next_event",
+                            "title": {
+                                "nl": "Haal de volgende afspraak op",
+                                "en": "Get the next event"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.3.0",
+                "color": "#E8352F",
+                "homepage": "https://weekdot.com",
+                "support": "https://community.homey.app/t/app-pro-weekdot/161566"
+            }
         },
         {
             "id": "vlagdagen-be",
@@ -742,7 +840,306 @@
                         "en": "First release: App Store apps as devices with downloads, status, versions, builds and ratings; portfolio device; flows; dashboard widgets."
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "asc_app",
+                        "name": {
+                            "nl": "App Store-app",
+                            "en": "App Store app"
+                        },
+                        "class": "sensor",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/drivers/asc_app/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/drivers/asc_app/assets/icon.svg"
+                    },
+                    {
+                        "id": "asc_portfolio",
+                        "name": {
+                            "nl": "Alle apps (portfolio)",
+                            "en": "All apps (portfolio)"
+                        },
+                        "class": "sensor",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/drivers/asc_portfolio/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/drivers/asc_portfolio/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "downloads",
+                        "name": {
+                            "nl": "Downloads",
+                            "en": "Downloads"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/downloads/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/downloads/preview-dark.png"
+                    },
+                    {
+                        "id": "status",
+                        "name": {
+                            "nl": "Review & status",
+                            "en": "Review & status"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/status/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/status/preview-dark.png"
+                    },
+                    {
+                        "id": "top-apps",
+                        "name": {
+                            "nl": "Top apps",
+                            "en": "Top apps"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/top-apps/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/top-apps/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "any_entered_review",
+                            "title": {
+                                "nl": "Een app is in App Review gegaan",
+                                "en": "An app entered App Review"
+                            }
+                        },
+                        {
+                            "id": "any_new_customer_review",
+                            "title": {
+                                "nl": "Er is een nieuwe klantreview",
+                                "en": "A new customer review arrived"
+                            }
+                        },
+                        {
+                            "id": "any_new_live_version",
+                            "title": {
+                                "nl": "Een nieuwe versie van een app is live",
+                                "en": "A new version of an app is live"
+                            }
+                        },
+                        {
+                            "id": "any_review_rejected",
+                            "title": {
+                                "nl": "Een app is afgewezen",
+                                "en": "An app was rejected"
+                            }
+                        },
+                        {
+                            "id": "any_status_changed",
+                            "title": {
+                                "nl": "De status van een app is veranderd",
+                                "en": "The status of an app changed"
+                            }
+                        },
+                        {
+                            "id": "total_downloads_updated",
+                            "title": {
+                                "nl": "Nieuwe downloadcijfers voor alle apps",
+                                "en": "New download figures for all apps"
+                            }
+                        },
+                        {
+                            "id": "status_changed",
+                            "title": {
+                                "nl": "App Store-status is veranderd",
+                                "en": "App Store status changed"
+                            }
+                        },
+                        {
+                            "id": "entered_review",
+                            "title": {
+                                "nl": "Versie is in App Review gegaan",
+                                "en": "Version entered App Review"
+                            }
+                        },
+                        {
+                            "id": "review_rejected",
+                            "title": {
+                                "nl": "Versie is afgewezen",
+                                "en": "Version was rejected"
+                            }
+                        },
+                        {
+                            "id": "ready_for_distribution",
+                            "title": {
+                                "nl": "Versie is klaar voor distributie",
+                                "en": "Version is ready for distribution"
+                            }
+                        },
+                        {
+                            "id": "pending_release",
+                            "title": {
+                                "nl": "Versie wacht op jouw vrijgave",
+                                "en": "Version is waiting for your release"
+                            }
+                        },
+                        {
+                            "id": "new_live_version",
+                            "title": {
+                                "nl": "Nieuwe versie is live (Ready for Sale)",
+                                "en": "New version is live (Ready for Sale)"
+                            }
+                        },
+                        {
+                            "id": "new_build",
+                            "title": {
+                                "nl": "Nieuwe build geüpload",
+                                "en": "New build uploaded"
+                            }
+                        },
+                        {
+                            "id": "build_processed",
+                            "title": {
+                                "nl": "Build is verwerkt en klaar",
+                                "en": "Build is processed and ready"
+                            }
+                        },
+                        {
+                            "id": "new_customer_review",
+                            "title": {
+                                "nl": "Nieuwe klantreview",
+                                "en": "New customer review"
+                            }
+                        },
+                        {
+                            "id": "rating_changed",
+                            "title": {
+                                "nl": "Beoordeling is veranderd",
+                                "en": "Rating changed"
+                            }
+                        },
+                        {
+                            "id": "downloads_updated",
+                            "title": {
+                                "nl": "Nieuwe downloadcijfers beschikbaar",
+                                "en": "New download figures are available"
+                            }
+                        },
+                        {
+                            "id": "downloads_dropped",
+                            "title": {
+                                "nl": "Downloads zijn gedaald t.o.v. de dag ervoor",
+                                "en": "Downloads dropped compared to the day before"
+                            }
+                        },
+                        {
+                            "id": "portfolio_downloads_updated",
+                            "title": {
+                                "nl": "Nieuwe downloadcijfers voor alle apps",
+                                "en": "New download figures for all apps"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "is_live",
+                            "title": {
+                                "nl": "App !{{is|is niet}} live",
+                                "en": "App !{{is|is not}} live"
+                            }
+                        },
+                        {
+                            "id": "is_in_review",
+                            "title": {
+                                "nl": "App !{{is|is niet}} in App Review",
+                                "en": "App !{{is|is not}} in App Review"
+                            }
+                        },
+                        {
+                            "id": "has_pending_version",
+                            "title": {
+                                "nl": "Er !{{is|is geen}} nieuwe versie in voorbereiding",
+                                "en": "A new version !{{is|is not}} in progress"
+                            }
+                        },
+                        {
+                            "id": "downloads_yesterday_above",
+                            "title": {
+                                "nl": "Downloads gisteren !{{zijn|zijn niet}} hoger dan…",
+                                "en": "Downloads yesterday !{{are|are not}} above…"
+                            }
+                        },
+                        {
+                            "id": "downloads_7d_above",
+                            "title": {
+                                "nl": "Downloads 7 dagen !{{zijn|zijn niet}} hoger dan…",
+                                "en": "Downloads 7 days !{{are|are not}} above…"
+                            }
+                        },
+                        {
+                            "id": "downloads_total_above",
+                            "title": {
+                                "nl": "Totaal downloads !{{zijn|zijn niet}} hoger dan…",
+                                "en": "Total downloads !{{are|are not}} above…"
+                            }
+                        },
+                        {
+                            "id": "rating_above",
+                            "title": {
+                                "nl": "Beoordeling !{{is|is niet}} hoger dan…",
+                                "en": "Rating !{{is|is not}} above…"
+                            }
+                        },
+                        {
+                            "id": "live_older_than",
+                            "title": {
+                                "nl": "Live versie !{{is|is niet}} ouder dan…",
+                                "en": "Live version !{{is|is not}} older than…"
+                            }
+                        },
+                        {
+                            "id": "portfolio_downloads_yesterday_above",
+                            "title": {
+                                "nl": "Downloads van alle apps gisteren !{{zijn|zijn niet}} hoger dan…",
+                                "en": "Downloads of all apps yesterday !{{are|are not}} above…"
+                            }
+                        },
+                        {
+                            "id": "portfolio_any_in_review",
+                            "title": {
+                                "nl": "Er !{{is|is geen}} app in App Review",
+                                "en": "An app !{{is|is not}} in App Review"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "refresh",
+                            "title": {
+                                "nl": "Alle App Store Connect-gegevens verversen",
+                                "en": "Refresh all App Store Connect data"
+                            }
+                        },
+                        {
+                            "id": "refresh_app",
+                            "title": {
+                                "nl": "App Store-status verversen",
+                                "en": "Refresh App Store status"
+                            }
+                        },
+                        {
+                            "id": "release_version",
+                            "title": {
+                                "nl": "Goedgekeurde versie vrijgeven",
+                                "en": "Release the approved version"
+                            }
+                        },
+                        {
+                            "id": "reply_to_review",
+                            "title": {
+                                "nl": "Reageer op een klantreview",
+                                "en": "Reply to a customer review"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.3.0",
+                "color": "#0484FD",
+                "homepage": "https://github.com/LRvdLinden/nl.lrvdlinden.appstoreconnect",
+                "support": "https://community.homey.app/t/app-pro-app-store-connect/161248"
+            }
         },
         {
             "id": "homey-p2000",
@@ -870,7 +1267,203 @@
                         "en": "Bug fix"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "p2000",
+                        "name": {
+                            "en": "P2000",
+                            "nl": "P2000"
+                        },
+                        "class": "other",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/drivers/p2000/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/drivers/p2000/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "latest-p2000",
+                        "name": {
+                            "nl": "P2000 Pager",
+                            "en": "P2000 Pager"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000/preview-dark.png"
+                    },
+                    {
+                        "id": "latest-p2000-custom",
+                        "name": {
+                            "nl": "P2000 Pager Custom",
+                            "en": "P2000 Pager Custom"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000-custom/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000-custom/preview-dark.png"
+                    },
+                    {
+                        "id": "latest-p2000-large",
+                        "name": {
+                            "nl": "P2000 Pager groot",
+                            "en": "P2000 Pager Large"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000-large/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000-large/preview-dark.png"
+                    },
+                    {
+                        "id": "p2000-map",
+                        "name": {
+                            "nl": "P2000 Kaart",
+                            "en": "P2000 Map"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/p2000-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/p2000-map/preview-dark.png"
+                    },
+                    {
+                        "id": "p2000-stats",
+                        "name": {
+                            "nl": "P2000 Statistieken Vandaag",
+                            "en": "P2000 Stats Today"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/p2000-stats/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/p2000-stats/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "new_message",
+                            "title": {
+                                "nl": "Een nieuwe melding is ontvangen",
+                                "en": "A new message has been received"
+                            }
+                        },
+                        {
+                            "id": "websocket_message_offline",
+                            "title": {
+                                "en": "P2000 is offline",
+                                "nl": "P2000 is offline"
+                            }
+                        },
+                        {
+                            "id": "websocket_message_online",
+                            "title": {
+                                "en": "P2000 is online",
+                                "nl": "P2000 is online"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "capcode_condition",
+                            "title": {
+                                "nl": "Capcode Conditie",
+                                "en": "Capcode Condition"
+                            }
+                        },
+                        {
+                            "id": "category_condition",
+                            "title": {
+                                "nl": "Categorie",
+                                "en": "Category"
+                            }
+                        },
+                        {
+                            "id": "grip_condition",
+                            "title": {
+                                "nl": "GRIP Conditie",
+                                "en": "GRIP Condition"
+                            }
+                        },
+                        {
+                            "id": "groep_condition",
+                            "title": {
+                                "nl": "Groep Conditie",
+                                "en": "Groep Condition"
+                            }
+                        },
+                        {
+                            "id": "opschaling_condition",
+                            "title": {
+                                "nl": "Opschaling Conditie",
+                                "en": "Opschaling Condition"
+                            }
+                        },
+                        {
+                            "id": "prio_condition",
+                            "title": {
+                                "nl": "Prio Conditie",
+                                "en": "Prio Condition"
+                            }
+                        },
+                        {
+                            "id": "province_condition",
+                            "title": {
+                                "nl": "Provincie",
+                                "en": "Province"
+                            }
+                        },
+                        {
+                            "id": "region_and_service_condition",
+                            "title": {
+                                "nl": "Regio en dienst",
+                                "en": "Region and service"
+                            }
+                        },
+                        {
+                            "id": "region_condition",
+                            "title": {
+                                "nl": "Regio",
+                                "en": "Region"
+                            }
+                        },
+                        {
+                            "id": "residence_condition",
+                            "title": {
+                                "nl": "Woonplaats",
+                                "en": "City"
+                            }
+                        },
+                        {
+                            "id": "service_condition",
+                            "title": {
+                                "nl": "Dienst",
+                                "en": "Service"
+                            }
+                        },
+                        {
+                            "id": "soortopschaling_condition",
+                            "title": {
+                                "nl": "soortopschaling Conditie",
+                                "en": "Soortopschaling Condition"
+                            }
+                        },
+                        {
+                            "id": "street_condition",
+                            "title": {
+                                "nl": "Straat",
+                                "en": "Street"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "send_to_dashboard_widget",
+                            "title": {
+                                "nl": "Stuur melding naar P2000 widgets",
+                                "en": "Send message to P2000 widgets"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local",
+                    "cloud"
+                ],
+                "compatibility": ">=12.1.0",
+                "color": "#ce011c",
+                "homepage": "https://p2000.xyz",
+                "support": "https://community.homey.app/t/app-pro-p2000/83738"
+            }
         },
         {
             "id": "homey-nlalert-widget",
@@ -999,7 +1592,65 @@
                         "en": "bugfix"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "widgets": [
+                    {
+                        "id": "nlalert-map",
+                        "name": {
+                            "nl": "NL-Alert Kaart",
+                            "en": "NL-Alert Map"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.nlalert-widget/24/5bf7fbe9-5419-4cab-9349-5600ce5c1f6a/widgets/nlalert-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.nlalert-widget/24/5bf7fbe9-5419-4cab-9349-5600ce5c1f6a/widgets/nlalert-map/preview-dark.png"
+                    },
+                    {
+                        "id": "nlalert-pager",
+                        "name": {
+                            "nl": "NL-Alert Pager",
+                            "en": "NL-Alert Pager"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.nlalert-widget/24/5bf7fbe9-5419-4cab-9349-5600ce5c1f6a/widgets/nlalert-pager/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.nlalert-widget/24/5bf7fbe9-5419-4cab-9349-5600ce5c1f6a/widgets/nlalert-pager/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "alert_received",
+                            "title": {
+                                "nl": "NL Alert ontvangen",
+                                "en": "NL Alert received"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "alert_active",
+                            "title": {
+                                "nl": "Er is een actieve NL Alert",
+                                "en": "An NL Alert is active"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "get_alerts",
+                            "title": {
+                                "nl": "Haal actieve NL Alerts op",
+                                "en": "Get active NL Alerts"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local",
+                    "cloud"
+                ],
+                "compatibility": ">=12.4.0",
+                "color": "#000000",
+                "support": "mailto:hallo@pixelforges.nl"
+            }
         },
         {
             "id": "homey-burgernet",
@@ -1027,7 +1678,75 @@
                         "en": "Official Release"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "burgernet",
+                        "name": {
+                            "nl": "Burgernet",
+                            "en": "Burgernet"
+                        },
+                        "class": "sensor",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.burgernet/1/19c04253-9c56-4835-b5a3-14ed0acbcd35/drivers/burgernet/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.burgernet/1/19c04253-9c56-4835-b5a3-14ed0acbcd35/drivers/burgernet/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "burgernet",
+                        "name": {
+                            "nl": "Burgernet",
+                            "en": "Burgernet"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.burgernet/1/19c04253-9c56-4835-b5a3-14ed0acbcd35/widgets/burgernet/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.burgernet/1/19c04253-9c56-4835-b5a3-14ed0acbcd35/widgets/burgernet/preview-dark.png"
+                    },
+                    {
+                        "id": "burgernet-map",
+                        "name": {
+                            "nl": "Burgernet Kaart",
+                            "en": "Burgernet Map"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.burgernet/1/19c04253-9c56-4835-b5a3-14ed0acbcd35/widgets/burgernet-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.burgernet/1/19c04253-9c56-4835-b5a3-14ed0acbcd35/widgets/burgernet-map/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "burgernet_closed",
+                            "title": {
+                                "nl": "Er is een Burgernetmelding gesloten",
+                                "en": "A Burgernet alert has been closed"
+                            }
+                        },
+                        {
+                            "id": "new_burgernet",
+                            "title": {
+                                "nl": "Er is een nieuwe Burgernetmelding",
+                                "en": "There is a new Burgernet alert"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "burgernet_location_matches",
+                            "title": {
+                                "nl": "Woonplaats is [[woonplaats]]",
+                                "en": "Location is [[woonplaats]]"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.3.0",
+                "color": "#026DAB",
+                "homepage": "https://lrvdlinden.app",
+                "support": "https://community.homey.app/t/app-pro-burgernet-for-homey/154795"
+            }
         },
         {
             "id": "homey-vermist",
@@ -1055,7 +1774,91 @@
                         "en": "Official Release"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "vermist",
+                        "name": {
+                            "nl": "Vermiste Personen",
+                            "en": "Missing Persons"
+                        },
+                        "class": "sensor",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.vermist/1/6e70f210-8a23-4bdc-9df9-e7f5c087f42c/drivers/vermist/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.vermist/1/6e70f210-8a23-4bdc-9df9-e7f5c087f42c/drivers/vermist/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "vermist-map",
+                        "name": {
+                            "nl": "Vermiste Personen Kaart",
+                            "en": "Missing Persons Map"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.vermist/1/6e70f210-8a23-4bdc-9df9-e7f5c087f42c/widgets/vermist-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.vermist/1/6e70f210-8a23-4bdc-9df9-e7f5c087f42c/widgets/vermist-map/preview-dark.png"
+                    },
+                    {
+                        "id": "vermist-page",
+                        "name": {
+                            "nl": "Vermiste Personen",
+                            "en": "Missing Persons"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.vermist/1/6e70f210-8a23-4bdc-9df9-e7f5c087f42c/widgets/vermist-page/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.vermist/1/6e70f210-8a23-4bdc-9df9-e7f5c087f42c/widgets/vermist-page/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "new_vermist",
+                            "title": {
+                                "nl": "Er is een nieuwe vermissing",
+                                "en": "There is a new missing person case"
+                            }
+                        },
+                        {
+                            "id": "vermist_closed",
+                            "title": {
+                                "nl": "Er is een vermissing gesloten",
+                                "en": "A missing person case has been closed"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "vermist_location_matches",
+                            "title": {
+                                "nl": "Woonplaats is [[woonplaats]]",
+                                "en": "Location is [[woonplaats]]"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "send_all_to_dashboard_widgets",
+                            "title": {
+                                "nl": "Stuur alle vermissingen naar widgets",
+                                "en": "Send all missing persons to widgets"
+                            }
+                        },
+                        {
+                            "id": "send_new_to_dashboard_widgets",
+                            "title": {
+                                "nl": "Stuur deze vermissing naar widgets",
+                                "en": "Send this missing person to widgets"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.1.0",
+                "color": "#182567",
+                "homepage": "https://lrvdlinden.app",
+                "support": "https://community.homey.app/t/app-pro-cloud-vermiste-personen-voor-homey/154918"
+            }
         },
         {
             "id": "homey-lifeliner",
@@ -1183,7 +1986,176 @@
                         "en": "Widget reset buttons capabilities"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "lifeliner",
+                        "name": {
+                            "en": "Lifeliner",
+                            "nl": "Lifeliner"
+                        },
+                        "class": "other",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/drivers/lifeliner/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/drivers/lifeliner/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "latest-p2000",
+                        "name": {
+                            "nl": "Lifeliner Pager",
+                            "en": "Lifeliner Pager"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/widgets/latest-p2000/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/widgets/latest-p2000/preview-dark.png"
+                    },
+                    {
+                        "id": "p2000-map",
+                        "name": {
+                            "nl": "Lifeliner Kaart",
+                            "en": "Lifeliner Map"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/widgets/p2000-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/widgets/p2000-map/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "new_message",
+                            "title": {
+                                "nl": "Een nieuwe melding is ontvangen",
+                                "en": "A new message has been received"
+                            }
+                        },
+                        {
+                            "id": "websocket_message_offline",
+                            "title": {
+                                "en": "P2000 is offline",
+                                "nl": "P2000 is offline"
+                            }
+                        },
+                        {
+                            "id": "websocket_message_online",
+                            "title": {
+                                "en": "P2000 is online",
+                                "nl": "P2000 is online"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "capcode_condition",
+                            "title": {
+                                "nl": "Capcode Conditie",
+                                "en": "Capcode Condition"
+                            }
+                        },
+                        {
+                            "id": "category_condition",
+                            "title": {
+                                "nl": "Categorie",
+                                "en": "Category"
+                            }
+                        },
+                        {
+                            "id": "grip_condition",
+                            "title": {
+                                "nl": "GRIP Conditie",
+                                "en": "GRIP Condition"
+                            }
+                        },
+                        {
+                            "id": "groep_condition",
+                            "title": {
+                                "nl": "Groep Conditie",
+                                "en": "Groep Condition"
+                            }
+                        },
+                        {
+                            "id": "opschaling_condition",
+                            "title": {
+                                "nl": "Opschaling Conditie",
+                                "en": "Opschaling Condition"
+                            }
+                        },
+                        {
+                            "id": "prio_condition",
+                            "title": {
+                                "nl": "Prio Conditie",
+                                "en": "Prio Condition"
+                            }
+                        },
+                        {
+                            "id": "province_condition",
+                            "title": {
+                                "nl": "Provincie",
+                                "en": "Province"
+                            }
+                        },
+                        {
+                            "id": "region_and_service_condition",
+                            "title": {
+                                "nl": "Regio en dienst",
+                                "en": "Region and service"
+                            }
+                        },
+                        {
+                            "id": "region_condition",
+                            "title": {
+                                "nl": "Regio",
+                                "en": "Region"
+                            }
+                        },
+                        {
+                            "id": "residence_condition",
+                            "title": {
+                                "nl": "Woonplaats",
+                                "en": "City"
+                            }
+                        },
+                        {
+                            "id": "service_condition",
+                            "title": {
+                                "nl": "Dienst",
+                                "en": "Service"
+                            }
+                        },
+                        {
+                            "id": "soortopschaling_condition",
+                            "title": {
+                                "nl": "soortopschaling Conditie",
+                                "en": "Soortopschaling Condition"
+                            }
+                        },
+                        {
+                            "id": "street_condition",
+                            "title": {
+                                "nl": "Straat",
+                                "en": "Street"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "send_to_dashboard_widget",
+                            "title": {
+                                "nl": "Stuur melding naar Lifeliner widgets",
+                                "en": "Send message to Lifeliner widgets"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local",
+                    "cloud"
+                ],
+                "compatibility": ">=12.1.0",
+                "color": "#9333ea",
+                "homepage": "https://p2000.xyz",
+                "support": "https://community.homey.app/t/app-pro-lifeline-alerts-for-homey/83742"
+            }
         },
         {
             "id": "homey-knmi-weerwaarschuwing",
@@ -1313,7 +2285,737 @@
                         "en": "Added expanded weather data support inc"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "knmi",
+                        "name": {
+                            "nl": "KNMI",
+                            "en": "KNMI"
+                        },
+                        "class": "other",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/110/f03b38bc-5ae4-4332-9b46-122b47743928/drivers/knmi/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/110/f03b38bc-5ae4-4332-9b46-122b47743928/drivers/knmi/assets/icon.svg"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "received-new-data",
+                            "title": {
+                                "nl": "Nieuwe gegevens van het KNMI",
+                                "en": "Received new data from KNMI"
+                            }
+                        },
+                        {
+                            "id": "websocket_message_offline",
+                            "title": {
+                                "nl": "KNMI-server is offline",
+                                "en": "Server offline"
+                            }
+                        },
+                        {
+                            "id": "websocket_message_online",
+                            "title": {
+                                "nl": "KNMI-server is weer online",
+                                "en": "Server online"
+                            }
+                        },
+                        {
+                            "id": "city_changed",
+                            "title": {
+                                "nl": "Plaats is veranderd",
+                                "en": "City changed"
+                            }
+                        },
+                        {
+                            "id": "timestamp_changed",
+                            "title": {
+                                "nl": "Tijdstempel is veranderd",
+                                "en": "Timestamp changed"
+                            }
+                        },
+                        {
+                            "id": "time_changed",
+                            "title": {
+                                "nl": "KNMI-gegevens zijn veranderd",
+                                "en": "KNMI data changed"
+                            }
+                        },
+                        {
+                            "id": "recap_changed",
+                            "title": {
+                                "nl": "Weerbeeld is veranderd",
+                                "en": "Weather recap changed"
+                            }
+                        },
+                        {
+                            "id": "image_changed",
+                            "title": {
+                                "nl": "Weericoon is veranderd",
+                                "en": "Weather icon changed"
+                            }
+                        },
+                        {
+                            "id": "wind_direction_changed",
+                            "title": {
+                                "nl": "Windrichting is veranderd",
+                                "en": "Wind direction changed"
+                            }
+                        },
+                        {
+                            "id": "wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Windrichting in graden is veranderd",
+                                "en": "Wind direction in degrees changed"
+                            }
+                        },
+                        {
+                            "id": "expected_changed",
+                            "title": {
+                                "nl": "Weersverwachting is veranderd",
+                                "en": "Weather forecast changed"
+                            }
+                        },
+                        {
+                            "id": "gr_sun_changed",
+                            "title": {
+                                "nl": "Stralingsintensiteit is veranderd",
+                                "en": "Radiation intensity changed"
+                            }
+                        },
+                        {
+                            "id": "sun_up_changed",
+                            "title": {
+                                "nl": "Zonsopkomst is veranderd",
+                                "en": "Sunrise changed"
+                            }
+                        },
+                        {
+                            "id": "sun_down_changed",
+                            "title": {
+                                "nl": "Zonsondergang is veranderd",
+                                "en": "Sunset changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon vandaag is veranderd",
+                                "en": "Expected weather icon today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting vandaag is veranderd",
+                                "en": "Expected wind direction today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting in graden vandaag is veranderd",
+                                "en": "Expected wind direction in degrees today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting morgen is veranderd",
+                                "en": "Expected wind direction tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting in graden morgen is veranderd",
+                                "en": "Expected wind direction in degrees tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting overmorgen is veranderd",
+                                "en": "Expected wind direction day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting in graden overmorgen is veranderd",
+                                "en": "Expected wind direction in degrees day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_recap_changed",
+                            "title": {
+                                "nl": "Verwacht weerbeeld overmorgen is veranderd",
+                                "en": "Expected weather recap day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting dag 4 is veranderd",
+                                "en": "Expected wind direction day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting in graden dag 4 is veranderd",
+                                "en": "Expected wind direction in degrees day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_recap_changed",
+                            "title": {
+                                "nl": "Verwacht weerbeeld dag 4 is veranderd",
+                                "en": "Expected weather recap day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting dag 5 is veranderd",
+                                "en": "Expected wind direction day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachte windrichting in graden dag 5 is veranderd",
+                                "en": "Expected wind direction in degrees day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_recap_changed",
+                            "title": {
+                                "nl": "Verwacht weerbeeld dag 5 is veranderd",
+                                "en": "Expected weather recap day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "alarm_actief_changed",
+                            "title": {
+                                "nl": "Alarmstatus is veranderd",
+                                "en": "Alarm status changed"
+                            }
+                        },
+                        {
+                            "id": "current_weather_alarm_changed",
+                            "title": {
+                                "nl": "Weeralarm is veranderd",
+                                "en": "Weather alert changed"
+                            }
+                        },
+                        {
+                            "id": "next_weather_alarm_changed",
+                            "title": {
+                                "nl": "Volgende weeralarm is veranderd",
+                                "en": "Next weather alert changed"
+                            }
+                        },
+                        {
+                            "id": "next_time_alarm_changed",
+                            "title": {
+                                "nl": "Tijdstip volgende weeralarm is veranderd",
+                                "en": "Next weather alert time changed"
+                            }
+                        },
+                        {
+                            "id": "next_date_time_alarm_changed",
+                            "title": {
+                                "nl": "Datum en tijd volgende weeralarm zijn veranderd",
+                                "en": "Next weather alert date and time changed"
+                            }
+                        },
+                        {
+                            "id": "current_weather_message_changed",
+                            "title": {
+                                "nl": "Weeralarmbericht is veranderd",
+                                "en": "Weather alert message changed"
+                            }
+                        },
+                        {
+                            "id": "current_weather_title_changed",
+                            "title": {
+                                "nl": "Weeralarmtitel is veranderd",
+                                "en": "Weather alert title changed"
+                            }
+                        },
+                        {
+                            "id": "current_temp_changed",
+                            "title": {
+                                "nl": "Huidige temperatuur is veranderd",
+                                "en": "Current temperature changed"
+                            }
+                        },
+                        {
+                            "id": "feel_temp_changed",
+                            "title": {
+                                "nl": "Gevoelstemperatuur is veranderd",
+                                "en": "Feels-like temperature changed"
+                            }
+                        },
+                        {
+                            "id": "humidity_changed",
+                            "title": {
+                                "nl": "Luchtvochtigheid is veranderd",
+                                "en": "Humidity changed"
+                            }
+                        },
+                        {
+                            "id": "wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Windsnelheid (meter per seconde) is veranderd",
+                                "en": "Wind speed (meters per second) changed"
+                            }
+                        },
+                        {
+                            "id": "wind_force_changed",
+                            "title": {
+                                "nl": "Windkracht is veranderd",
+                                "en": "Wind force changed"
+                            }
+                        },
+                        {
+                            "id": "wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Windsnelheid (kilometer per uur) is veranderd",
+                                "en": "Wind speed (kilometers per hour) changed"
+                            }
+                        },
+                        {
+                            "id": "wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Windsnelheid (knopen) is veranderd",
+                                "en": "Wind speed (knots) changed"
+                            }
+                        },
+                        {
+                            "id": "air_pressure_changed",
+                            "title": {
+                                "nl": "Luchtdruk is veranderd",
+                                "en": "Air pressure changed"
+                            }
+                        },
+                        {
+                            "id": "air_pressure_m_m_h_g_changed",
+                            "title": {
+                                "nl": "Luchtdruk (millimeter kwik) is veranderd",
+                                "en": "Air pressure (millimeters of mercury) changed"
+                            }
+                        },
+                        {
+                            "id": "dew_point_changed",
+                            "title": {
+                                "nl": "Dauwpunt is veranderd",
+                                "en": "Dew point changed"
+                            }
+                        },
+                        {
+                            "id": "sight_changed",
+                            "title": {
+                                "nl": "Zicht is veranderd",
+                                "en": "Visibility changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachte maximumtemperatuur vandaag is veranderd",
+                                "en": "Expected maximum temperature today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachte minimumtemperatuur vandaag is veranderd",
+                                "en": "Expected minimum temperature today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachte windkracht vandaag is veranderd",
+                                "en": "Expected wind force today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (meter per seconde) vandaag is veranderd",
+                                "en": "Expected wind speed (meters per second) today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (kilometer per uur) vandaag is veranderd",
+                                "en": "Expected wind speed (kilometers per hour) today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (knopen) vandaag is veranderd",
+                                "en": "Expected wind speed (knots) today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachte neerslagkans vandaag is veranderd",
+                                "en": "Expected chance of precipitation today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachte zonkans vandaag is veranderd",
+                                "en": "Expected chance of sunshine today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachte maximumtemperatuur morgen is veranderd",
+                                "en": "Expected maximum temperature tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachte minimumtemperatuur morgen is veranderd",
+                                "en": "Expected minimum temperature tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachte windkracht morgen is veranderd",
+                                "en": "Expected wind force tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (meter per seconde) morgen is veranderd",
+                                "en": "Expected wind speed (meters per second) tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (kilometer per uur) morgen is veranderd",
+                                "en": "Expected wind speed (kilometers per hour) tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (knopen) morgen is veranderd",
+                                "en": "Expected wind speed (knots) tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon morgen is veranderd",
+                                "en": "Expected weather icon tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachte neerslagkans morgen is veranderd",
+                                "en": "Expected chance of precipitation tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachte zonkans morgen is veranderd",
+                                "en": "Expected chance of sunshine tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachte maximumtemperatuur overmorgen is veranderd",
+                                "en": "Expected maximum temperature day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachte minimumtemperatuur overmorgen is veranderd",
+                                "en": "Expected minimum temperature day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachte windkracht overmorgen is veranderd",
+                                "en": "Expected wind force day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (meter per seconde) overmorgen is veranderd",
+                                "en": "Expected wind speed (meters per second) day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (kilometer per uur) overmorgen is veranderd",
+                                "en": "Expected wind speed (kilometers per hour) day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (knopen) overmorgen is veranderd",
+                                "en": "Expected wind speed (knots) day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon overmorgen is veranderd",
+                                "en": "Expected weather icon day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachte neerslagkans overmorgen is veranderd",
+                                "en": "Expected chance of precipitation day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachte zonkans overmorgen is veranderd",
+                                "en": "Expected chance of sunshine day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachte maximumtemperatuur dag 4 is veranderd",
+                                "en": "Expected maximum temperature day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachte minimumtemperatuur dag 4 is veranderd",
+                                "en": "Expected minimum temperature day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachte windkracht dag 4 is veranderd",
+                                "en": "Expected wind force day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (meter per seconde) dag 4 is veranderd",
+                                "en": "Expected wind speed (meters per second) day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (kilometer per uur) dag 4 is veranderd",
+                                "en": "Expected wind speed (kilometers per hour) day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (knopen) dag 4 is veranderd",
+                                "en": "Expected wind speed (knots) day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon dag 4 is veranderd",
+                                "en": "Expected weather icon day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachte neerslagkans dag 4 is veranderd",
+                                "en": "Expected chance of precipitation day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachte zonkans dag 4 is veranderd",
+                                "en": "Expected chance of sunshine day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachte maximumtemperatuur dag 5 is veranderd",
+                                "en": "Expected maximum temperature day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachte minimumtemperatuur dag 5 is veranderd",
+                                "en": "Expected minimum temperature day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachte windkracht dag 5 is veranderd",
+                                "en": "Expected wind force day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (meter per seconde) dag 5 is veranderd",
+                                "en": "Expected wind speed (meters per second) day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (kilometer per uur) dag 5 is veranderd",
+                                "en": "Expected wind speed (kilometers per hour) day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verwachte windsnelheid (knopen) dag 5 is veranderd",
+                                "en": "Expected wind speed (knots) day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon dag 5 is veranderd",
+                                "en": "Expected weather icon day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachte neerslagkans dag 5 is veranderd",
+                                "en": "Expected chance of precipitation day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachte zonkans dag 5 is veranderd",
+                                "en": "Expected chance of sunshine day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "last_refresh_changed",
+                            "title": {
+                                "nl": "Laatste dataverzoek is veranderd",
+                                "en": "Last data request changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_recap_changed",
+                            "title": {
+                                "nl": "Verwacht weerbeeld vandaag is veranderd",
+                                "en": "Expected weather recap today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_recap_changed",
+                            "title": {
+                                "nl": "Verwacht weerbeeld morgen is veranderd",
+                                "en": "Expected weather recap tomorrow changed"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "con_weather_code",
+                            "title": {
+                                "nl": "Er is een weeralarm",
+                                "en": "There is a weather alert"
+                            }
+                        },
+                        {
+                            "id": "con_next_weather_code",
+                            "title": {
+                                "nl": "Er is een volgend weeralarm",
+                                "en": "There is a next weather alert"
+                            }
+                        },
+                        {
+                            "id": "con_current_temp",
+                            "title": {
+                                "nl": "De huidige temperatuur is",
+                                "en": "The current temperature is"
+                            }
+                        },
+                        {
+                            "id": "con_feel_temp",
+                            "title": {
+                                "nl": "De gevoelstemperatuur is",
+                                "en": "The feels-like temperature is"
+                            }
+                        },
+                        {
+                            "id": "con_wind_speed_k_m_h",
+                            "title": {
+                                "nl": "De windsnelheid is",
+                                "en": "The wind speed is"
+                            }
+                        },
+                        {
+                            "id": "con_slightly_cloudy_or_clear",
+                            "title": {
+                                "nl": "Het is licht bewolkt of onbewolkt",
+                                "en": "It is slightly cloudy or clear"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "fetch-new-data",
+                            "title": {
+                                "nl": "Haal nieuwe gegevens",
+                                "en": "Fetch new data"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local",
+                    "cloud"
+                ],
+                "compatibility": ">=12.1.0",
+                "color": "#144182",
+                "homepage": "https://lrvdlinden.app/",
+                "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268"
+            }
         },
         {
             "id": "homey-kmi",
@@ -1440,7 +3142,716 @@
                         "en": "Added capabilities for day 4 and 5 in the future and fix condition card"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "KMI",
+                        "name": {
+                            "nl": "KMI",
+                            "en": "KMI"
+                        },
+                        "class": "other",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.KMI/39/0e00ece8-db22-473e-a8e7-87d90b4f8e59/drivers/KMI/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.KMI/39/0e00ece8-db22-473e-a8e7-87d90b4f8e59/drivers/KMI/assets/icon.svg"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "received-new-data",
+                            "title": {
+                                "nl": "Nieuwe gegevens van het KMI",
+                                "en": "Received new data from KMI"
+                            }
+                        },
+                        {
+                            "id": "websocket_message_offline",
+                            "title": {
+                                "en": "Server offline",
+                                "nl": "Server offline"
+                            }
+                        },
+                        {
+                            "id": "websocket_message_online",
+                            "title": {
+                                "en": "Server online",
+                                "nl": "Server online"
+                            }
+                        },
+                        {
+                            "id": "city_changed",
+                            "title": {
+                                "nl": "Plaats is veranderd",
+                                "en": "City changed"
+                            }
+                        },
+                        {
+                            "id": "timestamp_changed",
+                            "title": {
+                                "nl": "Tijdstempel is veranderd",
+                                "en": "Timestamp changed"
+                            }
+                        },
+                        {
+                            "id": "time_changed",
+                            "title": {
+                                "nl": "KNMI data is veranderd",
+                                "en": "KNMI data changed"
+                            }
+                        },
+                        {
+                            "id": "recap_changed",
+                            "title": {
+                                "nl": "Weerbeeld is veranderd",
+                                "en": "Recap changed"
+                            }
+                        },
+                        {
+                            "id": "image_changed",
+                            "title": {
+                                "nl": "Weericoon is veranderd",
+                                "en": "Weather icon changed"
+                            }
+                        },
+                        {
+                            "id": "wind_direction_changed",
+                            "title": {
+                                "nl": "Windrichting is veranderd",
+                                "en": "Wind direction changed"
+                            }
+                        },
+                        {
+                            "id": "wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Windrichting in graden is veranderd",
+                                "en": "Wind direction in degrees changed"
+                            }
+                        },
+                        {
+                            "id": "expected_changed",
+                            "title": {
+                                "nl": "Weersverwachting is veranderd",
+                                "en": "Expected changed"
+                            }
+                        },
+                        {
+                            "id": "gr_sun_changed",
+                            "title": {
+                                "nl": "Stralingsintensiteit is veranderd",
+                                "en": "Radiation intensity changed"
+                            }
+                        },
+                        {
+                            "id": "sun_up_changed",
+                            "title": {
+                                "nl": "Zonsopgang is veranderd",
+                                "en": "Sun up changed"
+                            }
+                        },
+                        {
+                            "id": "sun_down_changed",
+                            "title": {
+                                "nl": "Zonsondergang is veranderd",
+                                "en": "Sun down changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon vandaag is veranderd",
+                                "en": "Exp. weather icon today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting vandaag is veranderd",
+                                "en": "Expected wind direction today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting in graden vandaag is veranderd",
+                                "en": "Expected wind direction in degrees today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting morgen is veranderd",
+                                "en": "Expected wind direction tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting in graden morgen is veranderd",
+                                "en": "Expected wind direction in degrees tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting overmorgen is veranderd",
+                                "en": "Expected wind direction day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting in graden overmorgen is veranderd",
+                                "en": "Expected wind direction in degrees day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_recap_changed",
+                            "title": {
+                                "nl": "Verwachting weerbeeld is veranderd",
+                                "en": "Expected recap is changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting dag 4 is veranderd",
+                                "en": "Expected wind direction day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting in graden dag 4 is veranderd",
+                                "en": "Expected wind direction in degrees day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_recap_changed",
+                            "title": {
+                                "nl": "Verwachting weerbeeld is veranderd",
+                                "en": "Expected recap is changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_direction_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting dag 5 is veranderd",
+                                "en": "Expected wind direction day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_direction_degrees_changed",
+                            "title": {
+                                "nl": "Verwachting windrichting in graden dag 5 is veranderd",
+                                "en": "Expected wind direction in degrees day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_recap_changed",
+                            "title": {
+                                "nl": "Verwachting weerbeeld is veranderd",
+                                "en": "Expected recap is changed"
+                            }
+                        },
+                        {
+                            "id": "alarm_actief_changed",
+                            "title": {
+                                "nl": "Alarm actief",
+                                "en": "Alarm active"
+                            }
+                        },
+                        {
+                            "id": "current_weather_alarm_changed",
+                            "title": {
+                                "nl": "Weeralarm is veranderd",
+                                "en": "Weather alert changed"
+                            }
+                        },
+                        {
+                            "id": "next_weather_alarm_changed",
+                            "title": {
+                                "nl": "Volgende weeralarm is veranderd",
+                                "en": "Next weather alert changed"
+                            }
+                        },
+                        {
+                            "id": "next_time_alarm_changed",
+                            "title": {
+                                "nl": "Volgende weeralarm tijdnotitie is veranderd",
+                                "en": "Next weather alert timestamp changed"
+                            }
+                        },
+                        {
+                            "id": "next_date_time_alarm_changed",
+                            "title": {
+                                "nl": "Volgende weeralarm datum en tijd is veranderd",
+                                "en": "Next weather alert date and time changed"
+                            }
+                        },
+                        {
+                            "id": "current_weather_message_changed",
+                            "title": {
+                                "nl": "Weeralarm bericht is veranderd",
+                                "en": "Weather alarm message changed"
+                            }
+                        },
+                        {
+                            "id": "current_weather_title_changed",
+                            "title": {
+                                "nl": "Weeralarm titel is veranderd",
+                                "en": "Weather alarm title changed"
+                            }
+                        },
+                        {
+                            "id": "current_temp_changed",
+                            "title": {
+                                "nl": "Huidige temp is veranderd",
+                                "en": "current temp changed"
+                            }
+                        },
+                        {
+                            "id": "feel_temp_changed",
+                            "title": {
+                                "nl": "Gevoelstemperatuur is veranderd",
+                                "en": "feel temp changed"
+                            }
+                        },
+                        {
+                            "id": "humidity_changed",
+                            "title": {
+                                "nl": "Luchtvochtigheid is veranderd",
+                                "en": "Humidity changed"
+                            }
+                        },
+                        {
+                            "id": "wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Windsnelheid MS is veranderd",
+                                "en": "Wind speedMS changed"
+                            }
+                        },
+                        {
+                            "id": "wind_force_changed",
+                            "title": {
+                                "nl": "Windkracht is veranderd",
+                                "en": "wind force changed"
+                            }
+                        },
+                        {
+                            "id": "wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Windsnelheid KMH is veranderd",
+                                "en": "Wind speed KMH changed"
+                            }
+                        },
+                        {
+                            "id": "wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Windsnelheid (knopen) is veranderd",
+                                "en": "Wind speed (knots) changed"
+                            }
+                        },
+                        {
+                            "id": "air_pressure_changed",
+                            "title": {
+                                "nl": "Luchtdruk is veranderd",
+                                "en": "Air pressure changed"
+                            }
+                        },
+                        {
+                            "id": "air_pressure_m_m_h_g_changed",
+                            "title": {
+                                "nl": "Luchtdruk MMHG is veranderd",
+                                "en": "Air pressure MMHG changed"
+                            }
+                        },
+                        {
+                            "id": "dew_point_changed",
+                            "title": {
+                                "nl": "Dauwpunt is veranderd",
+                                "en": "Dew point changed"
+                            }
+                        },
+                        {
+                            "id": "sight_changed",
+                            "title": {
+                                "nl": "Zicht is veranderd",
+                                "en": "Sight changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachting max temp vandaag is veranderd",
+                                "en": "Expected max temp today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachting min temp vandaag is veranderd",
+                                "en": "Expected min temp today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachting windkracht vandaag is veranderd",
+                                "en": "Expected wind force today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid MS vandaag is veranderd",
+                                "en": "Expected wind speed MS today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid KMH vandaag is veranderd",
+                                "en": "Expected wind speed KMH today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verw. windsnelheid vandaag (knopen) is veranderd",
+                                "en": "Exp. wind speed today (knots) changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachting neerslag vandaag is veranderd",
+                                "en": "Expected precipitation today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_today_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachting zonkans vandaag is veranderd",
+                                "en": "Expected sunshine today changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachting max temp morgen is veranderd",
+                                "en": "Expected max temp tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachting min temp morgen is veranderd",
+                                "en": "Expected min temp tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachting windkracht morgen is veranderd",
+                                "en": "Expected wind force tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid MS morgen is veranderd",
+                                "en": "Expected wind speed MS tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid KMH morgen is veranderd",
+                                "en": "Expected wind speed KMH tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verw. windsnelheid morgen (knopen) is veranderd",
+                                "en": "Exp. wind speed tomorrow (knots) changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon morgen is veranderd",
+                                "en": "Exp. weather icon tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachting neerslag morgen is veranderd",
+                                "en": "Expected precipitation tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_tomorrow_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachting zonkans morgen is veranderd",
+                                "en": "Expected sunshine tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachting min temp overmorgen is veranderd",
+                                "en": "Expected max temp day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachting min temp overmorgen is veranderd",
+                                "en": "Expected min temp day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachting windkracht overmorgen is veranderd",
+                                "en": "Expected wind force day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid MS overmorgen is veranderd",
+                                "en": "Expected wind speed MS day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid KMH overmorgen is veranderd",
+                                "en": "Expected wind speed KMH day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verw. windsnelheid overmorgen (knopen) is veranderd",
+                                "en": "Exp. wind speed day after tomorrow (knots) changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon overmorgen is veranderd",
+                                "en": "Exp. weather icon day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachting neerslag overmorgen is veranderd",
+                                "en": "Expected precipitation day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day_after_tomorrow_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachting zonkans overmorgen is veranderd",
+                                "en": "Expected sunshine day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachting max temp dag 4 is veranderd",
+                                "en": "Expected max temp day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachting min temp dag 4 is veranderd",
+                                "en": "Expected min temp day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachting windkracht dag 4 is veranderd",
+                                "en": "Expected wind force day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid MS dag 4 is veranderd",
+                                "en": "Expected wind speed MS day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid KMH dag 4 is veranderd",
+                                "en": "Expected wind speed KMH day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verw. windsnelheid dag 4 (knopen) is veranderd",
+                                "en": "Exp. wind speed day 4 (knots) changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon dag 4 is veranderd",
+                                "en": "Exp. weather icon day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachting neerslag dag 4 is veranderd",
+                                "en": "Expected precipitation day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day4_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachting zonkans dag 4 is veranderd",
+                                "en": "Expected sunshine day 4 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_max_temp_changed",
+                            "title": {
+                                "nl": "Verwachting max temp dag 5 is veranderd",
+                                "en": "Expected max temp day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_min_temp_changed",
+                            "title": {
+                                "nl": "Verwachting min temp dag 5 is veranderd",
+                                "en": "Expected min temp day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_force_changed",
+                            "title": {
+                                "nl": "Verwachting windkracht dag 5 is veranderd",
+                                "en": "Expected wind force day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_speed_m_s_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid MS dag 5 is veranderd",
+                                "en": "Expected wind speed MS day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_speed_k_m_h_changed",
+                            "title": {
+                                "nl": "Verwachting windsnelheid KMH dag 5 is veranderd",
+                                "en": "Expected wind speed KMH day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_wind_speed_knots_changed",
+                            "title": {
+                                "nl": "Verw. windsnelheid dag 5 (knopen) is veranderd",
+                                "en": "Exp. wind speed day 5 (knots) changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_image_changed",
+                            "title": {
+                                "nl": "Verwacht weericoon dag 5 is veranderd",
+                                "en": "Exp. weather icon day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_precipitation_changed",
+                            "title": {
+                                "nl": "Verwachting neerslag dag 5 is veranderd",
+                                "en": "Expected precipitation day 5 changed"
+                            }
+                        },
+                        {
+                            "id": "expected_day5_sunshine_changed",
+                            "title": {
+                                "nl": "Verwachting zonkans dag 5 is veranderd",
+                                "en": "Expected sunshine day 5 changed"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "con_weather_code",
+                            "title": {
+                                "nl": "Er is een weer alarm",
+                                "en": "There is a weather alert"
+                            }
+                        },
+                        {
+                            "id": "con_next_weather_code",
+                            "title": {
+                                "nl": "Er is een volgende weer alarm",
+                                "en": "There is a next weather alert"
+                            }
+                        },
+                        {
+                            "id": "con_current_temp",
+                            "title": {
+                                "nl": "De huidige temperatuur is",
+                                "en": "The current temperature is"
+                            }
+                        },
+                        {
+                            "id": "con_feel_temp",
+                            "title": {
+                                "nl": "De gevoelstemperatuur is",
+                                "en": "The feel temperature is"
+                            }
+                        },
+                        {
+                            "id": "con_wind_speed_k_m_h",
+                            "title": {
+                                "nl": "De windsnelheid is",
+                                "en": "The wind speed is"
+                            }
+                        },
+                        {
+                            "id": "con_slightly_cloudy_or_clear",
+                            "title": {
+                                "nl": "Het !{{is|is niet}} licht of on-bewolkt ...",
+                                "en": "It !{{is|isn't}} slightly cloudy or clear ..."
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "fetch-new-data",
+                            "title": {
+                                "nl": "Haal nieuwe gegevens",
+                                "en": "Fetch new data"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local",
+                    "cloud"
+                ],
+                "compatibility": ">=5.0.0",
+                "color": "#0055ef",
+                "homepage": "https://lrvdlinden.app/",
+                "support": "https://community.homey.app/t/app-pro-kmi-belgium/97198"
+            }
         },
         {
             "id": "homey-postnl",
@@ -1577,7 +3988,207 @@
                         "en": "Added device Flow triggers for parcel delivered, delivery window changed, new PostNL parcel event, parcel weight available and parcel dimensions available. Added conditions for PostNL connected, parcel weight available, parcel dimensions available and current parcel status. Restored the v1.2.2 widget preview images."
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "account",
+                        "name": {
+                            "nl": "Mijn PostNL",
+                            "en": "My PostNL"
+                        },
+                        "class": "sensor",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/drivers/account/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/drivers/account/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "mijn-post",
+                        "name": {
+                            "nl": "Mijn Post",
+                            "en": "My Post"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/mijn-post/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/mijn-post/preview-dark.png"
+                    },
+                    {
+                        "id": "mijn-pakket",
+                        "name": {
+                            "nl": "Mijn Pakketten",
+                            "en": "My Packages"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/mijn-pakket/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/mijn-pakket/preview-dark.png"
+                    },
+                    {
+                        "id": "pakket-details",
+                        "name": {
+                            "nl": "Mijn Bezorging",
+                            "en": "My Delivery"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/pakket-details/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/pakket-details/preview-dark.png"
+                    },
+                    {
+                        "id": "pakket-reis",
+                        "name": {
+                            "nl": "Reis van je pakket",
+                            "en": "Parcel Journey"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/pakket-reis/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/pakket-reis/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "new_mail",
+                            "title": {
+                                "nl": "Er is nieuwe post onderweg",
+                                "en": "New mail is expected"
+                            }
+                        },
+                        {
+                            "id": "new_package",
+                            "title": {
+                                "nl": "Er is een nieuw pakket gevonden",
+                                "en": "A new parcel was found"
+                            }
+                        },
+                        {
+                            "id": "delivery_window_known",
+                            "title": {
+                                "nl": "Er is een bezorgvenster bekend",
+                                "en": "A delivery window became available"
+                            }
+                        },
+                        {
+                            "id": "package_status_changed",
+                            "title": {
+                                "nl": "De status van een pakket is gewijzigd",
+                                "en": "A parcel status changed"
+                            }
+                        },
+                        {
+                            "id": "sync_failed",
+                            "title": {
+                                "nl": "PostNL-synchronisatie is mislukt",
+                                "en": "PostNL synchronization failed"
+                            }
+                        },
+                        {
+                            "id": "login_expired",
+                            "title": {
+                                "nl": "De PostNL-aanmelding is verlopen",
+                                "en": "The PostNL login expired"
+                            }
+                        },
+                        {
+                            "id": "package_delivered",
+                            "title": {
+                                "nl": "Een pakket is bezorgd",
+                                "en": "A parcel was delivered"
+                            }
+                        },
+                        {
+                            "id": "delivery_window_changed",
+                            "title": {
+                                "nl": "Het bezorgvenster van een pakket is gewijzigd",
+                                "en": "A parcel delivery window changed"
+                            }
+                        },
+                        {
+                            "id": "package_event_changed",
+                            "title": {
+                                "nl": "Er is een nieuwe PostNL-pakketgebeurtenis",
+                                "en": "A new PostNL parcel event was received"
+                            }
+                        },
+                        {
+                            "id": "package_weight_known",
+                            "title": {
+                                "nl": "Het gewicht van een pakket is bekend",
+                                "en": "Parcel weight became available"
+                            }
+                        },
+                        {
+                            "id": "package_dimensions_known",
+                            "title": {
+                                "nl": "De afmetingen van een pakket zijn bekend",
+                                "en": "Parcel dimensions became available"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "mail_expected",
+                            "title": {
+                                "nl": "Post !{{wordt|wordt niet}} verwacht",
+                                "en": "Mail !{{is|isn't}} expected"
+                            }
+                        },
+                        {
+                            "id": "packages_underway",
+                            "title": {
+                                "nl": "Er !{{zijn|zijn geen}} pakketten onderweg",
+                                "en": "Parcels !{{are|aren't}} underway"
+                            }
+                        },
+                        {
+                            "id": "delivery_window_known",
+                            "title": {
+                                "nl": "Er !{{is|is geen}} bezorgvenster bekend",
+                                "en": "A delivery window !{{is|isn't}} known"
+                            }
+                        },
+                        {
+                            "id": "postnl_connected",
+                            "title": {
+                                "nl": "PostNL !{{is|is niet}} verbonden",
+                                "en": "PostNL !{{is|isn't}} connected"
+                            }
+                        },
+                        {
+                            "id": "package_has_weight",
+                            "title": {
+                                "nl": "Het huidige pakket !{{heeft|heeft geen}} gewichtsinformatie",
+                                "en": "The current parcel !{{has|doesn't have}} weight information"
+                            }
+                        },
+                        {
+                            "id": "package_has_dimensions",
+                            "title": {
+                                "nl": "Het huidige pakket !{{heeft|heeft geen}} afmetingen",
+                                "en": "The current parcel !{{has|doesn't have}} dimensions"
+                            }
+                        },
+                        {
+                            "id": "package_status_is",
+                            "title": {
+                                "nl": "De huidige pakketstatus !{{is|is niet}}",
+                                "en": "The current parcel status !{{is|isn't}}"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "sync_now",
+                            "title": {
+                                "nl": "Synchroniseer PostNL",
+                                "en": "Synchronize PostNL"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.3.0",
+                "color": "#FB6200",
+                "homepage": "https://lrvdlinden.gitbook.io/postnl-for-homey",
+                "support": "https://community.homey.app/t/app-pro-postnl-for-homey/159674"
+            }
         },
         {
             "id": "homey-birthdays",
@@ -1709,7 +4320,93 @@
                         "en": "New: settings page"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "widgets": [
+                    {
+                        "id": "birthdays-this-month",
+                        "name": {
+                            "nl": "Verjaardagen deze maand",
+                            "en": "Birthdays This Month"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.birthdays/56/d71d52d2-630e-46d2-aa34-fd76b9130fbb/widgets/birthdays-this-month/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.birthdays/56/d71d52d2-630e-46d2-aa34-fd76b9130fbb/widgets/birthdays-this-month/preview-dark.png"
+                    },
+                    {
+                        "id": "birthdays-today",
+                        "name": {
+                            "nl": "Vandaag jarig",
+                            "en": "Birthdays Today"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.birthdays/56/d71d52d2-630e-46d2-aa34-fd76b9130fbb/widgets/birthdays-today/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.birthdays/56/d71d52d2-630e-46d2-aa34-fd76b9130fbb/widgets/birthdays-today/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "birthday-today",
+                            "title": {
+                                "nl": "Het is iemands verjaardag",
+                                "en": "It's someone's birthday"
+                            }
+                        },
+                        {
+                            "id": "category-birthday-today",
+                            "title": {
+                                "nl": "Het is de verjaardag van een persoon in een categorie",
+                                "en": "It is the birthday of a person in a category"
+                            }
+                        },
+                        {
+                            "id": "specific-birthday-today",
+                            "title": {
+                                "nl": "Het is een specifiek iemand zijn verjaardag",
+                                "en": "It's a specific person's birthday"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "is-birthday-today",
+                            "title": {
+                                "nl": "Iemand is jarig vandaag",
+                                "en": "It's someone's birthday today"
+                            }
+                        },
+                        {
+                            "id": "is-specific-birthday-today",
+                            "title": {
+                                "nl": "Een specifiek iemand is jarig vandaag",
+                                "en": "Someone specific is celebrating their birthday today"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "sync-ical-calendars",
+                            "title": {
+                                "nl": "Synchroniseer iCal-agenda’s",
+                                "en": "Synchronize iCal calendars"
+                            }
+                        },
+                        {
+                            "id": "temporary-image",
+                            "title": {
+                                "nl": "Maak afbeeldingstoken",
+                                "en": "Create image token"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.1.0",
+                "color": "#ef35aa",
+                "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
+                "support": "https://community.homey.app/t/app-pro-birthdays-for-homey/93178"
+            }
         },
         {
             "id": "homey-custom-tokens",
@@ -1836,7 +4533,213 @@
                         "en": "New app name: Custom Logic"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "advanced-token-changed",
+                            "title": {
+                                "nl": "Token gewijzigd",
+                                "en": "Token changed"
+                            }
+                        },
+                        {
+                            "id": "number_above_threshold",
+                            "title": {
+                                "nl": "Nummer boven drempelwaarde",
+                                "en": "Number above threshold"
+                            }
+                        },
+                        {
+                            "id": "number_below_threshold",
+                            "title": {
+                                "nl": "Nummer onder drempelwaarde",
+                                "en": "Number below threshold"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "advanced-token-exists",
+                            "title": {
+                                "nl": "Token bestaat",
+                                "en": "Token exists"
+                            }
+                        },
+                        {
+                            "id": "advanced-token-matches",
+                            "title": {
+                                "nl": "Token expressie is waar",
+                                "en": "Token expression is true"
+                            }
+                        },
+                        {
+                            "id": "boolean_is_exactly",
+                            "title": {
+                                "nl": "Tekst is precies",
+                                "en": "Boolean is exact"
+                            }
+                        },
+                        {
+                            "id": "number_greater_than",
+                            "title": {
+                                "nl": "Nummer is groter dan",
+                                "en": "Number is bigger than"
+                            }
+                        },
+                        {
+                            "id": "number_less_than",
+                            "title": {
+                                "nl": "Nummer is kleiner dan",
+                                "en": "Number is smaller than"
+                            }
+                        },
+                        {
+                            "id": "text_has_exactly",
+                            "title": {
+                                "nl": "Tekst is precies waarde",
+                                "en": "Text is exact value"
+                            }
+                        },
+                        {
+                            "id": "text_has_value",
+                            "title": {
+                                "nl": "Tekst heeft waarde",
+                                "en": "Text has value"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "advanced-calculate",
+                            "title": {
+                                "nl": "Geavanceerd berekenen",
+                                "en": "Advanced calculate"
+                            }
+                        },
+                        {
+                            "id": "advanced-token-compute",
+                            "title": {
+                                "nl": "Computed token maken",
+                                "en": "Create computed token"
+                            }
+                        },
+                        {
+                            "id": "advanced-token-delete",
+                            "title": {
+                                "nl": "Token verwijderen",
+                                "en": "Delete Token"
+                            }
+                        },
+                        {
+                            "id": "advanced-token-get",
+                            "title": {
+                                "nl": "Token ophalen",
+                                "en": "Get Token"
+                            }
+                        },
+                        {
+                            "id": "advanced-token-set",
+                            "title": {
+                                "nl": "Token instellen",
+                                "en": "Set Token"
+                            }
+                        },
+                        {
+                            "id": "calculate-bmi",
+                            "title": {
+                                "nl": "Bereken BMI",
+                                "en": "Calculate BMI"
+                            }
+                        },
+                        {
+                            "id": "calculate-days-between-dates",
+                            "title": {
+                                "nl": "Bereken Dagen Tussen Datums",
+                                "en": "Calculate Days Between Dates"
+                            }
+                        },
+                        {
+                            "id": "calculate-float",
+                            "title": {
+                                "nl": "Bereken een kommagetal",
+                                "en": "Calculate a float"
+                            }
+                        },
+                        {
+                            "id": "calculate-int",
+                            "title": {
+                                "nl": "Bereken een getal",
+                                "en": "Calculate a number"
+                            }
+                        },
+                        {
+                            "id": "calculate",
+                            "title": {
+                                "nl": "Berekenen",
+                                "en": "Calculate"
+                            }
+                        },
+                        {
+                            "id": "check-leap-year",
+                            "title": {
+                                "nl": "Controleer Schrikkeljaar",
+                                "en": "Check Leap Year"
+                            }
+                        },
+                        {
+                            "id": "generate-random-number",
+                            "title": {
+                                "nl": "Genereer Willekeurig Getal",
+                                "en": "Generate Random Number"
+                            }
+                        },
+                        {
+                            "id": "temporary-boolean",
+                            "title": {
+                                "nl": "Aangepaste Booleaan",
+                                "en": "Custom Boolean"
+                            }
+                        },
+                        {
+                            "id": "temporary-image",
+                            "title": {
+                                "nl": "Maak afbeeldingstoken",
+                                "en": "Create image token"
+                            }
+                        },
+                        {
+                            "id": "temporary-number",
+                            "title": {
+                                "nl": "Aangepaste Nummer-Token",
+                                "en": "Custom Number-Token"
+                            }
+                        },
+                        {
+                            "id": "temporary-string",
+                            "title": {
+                                "nl": "Aangepaste Tekst-Token",
+                                "en": "Custom Text-Token"
+                            }
+                        },
+                        {
+                            "id": "temporary-url",
+                            "title": {
+                                "nl": "Aangepaste Tekst-Token",
+                                "en": "Custom URL-Token"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.1.0",
+                "color": "#ff0000",
+                "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
+                "support": "https://community.homey.app/t/app-pro-custom-tokens/92450"
+            }
         },
         {
             "id": "homey-rss-feed-reader",
@@ -1971,7 +4874,39 @@
                         "en": "Update readme"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "RSS",
+                        "name": {
+                            "en": "RSS Feed Reader",
+                            "nl": "RSS-feedlezer"
+                        },
+                        "class": "other",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.rss-feed-reader/10/486341c7-5f48-4928-9d66-478f8746491d/drivers/RSS/assets/images/small.jpg",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.rss-feed-reader/10/486341c7-5f48-4928-9d66-478f8746491d/drivers/RSS/assets/icon.svg"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "new_article",
+                            "title": {
+                                "nl": "Nieuw artikel ontvangen",
+                                "en": "New Article Received"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=5.0.0",
+                "color": "#f7882e",
+                "homepage": "https://shor.by/LRvdLinden",
+                "support": "https://community.homey.app/t/app-pro-rss-feed-reader/85954"
+            }
         },
         {
             "id": "homey-applehealth",
@@ -2060,7 +4995,528 @@
                         "en": "Fixed capability icons not showing on the device. New app and device images. Added a \"Last sync result\" line to the device settings for troubleshooting."
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "apple-health-user",
+                        "name": {
+                            "nl": "Apple Health",
+                            "en": "Apple Health"
+                        },
+                        "class": "sensor",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/drivers/apple-health-user/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/drivers/apple-health-user/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "apple-activity-rings",
+                        "name": {
+                            "nl": "Activiteitsringen",
+                            "en": "Activity rings"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/apple-activity-rings/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/apple-activity-rings/preview-dark.png"
+                    },
+                    {
+                        "id": "health-glucose",
+                        "name": {
+                            "nl": "Bloedglucose",
+                            "en": "Blood glucose"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-glucose/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-glucose/preview-dark.png"
+                    },
+                    {
+                        "id": "health-household",
+                        "name": {
+                            "nl": "Huishouden",
+                            "en": "Household"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-household/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-household/preview-dark.png"
+                    },
+                    {
+                        "id": "health-hrv-trend",
+                        "name": {
+                            "nl": "Hartslagvariabiliteit",
+                            "en": "Heart rate variability"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-hrv-trend/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-hrv-trend/preview-dark.png"
+                    },
+                    {
+                        "id": "health-overview",
+                        "name": {
+                            "nl": "Gezondheidsoverzicht",
+                            "en": "Health summary"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-overview/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-overview/preview-dark.png"
+                    },
+                    {
+                        "id": "health-readiness",
+                        "name": {
+                            "nl": "Paraatheid",
+                            "en": "Readiness"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-readiness/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-readiness/preview-dark.png"
+                    },
+                    {
+                        "id": "health-single",
+                        "name": {
+                            "nl": "Gezondheidsmeting",
+                            "en": "Health highlight"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-single/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-single/preview-dark.png"
+                    },
+                    {
+                        "id": "health-sleep",
+                        "name": {
+                            "nl": "Slaap",
+                            "en": "Sleep"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-sleep/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-sleep/preview-dark.png"
+                    },
+                    {
+                        "id": "health-status",
+                        "name": {
+                            "nl": "Companion- & syncstatus",
+                            "en": "Companion & sync status"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-status/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-status/preview-dark.png"
+                    },
+                    {
+                        "id": "health-tiles",
+                        "name": {
+                            "nl": "Gezondheidstegels",
+                            "en": "Health tiles"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-tiles/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-tiles/preview-dark.png"
+                    },
+                    {
+                        "id": "health-timeline",
+                        "name": {
+                            "nl": "Dagtijdlijn",
+                            "en": "Day timeline"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-timeline/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-timeline/preview-dark.png"
+                    },
+                    {
+                        "id": "health-vitals",
+                        "name": {
+                            "nl": "Vitale functies",
+                            "en": "Vitals"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-vitals/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-vitals/preview-dark.png"
+                    },
+                    {
+                        "id": "health-week",
+                        "name": {
+                            "nl": "Gezondheidsgrafiek",
+                            "en": "Health chart"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-week/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-week/preview-dark.png"
+                    },
+                    {
+                        "id": "health-workout",
+                        "name": {
+                            "nl": "Laatste training",
+                            "en": "Last workout"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-workout/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-workout/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "sync_received",
+                            "title": {
+                                "nl": "Gezondheidsdata is gesynchroniseerd",
+                                "en": "Health data was synced"
+                            }
+                        },
+                        {
+                            "id": "steps_updated",
+                            "title": {
+                                "nl": "Het aantal stappen is veranderd",
+                                "en": "The step count changed"
+                            }
+                        },
+                        {
+                            "id": "step_goal_reached",
+                            "title": {
+                                "nl": "Het dagelijkse stappendoel is bereikt",
+                                "en": "The daily step goal was reached"
+                            }
+                        },
+                        {
+                            "id": "ring_closed",
+                            "title": {
+                                "nl": "Een activiteitsring is gesloten",
+                                "en": "An activity ring was closed"
+                            }
+                        },
+                        {
+                            "id": "all_rings_closed",
+                            "title": {
+                                "nl": "Alle drie de activiteitsringen zijn gesloten",
+                                "en": "All three activity rings are closed"
+                            }
+                        },
+                        {
+                            "id": "metric_changed",
+                            "title": {
+                                "nl": "Een gezondheidsmeting is veranderd",
+                                "en": "A health metric changed"
+                            }
+                        },
+                        {
+                            "id": "metric_rose_above",
+                            "title": {
+                                "nl": "Een gezondheidsmeting is boven een waarde gestegen",
+                                "en": "A health metric rose above a value"
+                            }
+                        },
+                        {
+                            "id": "metric_fell_below",
+                            "title": {
+                                "nl": "Een gezondheidsmeting is onder een waarde gedaald",
+                                "en": "A health metric fell below a value"
+                            }
+                        },
+                        {
+                            "id": "health_value_changed",
+                            "title": {
+                                "nl": "Een Apple Health-waarde is veranderd",
+                                "en": "An Apple Health value changed"
+                            }
+                        },
+                        {
+                            "id": "health_event_logged",
+                            "title": {
+                                "nl": "Er is een Apple Health-gebeurtenis vastgelegd",
+                                "en": "An Apple Health event was logged"
+                            }
+                        },
+                        {
+                            "id": "symptom_logged",
+                            "title": {
+                                "nl": "Er is een symptoom vastgelegd",
+                                "en": "A symptom was logged"
+                            }
+                        },
+                        {
+                            "id": "state_of_mind_logged",
+                            "title": {
+                                "nl": "Er is een gemoedstoestand vastgelegd",
+                                "en": "A state of mind was logged"
+                            }
+                        },
+                        {
+                            "id": "heart_rate_updated",
+                            "title": {
+                                "nl": "Er is een nieuwe hartslagmeting binnengekomen",
+                                "en": "A new heart rate reading arrived"
+                            }
+                        },
+                        {
+                            "id": "resting_hr_above_baseline",
+                            "title": {
+                                "nl": "Rusthartslag ligt boven het 7-daags gemiddelde",
+                                "en": "Resting heart rate is above its 7-day average"
+                            }
+                        },
+                        {
+                            "id": "hrv_updated",
+                            "title": {
+                                "nl": "Er is een nieuwe HRV-waarde binnengekomen",
+                                "en": "A new HRV value arrived"
+                            }
+                        },
+                        {
+                            "id": "high_heart_rate_event",
+                            "title": {
+                                "nl": "Er was een melding voor hoge hartslag",
+                                "en": "A high heart rate notification occurred"
+                            }
+                        },
+                        {
+                            "id": "low_heart_rate_event",
+                            "title": {
+                                "nl": "Er was een melding voor lage hartslag",
+                                "en": "A low heart rate notification occurred"
+                            }
+                        },
+                        {
+                            "id": "irregular_rhythm_detected",
+                            "title": {
+                                "nl": "Er was een melding voor onregelmatig hartritme",
+                                "en": "An irregular rhythm notification occurred"
+                            }
+                        },
+                        {
+                            "id": "ecg_recorded",
+                            "title": {
+                                "nl": "Er is een ECG gemaakt",
+                                "en": "An ECG was recorded"
+                            }
+                        },
+                        {
+                            "id": "new_weight_measurement",
+                            "title": {
+                                "nl": "Er is een nieuwe gewichtsmeting binnengekomen",
+                                "en": "A new weight measurement arrived"
+                            }
+                        },
+                        {
+                            "id": "blood_pressure_measured",
+                            "title": {
+                                "nl": "Er is een bloeddrukmeting binnengekomen",
+                                "en": "A blood pressure measurement arrived"
+                            }
+                        },
+                        {
+                            "id": "glucose_measured",
+                            "title": {
+                                "nl": "Er is een bloedglucosemeting binnengekomen",
+                                "en": "A blood glucose reading arrived"
+                            }
+                        },
+                        {
+                            "id": "sleep_updated",
+                            "title": {
+                                "nl": "Er zijn nieuwe slaapgegevens binnengekomen",
+                                "en": "New sleep data arrived"
+                            }
+                        },
+                        {
+                            "id": "fell_asleep",
+                            "title": {
+                                "nl": "In slaap gevallen",
+                                "en": "Fell asleep"
+                            }
+                        },
+                        {
+                            "id": "woke_up",
+                            "title": {
+                                "nl": "Wakker geworden",
+                                "en": "Woke up"
+                            }
+                        },
+                        {
+                            "id": "workout_ended",
+                            "title": {
+                                "nl": "Een training is afgelopen",
+                                "en": "A workout ended"
+                            }
+                        },
+                        {
+                            "id": "mindful_session_ended",
+                            "title": {
+                                "nl": "Een mindfulnesssessie is afgelopen",
+                                "en": "A mindfulness session ended"
+                            }
+                        },
+                        {
+                            "id": "fall_detected",
+                            "title": {
+                                "nl": "Er is een val gedetecteerd",
+                                "en": "A fall was detected"
+                            }
+                        },
+                        {
+                            "id": "loud_environment",
+                            "title": {
+                                "nl": "Er was een melding voor harde omgevingsgeluiden",
+                                "en": "A loud environment notification occurred"
+                            }
+                        },
+                        {
+                            "id": "inactive_for",
+                            "title": {
+                                "nl": "Een tijd geen stappen gezet",
+                                "en": "No steps for a while"
+                            }
+                        },
+                        {
+                            "id": "sync_stale",
+                            "title": {
+                                "nl": "Gezondheidsdata synchroniseert niet meer",
+                                "en": "Health data stopped syncing"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "steps_above",
+                            "title": {
+                                "nl": "Stappen vandaag zijn boven…",
+                                "en": "Steps today are above…"
+                            }
+                        },
+                        {
+                            "id": "ring_is_closed",
+                            "title": {
+                                "nl": "Een activiteitsring is gesloten",
+                                "en": "An activity ring is closed"
+                            }
+                        },
+                        {
+                            "id": "exercise_minutes_above",
+                            "title": {
+                                "nl": "Trainingsminuten zijn boven…",
+                                "en": "Exercise minutes are above…"
+                            }
+                        },
+                        {
+                            "id": "moved_recently",
+                            "title": {
+                                "nl": "Er zijn recent stappen gezet",
+                                "en": "Steps were added recently"
+                            }
+                        },
+                        {
+                            "id": "exercised_today",
+                            "title": {
+                                "nl": "Vandaag getraind",
+                                "en": "Worked out today"
+                            }
+                        },
+                        {
+                            "id": "resting_hr_above",
+                            "title": {
+                                "nl": "Rusthartslag is boven…",
+                                "en": "Resting heart rate is above…"
+                            }
+                        },
+                        {
+                            "id": "hrv_below_average",
+                            "title": {
+                                "nl": "HRV ligt onder het 7-daags gemiddelde",
+                                "en": "HRV is below its 7-day average"
+                            }
+                        },
+                        {
+                            "id": "spo2_below",
+                            "title": {
+                                "nl": "Zuurstofsaturatie is onder…",
+                                "en": "Blood oxygen is below…"
+                            }
+                        },
+                        {
+                            "id": "is_asleep",
+                            "title": {
+                                "nl": "Gebruiker slaapt",
+                                "en": "User is asleep"
+                            }
+                        },
+                        {
+                            "id": "slept_less_than",
+                            "title": {
+                                "nl": "Slaap was korter dan…",
+                                "en": "Sleep was shorter than…"
+                            }
+                        },
+                        {
+                            "id": "deep_sleep_below",
+                            "title": {
+                                "nl": "Diepe slaap was minder dan…",
+                                "en": "Deep sleep was below…"
+                            }
+                        },
+                        {
+                            "id": "water_below",
+                            "title": {
+                                "nl": "Water vandaag is minder dan…",
+                                "en": "Water today is below…"
+                            }
+                        },
+                        {
+                            "id": "metric_compare",
+                            "title": {
+                                "nl": "Een gezondheidsmeting is boven of onder een waarde",
+                                "en": "A health metric is above or below a value"
+                            }
+                        },
+                        {
+                            "id": "health_value_compare",
+                            "title": {
+                                "nl": "Een Apple Health-waarde is boven of onder een waarde",
+                                "en": "An Apple Health value is above or below a value"
+                            }
+                        },
+                        {
+                            "id": "data_older_than",
+                            "title": {
+                                "nl": "Gezondheidsdata is ouder dan…",
+                                "en": "Health data is older than…"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "mark_asleep",
+                            "title": {
+                                "nl": "Markeer als slapend",
+                                "en": "Mark as asleep"
+                            }
+                        },
+                        {
+                            "id": "mark_awake",
+                            "title": {
+                                "nl": "Markeer als wakker",
+                                "en": "Mark as awake"
+                            }
+                        },
+                        {
+                            "id": "set_step_goal",
+                            "title": {
+                                "nl": "Stel het dagelijkse stappendoel in",
+                                "en": "Set the daily step goal"
+                            }
+                        },
+                        {
+                            "id": "get_summary",
+                            "title": {
+                                "nl": "Maak een gezondheidssamenvatting",
+                                "en": "Create a health summary"
+                            }
+                        },
+                        {
+                            "id": "get_metric",
+                            "title": {
+                                "nl": "Haal een gezondheidsmeting op",
+                                "en": "Get a health metric"
+                            }
+                        },
+                        {
+                            "id": "get_health_value",
+                            "title": {
+                                "nl": "Haal een Apple Health-waarde op",
+                                "en": "Get an Apple Health value"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.9.0",
+                "color": "#C92B50",
+                "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
+                "support": "https://community.homey.app/t/app-pro-apple-health/160608"
+            }
         },
         {
             "id": "homey-hyxi-cloud",
@@ -2191,7 +5647,169 @@
                         "en": "More condition and trigger cards"
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "hyxi-halo",
+                        "name": {
+                            "nl": "HYXI Halo",
+                            "en": "HYXI Halo"
+                        },
+                        "class": "battery",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyxi-cloud/13/a927fb8d-455c-4113-b0b8-6c67cf8d13d4/drivers/hyxi-halo/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyxi-cloud/13/a927fb8d-455c-4113-b0b8-6c67cf8d13d4/drivers/hyxi-halo/assets/icon.svg"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "charging_started",
+                            "title": {
+                                "nl": "Laden is gestart",
+                                "en": "Charging started"
+                            }
+                        },
+                        {
+                            "id": "charging_stopped",
+                            "title": {
+                                "nl": "Laden is gestopt",
+                                "en": "Charging stopped"
+                            }
+                        },
+                        {
+                            "id": "discharging_started",
+                            "title": {
+                                "nl": "Ontladen is gestart",
+                                "en": "Discharging started"
+                            }
+                        },
+                        {
+                            "id": "discharging_stopped",
+                            "title": {
+                                "nl": "Ontladen is gestopt",
+                                "en": "Discharging stopped"
+                            }
+                        },
+                        {
+                            "id": "alarm_activated",
+                            "title": {
+                                "nl": "Een storing is actief geworden",
+                                "en": "An alarm became active"
+                            }
+                        },
+                        {
+                            "id": "alarm_cleared",
+                            "title": {
+                                "nl": "De storing is opgeheven",
+                                "en": "The alarm was cleared"
+                            }
+                        },
+                        {
+                            "id": "running_state_changed",
+                            "title": {
+                                "nl": "Bedrijfsstatus is gewijzigd",
+                                "en": "Running state changed"
+                            }
+                        },
+                        {
+                            "id": "grid_import_started",
+                            "title": {
+                                "nl": "Netafname is gestart",
+                                "en": "Grid import started"
+                            }
+                        },
+                        {
+                            "id": "grid_export_started",
+                            "title": {
+                                "nl": "Teruglevering is gestart",
+                                "en": "Grid export started"
+                            }
+                        },
+                        {
+                            "id": "data_updated",
+                            "title": {
+                                "nl": "HYXI-data is bijgewerkt",
+                                "en": "HYXI data was updated"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "is_charging",
+                            "title": {
+                                "nl": "De batterij laadt",
+                                "en": "Battery is charging"
+                            }
+                        },
+                        {
+                            "id": "is_discharging",
+                            "title": {
+                                "nl": "De batterij ontlaadt",
+                                "en": "Battery is discharging"
+                            }
+                        },
+                        {
+                            "id": "has_alarm",
+                            "title": {
+                                "nl": "Er is een batterijstoring actief",
+                                "en": "A battery alarm is active"
+                            }
+                        },
+                        {
+                            "id": "cloud_online",
+                            "title": {
+                                "nl": "HYXI Cloud is online",
+                                "en": "HYXI Cloud is online"
+                            }
+                        },
+                        {
+                            "id": "soc_above",
+                            "title": {
+                                "nl": "Batterijniveau vergelijken",
+                                "en": "Battery level comparison"
+                            }
+                        },
+                        {
+                            "id": "soc_below",
+                            "title": {
+                                "nl": "Batterijniveau vergelijken",
+                                "en": "Battery level comparison"
+                            }
+                        },
+                        {
+                            "id": "grid_importing",
+                            "title": {
+                                "nl": "De woning neemt stroom af van het net",
+                                "en": "The home is importing from the grid"
+                            }
+                        },
+                        {
+                            "id": "grid_exporting",
+                            "title": {
+                                "nl": "De woning levert terug aan het net",
+                                "en": "The home is exporting to the grid"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "refresh_device",
+                            "title": {
+                                "nl": "HYXI-data verversen",
+                                "en": "Refresh HYXI data"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.3.0",
+                "color": "#175EFF",
+                "homepage": "https://lrvdlinden.app",
+                "support": "https://community.homey.app/t/app-pro-hyxi-cloud-for-homey/158017"
+            }
         },
         {
             "id": "homey-hyves",
@@ -2328,7 +5946,238 @@
                         "en": "Improved Dutch and English support, Homey-time handling, widget previews, discoverability tags, and added dedicated icons for all device capabilities."
                     }
                 }
-            ]
+            ],
+            "homey": {
+                "drivers": [
+                    {
+                        "id": "hyves",
+                        "name": {
+                            "nl": "Hyves",
+                            "en": "Hyves"
+                        },
+                        "class": "other",
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyves/24/df4b29ca-4b68-421c-85fd-87338e800433/drivers/hyves/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyves/24/df4b29ca-4b68-421c-85fd-87338e800433/drivers/hyves/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "hyves_notifications",
+                        "name": {
+                            "nl": "Hyves-meldingen",
+                            "en": "Hyves Notifications"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyves/24/df4b29ca-4b68-421c-85fd-87338e800433/widgets/hyves_notifications/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyves/24/df4b29ca-4b68-421c-85fd-87338e800433/widgets/hyves_notifications/preview-dark.png"
+                    },
+                    {
+                        "id": "hyves_groups",
+                        "name": {
+                            "nl": "Hyves-groepen",
+                            "en": "Hyves Groups"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyves/24/df4b29ca-4b68-421c-85fd-87338e800433/widgets/hyves_groups/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyves/24/df4b29ca-4b68-421c-85fd-87338e800433/widgets/hyves_groups/preview-dark.png"
+                    },
+                    {
+                        "id": "hyves_profile_stats",
+                        "name": {
+                            "nl": "Hyves-profielstatistieken",
+                            "en": "Hyves Profile Stats"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyves/24/df4b29ca-4b68-421c-85fd-87338e800433/widgets/hyves_profile_stats/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.hyves/24/df4b29ca-4b68-421c-85fd-87338e800433/widgets/hyves_profile_stats/preview-dark.png"
+                    }
+                ],
+                "flow": {
+                    "triggers": [
+                        {
+                            "id": "new_notification",
+                            "title": {
+                                "nl": "Er is een nieuwe Hyves-melding ontvangen",
+                                "en": "A new Hyves notification was received"
+                            }
+                        },
+                        {
+                            "id": "new_friend_request",
+                            "title": {
+                                "nl": "Er is een nieuw vriendschapsverzoek ontvangen",
+                                "en": "A new friend request was received"
+                            }
+                        },
+                        {
+                            "id": "new_timeline_item",
+                            "title": {
+                                "nl": "Er is een nieuw tijdlijnbericht gevonden",
+                                "en": "A new timeline item was found"
+                            }
+                        },
+                        {
+                            "id": "unread_notifications_changed",
+                            "title": {
+                                "nl": "Het aantal ongelezen meldingen is gewijzigd",
+                                "en": "The unread notification count changed"
+                            }
+                        },
+                        {
+                            "id": "friends_count_changed",
+                            "title": {
+                                "nl": "Het aantal vrienden is gewijzigd",
+                                "en": "The number of friends changed"
+                            }
+                        },
+                        {
+                            "id": "hyves_count_changed",
+                            "title": {
+                                "nl": "Het aantal Hyves is gewijzigd",
+                                "en": "The number of Hyves changed"
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "is_connected",
+                            "title": {
+                                "nl": "Hyves !{{is|is niet}} verbonden",
+                                "en": "Hyves !{{is|isn't}} connected"
+                            }
+                        },
+                        {
+                            "id": "has_unread_notifications",
+                            "title": {
+                                "nl": "Hyves !{{heeft|heeft geen}} ongelezen meldingen",
+                                "en": "Hyves !{{has|doesn't have}} unread notifications"
+                            }
+                        },
+                        {
+                            "id": "has_friend_requests",
+                            "title": {
+                                "nl": "Hyves !{{heeft|heeft geen}} vriendschapsverzoeken",
+                                "en": "Hyves !{{has|doesn't have}} friend requests"
+                            }
+                        },
+                        {
+                            "id": "unread_above",
+                            "title": {
+                                "nl": "Ongelezen meldingen !{{zijn|zijn niet}} meer dan...",
+                                "en": "Unread notifications !{{are|aren't}} above..."
+                            }
+                        },
+                        {
+                            "id": "friends_above",
+                            "title": {
+                                "nl": "Aantal vrienden !{{is|is niet}} meer dan...",
+                                "en": "Friend count !{{is|isn't}} above..."
+                            }
+                        },
+                        {
+                            "id": "hyves_above",
+                            "title": {
+                                "nl": "Aantal Hyves !{{is|is niet}} meer dan...",
+                                "en": "Number of Hyves !{{is|isn't}} above..."
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "id": "refresh",
+                            "title": {
+                                "nl": "Hyves nu vernieuwen",
+                                "en": "Refresh Hyves now"
+                            }
+                        },
+                        {
+                            "id": "create_post",
+                            "title": {
+                                "nl": "Plaats op Hyves",
+                                "en": "Post on Hyves"
+                            }
+                        },
+                        {
+                            "id": "mark_all_notifications_read",
+                            "title": {
+                                "nl": "Markeer alle meldingen als gelezen",
+                                "en": "Mark all notifications as read"
+                            }
+                        },
+                        {
+                            "id": "mark_notification_read",
+                            "title": {
+                                "nl": "Markeer een melding als gelezen",
+                                "en": "Mark a notification as read"
+                            }
+                        },
+                        {
+                            "id": "send_friend_request",
+                            "title": {
+                                "nl": "Stuur een vriendschapsverzoek",
+                                "en": "Send a friend request"
+                            }
+                        },
+                        {
+                            "id": "accept_friend_request",
+                            "title": {
+                                "nl": "Accepteer een vriendschapsverzoek",
+                                "en": "Accept a friend request"
+                            }
+                        },
+                        {
+                            "id": "decline_friend_request",
+                            "title": {
+                                "nl": "Weiger een vriendschapsverzoek",
+                                "en": "Decline a friend request"
+                            }
+                        },
+                        {
+                            "id": "remove_friend",
+                            "title": {
+                                "nl": "Verwijder een vriend",
+                                "en": "Remove a friend"
+                            }
+                        },
+                        {
+                            "id": "respect_post",
+                            "title": {
+                                "nl": "Geef respect aan een bericht",
+                                "en": "Give respect to a post"
+                            }
+                        },
+                        {
+                            "id": "unrespect_post",
+                            "title": {
+                                "nl": "Verwijder respect van een bericht",
+                                "en": "Remove respect from a post"
+                            }
+                        },
+                        {
+                            "id": "delete_post",
+                            "title": {
+                                "nl": "Verwijder een bericht",
+                                "en": "Delete a post"
+                            }
+                        },
+                        {
+                            "id": "join_group",
+                            "title": {
+                                "nl": "Word lid van een Hyve",
+                                "en": "Join a Hyve"
+                            }
+                        },
+                        {
+                            "id": "leave_group",
+                            "title": {
+                                "nl": "Verlaat een Hyve",
+                                "en": "Leave a Hyve"
+                            }
+                        }
+                    ]
+                },
+                "platforms": [
+                    "local"
+                ],
+                "compatibility": ">=12.3.0",
+                "color": "#FFA322"
+            }
         }
     ]
 }
