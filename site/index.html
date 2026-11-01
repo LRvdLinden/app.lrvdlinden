@@ -18,6 +18,9 @@
   --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
 }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hd-widget .wl{display:none}:root:not([data-theme="light"]) .hd-widget .wd{display:block}}
+:root[data-theme="dark"] .hd-widget .wl{display:none}
+:root[data-theme="dark"] .hd-widget .wd{display:block}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;
   --accent:#8A9DFF;--accent-soft:#1D2547;--build:#F2A15E;--build-soft:#2E2016;
@@ -117,22 +120,68 @@ header.top{padding-block:24px 8px}
 .history .d{color:var(--muted);font-size:12px}
 .history li p{margin:0;color:var(--muted)}
 
-.homey{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px}
+.homey{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.homey-intro{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 20px;align-items:center}
+.homey-intro > .icon{grid-row:1 / span 3}
+.homey-intro .btns{grid-column:3;grid-row:1 / span 3;justify-content:flex-end}
 .homey h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin-top:10px}
-.homey > div > p{color:var(--muted);margin:12px 0 18px;max-width:42ch}
-.homey > div > .icon{background:#fff;margin-bottom:16px}
-.homey ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;align-self:start}
+.homey-intro p{color:var(--muted);margin:0;max-width:62ch}
+.homey-intro h2{margin-top:0}
+.homey-intro > .icon{background:#fff}
+.homey ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;align-self:start}
 .homey li{background:var(--surface);min-width:0}
-.homey li a{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;padding:14px 16px;text-decoration:none;height:100%}
-.homey li a:hover{background:var(--bg)}
-.homey li .icon{width:40px;height:40px;border-radius:10px;margin:0;font-size:14px}
-.homey li b{font-family:var(--f-display);font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.homey li span{font-size:13.5px;color:var(--muted);display:block}
-.homey li .hmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:12.5px;color:var(--muted)}
-.homey li .hmeta .stars{font-size:12.5px}
-.homey li .hnew{margin-top:4px;font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.homey li .mono{overflow-wrap:anywhere;margin-top:4px}
-.homey li .pill{font-size:11px;padding:2px 8px}
+.homey li .hitem{display:grid;grid-template-columns:40px minmax(0,1fr) 16px;gap:12px;padding:14px 16px;height:100%;width:100%;text-align:left;background:none;border:0;font:inherit;color:inherit;cursor:pointer}
+.homey li .hitem:hover{background:var(--bg)}
+.homey li .hitem[aria-expanded="true"]{background:var(--accent-soft)}
+.homey li .chev{width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:8px;transition:transform .2s}
+.homey li .hitem[aria-expanded="true"] .chev{transform:rotate(-135deg);margin-top:12px}
+@media (prefers-reduced-motion:reduce){.homey li .chev{transition:none}}
+
+/* Uitgeklapte Homey-app, zoals in de Homey App Store */
+.homey li.hdetail{grid-column:1/-1;padding:24px;background:var(--surface)}
+.hd-head{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:16px;align-items:center;margin-bottom:18px}
+.hd-head h3{font-size:24px;letter-spacing:-.02em;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.hd-head .sub{font-size:14px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+.hd-close{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:18px;line-height:1}
+.hd-desc{color:var(--muted);margin:0 0 14px;max-width:70ch}
+.hd-facts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.hd-sec{margin-top:24px}
+.hd-sec h4{font-family:var(--f-display);font-size:17px;margin:0 0 12px;display:flex;align-items:baseline;gap:8px}
+.hd-sec h4 small{font:500 13px var(--f-body);color:var(--muted)}
+.hd-drivers{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.hd-driver{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;font-weight:600;font-size:14px;min-width:0}
+.hd-driver .img{width:84px;height:84px;border-radius:16px;background:#fff;display:grid;place-items:center;overflow:hidden}
+.hd-driver .img img{width:100%;height:100%;object-fit:contain}
+.hd-driver .img.ic{background:var(--hc,#2747E8)}
+.hd-driver .img.ic img{width:56%;height:56%;filter:brightness(0) invert(1)}
+.hd-widgets{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.hd-widget{margin:0;min-width:0}
+.hd-widget img{width:100%;height:auto;min-height:96px;object-fit:contain;border-radius:14px;border:1px solid var(--line);background:var(--bg);display:block}
+.hd-widget figcaption{font-size:14px;font-weight:600;margin-top:8px}
+.hd-widget .wd{display:none}
+.hd-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.hd-col{min-width:0}
+.hd-col h5{margin:0 0 8px;font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.hd-col h5::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fc)}
+.hd-col.when{--fc:#E8A317}.hd-col.and{--fc:#2F80ED}.hd-col.then{--fc:#22A06B}
+.hd-col ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.hd-col li{border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;background:var(--bg);min-width:0;overflow-wrap:anywhere}
+.hd-col li.more{display:none}
+.hd-col.open li.more{display:block}
+.hd-col .showall{margin-top:8px;font:600 13px var(--f-body);background:none;border:0;color:var(--accent);cursor:pointer;padding:4px 0}
+.hd-news{display:flex;flex-direction:column;gap:10px}
+.hd-news > div{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;font-size:14px}
+.hd-news .v{font-family:var(--f-mono);font-size:12.5px}
+.hd-news .d{color:var(--muted);font-size:12px}
+.hd-news p{margin:0;color:var(--muted);white-space:pre-line}
+.homey .hitem .icon{width:40px;height:40px;border-radius:10px;margin:0;font-size:14px}
+.homey .hitem b{font-family:var(--f-display);font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.homey .hitem > div > span{font-size:13.5px;color:var(--muted);display:block}
+.homey .hitem .hmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.homey .hitem .hmeta span{display:inline}
+.homey .hitem .hnew{margin-top:4px;font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.homey .hitem .mono{overflow-wrap:anywhere}
+.homey .pill{font-size:11px;padding:2px 8px}
 
 .notice{padding:20px;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}
 footer{padding-block:48px 40px;color:var(--muted);font-size:14px}
@@ -176,7 +225,12 @@ footer nav{display:flex;gap:18px}
 
 @media (max-width:860px){
   .intro{grid-template-columns:1fr;gap:16px;padding-block:32px 24px}
-  .detail,.homey{grid-template-columns:1fr}
+  .detail{grid-template-columns:1fr}
+  .homey ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .homey-intro{grid-template-columns:minmax(0,1fr)}
+  .homey-intro > .icon{grid-row:auto}
+  .homey-intro .btns{grid-column:auto;grid-row:auto;justify-content:flex-start}
+  .hd-flow{grid-template-columns:1fr}
 }
 @media (max-width:600px){
   .promo:not(.has-img){aspect-ratio:4/5;max-height:none;min-height:0}
@@ -189,6 +243,11 @@ footer nav{display:flex;gap:18px}
   .homey{padding:20px;border-radius:20px}
   .lab-card,.detail{padding:18px}
   .homey ul{grid-template-columns:1fr}
+  .homey li.hdetail{padding:18px 14px}
+  .hd-head{grid-template-columns:56px minmax(0,1fr) auto;gap:12px}
+  .hd-head .icon{width:56px;height:56px}
+  .hd-head h3{font-size:20px}
+  .hd-head .btns{grid-column:1/-1}
   .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .right nav{display:none}
 }
@@ -248,7 +307,7 @@ footer nav{display:flex;gap:18px}
 
   <section class="section wrap" id="homey">
     <div class="homey">
-      <div>
+      <div class="homey-intro">
         <span class="icon lg" aria-hidden="true"><img src="img/homey.webp" alt=""></span>
         <div class="eyebrow">Homey &amp; Homey Pro</div>
         <h2 data-t="homeyTitle"></h2>
@@ -288,6 +347,9 @@ const T = {
     donate:"Doneren", live:"Nieuw in de App Store", beta:"Open beta", dev:"In ontwikkeling",
     appstore:"Gratis in de App Store", testflight:"Doe mee via TestFlight", website:"Website",
     getStore:"Downloaden", getBeta:"Probeer beta", getSite:"Bekijk", whatsNew:"Nieuw",
+    hDevices:"Apparaten", hWidgets:"Widgets", hFlow:"Flow-kaarten", hWhen:"Als…", hAnd:"En…", hThen:"Dan…",
+    hWorks:"Werkt op", hStore:"Bekijk in de Homey App Store", hSupport:"Ondersteuning", hSite:"Website",
+    hAll:"Toon alle {n}", hLess:"Toon minder", hClose:"Sluiten", hNews:"Wat is nieuw", hOpen:"Details van {n}",
     rating:"Beoordeling", reviews:"Reviews", age:"Leeftijd", category:"Categorie", language:"Taal", size:"Grootte",
     history:"Versiegeschiedenis", noRating:"Nog geen beoordeling", dev_by:"Léon van der Linden",
     loadError:"De apps konden niet worden geladen. Controleer of apps.json naast index.html staat.",
@@ -304,6 +366,9 @@ const T = {
     donate:"Donate", live:"New on the App Store", beta:"Open beta", dev:"In development",
     appstore:"Free on the App Store", testflight:"Join on TestFlight", website:"Website",
     getStore:"Get", getBeta:"Try beta", getSite:"View", whatsNew:"New",
+    hDevices:"Devices", hWidgets:"Widgets", hFlow:"Flow cards", hWhen:"When…", hAnd:"And…", hThen:"Then…",
+    hWorks:"Works on", hStore:"View in the Homey App Store", hSupport:"Support", hSite:"Website",
+    hAll:"Show all {n}", hLess:"Show less", hClose:"Close", hNews:"What's new", hOpen:"Details of {n}",
     rating:"Rating", reviews:"Reviews", age:"Age", category:"Category", language:"Language", size:"Size",
     history:"Version history", noRating:"No ratings yet", dev_by:"Léon van der Linden",
     loadError:"The apps could not be loaded. Check that apps.json sits next to index.html.",
@@ -437,16 +502,103 @@ function render(){
       ${a.history&&a.history.length?`<div class="history"><h4>${esc(t("history"))}</h4><ol>${a.history.map(h=>`<li><div><div class="mono">${esc(h.version)}</div><div class="d">${esc(date(h.date))}</div></div><p>${esc(L(h.notes))}</p></li>`).join("")}</ol></div>`:""}
     </div>`;
 
+  renderHomey();
+}
+
+// ---------- Homey: lijst met uitklapbare details ----------
+let openHomey = null;
+const flowTitle = txt => String(txt || "")
+  .replace(/!\{\{([^|}]*)\|[^}]*\}\}/g, "$1")   // !{{is|isn't}} -> is
+  .replace(/\[\[[^\]]*\]\]/g, "…")                // [[argument]] -> …
+  .replace(/\{\{[^}]*\}\}/g, "…");
+const homeyUrl = h => (h.links && h.links.homey ? h.links.homey : "").replace("/nl-nl/", lang==="nl" ? "/nl-nl/" : "/en-us/");
+
+function homeyDetail(h){
+  const x = h.homey || {}, last = (h.history || [])[0];
+  const plat = (x.platforms || []).map(p => p === "local" ? "Homey Pro" : p === "cloud" ? "Homey Cloud" : p);
+  const facts = [
+    plat.length ? `<span class="tag">${esc(t("hWorks"))}: ${esc(plat.join(", "))}</span>` : "",
+    x.compatibility ? `<span class="tag">Homey ${esc(x.compatibility.replace(/^>=\s*/, "v").replace(/^v?(\d)/, "v$1"))}+</span>` : "",
+  ].join("");
+  const btns = [
+    homeyUrl(h) ? `<a class="btn primary" href="${esc(homeyUrl(h))}" target="_blank" rel="noopener">${esc(t("hStore"))}</a>` : "",
+    x.homepage ? `<a class="btn" href="${esc(x.homepage)}" target="_blank" rel="noopener">${esc(t("hSite"))}</a>` : "",
+    x.support ? `<a class="btn" href="${esc(x.support)}" target="_blank" rel="noopener">${esc(t("hSupport"))}</a>` : "",
+  ].join("");
+  const drivers = (x.drivers || []).map(d => `
+    <div class="hd-driver">
+      ${d.image ? `<span class="img"><img src="${esc(d.image)}" alt="" loading="lazy"></span>`
+                : `<span class="img ic" style="--hc:${esc(x.color || "#2747E8")}">${d.icon ? `<img src="${esc(d.icon)}" alt="" loading="lazy">` : ""}</span>`}
+      <span>${esc(L(d.name))}</span>
+    </div>`).join("");
+  const widgets = (x.widgets || []).map(w => `
+    <figure class="hd-widget">
+      ${w.light ? `<img class="wl" src="${esc(w.light)}" alt="" loading="lazy">` : ""}
+      ${w.dark || w.light ? `<img class="wd" src="${esc(w.dark || w.light)}" alt="" loading="lazy">` : ""}
+      <figcaption>${esc(L(w.name))}</figcaption>
+    </figure>`).join("");
+  const SHOW = 6;
+  const col = (cls, key, cards) => !cards || !cards.length ? "" : `
+    <div class="hd-col ${cls}">
+      <h5>${esc(t(key))} <small style="font-weight:500;color:var(--muted);letter-spacing:0;text-transform:none">${cards.length}</small></h5>
+      <ol>${cards.map((c,i) => `<li class="${i >= SHOW ? "more" : ""}">${esc(flowTitle(L(c.title)))}</li>`).join("")}</ol>
+      ${cards.length > SHOW ? `<button type="button" class="showall" data-n="${cards.length}">${esc(t("hAll").replace("{n}", cards.length))}</button>` : ""}
+    </div>`;
+  const f = x.flow || {};
+  const nFlow = ["triggers","conditions","actions"].reduce((n,k) => n + ((f[k] || []).length), 0);
+  const news = (h.history || []).slice(0, 3).filter(e => L(e.notes)).map(e => `
+    <div><span><span class="v">v${esc(e.version)}</span><br><span class="d">${esc(date(e.date))}</span></span><p>${esc(L(e.notes))}</p></div>`).join("");
+  return `
+    <div class="hd-head">
+      ${icon(h, "lg")}
+      <div style="min-width:0">
+        <h3>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</h3>
+        <div class="sub">${last && last.version ? `<span class="mono">v${esc(last.version)}</span>` : ""}${h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""}</div>
+      </div>
+      <button type="button" class="hd-close" data-hclose aria-label="${esc(t("hClose"))}">×</button>
+      <div class="btns" style="grid-column:1/-1">${btns}</div>
+    </div>
+    ${L(h.description) ? `<p class="hd-desc">${esc(L(h.description))}</p>` : ""}
+    ${facts ? `<div class="hd-facts">${facts}</div>` : ""}
+    ${drivers ? `<section class="hd-sec"><h4>${esc(t("hDevices"))} <small>${(x.drivers||[]).length}</small></h4><div class="hd-drivers">${drivers}</div></section>` : ""}
+    ${widgets ? `<section class="hd-sec"><h4>${esc(t("hWidgets"))} <small>${(x.widgets||[]).length}</small></h4><div class="hd-widgets">${widgets}</div></section>` : ""}
+    ${nFlow ? `<section class="hd-sec"><h4>${esc(t("hFlow"))} <small>${nFlow}</small></h4><div class="hd-flow">${col("when","hWhen",f.triggers)}${col("and","hAnd",f.conditions)}${col("then","hThen",f.actions)}</div></section>` : ""}
+    ${news ? `<section class="hd-sec"><h4>${esc(t("hNews"))}</h4><div class="hd-news">${news}</div></section>` : ""}`;
+}
+
+function renderHomey(){
+  const homey = APPS.filter(a => a.section === "homey");
+  if (openHomey && !homey.some(h => h.id === openHomey)) openHomey = null;
   $("#homeyList").innerHTML = homey.map(h => {
-    const url = (h.links && h.links.homey ? h.links.homey : "").replace("/nl-nl/", lang==="nl" ? "/nl-nl/" : "/en-us/");
     const last = (h.history || [])[0];
     const meta = [last && last.version ? `<span class="mono">v${esc(last.version)}</span>` : "",
                   h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""].filter(Boolean).join("");
     const news = last && L(last.notes) ? `<span class="hnew">${esc(t("whatsNew"))}: ${esc(L(last.notes).split("\n")[0])}</span>` : "";
-    const inner = `${icon(h)}<div style="min-width:0"><b>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</b><span>${esc(L(h.description))}</span>${meta?`<span class="hmeta">${meta}</span>`:""}${news}</div>`;
-    return `<li>${url?`<a href="${esc(url)}" target="_blank" rel="noopener">${inner}</a>`:`<a>${inner}</a>`}</li>`;
+    return `<li><button type="button" class="hitem" data-hid="${esc(h.id)}" aria-expanded="${openHomey===h.id}" aria-label="${esc(t("hOpen").replace("{n}", h.name))}">
+      ${icon(h)}<div style="min-width:0"><b>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</b><span>${esc(L(h.description))}</span>${meta?`<span class="hmeta">${meta}</span>`:""}${news}</div>
+      <span class="chev" aria-hidden="true"></span></button></li>`;
   }).join("");
+  placeHomeyDetail();
 }
+
+// Het detailpaneel komt onder de rij van de aangeklikte app, over de volle breedte.
+function placeHomeyDetail(){
+  const ul = $("#homeyList"); ul.querySelector(".hdetail")?.remove();
+  if (!openHomey) return;
+  const h = APPS.find(a => a.id === openHomey); if (!h) return;
+  const items = [...ul.querySelectorAll(":scope > li")];
+  const idx = items.findIndex(li => li.querySelector(`[data-hid="${CSS.escape(openHomey)}"]`));
+  const cols = getComputedStyle(ul).gridTemplateColumns.split(" ").filter(Boolean).length || 1;
+  const rowEnd = Math.min(items.length - 1, Math.floor(idx / cols) * cols + cols - 1);
+  const li = document.createElement("li"); li.className = "hdetail"; li.id = "homeyDetail";
+  li.innerHTML = homeyDetail(h);
+  items[rowEnd].after(li);
+}
+let lastCols = 0;
+window.addEventListener("resize", () => {
+  const cols = getComputedStyle($("#homeyList")).gridTemplateColumns.split(" ").length;
+  if (cols !== lastCols) { lastCols = cols; placeHomeyDetail(); }
+}, {passive:true});
 
 // Promo-banners: elke 8 seconden automatisch naar de volgende.
 // Pauzeert bij muis erop, toetsenbordfocus, aanraken en als de pagina niet zichtbaar is.
@@ -479,6 +631,10 @@ $("#promo").addEventListener("scroll", () => {
   document.querySelectorAll("#promoDots button").forEach((b,j) => b.setAttribute("aria-current", j===i));
 }, {passive:true});
 
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && openHomey) document.querySelector("[data-hclose]")?.click();
+});
+
 document.addEventListener("click", e => {
   const pd = e.target.closest("[data-promo]");
   if (pd){ goPromo(+pd.dataset.promo); startPromoTimer(); return; }
@@ -486,6 +642,27 @@ document.addEventListener("click", e => {
   if (lb){ lang = lb.dataset.lang; try{localStorage.setItem("lr-lang",lang)}catch(_){} render(); return; }
   const ch = e.target.closest(".chip");
   if (ch){ cat = ch.dataset.cat; render(); return; }
+  const hi = e.target.closest(".hitem");
+  if (hi){
+    openHomey = openHomey === hi.dataset.hid ? null : hi.dataset.hid;
+    document.querySelectorAll(".hitem").forEach(b => b.setAttribute("aria-expanded", b.dataset.hid === openHomey));
+    placeHomeyDetail();
+    if (openHomey) $("#homeyDetail")?.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"nearest"});
+    return;
+  }
+  if (e.target.closest("[data-hclose]")){
+    const was = openHomey; openHomey = null;
+    document.querySelectorAll(".hitem").forEach(b => b.setAttribute("aria-expanded", "false"));
+    placeHomeyDetail();
+    document.querySelector(`.hitem[data-hid="${CSS.escape(was)}"]`)?.focus();
+    return;
+  }
+  const sa = e.target.closest(".showall");
+  if (sa){
+    const c = sa.closest(".hd-col"); c.classList.toggle("open");
+    sa.textContent = c.classList.contains("open") ? t("hLess") : t("hAll").replace("{n}", sa.dataset.n);
+    return;
+  }
   const ap = e.target.closest(".app");
   if (ap){ open = open===ap.dataset.id ? null : ap.dataset.id; render();
     if (open) $("#detailSlot").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"nearest"}); }

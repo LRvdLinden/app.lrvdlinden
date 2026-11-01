@@ -98,17 +98,20 @@ def clean(text):
 
 
 # ---------- vertalen ----------
-def translate_batch(items):
+def translate_batch(items, kind="notes"):
     """items: lijst van (bron_tekst, doeltaal). Geeft lijst met vertalingen of None per item."""
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not items or not key:
         return [None] * len(items)
     names = {"nl": "Dutch", "en": "English"}
     payload = [{"i": i, "target": names[t], "text": s} for i, (s, t) in enumerate(items)]
+    what = ("app release note" if kind == "notes" else
+            "short Homey smart-home app text (device name, widget name or Flow card title as shown in the Homey app)")
     prompt = (
-        "Translate each app release note below into the target language. "
+        f"Translate each {what} below into the target language. "
         "Keep the meaning, tone, line breaks, bullet characters, version numbers and product names exactly. "
-        "Use natural, informal app-store wording (Dutch: use 'je'). "
+        "Keep placeholders like !{{is|isn't}}, [[name]] and {{token}} intact; translate only the words inside !{{...|...}}. "
+        "Use the wording the Homey app uses (Dutch: informal 'je'). "
         "Reply with only a JSON array of objects {\"i\": number, \"text\": string}, nothing else.\n\n"
         + json.dumps(payload, ensure_ascii=False)
     )
@@ -286,6 +289,78 @@ def check_appstore(apps, log):
 
 
 # ---------- Homey ----------
+def loc(d):
+    """Meertalig Homey-veld terugbrengen tot {nl, en}. Ontbreken beide, dan de eerste taal als en."""
+    if isinstance(d, str):
+        return {"en": d}
+    if not isinstance(d, dict):
+        return {}
+    out = {k: clean(d[k]) for k in ("nl", "en") if isinstance(d.get(k), str) and d[k].strip()}
+    if not out:
+        first = next((v for v in d.values() if isinstance(v, str) and v.strip()), None)
+        if first:
+            out["en"] = clean(first)
+    return out
+
+
+def known_translations(old):
+    """Bestaande vertalingen uit de vorige versie, zodat ze niet elke dag opnieuw gemaakt worden."""
+    table = {}
+    def walk(o):
+        if isinstance(o, dict):
+            if set(o) <= {"nl", "en"} and o.get("nl") and o.get("en"):
+                table[("en", o["en"])] = o["nl"]
+                table[("nl", o["nl"])] = o["en"]
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+    walk(old or {})
+    return table
+
+
+def homey_details(build, old):
+    """Apparaten, widgets en Flow-kaarten zoals de Homey App Store ze toont."""
+    table = known_translations(old)
+    def L(d):
+        t = loc(d)
+        for have, need in (("en", "nl"), ("nl", "en")):
+            if t.get(have) and not t.get(need) and (have, t[have]) in table:
+                t[need] = table[(have, t[have])]
+        return t
+    drivers = []
+    for d in build.get("drivers") or []:
+        if not isinstance(d, dict) or d.get("deprecated"):
+            continue
+        drivers.append({k: v for k, v in {
+            "id": d.get("id"), "name": L(d.get("name")), "class": d.get("class"),
+            "image": d.get("imageSmall") or d.get("imageLarge"), "icon": d.get("icon"),
+        }.items() if v})
+    widgets = []
+    w = build.get("widgets") or {}
+    for wid, wd in (w.items() if isinstance(w, dict) else enumerate(w)):
+        if not isinstance(wd, dict) or wd.get("deprecated"):
+            continue
+        widgets.append({k: v for k, v in {
+            "id": wd.get("id") or str(wid), "name": L(wd.get("name")),
+            "light": wd.get("previewLight"), "dark": wd.get("previewDark"),
+        }.items() if v})
+    flow = {}
+    for kind in ("triggers", "conditions", "actions"):
+        cards = []
+        for c in (build.get("flow") or {}).get(kind) or []:
+            if not isinstance(c, dict) or c.get("deprecated") or not c.get("title"):
+                continue
+            cards.append({"id": c.get("id"), "title": L(c.get("title"))})
+        if cards:
+            flow[kind] = cards
+    out = {"drivers": drivers, "widgets": widgets, "flow": flow,
+           "platforms": build.get("platforms") or [], "compatibility": build.get("compatibility"),
+           "color": build.get("brandColor"), "homepage": build.get("homepage"), "support": build.get("support")}
+    return {k: v for k, v in out.items() if v}
+
+
 def check_homey(apps, log):
     for app in [a for a in apps if a.get("section") == "homey"]:
         hid = homey_id(app)
@@ -315,6 +390,9 @@ def check_homey(apps, log):
         app.pop("reviews", None)  # Homey kent geen aantal beoordelingen
         if info.get("rating") is None:
             app.pop("rating", None)
+        build = info.get("liveBuild") if live else (info.get("testBuild") or info.get("liveBuild"))
+        if isinstance(build, dict):
+            app["homey"] = homey_details(build, app.get("homey"))
         for v, e in entries[:HOMEY_HISTORY]:
             cl = e.get("changelog") or {}
             notes = {k: clean(cl[k]) for k in ("nl", "en") if cl.get(k)}
@@ -535,6 +613,38 @@ def discover_homey(apps, log):
             log.append(f"- {'Nieuwe app' if new else 'Aangevuld'}: {app['name']} (Homey)")
 
 # ---------- ontbrekende talen vertalen ----------
+def fill_homey_translations(apps, log):
+    """Ontbrekende NL/EN-teksten in apparaten, widgets en Flow-kaarten vertalen."""
+    todo = []
+    def walk(o):
+        if isinstance(o, dict):
+            if set(o) <= {"nl", "en"} and o and len([k for k in ("nl", "en") if o.get(k)]) == 1:
+                have = "nl" if o.get("nl") else "en"
+                todo.append((o, have, "en" if have == "nl" else "nl"))
+                return
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+    for app in apps:
+        if app.get("section") == "homey":
+            walk(app.get("homey"))
+    if not todo:
+        return
+    results = []
+    for i in range(0, len(todo), 60):
+        chunk = todo[i:i + 60]
+        results += translate_batch([(o[have], need) for o, have, need in chunk], kind="short")
+    done = 0
+    for (o, have, need), text in zip(todo, results):
+        if text:
+            o[need] = text
+            done += 1
+    if done:
+        log.append(f"- {done} Homey-tekst(en) (apparaten, widgets, Flow-kaarten) vertaald")
+
+
 def fill_translations(apps, log):
     todo = []
     for app in apps:
@@ -572,6 +682,7 @@ def main():
     check_appstore(apps, log)
     check_homey(apps, log)
     fill_translations(apps, log)
+    fill_homey_translations(apps, log)
     for app in apps:
         if "history" in app:
             # lege versieregels (zonder versie en zonder tekst) opruimen

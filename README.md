@@ -54,8 +54,9 @@ Hetzelfde gebeurt met de knop **Nieuwe apps ophalen** in `beheer.html`.
 
 - **App Store** (apps met een App Store-link): versie, wat-is-nieuw, sterren en aantal beoordelingen
   (opgeteld over 44 landen), grootte en talen.
-- **Homey**: live- of testversie (status Live/Test), de laatste 10 changelog-regels en sterren.
-  Homey toont geen aantal beoordelingen.
+- **Homey**: live- of testversie (status Live/Test), de laatste 10 changelog-regels en sterren
+  (Homey toont geen aantal beoordelingen), plus de apparaten, widgets en Flow-kaarten. Op de site
+  klap je een Homey-app open om die te zien, net als in de Homey App Store.
 
 Wat-is-nieuw wordt in NL en EN opgeslagen; ontbreekt een taal, dan vertaalt de Claude API hem
 (alleen nieuwe teksten, dus hooguit een paar cent per maand). Bij wijzigingen wordt `site/apps.json`
