@@ -94,6 +94,13 @@ def translate_batch(items):
             if isinstance(o, dict) and isinstance(o.get("i"), int) and 0 <= o["i"] < len(items):
                 out[o["i"]] = clean(o.get("text"))
         return out
+    except urllib.error.HTTPError as e:
+        try:
+            msg = json.loads(e.read().decode()).get("error", {}).get("message", "")
+        except Exception:
+            msg = ""
+        print(f"::warning::Vertalen mislukt (HTTP {e.code}: {msg or e.reason}). Teksten blijven in de originele taal.")
+        return [None] * len(items)
     except Exception as e:
         print(f"::warning::Vertalen mislukt ({e}). Teksten blijven in de originele taal.")
         return [None] * len(items)
