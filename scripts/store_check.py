@@ -18,7 +18,11 @@ from datetime import datetime
 
 APPS_JSON = sys.argv[1] if len(sys.argv) > 1 else "site/apps.json"
 FIXTURES = os.environ.get("STORE_FIXTURES")  # alleen voor lokaal testen
-COUNTRIES = ["nl", "be", "us", "gb", "de", "fr", "es", "it", "ca", "au"]
+# Beoordelingen telt Apple per land; dit zijn de grootste App Store-landen (plus NL/BE).
+COUNTRIES = ["nl", "be", "us", "gb", "de", "fr", "es", "it", "ca", "au", "ie", "at", "ch", "lu", "dk", "se", "no", "fi",
+             "pl", "pt", "cz", "gr", "tr", "nz", "za", "in", "jp", "kr", "cn", "tw", "hk", "sg", "my", "id", "ph", "th",
+             "ae", "sa", "il", "br", "mx", "ar", "cl", "co"]
+PAUSE = float(os.environ.get("STORE_PAUSE", "3"))  # Apple staat ongeveer 20 aanvragen per minuut toe
 HOMEY_HISTORY = 10
 MODEL = os.environ.get("TRANSLATE_MODEL", "claude-haiku-5-5")
 UA = {"User-Agent": "lrvdlinden.app store-check (+https://lrvdlinden.app)"}
@@ -172,6 +176,8 @@ def check_appstore(apps, log):
     per_country = {}
     for cc in COUNTRIES:
         data = get_json(f"https://itunes.apple.com/lookup?id={ids}&country={cc}&entity=software")
+        if not FIXTURES:
+            time.sleep(PAUSE)
         for r in (data or {}).get("results", []):
             per_country.setdefault(str(r.get("trackId")), {})[cc] = r
     for app in ios:
@@ -188,6 +194,9 @@ def check_appstore(apps, log):
             avg = sum(float(r.get("averageUserRating") or 0) * int(r.get("userRatingCount") or 0) for r in res.values()) / total
             app["rating"] = round(avg, 1)
             app["reviews"] = total
+        elif len(res) >= len(COUNTRIES) // 2:  # alleen als de meeste landen zijn opgehaald
+            app.pop("rating", None)
+            app["reviews"] = 0
         size = fmt_size(main.get("fileSizeBytes"))
         if size:
             app["size"] = size
