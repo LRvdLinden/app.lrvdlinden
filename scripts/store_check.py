@@ -441,6 +441,9 @@ def discover_appstore(apps, log):
             if not FIXTURES:
                 time.sleep(PAUSE)
     known = {appstore_id(a) for a in apps if appstore_id(a)}
+    names = sorted({(next(iter(r.values())).get("trackName") or "?") for r in found.values()})
+    print(f"::notice::App Store: {len(found)} apps bij ontwikkelaar {DEVELOPER_ID}, "
+          f"{len([t for t in found if t not in known])} nog niet op de site. ({', '.join(names)})")
     jobs = []
     for tid, res in found.items():
         if tid in known:
@@ -489,6 +492,8 @@ def discover_homey(apps, log):
                 break
             listed += fresh
     known = {homey_id(a) for a in apps if a.get("section") == "homey"}
+    print(f"::notice::Homey: {len(listed)} apps op de auteurspagina's, "
+          f"{len([h for h in listed if h not in known])} nog niet op de site. ({', '.join(listed)})")
     jobs = []
     touched = []
     for hid in listed:
