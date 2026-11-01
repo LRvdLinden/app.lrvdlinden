@@ -1,0 +1,23 @@
+name: Store probe (eenmalig)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 scripts/store_probe.py
+      - name: Resultaat naar branch store-probe
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan store-probe
+          git rm -rfq --cached .
+          git add -f probe
+          git commit -qm "Store probe resultaat"
+          git push -f origin store-probe
