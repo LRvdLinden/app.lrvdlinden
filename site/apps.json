@@ -5,7 +5,7 @@
             "id": "nl-lrvdlinden-weekdot",
             "name": "Weekdot",
             "section": "ios",
-            "status": "beta",
+            "status": "live",
             "featured": true,
             "category": "utilities",
             "platforms": [
@@ -21,7 +21,8 @@
             "links": {
                 "testflight": "https://testflight.apple.com/join/kaFEvrXd",
                 "website": "https://weekdot.com",
-                "homey": "https://homey.app/en-us/app/nl.lrvdlinden.weekdot/Weekdot/test/"
+                "homey": "https://homey.app/en-us/app/nl.lrvdlinden.weekdot/Weekdot/test/",
+                "appstore": "https://apps.apple.com/us/app/weekdot/id6826670273"
             },
             "history": [],
             "icon": "img/nl-lrvdlinden-weekdot.webp",
