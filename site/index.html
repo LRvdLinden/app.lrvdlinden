@@ -128,6 +128,9 @@ header.top{padding-block:24px 8px}
 .homey li .icon{width:40px;height:40px;border-radius:10px;margin:0;font-size:14px}
 .homey li b{font-family:var(--f-display);font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .homey li span{font-size:13.5px;color:var(--muted);display:block}
+.homey li .hmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.homey li .hmeta .stars{font-size:12.5px}
+.homey li .hnew{margin-top:4px;font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .homey li .mono{overflow-wrap:anywhere;margin-top:4px}
 .homey li .pill{font-size:11px;padding:2px 8px}
 
@@ -284,7 +287,7 @@ const T = {
     homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In ontwikkeling",
     donate:"Doneren", live:"Nieuw in de App Store", beta:"Open beta", dev:"In ontwikkeling",
     appstore:"Gratis in de App Store", testflight:"Doe mee via TestFlight", website:"Website",
-    getStore:"Downloaden", getBeta:"Probeer beta", getSite:"Bekijk",
+    getStore:"Downloaden", getBeta:"Probeer beta", getSite:"Bekijk", whatsNew:"Nieuw",
     rating:"Beoordeling", reviews:"Reviews", age:"Leeftijd", category:"Categorie", language:"Taal", size:"Grootte",
     history:"Versiegeschiedenis", noRating:"Nog geen beoordeling", dev_by:"Léon van der Linden",
     loadError:"De apps konden niet worden geladen. Controleer of apps.json naast index.html staat.",
@@ -300,7 +303,7 @@ const T = {
     homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In development",
     donate:"Donate", live:"New on the App Store", beta:"Open beta", dev:"In development",
     appstore:"Free on the App Store", testflight:"Join on TestFlight", website:"Website",
-    getStore:"Get", getBeta:"Try beta", getSite:"View",
+    getStore:"Get", getBeta:"Try beta", getSite:"View", whatsNew:"New",
     rating:"Rating", reviews:"Reviews", age:"Age", category:"Category", language:"Language", size:"Size",
     history:"Version history", noRating:"No ratings yet", dev_by:"Léon van der Linden",
     loadError:"The apps could not be loaded. Check that apps.json sits next to index.html.",
@@ -436,7 +439,11 @@ function render(){
 
   $("#homeyList").innerHTML = homey.map(h => {
     const url = (h.links && h.links.homey ? h.links.homey : "").replace("/nl-nl/", lang==="nl" ? "/nl-nl/" : "/en-us/");
-    const inner = `${icon(h)}<div style="min-width:0"><b>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</b><span>${esc(L(h.description))}</span></div>`;
+    const last = (h.history || [])[0];
+    const meta = [last && last.version ? `<span class="mono">v${esc(last.version)}</span>` : "",
+                  h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""].filter(Boolean).join("");
+    const news = last && L(last.notes) ? `<span class="hnew">${esc(t("whatsNew"))}: ${esc(L(last.notes).split("\n")[0])}</span>` : "";
+    const inner = `${icon(h)}<div style="min-width:0"><b>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</b><span>${esc(L(h.description))}</span>${meta?`<span class="hmeta">${meta}</span>`:""}${news}</div>`;
     return `<li>${url?`<a href="${esc(url)}" target="_blank" rel="noopener">${inner}</a>`:`<a>${inner}</a>`}</li>`;
   }).join("");
 }

@@ -26,6 +26,7 @@ Zet deze onder **Settings → Secrets and variables → Actions → New reposito
 | `FTP_PORT` | Meestal `21` (`22` = SFTP) |
 | `FTP_DIR` | Optioneel: doelmap als die niet automatisch klopt |
 | `PUBLISH_GITHUB_TOKEN` | Fine-grained token, alleen voor deze repo, met *Contents: Read and write* |
+| `ANTHROPIC_API_KEY` | Optioneel: API-sleutel om wat-is-nieuw-teksten naar NL/EN te vertalen |
 
 Wachtwoord en token komen alleen op de server terecht, nooit in de repo of in de (publieke) zip-releases.
 
@@ -38,3 +39,16 @@ Wachtwoord en token komen alleen op de server terecht, nooit in de repo of in de
 
 Wijzigingen aan de code (bijv. `index.html`) gaan via een commit in `site/`; ook die worden automatisch live gezet.
 Handmatig opnieuw uitrollen: **Actions → Release site → Run workflow**.
+
+## Dagelijkse store-check
+
+Elke dag om 08:00 loopt **Actions → Store-check** de App Store en de Homey App Store na:
+
+- **App Store** (apps met een App Store-link): versie, wat-is-nieuw, sterren en aantal beoordelingen
+  (opgeteld over NL, BE, VS, VK, DE, FR, ES, IT, CA en AU), grootte en talen.
+- **Homey**: live- of testversie (status Live/Test), de laatste 10 changelog-regels en sterren.
+  Homey toont geen aantal beoordelingen.
+
+Wat-is-nieuw wordt in NL en EN opgeslagen; ontbreekt een taal, dan vertaalt de Claude API hem
+(alleen nieuwe teksten, dus hooguit een paar cent per maand). Bij wijzigingen wordt `site/apps.json`
+bijgewerkt en de site automatisch opnieuw live gezet. Handmatig draaien: **Run workflow**.

@@ -1,0 +1,73 @@
+name: Store-check
+
+# Elke dag om 08:00 (Nederlandse tijd) de App Store en de Homey App Store nalopen:
+# versies, wat-is-nieuw (NL en EN), sterren en aantal beoordelingen.
+# Bij wijzigingen wordt site/apps.json bijgewerkt en de site via "Release site" opnieuw live gezet.
+#
+# GitHub-planningen draaien in UTC. Daarom staan er twee tijden (zomer- en wintertijd);
+# de job gaat alleen echt aan de slag als het in Nederland tussen 08:00 en 09:59 is.
+
+on:
+  schedule:
+    - cron: "2 6 * * *"
+    - cron: "2 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: store-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Is het 08:00 in Nederland?
+        id: when
+        run: |
+          H=$(TZ=Europe/Amsterdam date +%H)
+          echo "Nederlandse tijd: $(TZ=Europe/Amsterdam date '+%d-%m-%Y %H:%M')"
+          # 08 of 09 uur: GitHub start geplande taken soms wat later. Een tweede run op dezelfde ochtend
+          # verandert niets, want het script schrijft alleen bij echte wijzigingen.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$H" = "08" ] || [ "$H" = "09" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Niet het juiste uur, overslaan."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v5
+        if: steps.when.outputs.run == 'true'
+
+      - name: Stores nalopen
+        if: steps.when.outputs.run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python3 scripts/store_check.py site/apps.json
+          cat store-check-summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Opslaan en live zetten
+        if: steps.when.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- site/apps.json; then
+            echo "Geen wijzigingen."
+            exit 0
+          fi
+          git config user.name "Store-check"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/apps.json
+          git commit -q -F store-check-summary.md
+          # Tussentijds gepubliceerd via de beheerpagina? Dan eerst bijwerken.
+          for i in 1 2 3; do
+            if git push -q origin HEAD:main; then break; fi
+            git pull -q --rebase origin main || { echo "::error::Samenvoegen met een tussentijdse wijziging mislukte."; exit 1; }
+          done
+          # Een push met de standaard-token start geen andere workflows; daarom expliciet de release starten.
+          gh workflow run release.yml --ref main
+          echo "Site wordt opnieuw live gezet."
