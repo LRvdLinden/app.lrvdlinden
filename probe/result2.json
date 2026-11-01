@@ -1,0 +1,76 @@
+{
+  "nl.lrvdlinden.p2000/changelog": {
+    "status": 200,
+    "body": "{\"1.0.0\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"First release\"},\"createdAt\":\"2023-07-01T12:00:27.336Z\"},\"1.0.2\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Update settings page\"},\"createdAt\":\"2023-07-01T12:29:04.332Z\"},\"1.0.3\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Minor bug fix\"},\"createdAt\":\"2023-07-02T05:52:31.136Z\"},\"1.0.4\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Minor bug fix\"},\"createdAt\":\"2023-07-02T08:55:05.067Z\"},\"1.0.5\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"NEW: app release\"},\"createdAt\":\"2023-07-03T03:21:39.529Z\"},\"1.0.6\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Changing the timeout function\"},\"createdAt\":\"2023-07-04T11:48:27.136Z\"},\"1.0.7\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Realtime notification\"},\"createdAt\":\"2023-07-04T12:42:40.662Z\"},\"1.0.8\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Minor bug fix\"},\"createdAt\":\"2023-07-04T14:51:26.812Z\"},\"1.0.9\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Bug fix feed\"},\"createdAt\":\"2023-07-04T19:35:29.260Z\"},\"1.1.0\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"New: Extra information in the settings page about; all capcodes meanings, when to call 112 (911), hat to do with storm and water damage, 122NL app\"},\"createdAt\":\"2023-07-05T13:32:40.208Z\"},\"1.1.1\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Fix: Minor bug fix | New: Extra information in the settings page about; all capcodes meanings, when to call 112 (911), what to do with storm and water damage, 122NL app\"},\"createdAt\":\"2023-07-05T16:58:24.290Z\"},\"1.1.2\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"New: Additional explanation of settings\"},\"createdAt\":\"2023-07-06T10:37:05.727Z\"},\"1.1.3\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"New: Added extra new tags for filtering\"},\"createdAt\":\"2023-07-07T06:42:38.285Z\"},\"1.1.4\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Improvemend feed\"},\"createdAt\":\"2023-07-07T07:51:36.998Z\"},\"1.1.5\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Rebuild settings page en improvements\"},\"createdAt\":\"2023-07-10T02:03:24.401Z\"},\"1.1.6\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Added translation for: 🇵🇱 🇹🇷 🇲🇦 🇨🇳\"},\"createdAt\":\"2023-07-14T14:58:59.735Z\"},\"2.0.0\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"New: tags for City, municipality, capcode and Prio1\"},\"createdAt\":\"2023-07-14T21:22:06.651Z\"},\"2.0.1\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Little changes translation for: 🇵🇱 🇹🇷 🇲🇦 🇨🇳\"},\"createdAt\":\"2023-07-16T12:50:14.468Z\"},\"2.0.2\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Minor bug fix\"},\"createdAt\":\"2023-07-17T12:14:17.722Z\"},\"2.0.3\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Added readme.txt for 🇵🇱\"},\"createdAt\":\"2023-07-18T14:42:25.670Z\"},\"2.0.4\":{\"state\":\"superseded\",\"changelog\":{\"nl\":\"Verbetering feed\",\"en\":\"Improvement feed\",\"pl\":\"Poprawa feedu\"},\"createdAt\":\"2023-07-18T17:51:46.420Z\"},\"2.1.0\":{\"state\":\"superseded\",\"changelog\":{\"nl\":\"Toegevoegd P2000-apparaat en instellingenpagina verplaatst naar apparaatinstellingen. Met dank aan @Martin_Verbeek. ⚠️ BELANGRIJK: Na het updaten van oudere versies, controleer je flows nadat je een"
+  },
+  "nl.lrvdlinden.p2000/versions": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "nl.lrvdlinden.p2000/build": {
+    "status": 401,
+    "body": "{\"error\":\"Unauthorized\"}"
+  },
+  "nl.lrvdlinden.p2000/reviews": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "nl.lrvdlinden.p2000/stats": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "nl.lrvdlinden.postnl/changelog": {
+    "status": 200,
+    "body": "{\"0.1.0\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"First test version with PostNL OAuth, My Mail, parcel data, local mail archive, Flow cards and dark/light widget.\",\"nl\":\"Eerste testversie met PostNL OAuth, Mijn Post, pakketgegevens, lokaal postarchief, Flow-kaarten en dark/light-widget.\"},\"createdAt\":\"2026-09-15T13:35:28.386Z\"},\"0.1.1\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"bugfix drivers\"},\"createdAt\":\"2026-09-15T13:49:35.482Z\"},\"0.1.2\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"New app icon and images\"},\"createdAt\":\"2026-09-15T13:54:09.526Z\"},\"0.1.3\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"bugfix add device\"},\"createdAt\":\"2026-09-15T14:30:38.450Z\"},\"0.1.4\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Moved PostNL authentication to App Settings. After signing in, the PostNL account device can be added using Homey's standard device pairing flow.\",\"nl\":\"PostNL-aanmelding verplaatst naar App-instellingen. Na het aanmelden kan het PostNL-accountapparaat via de standaard Homey-koppelroute worden toegevoegd.\"},\"createdAt\":\"2026-09-15T14:42:30.859Z\"},\"0.1.5\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Fixed opening the PostNL authorization page. Device pairing now checks the App Settings login first and redirects unauthenticated users to a clear login step before any device can be added.\",\"nl\":\"Openen van de PostNL-aanmeldpagina opgelost. De device-koppeling controleert nu eerst de aanmelding uit App-instellingen en stuurt niet-aangemelde gebruikers naar een duidelijke aanmeldstap voordat een apparaat kan worden toegevoegd.\"},\"createdAt\":\"2026-09-15T15:01:06.152Z\"},\"0.1.7\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Fixed the PostNL login button in App Settings. The authorization URL is prepared in advance and opens as a real link in a new blank browser tab, including on iOS.\",\"nl\":\"De PostNL-loginbutton in App-instellingen opgelost. De aanmeld-URL wordt vooraf klaargezet en opent als echte link in een nieuw leeg browsertabblad, ook op iOS.\"},\"createdAt\":\"2026-09-15T15:18:42.881Z\"},\"0.1.8\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Fixed App Settings login and device creation, added strict PostNL session validation before pairing, renamed all visible device references to Mijn PostNL, and added the new package-search device icon.\",\"nl\":\"Inloggen via App-instellingen en device toevoegen opgelost, strikte PostNL-sessiecontrole vóór pairing toegevoegd, alle zichtbare deviceverwijzingen hernoemd naar Mijn PostNL en het nieuwe pakketzoek-device-icoon toegevoegd.\"},\"createdAt\":\"2026-09-15T18:22:22.689Z\"},\"0.1.9\":{\"state\":\"superseded\",\"changelog\":{\"en\":\"Renamed the device and widget to My PostNL in English and Mijn PostNL in Dutch. Reduced production build size by moving the Homey SDK to development dependencies and excluding macOS build folders.\",\"nl\":\"Device en widget hernoemd naar My PostNL in het Engels en Mijn PostNL in het Nederlands. De productiebuild verkleind door de Homey SDK naar ontwikkelafhankelijkheden te verplaatsen en macOS-buildmappen uit te sluiten.\"},"
+  },
+  "nl.lrvdlinden.postnl/versions": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "nl.lrvdlinden.postnl/build": {
+    "status": 401,
+    "body": "{\"error\":\"Unauthorized\"}"
+  },
+  "nl.lrvdlinden.postnl/reviews": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "nl.lrvdlinden.postnl/stats": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "nl.lrvdlinden.weekdot/changelog": {
+    "status": 200,
+    "body": "{\"0.0.3\":{\"state\":\"test\",\"changelog\":{\"en\":\"Fix homey auth\"},\"createdAt\":\"2026-10-30T19:45:41.040Z\"},\"0.0.4\":{\"state\":\"test\",\"changelog\":{\"en\":\"App icon\"},\"createdAt\":\"2026-10-30T19:56:00.219Z\"},\"0.0.7\":{\"state\":\"test\",\"changelog\":{\"en\":\"Support Homey internationalization \"},\"createdAt\":\"2026-10-31T06:40:58.285Z\"},\"1.0.0\":{\"state\":\"in_review\",\"changelog\":{\"en\":\"First release\"},\"createdAt\":\"2026-10-31T06:49:25.766Z\"}}"
+  },
+  "nl.lrvdlinden.weekdot/versions": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "nl.lrvdlinden.weekdot/build": {
+    "status": 401,
+    "body": "{\"error\":\"Unauthorized\"}"
+  },
+  "nl.lrvdlinden.weekdot/reviews": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "nl.lrvdlinden.weekdot/stats": {
+    "status": 404,
+    "body": "{\"error\":\"Not Found\"}"
+  },
+  "js": [
+    "/js/main.9999c7ee-c482-4d58-aff3-c302d7eecf17.js",
+    "/js/pages/app.min.9999c7ee-c482-4d58-aff3-c302d7eecf17.js",
+    "https://js.sentry-cdn.com/14f1a9b84233495ab1f21abe51754257.min.js",
+    "https://sa.athom.com/latest.js"
+  ],
+  "jsHits https://homey.app/js/main.9999c7ee-c482-4d58-aff3-c302d7eecf17.js": [
+    "ass(\"is-disabled\",0===this.$installDialogHomeySelector.find(\"option\").length);const e=new URLSearchParams(window.location.search);\"true\"===e.get(\"showInstallDialogAfterOnUser\")&&this.showInstallDialog(),\"true\"===e.get(\"openSuggestionPopupAfterOnUser\")&&this.openSuggestion(),this.getThanks()}}onCloudApi(){this.appsApi=new AthomAppsAPI({baseUrl:ATHOM_APPS_API_URL});let e=!1;$('[data-popup-open=\"app-changelog\"]').on(\"click\",()=>{e||(this._getChangelog(),e=!0)})}showInstallDialog(){if(this.$install.hasClass(\"is-disabled\"))return;if(!this.user)return this.cloudApi.login(\"showInstallDialogAfterOnUser=true\");const e=this.$installDialogHomeySelector.val();this.handleNotInstallable(e),this.$installDialog.addClass(\"visible\")}hideInstallDialog(){this.$installDialog.removeClass(\"visible\"),this.$instal",
+    "meySelector.find(\"option\").length);const e=new URLSearchParams(window.location.search);\"true\"===e.get(\"showInstallDialogAfterOnUser\")&&this.showInstallDialog(),\"true\"===e.get(\"openSuggestionPopupAfterOnUser\")&&this.openSuggestion(),this.getThanks()}}onCloudApi(){this.appsApi=new AthomAppsAPI({baseUrl:ATHOM_APPS_API_URL});let e=!1;$('[data-popup-open=\"app-changelog\"]').on(\"click\",()=>{e||(this._getChangelog(),e=!0)})}showInstallDialog(){if(this.$install.hasClass(\"is-disabled\"))return;if(!this.user)return this.cloudApi.login(\"showInstallDialogAfterOnUser=true\");const e=this.$installDialogHomeySelector.val();this.handleNotInstallable(e),this.$installDialog.addClass(\"visible\")}hideInstallDialog(){this.$installDialog.removeClass(\"visible\"),this.$installDialogSuccess.removeClass(\"visible\")}insta",
+    "{this.$engagePopupSuggestionSubmitButton.removeClass(\"is-loading\")}))}showSuggestionError(e){e||(e=this.errorTypes.unknown),this.$engagePopupSuggestionError.text(e),this.$engagePopupSuggestion.addClass(\"is-error\")}hideSuggestionError(){this.$engagePopupSuggestionError.text(\"\"),this.$engagePopupSuggestion.removeClass(\"is-error\")}playSvgatorAnimation(e){(e?e.svgatorPlayer:{}).ready(e=>e.play())}_getChangelog(){\"function\"==typeof this.appsApi.getAppChangelog&&this.appsApi.getAppChangelog({appId:this.appId}).then(e=>{const t=$(\"<dl>\");Object.entries(e).forEach(([e,n])=>{if(n.createdAt){const i=$('<dt class=\"version\">').text(e),o=$('<dd class=\"text\">').text(_i(n.changelog)),s=$('<dd class=\"date\">').text(new Date(n.createdAt).toLocaleDateString(void 0,{year:\"numeric\",month:\"short\",day:\"numeric\"}",
+    "ss(\"is-loading\")}))}showSuggestionError(e){e||(e=this.errorTypes.unknown),this.$engagePopupSuggestionError.text(e),this.$engagePopupSuggestion.addClass(\"is-error\")}hideSuggestionError(){this.$engagePopupSuggestionError.text(\"\"),this.$engagePopupSuggestion.removeClass(\"is-error\")}playSvgatorAnimation(e){(e?e.svgatorPlayer:{}).ready(e=>e.play())}_getChangelog(){\"function\"==typeof this.appsApi.getAppChangelog&&this.appsApi.getAppChangelog({appId:this.appId}).then(e=>{const t=$(\"<dl>\");Object.entries(e).forEach(([e,n])=>{if(n.createdAt){const i=$('<dt class=\"version\">').text(e),o=$('<dd class=\"text\">').text(_i(n.changelog)),s=$('<dd class=\"date\">').text(new Date(n.createdAt).toLocaleDateString(void 0,{year:\"numeric\",month:\"short\",day:\"numeric\"}));if(t.prepend(i,s,o),[\"test\",\"in_review\",\"review",
+    "tionError(e){e||(e=this.errorTypes.unknown),this.$engagePopupSuggestionError.text(e),this.$engagePopupSuggestion.addClass(\"is-error\")}hideSuggestionError(){this.$engagePopupSuggestionError.text(\"\"),this.$engagePopupSuggestion.removeClass(\"is-error\")}playSvgatorAnimation(e){(e?e.svgatorPlayer:{}).ready(e=>e.play())}_getChangelog(){\"function\"==typeof this.appsApi.getAppChangelog&&this.appsApi.getAppChangelog({appId:this.appId}).then(e=>{const t=$(\"<dl>\");Object.entries(e).forEach(([e,n])=>{if(n.createdAt){const i=$('<dt class=\"version\">').text(e),o=$('<dd class=\"text\">').text(_i(n.changelog)),s=$('<dd class=\"date\">').text(new Date(n.createdAt).toLocaleDateString(void 0,{year:\"numeric\",month:\"short\",day:\"numeric\"}));if(t.prepend(i,s,o),[\"test\",\"in_review\",\"reviewed_accepted\",\"reviewed_rejecte",
+    "or.text(\"\"),this.$engagePopupSuggestion.removeClass(\"is-error\")}playSvgatorAnimation(e){(e?e.svgatorPlayer:{}).ready(e=>e.play())}_getChangelog(){\"function\"==typeof this.appsApi.getAppChangelog&&this.appsApi.getAppChangelog({appId:this.appId}).then(e=>{const t=$(\"<dl>\");Object.entries(e).forEach(([e,n])=>{if(n.createdAt){const i=$('<dt class=\"version\">').text(e),o=$('<dd class=\"text\">').text(_i(n.changelog)),s=$('<dd class=\"date\">').text(new Date(n.createdAt).toLocaleDateString(void 0,{year:\"numeric\",month:\"short\",day:\"numeric\"}));if(t.prepend(i,s,o),[\"test\",\"in_review\",\"reviewed_accepted\",\"reviewed_rejected\"].includes(n.state)){const e=window.location.href.endsWith(\"/test/\")?window.location.href:\"./test\",t=$(`<a class=\"beta\" href=\"${e}\">test</a>`);s.after(t)}}else{const i=$(\"<dt>\").text(e"
+  ]
+}
