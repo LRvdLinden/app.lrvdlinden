@@ -25,7 +25,7 @@ Zet deze onder **Settings → Secrets and variables → Actions → New reposito
 | `FTP_PASSWORD` | Wachtwoord van dat FTP-account |
 | `FTP_PORT` | Meestal `21` (`22` = SFTP) |
 | `FTP_DIR` | Optioneel: doelmap als die niet automatisch klopt |
-| `PUBLISH_GITHUB_TOKEN` | Fine-grained token, alleen voor deze repo, met *Contents: Read and write* |
+| `PUBLISH_GITHUB_TOKEN` | Fine-grained token, alleen voor deze repo, met *Contents: Read and write* en *Actions: Read and write* |
 | `ANTHROPIC_API_KEY` | Optioneel: API-sleutel om wat-is-nieuw-teksten naar NL/EN te vertalen |
 | `ANTHROPIC_WORKSPACE_ID` | Alleen nodig als de API-sleutel niet aan een workspace gekoppeld is (`wrkspc_…`) |
 
@@ -43,7 +43,14 @@ Handmatig opnieuw uitrollen: **Actions → Release site → Run workflow**.
 
 ## Dagelijkse store-check
 
-Elke dag om 08:00 loopt **Actions → Store-check** de App Store en de Homey App Store na:
+Elke dag om 08:00 loopt **Actions → Store-check** de App Store en de Homey App Store na.
+Hetzelfde gebeurt met de knop **Nieuwe apps ophalen** in `beheer.html`.
+
+- **Nieuwe apps**: alle apps van de ontwikkelaarspagina in de App Store (id 607860328) en van beide
+  Homey-auteurspagina's die nog niet op de site staan, worden toegevoegd met icoon, categorie, platformen
+  en een korte omschrijving en ondertitel in NL en EN.
+- **Beta-apps aanvullen**: staat een beta-app (zonder App Store-link) inmiddels in de store, dan krijgt hij
+  de link, status Live en wat er nog ontbrak. Bestaande teksten blijven staan.
 
 - **App Store** (apps met een App Store-link): versie, wat-is-nieuw, sterren en aantal beoordelingen
   (opgeteld over 44 landen), grootte en talen.

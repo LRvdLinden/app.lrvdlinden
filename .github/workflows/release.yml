@@ -89,7 +89,7 @@ jobs:
           AddCharset UTF-8 .html .json .svg
 
           # Beheerpagina en publiceren alleen met gebruikersnaam en wachtwoord
-          <FilesMatch "^(beheer\.html|publish\.php)$">
+          <FilesMatch "^(beheer\.html|publish\.php|store-refresh\.php)$">
             AuthType Basic
             AuthName "LRvdLinden beheer"
             AuthUserFile "${BEHEER_HTPASSWD_PATH}"
@@ -155,7 +155,7 @@ jobs:
           b=$(curl -s -o /dev/null -w '%{http_code}' https://lrvdlinden.app/beheer.html)
           echo "beheer.html zonder login: HTTP $b"
           [ "$b" = "401" ] || echo "::warning::beheer.html geeft HTTP $b in plaats van 401 (inloggen vereist)."
-          for f in publish.php .publish-config.php .htpasswd; do
+          for f in publish.php store-refresh.php .publish-config.php .htpasswd; do
             c=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$f")
             echo "$f zonder login: HTTP $c"
             case "$c" in 401|403) ;; *) echo "::error::$f is bereikbaar zonder login (HTTP $c)."; exit 1 ;; esac

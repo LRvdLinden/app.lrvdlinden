@@ -1,7 +1,9 @@
 name: Store-check
 
 # Elke dag om 08:00 (Nederlandse tijd) de App Store en de Homey App Store nalopen:
+# nieuwe apps toevoegen, beta-apps aanvullen zodra ze in de store staan,
 # versies, wat-is-nieuw (NL en EN), sterren en aantal beoordelingen.
+# Ook te starten met de knop "Nieuwe apps ophalen" in beheer.html.
 # Bij wijzigingen wordt site/apps.json bijgewerkt en de site via "Release site" opnieuw live gezet.
 #
 # GitHub-planningen draaien in UTC. Daarom staan er twee tijden (zomer- en wintertijd);
@@ -56,13 +58,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- site/apps.json; then
+          if git diff --quiet -- site/apps.json && [ -z "$(git status --porcelain -- site/img)" ]; then
             echo "Geen wijzigingen."
             exit 0
           fi
           git config user.name "Store-check"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/apps.json
+          git add site/apps.json site/img
           git commit -q -F store-check-summary.md
           # Tussentijds gepubliceerd via de beheerpagina? Dan eerst bijwerken.
           for i in 1 2 3; do

@@ -97,6 +97,7 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding
     <div class="brand"><img src="logo.svg" alt=""><h1>Apps beheren</h1></div>
     <div class="tools">
       <button class="btn" type="button" id="btnNew">+ Nieuwe app</button>
+      <button class="btn" type="button" id="btnFetch" title="Zoekt nieuwe apps in de App Store en de Homey App Store en vult beta-apps aan">Nieuwe apps ophalen</button>
       <details class="more">
         <summary class="btn">Meer</summary>
         <div class="menu">
@@ -131,7 +132,7 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding
 
 <script>
 const PLATFORMS = ["iPhone","iPad","Mac","Apple TV","Apple Watch","Vision Pro","Android","Android TV","Samsung TV","Windows","Web"];
-const CATS = {utilities:"Hulpmiddelen",entertainment:"Amusement",news:"Nieuws",business:"Zakelijk",lifestyle:"Lifestyle",games:"Games",music:"Muziek",productivity:"Productiviteit",health:"Gezondheid",education:"Onderwijs",travel:"Reizen",weather:"Weer"};
+const CATS = {utilities:"Hulpmiddelen",entertainment:"Amusement",news:"Nieuws",business:"Zakelijk",lifestyle:"Lifestyle",games:"Games",music:"Muziek",productivity:"Productiviteit",health:"Gezondheid",education:"Onderwijs",travel:"Reizen",weather:"Weer",sports:"Sport",photo:"Foto en video",navigation:"Navigatie",finance:"Financiën",reference:"Naslag",social:"Sociaal",food:"Eten en drinken",books:"Boeken",developer:"Ontwikkelaarstools",design:"Grafisch en ontwerp",shopping:"Winkelen",kids:"Kinderen"};
 const STATUS = {live:"Live", beta:"Beta / TestFlight", dev:"In ontwikkeling"};
 const KEY = "lr-beheer-concept";  // { base: apps.json waarop het concept gebaseerd is, data: concept }
 const $ = s => document.querySelector(s);
@@ -321,6 +322,7 @@ document.addEventListener("click", e => {
     sel = nid; confirmDel = false; save(); render(); setTimeout(()=>$("#f_name")?.select(),0); return;
   }
   if (id === "btnPublish") return publish();
+  if (id === "btnFetch") return fetchStores();
   if (id === "btnDiscard"){ if (!dirty) return toast("Er zijn geen wijzigingen");
     DATA = JSON.parse(ORIGINAL); PENDING = {}; sel = DATA.apps[0] && DATA.apps[0].id; try{ localStorage.removeItem(KEY); localStorage.removeItem(PKEY); }catch(e){}
     e.target.closest("details").open = false; updateState(); render(); toast("Wijzigingen weggegooid"); return; }
@@ -359,6 +361,49 @@ function changedNames(){
   return [...changed, ...removed];
 }
 function showResult(kind, html){ $("#result").innerHTML = `<div class="result ${kind}">${html}</div>`; $("#result").scrollIntoView?.({block:"nearest"}); }
+// "Nieuwe apps ophalen": laat GitHub de stores doorzoeken en laadt daarna de nieuwe gegevens in.
+let fetching = false;
+async function fetchStores(){
+  if (fetching) return;
+  fetching = true; const btn = $("#btnFetch"); btn.disabled = true; btn.textContent = "Bezig…";
+  const started = Date.now();
+  const status = (txt) => showResult("warn", `<b>Stores worden doorzocht.</b> ${txt} Dit duurt meestal 2 tot 4 minuten; je kunt intussen gewoon verder werken.`);
+  try {
+    status("Opdracht wordt gestart…");
+    const r = await fetch("store-refresh.php", { method:"POST", credentials:"same-origin", headers:{ "X-LR-Beheer":"1" } });
+    const st = await r.json().catch(() => ({}));
+    if (!r.ok || !st.ok) throw new Error(st.error || ("De server gaf HTTP " + r.status + "."));
+    let res = {};
+    while (true) {
+      await new Promise(ok => setTimeout(ok, 6000));
+      const secs = Math.round((Date.now() - started) / 1000);
+      if (secs > 600) throw new Error("Het duurt langer dan 10 minuten. Kijk op GitHub bij Actions → Store-check.");
+      const q = await fetch("store-refresh.php?since=" + encodeURIComponent(st.since), { credentials:"same-origin", headers:{ "X-LR-Beheer":"1" }, cache:"no-store" });
+      res = await q.json().catch(() => ({}));
+      if (!res.ok) throw new Error(res.error || ("De server gaf HTTP " + q.status + "."));
+      if (res.state === "done") break;
+      if (res.state === "failed") throw new Error(`De controle op GitHub is mislukt. <a href="${esc(res.url||"")}" target="_blank" rel="noopener">Bekijk de details</a>.`);
+      status(res.state === "running" ? `Bezig (${secs} s)…` : `In de wachtrij (${secs} s)…`);
+    }
+    // Nieuwe gegevens inladen; niet-gepubliceerde wijzigingen blijven behouden
+    const d = await (await fetch("apps.json", { cache:"no-store" })).json();
+    const beforeIds = new Set(JSON.parse(ORIGINAL || '{"apps":[]}').apps.map(a => a.id));
+    const added = d.apps.filter(a => !beforeIds.has(a.id)).map(a => a.name);
+    if (dirty) { const m = mergeDraft(JSON.parse(ORIGINAL || '{"apps":[]}'), DATA, d); DATA = m.data; } else { DATA = d; }
+    ORIGINAL = JSON.stringify(d);
+    if (!DATA.apps.some(a => a.id === sel)) sel = DATA.apps[0] && DATA.apps[0].id;
+    save(); render();
+    const link = res.url ? ` <a href="${esc(res.url)}" target="_blank" rel="noopener">Details</a>` : "";
+    if (added.length) showResult("good", `<b>Nieuwe apps toegevoegd:</b> ${esc(added.join(", "))}. Controleer ze en zet eventueel <i>Uitlichten</i> of een banner aan.${link}`);
+    else if (res.changed) showResult("good", `<b>Bijgewerkt.</b> Er waren geen nieuwe apps, wel bijgewerkte versies, teksten of beoordelingen.${link}`);
+    else showResult("good", `<b>Alles is al bij.</b> Geen nieuwe apps of wijzigingen gevonden.${link}`);
+  } catch(err) {
+    showResult("bad", `<b>Ophalen mislukt.</b> ${String(err.message).includes("<a ") ? err.message : esc(err.message)}`);
+  } finally {
+    fetching = false; btn.disabled = false; btn.textContent = "Nieuwe apps ophalen";
+  }
+}
+
 async function publish(){
   if (publishing || !dirty) return;
   const names = changedNames();
