@@ -173,6 +173,14 @@ def upsert_history(app, version, date, notes, keep=None):
     return changed
 
 
+def snap(app):
+    """Momentopname van een app voor de vergelijking, zonder interne velden."""
+    a = json.loads(json.dumps(app))
+    for h in a.get("history") or []:
+        h.pop("_src", None)
+    return json.dumps(a, sort_keys=True, ensure_ascii=False)
+
+
 def ver_key(v):
     return [int(x) if x.isdigit() else 0 for x in re.split(r"[.\-]", str(v or "0"))]
 
@@ -197,7 +205,7 @@ def check_appstore(apps, log):
             log.append(f"- {app['name']}: niet gevonden in de App Store")
             continue
         main = res.get("nl") or res.get("us") or next(iter(res.values()))
-        before = json.dumps(app, sort_keys=True, ensure_ascii=False)
+        before = snap(app)
 
         # Sterren en aantal beoordelingen, opgeteld over alle landen
         total = sum(int(r.get("userRatingCount") or 0) for r in res.values())
@@ -229,7 +237,7 @@ def check_appstore(apps, log):
         if version:
             upsert_history(app, version, date, notes, keep=20)
 
-        if json.dumps(app, sort_keys=True, ensure_ascii=False) != before:
+        if snap(app) != before:
             log.append(f"- {app['name']}: versie {version}, {app.get('rating', '–')} ★ ({app.get('reviews', 0)} beoordelingen)")
 
 
@@ -243,7 +251,7 @@ def check_homey(apps, log):
         if not info:
             log.append(f"- {app['name']} (Homey): niet gevonden")
             continue
-        before = json.dumps(app, sort_keys=True, ensure_ascii=False)
+        before = snap(app)
         live, test = info.get("liveVersion"), info.get("testVersion")
         app["status"] = "live" if live else ("beta" if test else app.get("status", "dev"))
         if info.get("rating") is not None:
@@ -270,7 +278,7 @@ def check_homey(apps, log):
                 t = clean(next(iter(cl.values())))
                 notes = {detect_lang(t): t}
             upsert_history(app, v, (e.get("createdAt") or "")[:10], notes, keep=HOMEY_HISTORY)
-        if json.dumps(app, sort_keys=True, ensure_ascii=False) != before:
+        if snap(app) != before:
             log.append(f"- {app['name']} (Homey): versie {live or test}" + (f", {app['rating']} ★" if app.get("rating") else ""))
 
 
