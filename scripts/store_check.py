@@ -179,7 +179,8 @@ def ver_key(v):
 
 # ---------- App Store ----------
 def check_appstore(apps, log):
-    ios = [a for a in apps if appstore_id(a)]
+    # Alleen iOS-apps. Een App Store-link bij een Homey-app is de bijbehorende iPhone-app, geen eigen versie.
+    ios = [a for a in apps if a.get("section", "ios") != "homey" and appstore_id(a)]
     if not ios:
         return
     ids = ",".join(sorted({appstore_id(a) for a in ios}))
@@ -256,6 +257,12 @@ def check_homey(apps, log):
         states = ("live", "superseded") if live else ("test", "live", "superseded")
         entries = [(v, e) for v, e in log_cl.items() if isinstance(e, dict) and e.get("state") in states]
         entries.sort(key=lambda x: ver_key(x[0]), reverse=True)
+        keep_versions = {str(v) for v, _ in entries[:HOMEY_HISTORY]}
+        if keep_versions:  # alleen Homey-versies tonen (oude of verkeerd gekoppelde regels weg)
+            app["history"] = [h for h in app.get("history") or [] if str(h.get("version")) in keep_versions]
+        app.pop("reviews", None)  # Homey kent geen aantal beoordelingen
+        if info.get("rating") is None:
+            app.pop("rating", None)
         for v, e in entries[:HOMEY_HISTORY]:
             cl = e.get("changelog") or {}
             notes = {k: clean(cl[k]) for k in ("nl", "en") if cl.get(k)}
