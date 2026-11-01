@@ -24,7 +24,13 @@
                 "homey": "https://homey.app/en-us/app/nl.lrvdlinden.weekdot/Weekdot/test/",
                 "appstore": "https://apps.apple.com/us/app/weekdot/id6826670273"
             },
-            "history": [],
+            "history": [
+                {
+                    "version": "1.0.0",
+                    "date": "2026-11-01",
+                    "notes": {}
+                }
+            ],
             "icon": "img/nl-lrvdlinden-weekdot.webp",
             "subtitle": {
                 "nl": "Agenda",
@@ -41,7 +47,8 @@
                 "nl": "Nieuw",
                 "en": "New"
             },
-            "languages": "NL + 33"
+            "languages": "NL + 32",
+            "size": "32,5 MB"
         },
         {
             "id": "bingr",
@@ -69,9 +76,9 @@
                 "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
                 "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
-            "size": "114,3 MB",
+            "size": "116,0 MB",
             "languages": "NL + 10",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/bingr/id6821401598",
@@ -80,11 +87,13 @@
             },
             "history": [
                 {
-                    "version": "",
+                    "version": "1.0.3",
                     "date": "2026-10-31",
                     "notes": {
-                        "nl": "",
-                        "en": ""
+                        "en": "We're hard at work improving the app, so you can focus on what you want to watch, when you want to watch it, and how you want to enjoy it. That's just as important.\n\nWe know there's a lot to choose from. In this version, we've made several improvements to the gallery to help you find what you love to watch more easily."
+                    },
+                    "_src": {
+                        "en": "We're hard at work improving the app, so you can focus on what you want to watch, when you want to watch it, and how you want to enjoy it. That's just as important.\n\nWe know there's a lot to choose from. In this version, we've made several improvements to the gallery to help you find what you love to watch more easily."
                     }
                 },
                 {
@@ -139,7 +148,10 @@
                     "date": "2026-10-14",
                     "notes": {
                         "nl": "Verbeterde slaapregistratie.",
-                        "en": "Improved sleep tracking."
+                        "en": "Improved sleep tracking\n- Time asleep now matches Apple Health: overlapping data from your Apple Watch, iPhone or sleep apps is no longer counted twice.\n- Time in bed and awake time are no longer added to your sleep.\n- Short naps outside your main night are ignored.\n- Your Homey now also receives time in bed, awake minutes, bedtime and sleep stages for richer sleep widgets and Flows."
+                    },
+                    "_src": {
+                        "en": "Improved sleep tracking\n- Time asleep now matches Apple Health: overlapping data from your Apple Watch, iPhone or sleep apps is no longer counted twice.\n- Time in bed and awake time are no longer added to your sleep.\n- Short naps outside your main night are ignored.\n- Your Homey now also receives time in bed, awake minutes, bedtime and sleep stages for richer sleep widgets and Flows."
                     }
                 },
                 {
@@ -151,7 +163,7 @@
                     }
                 }
             ],
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "promo": {
                 "image": {
@@ -227,7 +239,10 @@
                     "date": "2026-10-27",
                     "notes": {
                         "nl": "We werken voortdurend aan het verbeteren van DevTools, zodat jij je kunt richten op wat echt belangrijk is: bouwen, debuggen en je ideeën tot leven brengen. Met elke update maken we de app soepeler, sneller en betrouwbaarder. Want goede tools maken goed werk makkelijker.",
-                        "en": "We're hard at work improving DevTools, so you can focus on what matters most: building, debugging, and bringing your ideas to life. We're making the experience smoother, faster, and more reliable with every update. Because great tools should make great work easier.."
+                        "en": "We're hard at work improving DevTools, so you can focus on what matters most: building, debugging, and bringing your ideas to life. We're making the experience smoother, faster, and more reliable with every update. Because great tools should make great work easier."
+                    },
+                    "_src": {
+                        "en": "We're hard at work improving DevTools, so you can focus on what matters most: building, debugging, and bringing your ideas to life. We're making the experience smoother, faster, and more reliable with every update. Because great tools should make great work easier."
                     }
                 }
             ],
@@ -239,7 +254,9 @@
                     "en": "img/promo-devtools-en.webp"
                 },
                 "show": true
-            }
+            },
+            "size": "16,1 MB",
+            "languages": "NL + 8"
         },
         {
             "id": "samenzuidbroek",
@@ -259,10 +276,10 @@
                 "nl": "Wijkparticipatie-initiatief dat fungeert als klankbord tussen wijkbewoners en de gemeente Apeldoorn.",
                 "en": "Neighbourhood participation initiative that acts as a sounding board between residents and the municipality of Apeldoorn."
             },
-            "rating": 5,
-            "reviews": 3,
-            "size": "14,8 MB",
-            "languages": "NL",
+            "rating": 4.9,
+            "reviews": 7,
+            "size": "14,3 MB",
+            "languages": "EN",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/samen-zuidbroek/id6739449160",
                 "website": "https://samenzuidbroek.nl"
@@ -272,8 +289,11 @@
                     "version": "1.1.1",
                     "date": "2025-09-27",
                     "notes": {
-                        "nl": "Nieuwe huisstijl, logo en app-icoon, ontworpen door Merkbaar Reclamemakers.",
+                        "nl": "Onze app heeft een frisse look gekregen! Met een vernieuwde huisstijl én een nieuw logo en app-icoon, ontworpen door Merkbaar™ Reclamemakers, ziet alles er weer modern en eigentijds uit.",
                         "en": "New branding, logo and app icon, designed by Merkbaar Reclamemakers."
+                    },
+                    "_src": {
+                        "nl": "Onze app heeft een frisse look gekregen! Met een vernieuwde huisstijl én een nieuw logo en app-icoon, ontworpen door Merkbaar™ Reclamemakers, ziet alles er weer modern en eigentijds uit."
                     }
                 },
                 {
@@ -308,15 +328,25 @@
                 "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
                 "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "size": "23,1 MB",
-            "languages": "NL",
+            "languages": "EN",
             "links": {
                 "appstore": "https://apps.apple.com/us/app/thepark/id6753913040",
                 "website": "https://zuidbroekatthepark.nl"
             },
             "history": [
+                {
+                    "version": "1.0.1",
+                    "date": "2025-10-20",
+                    "notes": {
+                        "nl": "We hebben hard aan de App gewerkt. We hebben bugs opgelost en kleine verbeteringen. Daardoor doet de App het nu appsoluut beter."
+                    },
+                    "_src": {
+                        "nl": "We hebben hard aan de App gewerkt. We hebben bugs opgelost en kleine verbeteringen. Daardoor doet de App het nu appsoluut beter."
+                    }
+                },
                 {
                     "version": "1.0.0",
                     "date": "2025-10-14",
@@ -341,8 +371,8 @@
                 "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
-            "rating": 4.9,
-            "reviews": 12,
+            "rating": 5.0,
+            "reviews": 6,
             "size": "15,3 MB",
             "languages": "EN",
             "links": {
@@ -355,7 +385,10 @@
                     "date": "2025-01-05",
                     "notes": {
                         "nl": "Compatibel met iOS 18 en kleine verbeteringen.",
-                        "en": "Compatible with iOS 18 and small improvements."
+                        "en": "The app is now compatible with iOS 18.x.x and includes minor improvements for a smoother experience."
+                    },
+                    "_src": {
+                        "en": "The app is now compatible with iOS 18.x.x and includes minor improvements for a smoother experience."
                     }
                 },
                 {
@@ -390,9 +423,9 @@
                 "nl": "Een rekenmachine zonder afleiding, met rekengeschiedenis en optionele twee decimalen.",
                 "en": "A distraction-free calculator with calculation history and optional two decimals."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
-            "size": "23 MB",
+            "size": "23,0 MB",
             "languages": "EN",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/digitmate/id6740402186"
@@ -403,7 +436,10 @@
                     "date": "2025-01-15",
                     "notes": {
                         "nl": "Nieuw app-icoon en je rekengeschiedenis terugvinden.",
-                        "en": "New app icon and calculation history."
+                        "en": "We have been working hard on the App. We fixed bugs and made minor improvements. As a result, the App definitely performs better now.\n\nNew in version 1.0.2:\n- Calculation History\n- App icon"
+                    },
+                    "_src": {
+                        "en": "We have been working hard on the App. We fixed bugs and made minor improvements. As a result, the App definitely performs better now.\n\nNew in version 1.0.2:\n- Calculation History\n- App icon"
                     }
                 },
                 {
@@ -438,8 +474,8 @@
                 "nl": "Technieuws, reviews en innovaties over gadgets en technologie.",
                 "en": "Tech news, reviews and innovations about gadgets and technology."
             },
-            "size": "12,5 MB",
-            "languages": "NL",
+            "size": "23,5 MB",
+            "languages": "EN",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/techinside/id6740749788",
                 "website": "https://techinside.nu"
@@ -469,13 +505,23 @@
                 "nl": "Officiële vlagdagen in Nederland met herinneringen, weeradvies en agenda-integratie.",
                 "en": "Official Dutch flag days with reminders, weather advice and calendar integration."
             },
-            "size": "15,1 MB",
+            "size": "1,2 MB",
             "languages": "NL",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/vlagdagen/id6739980379",
                 "website": "https://vlagdagen.nl"
             },
             "history": [
+                {
+                    "version": "2.0.0",
+                    "date": "2026-10-31",
+                    "notes": {
+                        "nl": "Vlagdagen 2.0.0 is een compleet nieuwe app!\n• Nieuw ontwerp met een geanimeerd openingsscherm\n• Groot Ja. of Nee. en precies hoe de vlag vandaag hangt\n• Ochtendmelding op een tijd naar keuze, ook de avond ervoor\n• 4 mei: herinnering om 17:45 en de tijd van zonsondergang\n• Aftelklok tot de volgende vlagdag\n• Agenda-abonnement voor Apple, Google en Outlook\n• Widgets voor het beginscherm en het toegangsscherm\n• Handleiding: hijsen, halfstok en de wimpel\n• Nu ook voor iPad, en met donkere modus\n• Altijd de juiste datums: de app rekent zelf uit wanneer een vlagdag op een zondag of feestdag doorschuift"
+                    },
+                    "_src": {
+                        "nl": "Vlagdagen 2.0.0 is een compleet nieuwe app!\n• Nieuw ontwerp met een geanimeerd openingsscherm\n• Groot Ja. of Nee. en precies hoe de vlag vandaag hangt\n• Ochtendmelding op een tijd naar keuze, ook de avond ervoor\n• 4 mei: herinnering om 17:45 en de tijd van zonsondergang\n• Aftelklok tot de volgende vlagdag\n• Agenda-abonnement voor Apple, Google en Outlook\n• Widgets voor het beginscherm en het toegangsscherm\n• Handleiding: hijsen, halfstok en de wimpel\n• Nu ook voor iPad, en met donkere modus\n• Altijd de juiste datums: de app rekent zelf uit wanneer een vlagdag op een zondag of feestdag doorschuift"
+                    }
+                },
                 {
                     "version": "1.0.1",
                     "date": "2025-01-10",
@@ -519,7 +565,39 @@
                     "en": "img/promo-homey-weekdot-en.webp"
                 },
                 "show": true
-            }
+            },
+            "history": [
+                {
+                    "version": "0.0.7",
+                    "date": "2026-10-31",
+                    "notes": {
+                        "en": "Support Homey internationalization"
+                    },
+                    "_src": {
+                        "en": "Support Homey internationalization"
+                    }
+                },
+                {
+                    "version": "0.0.4",
+                    "date": "2026-10-30",
+                    "notes": {
+                        "en": "App icon"
+                    },
+                    "_src": {
+                        "en": "App icon"
+                    }
+                },
+                {
+                    "version": "0.0.3",
+                    "date": "2026-10-30",
+                    "notes": {
+                        "en": "Fix homey auth"
+                    },
+                    "_src": {
+                        "en": "Fix homey auth"
+                    }
+                }
+            ]
         },
         {
             "id": "vlagdagen-be",
@@ -536,7 +614,7 @@
                 "en": "The same flag days app, for Belgium."
             },
             "size": "14,2 MB",
-            "languages": "NL + FR",
+            "languages": "EN",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/vlagdagen-be/id6740135147",
                 "website": "https://vlagdagen.be"
@@ -566,10 +644,10 @@
                 "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
                 "en": "Learn chess the easy way. With dark mode and several board themes."
             },
-            "rating": 5,
-            "reviews": 2,
-            "size": "891 kB",
-            "languages": "EN",
+            "rating": 5.0,
+            "reviews": 3,
+            "size": "1,6 MB",
+            "languages": "NL + 3",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/simple-chess/id1583471443",
                 "testflight": "https://testflight.apple.com/join/8YvYNvsy"
@@ -580,7 +658,10 @@
                     "date": "2026-10-31",
                     "notes": {
                         "nl": "Simple Chess 3 is een helemaal nieuwe app: • Fris, vrolijk ontwerp met vier bordkleuren en donkere modus • Een coach die uitlegt hoe elk stuk beweegt • Tips met een pijl en een korte uitleg • Zie waar stukken heen kunnen en welke stukken in gevaar zijn • Elke zet terugnemen • Lessen voor elk stuk, schaak, rokeren, promotie en en passant • Samen spelen of tegen een vriendelijke robot • Nu in het Nederlands, Engels, Duits en Frans",
-                        "en": "Simple Chess 3 is a whole new app: • Fresh, friendly design with four board colors and dark mode • A coach that explains how every piece moves • Hints with an arrow and a short explanation • See where pieces can go and which pieces are in danger • Undo any move • Lessons for every piece, check, castling, promotion and en passant • Play together or against a friendly robot • Now in English, Dutch, German and French"
+                        "en": "Simple Chess 3 is a whole new app:\n• Fresh, friendly design with four board colors and dark mode\n• A coach that explains how every piece moves\n• Hints with an arrow and a short explanation\n• See where pieces can go and which pieces are in danger\n• Undo any move\n• Lessons for every piece, check, castling, promotion and en passant\n• Play together or against a friendly robot\n• Now in English, Dutch, German and French"
+                    },
+                    "_src": {
+                        "en": "Simple Chess 3 is a whole new app:\n• Fresh, friendly design with four board colors and dark mode\n• A coach that explains how every piece moves\n• Hints with an arrow and a short explanation\n• See where pieces can go and which pieces are in danger\n• Undo any move\n• Lessons for every piece, check, castling, promotion and en passant\n• Play together or against a friendly robot\n• Now in English, Dutch, German and French"
                     }
                 },
                 {
@@ -613,10 +694,46 @@
                 "en": "Downloads, App Review status, builds and reviews of your iOS apps in Homey."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/App-Store-Connect/test/",
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/",
                 "appstore": "https://apps.apple.com/us/app/devtools/id6826116132",
                 "testflight": "https://testflight.apple.com/join/x2H6vgKe"
-            }
+            },
+            "size": "16,1 MB",
+            "languages": "NL + 8",
+            "history": [
+                {
+                    "version": "1.0.1",
+                    "date": "2026-10-28",
+                    "notes": {
+                        "en": "New device images and rebrand settings page"
+                    },
+                    "_src": {
+                        "en": "New device images and rebrand settings page"
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2026-10-23",
+                    "notes": {
+                        "en": "First release"
+                    },
+                    "_src": {
+                        "en": "First release"
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2026-10-23",
+                    "notes": {
+                        "nl": "Eerste versie: App Store-apps als apparaten met downloads, status, versies, builds en beoordelingen; portfolio-apparaat; flows; dashboard-widgets.",
+                        "en": "First release: App Store apps as devices with downloads, status, versions, builds and ratings; portfolio device; flows; dashboard widgets."
+                    },
+                    "_src": {
+                        "nl": "Eerste versie: App Store-apps als apparaten met downloads, status, versies, builds en beoordelingen; portfolio-apparaat; flows; dashboard-widgets.",
+                        "en": "First release: App Store apps as devices with downloads, status, versions, builds and ratings; portfolio device; flows; dashboard widgets."
+                    }
+                }
+            ]
         },
         {
             "id": "homey-p2000",
@@ -631,7 +748,110 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/"
-            }
+            },
+            "rating": 4.5,
+            "history": [
+                {
+                    "version": "6.2.4",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "app improvement"
+                    },
+                    "_src": {
+                        "en": "app improvement"
+                    }
+                },
+                {
+                    "version": "6.2.3",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "app improvement"
+                    },
+                    "_src": {
+                        "en": "app improvement"
+                    }
+                },
+                {
+                    "version": "6.2.2",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "6.2.1",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "6.2.0",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "new device per service"
+                    },
+                    "_src": {
+                        "en": "new device per service"
+                    }
+                },
+                {
+                    "version": "6.1.12",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "bugfix widgets"
+                    },
+                    "_src": {
+                        "en": "bugfix widgets"
+                    }
+                },
+                {
+                    "version": "6.1.11",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "New: change widget title within the new widget settings"
+                    },
+                    "_src": {
+                        "en": "New: change widget title within the new widget settings"
+                    }
+                },
+                {
+                    "version": "6.1.10",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "app improvement"
+                    },
+                    "_src": {
+                        "en": "app improvement"
+                    }
+                },
+                {
+                    "version": "6.1.9",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "app improvement"
+                    },
+                    "_src": {
+                        "en": "app improvement"
+                    }
+                },
+                {
+                    "version": "6.1.8",
+                    "date": "2026-05-15",
+                    "notes": {
+                        "en": "Bug fix"
+                    },
+                    "_src": {
+                        "en": "Bug fix"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-nlalert-widget",
@@ -646,7 +866,113 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.nlalert-widget/"
-            }
+            },
+            "history": [
+                {
+                    "version": "1.0.4",
+                    "date": "2026-09-03",
+                    "notes": {
+                        "nl": "Verbeteringen voor App Store-certificering",
+                        "en": "App Store certification improvements"
+                    },
+                    "_src": {
+                        "nl": "Verbeteringen voor App Store-certificering",
+                        "en": "App Store certification improvements"
+                    }
+                },
+                {
+                    "version": "1.0.3",
+                    "date": "2026-09-03",
+                    "notes": {
+                        "nl": "Verbeteringen voor App Store-certificering",
+                        "en": "App Store certification improvements"
+                    },
+                    "_src": {
+                        "nl": "Verbeteringen voor App Store-certificering",
+                        "en": "App Store certification improvements"
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2026-09-02",
+                    "notes": {
+                        "en": "Correction widget images"
+                    },
+                    "_src": {
+                        "en": "Correction widget images"
+                    }
+                },
+                {
+                    "version": "1.0.1",
+                    "date": "2026-09-02",
+                    "notes": {
+                        "en": "New app store information"
+                    },
+                    "_src": {
+                        "en": "New app store information"
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2026-09-02",
+                    "notes": {
+                        "en": "First release"
+                    },
+                    "_src": {
+                        "en": "First release"
+                    }
+                },
+                {
+                    "version": "0.0.31",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "dark mode map widget"
+                    },
+                    "_src": {
+                        "en": "dark mode map widget"
+                    }
+                },
+                {
+                    "version": "0.0.30",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "addad dark mode to widget map"
+                    },
+                    "_src": {
+                        "en": "addad dark mode to widget map"
+                    }
+                },
+                {
+                    "version": "0.0.29",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "bugfix"
+                    },
+                    "_src": {
+                        "en": "bugfix"
+                    }
+                },
+                {
+                    "version": "0.0.28",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "bugfix"
+                    },
+                    "_src": {
+                        "en": "bugfix"
+                    }
+                },
+                {
+                    "version": "0.0.27",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "bugfix"
+                    },
+                    "_src": {
+                        "en": "bugfix"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-burgernet",
@@ -661,7 +987,19 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.burgernet/"
-            }
+            },
+            "history": [
+                {
+                    "version": "2.0.0",
+                    "date": "2026-05-18",
+                    "notes": {
+                        "en": "Official Release"
+                    },
+                    "_src": {
+                        "en": "Official Release"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-vermist",
@@ -676,7 +1014,19 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.vermist/"
-            }
+            },
+            "history": [
+                {
+                    "version": "2.0.0",
+                    "date": "2026-05-18",
+                    "notes": {
+                        "en": "Official Release"
+                    },
+                    "_src": {
+                        "en": "Official Release"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-lifeliner",
@@ -691,7 +1041,110 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/"
-            }
+            },
+            "rating": 5.0,
+            "history": [
+                {
+                    "version": "6.1.1",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "app improvement"
+                    },
+                    "_src": {
+                        "en": "app improvement"
+                    }
+                },
+                {
+                    "version": "6.1.0",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "app improvement"
+                    },
+                    "_src": {
+                        "en": "app improvement"
+                    }
+                },
+                {
+                    "version": "6.0.23",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "Little default zoom out mapLast login: Fri May 15 17:16:28 on ttys001"
+                    },
+                    "_src": {
+                        "en": "Little default zoom out mapLast login: Fri May 15 17:16:28 on ttys001"
+                    }
+                },
+                {
+                    "version": "6.0.22",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "app improvement"
+                    },
+                    "_src": {
+                        "en": "app improvement"
+                    }
+                },
+                {
+                    "version": "6.0.21",
+                    "date": "2026-05-16",
+                    "notes": {
+                        "en": "Map widget improvement"
+                    },
+                    "_src": {
+                        "en": "Map widget improvement"
+                    }
+                },
+                {
+                    "version": "6.0.20",
+                    "date": "2026-05-15",
+                    "notes": {
+                        "en": "bug fix"
+                    },
+                    "_src": {
+                        "en": "bug fix"
+                    }
+                },
+                {
+                    "version": "6.0.19",
+                    "date": "2026-05-13",
+                    "notes": {
+                        "en": "bugfix"
+                    },
+                    "_src": {
+                        "en": "bugfix"
+                    }
+                },
+                {
+                    "version": "6.0.18",
+                    "date": "2026-05-13",
+                    "notes": {
+                        "en": "bugfix"
+                    },
+                    "_src": {
+                        "en": "bugfix"
+                    }
+                },
+                {
+                    "version": "6.0.17",
+                    "date": "2026-05-13",
+                    "notes": {
+                        "en": "Reset button for widgets"
+                    },
+                    "_src": {
+                        "en": "Reset button for widgets"
+                    }
+                },
+                {
+                    "version": "6.0.16",
+                    "date": "2026-05-13",
+                    "notes": {
+                        "en": "Widget reset buttons capabilities"
+                    },
+                    "_src": {
+                        "en": "Widget reset buttons capabilities"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-knmi-weerwaarschuwing",
@@ -706,7 +1159,114 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
-            }
+            },
+            "rating": 5.0,
+            "history": [
+                {
+                    "version": "4.2.3",
+                    "date": "2026-10-12",
+                    "notes": {
+                        "nl": "Alle apparaat-triggers ('... is veranderd') gaan weer af, de server online/offline-triggers zijn gerepareerd, temperatuur- en windsnelheid-condities werken nu ook met 0 en decimalen, condities werken per gekozen apparaat en Flowkaart-titels zijn verbeterd (waaronder de trigger huidige temperatuur).",
+                        "en": "Fixed all device triggers ('... changed') not firing, fixed the server online/offline triggers, temperature and wind speed conditions now also work with 0 and decimals, conditions work per selected device, and corrected Flow card titles (including the current temperature trigger)."
+                    },
+                    "_src": {
+                        "nl": "Alle apparaat-triggers ('... is veranderd') gaan weer af, de server online/offline-triggers zijn gerepareerd, temperatuur- en windsnelheid-condities werken nu ook met 0 en decimalen, condities werken per gekozen apparaat en Flowkaart-titels zijn verbeterd (waaronder de trigger huidige temperatuur).",
+                        "en": "Fixed all device triggers ('... changed') not firing, fixed the server online/offline triggers, temperature and wind speed conditions now also work with 0 and decimals, conditions work per selected device, and corrected Flow card titles (including the current temperature trigger)."
+                    }
+                },
+                {
+                    "version": "4.2.2",
+                    "date": "2026-10-09",
+                    "notes": {
+                        "nl": "Probleem opgelost waarbij de Flowkaart 'Haal nieuwe gegevens' faalde met 'Invalid value for token apiSource'. De trigger 'Nieuwe gegevens van het KNMI' bevat niet langer de verwijderde API- en verwachtingsdatum-tokens en krijgt altijd geldige tokenwaarden.",
+                        "en": "Fixed the 'Fetch new data' Flow action failing with 'Invalid value for token apiSource'. The 'Received new data from KNMI' trigger no longer contains the removed API and forecast date tokens and always receives valid token values."
+                    },
+                    "_src": {
+                        "nl": "Probleem opgelost waarbij de Flowkaart 'Haal nieuwe gegevens' faalde met 'Invalid value for token apiSource'. De trigger 'Nieuwe gegevens van het KNMI' bevat niet langer de verwijderde API- en verwachtingsdatum-tokens en krijgt altijd geldige tokenwaarden.",
+                        "en": "Fixed the 'Fetch new data' Flow action failing with 'Invalid value for token apiSource'. The 'Received new data from KNMI' trigger no longer contains the removed API and forecast date tokens and always receives valid token values."
+                    }
+                },
+                {
+                    "version": "4.2.0",
+                    "date": "2026-10-07",
+                    "notes": {
+                        "en": "Expanded weather data with wind speed in knots, timestamps and weather icons for live, daily and hourly forecasts. Added a manual data refresh button and improved forecast image and solar radiation naming. Includes new weather capabilities, improved capability migration for existing devices, and various performance and logging improvements."
+                    },
+                    "_src": {
+                        "en": "Expanded weather data with wind speed in knots, timestamps and weather icons for live, daily and hourly forecasts. Added a manual data refresh button and improved forecast image and solar radiation naming. Includes new weather capabilities, improved capability migration for existing devices, and various performance and logging improvements."
+                    }
+                },
+                {
+                    "version": "4.2.1",
+                    "date": "2026-05-18",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "4.1.8",
+                    "date": "2026-05-18",
+                    "notes": {
+                        "en": "App Improvement"
+                    },
+                    "_src": {
+                        "en": "App Improvement"
+                    }
+                },
+                {
+                    "version": "4.1.7",
+                    "date": "2026-05-18",
+                    "notes": {
+                        "en": "app improvement"
+                    },
+                    "_src": {
+                        "en": "app improvement"
+                    }
+                },
+                {
+                    "version": "4.1.6",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "fix buienradar image"
+                    },
+                    "_src": {
+                        "en": "fix buienradar image"
+                    }
+                },
+                {
+                    "version": "4.1.5",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
+                    },
+                    "_src": {
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
+                    }
+                },
+                {
+                    "version": "4.1.4",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
+                    },
+                    "_src": {
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
+                    }
+                },
+                {
+                    "version": "4.1.3",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "Added expanded weather data support inc"
+                    },
+                    "_src": {
+                        "en": "Added expanded weather data support inc"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-kmi",
@@ -721,7 +1281,109 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.KMI/"
-            }
+            },
+            "history": [
+                {
+                    "version": "2.2.1",
+                    "date": "2026-05-18",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "2.2.0",
+                    "date": "2026-05-17",
+                    "notes": {
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KMI/weather data."
+                    },
+                    "_src": {
+                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KMI/weather data."
+                    }
+                },
+                {
+                    "version": "2.1.7",
+                    "date": "2024-03-24",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "2.1.6",
+                    "date": "2024-03-22",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "2.1.5",
+                    "date": "2024-03-22",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "2.1.4",
+                    "date": "2024-03-21",
+                    "notes": {
+                        "en": "Bug fix"
+                    },
+                    "_src": {
+                        "en": "Bug fix"
+                    }
+                },
+                {
+                    "version": "2.1.3",
+                    "date": "2024-03-20",
+                    "notes": {
+                        "en": "Added  extra logging"
+                    },
+                    "_src": {
+                        "en": "Added  extra logging"
+                    }
+                },
+                {
+                    "version": "2.1.2",
+                    "date": "2024-03-20",
+                    "notes": {
+                        "en": "Added extra logging"
+                    },
+                    "_src": {
+                        "en": "Added extra logging"
+                    }
+                },
+                {
+                    "version": "2.1.1",
+                    "date": "2024-03-20",
+                    "notes": {
+                        "en": "Added extra logging"
+                    },
+                    "_src": {
+                        "en": "Added extra logging"
+                    }
+                },
+                {
+                    "version": "2.1.0",
+                    "date": "2024-03-13",
+                    "notes": {
+                        "en": "Added capabilities for day 4 and 5 in the future and fix condition card"
+                    },
+                    "_src": {
+                        "en": "Added capabilities for day 4 and 5 in the future and fix condition card"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-postnl",
@@ -736,7 +1398,129 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/"
-            }
+            },
+            "history": [
+                {
+                    "version": "1.2.12",
+                    "date": "2026-10-09",
+                    "notes": {
+                        "nl": "Opgelost dat de pakketafbeelding in Flows een Homey-logo toonde of faalde met \"Missing token value: package_image\". Pakket-Flows gebruiken weer de Mijn Bezorging-afbeelding, die vlak voor de Flow start wordt ingesteld op het pakket en de actuele status van die trigger, zodat de afbeelding altijd bij de melding past. Afbeeldingen worden alleen getekend voor pakketten die nog niet bezorgd zijn. Nieuwe globale afbeeldingstokens \"Pakketafbeelding\" en \"Scan laatste poststuk\" zijn altijd gevuld en bruikbaar in elke Flow, ook in Advanced Flows met meerdere trigger-kaarten.",
+                        "en": "Fixed the parcel image in Flows showing a Homey logo or failing with \"Missing token value: package_image\". Parcel Flows now use the My Delivery image again, which is set to the triggering parcel and its current status right before the Flow starts, so the image always matches the notification. Images are only drawn for parcels that have not been delivered yet. New global image tokens \"Parcel image\" and \"Latest mail scan\" are always filled and can be used in any Flow, including Advanced Flows with several trigger cards."
+                    },
+                    "_src": {
+                        "nl": "Opgelost dat de pakketafbeelding in Flows een Homey-logo toonde of faalde met \"Missing token value: package_image\". Pakket-Flows gebruiken weer de Mijn Bezorging-afbeelding, die vlak voor de Flow start wordt ingesteld op het pakket en de actuele status van die trigger, zodat de afbeelding altijd bij de melding past. Afbeeldingen worden alleen getekend voor pakketten die nog niet bezorgd zijn. Nieuwe globale afbeeldingstokens \"Pakketafbeelding\" en \"Scan laatste poststuk\" zijn altijd gevuld en bruikbaar in elke Flow, ook in Advanced Flows met meerdere trigger-kaarten.",
+                        "en": "Fixed the parcel image in Flows showing a Homey logo or failing with \"Missing token value: package_image\". Parcel Flows now use the My Delivery image again, which is set to the triggering parcel and its current status right before the Flow starts, so the image always matches the notification. Images are only drawn for parcels that have not been delivered yet. New global image tokens \"Parcel image\" and \"Latest mail scan\" are always filled and can be used in any Flow, including Advanced Flows with several trigger cards."
+                    }
+                },
+                {
+                    "version": "1.2.11",
+                    "date": "2026-10-09",
+                    "notes": {
+                        "nl": "Opgelost dat pakket-Flows (bijvoorbeeld via WhatsApp) een afbeelding meestuurden met nog de vorige pakketstatus. Elke pakket-Flow krijgt nu een eigen afbeelding, getekend op het moment van de trigger met de actuele status, het bezorgvenster en de voortgang.",
+                        "en": "Fixed parcel Flows (for example via WhatsApp) sending an image that still showed the previous parcel status. Every parcel Flow now gets its own image, drawn at the moment of the trigger with the current status, delivery window and progress."
+                    },
+                    "_src": {
+                        "nl": "Opgelost dat pakket-Flows (bijvoorbeeld via WhatsApp) een afbeelding meestuurden met nog de vorige pakketstatus. Elke pakket-Flow krijgt nu een eigen afbeelding, getekend op het moment van de trigger met de actuele status, het bezorgvenster en de voortgang.",
+                        "en": "Fixed parcel Flows (for example via WhatsApp) sending an image that still showed the previous parcel status. Every parcel Flow now gets its own image, drawn at the moment of the trigger with the current status, delivery window and progress."
+                    }
+                },
+                {
+                    "version": "1.2.10",
+                    "date": "2026-10-09",
+                    "notes": {
+                        "nl": "Opgelost dat de statusgeschiedenis op het PostNL-apparaat in de Homey-webapp als onleesbaar blok ruwe data buiten de tegel liep. Je ziet nu de 3 meest recente PostNL-gebeurtenissen, nieuwste eerst, met datum en tijd. De Nederlandse naam van de observatiecode is nu vertaald. De popup van Mijn Pakketten toont nu veel meer pakketgegevens: fase, gewicht, afmetingen, PostNL-punt, statustijd, aanmeld- en bezorgtijd, observatiecode, de volledige reis van je pakket en een knop om het pakket bij PostNL te openen.",
+                        "en": "Fixed the status history on the PostNL device showing an unreadable block of raw data that ran off the tile in the Homey web app. It now shows the 3 most recent PostNL events, newest first, with date and time. The Dutch name of the observation code capability is now translated. The My Packages popup now shows much more parcel data: stage, weight, dimensions, PostNL Point, status time, registration and delivery time, observation code, the full parcel journey and a button to open the parcel at PostNL."
+                    },
+                    "_src": {
+                        "nl": "Opgelost dat de statusgeschiedenis op het PostNL-apparaat in de Homey-webapp als onleesbaar blok ruwe data buiten de tegel liep. Je ziet nu de 3 meest recente PostNL-gebeurtenissen, nieuwste eerst, met datum en tijd. De Nederlandse naam van de observatiecode is nu vertaald. De popup van Mijn Pakketten toont nu veel meer pakketgegevens: fase, gewicht, afmetingen, PostNL-punt, statustijd, aanmeld- en bezorgtijd, observatiecode, de volledige reis van je pakket en een knop om het pakket bij PostNL te openen.",
+                        "en": "Fixed the status history on the PostNL device showing an unreadable block of raw data that ran off the tile in the Homey web app. It now shows the 3 most recent PostNL events, newest first, with date and time. The Dutch name of the observation code capability is now translated. The My Packages popup now shows much more parcel data: stage, weight, dimensions, PostNL Point, status time, registration and delivery time, observation code, the full parcel journey and a button to open the parcel at PostNL."
+                    }
+                },
+                {
+                    "version": "1.2.9",
+                    "date": "2026-10-09",
+                    "notes": {
+                        "nl": "Opgelost dat de app herhaaldelijk crashte op de geheugenlimiet van Homey. De Mijn Bezorging-afbeelding werd bij elke synchronisatie voor elk pakket opnieuw getekend, ook voor oude bezorgde zendingen; dat gebeurt nu alleen wanneer de afbeelding wordt bekeken. Track & Trace wordt alleen opgehaald voor actieve pakketten en de 5 meest recente bezorgingen, een paar tegelijk, en alleen de 15 meest recente bezorgingen worden bewaard. Postscans worden niet meer bij elke synchronisatie opnieuw gedownload, open widgets starten niet langer elke minuut een volledige synchronisatie en lettertype- en afbeeldingsbuffers gebruiken minder geheugen. Ook opgelost dat pakketten met de status \"wordt vandaag bezorgd\" als bezorgd werden gezien. In de widget Mijn Bezorging wordt de volledige pakketstatus nu over meerdere regels getoond in plaats van afgekort met puntjes.",
+                        "en": "Fixed the app repeatedly crashing on Homey's memory limit. The My Delivery image was redrawn for every parcel, including old delivered ones, on every sync; it is now drawn only when it is viewed. Track & Trace is fetched for active parcels and the 5 most recent deliveries, a few at a time, and only the 15 most recent deliveries are kept. Mail scans are no longer downloaded again on every sync, open widgets no longer start a full sync every minute, and font and image buffers use less memory. Also fixed parcels with the status \"will be delivered today\" being treated as delivered. The My Delivery widget now shows the full parcel status across multiple lines instead of cutting it off with an ellipsis."
+                    },
+                    "_src": {
+                        "nl": "Opgelost dat de app herhaaldelijk crashte op de geheugenlimiet van Homey. De Mijn Bezorging-afbeelding werd bij elke synchronisatie voor elk pakket opnieuw getekend, ook voor oude bezorgde zendingen; dat gebeurt nu alleen wanneer de afbeelding wordt bekeken. Track & Trace wordt alleen opgehaald voor actieve pakketten en de 5 meest recente bezorgingen, een paar tegelijk, en alleen de 15 meest recente bezorgingen worden bewaard. Postscans worden niet meer bij elke synchronisatie opnieuw gedownload, open widgets starten niet langer elke minuut een volledige synchronisatie en lettertype- en afbeeldingsbuffers gebruiken minder geheugen. Ook opgelost dat pakketten met de status \"wordt vandaag bezorgd\" als bezorgd werden gezien. In de widget Mijn Bezorging wordt de volledige pakketstatus nu over meerdere regels getoond in plaats van afgekort met puntjes.",
+                        "en": "Fixed the app repeatedly crashing on Homey's memory limit. The My Delivery image was redrawn for every parcel, including old delivered ones, on every sync; it is now drawn only when it is viewed. Track & Trace is fetched for active parcels and the 5 most recent deliveries, a few at a time, and only the 15 most recent deliveries are kept. Mail scans are no longer downloaded again on every sync, open widgets no longer start a full sync every minute, and font and image buffers use less memory. Also fixed parcels with the status \"will be delivered today\" being treated as delivered. The My Delivery widget now shows the full parcel status across multiple lines instead of cutting it off with an ellipsis."
+                    }
+                },
+                {
+                    "version": "1.2.8",
+                    "date": "2026-10-09",
+                    "notes": {
+                        "nl": "Opgelost dat oude bezorgde zendingen onverwacht pakket-Flows konden activeren. Bezorgde zendingen die opnieuw in de PostNL-accountfeed verschijnen worden nu als historisch behandeld, terwijl echte overgangen van actief naar bezorgd normaal blijven triggeren. Pakketten worden nu bij voorkeur op het stabiele trackingnummer gekoppeld om foutieve nieuwe-pakket-events door wijzigende interne PostNL-sleutels te voorkomen.",
+                        "en": "Fixed old delivered shipments unexpectedly triggering parcel Flows. Delivered shipments that reappear in the PostNL account feed are now treated as historical, while real active-to-delivered transitions still trigger normally. Package matching now prefers the stable tracking barcode to avoid false new-package events when PostNL changes an internal shipment key."
+                    },
+                    "_src": {
+                        "nl": "Opgelost dat oude bezorgde zendingen onverwacht pakket-Flows konden activeren. Bezorgde zendingen die opnieuw in de PostNL-accountfeed verschijnen worden nu als historisch behandeld, terwijl echte overgangen van actief naar bezorgd normaal blijven triggeren. Pakketten worden nu bij voorkeur op het stabiele trackingnummer gekoppeld om foutieve nieuwe-pakket-events door wijzigende interne PostNL-sleutels te voorkomen.",
+                        "en": "Fixed old delivered shipments unexpectedly triggering parcel Flows. Delivered shipments that reappear in the PostNL account feed are now treated as historical, while real active-to-delivered transitions still trigger normally. Package matching now prefers the stable tracking barcode to avoid false new-package events when PostNL changes an internal shipment key."
+                    }
+                },
+                {
+                    "version": "1.2.7",
+                    "date": "2026-10-08",
+                    "notes": {
+                        "nl": "PostNL-pakketgegevens uitgebreid met gewicht in kilogrammen, losse pakketafmetingen, volledige statushistorie, observation codes, canonical status en afhaalinformatie. Directe PostNL-login in Pair/Repair, scrollen in Reis van je pakket en geheugengebruik verbeterd en de omzetting van PostNL-afmetingen gecorrigeerd.",
+                        "en": "Expanded PostNL parcel data with weight in kilograms, separate parcel dimensions, full status history, observation codes, canonical status and pickup information. Improved direct PostNL Pair/Repair login, Parcel Journey scrolling and memory usage, and corrected PostNL dimension conversion."
+                    },
+                    "_src": {
+                        "nl": "PostNL-pakketgegevens uitgebreid met gewicht in kilogrammen, losse pakketafmetingen, volledige statushistorie, observation codes, canonical status en afhaalinformatie. Directe PostNL-login in Pair/Repair, scrollen in Reis van je pakket en geheugengebruik verbeterd en de omzetting van PostNL-afmetingen gecorrigeerd.",
+                        "en": "Expanded PostNL parcel data with weight in kilograms, separate parcel dimensions, full status history, observation codes, canonical status and pickup information. Improved direct PostNL Pair/Repair login, Parcel Journey scrolling and memory usage, and corrected PostNL dimension conversion."
+                    }
+                },
+                {
+                    "version": "1.2.6",
+                    "date": "2026-10-08",
+                    "notes": {
+                        "nl": "PostNL-pakketcapabilities en Flow-tokens verrijkt, PostNL-login met e-mail/wachtwoord toegevoegd aan pair/repair, status-history-weergave verbeterd, een omkeerbare pakketstatus-dropdownconditie toegevoegd, pakketpopups verrijkt en ondersteuning voor meerdere actieve pakketten toegevoegd aan Mijn Bezorging en Reis van je pakket.",
+                        "en": "Enriched PostNL parcel capabilities and Flow tokens, added password-based PostNL login for pair/repair, improved status history display, added an invertible parcel-status dropdown condition, richer package detail popups, and multi-parcel handling in My Delivery and Parcel Journey."
+                    },
+                    "_src": {
+                        "nl": "PostNL-pakketcapabilities en Flow-tokens verrijkt, PostNL-login met e-mail/wachtwoord toegevoegd aan pair/repair, status-history-weergave verbeterd, een omkeerbare pakketstatus-dropdownconditie toegevoegd, pakketpopups verrijkt en ondersteuning voor meerdere actieve pakketten toegevoegd aan Mijn Bezorging en Reis van je pakket.",
+                        "en": "Enriched PostNL parcel capabilities and Flow tokens, added password-based PostNL login for pair/repair, improved status history display, added an invertible parcel-status dropdown condition, richer package detail popups, and multi-parcel handling in My Delivery and Parcel Journey."
+                    }
+                },
+                {
+                    "version": "1.2.5",
+                    "date": "2026-10-07",
+                    "notes": {
+                        "nl": "Alle conditie-Flowkaarten ondersteunen nu de omgekeerde Homey-conditie. De kaart voor de huidige pakketstatus gebruikt nu titleFormatted voor de gekozen status en toont niet langer de ruwe [[status]]-placeholder.",
+                        "en": "Updated all condition Flow cards to support Homey's inverted condition state. Fixed the current parcel status condition to use titleFormatted for the selected status instead of showing the raw [[status]] placeholder."
+                    },
+                    "_src": {
+                        "nl": "Alle conditie-Flowkaarten ondersteunen nu de omgekeerde Homey-conditie. De kaart voor de huidige pakketstatus gebruikt nu titleFormatted voor de gekozen status en toont niet langer de ruwe [[status]]-placeholder.",
+                        "en": "Updated all condition Flow cards to support Homey's inverted condition state. Fixed the current parcel status condition to use titleFormatted for the selected status instead of showing the raw [[status]] placeholder."
+                    }
+                },
+                {
+                    "version": "1.2.4",
+                    "date": "2026-10-07",
+                    "notes": {
+                        "nl": "De nieuwe Flow-kaarten zijn nu volledig opgenomen in Homey Compose. Triggers toegevoegd voor pakket bezorgd, bezorgvenster gewijzigd, nieuwe PostNL-pakketgebeurtenis, pakketgewicht bekend en pakketafmetingen bekend, plus voorwaarden voor verbinding, pakketgewicht, pakketafmetingen en huidige pakketstatus. De widget-previews van v1.2.2 blijven behouden.",
+                        "en": "Flow card definitions are now fully included in Homey Compose. Added parcel delivered, delivery window changed, new PostNL parcel event, parcel weight available and parcel dimensions available triggers, plus conditions for connection, parcel weight, parcel dimensions and current parcel status. Keeps the v1.2.2 widget previews."
+                    },
+                    "_src": {
+                        "nl": "De nieuwe Flow-kaarten zijn nu volledig opgenomen in Homey Compose. Triggers toegevoegd voor pakket bezorgd, bezorgvenster gewijzigd, nieuwe PostNL-pakketgebeurtenis, pakketgewicht bekend en pakketafmetingen bekend, plus voorwaarden voor verbinding, pakketgewicht, pakketafmetingen en huidige pakketstatus. De widget-previews van v1.2.2 blijven behouden.",
+                        "en": "Flow card definitions are now fully included in Homey Compose. Added parcel delivered, delivery window changed, new PostNL parcel event, parcel weight available and parcel dimensions available triggers, plus conditions for connection, parcel weight, parcel dimensions and current parcel status. Keeps the v1.2.2 widget previews."
+                    }
+                },
+                {
+                    "version": "1.2.3",
+                    "date": "2026-10-07",
+                    "notes": {
+                        "nl": "Apparaat-Flowtriggers toegevoegd voor pakket bezorgd, bezorgvenster gewijzigd, nieuwe PostNL-pakketgebeurtenis, pakketgewicht bekend en pakketafmetingen bekend. Ook voorwaarden toegevoegd voor PostNL verbonden, pakketgewicht beschikbaar, pakketafmetingen beschikbaar en huidige pakketstatus. De widget-previews van v1.2.2 zijn teruggezet.",
+                        "en": "Added device Flow triggers for parcel delivered, delivery window changed, new PostNL parcel event, parcel weight available and parcel dimensions available. Added conditions for PostNL connected, parcel weight available, parcel dimensions available and current parcel status. Restored the v1.2.2 widget preview images."
+                    },
+                    "_src": {
+                        "nl": "Apparaat-Flowtriggers toegevoegd voor pakket bezorgd, bezorgvenster gewijzigd, nieuwe PostNL-pakketgebeurtenis, pakketgewicht bekend en pakketafmetingen bekend. Ook voorwaarden toegevoegd voor PostNL verbonden, pakketgewicht beschikbaar, pakketafmetingen beschikbaar en huidige pakketstatus. De widget-previews van v1.2.2 zijn teruggezet.",
+                        "en": "Added device Flow triggers for parcel delivered, delivery window changed, new PostNL parcel event, parcel weight available and parcel dimensions available. Added conditions for PostNL connected, parcel weight available, parcel dimensions available and current parcel status. Restored the v1.2.2 widget preview images."
+                    }
+                }
+            ]
         },
         {
             "id": "homey-birthdays",
@@ -751,7 +1535,119 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.birthdays/"
-            }
+            },
+            "history": [
+                {
+                    "version": "2.1.6",
+                    "date": "2026-10-11",
+                    "notes": {
+                        "nl": "Onleesbare instellingenpagina's in donkere modus opgelost. De instellingen volgen nu het thema van de Homey-app en elke pagina (menu, verjaardagslijst, verjaardagsformulier en iCal) gebruikt één consistent licht en donker kleurenschema met leesbare tekst, velden en knoppen.",
+                        "en": "Fixed unreadable settings pages in dark mode. The settings now follow the theme of the Homey app, and every page (menu, birthday list, birthday form and iCal) uses one consistent light and dark colour scheme with readable text, fields and buttons."
+                    },
+                    "_src": {
+                        "nl": "Onleesbare instellingenpagina's in donkere modus opgelost. De instellingen volgen nu het thema van de Homey-app en elke pagina (menu, verjaardagslijst, verjaardagsformulier en iCal) gebruikt één consistent licht en donker kleurenschema met leesbare tekst, velden en knoppen.",
+                        "en": "Fixed unreadable settings pages in dark mode. The settings now follow the theme of the Homey app, and every page (menu, birthday list, birthday form and iCal) uses one consistent light and dark colour scheme with readable text, fields and buttons."
+                    }
+                },
+                {
+                    "version": "2.1.5",
+                    "date": "2026-10-10",
+                    "notes": {
+                        "nl": "Opgelost dat verjaardagsberichten alleen naar de eerste persoon werden verstuurd als meerdere personen op dezelfde dag jarig zijn. Iedere jarige start nu de Flow op de ingestelde tijd, ook als een Flow langer duurt. De controle per minuut verloopt niet meer en slaat geen minuut meer over.",
+                        "en": "Fixed birthday messages only being sent to the first person when several people have their birthday on the same day. Every birthday person now triggers the Flow at the configured time, even when a Flow takes longer to finish. The minute check no longer drifts or skips a minute."
+                    },
+                    "_src": {
+                        "nl": "Opgelost dat verjaardagsberichten alleen naar de eerste persoon werden verstuurd als meerdere personen op dezelfde dag jarig zijn. Iedere jarige start nu de Flow op de ingestelde tijd, ook als een Flow langer duurt. De controle per minuut verloopt niet meer en slaat geen minuut meer over.",
+                        "en": "Fixed birthday messages only being sent to the first person when several people have their birthday on the same day. Every birthday person now triggers the Flow at the configured time, even when a Flow takes longer to finish. The minute check no longer drifts or skips a minute."
+                    }
+                },
+                {
+                    "version": "2.1.4",
+                    "date": "2026-10-07",
+                    "notes": {
+                        "nl": "Beide verjaardagswidgets zijn vernieuwd met een rustigere Homey-opmaak, duidelijkere verjaardagsregels, categorielabels en verbeterde lichte en donkere modus. Ook zijn geldige transparante widgetvoorbeelden van 1024×1024 zonder tekst toegevoegd voor light en dark mode.",
+                        "en": "Redesigned both birthday widgets with a cleaner native Homey layout, improved birthday rows, category badges and better light and dark mode styling. Added compliant 1024×1024 transparent light and dark widget previews without text."
+                    },
+                    "_src": {
+                        "nl": "Beide verjaardagswidgets zijn vernieuwd met een rustigere Homey-opmaak, duidelijkere verjaardagsregels, categorielabels en verbeterde lichte en donkere modus. Ook zijn geldige transparante widgetvoorbeelden van 1024×1024 zonder tekst toegevoegd voor light en dark mode.",
+                        "en": "Redesigned both birthday widgets with a cleaner native Homey layout, improved birthday rows, category badges and better light and dark mode styling. Added compliant 1024×1024 transparent light and dark widget previews without text."
+                    }
+                },
+                {
+                    "version": "2.1.3",
+                    "date": "2026-09-15",
+                    "notes": {
+                        "nl": "De lichte en donkere modus is verbeterd op alle instellingenpagina’s en widgets, inclusief alle veldtitels, velden, lijsten en iCal-knoppen. De HTML-vertaalcontrole voor alle 13 ondersteunde talen is voltooid.",
+                        "en": "Improved light and dark mode across every settings page and widget, including all birthday form labels, fields, lists and iCal controls. Completed the HTML translation audit for all 13 supported languages."
+                    },
+                    "_src": {
+                        "nl": "De lichte en donkere modus is verbeterd op alle instellingenpagina’s en widgets, inclusief alle veldtitels, velden, lijsten en iCal-knoppen. De HTML-vertaalcontrole voor alle 13 ondersteunde talen is voltooid.",
+                        "en": "Improved light and dark mode across every settings page and widget, including all birthday form labels, fields, lists and iCal controls. Completed the HTML translation audit for all 13 supported languages."
+                    }
+                },
+                {
+                    "version": "2.1.2",
+                    "date": "2026-09-14",
+                    "notes": {
+                        "nl": "iCal-URL-abonnementen en .ics-import toegevoegd, zoeken/filteren op categorie, stabiele persoons-ID’s en betrouwbare verjaardags-Flow-triggers. iCal-beheer staat nu in een eigen tab in de instellingen en README-bestanden zijn toegevoegd voor alle 13 ondersteunde talen. Het iCal-overzicht is hersteld: abonnementen en geüploade bestanden worden nu direct opgeslagen en met details en importstatus weergegeven. De ontbrekende Homey API-routeregistratie voor iCal-synchronisatie en uploads is hersteld. De iCal-pagina is opnieuw opgebouwd met responsieve Homey-opmaak en dark mode. Google-, Apple- en Outlook-agenda’s worden beter verwerkt, met directe synchronisatie, webcal-ondersteuning en fouten per agenda. De iCal-pagina gebruikt nu dezelfde terugknop als de verjaardagslijst en de standaard Homey-knopopmaak voor alle acties. Tekst- en invoerkleuren van iCal zijn verbeterd voor lichte en donkere modus; iCal-agenda’s staat nu boven Lijst leegmaken. Een Advanced Flow-only actiekaart toegevoegd om alle iCal-agenda’s te synchroniseren, met tokens voor geïmporteerde verjaardagen, geslaagde agenda’s en mislukte agenda’s.",
+                        "en": "Added iCal URL subscriptions and .ics imports, category search/filtering, stable person IDs and reliable birthday Flow triggers. iCal management is now available from its own settings tab and README files are included in all 13 supported languages. Fixed the iCal overview: subscriptions and uploaded files are now saved and displayed immediately with their details and import status. Fixed missing Homey API route registration for iCal synchronization and uploads. Rebuilt the iCal page with responsive Homey styling and dark mode. Improved Google, Apple and Outlook calendar parsing, direct synchronization, webcal support and per-calendar errors. The iCal page now uses the same back button as the birthday list and native Homey button styling for all actions. Improved iCal text and input colors in light and dark mode, and moved iCal calendars above Clear list. Added an Advanced Flow-only action card to synchronize all iCal calendars, with tokens for imported birthdays, successful calendars and failed calendars."
+                    },
+                    "_src": {
+                        "nl": "iCal-URL-abonnementen en .ics-import toegevoegd, zoeken/filteren op categorie, stabiele persoons-ID’s en betrouwbare verjaardags-Flow-triggers. iCal-beheer staat nu in een eigen tab in de instellingen en README-bestanden zijn toegevoegd voor alle 13 ondersteunde talen. Het iCal-overzicht is hersteld: abonnementen en geüploade bestanden worden nu direct opgeslagen en met details en importstatus weergegeven. De ontbrekende Homey API-routeregistratie voor iCal-synchronisatie en uploads is hersteld. De iCal-pagina is opnieuw opgebouwd met responsieve Homey-opmaak en dark mode. Google-, Apple- en Outlook-agenda’s worden beter verwerkt, met directe synchronisatie, webcal-ondersteuning en fouten per agenda. De iCal-pagina gebruikt nu dezelfde terugknop als de verjaardagslijst en de standaard Homey-knopopmaak voor alle acties. Tekst- en invoerkleuren van iCal zijn verbeterd voor lichte en donkere modus; iCal-agenda’s staat nu boven Lijst leegmaken. Een Advanced Flow-only actiekaart toegevoegd om alle iCal-agenda’s te synchroniseren, met tokens voor geïmporteerde verjaardagen, geslaagde agenda’s en mislukte agenda’s.",
+                        "en": "Added iCal URL subscriptions and .ics imports, category search/filtering, stable person IDs and reliable birthday Flow triggers. iCal management is now available from its own settings tab and README files are included in all 13 supported languages. Fixed the iCal overview: subscriptions and uploaded files are now saved and displayed immediately with their details and import status. Fixed missing Homey API route registration for iCal synchronization and uploads. Rebuilt the iCal page with responsive Homey styling and dark mode. Improved Google, Apple and Outlook calendar parsing, direct synchronization, webcal support and per-calendar errors. The iCal page now uses the same back button as the birthday list and native Homey button styling for all actions. Improved iCal text and input colors in light and dark mode, and moved iCal calendars above Clear list. Added an Advanced Flow-only action card to synchronize all iCal calendars, with tokens for imported birthdays, successful calendars and failed calendars."
+                    }
+                },
+                {
+                    "version": "2.1.1",
+                    "date": "2026-05-10",
+                    "notes": {
+                        "en": "Restyle homey dashboard widgets"
+                    },
+                    "_src": {
+                        "en": "Restyle homey dashboard widgets"
+                    }
+                },
+                {
+                    "version": "2.1.0",
+                    "date": "2026-05-10",
+                    "notes": {
+                        "en": "New: Import and export CSV files, dashboard widgets"
+                    },
+                    "_src": {
+                        "en": "New: Import and export CSV files, dashboard widgets"
+                    }
+                },
+                {
+                    "version": "2.0.2",
+                    "date": "2026-05-10",
+                    "notes": {
+                        "en": "Test version for new widgets"
+                    },
+                    "_src": {
+                        "en": "Test version for new widgets"
+                    }
+                },
+                {
+                    "version": "2.0.1",
+                    "date": "2024-03-15",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "2.0.0",
+                    "date": "2024-03-15",
+                    "notes": {
+                        "en": "New: settings page"
+                    },
+                    "_src": {
+                        "en": "New: settings page"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-custom-tokens",
@@ -766,7 +1662,109 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.custom-tokens/"
-            }
+            },
+            "history": [
+                {
+                    "version": "2.0.3",
+                    "date": "2026-06-03",
+                    "notes": {
+                        "en": "crash fix"
+                    },
+                    "_src": {
+                        "en": "crash fix"
+                    }
+                },
+                {
+                    "version": "1.0.6",
+                    "date": "2023-10-24",
+                    "notes": {
+                        "en": "Fix: Action card generate random number"
+                    },
+                    "_src": {
+                        "en": "Fix: Action card generate random number"
+                    }
+                },
+                {
+                    "version": "1.0.5",
+                    "date": "2023-10-23",
+                    "notes": {
+                        "en": "Fix boolean condition card"
+                    },
+                    "_src": {
+                        "en": "Fix boolean condition card"
+                    }
+                },
+                {
+                    "version": "1.0.4",
+                    "date": "2023-10-23",
+                    "notes": {
+                        "en": "Changing brand color and move all day cards to a upcoming app Better Days"
+                    },
+                    "_src": {
+                        "en": "Changing brand color and move all day cards to a upcoming app Better Days"
+                    }
+                },
+                {
+                    "version": "1.0.3",
+                    "date": "2023-10-22",
+                    "notes": {
+                        "en": "New: 5 condition card: Dutch Public Holiday, Dutch Flag Day, Today is a..., Today is a working day and today is a weekendday"
+                    },
+                    "_src": {
+                        "en": "New: 5 condition card: Dutch Public Holiday, Dutch Flag Day, Today is a..., Today is a working day and today is a weekendday"
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2023-10-22",
+                    "notes": {
+                        "en": "Added Boolean Temp Variable"
+                    },
+                    "_src": {
+                        "en": "Added Boolean Temp Variable"
+                    }
+                },
+                {
+                    "version": "1.0.1",
+                    "date": "2023-10-22",
+                    "notes": {
+                        "en": "Updated Readme"
+                    },
+                    "_src": {
+                        "en": "Updated Readme"
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2023-10-22",
+                    "notes": {
+                        "en": "Initial release"
+                    },
+                    "_src": {
+                        "en": "Initial release"
+                    }
+                },
+                {
+                    "version": "0.1.0",
+                    "date": "2023-10-22",
+                    "notes": {
+                        "en": "Firt Relese"
+                    },
+                    "_src": {
+                        "en": "Firt Relese"
+                    }
+                },
+                {
+                    "version": "0.0.9",
+                    "date": "2023-10-21",
+                    "notes": {
+                        "en": "New app name: Custom Logic"
+                    },
+                    "_src": {
+                        "en": "New app name: Custom Logic"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-rss-feed-reader",
@@ -781,7 +1779,125 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.rss-feed-reader/"
-            }
+            },
+            "history": [
+                {
+                    "version": "1.1.3",
+                    "date": "2024-03-22",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "1.1.1",
+                    "date": "2024-03-22",
+                    "notes": {
+                        "en": "App improvement"
+                    },
+                    "_src": {
+                        "en": "App improvement"
+                    }
+                },
+                {
+                    "version": "1.1.0",
+                    "date": "2023-08-06",
+                    "notes": {
+                        "nl": "Nieuw: Image Tag om te gebruiken in diverse aktie kaarten. Fix: 403 feed error, includes, image parsing.",
+                        "en": "New: Image Tag for using in any action cards. Fix: 403 feed error, includes, image parsing."
+                    },
+                    "_src": {
+                        "nl": "Nieuw: Image Tag om te gebruiken in diverse aktie kaarten. Fix: 403 feed error, includes, image parsing.",
+                        "en": "New: Image Tag for using in any action cards. Fix: 403 feed error, includes, image parsing."
+                    }
+                },
+                {
+                    "version": "1.0.6",
+                    "date": "2023-08-04",
+                    "notes": {
+                        "nl": "Nieuw: inestellingen pagina door @martijnpoppen, extra vertaling voor 🇩🇪 🇫🇷 🇮🇹 🇸🇪 🇳🇴 🇪🇸 🇩🇰 🇷🇺 🇵🇱 Fix: Feed verbeteringen",
+                        "en": "New: Settings page by @martijnpoppen, extra translation for 🇩🇪 🇫🇷 🇮🇹 🇸🇪 🇳🇴 🇪🇸 🇩🇰 🇷🇺 🇵🇱 Fix: Feed inprovement"
+                    },
+                    "_src": {
+                        "nl": "Nieuw: inestellingen pagina door @martijnpoppen, extra vertaling voor 🇩🇪 🇫🇷 🇮🇹 🇸🇪 🇳🇴 🇪🇸 🇩🇰 🇷🇺 🇵🇱 Fix: Feed verbeteringen",
+                        "en": "New: Settings page by @martijnpoppen, extra translation for 🇩🇪 🇫🇷 🇮🇹 🇸🇪 🇳🇴 🇪🇸 🇩🇰 🇷🇺 🇵🇱 Fix: Feed inprovement"
+                    }
+                },
+                {
+                    "version": "1.0.5",
+                    "date": "2023-08-04",
+                    "notes": {
+                        "nl": "Fix trigger card and imageUrl",
+                        "en": "Fix trigger card and imageUrl"
+                    },
+                    "_src": {
+                        "nl": "Fix trigger card and imageUrl",
+                        "en": "Fix trigger card and imageUrl"
+                    }
+                },
+                {
+                    "version": "1.0.4",
+                    "date": "2023-08-03",
+                    "notes": {
+                        "nl": "Minor bug fix",
+                        "en": "Kleine verbeteringen"
+                    },
+                    "_src": {
+                        "nl": "Minor bug fix",
+                        "en": "Kleine verbeteringen"
+                    }
+                },
+                {
+                    "version": "1.0.3",
+                    "date": "2023-08-03",
+                    "notes": {
+                        "nl": "Fix trigger kaart meerdere devices",
+                        "en": "Fix trigger card multiply devices"
+                    },
+                    "_src": {
+                        "nl": "Fix trigger kaart meerdere devices",
+                        "en": "Fix trigger card multiply devices"
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2023-08-03",
+                    "notes": {
+                        "nl": "Fix documentatie",
+                        "en": "Fix documentation"
+                    },
+                    "_src": {
+                        "nl": "Fix documentatie",
+                        "en": "Fix documentation"
+                    }
+                },
+                {
+                    "version": "1.0.1",
+                    "date": "2023-08-03",
+                    "notes": {
+                        "nl": "Fix documentatie",
+                        "en": "Fix documentation"
+                    },
+                    "_src": {
+                        "nl": "Fix documentatie",
+                        "en": "Fix documentation"
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2023-08-03",
+                    "notes": {
+                        "nl": "Update leesmij-bestand",
+                        "en": "Update readme"
+                    },
+                    "_src": {
+                        "nl": "Update leesmij-bestand",
+                        "en": "Update readme"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-applehealth",
@@ -796,7 +1912,81 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/"
-            }
+            },
+            "history": [
+                {
+                    "version": "1.0.3",
+                    "date": "2026-10-14",
+                    "notes": {
+                        "nl": "Nieuwe koppelflow: koppel eerst HealthSync in de app-instellingen (Verbinding maken) en voeg daarna het Apple Health-apparaat toe. Het koppelen controleert nu de verbinding en al verstuurde data verschijnt direct.",
+                        "en": "New pairing flow: first connect HealthSync in the app settings (Create connection), then add the Apple Health device. Pairing now checks the connection and data that was already sent appears immediately."
+                    },
+                    "_src": {
+                        "nl": "Nieuwe koppelflow: koppel eerst HealthSync in de app-instellingen (Verbinding maken) en voeg daarna het Apple Health-apparaat toe. Het koppelen controleert nu de verbinding en al verstuurde data verschijnt direct.",
+                        "en": "New pairing flow: first connect HealthSync in the app settings (Create connection), then add the Apple Health device. Pairing now checks the connection and data that was already sent appears immediately."
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2026-10-12",
+                    "notes": {
+                        "nl": "Vernieuwde app-instellingen: logo, stap-voor-stap iPhone koppelen met App Store-link, breder Sync-URL-veld met tonen/verbergen, laatste sync-tijd en resultaat per apparaat.",
+                        "en": "Redesigned app settings: logo, step-by-step iPhone linking with App Store link, wider Sync URL field with show/hide, last sync time and result per device."
+                    },
+                    "_src": {
+                        "nl": "Vernieuwde app-instellingen: logo, stap-voor-stap iPhone koppelen met App Store-link, breder Sync-URL-veld met tonen/verbergen, laatste sync-tijd en resultaat per apparaat.",
+                        "en": "Redesigned app settings: logo, step-by-step iPhone linking with App Store link, wider Sync URL field with show/hide, last sync time and result per device."
+                    }
+                },
+                {
+                    "version": "1.0.1",
+                    "date": "2026-10-11",
+                    "notes": {
+                        "nl": "Nieuwe app-afbeeldingen in Apple Health-stijl, passend bij de HealthSync iPhone-app.",
+                        "en": "New app images in Apple Health style, matching the HealthSync iPhone app."
+                    },
+                    "_src": {
+                        "nl": "Nieuwe app-afbeeldingen in Apple Health-stijl, passend bij de HealthSync iPhone-app.",
+                        "en": "New app images in Apple Health style, matching the HealthSync iPhone app."
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2026-10-10",
+                    "notes": {
+                        "nl": "Eerste stabiele release van Apple Health voor Homey: Apple Health- en Apple Watch-gegevens via de iPhone-companion, 100+ capabilities, elk HealthKit-type in Flows, 14 widgets in Apple Health-stijl en alle 13 Homey-talen.",
+                        "en": "First stable release of Apple Health for Homey: Apple Health and Apple Watch data via the iPhone companion, 100+ capabilities, every HealthKit type in Flows, 14 Apple Health-style widgets and all 13 Homey languages."
+                    },
+                    "_src": {
+                        "nl": "Eerste stabiele release van Apple Health voor Homey: Apple Health- en Apple Watch-gegevens via de iPhone-companion, 100+ capabilities, elk HealthKit-type in Flows, 14 widgets in Apple Health-stijl en alle 13 Homey-talen.",
+                        "en": "First stable release of Apple Health for Homey: Apple Health and Apple Watch data via the iPhone companion, 100+ capabilities, every HealthKit type in Flows, 14 Apple Health-style widgets and all 13 Homey languages."
+                    }
+                },
+                {
+                    "version": "0.2.2",
+                    "date": "2026-10-10",
+                    "notes": {
+                        "nl": "Nieuwe widget-voorbeeldafbeeldingen volgens de richtlijnen van de Homey App Store.",
+                        "en": "New widget preview images that follow the Homey App Store guidelines."
+                    },
+                    "_src": {
+                        "nl": "Nieuwe widget-voorbeeldafbeeldingen volgens de richtlijnen van de Homey App Store.",
+                        "en": "New widget preview images that follow the Homey App Store guidelines."
+                    }
+                },
+                {
+                    "version": "0.2.1",
+                    "date": "2026-10-10",
+                    "notes": {
+                        "nl": "Capability-iconen die niet zichtbaar waren op het apparaat hersteld. Nieuwe app- en apparaatafbeeldingen. Regel \"Resultaat laatste sync\" toegevoegd aan de apparaatinstellingen voor probleemoplossing.",
+                        "en": "Fixed capability icons not showing on the device. New app and device images. Added a \"Last sync result\" line to the device settings for troubleshooting."
+                    },
+                    "_src": {
+                        "nl": "Capability-iconen die niet zichtbaar waren op het apparaat hersteld. Nieuwe app- en apparaatafbeeldingen. Regel \"Resultaat laatste sync\" toegevoegd aan de apparaatinstellingen voor probleemoplossing.",
+                        "en": "Fixed capability icons not showing on the device. New app and device images. Added a \"Last sync result\" line to the device settings for troubleshooting."
+                    }
+                }
+            ]
         },
         {
             "id": "homey-hyxi-cloud",
@@ -811,7 +2001,117 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.hyxi-cloud/"
-            }
+            },
+            "history": [
+                {
+                    "version": "1.1.5",
+                    "date": "2026-09-05",
+                    "notes": {
+                        "nl": "De vermogensrichting van de HYXI Halo-batterij gecorrigeerd zodat Homey laden en ontladen juist weergeeft.",
+                        "en": "Fixed the HYXI Halo battery power direction so Homey correctly shows charging and discharging."
+                    },
+                    "_src": {
+                        "nl": "De vermogensrichting van de HYXI Halo-batterij gecorrigeerd zodat Homey laden en ontladen juist weergeeft.",
+                        "en": "Fixed the HYXI Halo battery power direction so Homey correctly shows charging and discharging."
+                    }
+                },
+                {
+                    "version": "1.1.4",
+                    "date": "2026-08-14",
+                    "notes": {
+                        "en": "Change app decripstion app store page"
+                    },
+                    "_src": {
+                        "en": "Change app decripstion app store page"
+                    }
+                },
+                {
+                    "version": "1.1.3",
+                    "date": "2026-08-14",
+                    "notes": {
+                        "en": "Bugfix app settings"
+                    },
+                    "_src": {
+                        "en": "Bugfix app settings"
+                    }
+                },
+                {
+                    "version": "1.1.2",
+                    "date": "2026-08-12",
+                    "notes": {
+                        "nl": "App Store-beschrijving verbeterd en de dubbele Flow-trigger voor het batterijniveau verwijderd.",
+                        "en": "Improved the App Store description and removed the duplicate battery level Flow trigger."
+                    },
+                    "_src": {
+                        "nl": "App Store-beschrijving verbeterd en de dubbele Flow-trigger voor het batterijniveau verwijderd.",
+                        "en": "Improved the App Store description and removed the duplicate battery level Flow trigger."
+                    }
+                },
+                {
+                    "version": "1.1.1",
+                    "date": "2026-08-12",
+                    "notes": {
+                        "nl": "App Store-beschrijving verbeterd en de dubbele Flow-trigger voor het batterijniveau verwijderd.",
+                        "en": "Improved the App Store description and removed the duplicate battery level Flow trigger."
+                    },
+                    "_src": {
+                        "nl": "App Store-beschrijving verbeterd en de dubbele Flow-trigger voor het batterijniveau verwijderd.",
+                        "en": "Improved the App Store description and removed the duplicate battery level Flow trigger."
+                    }
+                },
+                {
+                    "version": "1.1.0",
+                    "date": "2026-08-08",
+                    "notes": {
+                        "en": "First release"
+                    },
+                    "_src": {
+                        "en": "First release"
+                    }
+                },
+                {
+                    "version": "1.0.4",
+                    "date": "2026-08-08",
+                    "notes": {
+                        "nl": "Overgebleven widget-historycode verwijderd die de HYXI Halo onbeschikbaar kon maken.",
+                        "en": "Removed remaining widget history code that could make the HYXI Halo unavailable."
+                    },
+                    "_src": {
+                        "nl": "Overgebleven widget-historycode verwijderd die de HYXI Halo onbeschikbaar kon maken.",
+                        "en": "Removed remaining widget history code that could make the HYXI Halo unavailable."
+                    }
+                },
+                {
+                    "version": "1.0.3",
+                    "date": "2026-08-08",
+                    "notes": {
+                        "en": "Clean-up readme"
+                    },
+                    "_src": {
+                        "en": "Clean-up readme"
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2026-08-08",
+                    "notes": {
+                        "en": "Deleted permission"
+                    },
+                    "_src": {
+                        "en": "Deleted permission"
+                    }
+                },
+                {
+                    "version": "1.0.1",
+                    "date": "2026-08-08",
+                    "notes": {
+                        "en": "More condition and trigger cards"
+                    },
+                    "_src": {
+                        "en": "More condition and trigger cards"
+                    }
+                }
+            ]
         },
         {
             "id": "homey-hyves",
@@ -826,7 +2126,129 @@
             },
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.hyves/"
-            }
+            },
+            "history": [
+                {
+                    "version": "1.0.5",
+                    "date": "2026-10-02",
+                    "notes": {
+                        "nl": "De preview van de Hyves-meldingenwidget is vervangen door tekstvrije artwork volgens de Homey-richtlijnen.",
+                        "en": "Updated the Hyves Notifications widget preview with text-free Homey-compliant artwork."
+                    },
+                    "_src": {
+                        "nl": "De preview van de Hyves-meldingenwidget is vervangen door tekstvrije artwork volgens de Homey-richtlijnen.",
+                        "en": "Updated the Hyves Notifications widget preview with text-free Homey-compliant artwork."
+                    }
+                },
+                {
+                    "version": "1.0.4",
+                    "date": "2026-10-01",
+                    "notes": {
+                        "nl": "De App Store-tagline bijgewerkt, het communitytopic naar het app-manifest verplaatst en de Hyves-driverafbeeldingen vervangen door de nieuwe Hyves-logo-afbeeldingen voor certificering.",
+                        "en": "Updated the App Store tagline, moved the community topic to the app manifest and replaced the Hyves driver images with the new Hyves logo artwork for certification."
+                    },
+                    "_src": {
+                        "nl": "De App Store-tagline bijgewerkt, het communitytopic naar het app-manifest verplaatst en de Hyves-driverafbeeldingen vervangen door de nieuwe Hyves-logo-afbeeldingen voor certificering.",
+                        "en": "Updated the App Store tagline, moved the community topic to the app manifest and replaced the Hyves driver images with the new Hyves logo artwork for certification."
+                    }
+                },
+                {
+                    "version": "1.0.3",
+                    "date": "2026-09-28",
+                    "notes": {
+                        "nl": "Automatische vernieuwing van de Hyves-sessie toegevoegd met refresh tokens. Access tokens kunnen nu automatisch worden vernieuwd en geroteerde inloggegevens worden per device opgeslagen. Pairing en Repareren ondersteunen het credential-pakket van Login Helper 0.2.0, met uitgebreidere privacyveilige authenticatiediagnostiek.",
+                        "en": "Added automatic Hyves session renewal using refresh tokens. Access tokens can now be renewed automatically and rotated credentials are stored per device. Pairing and Repair support the Login Helper 0.2.0 credential package, with expanded privacy-safe authentication diagnostics."
+                    },
+                    "_src": {
+                        "nl": "Automatische vernieuwing van de Hyves-sessie toegevoegd met refresh tokens. Access tokens kunnen nu automatisch worden vernieuwd en geroteerde inloggegevens worden per device opgeslagen. Pairing en Repareren ondersteunen het credential-pakket van Login Helper 0.2.0, met uitgebreidere privacyveilige authenticatiediagnostiek.",
+                        "en": "Added automatic Hyves session renewal using refresh tokens. Access tokens can now be renewed automatically and rotated credentials are stored per device. Pairing and Repair support the Login Helper 0.2.0 credential package, with expanded privacy-safe authentication diagnostics."
+                    }
+                },
+                {
+                    "version": "1.0.2",
+                    "date": "2026-09-26",
+                    "notes": {
+                        "nl": "Widget-accountdetectie, aantal Hyves, reparatiepagina en verbindingsstabiliteit verbeterd.",
+                        "en": "Fixed widget account detection, Hyves group counts, repair loading and connection stability."
+                    },
+                    "_src": {
+                        "nl": "Widget-accountdetectie, aantal Hyves, reparatiepagina en verbindingsstabiliteit verbeterd.",
+                        "en": "Fixed widget account detection, Hyves group counts, repair loading and connection stability."
+                    }
+                },
+                {
+                    "version": "1.0.1",
+                    "date": "2026-09-26",
+                    "notes": {
+                        "nl": "Device-reparatie toegevoegd voor Hyves-accounts. Koppel een bestaand device opnieuw met een verse token zonder het device te verwijderen of Flows te breken. Reparatie controleert hetzelfde Hyves-account, herstelt de verbinding en ververst de data direct.",
+                        "en": "Added device Repair for Hyves accounts. Re-authenticate an existing device with a fresh token without deleting it or breaking Flows. Repair validates the same Hyves account, restores connection state and refreshes data immediately."
+                    },
+                    "_src": {
+                        "nl": "Device-reparatie toegevoegd voor Hyves-accounts. Koppel een bestaand device opnieuw met een verse token zonder het device te verwijderen of Flows te breken. Reparatie controleert hetzelfde Hyves-account, herstelt de verbinding en ververst de data direct.",
+                        "en": "Added device Repair for Hyves accounts. Re-authenticate an existing device with a fresh token without deleting it or breaking Flows. Repair validates the same Hyves account, restores connection state and refreshes data immediately."
+                    }
+                },
+                {
+                    "version": "1.0.0",
+                    "date": "2026-09-25",
+                    "notes": {
+                        "nl": "Officiële eerste release van Hyves voor Homey. De verbindingslogica is hersteld zodat tijdelijke Hyves/API-storingen een gekoppeld account niet onterecht als niet verbonden tonen, laatst bekende capability-data behouden blijft bij tijdelijke endpointfouten, met behoud van widget-devicekeuze, witte Hyves-widgetbranding, device-gebaseerde Flow-kaarten, Flow-tokens met afbeeldingen, EN/NL-ondersteuning, Homey-tijd en privacyveilige diagnostiek. Widget-devicekeuze en lege status hersteld, zodat geen berichten niet meer wordt weergegeven alsof er geen device beschikbaar is. Lege widgetstatussen onderscheiden nu geen inhoud van verbindings/API-fouten, zodat een device zonder meldingen of tijdlijnitems niet langer “Hyves is niet beschikbaar” toont.",
+                        "en": "Official first release of Hyves for Homey. Fixed connection-state handling so transient Hyves/API failures no longer falsely mark a linked account as disconnected, preserved last known capability data during temporary endpoint failures, and retained widget device selection, white Hyves widget branding, device-based Flow cards, image-aware Flow tokens, EN/NL support, Homey-time handling and privacy-safe diagnostics. Fixed widget device selection and empty-state handling so no messages no longer looks like a missing device. Widget empty states now distinguish no content from connection/API errors, so a device without notifications or timeline items no longer shows “Hyves is unavailable”."
+                    },
+                    "_src": {
+                        "nl": "Officiële eerste release van Hyves voor Homey. De verbindingslogica is hersteld zodat tijdelijke Hyves/API-storingen een gekoppeld account niet onterecht als niet verbonden tonen, laatst bekende capability-data behouden blijft bij tijdelijke endpointfouten, met behoud van widget-devicekeuze, witte Hyves-widgetbranding, device-gebaseerde Flow-kaarten, Flow-tokens met afbeeldingen, EN/NL-ondersteuning, Homey-tijd en privacyveilige diagnostiek. Widget-devicekeuze en lege status hersteld, zodat geen berichten niet meer wordt weergegeven alsof er geen device beschikbaar is. Lege widgetstatussen onderscheiden nu geen inhoud van verbindings/API-fouten, zodat een device zonder meldingen of tijdlijnitems niet langer “Hyves is niet beschikbaar” toont.",
+                        "en": "Official first release of Hyves for Homey. Fixed connection-state handling so transient Hyves/API failures no longer falsely mark a linked account as disconnected, preserved last known capability data during temporary endpoint failures, and retained widget device selection, white Hyves widget branding, device-based Flow cards, image-aware Flow tokens, EN/NL support, Homey-time handling and privacy-safe diagnostics. Fixed widget device selection and empty-state handling so no messages no longer looks like a missing device. Widget empty states now distinguish no content from connection/API errors, so a device without notifications or timeline items no longer shows “Hyves is unavailable”."
+                    }
+                },
+                {
+                    "version": "0.1.15",
+                    "date": "2026-09-25",
+                    "notes": {
+                        "nl": "Hyves API-response parsing, Flow image-tokenfouten en het opnieuw afspelen van bestaande items bij de eerste poll opgelost. Privacyveilige diagnostiek uitgebreid en widgetdata-parsing hersteld.",
+                        "en": "Fixed Hyves API response parsing, Flow image-token errors and first-poll event replay. Expanded privacy-safe diagnostics and fixed widget data parsing."
+                    },
+                    "_src": {
+                        "nl": "Hyves API-response parsing, Flow image-tokenfouten en het opnieuw afspelen van bestaande items bij de eerste poll opgelost. Privacyveilige diagnostiek uitgebreid en widgetdata-parsing hersteld.",
+                        "en": "Fixed Hyves API response parsing, Flow image-token errors and first-poll event replay. Expanded privacy-safe diagnostics and fixed widget data parsing."
+                    }
+                },
+                {
+                    "version": "0.1.14",
+                    "date": "2026-09-25",
+                    "notes": {
+                        "nl": "Alle device-gebaseerde Flow-kaarten hersteld met behoud van uitgebreidere Hyves-data parsing en privacyveilige diagnostiek.",
+                        "en": "Restored all device-based Flow cards while retaining expanded Hyves data parsing and privacy-safe diagnostics."
+                    },
+                    "_src": {
+                        "nl": "Alle device-gebaseerde Flow-kaarten hersteld met behoud van uitgebreidere Hyves-data parsing en privacyveilige diagnostiek.",
+                        "en": "Restored all device-based Flow cards while retaining expanded Hyves data parsing and privacy-safe diagnostics."
+                    }
+                },
+                {
+                    "version": "0.1.13",
+                    "date": "2026-09-25",
+                    "notes": {
+                        "nl": "Device-Flowarchitectuur hersteld, parsing van geneste Hyves API-responses sterk verbeterd en uitgebreide privacyveilige app/device-diagnostiek toegevoegd. Diagnostiek meldt alleen of een token aanwezig/verlopen is en toont nooit het token zelf.",
+                        "en": "Fixed device Flow architecture, greatly improved nested Hyves API response parsing and added extensive privacy-safe app/device diagnostics. Diagnostics only report whether a token is present/expired, never the token itself."
+                    },
+                    "_src": {
+                        "nl": "Device-Flowarchitectuur hersteld, parsing van geneste Hyves API-responses sterk verbeterd en uitgebreide privacyveilige app/device-diagnostiek toegevoegd. Diagnostiek meldt alleen of een token aanwezig/verlopen is en toont nooit het token zelf.",
+                        "en": "Fixed device Flow architecture, greatly improved nested Hyves API response parsing and added extensive privacy-safe app/device diagnostics. Diagnostics only report whether a token is present/expired, never the token itself."
+                    }
+                },
+                {
+                    "version": "0.1.12",
+                    "date": "2026-09-25",
+                    "notes": {
+                        "nl": "Nederlandse en Engelse ondersteuning, Homey-tijd, widgetpreviews en vindbaarheidstags verbeterd, plus eigen iconen toegevoegd voor alle device-capabilities.",
+                        "en": "Improved Dutch and English support, Homey-time handling, widget previews, discoverability tags, and added dedicated icons for all device capabilities."
+                    },
+                    "_src": {
+                        "nl": "Nederlandse en Engelse ondersteuning, Homey-tijd, widgetpreviews en vindbaarheidstags verbeterd, plus eigen iconen toegevoegd voor alle device-capabilities.",
+                        "en": "Improved Dutch and English support, Homey-time handling, widget previews, discoverability tags, and added dedicated icons for all device capabilities."
+                    }
+                }
+            ]
         }
     ]
 }
