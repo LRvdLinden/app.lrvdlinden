@@ -48,7 +48,8 @@
                 "en": "New"
             },
             "languages": "NL + 32",
-            "size": "32,5 MB"
+            "size": "32,5 MB",
+            "reviews": 0
         },
         {
             "id": "bingr",
@@ -246,8 +247,7 @@
                     }
                 }
             ],
-            "rating": 5,
-            "reviews": 1,
+            "reviews": 0,
             "promo": {
                 "image": {
                     "nl": "img/promo-devtools-nl.webp",
@@ -372,7 +372,7 @@
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
             "rating": 5.0,
-            "reviews": 6,
+            "reviews": 15,
             "size": "15,3 MB",
             "languages": "EN",
             "links": {
@@ -489,7 +489,8 @@
                         "en": "First release."
                     }
                 }
-            ]
+            ],
+            "reviews": 0
         },
         {
             "id": "vlagdagen",
@@ -733,7 +734,8 @@
                         "en": "First release: App Store apps as devices with downloads, status, versions, builds and ratings; portfolio device; flows; dashboard widgets."
                     }
                 }
-            ]
+            ],
+            "reviews": 0
         },
         {
             "id": "homey-p2000",
