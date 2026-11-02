@@ -263,6 +263,7 @@ footer nav{display:flex;gap:18px}
       <nav aria-label="Menu">
         <a href="#nieuw" data-t="navNew"></a>
         <a href="#apps" data-t="navApps"></a>
+        <a href="#testflight" data-t="navTf" id="navTf" hidden></a>
         <a href="#homey">Homey</a>
       </nav>
       <div class="lang" role="group" aria-label="Taal / Language">
@@ -305,6 +306,12 @@ footer nav{display:flex;gap:18px}
     <div id="detailSlot"></div>
   </section>
 
+  <section class="section wrap" id="testflight" hidden>
+    <div class="sec-head"><h2 data-t="tfTitle"></h2><p data-t="tfSub"></p></div>
+    <div class="grid" id="tfGrid"></div>
+    <div id="tfSlot"></div>
+  </section>
+
   <section class="section wrap" id="homey">
     <div class="homey">
       <div class="homey-intro">
@@ -341,6 +348,7 @@ const T = {
     stLive:"apps live", stDev:"in beta of ontwikkeling", stHomey:"Homey-apps",
     newTitle:"Nieuw en onderweg", newSub:"Net uit, in beta of nog op de werkbank.",
     storeTitle:"In de App Store", storeSub:"Tik op een app voor details en versiegeschiedenis.",
+    navTf:"TestFlight", tfTitle:"Via TestFlight", tfSub:"Nog niet in de App Store, maar je kunt ze nu al testen via TestFlight.",
     all:"Alles", homeyTitle:"Apps voor je smart home",
     homeySub:"Koppelingen met diensten die je dagelijks gebruikt, verdeeld over twee ontwikkelaarsaccounts. Versies en releasenotes vind je in de Homey App Store en op het Community Forum.",
     homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In ontwikkeling",
@@ -360,6 +368,7 @@ const T = {
     stLive:"apps live", stDev:"in beta or development", stHomey:"Homey apps",
     newTitle:"New and upcoming", newSub:"Just released, in beta or still on the workbench.",
     storeTitle:"On the App Store", storeSub:"Tap an app for details and version history.",
+    navTf:"TestFlight", tfTitle:"On TestFlight", tfSub:"Not on the App Store yet, but you can already test them via TestFlight.",
     all:"All", homeyTitle:"Apps for your smart home",
     homeySub:"Integrations with services you use every day, spread across two developer accounts. Versions and release notes are in the Homey App Store and on the Community Forum.",
     homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In development",
@@ -472,27 +481,38 @@ function render(){
     return `<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c===cat}">${esc(c==="all"?t("all"):catName(c))}<span class="n">${n}</span></button>`;
   }).join("");
 
-  const list = live.filter(a => cat==="all" || a.category===cat);
-  $("#grid").innerHTML = list.map(a => `
-    <button class="app" type="button" data-id="${esc(a.id)}" aria-expanded="${open===a.id}" aria-controls="detailSlot">
+  renderGrid($("#grid"), "detailSlot", live.filter(a => cat==="all" || a.category===cat));
+
+  // TestFlight: wel een TestFlight-link, nog geen App Store-link
+  const tf = ios.filter(a => a.links && a.links.testflight && !a.links.appstore);
+  $("#testflight").hidden = !tf.length;
+  $("#navTf").hidden = !tf.length;
+  renderGrid($("#tfGrid"), "tfSlot", tf);
+
+  renderHomey();
+}
+
+function renderGrid(gridEl, slotId, list){
+  gridEl.innerHTML = list.map(a => `
+    <button class="app" type="button" data-id="${esc(a.id)}" aria-expanded="${open===a.id}" aria-controls="${slotId}">
       ${icon(a)}
       <div style="min-width:0">
         <h3>${esc(a.name)}</h3>
         <div class="cat">${esc(catName(a.category))}${a.badge?` · ${esc(L(a.badge))}`:""}</div>
-        <div class="meta"><span>${a.rating?`<span class="stars" aria-hidden="true">★★★★★</span> ${num(a.rating)}`:esc(t("noRating"))}</span>${a.history&&a.history.length?`<span class="mono">v${esc(a.history[0].version)}</span>`:""}</div>
+        <div class="meta"><span>${!(a.links&&a.links.appstore)?esc(t(a.status)):a.rating?`<span class="stars" aria-hidden="true">★★★★★</span> ${num(a.rating)}`:esc(t("noRating"))}</span>${a.history&&a.history.length?`<span class="mono">v${esc(a.history[0].version)}</span>`:""}</div>
       </div>
     </button>`).join("");
 
   const a = list.find(x => x.id === open);
-  $("#detailSlot").innerHTML = !a ? "" : `
+  $("#"+slotId).innerHTML = !a ? "" : `
     <div class="detail ${a.history&&a.history.length?"":"single"}">
       <div>
         <div class="lead">${icon(a,"lg")}<div><h3>${esc(a.name)}</h3><div style="color:var(--muted);font-size:14px">${esc(t("dev_by"))}</div></div></div>
         <p>${esc(L(a.description))}</p>
         <div class="plat">${(a.platforms||[]).map(p=>`<span class="tag">${esc(p)}</span>`).join("")}</div>
         <dl class="facts">
-          <div><dt>${esc(t("rating"))}</dt><dd>${a.rating?num(a.rating)+" ★":"–"}</dd></div>
-          <div><dt>${esc(t("reviews"))}</dt><dd>${a.reviews||0}</dd></div>
+          ${a.links&&a.links.appstore?`<div><dt>${esc(t("rating"))}</dt><dd>${a.rating?num(a.rating)+" ★":"–"}</dd></div>
+          <div><dt>${esc(t("reviews"))}</dt><dd>${a.reviews||0}</dd></div>`:""}
           <div><dt>${esc(t("age"))}</dt><dd>4+</dd></div>
           <div><dt>${esc(t("category"))}</dt><dd>${esc(catName(a.category))}</dd></div>
           <div><dt>${esc(t("language"))}</dt><dd>${esc(a.languages||"–")}</dd></div>
@@ -503,7 +523,6 @@ function render(){
       ${a.history&&a.history.length?`<div class="history"><h4>${esc(t("history"))}</h4><ol>${a.history.map(h=>`<li><div><div class="mono">${esc(h.version)}</div><div class="d">${esc(date(h.date))}</div></div><p>${esc(L(h.notes))}</p></li>`).join("")}</ol></div>`:""}
     </div>`;
 
-  renderHomey();
 }
 
 // ---------- Homey: lijst met uitklapbare details ----------
@@ -666,7 +685,7 @@ document.addEventListener("click", e => {
   }
   const ap = e.target.closest(".app");
   if (ap){ open = open===ap.dataset.id ? null : ap.dataset.id; render();
-    if (open) $("#detailSlot").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"nearest"}); }
+    if (open) document.getElementById(ap.getAttribute("aria-controls"))?.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"nearest"}); }
 });
 
 renderStatic();

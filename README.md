@@ -39,6 +39,9 @@ Wachtwoord en token komen alleen op de server terecht, nooit in de repo of in de
 3. De wijziging staat direct live en wordt als commit in deze repo opgeslagen.
 4. De workflow zet daarna de hele site via FTP opnieuw neer en maakt een zip-release als back-up.
 
+Apps met alleen een TestFlight-link (nog geen App Store-link) staan op de site in een eigen blok **Via TestFlight**.
+Zodra de store-check een App Store-link vindt, verhuist de app vanzelf naar **In de App Store**.
+
 Wijzigingen aan de code (bijv. `index.html`) gaan via een commit in `site/`; ook die worden automatisch live gezet.
 Handmatig opnieuw uitrollen: **Actions → Release site → Run workflow**.
 
