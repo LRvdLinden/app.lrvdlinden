@@ -158,7 +158,6 @@
             "name": "HealthSync",
             "section": "ios",
             "status": "live",
-            "featured": true,
             "icon": "img/healthsync.webp",
             "category": "utilities",
             "platforms": [
