@@ -30,8 +30,7 @@
             "subtitle": {
                 "nl": "Apps voor je Homey Pro & Cloud",
                 "en": "Apps for your Homey Pro & Cloud"
-            },
-            "featured": true
+            }
         },
         {
             "id": "nl-lrvdlinden-homeydevtools",
@@ -63,8 +62,7 @@
             "subtitle": {
                 "nl": "Je Homey-apps altijd dichtbij",
                 "en": "Your Homey apps, always close by"
-            },
-            "featured": true
+            }
         },
         {
             "id": "nl-lrvdlinden-pasr",
