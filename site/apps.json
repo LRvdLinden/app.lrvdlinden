@@ -14,14 +14,23 @@
                 "Apple Watch"
             ],
             "description": {
-                "nl": "",
+                "nl": "Volg installs, builds en reviews van je Homey-apps. Krijg een melding zodra een build live gaat of is goedgekeurd, en beheer je Homeys onderweg.",
                 "en": ""
             },
             "links": {
                 "testflight": "https://testflight.apple.com/join/nPzKAhsZ"
             },
             "history": [],
-            "icon": "img/nl-lrvdlinden-homeydevtools.webp"
+            "icon": "img/nl-lrvdlinden-homeydevtools.webp",
+            "promo": {
+                "image": {
+                    "nl": "img/promo-nl-lrvdlinden-homeydevtools-nl.webp",
+                    "en": "img/promo-nl-lrvdlinden-homeydevtools-en.webp"
+                }
+            },
+            "subtitle": {
+                "nl": "Je Homey-apps altijd dichtbij"
+            }
         },
         {
             "id": "nl-lrvdlinden-pasr",
