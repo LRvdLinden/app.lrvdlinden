@@ -81,6 +81,10 @@ textarea{min-height:84px;resize:vertical}
 .iconrow{grid-column:1/-1;display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
 .iconrow img,.iconrow .ph{width:64px;height:64px;border-radius:15px;object-fit:cover;background:var(--line);flex:none}
 .iconrow label{flex:1;min-width:200px}
+.trbar{grid-column:1/-1;display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap;background:var(--accent-soft);border-radius:12px;padding:10px 12px}
+.trbar .muted{flex-basis:100%;font-size:12.5px}
+.trover{flex-direction:row !important;align-items:center;gap:6px !important;font-weight:500 !important;color:var(--ink) !important}
+.trover input{width:auto}
 .bannerrow{grid-column:1/-1;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .bannerrow .prev{width:240px;max-width:100%;aspect-ratio:16/9;border-radius:12px;object-fit:cover;background:var(--line);display:grid;place-items:center;font-size:12px;color:var(--muted);text-align:center;padding:6px}
 .switch{grid-column:1/-1;flex-direction:row !important;align-items:center;gap:8px !important;color:var(--ink) !important;font-weight:600}
@@ -204,6 +208,11 @@ function renderEditor(){
 
     <fieldset>
       <legend>Teksten</legend>
+      <div class="trbar">
+        <button type="button" class="btn small" id="btnTranslate" ${translating?"disabled":""}>${translating?"Bezig met vertalen…":"Vertaal NL → EN"}</button>
+        <label class="trover" for="trOverwrite"><input type="checkbox" id="trOverwrite"> Ook bestaande Engelse teksten overschrijven</label>
+        <span class="muted">Vertaalt ondertitel, omschrijving, label, banner en versie-notities van deze app. Lege Nederlandse velden worden vanuit het Engels ingevuld.</span>
+      </div>
       ${field("Ondertitel NL","subtitle.nl",(a.subtitle||{}).nl)}
       ${field("Subtitle EN","subtitle.en",(a.subtitle||{}).en)}
       ${field("Omschrijving NL","description.nl",(a.description||{}).nl,{area:1})}
@@ -338,6 +347,7 @@ document.addEventListener("click", e => {
     }
     save(); renderEditor(); return;
   }
+  if (id === "btnTranslate") return translateApp(a, $("#trOverwrite")?.checked);
   if (id === "addPlat"){ const v = $("#newPlat").value.trim(); if (!v) return; a.platforms = [...new Set([...(a.platforms||[]), v])]; save(); renderEditor(); return; }
   if (id === "addHist"){ a.history = a.history || []; a.history.unshift({version:"", date:new Date().toISOString().slice(0,10), notes:{nl:"",en:""}}); save(); renderEditor(); return; }
   if (e.target.dataset.delh != null){ a.history.splice(+e.target.dataset.delh,1); save(); renderEditor(); return; }
@@ -352,6 +362,48 @@ document.addEventListener("click", e => {
 });
 
 function json(){ return JSON.stringify(DATA, null, 2) + "\n"; }
+// "Vertaal NL → EN": vult Engelse velden vanuit het Nederlands (en lege Nederlandse vanuit het Engels)
+let translating = false;
+function textPairs(a){
+  const pairs = [];
+  const add = (obj, label) => { if (obj && typeof obj === "object") pairs.push({ obj, label }); };
+  add(a.subtitle, "ondertitel"); add(a.description, "omschrijving"); add(a.badge, "label");
+  if (a.promo){ add(a.promo.eyebrow, "banner bovenregel"); add(a.promo.title, "banner titel"); add(a.promo.text, "banner tekst"); }
+  (a.history || []).forEach(h => add(h.notes, "versie " + (h.version || "")));
+  return pairs;
+}
+async function translateApp(a, overwrite){
+  if (translating) return;
+  const jobs = [];
+  for (const p of textPairs(a)){
+    const nl = (p.obj.nl || "").trim(), en = (p.obj.en || "").trim();
+    if (nl && (!en || overwrite)) jobs.push({ p, to: "en", text: nl });
+    else if (en && !nl) jobs.push({ p, to: "nl", text: en });
+  }
+  if (!jobs.length) return toast(overwrite ? "Er staan geen Nederlandse teksten bij deze app" : "Alles is al vertaald. Vink 'overschrijven' aan om opnieuw te vertalen.");
+  translating = true; renderEditor();
+  try {
+    const out = [];
+    for (let i = 0; i < jobs.length; i += 40){
+      const chunk = jobs.slice(i, i + 40);
+      const r = await fetch("translate.php", { method:"POST", credentials:"same-origin",
+        headers:{ "Content-Type":"application/json", "X-LR-Beheer":"1" },
+        body: JSON.stringify({ items: chunk.map(j => ({ text: j.text, to: j.to })) }) });
+      const res = await r.json().catch(() => ({}));
+      if (!r.ok || !res.ok) throw new Error(res.error || ("De server gaf HTTP " + r.status + ". Staat translate.php op de server?"));
+      out.push(...res.texts);
+    }
+    let n = 0;
+    jobs.forEach((j, i) => { if (out[i]) { j.p.obj[j.to] = out[i]; n++; } });
+    save();
+    toast(n ? `${n} ${n === 1 ? "tekst" : "teksten"} vertaald. Controleer ze en klik Publiceren.` : "Er kwam geen vertaling terug");
+  } catch(err) {
+    showResult("bad", `<b>Vertalen mislukt.</b> ${esc(err.message)}`);
+  } finally {
+    translating = false; renderEditor();
+  }
+}
+
 function changedNames(){
   let before = []; try { before = JSON.parse(ORIGINAL).apps || []; } catch(e){}
   const map = new Map(before.map(a => [a.id, JSON.stringify(a)]));

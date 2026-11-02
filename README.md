@@ -26,7 +26,7 @@ Zet deze onder **Settings → Secrets and variables → Actions → New reposito
 | `FTP_PORT` | Meestal `21` (`22` = SFTP) |
 | `FTP_DIR` | Optioneel: doelmap als die niet automatisch klopt |
 | `PUBLISH_GITHUB_TOKEN` | Fine-grained token, alleen voor deze repo, met *Contents: Read and write* en *Actions: Read and write* |
-| `ANTHROPIC_API_KEY` | Optioneel: API-sleutel om wat-is-nieuw-teksten naar NL/EN te vertalen |
+| `ANTHROPIC_API_KEY` | API-sleutel voor vertalen: wat-is-nieuw in de store-check en de knop **Vertaal NL → EN** in beheer |
 | `ANTHROPIC_WORKSPACE_ID` | Alleen nodig als de API-sleutel niet aan een workspace gekoppeld is (`wrkspc_…`) |
 
 Wachtwoord en token komen alleen op de server terecht, nooit in de repo of in de (publieke) zip-releases.
@@ -34,7 +34,8 @@ Wachtwoord en token komen alleen op de server terecht, nooit in de repo of in de
 ## Een update doen
 
 1. Open `https://lrvdlinden.app/beheer.html` en log in.
-2. Pas apps aan, upload eventueel een icoon en klik **Publiceren**.
+2. Pas apps aan, upload eventueel een icoon en klik **Publiceren**. Met **Vertaal NL → EN** vul je de
+   Engelse teksten van een app automatisch in vanuit het Nederlands.
 3. De wijziging staat direct live en wordt als commit in deze repo opgeslagen.
 4. De workflow zet daarna de hele site via FTP opnieuw neer en maakt een zip-release als back-up.
 
