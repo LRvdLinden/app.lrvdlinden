@@ -2,6 +2,38 @@
     "_uitleg": "Pas dit bestand aan om apps toe te voegen, platformen te wijzigen of de status te veranderen. status: live | beta | dev. section: ios | homey. featured: true zet een live app bovenaan in 'Nieuw en onderweg'. Makkelijker: open beheer.html.",
     "apps": [
         {
+            "id": "nl-lrvdlinden-homeystore",
+            "name": "HomeyStore",
+            "section": "ios",
+            "status": "dev",
+            "featured": true,
+            "category": "utilities",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac"
+            ],
+            "description": {
+                "nl": "Ontdek apps voor je Homey en installeer ze direct op je Homey Pro of Homey Cloud – ook testversies. Met recensies, updates en filters op Zigbee, Z-Wave en Matter.",
+                "en": "Discover apps for your Homey and install them directly on your Homey Pro or Homey Cloud – including beta versions. With reviews, updates and filters for Zigbee, Z-Wave and Matter."
+            },
+            "links": {
+                "testflight": "https://testflight.apple.com/join/EzB9xDAQ"
+            },
+            "history": [],
+            "icon": "img/nl-lrvdlinden-homeystore.webp",
+            "promo": {
+                "image": {
+                    "nl": "img/promo-nl-lrvdlinden-homeystore-nl.webp",
+                    "en": "img/promo-nl-lrvdlinden-homeystore-en.webp"
+                }
+            },
+            "subtitle": {
+                "nl": "Apps voor je Homey Pro & Cloud",
+                "en": "Apps for your Homey Pro & Cloud"
+            }
+        },
+        {
             "id": "nl-lrvdlinden-homeydevtools",
             "name": "HomeyDev",
             "section": "ios",
