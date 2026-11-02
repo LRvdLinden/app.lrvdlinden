@@ -567,13 +567,13 @@ function homeyDetail(h){
   const f = x.flow || {};
   const nFlow = ["triggers","conditions","actions"].reduce((n,k) => n + ((f[k] || []).length), 0);
   const news = (h.history || []).slice(0, 3).filter(e => L(e.notes)).map(e => `
-    <div><span><span class="v">v${esc(e.version)}</span><br><span class="d">${esc(date(e.date))}</span></span><p>${esc(L(e.notes))}</p></div>`).join("");
+    <div><span><span class="v">v${esc(e.version)}</span>${e.test ? ` <span class="pill beta">${esc(t("h_beta"))}</span>` : ""}<br><span class="d">${esc(date(e.date))}</span></span><p>${esc(L(e.notes))}</p></div>`).join("");
   return `
     <div class="hd-head">
       ${icon(h, "lg")}
       <div style="min-width:0">
         <h3>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</h3>
-        <div class="sub">${last && last.version ? `<span class="mono">v${esc(last.version)}</span>` : ""}${h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""}</div>
+        <div class="sub">${(() => { const st = (h.history || []).find(e => !e.test); return (st && st.version ? `<span class="mono">v${esc(st.version)}</span>` : "") + (last && last.test ? `<span class="mono">${esc(t("h_beta"))} v${esc(last.version)}</span>` : ""); })()}${h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""}</div>
       </div>
       <button type="button" class="hd-close" data-hclose aria-label="${esc(t("hClose"))}">×</button>
       <div class="btns" style="grid-column:1/-1">${btns}</div>
@@ -591,7 +591,10 @@ function renderHomey(){
   if (openHomey && !homey.some(h => h.id === openHomey)) openHomey = null;
   $("#homeyList").innerHTML = homey.map(h => {
     const last = (h.history || [])[0];
-    const meta = [last && last.version ? `<span class="mono">v${esc(last.version)}</span>` : "",
+    const stable = (h.history || []).find(e => !e.test);
+    const tv = last && last.test ? last : null;
+    const meta = [stable && stable.version ? `<span class="mono">v${esc(stable.version)}</span>` : "",
+                  tv ? `<span class="mono">${esc(t("h_beta"))} v${esc(tv.version)}</span>` : "",
                   h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""].filter(Boolean).join("");
     const news = last && L(last.notes) ? `<span class="hnew">${esc(t("whatsNew"))}: ${esc(L(last.notes).split("\n")[0])}</span>` : "";
     return `<li><button type="button" class="hitem" data-hid="${esc(h.id)}" aria-expanded="${openHomey===h.id}" aria-label="${esc(t("hOpen").replace("{n}", h.name))}">

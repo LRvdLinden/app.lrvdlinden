@@ -397,7 +397,7 @@ def check_homey(apps, log, only=None):
         links["homey"] = f"https://homey.app/nl-nl/app/{hid}/" + ("" if live else f"{name_slug}/test/")
 
         log_cl = get_json(f"https://apps-api.athom.com/api/v1/app/{hid}/changelog") or {}
-        states = ("live", "superseded") if live else ("test", "live", "superseded")
+        states = ("test", "live", "superseded")  # testversies ook tonen, ook bij een app die al live is
         entries = [(v, e) for v, e in log_cl.items() if isinstance(e, dict) and e.get("state") in states]
         entries.sort(key=lambda x: ver_key(x[0]), reverse=True)
         keep_versions = {str(v) for v, _ in entries[:HOMEY_HISTORY]}
@@ -416,8 +416,14 @@ def check_homey(apps, log, only=None):
                 t = clean(next(iter(cl.values())))
                 notes = {detect_lang(t): t}
             upsert_history(app, v, (e.get("createdAt") or "")[:10], notes, keep=HOMEY_HISTORY)
+            entry = next((h for h in app["history"] if str(h.get("version")) == str(v)), None)
+            if entry is not None:
+                if e.get("state") == "test" and live:
+                    entry["test"] = True
+                else:
+                    entry.pop("test", None)
         if snap(app) != before:
-            log.append(f"- {app['name']} (Homey): versie {live or test}" + (f", {app['rating']} ★" if app.get("rating") else ""))
+            log.append(f"- {app['name']} (Homey): versie {live or test}" + (f", test {test}" if live and test and test != live else "") + (f", {app['rating']} ★" if app.get("rating") else ""))
 
 
 
