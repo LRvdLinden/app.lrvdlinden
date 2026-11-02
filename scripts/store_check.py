@@ -398,7 +398,9 @@ def check_homey(apps, log, only=None):
 
         log_cl = get_json(f"https://apps-api.athom.com/api/v1/app/{hid}/changelog") or {}
         states = ("test", "live", "superseded")  # testversies ook tonen, ook bij een app die al live is
-        entries = [(v, e) for v, e in log_cl.items() if isinstance(e, dict) and e.get("state") in states]
+        entries = [(v, e) for v, e in log_cl.items() if isinstance(e, dict) and e.get("state") in states
+                   # oude testversies die nooit live gingen weglaten; alleen een test nieuwer dan live tonen
+                   and not (live and e.get("state") == "test" and ver_key(v) <= ver_key(live))]
         entries.sort(key=lambda x: ver_key(x[0]), reverse=True)
         keep_versions = {str(v) for v, _ in entries[:HOMEY_HISTORY]}
         if keep_versions:  # alleen Homey-versies tonen (oude of verkeerd gekoppelde regels weg)
