@@ -59,6 +59,7 @@ jobs:
         run: |
           python3 scripts/store_check.py site/apps.json
           cat store-check-summary.md >> "$GITHUB_STEP_SUMMARY"
+          [ -f store-check-overview.md ] && cat store-check-overview.md >> "$GITHUB_STEP_SUMMARY" || true
 
       - name: Opslaan en live zetten
         if: steps.when.outputs.run == 'true'

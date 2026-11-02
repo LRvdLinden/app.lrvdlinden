@@ -233,6 +233,9 @@ def ver_key(v):
 
 
 # ---------- App Store ----------
+CHECKED = []  # wat de stores teruggaven, voor het overzicht in de run
+
+
 def check_appstore(apps, log, only=None):
     # Alleen iOS-apps. Een App Store-link bij een Homey-app is de bijbehorende iPhone-app, geen eigen versie.
     ios = [a for a in apps if a.get("section", "ios") != "homey" and appstore_id(a)
@@ -253,6 +256,10 @@ def check_appstore(apps, log, only=None):
             log.append(f"- {app['name']}: niet gevonden in de App Store")
             continue
         main = res.get("nl") or res.get("us") or next(iter(res.values()))
+        newest = max((r.get("version") or "0" for r in res.values()), key=ver_key)
+        CHECKED.append(f"| {app['name']} | App Store | {main.get('version') or '–'}"
+                       + (f" (elders al {newest})" if newest != main.get("version") else "")
+                       + f" | {(main.get('currentVersionReleaseDate') or '')[:10]} |")
         before = snap(app)
 
         # Sterren en aantal beoordelingen, opgeteld over alle landen
@@ -373,6 +380,7 @@ def check_homey(apps, log, only=None):
             continue
         before = snap(app)
         live, test = info.get("liveVersion"), info.get("testVersion")
+        CHECKED.append(f"| {app['name']} | Homey | {live or '–'}" + (f" (test {test})" if test and test != live else "") + " | |")
         app["status"] = "live" if live else ("beta" if test else app.get("status", "dev"))
         if info.get("rating") is not None:
             app["rating"] = round(float(info["rating"]), 1)
@@ -713,6 +721,9 @@ def main():
     else:
         summary = f"Store-check {stamp}: geen wijzigingen"
     open("store-check-summary.md", "w", encoding="utf-8").write(summary + "\n")
+    if CHECKED:  # alleen in de Actions-samenvatting, niet in de commit
+        open("store-check-overview.md", "w", encoding="utf-8").write(
+            "\n\n### Gecontroleerd\n\n| App | Store | Versie in de store | Datum |\n|---|---|---|---|\n" + "\n".join(CHECKED) + "\n")
     print(summary)
 
 
