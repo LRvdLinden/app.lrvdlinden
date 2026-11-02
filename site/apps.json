@@ -15,7 +15,7 @@
             ],
             "description": {
                 "nl": "Zet je kaarten in Apple Wallet, zodat ze op je toegangsscherm verschijnen als je bij de winkel bent. Gratis, zonder reclame en zonder abonnement.\n",
-                "en": ""
+                "en": "Put your Dutch or Belgium cards in Apple Wallet, so they show up on your lock screen when you're near the store. Free, no ads and no subscription."
             },
             "links": {
                 "website": "https://pasr.nl",
@@ -32,7 +32,8 @@
             },
             "languages": "NL + 1",
             "subtitle": {
-                "nl": "Al je pasjes in één app"
+                "nl": "Al je pasjes in één app",
+                "en": "All your cards in one app"
             }
         },
         {
