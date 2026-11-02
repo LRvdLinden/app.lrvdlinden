@@ -233,9 +233,10 @@ def ver_key(v):
 
 
 # ---------- App Store ----------
-def check_appstore(apps, log):
+def check_appstore(apps, log, only=None):
     # Alleen iOS-apps. Een App Store-link bij een Homey-app is de bijbehorende iPhone-app, geen eigen versie.
-    ios = [a for a in apps if a.get("section", "ios") != "homey" and appstore_id(a)]
+    ios = [a for a in apps if a.get("section", "ios") != "homey" and appstore_id(a)
+           and (only is None or a["id"] in only)]
     if not ios:
         return
     ids = ",".join(sorted({appstore_id(a) for a in ios}))
@@ -361,8 +362,8 @@ def homey_details(build, old):
     return {k: v for k, v in out.items() if v}
 
 
-def check_homey(apps, log):
-    for app in [a for a in apps if a.get("section") == "homey"]:
+def check_homey(apps, log, only=None):
+    for app in [a for a in apps if a.get("section") == "homey" and (only is None or a["id"] in only)]:
         hid = homey_id(app)
         if not hid:
             continue
@@ -508,6 +509,7 @@ def write_texts(jobs):
 
 
 def discover_appstore(apps, log):
+    touched_ids = set()
     found = {}
     for cc in ("nl", "us", "nz", "gb"):
         for entity in ("software", "macSoftware"):
@@ -556,7 +558,9 @@ def discover_appstore(apps, log):
         if need:
             jobs.append({"app": app, "name": name, "nl": nl.get("description"), "en": en.get("description"), "need": need})
         log.append(f"- {'Nieuwe app' if new else 'Aangevuld'}: {name} (App Store)")
+        touched_ids.add(app["id"])
     write_texts(jobs)
+    return touched_ids
 
 
 def discover_homey(apps, log):
@@ -611,6 +615,7 @@ def discover_homey(apps, log):
     for app, new, before in touched:
         if new or snap(app) != before:
             log.append(f"- {'Nieuwe app' if new else 'Aangevuld'}: {app['name']} (Homey)")
+    return {app["id"] for app, _, _ in touched}
 
 # ---------- ontbrekende talen vertalen ----------
 def fill_homey_translations(apps, log):
@@ -676,11 +681,19 @@ def main():
     data = json.loads(raw)
     apps = data.get("apps", [])
     log = []
-    if os.environ.get("STORE_DISCOVER", "1") == "1":
-        discover_appstore(apps, log)
-        discover_homey(apps, log)
-    check_appstore(apps, log)
-    check_homey(apps, log)
+    # STORE_MODE: alles (standaard), nieuw (alleen nieuwe en beta-apps), bijwerken (alleen bestaande apps)
+    mode = os.environ.get("STORE_MODE", "alles").strip().lower() or "alles"
+    if os.environ.get("STORE_DISCOVER", "1") != "1":
+        mode = "bijwerken"
+    print(f"Modus: {mode}")
+    only = None
+    if mode in ("alles", "nieuw"):
+        touched = discover_appstore(apps, log) | discover_homey(apps, log)
+        if mode == "nieuw":
+            only = touched  # nieuw gevonden of aangevulde apps meteen volledig ophalen
+    if only is None or only:
+        check_appstore(apps, log, only)
+        check_homey(apps, log, only)
     fill_translations(apps, log)
     fill_homey_translations(apps, log)
     for app in apps:

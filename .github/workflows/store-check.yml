@@ -3,7 +3,7 @@ name: Store-check
 # Elke dag om 08:00 (Nederlandse tijd) de App Store en de Homey App Store nalopen:
 # nieuwe apps toevoegen, beta-apps aanvullen zodra ze in de store staan,
 # versies, wat-is-nieuw (NL en EN), sterren en aantal beoordelingen.
-# Ook te starten met de knop "Nieuwe apps ophalen" in beheer.html.
+# Ook te starten in beheer.html: "Nieuwe apps ophalen" (modus nieuw) en "Apps bijwerken" (modus bijwerken).
 # Bij wijzigingen wordt site/apps.json bijgewerkt en de site via "Release site" opnieuw live gezet.
 #
 # GitHub-planningen draaien in UTC. Daarom staan er twee tijden (zomer- en wintertijd);
@@ -14,6 +14,12 @@ on:
     - cron: "2 6 * * *"
     - cron: "2 7 * * *"
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "Wat ophalen"
+        type: choice
+        options: [alles, nieuw, bijwerken]
+        default: alles
 
 permissions:
   contents: write
@@ -49,6 +55,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
+          STORE_MODE: ${{ github.event.inputs.mode || 'alles' }}
         run: |
           python3 scripts/store_check.py site/apps.json
           cat store-check-summary.md >> "$GITHUB_STEP_SUMMARY"

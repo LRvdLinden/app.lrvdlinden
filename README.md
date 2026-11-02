@@ -44,8 +44,13 @@ Handmatig opnieuw uitrollen: **Actions → Release site → Run workflow**.
 
 ## Dagelijkse store-check
 
-Elke dag om 08:00 loopt **Actions → Store-check** de App Store en de Homey App Store na.
-Hetzelfde gebeurt met de knop **Nieuwe apps ophalen** in `beheer.html`.
+Elke dag om 08:00 loopt **Actions → Store-check** de App Store en de Homey App Store na (alles).
+In `beheer.html` kun je het ook zelf starten:
+
+- **Nieuwe apps ophalen**: alleen nieuwe apps zoeken en beta-apps aanvullen (1 tot 3 minuten).
+- **Apps bijwerken**: alle bestaande apps bijwerken (3 tot 5 minuten).
+
+Handmatig op GitHub kan ook: **Run workflow** en kies *alles*, *nieuw* of *bijwerken*.
 
 - **Nieuwe apps**: alle apps van de ontwikkelaarspagina in de App Store (id 607860328) en van beide
   Homey-auteurspagina's die nog niet op de site staan, worden toegevoegd met icoon, categorie, platformen

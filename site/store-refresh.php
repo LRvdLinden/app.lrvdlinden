@@ -1,7 +1,8 @@
 <?php
 /**
  * Knop "Nieuwe apps ophalen" in beheer.html.
- *   POST            start de GitHub-workflow "Store-check" (zoekt nieuwe apps, vult beta-apps aan, werkt alles bij)
+ *   POST ?mode=...  start de GitHub-workflow "Store-check":
+ *                   nieuw = alleen nieuwe apps zoeken en beta-apps aanvullen, bijwerken = alleen bestaande apps bijwerken
  *   GET ?since=...  geeft de voortgang. Is de run klaar, dan worden apps.json en nieuwe iconen meteen
  *                   van GitHub op deze server gezet, zodat ze direct zichtbaar zijn.
  *
@@ -59,7 +60,10 @@ function gh(string $method, string $url, array $cfg, ?array $body = null, bool $
 try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $since = gmdate('Y-m-d\TH:i:s\Z', time() - 5);
-        gh('POST', '/actions/workflows/' . $workflow . '/dispatches', $cfg, ['ref' => $cfg['branch'] ?? 'main']);
+        $mode = $_GET['mode'] ?? 'alles';
+        if (!in_array($mode, ['alles', 'nieuw', 'bijwerken'], true)) $mode = 'alles';
+        gh('POST', '/actions/workflows/' . $workflow . '/dispatches', $cfg,
+           ['ref' => $cfg['branch'] ?? 'main', 'inputs' => ['mode' => $mode]]);
         reply(200, ['ok' => true, 'since' => $since]);
     }
 

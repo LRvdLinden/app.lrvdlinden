@@ -101,7 +101,8 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding
     <div class="brand"><img src="logo.svg" alt=""><h1>Apps beheren</h1></div>
     <div class="tools">
       <button class="btn" type="button" id="btnNew">+ Nieuwe app</button>
-      <button class="btn" type="button" id="btnFetch" title="Zoekt nieuwe apps in de App Store en de Homey App Store en vult beta-apps aan">Nieuwe apps ophalen</button>
+      <button class="btn" type="button" id="btnFetch" data-mode="nieuw" title="Zoekt nieuwe apps in de App Store en de Homey App Store en vult beta-apps aan">Nieuwe apps ophalen</button>
+      <button class="btn" type="button" id="btnUpdate" data-mode="bijwerken" title="Werkt versies, wat-is-nieuw, sterren, beoordelingen en Homey-details van alle apps bij">Apps bijwerken</button>
       <details class="more">
         <summary class="btn">Meer</summary>
         <div class="menu">
@@ -331,7 +332,7 @@ document.addEventListener("click", e => {
     sel = nid; confirmDel = false; save(); render(); setTimeout(()=>$("#f_name")?.select(),0); return;
   }
   if (id === "btnPublish") return publish();
-  if (id === "btnFetch") return fetchStores();
+  if (id === "btnFetch" || id === "btnUpdate") return fetchStores(e.target.dataset.mode);
   if (id === "btnDiscard"){ if (!dirty) return toast("Er zijn geen wijzigingen");
     DATA = JSON.parse(ORIGINAL); PENDING = {}; sel = DATA.apps[0] && DATA.apps[0].id; try{ localStorage.removeItem(KEY); localStorage.removeItem(PKEY); }catch(e){}
     e.target.closest("details").open = false; updateState(); render(); toast("Wijzigingen weggegooid"); return; }
@@ -415,14 +416,19 @@ function changedNames(){
 function showResult(kind, html){ $("#result").innerHTML = `<div class="result ${kind}">${html}</div>`; $("#result").scrollIntoView?.({block:"nearest"}); }
 // "Nieuwe apps ophalen": laat GitHub de stores doorzoeken en laadt daarna de nieuwe gegevens in.
 let fetching = false;
-async function fetchStores(){
+async function fetchStores(mode = "nieuw"){
   if (fetching) return;
-  fetching = true; const btn = $("#btnFetch"); btn.disabled = true; btn.textContent = "Bezig…";
+  fetching = true;
+  const buttons = [$("#btnFetch"), $("#btnUpdate")], btn = mode === "bijwerken" ? $("#btnUpdate") : $("#btnFetch");
+  const labels = buttons.map(b => b.textContent);
+  buttons.forEach(b => b.disabled = true); btn.textContent = "Bezig…";
   const started = Date.now();
-  const status = (txt) => showResult("warn", `<b>Stores worden doorzocht.</b> ${txt} Dit duurt meestal 2 tot 4 minuten; je kunt intussen gewoon verder werken.`);
+  const what = mode === "bijwerken" ? "Alle apps worden bijgewerkt." : "Er wordt naar nieuwe apps gezocht.";
+  const dur = mode === "bijwerken" ? "3 tot 5 minuten" : "1 tot 3 minuten";
+  const status = (txt) => showResult("warn", `<b>${what}</b> ${txt} Dit duurt meestal ${dur}; je kunt intussen gewoon verder werken.`);
   try {
     status("Opdracht wordt gestart…");
-    const r = await fetch("store-refresh.php", { method:"POST", credentials:"same-origin", headers:{ "X-LR-Beheer":"1" } });
+    const r = await fetch("store-refresh.php?mode=" + encodeURIComponent(mode), { method:"POST", credentials:"same-origin", headers:{ "X-LR-Beheer":"1" } });
     const st = await r.json().catch(() => ({}));
     if (!r.ok || !st.ok) throw new Error(st.error || ("De server gaf HTTP " + r.status + "."));
     let res = {};
@@ -447,12 +453,16 @@ async function fetchStores(){
     save(); render();
     const link = res.url ? ` <a href="${esc(res.url)}" target="_blank" rel="noopener">Details</a>` : "";
     if (added.length) showResult("good", `<b>Nieuwe apps toegevoegd:</b> ${esc(added.join(", "))}. Controleer ze en zet eventueel <i>Uitlichten</i> of een banner aan.${link}`);
-    else if (res.changed) showResult("good", `<b>Bijgewerkt.</b> Er waren geen nieuwe apps, wel bijgewerkte versies, teksten of beoordelingen.${link}`);
-    else showResult("good", `<b>Alles is al bij.</b> Geen nieuwe apps of wijzigingen gevonden.${link}`);
+    else if (res.changed) showResult("good", mode === "bijwerken"
+      ? `<b>Bijgewerkt.</b> Versies, teksten, beoordelingen of Homey-details zijn vernieuwd.${link}`
+      : `<b>Aangevuld.</b> Geen nieuwe apps, wel beta-apps aangevuld met gegevens uit de store.${link}`);
+    else showResult("good", mode === "bijwerken"
+      ? `<b>Alles is al bij.</b> Er waren geen nieuwe versies of beoordelingen.${link}`
+      : `<b>Geen nieuwe apps.</b> Alle apps uit de App Store en de Homey App Store staan al op de site.${link}`);
   } catch(err) {
     showResult("bad", `<b>Ophalen mislukt.</b> ${String(err.message).includes("<a ") ? err.message : esc(err.message)}`);
   } finally {
-    fetching = false; btn.disabled = false; btn.textContent = "Nieuwe apps ophalen";
+    fetching = false; buttons.forEach((b, i) => { b.disabled = false; b.textContent = labels[i]; });
   }
 }
 
