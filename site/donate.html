@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1471e3c42ec503ecd9bd0f17/script.js"></script> <!-- End cookieyes banner -->
+<title>Doneren · LRvdLinden Apps</title>
+<meta name="description" content="Steun de gratis apps van Léon van der Linden met een donatie via iDEAL, Wero of PayPal.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F9;--surface:#FFFFFF;--ink:#121726;--muted:#5D6578;--line:#DDE2EC;
+  --accent:#2747E8;--accent-soft:#E6EBFF;--on-accent:#FFFFFF;--ok:#0F766E;
+  --bunq:#1C1C1C;--paypal:#003087;--paypal-2:#0070E0;
+  --f-display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;
+  --accent:#8A9DFF;--accent-soft:#1D2547;--on-accent:#0D1018;--ok:#5EC8B8;
+  --bunq:#000000;--paypal:#0B1F4D;--paypal-2:#3B8BEB;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;
+  --accent:#8A9DFF;--accent-soft:#1D2547;--on-accent:#0D1018;--ok:#5EC8B8;
+  --bunq:#000000;--paypal:#0B1F4D;--paypal-2:#3B8BEB;color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+header.top{padding-block:24px 8px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:18px}
+.brand svg{width:36px;height:36px;display:block}
+.right{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.right nav{display:flex;gap:18px;font-size:14.5px;color:var(--muted)}
+.right nav a{text-decoration:none}
+.right nav a:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface)}
+.lang button{font:600 12.5px var(--f-body);letter-spacing:.04em;border:0;background:none;color:var(--muted);padding:5px 11px;border-radius:99px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+.hero{padding-block:52px 28px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.hero h1{font-size:clamp(40px,6.4vw,72px);line-height:.98;font-weight:800;letter-spacing:-.035em;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--muted);max-width:46ch;margin:0}
+
+.give{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px;padding-block:20px 40px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px}
+.card h2{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.card > p{color:var(--muted);margin:6px 0 0;font-size:15px}
+
+.amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.amounts button{font:700 20px var(--f-display);letter-spacing:-.01em;padding:16px 6px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.amounts button:hover{border-color:var(--muted)}
+.amounts button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.custom{margin-top:12px;display:flex;align-items:center;gap:0;border:1.5px solid var(--line);border-radius:16px;background:var(--bg);padding:0 16px;transition:border-color .15s}
+.custom:focus-within{border-color:var(--accent)}
+.custom span{font:700 20px var(--f-display);color:var(--muted)}
+.custom input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:600 18px var(--f-body);padding:14px 10px;outline:none}
+.custom input::placeholder{color:var(--muted);font-weight:500}
+.hint{font-size:13px;color:var(--muted);margin:10px 2px 0}
+
+.pay{display:grid;gap:12px;margin-top:20px}
+.method{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;padding:18px 20px;border-radius:20px;text-decoration:none;color:#fff;transition:transform .15s,box-shadow .15s}
+.method:hover{transform:translateY(-2px);box-shadow:0 10px 26px -12px rgba(18,23,38,.45)}
+.method.bunq{background:var(--bunq)}
+.method.paypal{background:linear-gradient(135deg,var(--paypal),var(--paypal-2))}
+.method .logo{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.12);font:800 15px var(--f-display);letter-spacing:-.02em}
+.method b{display:block;font:700 18px var(--f-display);letter-spacing:-.01em}
+.method small{display:block;opacity:.8;font-size:13.5px}
+.method .go{font:700 15px var(--f-body);background:#fff;color:#121726;padding:10px 16px;border-radius:99px;white-space:nowrap}
+.rainbow{background:linear-gradient(90deg,#3DB04B,#2EB4E6,#E94E3C,#F6C142,#8E4AB1)!important}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.badges i{font-style:normal;font-size:11.5px;font-weight:600;letter-spacing:.03em;padding:2px 8px;border-radius:99px;background:rgba(255,255,255,.16)}
+.handle{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);margin-top:14px;display:flex;gap:6px 18px;flex-wrap:wrap}
+
+.why{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
+.why li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;align-items:start}
+.why .ic{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.why .ic svg{width:20px;height:20px}
+.why b{display:block;font-weight:600}
+.why span{color:var(--muted);font-size:14.5px}
+.thanks{margin-top:22px;padding:16px 18px;border-radius:16px;background:var(--bg);border:1px dashed var(--line);font-size:14.5px;color:var(--muted)}
+.thanks b{color:var(--ink)}
+
+footer{padding-block:48px 40px;color:var(--muted);font-size:14px}
+footer .bar{border-top:1px solid var(--line);padding-top:22px}
+footer nav{display:flex;gap:18px}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:16px;padding-block:36px 16px}
+  .give{grid-template-columns:minmax(0,1fr)}
+  .give .pick{order:-1}
+}
+@media (max-width:520px){
+  .card{padding:20px;border-radius:20px}
+  .amounts{grid-template-columns:repeat(2,1fr)}
+  .method{grid-template-columns:auto minmax(0,1fr);padding:16px}
+  .method .go{grid-column:1/-1;text-align:center}
+  .right nav{display:none}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="bar">
+    <a class="brand" href="./">
+      <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="116" fill="#121726"/><g fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"><path d="M132 146V370H232"/><path d="M292 370V146H340A62 62 0 0 1 340 270H292"/><path d="M338 270L390 370"/></g><circle cx="404" cy="126" r="34" fill="#4C6BFF" stroke="#121726" stroke-width="14"/></svg>
+      lrvdlinden.app
+    </a>
+    <div class="right">
+      <nav aria-label="Menu">
+        <a href="./#apps" data-t="navApps"></a>
+        <a href="./#homey">Homey</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Taal / Language">
+        <button type="button" data-lang="nl">NL</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div>
+      <div class="eyebrow" data-t="eyebrow"></div>
+      <h1 data-t="h1" data-html></h1>
+    </div>
+    <p data-t="intro"></p>
+  </section>
+
+  <section class="give wrap">
+    <div class="card">
+      <h2 data-t="whyTitle"></h2>
+      <ul class="why">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></span><div><b data-t="w1"></b><span data-t="w1s"></span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><div><b data-t="w2"></b><span data-t="w2s"></span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span><div><b data-t="w3"></b><span data-t="w3s"></span></div></li>
+      </ul>
+      <div class="thanks" data-t="thanks" data-html></div>
+    </div>
+
+    <div class="card pick">
+      <h2 data-t="pickTitle"></h2>
+      <p data-t="pickSub"></p>
+      <div class="amounts" role="group" id="amounts">
+        <button type="button" data-amt="3">€3</button>
+        <button type="button" data-amt="5" aria-pressed="true">€5</button>
+        <button type="button" data-amt="10">€10</button>
+        <button type="button" data-amt="25">€25</button>
+      </div>
+      <label class="custom"><span>€</span><input id="custom" type="text" inputmode="decimal" autocomplete="off" maxlength="7"></label>
+      <p class="hint" id="hint"></p>
+
+      <div class="pay">
+        <a class="method bunq" id="payBunq" href="https://bunq.me/LRvdLinden" target="_blank" rel="noopener">
+          <span class="logo rainbow">bunq</span>
+          <span><b data-t="bunqTitle"></b><span class="badges"><i>iDEAL</i><i>Wero</i><i data-t="card"></i></span></span>
+          <span class="go" id="goBunq"></span>
+        </a>
+        <a class="method paypal" id="payPaypal" href="https://paypal.me/LRvdLinden" target="_blank" rel="noopener">
+          <span class="logo">PP</span>
+          <span><b>PayPal</b><small data-t="ppSub"></small></span>
+          <span class="go" id="goPaypal"></span>
+        </a>
+      </div>
+      <div class="handle"><span>bunq.me/LRvdLinden</span><span>paypal.me/LRvdLinden</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="bar">
+    <span>© lrvdlinden.app · Powered by PixelForges</span>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="./" data-t="back"></a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const T = {
+  nl:{ navApps:"iOS-apps", eyebrow:"Doneren", back:"Terug naar de apps",
+    h1:"Vind je mijn apps handig? <em>Trakteer</em> me op een koffie.",
+    intro:"Al mijn apps zijn gratis en zonder advertenties. Met een kleine donatie help je ze online en up-to-date te houden. Geen verplichting, wel heel fijn.",
+    whyTitle:"Waar je donatie naartoe gaat",
+    w1:"Ontwikkelaarsaccounts", w1s:"Het jaarlijkse Apple Developer-lidmaatschap en de Homey-accounts om apps te publiceren.",
+    w2:"Servers en diensten", w2s:"Hosting, API's en de koppelingen die de apps en Homey-apps laten werken.",
+    w3:"Updates en nieuwe apps", w3s:"Tijd voor bugfixes, nieuwe functies en de volgende app op de werkbank.",
+    thanks:"<b>Dank je wel!</b> Elke bijdrage, groot of klein, wordt enorm gewaardeerd.",
+    pickTitle:"Kies een bedrag", pickSub:"Kies hieronder hoe je wilt betalen. Je rondt de betaling af bij bunq of PayPal.",
+    custom:"Ander bedrag", bunqTitle:"iDEAL of Wero via bunq", card:"Creditcard",
+    ppSub:"Met je PayPal-saldo of gekoppelde kaart", give:"Doneer {a}", giveAny:"Doneren",
+    hint:"Je doneert {a}.", hintAny:"Vul een bedrag in of kies het in de volgende stap.", desc:"Donatie lrvdlinden.app" },
+  en:{ navApps:"iOS apps", eyebrow:"Donate", back:"Back to the apps",
+    h1:"Like my apps? <em>Buy</em> me a coffee.",
+    intro:"All my apps are free and ad-free. A small donation helps keep them online and up to date. No obligation, but much appreciated.",
+    whyTitle:"Where your donation goes",
+    w1:"Developer accounts", w1s:"The yearly Apple Developer membership and the Homey accounts needed to publish apps.",
+    w2:"Servers and services", w2s:"Hosting, APIs and the integrations that keep the apps and Homey apps running.",
+    w3:"Updates and new apps", w3s:"Time for bug fixes, new features and the next app on the workbench.",
+    thanks:"<b>Thank you!</b> Every contribution, big or small, is hugely appreciated.",
+    pickTitle:"Choose an amount", pickSub:"Then choose how to pay. You complete the payment with bunq or PayPal.",
+    custom:"Other amount", bunqTitle:"iDEAL or Wero via bunq", card:"Credit card",
+    ppSub:"With your PayPal balance or linked card", give:"Donate {a}", giveAny:"Donate",
+    hint:"You're donating {a}.", hintAny:"Enter an amount or choose it in the next step.", desc:"Donation lrvdlinden.app" }
+};
+let lang = "nl", amount = 5;
+try { lang = localStorage.getItem("lr-lang") || (navigator.language||"nl").slice(0,2); } catch(e){}
+if (location.hash === "#en") lang = "en";
+if (!T[lang]) lang = "nl";
+const t = k => T[lang][k];
+const $ = s => document.querySelector(s);
+
+function fmt(a){
+  return new Intl.NumberFormat(lang==="nl"?"nl-NL":"en-IE",{style:"currency",currency:"EUR",minimumFractionDigits:a%1?2:0}).format(a);
+}
+function update(){
+  const ok = amount && amount >= 1 && amount <= 5000;
+  const a = ok ? amount.toFixed(2).replace(/\.00$/,"") : "";
+  const desc = encodeURIComponent(t("desc"));
+  $("#payBunq").href = ok ? `https://bunq.me/LRvdLinden/${a}/${desc}` : "https://bunq.me/LRvdLinden";
+  $("#payPaypal").href = ok ? `https://paypal.me/LRvdLinden/${a}EUR` : "https://paypal.me/LRvdLinden";
+  const g = ok ? t("give").replace("{a}", fmt(amount)) : t("giveAny");
+  $("#goBunq").textContent = g; $("#goPaypal").textContent = g;
+  $("#hint").textContent = ok ? t("hint").replace("{a}", fmt(amount)) : t("hintAny");
+  document.querySelectorAll("#amounts button").forEach(b => b.setAttribute("aria-pressed", ok && +b.dataset.amt === amount && !$("#custom").value));
+}
+function render(){
+  document.documentElement.lang = lang;
+  document.title = (lang==="nl" ? "Doneren" : "Donate") + " · LRvdLinden Apps";
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const v = t(el.dataset.t); if (v == null) return;
+    if (el.hasAttribute("data-html")) el.innerHTML = v; else el.textContent = v;
+  });
+  $("#custom").placeholder = t("custom");
+  $("#custom").setAttribute("aria-label", t("custom"));
+  $("#amounts").setAttribute("aria-label", t("pickTitle"));
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  update();
+}
+document.addEventListener("click", e => {
+  const lb = e.target.closest("[data-lang]");
+  if (lb){ lang = lb.dataset.lang; try{localStorage.setItem("lr-lang",lang)}catch(_){} render(); return; }
+  const ab = e.target.closest("[data-amt]");
+  if (ab){ amount = +ab.dataset.amt; $("#custom").value = ""; update(); }
+});
+$("#custom").addEventListener("input", e => {
+  const v = e.target.value.replace(/[^0-9.,]/g,"");
+  if (v !== e.target.value) e.target.value = v;
+  amount = v ? Math.round(parseFloat(v.replace(",", ".")) * 100) / 100 : 5;
+  if (isNaN(amount)) amount = 0;
+  update();
+});
+render();
+</script>
+</body>
+</html>
