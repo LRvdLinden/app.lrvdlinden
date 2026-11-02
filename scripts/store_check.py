@@ -245,7 +245,8 @@ def check_appstore(apps, log, only=None):
     ids = ",".join(sorted({appstore_id(a) for a in ios}))
     per_country = {}
     for cc in COUNTRIES:
-        data = get_json(f"https://itunes.apple.com/lookup?id={ids}&country={cc}&entity=software")
+        # cb= omzeilt de cache van Apple, die na een nieuwe release soms uren de oude versie blijft geven
+        data = get_json(f"https://itunes.apple.com/lookup?id={ids}&country={cc}&entity=software&cb={int(time.time())}")
         if not FIXTURES:
             time.sleep(PAUSE)
         for r in (data or {}).get("results", []):
@@ -255,8 +256,12 @@ def check_appstore(apps, log, only=None):
         if not res:
             log.append(f"- {app['name']}: niet gevonden in de App Store")
             continue
-        main = res.get("nl") or res.get("us") or next(iter(res.values()))
         newest = max((r.get("version") or "0" for r in res.values()), key=ver_key)
+        # Nieuwste versie aanhouden, ook als nog niet elk land die doorgeeft
+        fresh = {cc: r for cc, r in res.items() if (r.get("version") or "0") == newest}
+        main = fresh.get("nl") or fresh.get("us") or res.get("nl") or res.get("us") or next(iter(res.values()))
+        if main.get("version") != newest:
+            main = next(iter(fresh.values()))
         CHECKED.append(f"| {app['name']} | App Store | {main.get('version') or '–'}"
                        + (f" (elders al {newest})" if newest != main.get("version") else "")
                        + f" | {(main.get('currentVersionReleaseDate') or '')[:10]} |")
@@ -281,8 +286,10 @@ def check_appstore(apps, log, only=None):
         # Wat is nieuw
         version = main.get("version")
         date = (main.get("currentVersionReleaseDate") or "")[:10]
-        nl_txt = clean((res.get("nl") or {}).get("releaseNotes"))
-        en_txt = clean((res.get("us") or res.get("gb") or {}).get("releaseNotes"))
+        nl_txt = clean((fresh.get("nl") or {}).get("releaseNotes"))
+        en_txt = clean((fresh.get("us") or fresh.get("gb") or {}).get("releaseNotes"))
+        if not nl_txt and not en_txt:
+            en_txt = clean(main.get("releaseNotes"))
         notes = {}
         if nl_txt and en_txt and nl_txt != en_txt:
             notes = {"nl": nl_txt, "en": en_txt}
