@@ -5,8 +5,7 @@
             "id": "nl-lrvdlinden-homeystore",
             "name": "HomeyStore",
             "section": "ios",
-            "status": "dev",
-            "featured": true,
+            "status": "beta",
             "category": "utilities",
             "platforms": [
                 "iPhone",
