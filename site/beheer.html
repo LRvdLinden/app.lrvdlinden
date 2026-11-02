@@ -49,6 +49,7 @@ header h1{font-size:20px}
 .item[aria-current="true"]{border-color:var(--accent);background:var(--accent-soft)}
 .item img,.item .ph{width:32px;height:32px;border-radius:8px;object-fit:cover;background:var(--line)}
 .item b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ft{color:var(--accent);font-size:12px}
 .dot{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid currentColor}
 .dot.live{color:var(--live)}.dot.beta{color:var(--beta)}.dot.dev{color:var(--dev)}
 form{display:flex;flex-direction:column;gap:18px}
@@ -166,7 +167,7 @@ function renderList(){
     return `<h3>${label} · ${items.length}</h3>` + items.map(a => `
       <button type="button" class="item" data-id="${esc(a.id)}" aria-current="${a.id===sel}">
         ${a.icon?`<img src="${esc(iconSrc(a))}" alt="" onerror="this.outerHTML='<span class=ph></span>'">`:`<span class="ph"></span>`}
-        <b>${esc(a.name||"(naamloos)")}</b>
+        <b>${esc(a.name||"(naamloos)")}${a.featured && (a.section||"ios")==="ios" ? ` <span class="ft" title="Staat in Nieuw en onderweg">★</span>` : ""}</b>
         <span class="dot ${esc(a.status)}">${esc(a.status)}</span>
       </button>`).join("");
   }).join("");
@@ -193,7 +194,7 @@ function renderEditor(){
       <div class="full" style="grid-column:1/-1">
         <div class="muted" style="font-weight:600;margin-bottom:6px">Status</div>
         <div class="seg">${Object.entries(STATUS).map(([k,v])=>`<label><input type="radio" name="status" value="${k}" ${a.status===k?"checked":""}> ${v}</label>`).join("")}
-          <label><input type="checkbox" id="f_featured" ${a.featured?"checked":""}> Uitlichten bovenaan</label></div>
+          <label><input type="checkbox" id="f_featured" ${a.featured?"checked":""}> Tonen in Nieuw en onderweg</label></div>
       </div>
       <div class="full" style="grid-column:1/-1">
         <div class="muted" style="font-weight:600;margin-bottom:6px">Platformen / apparaten</div>
@@ -452,7 +453,7 @@ async function fetchStores(mode = "nieuw"){
     if (!DATA.apps.some(a => a.id === sel)) sel = DATA.apps[0] && DATA.apps[0].id;
     save(); render();
     const link = res.url ? ` <a href="${esc(res.url)}" target="_blank" rel="noopener">Details</a>` : "";
-    if (added.length) showResult("good", `<b>Nieuwe apps toegevoegd:</b> ${esc(added.join(", "))}. Controleer ze en zet eventueel <i>Uitlichten</i> of een banner aan.${link}`);
+    if (added.length) showResult("good", `<b>Nieuwe apps toegevoegd:</b> ${esc(added.join(", "))}. Controleer ze en zet eventueel <i>Tonen in Nieuw en onderweg</i> of een banner aan.${link}`);
     else if (res.changed) showResult("good", mode === "bijwerken"
       ? `<b>Bijgewerkt.</b> Versies, teksten, beoordelingen of Homey-details zijn vernieuwd.${link}`
       : `<b>Aangevuld.</b> Geen nieuwe apps, wel beta-apps aangevuld met gegevens uit de store.${link}`);

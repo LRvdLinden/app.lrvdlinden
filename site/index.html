@@ -453,7 +453,8 @@ function render(){
   startPromoTimer();
 
   // Uitgelicht: featured, of alles wat nog niet live is
-  const feat = ios.filter(a => a.featured || a.status !== "live");
+  // Alleen apps die in beheer zijn aangevinkt bij "Tonen in Nieuw en onderweg"
+  const feat = ios.filter(a => a.featured === true);
   $("#nieuw").hidden = !feat.length;
   $("#lab").innerHTML = feat.map(a => `
     <article class="lab-card">
