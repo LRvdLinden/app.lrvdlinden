@@ -93,6 +93,33 @@ textarea{min-height:84px;resize:vertical}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:600;font-size:14px}
 pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;font:12px/1.5 var(--f-mono);max-height:320px;overflow:auto;white-space:pre-wrap;word-break:break-all}
 .muted{color:var(--muted);font-size:13px}
+.logbook{margin-bottom:16px}
+.loghead{display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap;margin-bottom:12px}
+.loghead h2{font-size:18px;margin-right:auto}
+.logday{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 4px 6px;font-weight:600}
+.logday:first-child{margin-top:0}
+.run{border:1px solid var(--line);border-radius:12px;margin-bottom:6px;background:var(--surface)}
+.run[open]{border-color:var(--muted)}
+.run summary{display:grid;grid-template-columns:52px minmax(0,1fr) auto 14px;gap:10px;align-items:center;padding:10px 12px;cursor:pointer;list-style:none}
+.run summary::-webkit-details-marker{display:none}
+.run summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);justify-self:center;transition:transform .15s}
+.run[open] summary::after{transform:rotate(225deg)}
+.run .tm{font:12.5px var(--f-mono);color:var(--muted)}
+.run .ttl{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.run .ttl small{font-weight:400;color:var(--muted);margin-left:6px}
+.tag{font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:99px;white-space:nowrap;border:1px solid currentColor}
+.tag.ok{color:var(--beta)}.tag.none{color:var(--muted)}.tag.bad{color:var(--danger)}.tag.busy{color:var(--dev)}
+.runbody{padding:0 12px 12px 74px;display:flex;flex-direction:column;gap:12px}
+.runbody ul{margin:0;padding-left:18px}
+.runbody li{margin:2px 0}
+.chk{width:100%;border-collapse:collapse;font-size:13px}
+.chk th{text-align:left;font-weight:600;color:var(--muted);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 8px;border-bottom:1px solid var(--line)}
+.chk td{padding:5px 8px;border-bottom:1px solid var(--line)}
+.chk tr:last-child td{border-bottom:0}
+.chk .v{font-family:var(--f-mono);font-size:12px}
+.chk tr.upd td:first-child{font-weight:600}
+.chkwrap{overflow-x:auto}
+@media (max-width:820px){.runbody{padding-left:12px}.run summary{grid-template-columns:44px minmax(0,1fr) 14px}.run summary .tag{grid-column:2;justify-self:start;grid-row:2}}
 @media (max-width:820px){.layout{grid-template-columns:1fr}.list{max-height:none}fieldset{grid-template-columns:1fr}.hist .h{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -104,6 +131,7 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding
       <button class="btn" type="button" id="btnNew">+ Nieuwe app</button>
       <button class="btn" type="button" id="btnFetch" data-mode="nieuw" title="Zoekt nieuwe apps in de App Store en de Homey App Store en vult beta-apps aan">Nieuwe apps ophalen</button>
       <button class="btn" type="button" id="btnUpdate" data-mode="bijwerken" title="Werkt versies, wat-is-nieuw, sterren, beoordelingen en Homey-details van alle apps bij">Apps bijwerken</button>
+      <button class="btn" type="button" id="btnLog" aria-expanded="false" aria-controls="logbook">Logboek</button>
       <details class="more">
         <summary class="btn">Meer</summary>
         <div class="menu">
@@ -129,6 +157,21 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding
   </div>
 
   <div id="result"></div>
+
+  <section class="panel logbook" id="logbook" hidden aria-labelledby="logTitle">
+    <div class="loghead">
+      <h2 id="logTitle">Logboek</h2>
+      <div class="seg" role="group" aria-label="Filter">
+        <label><input type="radio" name="logf" value="all" checked> Alles</label>
+        <label><input type="radio" name="logf" value="changed"> Met wijzigingen</label>
+        <label><input type="radio" name="logf" value="bijwerken"> Apps bijwerken</label>
+        <label><input type="radio" name="logf" value="nieuw"> Nieuwe apps</label>
+      </div>
+      <button class="btn small" type="button" id="btnLogRefresh">Vernieuwen</button>
+      <button class="btn small" type="button" id="btnLogClose" aria-label="Logboek sluiten">Sluiten</button>
+    </div>
+    <div id="logList"><p class="muted">Laden…</p></div>
+  </section>
 
   <div class="layout">
     <aside class="panel"><div class="list" id="list"></div></aside>
@@ -334,6 +377,10 @@ document.addEventListener("click", e => {
   }
   if (id === "btnPublish") return publish();
   if (id === "btnFetch" || id === "btnUpdate") return fetchStores(e.target.dataset.mode);
+  if (id === "btnLog") return toggleLog();
+  if (id === "btnLogClose") return toggleLog(false);
+  if (id === "btnLogRefresh") return loadLog();
+  if (e.target.matches?.("[data-openlog]")) { e.preventDefault(); return toggleLog(true, e.target.dataset.openlog); }
   if (id === "btnDiscard"){ if (!dirty) return toast("Er zijn geen wijzigingen");
     DATA = JSON.parse(ORIGINAL); PENDING = {}; sel = DATA.apps[0] && DATA.apps[0].id; try{ localStorage.removeItem(KEY); localStorage.removeItem(PKEY); }catch(e){}
     e.target.closest("details").open = false; updateState(); render(); toast("Wijzigingen weggegooid"); return; }
@@ -415,6 +462,64 @@ function changedNames(){
   return [...changed, ...removed];
 }
 function showResult(kind, html){ $("#result").innerHTML = `<div class="result ${kind}">${html}</div>`; $("#result").scrollIntoView?.({block:"nearest"}); }
+// ---------- Logboek: uitkomst van elke store-check ----------
+let LOG = null, logFilter = "all", logOpenId = null;
+const MODE_LABEL = { bijwerken:"Apps bijwerken", nieuw:"Nieuwe apps ophalen", alles:"Dagelijkse check" };
+function toggleLog(show, openId){
+  const box = $("#logbook");
+  show = show ?? box.hidden;
+  box.hidden = !show; $("#btnLog").setAttribute("aria-expanded", show);
+  if (openId) logOpenId = openId;
+  if (show) { box.scrollIntoView({block:"nearest", behavior:"smooth"}); loadLog(); }
+}
+async function loadLog(){
+  if (!LOG) $("#logList").innerHTML = `<p class="muted">Laden…</p>`;
+  try {
+    const r = await fetch("store-log.php", { credentials:"same-origin", headers:{ "X-LR-Beheer":"1" }, cache:"no-store" });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok || !d.ok) throw new Error(d.error || ("De server gaf HTTP " + r.status + "."));
+    LOG = d; renderLog();
+  } catch(err) {
+    $("#logList").innerHTML = `<div class="result bad"><b>Logboek laden mislukt.</b> ${esc(err.message)}</div>`;
+  }
+}
+function renderLog(){
+  if (!LOG) return;
+  const all = [...(LOG.active || []).map(r => ({...r, pending:true})), ...(LOG.runs || [])]
+    .sort((a, b) => new Date(b.time) - new Date(a.time));
+  const list = all.filter(r => logFilter === "all" || (logFilter === "changed" ? r.changed
+    : logFilter === "nieuw" ? r.mode === "nieuw" : logFilter === "bijwerken" ? (r.mode === "bijwerken" || r.mode === "alles") : true));
+  if (!list.length) { $("#logList").innerHTML = `<p class="muted">${all.length ? "Geen runs voor dit filter." : "Nog geen runs. De volgende check (08:00 of via de knoppen hierboven) verschijnt hier."}</p>`; return; }
+  const dayFmt = new Intl.DateTimeFormat("nl-NL", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+  const tmFmt = new Intl.DateTimeFormat("nl-NL", { hour:"2-digit", minute:"2-digit" });
+  let day = "", html = "";
+  for (const r of list) {
+    const d = new Date(r.time), dk = isNaN(d) ? "" : dayFmt.format(d);
+    if (dk !== day) { day = dk; html += `<div class="logday">${esc(dk)}</div>`; }
+    const who = r.trigger === "schedule" ? "automatisch" : "handmatig";
+    const title = r.pending ? (r.trigger === "schedule" ? "Dagelijkse check" : "Store-check") : (MODE_LABEL[r.mode] || "Store-check");
+    const upd = (r.checked || []).filter(c => c.changed).length;
+    const tag = r.pending ? (r.state === "running" ? `<span class="tag busy">Bezig</span>` : `<span class="tag bad">Mislukt</span>`)
+      : r.changed ? `<span class="tag ok">${(r.lines || []).length || upd} ${((r.lines || []).length || upd) === 1 ? "wijziging" : "wijzigingen"}</span>`
+      : `<span class="tag none">Geen wijzigingen</span>`;
+    const lines = (r.lines || []).length ? `<div><b>Wat er veranderde</b><ul>${r.lines.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>` : "";
+    const chk = (r.checked || []).length ? `<div><b>Gecontroleerd (${r.checked.length})</b><div class="chkwrap"><table class="chk">
+        <thead><tr><th>App</th><th>Store</th><th>Versie</th><th>Datum</th><th></th></tr></thead>
+        <tbody>${r.checked.map(c => `<tr class="${c.changed ? "upd" : ""}"><td>${esc(c.app)}</td><td>${esc(c.store)}</td>
+          <td class="v">${esc(c.version || "–")}${c.test ? ` <span class="tag busy">test ${esc(c.test)}</span>` : ""}</td>
+          <td class="v">${esc(c.date || "")}</td><td>${c.changed ? `<span class="tag ok">bijgewerkt</span>` : ""}</td></tr>`).join("")}</tbody></table></div></div>` : "";
+    const body = r.pending
+      ? `<p class="muted" style="margin:0">${r.state === "running" ? "Deze run is nog bezig. Klik straks op Vernieuwen." : "Deze run is mislukt; er is niets gewijzigd."}</p>`
+      : (lines || chk ? lines + chk : `<p class="muted" style="margin:0">Niets gevonden om te controleren.</p>`);
+    html += `<details class="run" data-run="${esc(r.id)}"${String(r.id) === String(logOpenId) ? " open" : ""}>
+      <summary><span class="tm">${isNaN(d) ? "" : esc(tmFmt.format(d))}</span><span class="ttl">${esc(title)}<small>${esc(who)}</small></span>${tag}</summary>
+      <div class="runbody">${body}${r.url ? `<a class="muted" href="${esc(r.url)}" target="_blank" rel="noopener">Bekijk op GitHub</a>` : ""}</div>
+    </details>`;
+  }
+  $("#logList").innerHTML = html;
+}
+document.addEventListener("change", e => { if (e.target.name === "logf") { logFilter = e.target.value; renderLog(); } });
+
 // "Nieuwe apps ophalen": laat GitHub de stores doorzoeken en laadt daarna de nieuwe gegevens in.
 let fetching = false;
 async function fetchStores(mode = "nieuw"){
@@ -452,7 +557,9 @@ async function fetchStores(mode = "nieuw"){
     ORIGINAL = JSON.stringify(d);
     if (!DATA.apps.some(a => a.id === sel)) sel = DATA.apps[0] && DATA.apps[0].id;
     save(); render();
-    const link = res.url ? ` <a href="${esc(res.url)}" target="_blank" rel="noopener">Details</a>` : "";
+    const runId = (String(res.url || "").match(/runs\/(\d+)/) || [])[1] || "";
+    const link = ` <a href="#logbook" data-openlog="${esc(runId)}">Bekijk in logboek</a>`;
+    if (!$("#logbook").hidden) { logOpenId = runId; loadLog(); }
     if (added.length) showResult("good", `<b>Nieuwe apps toegevoegd:</b> ${esc(added.join(", "))}. Controleer ze en zet eventueel <i>Tonen in Nieuw en onderweg</i> of een banner aan.${link}`);
     else if (res.changed) showResult("good", mode === "bijwerken"
       ? `<b>Bijgewerkt.</b> Versies, teksten, beoordelingen of Homey-details zijn vernieuwd.${link}`

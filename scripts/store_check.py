@@ -262,9 +262,9 @@ def check_appstore(apps, log, only=None):
         main = fresh.get("nl") or fresh.get("us") or res.get("nl") or res.get("us") or next(iter(res.values()))
         if main.get("version") != newest:
             main = next(iter(fresh.values()))
-        CHECKED.append(f"| {app['name']} | App Store | {main.get('version') or '–'}"
-                       + (f" (elders al {newest})" if newest != main.get("version") else "")
-                       + f" | {(main.get('currentVersionReleaseDate') or '')[:10]} |")
+        chk = {"app": app["name"], "store": "App Store", "version": main.get("version") or "",
+               "date": (main.get("currentVersionReleaseDate") or "")[:10], "changed": False}
+        CHECKED.append(chk)
         before = snap(app)
 
         # Sterren en aantal beoordelingen, opgeteld over alle landen
@@ -300,6 +300,7 @@ def check_appstore(apps, log, only=None):
             upsert_history(app, version, date, notes, keep=20)
 
         if snap(app) != before:
+            chk["changed"] = True
             log.append(f"- {app['name']}: versie {version}, {app.get('rating', '–')} ★ ({app.get('reviews', 0)} beoordelingen)")
 
 
@@ -387,7 +388,9 @@ def check_homey(apps, log, only=None):
             continue
         before = snap(app)
         live, test = info.get("liveVersion"), info.get("testVersion")
-        CHECKED.append(f"| {app['name']} | Homey | {live or '–'}" + (f" (test {test})" if test and test != live else "") + " | |")
+        chk = {"app": app["name"], "store": "Homey", "version": live or test or "",
+               "test": test if live and test and test != live else "", "changed": False}
+        CHECKED.append(chk)
         app["status"] = "live" if live else ("beta" if test else app.get("status", "dev"))
         if info.get("rating") is not None:
             app["rating"] = round(float(info["rating"]), 1)
@@ -425,6 +428,7 @@ def check_homey(apps, log, only=None):
                 else:
                     entry.pop("test", None)
         if snap(app) != before:
+            chk["changed"] = True
             log.append(f"- {app['name']} (Homey): versie {live or test}" + (f", test {test}" if live and test and test != live else "") + (f", {app['rating']} ★" if app.get("rating") else ""))
 
 
@@ -699,6 +703,37 @@ def fill_translations(apps, log):
         print(f"::notice::{len(todo)} tekst(en) niet vertaald: secret ANTHROPIC_API_KEY ontbreekt.")
 
 
+LOGBOOK = os.environ.get("STORE_LOGBOOK", "logs/store-check.json")
+
+
+def write_logbook(mode, changed, log):
+    """Elke run vastleggen voor het logboek in beheer.html (laatste 150 runs)."""
+    try:
+        book = json.load(open(LOGBOOK, encoding="utf-8"))
+    except (OSError, ValueError):
+        book = {"runs": []}
+    run_id = os.environ.get("GITHUB_RUN_ID", "")
+    url = (f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run_id}"
+           if run_id and os.environ.get("GITHUB_REPOSITORY") else "")
+    event = os.environ.get("GITHUB_EVENT_NAME", "")
+    entry = {
+        "id": run_id,
+        "time": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "mode": mode,
+        "trigger": "schedule" if event == "schedule" else ("manual" if event == "workflow_dispatch" else event or "local"),
+        "changed": bool(changed),
+        "lines": [l[2:] if l.startswith("- ") else l for l in log],
+        "checked": CHECKED,
+        "url": url,
+    }
+    book["runs"] = [entry] + [r for r in book.get("runs", []) if not run_id or r.get("id") != run_id]
+    book["runs"] = book["runs"][:150]
+    os.makedirs(os.path.dirname(LOGBOOK) or ".", exist_ok=True)
+    with open(LOGBOOK, "w", encoding="utf-8") as f:
+        json.dump(book, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+
+
 def main():
     raw = open(APPS_JSON, encoding="utf-8").read()
     data = json.loads(raw)
@@ -737,8 +772,12 @@ def main():
         summary = f"Store-check {stamp}: geen wijzigingen"
     open("store-check-summary.md", "w", encoding="utf-8").write(summary + "\n")
     if CHECKED:  # alleen in de Actions-samenvatting, niet in de commit
+        rows = [f"| {c['app']} | {c['store']} | {c['version'] or '–'}" + (f" (test {c['test']})" if c.get("test") else "")
+                + f" | {c.get('date', '')} | {'ja' if c['changed'] else ''} |" for c in CHECKED]
         open("store-check-overview.md", "w", encoding="utf-8").write(
-            "\n\n### Gecontroleerd\n\n| App | Store | Versie in de store | Datum |\n|---|---|---|---|\n" + "\n".join(CHECKED) + "\n")
+            "\n\n### Gecontroleerd\n\n| App | Store | Versie in de store | Datum | Bijgewerkt |\n|---|---|---|---|---|\n"
+            + "\n".join(rows) + "\n")
+    write_logbook(mode, new != raw, log)
     print(summary)
 
 

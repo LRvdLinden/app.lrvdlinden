@@ -1,0 +1,354 @@
+{
+ "runs": [
+  {
+   "id": "41519359918",
+   "time": "2026-11-02T20:27:32+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41519359918"
+  },
+  {
+   "id": "41518860560",
+   "time": "2026-11-02T20:24:10+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41518860560"
+  },
+  {
+   "id": "41518022361",
+   "time": "2026-11-02T20:18:32+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Burgernet (Homey): versie 2.0.0",
+    "Vermiste personen (Homey): versie 2.0.0"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41518022361"
+  },
+  {
+   "id": "41517319794",
+   "time": "2026-11-02T20:13:59+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Burgernet (Homey): versie 2.0.0",
+    "Vermiste personen (Homey): versie 2.0.0",
+    "18 wat-is-nieuw-tekst(en) vertaald"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41517319794"
+  },
+  {
+   "id": "41516210615",
+   "time": "2026-11-02T20:06:59+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Weekdot: versie 1.0.1, – ★ (0 beoordelingen)",
+    "Bingr: versie 1.0.4, 5.0 ★ (1 beoordelingen)",
+    "HealthSync: versie 1.0.2, 5.0 ★ (1 beoordelingen)",
+    "DevTools: versie 1.0.2, – ★ (0 beoordelingen)",
+    "VlagDagen: versie 2.0.1, – ★ (0 beoordelingen)",
+    "Simple Chess: versie 3.0.1, 5.0 ★ (3 beoordelingen)",
+    "6 wat-is-nieuw-tekst(en) vertaald"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41516210615"
+  },
+  {
+   "id": "41515318412",
+   "time": "2026-11-02T20:01:18+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41515318412"
+  },
+  {
+   "id": "41514338125",
+   "time": "2026-11-02T19:54:57+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41514338125"
+  },
+  {
+   "id": "41484281093",
+   "time": "2026-11-02T16:43:36+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Bingr: versie 1.0.3, 5.0 ★ (1 beoordelingen)",
+    "HealthSync: versie 1.0.1, 5.0 ★ (1 beoordelingen)",
+    "@ThePark: versie 1.0.1, 5.0 ★ (1 beoordelingen)",
+    "Cable Maps: versie 2.0.0, 5.0 ★ (15 beoordelingen)",
+    "DigiMate: versie 1.0.2, 5.0 ★ (1 beoordelingen)",
+    "Simple Chess: versie 3.0.0, 5.0 ★ (3 beoordelingen)",
+    "Lifeliner (Homey): versie 6.1.1, 5.0 ★",
+    "KNMI (Homey): versie 4.2.3, 5.0 ★"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41484281093"
+  },
+  {
+   "id": "41469905575",
+   "time": "2026-11-02T15:16:07+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41469905575"
+  },
+  {
+   "id": "41468256163",
+   "time": "2026-11-02T15:06:06+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Bingr: versie 1.0.3, 5.0 ★ (1 beoordelingen)",
+    "HealthSync: versie 1.0.1, 5.0 ★ (1 beoordelingen)",
+    "@ThePark: versie 1.0.1, 5.0 ★ (1 beoordelingen)",
+    "Cable Maps: versie 2.0.0, 5.0 ★ (15 beoordelingen)",
+    "DigiMate: versie 1.0.2, 5.0 ★ (1 beoordelingen)",
+    "Simple Chess: versie 3.0.0, 5.0 ★ (3 beoordelingen)",
+    "Lifeliner (Homey): versie 6.1.1, 5.0 ★",
+    "KNMI (Homey): versie 4.2.3, 5.0 ★"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41468256163"
+  },
+  {
+   "id": "41423655648",
+   "time": "2026-11-02T09:48:32+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41423655648"
+  },
+  {
+   "id": "41423564943",
+   "time": "2026-11-02T09:47:51+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41423564943"
+  },
+  {
+   "id": "41423032955",
+   "time": "2026-11-02T09:43:52+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Bingr: versie 1.0.3, 5.0 ★ (1 beoordelingen)",
+    "HealthSync: versie 1.0.1, 5.0 ★ (1 beoordelingen)",
+    "@ThePark: versie 1.0.1, 5.0 ★ (1 beoordelingen)",
+    "Cable Maps: versie 2.0.0, 5.0 ★ (15 beoordelingen)",
+    "DigiMate: versie 1.0.2, 5.0 ★ (1 beoordelingen)",
+    "Simple Chess: versie 3.0.0, 5.0 ★ (3 beoordelingen)",
+    "Lifeliner (Homey): versie 6.1.1, 5.0 ★",
+    "KNMI (Homey): versie 4.2.3, 5.0 ★"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41423032955"
+  },
+  {
+   "id": "41361284579",
+   "time": "2026-11-01T23:16:21+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Weekdot (Homey): versie 1.0.0",
+    "App Store Connect (Homey): versie 1.0.2",
+    "P2000 (Homey): versie 6.2.4, 4.5 ★",
+    "NL-Alert (Homey): versie 1.0.4",
+    "Burgernet (Homey): versie 2.0.0",
+    "Vermiste personen (Homey): versie 2.0.0",
+    "Lifeliner (Homey): versie 6.1.1, 5.0 ★",
+    "KNMI (Homey): versie 4.2.3, 5.0 ★",
+    "KMI (Homey): versie 2.2.1",
+    "PostNL (Homey): versie 1.2.12",
+    "Verjaardagen (Homey): versie 2.1.6",
+    "Custom Logic (Homey): versie 2.0.3",
+    "RSS Feed Reader (Homey): versie 1.1.3",
+    "Apple Health (Homey): versie 1.0.3",
+    "HYXI Cloud (Homey): versie 1.1.5",
+    "Hyves (Homey): versie 1.0.5",
+    "9 Homey-tekst(en) (apparaten, widgets, Flow-kaarten) vertaald"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41361284579"
+  },
+  {
+   "id": "41358053007",
+   "time": "2026-11-01T22:37:20+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41358053007"
+  },
+  {
+   "id": "41354860827",
+   "time": "2026-11-01T22:00:18+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41354860827"
+  },
+  {
+   "id": "41354547715",
+   "time": "2026-11-01T21:56:30+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41354547715"
+  },
+  {
+   "id": "41349001526",
+   "time": "2026-11-01T20:51:38+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41349001526"
+  },
+  {
+   "id": "41348753375",
+   "time": "2026-11-01T20:48:38+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Weekdot: versie 1.0.0, – ★ (0 beoordelingen)",
+    "TechInside: versie 1.0.0, – ★ (0 beoordelingen)",
+    "VlagDagen BE: versie 1.0.0, – ★ (0 beoordelingen)",
+    "App Store Connect (Homey): versie 1.0.2"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41348753375"
+  },
+  {
+   "id": "41348421383",
+   "time": "2026-11-01T20:44:51+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Weekdot: versie 1.0.0, – ★ (0 beoordelingen)",
+    "TechInside: versie 1.0.0, – ★ (0 beoordelingen)",
+    "VlagDagen BE: versie 1.0.0, – ★ (0 beoordelingen)",
+    "App Store Connect: versie 1.0.1, – ★ (0 beoordelingen)",
+    "App Store Connect (Homey): versie 1.0.2",
+    "79 wat-is-nieuw-tekst(en) vertaald"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41348421383"
+  },
+  {
+   "id": "41347656791",
+   "time": "2026-11-01T20:35:41+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41347656791"
+  },
+  {
+   "id": "41347363860",
+   "time": "2026-11-01T20:32:22+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": false,
+   "lines": [],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41347363860"
+  },
+  {
+   "id": "41346319719",
+   "time": "2026-11-01T20:20:10+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Weekdot: versie 1.0.0, – ★ (0 beoordelingen)",
+    "DevTools: versie 1.0.1, – ★ (0 beoordelingen)",
+    "Cable Maps: versie 2.0.0, 5.0 ★ (15 beoordelingen)",
+    "TechInside: versie 1.0.0, – ★ (0 beoordelingen)",
+    "VlagDagen BE: versie 1.0.0, – ★ (0 beoordelingen)",
+    "App Store Connect: versie 1.0.1, – ★ (0 beoordelingen)",
+    "App Store Connect (Homey): versie 1.0.2"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41346319719"
+  },
+  {
+   "id": "41345832241",
+   "time": "2026-11-01T20:14:31+00:00",
+   "mode": "",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Weekdot: versie 1.0.0, – ★ (0 beoordelingen)",
+    "Bingr: versie 1.0.3, 5.0 ★ (1 beoordelingen)",
+    "HealthSync: versie 1.0.1, 5.0 ★ (1 beoordelingen)",
+    "DevTools: versie 1.0.1, 5 ★ (1 beoordelingen)",
+    "Samen Zuidbroek: versie 1.1.1, 4.9 ★ (7 beoordelingen)",
+    "@ThePark: versie 1.0.1, 5.0 ★ (1 beoordelingen)",
+    "Cable Maps: versie 2.0.0, 5.0 ★ (6 beoordelingen)",
+    "DigiMate: versie 1.0.2, 5.0 ★ (1 beoordelingen)",
+    "TechInside: versie 1.0.0, – ★ (0 beoordelingen)",
+    "VlagDagen: versie 2.0.0, – ★ (0 beoordelingen)",
+    "VlagDagen BE: versie 1.0.0, – ★ (0 beoordelingen)",
+    "Simple Chess: versie 3.0.0, 5.0 ★ (3 beoordelingen)",
+    "App Store Connect: versie 1.0.1, – ★ (0 beoordelingen)",
+    "Weekdot (Homey): versie 1.0.0",
+    "App Store Connect (Homey): versie 1.0.2",
+    "P2000 (Homey): versie 6.2.4, 4.5 ★",
+    "NL-Alert (Homey): versie 1.0.4",
+    "Burgernet (Homey): versie 2.0.0",
+    "Vermiste personen (Homey): versie 2.0.0",
+    "Lifeliner (Homey): versie 6.1.1, 5.0 ★",
+    "KNMI (Homey): versie 4.2.3, 5.0 ★",
+    "KMI (Homey): versie 2.2.1",
+    "PostNL (Homey): versie 1.2.12",
+    "Verjaardagen (Homey): versie 2.1.6",
+    "Custom Logic (Homey): versie 2.0.3",
+    "RSS Feed Reader (Homey): versie 1.1.3",
+    "Apple Health (Homey): versie 1.0.3",
+    "HYXI Cloud (Homey): versie 1.1.5",
+    "Hyves (Homey): versie 1.0.5"
+   ],
+   "checked": [],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/41345832241"
+  }
+ ]
+}

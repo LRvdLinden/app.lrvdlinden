@@ -66,19 +66,28 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          SITE_CHANGED=1
           if git diff --quiet -- site/apps.json && [ -z "$(git status --porcelain -- site/img)" ]; then
-            echo "Geen wijzigingen."
-            exit 0
+            SITE_CHANGED=0
+            echo "Geen wijzigingen aan de site."
           fi
           git config user.name "Store-check"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/apps.json site/img
-          git commit -q -F store-check-summary.md
+          # Logboek voor beheer.html: elke run, ook zonder wijzigingen
+          git add logs/store-check.json site/apps.json site/img
+          git diff --cached --quiet && exit 0
+          if [ "$SITE_CHANGED" = "1" ]; then
+            git commit -q -F store-check-summary.md
+          else
+            git commit -q -m "Logboek store-check: geen wijzigingen"
+          fi
           # Tussentijds gepubliceerd via de beheerpagina? Dan eerst bijwerken.
           for i in 1 2 3; do
             if git push -q origin HEAD:main; then break; fi
             git pull -q --rebase origin main || { echo "::error::Samenvoegen met een tussentijdse wijziging mislukte."; exit 1; }
           done
-          # Een push met de standaard-token start geen andere workflows; daarom expliciet de release starten.
-          gh workflow run release.yml --ref main
-          echo "Site wordt opnieuw live gezet."
+          if [ "$SITE_CHANGED" = "1" ]; then
+            # Een push met de standaard-token start geen andere workflows; daarom expliciet de release starten.
+            gh workflow run release.yml --ref main
+            echo "Site wordt opnieuw live gezet."
+          fi
