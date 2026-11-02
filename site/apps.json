@@ -2,6 +2,44 @@
     "_uitleg": "Pas dit bestand aan om apps toe te voegen, platformen te wijzigen of de status te veranderen. status: live | beta | dev. section: ios | homey. featured: true zet een live app bovenaan in 'Nieuw en onderweg'. Makkelijker: open beheer.html.",
     "apps": [
         {
+            "id": "nl-lrvdlinden-p2000-apeldoorn",
+            "name": "P2000 Apeldoorn",
+            "section": "ios",
+            "status": "beta",
+            "featured": true,
+            "category": "utilities",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac",
+                "Apple TV",
+                "Apple Watch",
+                "Web"
+            ],
+            "description": {
+                "nl": "P2000 Apeldoorn is de officiële app van p2000-apeldoorn.nl. Je ziet direct welke hulpdiensten er in de gemeente Apeldoorn worden opgeroepen: brandweer, ambulance, politie en traumaheli.",
+                "en": "P2000 Apeldoorn is the official app of p2000-apeldoorn.nl. You instantly see which emergency services are being dispatched in the municipality of Apeldoorn: fire brigade, ambulance, police and trauma helicopter."
+            },
+            "links": {
+                "testflight": "https://testflight.apple.com/join/xjwuY299",
+                "website": "https://p2000-apeldoorn.nl"
+            },
+            "history": [],
+            "icon": "img/nl-lrvdlinden-p2000-apeldoorn.webp",
+            "subtitle": {
+                "nl": "Live P2000-meldingen Apeldoorn",
+                "en": "Live P2000 alerts Apeldoorn"
+            },
+            "promo": {
+                "image": {
+                    "nl": "img/promo-nl-lrvdlinden-p2000-apeldoorn-nl.webp",
+                    "en": "img/promo-nl-lrvdlinden-p2000-apeldoorn-en.webp"
+                },
+                "show": true
+            },
+            "languages": "NL"
+        },
+        {
             "id": "nl-lrvdlinden-pasr",
             "name": "Pasr",
             "section": "ios",
