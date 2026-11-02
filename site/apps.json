@@ -98,6 +98,17 @@
             },
             "history": [
                 {
+                    "version": "1.0.1",
+                    "date": "2026-11-02",
+                    "notes": {
+                        "en": "We're constantly working to make our app even better! With every update, we focus on improving speed, stability, and usability. We fix bugs, optimize performance, and regularly introduce enhancements to deliver an even better experience.",
+                        "nl": "We werken voortdurend aan het verbeteren van onze app! Met elke update richten we ons op snellere prestaties, meer stabiliteit en betere bruikbaarheid. We lossen bugs op, optimaliseren de prestaties en voegen regelmatig verbeteringen toe voor een nog betere ervaring."
+                    },
+                    "_src": {
+                        "en": "We're constantly working to make our app even better! With every update, we focus on improving speed, stability, and usability. We fix bugs, optimize performance, and regularly introduce enhancements to deliver an even better experience."
+                    }
+                },
+                {
                     "version": "1.0.0",
                     "date": "2026-11-01",
                     "notes": []
@@ -120,7 +131,7 @@
                 "en": "New"
             },
             "languages": "NL + 32",
-            "size": "32,5 MB",
+            "size": "32,6 MB",
             "reviews": 0
         },
         {
@@ -151,7 +162,7 @@
             },
             "rating": 5.0,
             "reviews": 1,
-            "size": "116,0 MB",
+            "size": "116,1 MB",
             "languages": "NL + 10",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/bingr/id6821401598",
@@ -159,6 +170,17 @@
                 "testflight": "https://testflight.apple.com/join/JW915fdA"
             },
             "history": [
+                {
+                    "version": "1.0.4",
+                    "date": "2026-11-02",
+                    "notes": {
+                        "en": "We're hard at work improving the app, so you can focus on what you want to watch, when you want to watch it, and how you want to enjoy it. That's just as important.\n\nWe know there's a lot to choose from. In this version, we've made several improvements to the gallery to help you find what you love to watch more easily.",
+                        "nl": "We zijn druk bezig om de app te verbeteren, zodat jij je kunt richten op wat je wilt kijken, wanneer je wilt kijken en hoe je ervan wilt genieten. Dat is net zo belangrijk.\n\nWe weten dat er veel te kiezen is. In deze versie hebben we de galerij op verschillende punten verbeterd, zodat je makkelijker vindt waar je van houdt om te kijken."
+                    },
+                    "_src": {
+                        "en": "We're hard at work improving the app, so you can focus on what you want to watch, when you want to watch it, and how you want to enjoy it. That's just as important.\n\nWe know there's a lot to choose from. In this version, we've made several improvements to the gallery to help you find what you love to watch more easily."
+                    }
+                },
                 {
                     "version": "1.0.3",
                     "date": "2026-10-31",
@@ -209,13 +231,24 @@
                 "nl": "Stuurt gezondheidsdata van je iPhone naar je Homey: stappen, hartslag, slaap, workouts, bloedzuurstof en meer dan 180 andere typen. Alleen-lezen en rechtstreeks via HTTPS naar je eigen Homey. Werkt samen met de gratis Apple Health-app voor Homey Pro en Homey Cloud.",
                 "en": "Sends health data from your iPhone to your Homey: steps, heart rate, sleep, workouts, blood oxygen and over 180 other types. Read-only and sent directly over HTTPS to your own Homey. Works with the free Apple Health app for Homey Pro and Homey Cloud."
             },
-            "size": "2,5 MB",
+            "size": "2,6 MB",
             "languages": "EN",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/healthsync/id6820227732",
                 "website": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/"
             },
             "history": [
+                {
+                    "version": "1.0.2",
+                    "date": "2026-11-02",
+                    "notes": {
+                        "en": "We're constantly working to make our app even better! With every update, we focus on improving speed, stability, and usability. We fix bugs, optimize performance, and regularly introduce enhancements to deliver an even better experience.",
+                        "nl": "We werken voortdurend aan het verbeteren van onze app! Met elke update richten we ons op snellere prestaties, meer stabiliteit en betere bruikbaarheid. We lossen bugs op, optimaliseren de prestaties en voegen regelmatig verbeteringen toe voor een nog betere ervaring."
+                    },
+                    "_src": {
+                        "en": "We're constantly working to make our app even better! With every update, we focus on improving speed, stability, and usability. We fix bugs, optimize performance, and regularly introduce enhancements to deliver an even better experience."
+                    }
+                },
                 {
                     "version": "1.0.1",
                     "date": "2026-10-14",
@@ -308,6 +341,17 @@
             },
             "history": [
                 {
+                    "version": "1.0.2",
+                    "date": "2026-11-02",
+                    "notes": {
+                        "en": "We're constantly working to make our app even better! With every update, we focus on improving speed, stability, and usability. We fix bugs, optimize performance, and regularly introduce enhancements to deliver an even better experience.",
+                        "nl": "We werken voortdurend aan het verbeteren van onze app! Met elke update richten we ons op snellere prestaties, meer stabiliteit en betere bruikbaarheid. We lossen bugs op, optimaliseren de prestaties en voegen regelmatig verbeteringen toe voor een nog betere ervaring."
+                    },
+                    "_src": {
+                        "en": "We're constantly working to make our app even better! With every update, we focus on improving speed, stability, and usability. We fix bugs, optimize performance, and regularly introduce enhancements to deliver an even better experience."
+                    }
+                },
+                {
                     "version": "1.0.1",
                     "date": "2026-10-27",
                     "notes": {
@@ -327,7 +371,7 @@
                 },
                 "show": true
             },
-            "size": "16,1 MB",
+            "size": "16,2 MB",
             "languages": "NL + 8"
         },
         {
@@ -579,13 +623,24 @@
                 "nl": "Officiële vlagdagen in Nederland met herinneringen, weeradvies en agenda-integratie.",
                 "en": "Official Dutch flag days with reminders, weather advice and calendar integration."
             },
-            "size": "1,2 MB",
+            "size": "1,3 MB",
             "languages": "NL",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/vlagdagen/id6739980379",
                 "website": "https://vlagdagen.nl"
             },
             "history": [
+                {
+                    "version": "2.0.1",
+                    "date": "2026-11-02",
+                    "notes": {
+                        "nl": "We blijven onze app continu verbeteren! Met iedere update maken we de app sneller, stabieler en gebruiksvriendelijker. We lossen problemen op, optimaliseren de prestaties en voegen regelmatig verbeteringen toe voor een nog fijnere ervaring.",
+                        "en": "We're constantly working to make our app even better! With every update, we make the app faster, more stable and easier to use. We fix problems, optimize performance and regularly add improvements for an even better experience."
+                    },
+                    "_src": {
+                        "nl": "We blijven onze app continu verbeteren! Met iedere update maken we de app sneller, stabieler en gebruiksvriendelijker. We lossen problemen op, optimaliseren de prestaties en voegen regelmatig verbeteringen toe voor een nog fijnere ervaring."
+                    }
+                },
                 {
                     "version": "2.0.0",
                     "date": "2026-10-31",
@@ -822,13 +877,24 @@
             },
             "rating": 5.0,
             "reviews": 3,
-            "size": "1,6 MB",
+            "size": "1,7 MB",
             "languages": "NL + 3",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/simple-chess/id1583471443",
                 "testflight": "https://testflight.apple.com/join/8YvYNvsy"
             },
             "history": [
+                {
+                    "version": "3.0.1",
+                    "date": "2026-11-02",
+                    "notes": {
+                        "en": "We're constantly working to make our app even better! With every update, we focus on improving speed, stability, and usability. We fix bugs, optimize performance, and regularly introduce enhancements to deliver an even better experience.",
+                        "nl": "We werken voortdurend aan het verbeteren van onze app! Met elke update richten we ons op snellere prestaties, meer stabiliteit en betere bruikbaarheid. We lossen bugs op, optimaliseren de prestaties en voegen regelmatig verbeteringen toe voor een nog betere ervaring."
+                    },
+                    "_src": {
+                        "en": "We're constantly working to make our app even better! With every update, we focus on improving speed, stability, and usability. We fix bugs, optimize performance, and regularly introduce enhancements to deliver an even better experience."
+                    }
+                },
                 {
                     "version": "3.0.0",
                     "date": "2026-10-31",
