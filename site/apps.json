@@ -15,7 +15,7 @@
             ],
             "description": {
                 "nl": "Volg installs, builds en reviews van je Homey-apps. Krijg een melding zodra een build live gaat of is goedgekeurd, en beheer je Homeys onderweg.",
-                "en": ""
+                "en": "Track installs, builds and reviews of your Homey apps. Get a notification as soon as a build goes live or is approved, and manage your Homey on the go."
             },
             "links": {
                 "testflight": "https://testflight.apple.com/join/nPzKAhsZ"
@@ -29,7 +29,8 @@
                 }
             },
             "subtitle": {
-                "nl": "Je Homey-apps altijd dichtbij"
+                "nl": "Je Homey-apps altijd dichtbij",
+                "en": "Your Homey apps, always close by"
             }
         },
         {
