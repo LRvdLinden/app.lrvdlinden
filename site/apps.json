@@ -21,8 +21,7 @@
                 "image": {
                     "en": "img/promo-nieuwe-app-1-en.webp",
                     "nl": "img/promo-nieuwe-app-1-nl.webp"
-                },
-                "show": true
+                }
             },
             "subtitle": {
                 "nl": "Kan ik vandaag hout stoken?",
