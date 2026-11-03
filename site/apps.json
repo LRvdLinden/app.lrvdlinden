@@ -129,6 +129,17 @@
             },
             "history": [
                 {
+                    "version": "1.0.2",
+                    "date": "2026-11-03",
+                    "notes": {
+                        "en": "New in this version:\n\n• Month & List: a new view with a compact month on top – coloured dots show which days are busy – and your events from the selected day onwards below it. On iPad and Mac the month sits next to the list.\n• Small improvements and fixes for speed and stability.\n\nEnjoying Weekdot? A rating in the App Store helps a lot. Thank you for using Weekdot!",
+                        "nl": "Nieuw in deze versie:\n\n• Maand & Lijst: een nieuwe weergave met bovenaan een compacte maand – gekleurde stippen tonen welke dagen druk zijn – en daaronder je afspraken vanaf de geselecteerde dag. Op iPad en Mac staat de maand naast de lijst.\n• Kleine verbeteringen en oplossingen voor snelheid en stabiliteit.\n\nVind je Weekdot leuk? Een beoordeling in de App Store helpt enorm. Bedankt dat je Weekdot gebruikt!"
+                    },
+                    "_src": {
+                        "en": "New in this version:\n\n• Month & List: a new view with a compact month on top – coloured dots show which days are busy – and your events from the selected day onwards below it. On iPad and Mac the month sits next to the list.\n• Small improvements and fixes for speed and stability.\n\nEnjoying Weekdot? A rating in the App Store helps a lot. Thank you for using Weekdot!"
+                    }
+                },
+                {
                     "version": "1.0.1",
                     "date": "2026-11-02",
                     "notes": {
@@ -162,7 +173,7 @@
                 "en": "New"
             },
             "languages": "NL + 32",
-            "size": "32,6 MB",
+            "size": "32,7 MB",
             "reviews": 1,
             "rating": 5.0
         },
