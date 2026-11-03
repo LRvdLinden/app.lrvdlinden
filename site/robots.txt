@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /beheer.html
+Disallow: /publish.php
+Disallow: /store-refresh.php
+Disallow: /store-log.php
+Disallow: /translate.php
+
+Sitemap: https://lrvdlinden.app/sitemap.xml

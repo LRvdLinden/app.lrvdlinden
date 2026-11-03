@@ -10,6 +10,7 @@ on:
     branches: [main]
     paths:
       - "site/**"
+      - "scripts/build_seo.py"
       - ".github/workflows/release.yml"
   workflow_dispatch:
 
@@ -73,6 +74,8 @@ jobs:
           python3 -c "import json; json.load(open('site/apps.json'))" || { echo "::error::site/apps.json is geen geldige JSON"; exit 1; }
           rm -rf build && mkdir build
           cp -r site/. build/
+          # sitemap.xml en gestructureerde gegevens (JSON-LD) voor zoekmachines
+          python3 scripts/build_seo.py build
 
           # Wachtwoord via stdin, zodat het niet in de proceslijst verschijnt. bcrypt-hash.
           printf '%s' "$BEHEER_PASSWORD" | htpasswd -niB -C 12 "$BEHEER_USER" | sed '/^$/d' > build/.htpasswd
