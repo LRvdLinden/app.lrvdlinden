@@ -24,8 +24,8 @@ def last_date(a):
 
 # ---------- sitemap.xml ----------
 pages = [("", "weekly", "1.0", max([last_date(a) for a in apps] + [""]) or today)]
-for name, freq, prio in (("donate.html", "yearly", "0.5"), ("privacy.html", "yearly", "0.3")):
-    if os.path.isfile(os.path.join(out, name)):
+for name, freq, prio in (("donate", "yearly", "0.5"), ("privacy", "yearly", "0.3")):
+    if os.path.isfile(os.path.join(out, name + ".html")):  # nette URL zonder .html
         pages.append((name, freq, prio, today))
 xml = ['<?xml version="1.0" encoding="UTF-8"?>',
        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']

@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /beheer.html
+Disallow: /beheer
 Disallow: /publish.php
 Disallow: /store-refresh.php
 Disallow: /store-log.php

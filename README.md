@@ -33,7 +33,7 @@ Wachtwoord en token komen alleen op de server terecht, nooit in de repo of in de
 
 ## Een update doen
 
-1. Open `https://lrvdlinden.app/beheer.html` en log in.
+1. Open `https://lrvdlinden.app/beheer` en log in.
 2. Pas apps aan, upload eventueel een icoon en klik **Publiceren**. Met **Vertaal NL → EN** vul je de
    Engelse teksten van een app automatisch in vanuit het Nederlands.
 3. De wijziging staat direct live en wordt als commit in deze repo opgeslagen.

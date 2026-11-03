@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1471e3c42ec503ecd9bd0f17/script.js"></script> <!-- End cookieyes banner -->
+<title>Privacy · LRvdLinden Apps</title>
+<meta name="description" content="Privacyverklaring van lrvdlinden.app: welke gegevens de website gebruikt, cookies, donaties en je rechten.">
+<meta name="author" content="Léon van der Linden">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lrvdlinden.app/privacy">
+<meta name="theme-color" content="#F3F5F9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1018" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LRvdLinden Apps">
+<meta property="og:url" content="https://lrvdlinden.app/privacy">
+<meta property="og:title" content="Privacy · LRvdLinden Apps">
+<meta property="og:description" content="Welke gegevens lrvdlinden.app gebruikt, hoe cookies werken en wat je rechten zijn.">
+<meta property="og:image" content="https://lrvdlinden.app/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="lrvdlinden.app: apps voor je buurt, je huis en je dag">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy · LRvdLinden Apps">
+<meta name="twitter:description" content="Privacyverklaring van lrvdlinden.app.">
+<meta name="twitter:image" content="https://lrvdlinden.app/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F9;--surface:#FFFFFF;--ink:#121726;--muted:#5D6578;--line:#DDE2EC;
+  --accent:#2747E8;--accent-soft:#E6EBFF;--on-accent:#FFFFFF;--ok:#0F766E;
+  --bunq:#1C1C1C;--paypal:#003087;--paypal-2:#0070E0;
+  --f-display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;
+  --accent:#8A9DFF;--accent-soft:#1D2547;--on-accent:#0D1018;--ok:#5EC8B8;
+  --bunq:#000000;--paypal:#0B1F4D;--paypal-2:#3B8BEB;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1018;--surface:#161B27;--ink:#E9ECF4;--muted:#98A0B3;--line:#262D3D;
+  --accent:#8A9DFF;--accent-soft:#1D2547;--on-accent:#0D1018;--ok:#5EC8B8;
+  --bunq:#000000;--paypal:#0B1F4D;--paypal-2:#3B8BEB;color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+header.top{padding-block:24px 8px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:18px}
+.brand svg{width:36px;height:36px;display:block}
+.right{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.right nav{display:flex;gap:18px;font-size:14.5px;color:var(--muted)}
+.right nav a{text-decoration:none}
+.right nav a:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface)}
+.lang button{font:600 12.5px var(--f-body);letter-spacing:.04em;border:0;background:none;color:var(--muted);padding:5px 11px;border-radius:99px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+
+.hero{padding-block:52px 24px;max-width:760px;margin-left:260px}
+.hero h1{font-size:clamp(40px,6vw,64px);line-height:1;font-weight:800;letter-spacing:-.035em;margin-top:14px}
+.hero p{color:var(--muted);margin:16px 0 0;max-width:60ch}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;align-items:start;padding-bottom:40px}
+.toc{position:sticky;top:20px;display:flex;flex-direction:column;gap:2px;font-size:14px}
+.toc a{text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:8px}
+.toc a:hover{color:var(--ink);background:var(--surface)}
+.doc{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:12px 36px 28px;max-width:760px}
+.doc section{padding-block:24px;border-bottom:1px solid var(--line);scroll-margin-top:20px}
+.doc section:last-child{border-bottom:0}
+.doc h2{font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.doc h3{font-size:16px;font-weight:700;font-family:var(--f-body);margin:16px 0 4px}
+.doc p,.doc li{color:var(--muted)}
+.doc p{margin:0 0 10px}
+.doc ul{margin:0 0 10px;padding-left:20px}
+.doc li{margin:4px 0}
+.doc b{color:var(--ink);font-weight:600}
+.doc a{color:var(--accent)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:6px 0 4px}
+.facts div{background:var(--bg);border-radius:14px;padding:14px 16px}
+.facts b{display:block;font-family:var(--f-display);font-size:17px}
+.facts span{font-size:13.5px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:6px;font:600 14.5px var(--f-body);padding:10px 18px;border-radius:99px;border:0;background:var(--accent);color:var(--on-accent);cursor:pointer;text-decoration:none;margin-top:4px}
+.updated{font-size:13px;color:var(--muted);margin-top:18px}
+[data-lang-block][hidden]{display:none}
+footer{padding-block:48px 40px;color:var(--muted);font-size:14px}
+footer .bar{border-top:1px solid var(--line);padding-top:22px}
+footer nav{display:flex;gap:18px}
+@media (max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}.toc{display:none}.doc{padding:6px 20px 20px;border-radius:20px}.facts{grid-template-columns:1fr}.hero{padding-block:36px 16px;margin-left:0}}
+@media (max-width:520px){.right nav{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="bar">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="116" fill="#121726"/><g fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"><path d="M132 146V370H232"/><path d="M292 370V146H340A62 62 0 0 1 340 270H292"/><path d="M338 270L390 370"/></g><circle cx="404" cy="126" r="34" fill="#4C6BFF" stroke="#121726" stroke-width="14"/></svg>
+      lrvdlinden.app
+    </a>
+    <div class="right">
+      <nav aria-label="Menu">
+        <a href="/#apps" data-t="navApps"></a>
+        <a href="/#homey">Homey</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Taal / Language">
+        <button type="button" data-lang="nl">NL</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+<article data-lang-block="nl">
+  <section class="hero">
+    <div class="eyebrow">Privacy</div>
+    <h1>Privacyverklaring</h1>
+    <p>lrvdlinden.app laat mijn apps zien. Je hoeft je niet aan te melden en er is geen advertentie of tracker die je volgt. Hieronder lees je precies welke gegevens er toch langskomen en wat je rechten zijn.</p>
+  </section>
+  <div class="layout">
+    <nav class="toc" aria-label="Inhoud">
+      <a href="#wie">Wie ben ik</a><a href="#website">De website</a><a href="#cookies">Cookies</a><a href="#doneren">Doneren</a>
+      <a href="#apps">Mijn apps</a><a href="#bewaren">Bewaren en delen</a><a href="#rechten">Je rechten</a><a href="#wijzigingen">Wijzigingen</a>
+    </nav>
+    <div class="doc">
+      <section>
+        <div class="facts">
+          <div><b>Geen account</b><span>Je hoeft nergens in te loggen of iets in te vullen.</span></div>
+          <div><b>Geen advertenties</b><span>Geen advertentienetwerken of verkoop van gegevens.</span></div>
+          <div><b>Jij kiest</b><span>Cookies die niet nodig zijn, alleen met jouw toestemming.</span></div>
+        </div>
+      </section>
+      <section id="wie">
+        <h2>Wie ben ik</h2>
+        <p>Deze website is van <b>Léon van der Linden</b>, maker van de apps op lrvdlinden.app. Ik ben verantwoordelijk voor de verwerking van persoonsgegevens op deze website, zoals bedoeld in de Algemene verordening gegevensbescherming (AVG).</p>
+        <p>Vragen over privacy? Neem contact op via <a href="https://github.com/LRvdLinden" target="_blank" rel="noopener">GitHub</a> of via de ondersteuningslink bij de betreffende app.</p>
+      </section>
+      <section id="website">
+        <h2>Wat de website gebruikt</h2>
+        <h3>Serverlogboeken</h3>
+        <p>Zoals bij elke website ontvangt de server bij een bezoek technische gegevens, zoals je IP-adres, het tijdstip, de opgevraagde pagina en je browsertype. Mijn hostingpartij gebruikt die alleen om de site veilig en bereikbaar te houden en bewaart ze kort.</p>
+        <h3>Taalvoorkeur</h3>
+        <p>Kies je NL of EN, dan onthoudt je browser die keuze lokaal (in <i>localStorage</i>). Die keuze wordt niet naar mij of naar anderen verstuurd en je kunt hem wissen door de websitegegevens in je browser te verwijderen.</p>
+        <h3>Lettertypen</h3>
+        <p>De lettertypen komen van Google Fonts. Je browser maakt daarvoor verbinding met servers van Google, die daarbij je IP-adres ziet. Google gebruikt dit volgens eigen zeggen niet om je te volgen.</p>
+        <h3>Wat niet</h3>
+        <p>Er zijn geen formulieren, accounts of nieuwsbrieven. Ik verzamel geen namen, e-mailadressen of telefoonnummers via deze website.</p>
+      </section>
+      <section id="cookies">
+        <h2>Cookies</h2>
+        <p>Bij je eerste bezoek vraagt een cookiebanner (van CookieYes) om toestemming. Je keuze wordt in een functioneel cookie opgeslagen, zodat de banner niet steeds terugkomt. Cookies die niet strikt nodig zijn, worden alleen geplaatst als je daarvoor toestemming geeft. In de banner zie je per categorie welke cookies het zijn.</p>
+        <p>Je kunt je keuze altijd wijzigen of intrekken:</p>
+        <button type="button" class="btn cky-banner-element" data-cky>Cookie-instellingen wijzigen</button>
+      </section>
+      <section id="doneren">
+        <h2>Doneren</h2>
+        <p>Doneer je via de <a href="/donate">donatiepagina</a>, dan rond je de betaling af bij <b>bunq</b> (iDEAL, Wero of creditcard) of <b>PayPal</b>. Deze website verwerkt zelf geen betaalgegevens. Ik ontvang van de betaaldienst je naam, het bedrag, de datum en de omschrijving, zoals bij elke bankbetaling. Die gegevens bewaar ik alleen zolang dat voor mijn administratie nodig is.</p>
+        <p>Voor wat bunq en PayPal zelf met je gegevens doen, zie het <a href="https://www.bunq.com/nl/privacy" target="_blank" rel="noopener">privacybeleid van bunq</a> en het <a href="https://www.paypal.com/nl/legalhub/privacy-full" target="_blank" rel="noopener">privacybeleid van PayPal</a>.</p>
+      </section>
+      <section id="apps">
+        <h2>Mijn apps</h2>
+        <p>Deze verklaring gaat over de website. Elke app heeft eigen privacygegevens:</p>
+        <ul>
+          <li><b>iOS-apps:</b> zie het onderdeel <i>Privacy van de app</i> op de pagina van de app in de App Store, en de privacylink daar.</li>
+          <li><b>Homey-apps:</b> die draaien op je eigen Homey. Welke gegevens een app gebruikt, staat op de pagina van de app in de Homey App Store.</li>
+          <li><b>TestFlight:</b> doe je mee aan een beta, dan deelt Apple onder meer je e-mailadres en crashrapporten met mij, zoals Apple uitlegt bij het aanmelden.</li>
+        </ul>
+        <p>Links naar de App Store, de Homey App Store, GitHub en andere sites brengen je naar diensten met een eigen privacybeleid.</p>
+      </section>
+      <section id="bewaren">
+        <h2>Bewaren en delen</h2>
+        <p>Ik verkoop geen gegevens en deel ze niet met anderen, behalve met de diensten hierboven die nodig zijn om de site en donaties te laten werken. Ik bewaar gegevens niet langer dan nodig.</p>
+      </section>
+      <section id="rechten">
+        <h2>Je rechten</h2>
+        <p>Je hebt het recht om je gegevens in te zien, te laten corrigeren of verwijderen, de verwerking te beperken en bezwaar te maken. Neem daarvoor contact met mij op. Ben je het niet eens met hoe ik met je gegevens omga, dan kun je een klacht indienen bij de <a href="https://autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+      </section>
+      <section id="wijzigingen">
+        <h2>Wijzigingen</h2>
+        <p>Verandert er iets aan de website of de diensten die ik gebruik, dan pas ik deze verklaring aan.</p>
+        <p class="updated">Laatst bijgewerkt: 3 november 2026</p>
+      </section>
+    </div>
+  </div>
+</article>
+
+<article data-lang-block="en" hidden>
+  <section class="hero">
+    <div class="eyebrow">Privacy</div>
+    <h1>Privacy policy</h1>
+    <p>lrvdlinden.app shows my apps. You don't need to sign up and there are no ads or trackers following you. Below is exactly which data does pass by and what your rights are.</p>
+  </section>
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <a href="#who">Who I am</a><a href="#site">The website</a><a href="#cookies-en">Cookies</a><a href="#donate">Donations</a>
+      <a href="#apps-en">My apps</a><a href="#keep">Storage and sharing</a><a href="#rights">Your rights</a><a href="#changes">Changes</a>
+    </nav>
+    <div class="doc">
+      <section>
+        <div class="facts">
+          <div><b>No account</b><span>You never need to log in or fill anything in.</span></div>
+          <div><b>No ads</b><span>No ad networks and no selling of data.</span></div>
+          <div><b>Your choice</b><span>Non-essential cookies only with your consent.</span></div>
+        </div>
+      </section>
+      <section id="who">
+        <h2>Who I am</h2>
+        <p>This website belongs to <b>Léon van der Linden</b>, maker of the apps on lrvdlinden.app. I am the controller for personal data processed on this website under the General Data Protection Regulation (GDPR).</p>
+        <p>Questions about privacy? Get in touch via <a href="https://github.com/LRvdLinden" target="_blank" rel="noopener">GitHub</a> or the support link of the app concerned.</p>
+      </section>
+      <section id="site">
+        <h2>What the website uses</h2>
+        <h3>Server logs</h3>
+        <p>Like any website, the server receives technical data when you visit, such as your IP address, the time, the page requested and your browser type. My hosting provider uses this only to keep the site secure and available, and keeps it briefly.</p>
+        <h3>Language preference</h3>
+        <p>When you choose NL or EN, your browser remembers it locally (in <i>localStorage</i>). It is never sent to me or anyone else, and you can clear it by deleting the site data in your browser.</p>
+        <h3>Fonts</h3>
+        <p>The fonts are served by Google Fonts. Your browser connects to Google's servers for this, which see your IP address. Google states it does not use this to track you.</p>
+        <h3>What not</h3>
+        <p>There are no forms, accounts or newsletters. I don't collect names, email addresses or phone numbers through this website.</p>
+      </section>
+      <section id="cookies-en">
+        <h2>Cookies</h2>
+        <p>On your first visit a cookie banner (by CookieYes) asks for consent. Your choice is stored in a functional cookie so the banner doesn't keep coming back. Cookies that aren't strictly necessary are only set if you agree. The banner shows which cookies belong to each category.</p>
+        <p>You can change or withdraw your choice at any time:</p>
+        <button type="button" class="btn cky-banner-element" data-cky>Change cookie settings</button>
+      </section>
+      <section id="donate">
+        <h2>Donations</h2>
+        <p>If you donate via the <a href="/donate">donation page</a>, you complete the payment with <b>bunq</b> (iDEAL, Wero or card) or <b>PayPal</b>. This website does not process any payment details itself. The payment service gives me your name, the amount, the date and the description, as with any bank payment. I keep this only as long as needed for my records.</p>
+        <p>For what bunq and PayPal do with your data, see <a href="https://www.bunq.com/en/privacy" target="_blank" rel="noopener">bunq's privacy policy</a> and <a href="https://www.paypal.com/nl/legalhub/privacy-full" target="_blank" rel="noopener">PayPal's privacy policy</a>.</p>
+      </section>
+      <section id="apps-en">
+        <h2>My apps</h2>
+        <p>This policy covers the website. Each app has its own privacy details:</p>
+        <ul>
+          <li><b>iOS apps:</b> see <i>App Privacy</i> on the app's App Store page, and the privacy link there.</li>
+          <li><b>Homey apps:</b> these run on your own Homey. Which data an app uses is listed on its page in the Homey App Store.</li>
+          <li><b>TestFlight:</b> if you join a beta, Apple shares things like your email address and crash reports with me, as Apple explains when you sign up.</li>
+        </ul>
+        <p>Links to the App Store, the Homey App Store, GitHub and other sites take you to services with their own privacy policies.</p>
+      </section>
+      <section id="keep">
+        <h2>Storage and sharing</h2>
+        <p>I don't sell data or share it with others, except with the services above that are needed for the site and donations to work. I don't keep data longer than necessary.</p>
+      </section>
+      <section id="rights">
+        <h2>Your rights</h2>
+        <p>You have the right to access your data, have it corrected or erased, restrict processing and object. Contact me to do so. If you disagree with how I handle your data, you can file a complaint with the Dutch Data Protection Authority, the <a href="https://autoriteitpersoonsgegevens.nl/en" target="_blank" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+      </section>
+      <section id="changes">
+        <h2>Changes</h2>
+        <p>If anything changes on the website or in the services I use, I will update this policy.</p>
+        <p class="updated">Last updated: 3 November 2026</p>
+      </section>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="wrap">
+  <div class="bar">
+    <span>© lrvdlinden.app · Powered by <a href="https://pixelforges.nl" target="_blank" rel="noopener">PixelForges</a></span>
+    <nav>
+      <a href="/donate" data-t="donate"></a>
+      <a href="/" data-t="back"></a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const T = { nl:{ navApps:"iOS-apps", donate:"Doneren", back:"Terug naar de apps" },
+            en:{ navApps:"iOS apps", donate:"Donate", back:"Back to the apps" } };
+let lang = "nl";
+try { lang = localStorage.getItem("lr-lang") || (navigator.language||"nl").slice(0,2); } catch(e){}
+if (location.hash === "#en") lang = "en";
+if (!T[lang]) lang = "nl";
+function render(){
+  document.documentElement.lang = lang;
+  document.title = (lang === "nl" ? "Privacy" : "Privacy policy") + " · LRvdLinden Apps";
+  document.querySelectorAll("[data-t]").forEach(el => { const v = T[lang][el.dataset.t]; if (v != null) el.textContent = v; });
+  document.querySelectorAll("[data-lang-block]").forEach(el => el.hidden = el.dataset.langBlock !== lang);
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+}
+document.addEventListener("click", e => {
+  const lb = e.target.closest("[data-lang]");
+  if (lb){ lang = lb.dataset.lang; try{localStorage.setItem("lr-lang",lang)}catch(_){} render(); return; }
+  if (e.target.closest("[data-cky]") && typeof window.revisitCkyConsent === "function") window.revisitCkyConsent();
+});
+render();
+</script>
+</body>
+</html>

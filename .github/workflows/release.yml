@@ -114,6 +114,19 @@ jobs:
             Require all denied
           </FilesMatch>
 
+          # Nette URL's zonder .html: /privacy toont privacy.html, /privacy.html stuurt door naar /privacy
+          <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+            RewriteRule ^index\.html$ / [R=301,L]
+            RewriteCond %{THE_REQUEST} \s/+([^.?\s]+)\.html[\s?] [NC]
+            RewriteRule ^ /%1 [R=301,L,NE]
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteCond %{REQUEST_FILENAME}.html -f
+            RewriteRule ^([a-z0-9-]+)/?$ \$1.html [L]
+          </IfModule>
+
           # apps.json altijd vers ophalen na een update
           <IfModule mod_headers.c>
             <Files "apps.json">
@@ -161,13 +174,22 @@ jobs:
       - name: Controleer live site
         run: |
           sleep 3
-          code=$(curl -s -o /tmp/live.html -w '%{http_code}' "https://lrvdlinden.app/index.html?v=${GITHUB_RUN_NUMBER}")
-          echo "index.html: HTTP $code"
-          [ "$code" = "200" ] || { echo "::error::lrvdlinden.app/index.html geeft HTTP $code na upload. Klopt de doelmap? Zet eventueel secret FTP_DIR."; exit 1; }
+          code=$(curl -s -o /tmp/live.html -w '%{http_code}' "https://lrvdlinden.app/?v=${GITHUB_RUN_NUMBER}")
+          echo "homepagina: HTTP $code"
+          [ "$code" = "200" ] || { echo "::error::lrvdlinden.app geeft HTTP $code na upload. Klopt de doelmap? Zet eventueel secret FTP_DIR."; exit 1; }
+          for pg in donate privacy; do
+            c=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$pg")
+            echo "/$pg: HTTP $c"
+            [ "$c" = "200" ] || echo "::warning::/$pg geeft HTTP $c (nette URL's werken niet?)."
+            r=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "https://lrvdlinden.app/$pg.html")
+            echo "/$pg.html: $r"
+          done
           curl -s "https://lrvdlinden.app/apps.json?v=${GITHUB_RUN_NUMBER}" | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d['apps']), 'apps live')"
-          b=$(curl -s -o /dev/null -w '%{http_code}' https://lrvdlinden.app/beheer.html)
-          echo "beheer.html zonder login: HTTP $b"
-          [ "$b" = "401" ] || echo "::warning::beheer.html geeft HTTP $b in plaats van 401 (inloggen vereist)."
+          for u in beheer beheer.html; do
+            b=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$u")
+            echo "/$u zonder login: HTTP $b"
+            case "$b" in 401|403) ;; *) echo "::error::/$u is bereikbaar zonder login (HTTP $b)."; exit 1 ;; esac
+          done
           for f in publish.php store-refresh.php store-log.php translate.php .publish-config.php .translate-config.php .htpasswd; do
             c=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$f")
             echo "$f zonder login: HTTP $c"
