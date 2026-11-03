@@ -4,3 +4,4 @@ build/
 scripts/__pycache__/
 store-check-summary.md
 store-check-overview.md
+store-check-entry.json

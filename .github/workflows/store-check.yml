@@ -82,10 +82,26 @@ jobs:
             git commit -q -m "Logboek store-check: geen wijzigingen"
           fi
           # Tussentijds gepubliceerd via de beheerpagina? Dan eerst bijwerken.
-          for i in 1 2 3; do
-            if git push -q origin HEAD:main; then break; fi
-            git pull -q --rebase origin main || { echo "::error::Samenvoegen met een tussentijdse wijziging mislukte."; exit 1; }
+          # Tussentijds gepubliceerd via beheer of een andere check? Dan eerst bijwerken.
+          # Botst alleen het logboek, dan de versie van GitHub nemen en deze run er opnieuw in zetten.
+          pushed=0
+          for i in 1 2 3 4 5; do
+            if git push -q origin HEAD:main; then pushed=1; break; fi
+            sleep $((i * 3))
+            if ! git pull -q --rebase origin main; then
+              conflicts=$(git diff --name-only --diff-filter=U)
+              if [ "$conflicts" = "logs/store-check.json" ]; then
+                git checkout -q --ours logs/store-check.json
+                python3 scripts/store_check.py --add-log store-check-entry.json
+                git add logs/store-check.json
+                GIT_EDITOR=true git rebase --continue || { git rebase --abort; echo "::error::Samenvoegen mislukte."; exit 1; }
+              else
+                git rebase --abort
+                echo "::error::Samenvoegen met een tussentijdse wijziging mislukte ($conflicts)."; exit 1
+              fi
+            fi
           done
+          [ "$pushed" = "1" ] || { echo "::error::Opslaan op GitHub mislukte na 5 pogingen."; exit 1; }
           if [ "$SITE_CHANGED" = "1" ]; then
             # Een push met de standaard-token start geen andere workflows; daarom expliciet de release starten.
             gh workflow run release.yml --ref main

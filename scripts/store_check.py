@@ -16,7 +16,7 @@ Schrijft het bestand alleen als er iets veranderd is en zet een samenvatting in 
 import json, os, re, sys, time, urllib.request, urllib.error
 from datetime import datetime
 
-APPS_JSON = sys.argv[1] if len(sys.argv) > 1 else "site/apps.json"
+APPS_JSON = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else "site/apps.json"
 FIXTURES = os.environ.get("STORE_FIXTURES")  # alleen voor lokaal testen
 # Beoordelingen telt Apple per land; dit zijn de grootste App Store-landen (plus NL/BE).
 COUNTRIES = ["nl", "be", "us", "gb", "de", "fr", "es", "it", "ca", "au", "ie", "at", "ch", "lu", "dk", "se", "no", "fi",
@@ -734,8 +734,21 @@ def write_logbook(mode, changed, log):
         "checked": CHECKED,
         "url": url,
     }
-    book["runs"] = [entry] + [r for r in book.get("runs", []) if not run_id or r.get("id") != run_id]
-    book["runs"] = book["runs"][:150]
+    # los bewaren, zodat de workflow het bij een gelijktijdige wijziging opnieuw kan toevoegen
+    with open("store-check-entry.json", "w", encoding="utf-8") as f:
+        json.dump(entry, f, ensure_ascii=False)
+    add_to_logbook(entry, book)
+
+
+def add_to_logbook(entry, book=None):
+    if book is None:
+        try:
+            book = json.load(open(LOGBOOK, encoding="utf-8"))
+        except (OSError, ValueError):
+            book = {"runs": []}
+    rid = entry.get("id")
+    book["runs"] = [entry] + [r for r in book.get("runs", []) if not rid or r.get("id") != rid]
+    book["runs"] = sorted(book["runs"], key=lambda r: r.get("time") or "", reverse=True)[:150]
     os.makedirs(os.path.dirname(LOGBOOK) or ".", exist_ok=True)
     with open(LOGBOOK, "w", encoding="utf-8") as f:
         json.dump(book, f, ensure_ascii=False, indent=1)
@@ -790,4 +803,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 2 and sys.argv[1] == "--add-log":
+        # gebruik: store_check.py --add-log store-check-entry.json
+        add_to_logbook(json.load(open(sys.argv[2], encoding="utf-8")))
+    else:
+        main()
