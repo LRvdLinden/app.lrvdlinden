@@ -149,25 +149,14 @@ header.top{padding-block:24px 8px}
 .history .d{color:var(--muted);font-size:12px}
 .history li p{margin:0;color:var(--muted)}
 
-.homey{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
-.homey-intro{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 20px;align-items:center}
-.homey-intro > .icon{grid-row:1 / span 3}
-.homey-intro .btns{grid-column:3;grid-row:1 / span 3;justify-content:flex-end}
-.homey h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin-top:10px}
-.homey-intro p{color:var(--muted);margin:0;max-width:62ch}
-.homey-intro h2{margin-top:0}
-.homey-intro > .icon{background:#fff}
-.homey ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;align-self:start}
-.homey li{background:var(--surface);min-width:0}
-.homey li .hitem{display:grid;grid-template-columns:40px minmax(0,1fr) 16px;gap:12px;padding:14px 16px;height:100%;width:100%;text-align:left;background:none;border:0;font:inherit;color:inherit;cursor:pointer}
-.homey li .hitem:hover{background:var(--bg)}
-.homey li .hitem[aria-expanded="true"]{background:var(--accent-soft)}
-.homey li .chev{width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:8px;transition:transform .2s}
-.homey li .hitem[aria-expanded="true"] .chev{transform:rotate(-135deg);margin-top:12px}
-@media (prefers-reduced-motion:reduce){.homey li .chev{transition:none}}
 
+/* Homey: zelfde kaarten als de App Store-grid, details klappen open onder de rij */
+.hitem h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hitem h3 .pill{font-size:11px;padding:2px 8px}
+.homey-more{display:flex;gap:6px 16px;flex-wrap:wrap;align-items:center;margin-top:18px;font-size:14px;color:var(--muted)}
+.homey-more a{color:var(--ink);font-weight:600;text-underline-offset:3px}
 /* Uitgeklapte Homey-app, zoals in de Homey App Store */
-.homey li.hdetail{grid-column:1/-1;padding:24px;background:var(--surface)}
+.hdetail{grid-column:1/-1;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;min-width:0}
 .hd-head{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:16px;align-items:center;margin-bottom:18px}
 .hd-head h3{font-size:24px;letter-spacing:-.02em;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .hd-head .sub{font-size:14px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
@@ -203,14 +192,6 @@ header.top{padding-block:24px 8px}
 .hd-news .v{font-family:var(--f-mono);font-size:12.5px}
 .hd-news .d{color:var(--muted);font-size:12px}
 .hd-news p{margin:0;color:var(--muted);white-space:pre-line}
-.homey .hitem .icon{width:40px;height:40px;border-radius:10px;margin:0;font-size:14px}
-.homey .hitem b{font-family:var(--f-display);font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.homey .hitem > div > span{font-size:13.5px;color:var(--muted);display:block}
-.homey .hitem .hmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:12.5px;color:var(--muted)}
-.homey .hitem .hmeta span{display:inline}
-.homey .hitem .hnew{margin-top:4px;font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.homey .hitem .mono{overflow-wrap:anywhere}
-.homey .pill{font-size:11px;padding:2px 8px}
 
 .notice{padding:20px;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}
 footer{padding-block:48px 40px;color:var(--muted);font-size:14px}
@@ -255,10 +236,6 @@ footer nav{display:flex;gap:18px}
 @media (max-width:860px){
   .intro{grid-template-columns:1fr;gap:16px;padding-block:32px 24px}
   .detail{grid-template-columns:1fr}
-  .homey ul{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .homey-intro{grid-template-columns:minmax(0,1fr)}
-  .homey-intro > .icon{grid-row:auto}
-  .homey-intro .btns{grid-column:auto;grid-row:auto;justify-content:flex-start}
   .hd-flow{grid-template-columns:1fr}
 }
 @media (max-width:600px){
@@ -269,10 +246,8 @@ footer nav{display:flex;gap:18px}
   .promo .head{padding:20px}
 }
 @media (max-width:480px){
-  .homey{padding:20px;border-radius:20px}
   .lab-card,.detail{padding:18px}
-  .homey ul{grid-template-columns:1fr}
-  .homey li.hdetail{padding:18px 14px}
+  .hdetail{padding:18px}
   .hd-head{grid-template-columns:56px minmax(0,1fr) auto;gap:12px}
   .hd-head .icon{width:56px;height:56px}
   .hd-head h3{font-size:20px}
@@ -342,19 +317,14 @@ footer nav{display:flex;gap:18px}
   </section>
 
   <section class="section wrap" id="homey">
-    <div class="homey">
-      <div class="homey-intro">
-        <span class="icon lg" aria-hidden="true"><img src="img/homey.webp" alt=""></span>
-        <div class="eyebrow">Homey &amp; Homey Pro</div>
-        <h2 data-t="homeyTitle"></h2>
-        <p data-t="homeySub"></p>
-        <div class="btns">
-          <a class="btn primary" href="https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/" target="_blank" rel="noopener" data-t="homeyStore"></a>
-          <a class="btn" href="https://homey.app/nl-nl/apps/author/6ac4bc064c7de6266bbdb73e/page/0/" target="_blank" rel="noopener">PixelForges</a>
-          <a class="btn" href="https://community.homey.app/t/apps-made-by-lrvdlinden/85452" target="_blank" rel="noopener">Community Forum</a>
-        </div>
-      </div>
-      <ul id="homeyList"></ul>
+    <div class="sec-head"><h2 data-t="homeyTitle"></h2><p data-t="homeySub"></p></div>
+    <div class="filters" id="hfilters" role="group"></div>
+    <div class="grid" id="homeyList"></div>
+    <div class="homey-more">
+      <span data-t="homeyMore"></span>
+      <a href="https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/" target="_blank" rel="noopener">Léon van der Linden</a>
+      <a href="https://homey.app/nl-nl/apps/author/6ac4bc064c7de6266bbdb73e/page/0/" target="_blank" rel="noopener">PixelForges</a>
+      <a href="https://community.homey.app/t/apps-made-by-lrvdlinden/85452" target="_blank" rel="noopener">Community Forum</a>
     </div>
   </section>
 </main>
@@ -378,8 +348,9 @@ const T = {
     newTitle:"Nieuw en onderweg", newSub:"Net uit, in beta of nog op de werkbank.",
     storeTitle:"In de App Store", storeSub:"Tik op een app voor details en versiegeschiedenis.",
     navTf:"TestFlight", tfTitle:"Via TestFlight", tfSub:"Nog niet in de App Store, maar je kunt ze nu al testen via TestFlight.",
-    all:"Alles", homeyTitle:"Apps voor je smart home",
-    homeySub:"Koppelingen met diensten die je dagelijks gebruikt, verdeeld over twee ontwikkelaarsaccounts. Versies en releasenotes vind je in de Homey App Store en op het Community Forum.",
+    all:"Alles", homeyTitle:"Voor Homey", homeyMore:"Bekijk ook in de Homey App Store:",
+    homeySub:"Tik op een app voor apparaten, Flow-kaarten en wat er nieuw is.",
+    hcats:{appliances:"Apparaten",climate:"Klimaat",energy:"Energie",internet:"Internet",lights:"Verlichting",localization:"Locatie",music:"Muziek",security:"Veiligheid",tools:"Hulpmiddelen",video:"Video"},
     homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In ontwikkeling",
     donate:"Doneren", live:"Nieuw in de App Store", beta:"Open beta", dev:"In ontwikkeling",
     appstore:"Gratis in de App Store", testflight:"Doe mee via TestFlight", website:"Website",
@@ -398,8 +369,9 @@ const T = {
     newTitle:"New and upcoming", newSub:"Just released, in beta or still on the workbench.",
     storeTitle:"On the App Store", storeSub:"Tap an app for details and version history.",
     navTf:"TestFlight", tfTitle:"On TestFlight", tfSub:"Not on the App Store yet, but you can already test them via TestFlight.",
-    all:"All", homeyTitle:"Apps for your smart home",
-    homeySub:"Integrations with services you use every day, spread across two developer accounts. Versions and release notes are in the Homey App Store and on the Community Forum.",
+    all:"All", homeyTitle:"For Homey", homeyMore:"Also in the Homey App Store:",
+    homeySub:"Tap an app for devices, Flow cards and what's new.",
+    hcats:{appliances:"Appliances",climate:"Climate",energy:"Energy",internet:"Internet",lights:"Lights",localization:"Localization",music:"Music",security:"Security",tools:"Tools",video:"Video"},
     homeyStore:"Léon van der Linden", h_beta:"Test", h_dev:"In development",
     donate:"Donate", live:"New on the App Store", beta:"Open beta", dev:"In development",
     appstore:"Free on the App Store", testflight:"Join on TestFlight", website:"Website",
@@ -615,36 +587,54 @@ function homeyDetail(h){
     ${news ? `<section class="hd-sec"><h4>${esc(t("hNews"))}</h4><div class="hd-news">${news}</div></section>` : ""}`;
 }
 
+let hcat = "all";
+const hcatName = c => (T[lang].hcats || {})[c] || c;
 function renderHomey(){
   const homey = APPS.filter(a => a.section === "homey");
-  if (openHomey && !homey.some(h => h.id === openHomey)) openHomey = null;
-  $("#homeyList").innerHTML = homey.map(h => {
+  const catOf = h => (h.homey && h.homey.category) || "";
+  const cats = ["all", ...new Set(homey.map(catOf).filter(Boolean))];
+  if (!cats.includes(hcat)) hcat = "all";
+  $("#hfilters").innerHTML = cats.length > 2 ? cats.map(c => {
+    const n = c === "all" ? homey.length : homey.filter(h => catOf(h) === c).length;
+    return `<button class="chip" type="button" data-hcat="${esc(c)}" aria-pressed="${c===hcat}">${esc(c==="all"?t("all"):hcatName(c))}<span class="n">${n}</span></button>`;
+  }).join("") : "";
+  $("#hfilters").hidden = cats.length <= 2;
+  $("#hfilters").setAttribute("aria-label", lang==="nl" ? "Filter Homey-apps" : "Filter Homey apps");
+  const list = homey.filter(h => hcat === "all" || catOf(h) === hcat);
+  if (openHomey && !list.some(h => h.id === openHomey)) openHomey = null;
+  $("#homeyList").innerHTML = list.map(h => {
     const last = (h.history || [])[0];
     const stable = (h.history || []).find(e => !e.test);
-    const tv = last && last.test ? last : null;
-    const meta = [stable && stable.version ? `<span class="mono">v${esc(stable.version)}</span>` : "",
-                  tv ? `<span class="mono">${esc(t("h_beta"))} v${esc(tv.version)}</span>` : "",
-                  h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""].filter(Boolean).join("");
-    const news = last && L(last.notes) ? `<span class="hnew">${esc(t("whatsNew"))}: ${esc(L(last.notes).split("\n")[0])}</span>` : "";
-    return `<li><button type="button" class="hitem" data-hid="${esc(h.id)}" aria-expanded="${openHomey===h.id}" aria-label="${esc(t("hOpen").replace("{n}", h.name))}">
-      ${icon(h)}<div style="min-width:0"><b>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</b><span>${esc(L(h.description))}</span>${meta?`<span class="hmeta">${meta}</span>`:""}${news}</div>
-      <span class="chev" aria-hidden="true"></span></button></li>`;
+    const tv = last && last.test && h.status === "live" ? last : null;
+    const ver = stable && stable.version ? stable.version : (last && last.version);
+    const meta = [`<span>${h.rating ? `<span class="stars" aria-hidden="true">★★★★★</span> ${num(h.rating)}` : esc(t("noRating"))}</span>`,
+                  ver ? `<span class="mono">v${esc(ver)}</span>` : "",
+                  tv ? `<span class="mono">${esc(t("h_beta"))} v${esc(tv.version)}</span>` : ""].join("");
+    return `<button type="button" class="app hitem" data-hid="${esc(h.id)}" aria-expanded="${openHomey===h.id}" aria-label="${esc(t("hOpen").replace("{n}", h.name))}">
+      ${icon(h)}
+      <div style="min-width:0">
+        <h3>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</h3>
+        <div class="cat">${esc(catOf(h) ? hcatName(catOf(h)) : "Homey")}</div>
+        <div class="meta">${meta}</div>
+      </div>
+    </button>`;
   }).join("");
   placeHomeyDetail();
 }
 
 // Het detailpaneel komt onder de rij van de aangeklikte app, over de volle breedte.
 function placeHomeyDetail(){
-  const ul = $("#homeyList"); ul.querySelector(".hdetail")?.remove();
+  const grid = $("#homeyList"); grid.querySelector(".hdetail")?.remove();
   if (!openHomey) return;
   const h = APPS.find(a => a.id === openHomey); if (!h) return;
-  const items = [...ul.querySelectorAll(":scope > li")];
-  const idx = items.findIndex(li => li.querySelector(`[data-hid="${CSS.escape(openHomey)}"]`));
-  const cols = getComputedStyle(ul).gridTemplateColumns.split(" ").filter(Boolean).length || 1;
+  const items = [...grid.querySelectorAll(":scope > .hitem")];
+  const idx = items.findIndex(b => b.dataset.hid === openHomey); if (idx < 0) return;
+  const cols = getComputedStyle(grid).gridTemplateColumns.split(" ").filter(Boolean).length || 1;
   const rowEnd = Math.min(items.length - 1, Math.floor(idx / cols) * cols + cols - 1);
-  const li = document.createElement("li"); li.className = "hdetail"; li.id = "homeyDetail";
-  li.innerHTML = homeyDetail(h);
-  items[rowEnd].after(li);
+  const box = document.createElement("div"); box.className = "hdetail"; box.id = "homeyDetail";
+  box.setAttribute("role", "region"); box.setAttribute("aria-label", h.name);
+  box.innerHTML = homeyDetail(h);
+  items[rowEnd].after(box);
 }
 let lastCols = 0;
 window.addEventListener("resize", () => {
@@ -692,6 +682,8 @@ document.addEventListener("click", e => {
   if (pd){ goPromo(+pd.dataset.promo); startPromoTimer(); return; }
   const lb = e.target.closest(".lang button");
   if (lb){ lang = lb.dataset.lang; try{localStorage.setItem("lr-lang",lang)}catch(_){} render(); return; }
+  const hc = e.target.closest("[data-hcat]");
+  if (hc){ hcat = hc.dataset.hcat; renderHomey(); return; }
   const ch = e.target.closest(".chip");
   if (ch){ cat = ch.dataset.cat; render(); return; }
   const hi = e.target.closest(".hitem");

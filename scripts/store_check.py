@@ -336,6 +336,13 @@ def known_translations(old):
     return table
 
 
+def homey_category(c):
+    """Eerste categorie uit de Homey App Store (bijv. security, climate, tools)."""
+    if isinstance(c, list):
+        c = next((x for x in c if isinstance(x, str) and x), None)
+    return c if isinstance(c, str) and c else None
+
+
 def homey_details(build, old):
     """Apparaten, widgets en Flow-kaarten zoals de Homey App Store ze toont."""
     table = known_translations(old)
@@ -373,7 +380,8 @@ def homey_details(build, old):
             flow[kind] = cards
     out = {"drivers": drivers, "widgets": widgets, "flow": flow,
            "platforms": build.get("platforms") or [], "compatibility": build.get("compatibility"),
-           "color": build.get("brandColor"), "homepage": build.get("homepage"), "support": build.get("support")}
+           "color": build.get("brandColor"), "homepage": build.get("homepage"), "support": build.get("support"),
+           "category": homey_category(build.get("category"))}
     return {k: v for k, v in out.items() if v}
 
 
