@@ -5,7 +5,7 @@
             "id": "nieuwe-app-1",
             "name": "Stookwijzer",
             "section": "ios",
-            "status": "dev",
+            "status": "beta",
             "category": "utilities",
             "platforms": [
                 "iPhone",
