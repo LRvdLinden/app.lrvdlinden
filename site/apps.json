@@ -680,7 +680,7 @@
             "id": "homey-weekdot",
             "name": "Weekdot",
             "section": "homey",
-            "status": "beta",
+            "status": "live",
             "icon": "img/homey-weekdot.webp",
             "bundleId": "nl.lrvdlinden.weekdot",
             "description": {
@@ -688,7 +688,7 @@
                 "en": "Your Weekdot calendar in Homey: Flows for your appointments and daily agenda, plus a calendar widget."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/"
             },
             "promo": {
                 "image": {
@@ -698,6 +698,17 @@
                 "show": true
             },
             "history": [
+                {
+                    "version": "1.0.0",
+                    "date": "2026-10-31",
+                    "notes": {
+                        "en": "First release",
+                        "nl": "Eerste release"
+                    },
+                    "_src": {
+                        "en": "First release"
+                    }
+                },
                 {
                     "version": "0.0.7",
                     "date": "2026-10-31",
@@ -729,6 +740,17 @@
                     },
                     "_src": {
                         "en": "Fix homey auth"
+                    }
+                },
+                {
+                    "version": "0.0.2",
+                    "date": "2026-10-30",
+                    "notes": {
+                        "en": "First beta",
+                        "nl": "Eerste beta"
+                    },
+                    "_src": {
+                        "en": "First beta"
                     }
                 }
             ],
@@ -946,6 +968,18 @@
             "languages": "NL + 8",
             "history": [
                 {
+                    "version": "1.1.0",
+                    "date": "2026-10-31",
+                    "notes": {
+                        "nl": "TestFlight-installaties en -testers, nieuwe TestFlight-feedback en crashmeldingen, gefaseerde release (status, pauzeren, hervatten, aan iedereen uitbrengen), Xcode Cloud (build starten, build klaar) en een kortere appbeschrijving.",
+                        "en": "TestFlight installs and testers, new TestFlight feedback and crash reports, phased release (status, pause, resume, release to everyone), Xcode Cloud (start a build, build finished) and a shorter app description."
+                    },
+                    "_src": {
+                        "nl": "TestFlight-installaties en -testers, nieuwe TestFlight-feedback en crashmeldingen, gefaseerde release (status, pauzeren, hervatten, aan iedereen uitbrengen), Xcode Cloud (build starten, build klaar) en een kortere appbeschrijving.",
+                        "en": "TestFlight installs and testers, new TestFlight feedback and crash reports, phased release (status, pause, resume, release to everyone), Xcode Cloud (start a build, build finished) and a shorter app description."
+                    }
+                },
+                {
                     "version": "1.0.1",
                     "date": "2026-10-28",
                     "notes": {
@@ -989,8 +1023,8 @@
                             "en": "App Store app"
                         },
                         "class": "sensor",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/drivers/asc_app/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/drivers/asc_app/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/drivers/asc_app/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/drivers/asc_app/assets/icon.svg"
                     },
                     {
                         "id": "asc_portfolio",
@@ -999,8 +1033,8 @@
                             "en": "All apps (portfolio)"
                         },
                         "class": "sensor",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/drivers/asc_portfolio/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/drivers/asc_portfolio/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/drivers/asc_portfolio/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/drivers/asc_portfolio/assets/icon.svg"
                     }
                 ],
                 "widgets": [
@@ -1010,8 +1044,8 @@
                             "nl": "Downloads",
                             "en": "Downloads"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/downloads/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/downloads/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/downloads/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/downloads/preview-dark.png"
                     },
                     {
                         "id": "status",
@@ -1019,8 +1053,8 @@
                             "nl": "Review & status",
                             "en": "Review & status"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/status/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/status/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/status/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/status/preview-dark.png"
                     },
                     {
                         "id": "top-apps",
@@ -1028,8 +1062,8 @@
                             "nl": "Top apps",
                             "en": "Top apps"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/top-apps/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/3/868e5470-6355-48e0-89d5-5ac985df64af/widgets/top-apps/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/top-apps/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/top-apps/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -1053,6 +1087,20 @@
                             "title": {
                                 "nl": "Een nieuwe versie van een app is live",
                                 "en": "A new version of an app is live"
+                            }
+                        },
+                        {
+                            "id": "any_new_testflight_crash",
+                            "title": {
+                                "nl": "Een app kreeg een TestFlight-crashmelding",
+                                "en": "An app received a TestFlight crash report"
+                            }
+                        },
+                        {
+                            "id": "any_new_testflight_feedback",
+                            "title": {
+                                "nl": "Een app kreeg TestFlight-feedback",
+                                "en": "An app received TestFlight feedback"
                             }
                         },
                         {
@@ -1161,6 +1209,34 @@
                             }
                         },
                         {
+                            "id": "new_testflight_feedback",
+                            "title": {
+                                "nl": "Nieuwe TestFlight-feedback",
+                                "en": "New TestFlight feedback"
+                            }
+                        },
+                        {
+                            "id": "new_testflight_crash",
+                            "title": {
+                                "nl": "Nieuwe TestFlight-crashmelding",
+                                "en": "New TestFlight crash report"
+                            }
+                        },
+                        {
+                            "id": "phased_release_changed",
+                            "title": {
+                                "nl": "Gefaseerde release gewijzigd",
+                                "en": "Phased release changed"
+                            }
+                        },
+                        {
+                            "id": "xcode_cloud_build_finished",
+                            "title": {
+                                "nl": "Xcode Cloud-build klaar",
+                                "en": "Xcode Cloud build finished"
+                            }
+                        },
+                        {
                             "id": "portfolio_downloads_updated",
                             "title": {
                                 "nl": "Nieuwe downloadcijfers voor alle apps",
@@ -1226,6 +1302,20 @@
                             }
                         },
                         {
+                            "id": "phased_release_active",
+                            "title": {
+                                "nl": "Gefaseerde release !{{is|is niet}} bezig",
+                                "en": "Phased release !{{is|is not}} in progress"
+                            }
+                        },
+                        {
+                            "id": "testflight_installs_above",
+                            "title": {
+                                "nl": "TestFlight-installaties !{{zijn|zijn niet}} hoger dan…",
+                                "en": "TestFlight installs !{{are|are not}} above…"
+                            }
+                        },
+                        {
                             "id": "portfolio_downloads_yesterday_above",
                             "title": {
                                 "nl": "Downloads van alle apps gisteren !{{zijn|zijn niet}} hoger dan…",
@@ -1267,6 +1357,20 @@
                             "title": {
                                 "nl": "Reageer op een klantreview",
                                 "en": "Reply to a customer review"
+                            }
+                        },
+                        {
+                            "id": "phased_release_control",
+                            "title": {
+                                "nl": "Gefaseerde release bedienen",
+                                "en": "Control the phased release"
+                            }
+                        },
+                        {
+                            "id": "start_xcode_cloud_build",
+                            "title": {
+                                "nl": "Xcode Cloud-build starten",
+                                "en": "Start an Xcode Cloud build"
                             }
                         }
                     ]
