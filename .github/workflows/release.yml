@@ -185,9 +185,10 @@ jobs:
             echo "/$pg.html: $r"
           done
           curl -s "https://lrvdlinden.app/apps.json?v=${GITHUB_RUN_NUMBER}" | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d['apps']), 'apps live')"
+          # /beheer.html mag doorsturen naar /beheer; daarna moet altijd een login volgen
           for u in beheer beheer.html; do
-            b=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$u")
-            echo "/$u zonder login: HTTP $b"
+            b=$(curl -sL -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$u")
+            echo "/$u zonder login (na doorsturen): HTTP $b"
             case "$b" in 401|403) ;; *) echo "::error::/$u is bereikbaar zonder login (HTTP $b)."; exit 1 ;; esac
           done
           for f in publish.php store-refresh.php store-log.php translate.php .publish-config.php .translate-config.php .htpasswd; do
