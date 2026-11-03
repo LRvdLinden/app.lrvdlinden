@@ -8,7 +8,8 @@
             "status": "dev",
             "category": "utilities",
             "platforms": [
-                "iPhone"
+                "iPhone",
+                "iPad"
             ],
             "description": {
                 "nl": "Weet in één oogopslag of je je houtkachel of open haard kunt aansteken. Met verwachting per 6 uur, widgets en een pushmelding zodra het code rood wordt.\n",
