@@ -14,7 +14,6 @@
                 "nl": "Weet in één oogopslag of je je houtkachel of open haard kunt aansteken. Met verwachting per 6 uur, widgets en een pushmelding zodra het code rood wordt.\n",
                 "en": "Know at a glance whether you can light your wood stove or open fireplace. With forecasts every 6 hours, widgets, and a push notification as soon as it turns code red."
             },
-            "links": [],
             "history": [],
             "icon": "img/nieuwe-app-1.webp",
             "promo": {
@@ -27,7 +26,10 @@
                 "nl": "Kan ik vandaag hout stoken?",
                 "en": "Can I burn wood today?"
             },
-            "languages": "NL"
+            "languages": "NL",
+            "links": {
+                "testflight": "https://testflight.apple.com/join/UrwyYgG8"
+            }
         },
         {
             "id": "nl-lrvdlinden-p2000-apeldoorn",
