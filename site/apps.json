@@ -828,7 +828,8 @@
                 "compatibility": ">=12.3.0",
                 "color": "#E8352F",
                 "homepage": "https://weekdot.com",
-                "support": "https://community.homey.app/t/app-pro-weekdot/161566"
+                "support": "https://community.homey.app/t/app-pro-weekdot/161566",
+                "category": "tools"
             }
         },
         {
@@ -1276,7 +1277,8 @@
                 "compatibility": ">=12.3.0",
                 "color": "#0484FD",
                 "homepage": "https://github.com/LRvdLinden/nl.lrvdlinden.appstoreconnect",
-                "support": "https://community.homey.app/t/app-pro-app-store-connect/161248"
+                "support": "https://community.homey.app/t/app-pro-app-store-connect/161248",
+                "category": "internet"
             }
         },
         {
@@ -1600,7 +1602,8 @@
                 "compatibility": ">=12.1.0",
                 "color": "#ce011c",
                 "homepage": "https://p2000.xyz",
-                "support": "https://community.homey.app/t/app-pro-p2000/83738"
+                "support": "https://community.homey.app/t/app-pro-p2000/83738",
+                "category": "internet"
             }
         },
         {
@@ -1787,7 +1790,8 @@
                 ],
                 "compatibility": ">=12.4.0",
                 "color": "#000000",
-                "support": "mailto:hallo@pixelforges.nl"
+                "support": "mailto:hallo@pixelforges.nl",
+                "category": "security"
             }
         },
         {
@@ -1883,7 +1887,8 @@
                 "compatibility": ">=12.3.0",
                 "color": "#026DAB",
                 "homepage": "https://lrvdlinden.app",
-                "support": "https://community.homey.app/t/app-pro-burgernet-for-homey/154795"
+                "support": "https://community.homey.app/t/app-pro-burgernet-for-homey/154795",
+                "category": "internet"
             }
         },
         {
@@ -1995,7 +2000,8 @@
                 "compatibility": ">=12.1.0",
                 "color": "#182567",
                 "homepage": "https://lrvdlinden.app",
-                "support": "https://community.homey.app/t/app-pro-cloud-vermiste-personen-voor-homey/154918"
+                "support": "https://community.homey.app/t/app-pro-cloud-vermiste-personen-voor-homey/154918",
+                "category": "internet"
             }
         },
         {
@@ -2292,7 +2298,8 @@
                 "compatibility": ">=12.1.0",
                 "color": "#9333ea",
                 "homepage": "https://p2000.xyz",
-                "support": "https://community.homey.app/t/app-pro-lifeline-alerts-for-homey/83742"
+                "support": "https://community.homey.app/t/app-pro-lifeline-alerts-for-homey/83742",
+                "category": "internet"
             }
         },
         {
@@ -3152,7 +3159,8 @@
                 "compatibility": ">=12.1.0",
                 "color": "#144182",
                 "homepage": "https://lrvdlinden.app/",
-                "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268"
+                "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268",
+                "category": "internet"
             }
         },
         {
@@ -3988,7 +3996,8 @@
                 "compatibility": ">=5.0.0",
                 "color": "#0055ef",
                 "homepage": "https://lrvdlinden.app/",
-                "support": "https://community.homey.app/t/app-pro-kmi-belgium/97198"
+                "support": "https://community.homey.app/t/app-pro-kmi-belgium/97198",
+                "category": "internet"
             }
         },
         {
@@ -4325,7 +4334,8 @@
                 "compatibility": ">=12.3.0",
                 "color": "#FB6200",
                 "homepage": "https://lrvdlinden.gitbook.io/postnl-for-homey",
-                "support": "https://community.homey.app/t/app-pro-postnl-for-homey/159674"
+                "support": "https://community.homey.app/t/app-pro-postnl-for-homey/159674",
+                "category": "internet"
             }
         },
         {
@@ -4543,7 +4553,8 @@
                 "compatibility": ">=12.1.0",
                 "color": "#ef35aa",
                 "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
-                "support": "https://community.homey.app/t/app-pro-birthdays-for-homey/93178"
+                "support": "https://community.homey.app/t/app-pro-birthdays-for-homey/93178",
+                "category": "tools"
             }
         },
         {
@@ -4876,7 +4887,8 @@
                 "compatibility": ">=12.1.0",
                 "color": "#ff0000",
                 "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
-                "support": "https://community.homey.app/t/app-pro-custom-tokens/92450"
+                "support": "https://community.homey.app/t/app-pro-custom-tokens/92450",
+                "category": "tools"
             }
         },
         {
@@ -5043,7 +5055,8 @@
                 "compatibility": ">=5.0.0",
                 "color": "#f7882e",
                 "homepage": "https://shor.by/LRvdLinden",
-                "support": "https://community.homey.app/t/app-pro-rss-feed-reader/85954"
+                "support": "https://community.homey.app/t/app-pro-rss-feed-reader/85954",
+                "category": "internet"
             }
         },
         {
@@ -5653,7 +5666,8 @@
                 "compatibility": ">=12.9.0",
                 "color": "#C92B50",
                 "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
-                "support": "https://community.homey.app/t/app-pro-apple-health/160608"
+                "support": "https://community.homey.app/t/app-pro-apple-health/160608",
+                "category": "tools"
             }
         },
         {
@@ -5946,7 +5960,8 @@
                 "compatibility": ">=12.3.0",
                 "color": "#175EFF",
                 "homepage": "https://lrvdlinden.app",
-                "support": "https://community.homey.app/t/app-pro-hyxi-cloud-for-homey/158017"
+                "support": "https://community.homey.app/t/app-pro-hyxi-cloud-for-homey/158017",
+                "category": "energy"
             }
         },
         {
@@ -6314,7 +6329,8 @@
                     "local"
                 ],
                 "compatibility": ">=12.3.0",
-                "color": "#FFA322"
+                "color": "#FFA322",
+                "category": "internet"
             }
         }
     ]
