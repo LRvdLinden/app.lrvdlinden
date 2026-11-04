@@ -288,7 +288,8 @@
                     "nl": "img/promo-bingr-nl.webp",
                     "en": "img/promo-bingr-en.webp"
                 }
-            }
+            },
+            "featured": true
         },
         {
             "id": "healthsync",
@@ -361,7 +362,6 @@
             "name": "Tunr",
             "section": "ios",
             "status": "beta",
-            "featured": true,
             "icon": "img/tunr.webp",
             "category": "music",
             "platforms": [
