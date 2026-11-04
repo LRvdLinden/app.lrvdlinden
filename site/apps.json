@@ -20,7 +20,6 @@
                 "testflight": "https://testflight.apple.com/join/bjhRGGG8"
             },
             "history": [],
-            "featured": true,
             "icon": "img/nl-lrvdlinden-liftr.webp",
             "subtitle": {
                 "nl": "Sets, gewicht en voortgang",
@@ -33,7 +32,8 @@
                     "en": "img/promo-nl-lrvdlinden-liftr-en.webp"
                 },
                 "show": true
-            }
+            },
+            "featured": true
         },
         {
             "id": "nieuwe-app-1",
@@ -395,7 +395,6 @@
             "name": "DevTools",
             "section": "ios",
             "status": "live",
-            "featured": true,
             "icon": "img/devtools.webp",
             "category": "business",
             "platforms": [
