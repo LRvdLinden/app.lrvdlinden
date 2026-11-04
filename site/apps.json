@@ -763,7 +763,8 @@
                 "en": "Your Weekdot calendar in Homey: Flows for your appointments and daily agenda, plus a calendar widget."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
             },
             "promo": {
                 "image": {
@@ -926,7 +927,9 @@
                 "color": "#E8352F",
                 "homepage": "https://weekdot.com",
                 "support": "https://community.homey.app/t/app-pro-weekdot/161566",
-                "category": "tools"
+                "category": "tools",
+                "live": "1.0.0",
+                "test": "1.0.1"
             }
         },
         {
@@ -1037,7 +1040,8 @@
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/",
                 "appstore": "https://apps.apple.com/us/app/devtools/id6826116132",
-                "testflight": "https://testflight.apple.com/join/x2H6vgKe"
+                "testflight": "https://testflight.apple.com/join/x2H6vgKe",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/App-Store-Connect/test/"
             },
             "size": "16,1 MB",
             "languages": "NL + 8",
@@ -1457,7 +1461,9 @@
                 "color": "#0484FD",
                 "homepage": "https://github.com/LRvdLinden/nl.lrvdlinden.appstoreconnect",
                 "support": "https://community.homey.app/t/app-pro-app-store-connect/161248",
-                "category": "internet"
+                "category": "internet",
+                "live": "1.1.0",
+                "test": "1.1.1"
             }
         },
         {
@@ -1782,7 +1788,8 @@
                 "color": "#ce011c",
                 "homepage": "https://p2000.xyz",
                 "support": "https://community.homey.app/t/app-pro-p2000/83738",
-                "category": "internet"
+                "category": "internet",
+                "live": "6.2.4"
             }
         },
         {
@@ -1970,7 +1977,8 @@
                 "compatibility": ">=12.4.0",
                 "color": "#000000",
                 "support": "mailto:hallo@pixelforges.nl",
-                "category": "security"
+                "category": "security",
+                "live": "1.0.4"
             }
         },
         {
@@ -2067,7 +2075,8 @@
                 "color": "#026DAB",
                 "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-burgernet-for-homey/154795",
-                "category": "internet"
+                "category": "internet",
+                "live": "2.0.0"
             }
         },
         {
@@ -2180,7 +2189,8 @@
                 "color": "#182567",
                 "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-cloud-vermiste-personen-voor-homey/154918",
-                "category": "internet"
+                "category": "internet",
+                "live": "2.0.0"
             }
         },
         {
@@ -2478,7 +2488,8 @@
                 "color": "#9333ea",
                 "homepage": "https://p2000.xyz",
                 "support": "https://community.homey.app/t/app-pro-lifeline-alerts-for-homey/83742",
-                "category": "internet"
+                "category": "internet",
+                "live": "6.1.1"
             }
         },
         {
@@ -3339,7 +3350,8 @@
                 "color": "#144182",
                 "homepage": "https://lrvdlinden.app/",
                 "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268",
-                "category": "internet"
+                "category": "internet",
+                "live": "4.2.3"
             }
         },
         {
@@ -4176,7 +4188,8 @@
                 "color": "#0055ef",
                 "homepage": "https://lrvdlinden.app/",
                 "support": "https://community.homey.app/t/app-pro-kmi-belgium/97198",
-                "category": "internet"
+                "category": "internet",
+                "live": "2.2.1"
             }
         },
         {
@@ -4191,7 +4204,8 @@
                 "en": "Expected mail and parcels in Homey, with widgets and Flow cards."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/PostNL/test/"
             },
             "history": [
                 {
@@ -4514,7 +4528,9 @@
                 "color": "#FB6200",
                 "homepage": "https://lrvdlinden.gitbook.io/postnl-for-homey",
                 "support": "https://community.homey.app/t/app-pro-postnl-for-homey/159674",
-                "category": "internet"
+                "category": "internet",
+                "live": "1.2.12",
+                "test": "1.3.0"
             }
         },
         {
@@ -4733,7 +4749,8 @@
                 "color": "#ef35aa",
                 "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
                 "support": "https://community.homey.app/t/app-pro-birthdays-for-homey/93178",
-                "category": "tools"
+                "category": "tools",
+                "live": "2.1.6"
             }
         },
         {
@@ -5067,7 +5084,8 @@
                 "color": "#ff0000",
                 "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
                 "support": "https://community.homey.app/t/app-pro-custom-tokens/92450",
-                "category": "tools"
+                "category": "tools",
+                "live": "2.0.3"
             }
         },
         {
@@ -5235,7 +5253,8 @@
                 "color": "#f7882e",
                 "homepage": "https://shor.by/LRvdLinden",
                 "support": "https://community.homey.app/t/app-pro-rss-feed-reader/85954",
-                "category": "internet"
+                "category": "internet",
+                "live": "1.1.3"
             }
         },
         {
@@ -5250,7 +5269,8 @@
                 "en": "Your Apple Health and Apple Watch data in Homey."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/Apple-Health/test/"
             },
             "history": [
                 {
@@ -5846,7 +5866,9 @@
                 "color": "#C92B50",
                 "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
                 "support": "https://community.homey.app/t/app-pro-apple-health/160608",
-                "category": "tools"
+                "category": "tools",
+                "live": "1.0.3",
+                "test": "1.0.4"
             }
         },
         {
@@ -6140,7 +6162,8 @@
                 "color": "#175EFF",
                 "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-hyxi-cloud-for-homey/158017",
-                "category": "energy"
+                "category": "energy",
+                "live": "1.1.5"
             }
         },
         {
@@ -6509,7 +6532,8 @@
                 ],
                 "compatibility": ">=12.3.0",
                 "color": "#FFA322",
-                "category": "internet"
+                "category": "internet",
+                "live": "1.0.5"
             }
         }
     ]
