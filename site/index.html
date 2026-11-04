@@ -153,6 +153,12 @@ header.top{padding-block:24px 8px}
 /* Homey: zelfde kaarten als de App Store-grid, details klappen open onder de rij */
 .hitem h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .hitem h3 .pill{font-size:11px;padding:2px 8px}
+.vtag{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.vtag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.vtag.test::before{background:var(--beta)}
+.vtag.test{color:var(--beta)}
+.testbtn:not(.primary){border-color:var(--beta);color:var(--beta)}
+.testbtn .mono{font-size:12px;opacity:.8}
 .homey-more{display:flex;gap:6px 16px;flex-wrap:wrap;align-items:center;margin-top:18px;font-size:14px;color:var(--muted)}
 .homey-more a{color:var(--ink);font-weight:600;text-underline-offset:3px}
 /* Uitgeklapte Homey-app, zoals in de Homey App Store */
@@ -356,7 +362,7 @@ const T = {
     appstore:"Gratis in de App Store", testflight:"Doe mee via TestFlight", website:"Website",
     getStore:"Downloaden", getBeta:"Probeer beta", getSite:"Bekijk", whatsNew:"Nieuw",
     hDevices:"Apparaten", hWidgets:"Widgets", hFlow:"Flow-kaarten", hWhen:"Als…", hAnd:"En…", hThen:"Dan…",
-    hWorks:"Werkt op", hStore:"Bekijk in de Homey App Store", hSupport:"Ondersteuning", hSite:"Website",
+    hWorks:"Werkt op", hStore:"Bekijk in de Homey App Store", hLive:"Live", hTest:"Test", hTestBtn:"Testversie installeren", hInstall:"Installeren", hSupport:"Ondersteuning", hSite:"Website",
     hAll:"Toon alle {n}", hLess:"Toon minder", hClose:"Sluiten", hNews:"Wat is nieuw", hOpen:"Details van {n}",
     rating:"Beoordeling", reviews:"Reviews", age:"Leeftijd", category:"Categorie", language:"Taal", size:"Grootte",
     history:"Versiegeschiedenis", noRating:"Nog geen beoordeling", dev_by:"Léon van der Linden",
@@ -377,7 +383,7 @@ const T = {
     appstore:"Free on the App Store", testflight:"Join on TestFlight", website:"Website",
     getStore:"Get", getBeta:"Try beta", getSite:"View", whatsNew:"New",
     hDevices:"Devices", hWidgets:"Widgets", hFlow:"Flow cards", hWhen:"When…", hAnd:"And…", hThen:"Then…",
-    hWorks:"Works on", hStore:"View in the Homey App Store", hSupport:"Support", hSite:"Website",
+    hWorks:"Works on", hStore:"View in the Homey App Store", hLive:"Live", hTest:"Test", hTestBtn:"Install test version", hInstall:"Install", hSupport:"Support", hSite:"Website",
     hAll:"Show all {n}", hLess:"Show less", hClose:"Close", hNews:"What's new", hOpen:"Details of {n}",
     rating:"Rating", reviews:"Reviews", age:"Age", category:"Category", language:"Language", size:"Size",
     history:"Version history", noRating:"No ratings yet", dev_by:"Léon van der Linden",
@@ -532,6 +538,17 @@ const flowTitle = txt => String(txt || "")
   .replace(/!\{\{([^|}]*)\|[^}]*\}\}/g, "$1")   // !{{is|isn't}} -> is
   .replace(/\[\[[^\]]*\]\]/g, "…")                // [[argument]] -> …
   .replace(/\{\{[^}]*\}\}/g, "…");
+// Live- en testversie van een Homey-app; een testversie gelijk aan live wordt niet getoond
+function homeyVersions(h){
+  const x = h.homey || {}, hist = h.history || [];
+  let live = x.live || (h.status === "live" ? ((hist.find(e => !e.test) || {}).version) : null);
+  let test = x.test || (h.status !== "live" ? (hist[0] || {}).version : (hist[0] && hist[0].test ? hist[0].version : null));
+  if (test && live && String(test) === String(live)) test = null;
+  const testUrl = h.links && (h.links.homeyTest || (h.status !== "live" ? h.links.homey : ""));
+  return { live: live || null, test: test || null, testUrl: test ? (testUrl || "").replace("/nl-nl/", lang==="nl" ? "/nl-nl/" : "/en-us/") : "" };
+}
+const verTags = v => (v.live ? `<span class="mono vtag live">${esc(t("hLive"))} v${esc(v.live)}</span>` : "")
+  + (v.test ? `<span class="mono vtag test">${esc(t("hTest"))} v${esc(v.test)}</span>` : "");
 const homeyUrl = h => (h.links && h.links.homey ? h.links.homey : "").replace("/nl-nl/", lang==="nl" ? "/nl-nl/" : "/en-us/");
 
 function homeyDetail(h){
@@ -541,8 +558,10 @@ function homeyDetail(h){
     plat.length ? `<span class="tag">${esc(t("hWorks"))}: ${esc(plat.join(", "))}</span>` : "",
     x.compatibility ? `<span class="tag">Homey ${esc(x.compatibility.replace(/^>=\s*/, "v").replace(/^v?(\d)/, "v$1"))}+</span>` : "",
   ].join("");
+  const v = homeyVersions(h);
   const btns = [
-    homeyUrl(h) ? `<a class="btn primary" href="${esc(homeyUrl(h))}" target="_blank" rel="noopener">${esc(t("hStore"))}</a>` : "",
+    v.live && homeyUrl(h) ? `<a class="btn primary" href="${esc(homeyUrl(h))}" target="_blank" rel="noopener">${esc(t("hStore"))}</a>` : "",
+    v.test && v.testUrl ? `<a class="btn ${v.live ? "" : "primary"} testbtn" href="${esc(v.testUrl)}" target="_blank" rel="noopener">${esc(t("hTestBtn"))} <span class="mono">v${esc(v.test)}</span></a>` : "",
     x.homepage ? `<a class="btn" href="${esc(x.homepage)}" target="_blank" rel="noopener">${esc(t("hSite"))}</a>` : "",
     x.support ? `<a class="btn" href="${esc(x.support)}" target="_blank" rel="noopener">${esc(t("hSupport"))}</a>` : "",
   ].join("");
@@ -574,7 +593,7 @@ function homeyDetail(h){
       ${icon(h, "lg")}
       <div style="min-width:0">
         <h3>${esc(h.name)}${h.status!=="live"?` <span class="pill ${h.status}">${esc(t("h_"+h.status))}</span>`:""}</h3>
-        <div class="sub">${(() => { const st = (h.history || []).find(e => !e.test); return (st && st.version ? `<span class="mono">v${esc(st.version)}</span>` : "") + (last && last.test ? `<span class="mono">${esc(t("h_beta"))} v${esc(last.version)}</span>` : ""); })()}${h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""}</div>
+        <div class="sub">${verTags(v)}${h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""}</div>
       </div>
       <button type="button" class="hd-close" data-hclose aria-label="${esc(t("hClose"))}">×</button>
       <div class="btns" style="grid-column:1/-1">${btns}</div>
@@ -604,12 +623,9 @@ function renderHomey(){
   if (openHomey && !list.some(h => h.id === openHomey)) openHomey = null;
   $("#homeyList").innerHTML = list.map(h => {
     const last = (h.history || [])[0];
-    const stable = (h.history || []).find(e => !e.test);
-    const tv = last && last.test && h.status === "live" ? last : null;
-    const ver = stable && stable.version ? stable.version : (last && last.version);
+    const v = homeyVersions(h);
     const meta = [`<span>${h.rating ? `<span class="stars" aria-hidden="true">★★★★★</span> ${num(h.rating)}` : esc(t("noRating"))}</span>`,
-                  ver ? `<span class="mono">v${esc(ver)}</span>` : "",
-                  tv ? `<span class="mono">${esc(t("h_beta"))} v${esc(tv.version)}</span>` : ""].join("");
+                  verTags(v)].join("");
     return `<button type="button" class="app hitem" data-hid="${esc(h.id)}" aria-expanded="${openHomey===h.id}" aria-label="${esc(t("hOpen").replace("{n}", h.name))}">
       ${icon(h)}
       <div style="min-width:0">

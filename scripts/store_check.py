@@ -422,6 +422,16 @@ def check_homey(apps, log, only=None):
         build = info.get("liveBuild") if live else (info.get("testBuild") or info.get("liveBuild"))
         if isinstance(build, dict):
             app["homey"] = homey_details(build, app.get("homey"))
+        # Live- en testversie apart bewaren; een test die gelijk is aan live telt niet
+        hx = app.setdefault("homey", {})
+        hx.pop("live", None); hx.pop("test", None)
+        if live:
+            hx["live"] = str(live)
+        if test and test != live and (not live or ver_key(test) > ver_key(live)):
+            hx["test"] = str(test)
+            links["homeyTest"] = f"https://homey.app/nl-nl/app/{hid}/{name_slug}/test/"
+        else:
+            links.pop("homeyTest", None)
         for v, e in entries[:HOMEY_HISTORY]:
             cl = e.get("changelog") or {}
             notes = {k: clean(cl[k]) for k in ("nl", "en") if cl.get(k)}
