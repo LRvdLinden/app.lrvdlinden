@@ -163,6 +163,17 @@
             },
             "history": [
                 {
+                    "version": "1.0.3",
+                    "date": "2026-11-05",
+                    "notes": {
+                        "en": "New in this version:\n\n• Homey: choose whether Weekdot sends the coming 1, 2 or 3 months to your Homey (Settings › Homey). Together with the Weekdot app for Homey, Flows can now remind you days or weeks before an appointment.\n• Small improvements and fixes.\n\nEnjoying Weekdot? A rating in the App Store helps a lot. Thank you!",
+                        "nl": "Nieuw in deze versie:\n\n• Homey: kies of Weekdot de komende 1, 2 of 3 maanden naar je Homey stuurt (Instellingen › Homey). Samen met de Weekdot-app voor Homey kunnen Flows je nu dagen of weken vóór een afspraak herinneren.\n• Kleine verbeteringen en oplossingen.\n\nVind je Weekdot leuk? Een beoordeling in de App Store helpt enorm. Bedankt!"
+                    },
+                    "_src": {
+                        "en": "New in this version:\n\n• Homey: choose whether Weekdot sends the coming 1, 2 or 3 months to your Homey (Settings › Homey). Together with the Weekdot app for Homey, Flows can now remind you days or weeks before an appointment.\n• Small improvements and fixes.\n\nEnjoying Weekdot? A rating in the App Store helps a lot. Thank you!"
+                    }
+                },
+                {
                     "version": "1.0.2",
                     "date": "2026-11-03",
                     "notes": {
@@ -208,7 +219,7 @@
             },
             "languages": "NL + 32",
             "size": "32,7 MB",
-            "reviews": 3,
+            "reviews": 4,
             "rating": 5.0
         },
         {
