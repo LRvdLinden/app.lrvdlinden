@@ -2515,7 +2515,8 @@
                 "en": "Dutch KNMI weather conditions and forecasts."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/KNMI/test/"
             },
             "rating": 5.0,
             "history": [
@@ -3362,7 +3363,8 @@
                 "homepage": "https://lrvdlinden.app/",
                 "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268",
                 "category": "internet",
-                "live": "4.2.3"
+                "live": "4.2.3",
+                "test": "4.2.4"
             }
         },
         {
