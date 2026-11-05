@@ -774,8 +774,7 @@
                 "en": "Your Weekdot calendar in Homey: Flows for your appointments and daily agenda, plus a calendar widget."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/"
             },
             "promo": {
                 "image": {
@@ -785,6 +784,18 @@
                 "show": true
             },
             "history": [
+                {
+                    "version": "1.0.1",
+                    "date": "2026-11-04",
+                    "notes": {
+                        "nl": "Nieuw: \"Een afspraak begint over … dagen\" (tot 3 maanden vooruit, op een tijdstip dat jij kiest, ook voor hele-dag-afspraken) en de conditie \"Er is over … dagen een afspraak\". Alle condities kun je omdraaien. Voor meer dan 7 dagen is Weekdot 1.0.3 of nieuwer nodig. Zes nieuwe widgets: Volgende afspraak, Vrij of bezet, Aftellen, Deze week, Tijdlijn van vandaag en Minimaand.",
+                        "en": "New: \"An event starts in … days\" (up to 3 months ahead, at a time you choose, also for all-day events) and the condition \"There is an event in … days\". All conditions can be inverted. Needs Weekdot 1.0.3 or later for more than 7 days. Six new widgets: Next event, Free or busy, Countdown, This week, Today's timeline and Mini month."
+                    },
+                    "_src": {
+                        "nl": "Nieuw: \"Een afspraak begint over … dagen\" (tot 3 maanden vooruit, op een tijdstip dat jij kiest, ook voor hele-dag-afspraken) en de conditie \"Er is over … dagen een afspraak\". Alle condities kun je omdraaien. Voor meer dan 7 dagen is Weekdot 1.0.3 of nieuwer nodig. Zes nieuwe widgets: Volgende afspraak, Vrij of bezet, Aftellen, Deze week, Tijdlijn van vandaag en Minimaand.",
+                        "en": "New: \"An event starts in … days\" (up to 3 months ahead, at a time you choose, also for all-day events) and the condition \"There is an event in … days\". All conditions can be inverted. Needs Weekdot 1.0.3 or later for more than 7 days. Six new widgets: Next event, Free or busy, Countdown, This week, Today's timeline and Mini month."
+                    }
+                },
                 {
                     "version": "1.0.0",
                     "date": "2026-10-31",
@@ -849,8 +860,62 @@
                             "nl": "Agenda",
                             "en": "Agenda"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/7/3a092024-2108-48d9-8ffa-93ea6b0b9715/widgets/agenda/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/7/3a092024-2108-48d9-8ffa-93ea6b0b9715/widgets/agenda/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/agenda/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/agenda/preview-dark.png"
+                    },
+                    {
+                        "id": "countdown",
+                        "name": {
+                            "nl": "Aftellen",
+                            "en": "Countdown"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/countdown/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/countdown/preview-dark.png"
+                    },
+                    {
+                        "id": "free_busy",
+                        "name": {
+                            "nl": "Vrij of bezet",
+                            "en": "Free or busy"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/free_busy/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/free_busy/preview-dark.png"
+                    },
+                    {
+                        "id": "month",
+                        "name": {
+                            "nl": "Minimaand",
+                            "en": "Mini month"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/month/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/month/preview-dark.png"
+                    },
+                    {
+                        "id": "next_event",
+                        "name": {
+                            "nl": "Volgende afspraak",
+                            "en": "Next event"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/next_event/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/next_event/preview-dark.png"
+                    },
+                    {
+                        "id": "timeline",
+                        "name": {
+                            "nl": "Tijdlijn van vandaag",
+                            "en": "Today's timeline"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/timeline/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/timeline/preview-dark.png"
+                    },
+                    {
+                        "id": "week",
+                        "name": {
+                            "nl": "Deze week",
+                            "en": "This week"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/week/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/9/cee7badc-01ca-40da-81be-e1b60ce2510f/widgets/week/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -860,6 +925,13 @@
                             "title": {
                                 "nl": "Dagagenda op een vast tijdstip",
                                 "en": "Daily agenda at a set time"
+                            }
+                        },
+                        {
+                            "id": "event_days_before",
+                            "title": {
+                                "nl": "Een afspraak begint over … dagen",
+                                "en": "An event starts in … days"
                             }
                         },
                         {
@@ -892,6 +964,13 @@
                         }
                     ],
                     "conditions": [
+                        {
+                            "id": "event_in_days",
+                            "title": {
+                                "nl": "Er is over … dagen een afspraak",
+                                "en": "There is an event in … days"
+                            }
+                        },
                         {
                             "id": "event_now",
                             "title": {
@@ -936,11 +1015,10 @@
                 ],
                 "compatibility": ">=12.3.0",
                 "color": "#E8352F",
-                "homepage": "https://weekdot.com",
+                "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-weekdot/161566",
                 "category": "tools",
-                "live": "1.0.0",
-                "test": "1.0.1"
+                "live": "1.0.1"
             }
         },
         {
