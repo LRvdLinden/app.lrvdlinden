@@ -219,7 +219,7 @@
             },
             "languages": "NL + 32",
             "size": "32,7 MB",
-            "reviews": 4,
+            "reviews": 5,
             "rating": 5.0
         },
         {
@@ -1051,12 +1051,23 @@
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/",
                 "appstore": "https://apps.apple.com/us/app/devtools/id6826116132",
-                "testflight": "https://testflight.apple.com/join/x2H6vgKe",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.appstoreconnect/App-Store-Connect/test/"
+                "testflight": "https://testflight.apple.com/join/x2H6vgKe"
             },
             "size": "16,1 MB",
             "languages": "NL + 8",
             "history": [
+                {
+                    "version": "1.1.1",
+                    "date": "2026-11-04",
+                    "notes": {
+                        "nl": "Nieuwe store-beschrijving en app-tekst, ondersteuning via het Homey Community-forum, downloadgrafieken tonen nu de laatste maand (31 dagen), scherper app-icoon op elk apparaat en een kaart in de instellingen met meer apps van de ontwikkelaar.",
+                        "en": "New store description and app text, support via the Homey Community forum, download charts now show the last month (31 days), sharper app icon on every device, and a card in the settings with more apps from the developer."
+                    },
+                    "_src": {
+                        "nl": "Nieuwe store-beschrijving en app-tekst, ondersteuning via het Homey Community-forum, downloadgrafieken tonen nu de laatste maand (31 dagen), scherper app-icoon op elk apparaat en een kaart in de instellingen met meer apps van de ontwikkelaar.",
+                        "en": "New store description and app text, support via the Homey Community forum, download charts now show the last month (31 days), sharper app icon on every device, and a card in the settings with more apps from the developer."
+                    }
+                },
                 {
                     "version": "1.1.0",
                     "date": "2026-10-31",
@@ -1113,8 +1124,8 @@
                             "en": "App Store app"
                         },
                         "class": "sensor",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/drivers/asc_app/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/drivers/asc_app/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/drivers/asc_app/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/drivers/asc_app/assets/icon.svg"
                     },
                     {
                         "id": "asc_portfolio",
@@ -1123,8 +1134,8 @@
                             "en": "All apps (portfolio)"
                         },
                         "class": "sensor",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/drivers/asc_portfolio/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/drivers/asc_portfolio/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/drivers/asc_portfolio/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/drivers/asc_portfolio/assets/icon.svg"
                     }
                 ],
                 "widgets": [
@@ -1134,8 +1145,8 @@
                             "nl": "Downloads",
                             "en": "Downloads"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/downloads/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/downloads/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/widgets/downloads/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/widgets/downloads/preview-dark.png"
                     },
                     {
                         "id": "status",
@@ -1143,8 +1154,8 @@
                             "nl": "Review & status",
                             "en": "Review & status"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/status/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/status/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/widgets/status/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/widgets/status/preview-dark.png"
                     },
                     {
                         "id": "top-apps",
@@ -1152,8 +1163,8 @@
                             "nl": "Top apps",
                             "en": "Top apps"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/top-apps/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/4/2aa3087b-84f7-4020-9096-cdc5e50fdb5c/widgets/top-apps/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/widgets/top-apps/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.appstoreconnect/5/a0645811-1fbd-4557-8c81-9a54058d03dd/widgets/top-apps/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -1470,11 +1481,10 @@
                 ],
                 "compatibility": ">=12.3.0",
                 "color": "#0484FD",
-                "homepage": "https://github.com/LRvdLinden/nl.lrvdlinden.appstoreconnect",
+                "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-app-store-connect/161248",
                 "category": "internet",
-                "live": "1.1.0",
-                "test": "1.1.1"
+                "live": "1.1.1"
             }
         },
         {
@@ -2515,11 +2525,22 @@
                 "en": "Dutch KNMI weather conditions and forecasts."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/KNMI/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
             },
             "rating": 5.0,
             "history": [
+                {
+                    "version": "4.2.4",
+                    "date": "2026-11-05",
+                    "notes": {
+                        "nl": "KNMI is nu beschikbaar in alle 13 Homey-talen. Weeralarmen worden robuuster verwerkt, het alarmbericht blijft leeg als er geen waarschuwing is en Weerlive-fouten worden op het apparaat getoond. Nieuwe kaart \"Meer apps van de ontwikkelaar\" in de app-instellingen.",
+                        "en": "KNMI now speaks all 13 Homey languages. Weather alerts are handled more robustly, the alert message stays empty when there is no warning, and Weerlive errors are shown on the device. New \"More apps from the developer\" card in the app settings."
+                    },
+                    "_src": {
+                        "nl": "KNMI is nu beschikbaar in alle 13 Homey-talen. Weeralarmen worden robuuster verwerkt, het alarmbericht blijft leeg als er geen waarschuwing is en Weerlive-fouten worden op het apparaat getoond. Nieuwe kaart \"Meer apps van de ontwikkelaar\" in de app-instellingen.",
+                        "en": "KNMI now speaks all 13 Homey languages. Weather alerts are handled more robustly, the alert message stays empty when there is no warning, and Weerlive errors are shown on the device. New \"More apps from the developer\" card in the app settings."
+                    }
+                },
                 {
                     "version": "4.2.3",
                     "date": "2026-10-12",
@@ -2620,17 +2641,6 @@
                     "_src": {
                         "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
                     }
-                },
-                {
-                    "version": "4.1.3",
-                    "date": "2026-05-17",
-                    "notes": {
-                        "en": "Added expanded weather data support inc",
-                        "nl": "Ondersteuning voor uitgebreide weerdata toegevoegd, inc"
-                    },
-                    "_src": {
-                        "en": "Added expanded weather data support inc"
-                    }
                 }
             ],
             "homey": {
@@ -2642,8 +2652,8 @@
                             "en": "KNMI"
                         },
                         "class": "other",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/110/f03b38bc-5ae4-4332-9b46-122b47743928/drivers/knmi/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/110/f03b38bc-5ae4-4332-9b46-122b47743928/drivers/knmi/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/111/920c90d4-5b7a-43f3-8705-05b3cc32796d/drivers/knmi/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/111/920c90d4-5b7a-43f3-8705-05b3cc32796d/drivers/knmi/assets/icon.svg"
                     }
                 ],
                 "flow": {
@@ -2659,14 +2669,14 @@
                             "id": "websocket_message_offline",
                             "title": {
                                 "nl": "KNMI-server is offline",
-                                "en": "Server offline"
+                                "en": "KNMI server is offline"
                             }
                         },
                         {
                             "id": "websocket_message_online",
                             "title": {
                                 "nl": "KNMI-server is weer online",
-                                "en": "Server online"
+                                "en": "KNMI server is back online"
                             }
                         },
                         {
@@ -2679,8 +2689,8 @@
                         {
                             "id": "timestamp_changed",
                             "title": {
-                                "nl": "Tijdstempel is veranderd",
-                                "en": "Timestamp changed"
+                                "nl": "Tijdstempel (Unix) is veranderd",
+                                "en": "Timestamp (Unix) changed"
                             }
                         },
                         {
@@ -2861,21 +2871,21 @@
                         {
                             "id": "next_weather_alarm_changed",
                             "title": {
-                                "nl": "Volgende weeralarm is veranderd",
+                                "nl": "Volgend weeralarm is veranderd",
                                 "en": "Next weather alert changed"
                             }
                         },
                         {
                             "id": "next_time_alarm_changed",
                             "title": {
-                                "nl": "Tijdstip volgende weeralarm is veranderd",
+                                "nl": "Tijdstip volgend weeralarm is veranderd",
                                 "en": "Next weather alert time changed"
                             }
                         },
                         {
                             "id": "next_date_time_alarm_changed",
                             "title": {
-                                "nl": "Datum en tijd volgende weeralarm zijn veranderd",
+                                "nl": "Datum en tijd volgend weeralarm zijn veranderd",
                                 "en": "Next weather alert date and time changed"
                             }
                         },
@@ -2917,8 +2927,8 @@
                         {
                             "id": "wind_speed_m_s_changed",
                             "title": {
-                                "nl": "Windsnelheid (meter per seconde) is veranderd",
-                                "en": "Wind speed (meters per second) changed"
+                                "nl": "Windsnelheid (m/s) is veranderd",
+                                "en": "Wind speed (m/s) changed"
                             }
                         },
                         {
@@ -2931,8 +2941,8 @@
                         {
                             "id": "wind_speed_k_m_h_changed",
                             "title": {
-                                "nl": "Windsnelheid (kilometer per uur) is veranderd",
-                                "en": "Wind speed (kilometers per hour) changed"
+                                "nl": "Windsnelheid (km/u) is veranderd",
+                                "en": "Wind speed (km/h) changed"
                             }
                         },
                         {
@@ -2952,8 +2962,8 @@
                         {
                             "id": "air_pressure_m_m_h_g_changed",
                             "title": {
-                                "nl": "Luchtdruk (millimeter kwik) is veranderd",
-                                "en": "Air pressure (millimeters of mercury) changed"
+                                "nl": "Luchtdruk (mmHg) is veranderd",
+                                "en": "Air pressure (mmHg) changed"
                             }
                         },
                         {
@@ -2994,15 +3004,15 @@
                         {
                             "id": "expected_today_wind_speed_m_s_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (meter per seconde) vandaag is veranderd",
-                                "en": "Expected wind speed (meters per second) today changed"
+                                "nl": "Verwachte windsnelheid (m/s) vandaag is veranderd",
+                                "en": "Expected wind speed (m/s) today changed"
                             }
                         },
                         {
                             "id": "expected_today_wind_speed_k_m_h_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (kilometer per uur) vandaag is veranderd",
-                                "en": "Expected wind speed (kilometers per hour) today changed"
+                                "nl": "Verwachte windsnelheid (km/u) vandaag is veranderd",
+                                "en": "Expected wind speed (km/h) today changed"
                             }
                         },
                         {
@@ -3050,15 +3060,15 @@
                         {
                             "id": "expected_tomorrow_wind_speed_m_s_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (meter per seconde) morgen is veranderd",
-                                "en": "Expected wind speed (meters per second) tomorrow changed"
+                                "nl": "Verwachte windsnelheid (m/s) morgen is veranderd",
+                                "en": "Expected wind speed (m/s) tomorrow changed"
                             }
                         },
                         {
                             "id": "expected_tomorrow_wind_speed_k_m_h_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (kilometer per uur) morgen is veranderd",
-                                "en": "Expected wind speed (kilometers per hour) tomorrow changed"
+                                "nl": "Verwachte windsnelheid (km/u) morgen is veranderd",
+                                "en": "Expected wind speed (km/h) tomorrow changed"
                             }
                         },
                         {
@@ -3113,15 +3123,15 @@
                         {
                             "id": "expected_day_after_tomorrow_wind_speed_m_s_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (meter per seconde) overmorgen is veranderd",
-                                "en": "Expected wind speed (meters per second) day after tomorrow changed"
+                                "nl": "Verwachte windsnelheid (m/s) overmorgen is veranderd",
+                                "en": "Expected wind speed (m/s) day after tomorrow changed"
                             }
                         },
                         {
                             "id": "expected_day_after_tomorrow_wind_speed_k_m_h_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (kilometer per uur) overmorgen is veranderd",
-                                "en": "Expected wind speed (kilometers per hour) day after tomorrow changed"
+                                "nl": "Verwachte windsnelheid (km/u) overmorgen is veranderd",
+                                "en": "Expected wind speed (km/h) day after tomorrow changed"
                             }
                         },
                         {
@@ -3176,15 +3186,15 @@
                         {
                             "id": "expected_day4_wind_speed_m_s_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (meter per seconde) dag 4 is veranderd",
-                                "en": "Expected wind speed (meters per second) day 4 changed"
+                                "nl": "Verwachte windsnelheid (m/s) dag 4 is veranderd",
+                                "en": "Expected wind speed (m/s) day 4 changed"
                             }
                         },
                         {
                             "id": "expected_day4_wind_speed_k_m_h_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (kilometer per uur) dag 4 is veranderd",
-                                "en": "Expected wind speed (kilometers per hour) day 4 changed"
+                                "nl": "Verwachte windsnelheid (km/u) dag 4 is veranderd",
+                                "en": "Expected wind speed (km/h) day 4 changed"
                             }
                         },
                         {
@@ -3239,15 +3249,15 @@
                         {
                             "id": "expected_day5_wind_speed_m_s_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (meter per seconde) dag 5 is veranderd",
-                                "en": "Expected wind speed (meters per second) day 5 changed"
+                                "nl": "Verwachte windsnelheid (m/s) dag 5 is veranderd",
+                                "en": "Expected wind speed (m/s) day 5 changed"
                             }
                         },
                         {
                             "id": "expected_day5_wind_speed_k_m_h_changed",
                             "title": {
-                                "nl": "Verwachte windsnelheid (kilometer per uur) dag 5 is veranderd",
-                                "en": "Expected wind speed (kilometers per hour) day 5 changed"
+                                "nl": "Verwachte windsnelheid (km/u) dag 5 is veranderd",
+                                "en": "Expected wind speed (km/h) day 5 changed"
                             }
                         },
                         {
@@ -3360,11 +3370,10 @@
                 ],
                 "compatibility": ">=12.1.0",
                 "color": "#144182",
-                "homepage": "https://lrvdlinden.app/",
+                "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268",
                 "category": "internet",
-                "live": "4.2.3",
-                "test": "4.2.4"
+                "live": "4.2.4"
             }
         },
         {
@@ -4217,10 +4226,21 @@
                 "en": "Expected mail and parcels in Homey, with widgets and Flow cards."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/PostNL/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.postnl/"
             },
             "history": [
+                {
+                    "version": "1.3.0",
+                    "date": "2026-11-04",
+                    "notes": {
+                        "nl": "Nu beschikbaar in alle 13 Homey-talen: Flow-kaarten, tokens, capabilities, widgets, koppelen en instellingen. Kaart Meer apps van de ontwikkelaar toegevoegd aan de app-instellingen. Fouten bij koppelen en aanmelden zijn nu vertaald, en de App Store-beschrijving en README zijn herschreven.",
+                        "en": "Now available in all 13 Homey languages: Flow cards, tokens, capabilities, widgets, pairing and settings. Added a More apps from the developer card to the app settings. Pairing and sign-in errors are now translated, and the App Store description and README were rewritten."
+                    },
+                    "_src": {
+                        "nl": "Nu beschikbaar in alle 13 Homey-talen: Flow-kaarten, tokens, capabilities, widgets, koppelen en instellingen. Kaart Meer apps van de ontwikkelaar toegevoegd aan de app-instellingen. Fouten bij koppelen en aanmelden zijn nu vertaald, en de App Store-beschrijving en README zijn herschreven.",
+                        "en": "Now available in all 13 Homey languages: Flow cards, tokens, capabilities, widgets, pairing and settings. Added a More apps from the developer card to the app settings. Pairing and sign-in errors are now translated, and the App Store description and README were rewritten."
+                    }
+                },
                 {
                     "version": "1.2.12",
                     "date": "2026-10-09",
@@ -4328,18 +4348,6 @@
                         "nl": "De nieuwe Flow-kaarten zijn nu volledig opgenomen in Homey Compose. Triggers toegevoegd voor pakket bezorgd, bezorgvenster gewijzigd, nieuwe PostNL-pakketgebeurtenis, pakketgewicht bekend en pakketafmetingen bekend, plus voorwaarden voor verbinding, pakketgewicht, pakketafmetingen en huidige pakketstatus. De widget-previews van v1.2.2 blijven behouden.",
                         "en": "Flow card definitions are now fully included in Homey Compose. Added parcel delivered, delivery window changed, new PostNL parcel event, parcel weight available and parcel dimensions available triggers, plus conditions for connection, parcel weight, parcel dimensions and current parcel status. Keeps the v1.2.2 widget previews."
                     }
-                },
-                {
-                    "version": "1.2.3",
-                    "date": "2026-10-07",
-                    "notes": {
-                        "nl": "Apparaat-Flowtriggers toegevoegd voor pakket bezorgd, bezorgvenster gewijzigd, nieuwe PostNL-pakketgebeurtenis, pakketgewicht bekend en pakketafmetingen bekend. Ook voorwaarden toegevoegd voor PostNL verbonden, pakketgewicht beschikbaar, pakketafmetingen beschikbaar en huidige pakketstatus. De widget-previews van v1.2.2 zijn teruggezet.",
-                        "en": "Added device Flow triggers for parcel delivered, delivery window changed, new PostNL parcel event, parcel weight available and parcel dimensions available. Added conditions for PostNL connected, parcel weight available, parcel dimensions available and current parcel status. Restored the v1.2.2 widget preview images."
-                    },
-                    "_src": {
-                        "nl": "Apparaat-Flowtriggers toegevoegd voor pakket bezorgd, bezorgvenster gewijzigd, nieuwe PostNL-pakketgebeurtenis, pakketgewicht bekend en pakketafmetingen bekend. Ook voorwaarden toegevoegd voor PostNL verbonden, pakketgewicht beschikbaar, pakketafmetingen beschikbaar en huidige pakketstatus. De widget-previews van v1.2.2 zijn teruggezet.",
-                        "en": "Added device Flow triggers for parcel delivered, delivery window changed, new PostNL parcel event, parcel weight available and parcel dimensions available. Added conditions for PostNL connected, parcel weight available, parcel dimensions available and current parcel status. Restored the v1.2.2 widget preview images."
-                    }
                 }
             ],
             "homey": {
@@ -4351,8 +4359,8 @@
                             "en": "My PostNL"
                         },
                         "class": "sensor",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/drivers/account/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/drivers/account/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/drivers/account/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/drivers/account/assets/icon.svg"
                     }
                 ],
                 "widgets": [
@@ -4362,8 +4370,8 @@
                             "nl": "Mijn Post",
                             "en": "My Post"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/mijn-post/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/mijn-post/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/widgets/mijn-post/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/widgets/mijn-post/preview-dark.png"
                     },
                     {
                         "id": "mijn-pakket",
@@ -4371,8 +4379,8 @@
                             "nl": "Mijn Pakketten",
                             "en": "My Packages"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/mijn-pakket/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/mijn-pakket/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/widgets/mijn-pakket/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/widgets/mijn-pakket/preview-dark.png"
                     },
                     {
                         "id": "pakket-details",
@@ -4380,8 +4388,8 @@
                             "nl": "Mijn Bezorging",
                             "en": "My Delivery"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/pakket-details/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/pakket-details/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/widgets/pakket-details/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/widgets/pakket-details/preview-dark.png"
                     },
                     {
                         "id": "pakket-reis",
@@ -4389,8 +4397,8 @@
                             "nl": "Reis van je pakket",
                             "en": "Parcel Journey"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/pakket-reis/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/47/1bbcd323-5be9-4f20-a9d6-a78a2282b092/widgets/pakket-reis/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/widgets/pakket-reis/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.postnl/48/54da7c6a-c36a-4327-b463-aff4129e50d5/widgets/pakket-reis/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -4539,11 +4547,10 @@
                 ],
                 "compatibility": ">=12.3.0",
                 "color": "#FB6200",
-                "homepage": "https://lrvdlinden.gitbook.io/postnl-for-homey",
+                "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-postnl-for-homey/159674",
                 "category": "internet",
-                "live": "1.2.12",
-                "test": "1.3.0"
+                "live": "1.3.0"
             }
         },
         {
@@ -5282,10 +5289,21 @@
                 "en": "Your Apple Health and Apple Watch data in Homey."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/Apple-Health/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.applehealth/"
             },
             "history": [
+                {
+                    "version": "1.0.4",
+                    "date": "2026-11-04",
+                    "notes": {
+                        "nl": "Nieuwe kaart “Meer apps van de ontwikkelaar” in de app-instellingen, een nieuwe App Store-beschrijving en readme, en de doneerknop is uit de instellingen gehaald.",
+                        "en": "New “More apps from the developer” card in the app settings, a fresh App Store description and readme, and the donate button has been removed from the settings."
+                    },
+                    "_src": {
+                        "nl": "Nieuwe kaart “Meer apps van de ontwikkelaar” in de app-instellingen, een nieuwe App Store-beschrijving en readme, en de doneerknop is uit de instellingen gehaald.",
+                        "en": "New “More apps from the developer” card in the app settings, a fresh App Store description and readme, and the donate button has been removed from the settings."
+                    }
+                },
                 {
                     "version": "1.0.3",
                     "date": "2026-10-14",
@@ -5368,8 +5386,8 @@
                             "en": "Apple Health"
                         },
                         "class": "sensor",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/drivers/apple-health-user/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/drivers/apple-health-user/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/drivers/apple-health-user/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/drivers/apple-health-user/assets/icon.svg"
                     }
                 ],
                 "widgets": [
@@ -5379,8 +5397,8 @@
                             "nl": "Activiteitsringen",
                             "en": "Activity rings"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/apple-activity-rings/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/apple-activity-rings/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/apple-activity-rings/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/apple-activity-rings/preview-dark.png"
                     },
                     {
                         "id": "health-glucose",
@@ -5388,8 +5406,8 @@
                             "nl": "Bloedglucose",
                             "en": "Blood glucose"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-glucose/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-glucose/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-glucose/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-glucose/preview-dark.png"
                     },
                     {
                         "id": "health-household",
@@ -5397,8 +5415,8 @@
                             "nl": "Huishouden",
                             "en": "Household"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-household/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-household/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-household/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-household/preview-dark.png"
                     },
                     {
                         "id": "health-hrv-trend",
@@ -5406,8 +5424,8 @@
                             "nl": "Hartslagvariabiliteit",
                             "en": "Heart rate variability"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-hrv-trend/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-hrv-trend/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-hrv-trend/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-hrv-trend/preview-dark.png"
                     },
                     {
                         "id": "health-overview",
@@ -5415,8 +5433,8 @@
                             "nl": "Gezondheidsoverzicht",
                             "en": "Health summary"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-overview/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-overview/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-overview/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-overview/preview-dark.png"
                     },
                     {
                         "id": "health-readiness",
@@ -5424,8 +5442,8 @@
                             "nl": "Paraatheid",
                             "en": "Readiness"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-readiness/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-readiness/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-readiness/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-readiness/preview-dark.png"
                     },
                     {
                         "id": "health-single",
@@ -5433,8 +5451,8 @@
                             "nl": "Gezondheidsmeting",
                             "en": "Health highlight"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-single/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-single/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-single/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-single/preview-dark.png"
                     },
                     {
                         "id": "health-sleep",
@@ -5442,8 +5460,8 @@
                             "nl": "Slaap",
                             "en": "Sleep"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-sleep/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-sleep/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-sleep/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-sleep/preview-dark.png"
                     },
                     {
                         "id": "health-status",
@@ -5451,8 +5469,8 @@
                             "nl": "Companion- & syncstatus",
                             "en": "Companion & sync status"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-status/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-status/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-status/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-status/preview-dark.png"
                     },
                     {
                         "id": "health-tiles",
@@ -5460,8 +5478,8 @@
                             "nl": "Gezondheidstegels",
                             "en": "Health tiles"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-tiles/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-tiles/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-tiles/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-tiles/preview-dark.png"
                     },
                     {
                         "id": "health-timeline",
@@ -5469,8 +5487,8 @@
                             "nl": "Dagtijdlijn",
                             "en": "Day timeline"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-timeline/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-timeline/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-timeline/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-timeline/preview-dark.png"
                     },
                     {
                         "id": "health-vitals",
@@ -5478,8 +5496,8 @@
                             "nl": "Vitale functies",
                             "en": "Vitals"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-vitals/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-vitals/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-vitals/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-vitals/preview-dark.png"
                     },
                     {
                         "id": "health-week",
@@ -5487,8 +5505,8 @@
                             "nl": "Gezondheidsgrafiek",
                             "en": "Health chart"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-week/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-week/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-week/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-week/preview-dark.png"
                     },
                     {
                         "id": "health-workout",
@@ -5496,8 +5514,8 @@
                             "nl": "Laatste training",
                             "en": "Last workout"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-workout/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/6/de856e5b-b0b2-4065-ad44-1721dbed8879/widgets/health-workout/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-workout/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.applehealth/7/0840fadf-cb1a-4c26-b1d5-96811af81823/widgets/health-workout/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -5877,11 +5895,10 @@
                 ],
                 "compatibility": ">=12.9.0",
                 "color": "#C92B50",
-                "homepage": "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/",
+                "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-apple-health/160608",
                 "category": "tools",
-                "live": "1.0.3",
-                "test": "1.0.4"
+                "live": "1.0.4"
             }
         },
         {
