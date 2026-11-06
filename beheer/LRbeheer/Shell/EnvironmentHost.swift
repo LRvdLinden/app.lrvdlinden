@@ -8,8 +8,16 @@ struct EnvironmentHost: View {
     @Environment(AppModel.self) private var model
 
     var body: some View {
-        env.rootView
-            .safeAreaInset(edge: .top, spacing: 0) { EnvironmentBar(env: env) }
+        // De balk staat bóven de omgeving, niet eroverheen (geen safeAreaInset): de navigatiebalk van de omgeving zelf
+        // (met bv. het menu rechtsboven van Bingr, "Wijzig", de knoppen van Tunr, Pasr en A-Alerts) begint zo direct onder
+        // de kiezer en blijft volledig zichtbaar en bruikbaar.
+        VStack(spacing: 0) {
+            EnvironmentBar(env: env)
+            // ligt niet tegen de bovenrand van het scherm: de veilige ruimte bovenin is voor de omgeving 0, dus zijn
+            // navigatiebalk staat direct onder de kiezer
+            env.rootView
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
     }
 }
 
@@ -68,7 +76,7 @@ struct EnvironmentBar: View {
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 6)
-        .background(.bar)
+        .background(.bar, ignoresSafeAreaEdges: .top)
         .overlay(alignment: .bottom) { Rectangle().fill(env.color.opacity(0.7)).frame(height: 1.5) }
     }
 }
