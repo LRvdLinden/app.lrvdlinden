@@ -538,14 +538,24 @@ struct FlowChips: View {
             ForEach(items, id: \.self) { p in
                 let on = selected.contains(p)
                 Button { toggle(p) } label: {
-                    Label(p, systemImage: on ? "checkmark.circle.fill" : "circle")
-                        .font(.footnote.weight(.medium))
-                        .padding(.horizontal, 10).padding(.vertical, 6)
-                        .background(on ? Brand.accentSoft : Theme.surface, in: Capsule())
-                        .overlay(Capsule().strokeBorder(on ? Theme.accent.opacity(0.5) : Theme.line))
-                        .foregroundStyle(on ? Theme.accent : .primary)
+                    // HStack i.p.v. Label: in een Form-rij krijgt een Label de lijst-opmaak en valt de tekst weg.
+                    // fixedSize: de pil breekt nooit af, FlowLayout zet hem op een nieuwe regel als hij niet past.
+                    HStack(spacing: 5) {
+                        Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                            .imageScale(.small)
+                        Text(verbatim: p)
+                            .lineLimit(1)
+                    }
+                    .font(.footnote.weight(.medium))
+                    .foregroundStyle(on ? Theme.accent : Theme.ink)
+                    .padding(.horizontal, 11).padding(.vertical, 7)
+                    .background(on ? Brand.accentSoft : Theme.surface, in: Capsule())
+                    .overlay(Capsule().strokeBorder(on ? Theme.accent.opacity(0.5) : Theme.line))
+                    .fixedSize()
+                    .contentShape(Capsule())
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.borderless)
+                .accessibilityLabel(Text(verbatim: p))
                 .accessibilityAddTraits(on ? .isSelected : [])
             }
         }
@@ -557,7 +567,7 @@ struct FlowLayout: Layout {
     var spacing: CGFloat = 8
 
     func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        let width = proposal.width ?? .infinity
+        let width = proposal.width ?? 320
         var x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, maxX: CGFloat = 0
         for s in subviews {
             let sz = s.sizeThatFits(.unspecified)
