@@ -23,7 +23,7 @@ BUNDLE = "app.lrvdlinden.lrbeheer"
 TEAM = "EU3UY476T6"
 VERSION = "1.0.0"
 BUILD = "1"
-IOS = "17.0"
+IOS = "18.0"  # P2000Beheer vraagt iOS 18 (TabView met Tab, sidebarAdaptable); Bingr, Tunr en Pasr 17
 
 FRAMEWORKS = [
     ("BingrKit", "Modules/BingrKit", "bingrkit"),
@@ -124,7 +124,7 @@ def framework_settings(name, suffix):
         **COMMON_TARGET,
         "APPLICATION_EXTENSION_API_ONLY": "NO",
         "BUILD_LIBRARY_FOR_DISTRIBUTION": "NO",
-        "DEFINES_MODULE": "YES",
+        "DEFINES_MODULE": "NO",  # alleen Swift: de .swiftmodule is genoeg, geen umbrella header
         "DYLIB_COMPATIBILITY_VERSION": "1",
         "DYLIB_CURRENT_VERSION": "1",
         "DYLIB_INSTALL_NAME_BASE": "@rpath",

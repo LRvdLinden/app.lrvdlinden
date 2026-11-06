@@ -58,28 +58,31 @@ Ze zijn **niet** toegepast of gedeployd: dat raakt productie en is jouw beslissi
 ## De centrale functie `lrbeheer` installeren (Supabase-project van Tunr)
 
 1. **Schema**: voer `supabase/schema.sql` uit (SQL Editor of Management API). Alleen nieuwe tabellen `lrbeheer_*`.
-2. **Function-secrets** (Supabase → Edge Functions → Secrets, of `supabase secrets set`):
+2. **Snelste weg: de workflow** `github/lrbeheer-push.yml`. Kopieer hem naar `.github/workflows/` in
+   **LRvdLinden/app.lrvdlinden.secrets** en start hem met de hand. Hij past het schema toe, zet de function-secrets en
+   deployt de functie, met de APNs-sleutel die daar al staat. Voeg in die repo nog toe: `SUPABASE_ACCESS_TOKEN`,
+   `TUNR_PROJECT_REF` en `LRBEHEER_CRON_SECRET`.
 
-   | Secret | Waarde |
+   Of met de hand (Supabase → Edge Functions → Secrets):
+
+   | Function-secret | Waarde (bron in app.lrvdlinden.secrets) |
    | --- | --- |
    | `TUNR_TOKEN_SECRET` | staat er al (van `admin`) |
-   | `APNS_KEY_P8`, `APNS_KEY_ID`, `APNS_TEAM_ID` | dezelfde APNs-sleutel (.p8) als Bingr/Pasr; een APNs-sleutel geldt voor alle apps van team EU3UY476T6 |
+   | `APN_P8_CERT`, `APN_KEY_ID`, `TEAM_ID` | dezelfde namen als de repository-secrets; de functie accepteert ook `APNS_KEY_P8` / `APNS_KEY_ID` / `APNS_TEAM_ID` (namen van Bingr/Pasr) |
    | `LRBEHEER_CRON_SECRET` | nieuw, lange willekeurige tekst |
    | `LRBEHEER_NOTIFY_SECRET` | optioneel, voor haken van buitenaf (zie onder) |
    | `LRBEHEER_APNS_TOPIC` | optioneel, standaard `app.lrvdlinden.lrbeheer` |
-   | `GITHUB_TOKEN` | optioneel, fine-grained, alleen *Public repositories (read-only)*; zonder token 60 GitHub-verzoeken per uur, ruim genoeg |
+   | `GITHUB_TOKEN` | optioneel; de workflow neemt `FINE_GRAINED_PERSONAL_ACCESS_TOKEN` (alleen lezen nodig) |
 
-3. **Deploy**: kopieer `supabase/functions/lrbeheer` naar `tunr-beheer/supabase/functions/` (of deploy vanuit deze map) en
-   zet in `config.toml`:
+   Met de hand deployen: kopieer `supabase/functions/lrbeheer` naar `tunr-beheer/supabase/functions/`, zet in
+   `config.toml` `[functions.lrbeheer]` met `verify_jwt = false`, en draai
+   `supabase functions deploy lrbeheer --project-ref <ref> --no-verify-jwt`. Voer `supabase/schema.sql` uit.
 
-   ```toml
-   [functions.lrbeheer]
-   verify_jwt = false
-   ```
+3. **Cron**: het blok onderaan `schema.sql` (pg_cron + pg_net, elke 5 minuten), met dezelfde `LRBEHEER_CRON_SECRET`.
 
-   `supabase functions deploy lrbeheer --project-ref <ref>`
-
-4. **Cron**: het blok onderaan `schema.sql` (pg_cron + pg_net, elke 5 minuten).
+4. **APNs-sleutel bij de app-id**: een APNs-sleutel (.p8) geldt voor alle apps van team EU3UY476T6; de App ID
+   `app.lrvdlinden.lrbeheer` moet wel *Push Notifications* aan hebben (doet Xcode bij de eerste build met automatisch
+   ondertekenen).
 
 5. **Test**: log in LRbeheer in bij Tunr, ga naar Instellingen → Meldingen en tik *Stuur een testmelding*.
 
@@ -118,6 +121,12 @@ verzoek doen. **Dit is niet toegepast** (de websites blijven ongewijzigd); het i
 
 ## Secrets
 
-De repo `LRvdLinden/app.lrvdlinden.secrets` was bij het bouwen **leeg** (geen bestanden). Er staan dus geen geheimen in
-deze map of in de app: alle sleutels blijven function-secrets op de server. In de app staan alleen openbare waarden
-(Supabase-URL's en publishable keys, die ook in de bestaande beheerapps staan).
+De centrale bron is **LRvdLinden/app.lrvdlinden.secrets**: de waarden staan daar als GitHub Actions-secrets
+(o.a. `APN_KEY_ID`, `APN_P8_CERT`, `TEAM_ID`, `BEHEER_APP_USER`, `BEHEER_APP_PASSWORD`, `FINE_GRAINED_PERSONAL_ACCESS_TOKEN`,
+MapKit JS, Maps Server API en WeatherKit). Die waarden zijn alleen in een workflow te gebruiken, nooit te lezen; daarom
+gaat de APNs-sleutel via de workflow hierboven rechtstreeks naar de function-secrets van `lrbeheer`.
+
+Wat LRbeheer ervan nodig heeft: alleen de APNs-sleutel (`APN_*`, `TEAM_ID`), en dan op de server. MapKit, Maps Server API
+en WeatherKit gebruikt geen van de beheeromgevingen. De beheer-inloggen blijven per omgeving in de app (sleutelhanger),
+net als in de losse beheerapps; er staat geen wachtwoord in de app of in deze repo. In de app staan alleen openbare
+waarden (Supabase-URL's en publishable keys, die ook in de bestaande beheerapps staan).

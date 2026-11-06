@@ -8,7 +8,7 @@ Elke omgeving is de volledige beheerapp of het volledige webbeheer, niet een ver
 | Appnaam | LRbeheer |
 | Bundle-id | `app.lrvdlinden.lrbeheer` (widgets: `app.lrvdlinden.lrbeheer.widget`) |
 | Versie / build | 1.0.0 (1) |
-| Platform | iPhone en iPad, iOS/iPadOS 17+ (op een Mac met Apple silicon als "Designed for iPad") |
+| Platform | iPhone en iPad, iOS/iPadOS 18+ (P2000Beheer vroeg al iOS 18; Bingr, Tunr en Pasr 17); op een Mac met Apple silicon als "Designed for iPad" |
 | Team | EU3UY476T6, automatisch ondertekenen |
 | URL-schema | `lrbeheer://<omgeving>/…` |
 

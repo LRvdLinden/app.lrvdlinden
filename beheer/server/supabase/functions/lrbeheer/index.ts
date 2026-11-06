@@ -19,6 +19,10 @@ import {
 } from "./logic.ts";
 
 const env = (k: string) => Deno.env.get(k) ?? "";
+/** APNs-sleutel: namen van Bingr/Pasr (APNS_*) of de centrale namen uit app.lrvdlinden.secrets (APN_*, TEAM_ID). */
+const apnsKey = () => env("APNS_KEY_P8") || env("APN_P8_CERT");
+const apnsKeyId = () => env("APNS_KEY_ID") || env("APN_KEY_ID");
+const apnsTeam = () => env("APNS_TEAM_ID") || env("TEAM_ID") || "EU3UY476T6";
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"), { auth: { autoRefreshToken: false, persistSession: false } });
 
 const json = (body: unknown, status = 200) =>
@@ -44,7 +48,7 @@ async function apnsBearer(): Promise<string> {
   const now = Date.now();
   if (apnsAuth && now - apnsAuth.at < 50 * 60_000) return apnsAuth.jwt;
   const iat = Math.floor(now / 1000 / 1800) * 1800; // zelfde blok van 30 min als de andere functies (TooManyProviderTokenUpdates)
-  const jwt = await apnsJwt(await importApnsKey(env("APNS_KEY_P8")), env("APNS_KEY_ID"), env("APNS_TEAM_ID") || "EU3UY476T6", iat);
+  const jwt = await apnsJwt(await importApnsKey(apnsKey()), apnsKeyId(), apnsTeam(), iat);
   apnsAuth = { jwt, at: iat * 1000 };
   return jwt;
 }
