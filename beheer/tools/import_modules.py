@@ -197,7 +197,12 @@ def import_widgets(src_root: Path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", required=True, help="map met de clones van de bestaande repo's")
+    ap.add_argument("--overwrite", action="store_true",
+                    help="echt overschrijven: Modules/*/Sources is nu de bron van waarheid (zie README)")
     a = ap.parse_args()
+    if not a.overwrite:
+        raise SystemExit("Gestopt: het beheer wordt sinds 6 november 2026 in LRbeheer zelf bijgewerkt (Modules/*/Sources).\n"
+                         "Importeren overschrijft die wijzigingen. Alleen als je dat echt wilt: --overwrite.")
     src = Path(a.src).resolve()
     report = {}
     for kit, cfg in MODULES.items():

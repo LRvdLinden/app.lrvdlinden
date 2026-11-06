@@ -59,13 +59,13 @@ Door elke app een eigen framework (eigen Swift-module) te geven, blijft hun code
 botst er niets. Alleen een klein, openbaar `…Environment`-type per module (`Modules/*/Bridge`) doet wat vroeger de
 `@main`-app deed: één sessie, de root-view, pushregistratie en deeplinks.
 
-De bronnen komen uit de bestaande repo's via `tools/import_modules.py`. Werk je een bestaande beheerapp bij, draai dan:
+**Bron van waarheid.** Sinds 6 november 2026 wordt het beheer van alle apps **hier** bijgewerkt, in
+`Modules/<App>Kit/Sources/`. De `beheer`-mappen in de oude repo's (bingr-beheer/ios, tunr-beheer/apple,
+app.lrvdlinden.pasr/beheer/apple, p2000-apeldoorn/beheer) staan stil. De serverkant (API's, Edge Functions, worker)
+blijft in die repo's; LRbeheer gebruikt die direct.
 
-```sh
-python3 tools/import_modules.py --src <map met de clones van bingr-beheer, tunr-beheer, app.lrvdlinden.pasr, p2000-apeldoorn>
-```
-
-`Modules/IMPORT.json` toont welke bestanden zijn overgenomen.
+`tools/import_modules.py` was voor de eerste overname en staat nu op slot: het zou wijzigingen hier overschrijven. Alleen
+met `--overwrite` draait het nog. `Modules/IMPORT.json` toont welke bestanden oorspronkelijk zijn overgenomen.
 
 ### Wat er aan de bestaande code is aangepast (en waarom)
 
