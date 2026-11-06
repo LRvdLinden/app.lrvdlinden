@@ -473,5 +473,12 @@
  "Volgorde: instellingen invullen (nog uit laten), codes genereren (eerst droog), mail testen; op dag D Lifetime-only aan, mail versturen en de melding in de apps klaarzetten; 7 dagen voor de overgang de herinnering.": "Order: fill in the settings (leave off), generate codes (dry run first), test the email; on day D turn Lifetime only on, send the email and prepare the in-app notice; 7 days before the switch the reminder.",
  "Weet je het zeker?": "Are you sure?",
  "Zolang Lifetime-only uit staat, werkt alles zoals nu. Na de overgangsdatum zien gratis accounts alleen nog Activeer Lifetime. Tijden in Nederlandse tijd.": "While Lifetime only is off, everything works as now. After the switch date free accounts only see Activate Lifetime. Times in Dutch time.",
- "e-mail bekend: wordt vanzelf gekoppeld bij inloggen": "email known: linked automatically on sign-in"
+ "e-mail bekend: wordt vanzelf gekoppeld bij inloggen": "email known: linked automatically on sign-in",
+ "Klaar in Stripe": "Ready in Stripe",
+ "Herinnerd": "Reminded",
+ "Welke mail": "Which email",
+ "Bingr wordt Lifetime": "Bingr is going Lifetime",
+ "Herinnering": "Reminder",
+ "Voorbeeld bekijken": "View preview",
+ "Testmail naar (leeg = beheeradres, support@)": "Test email to (empty = admin address, support@)"
 }

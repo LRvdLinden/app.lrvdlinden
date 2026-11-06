@@ -1410,6 +1410,22 @@
         }
       }
     },
+    "Bingr wordt Lifetime": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr is going Lifetime"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr wordt Lifetime"
+          }
+        }
+      }
+    },
     "Bingr, Tunr en Pasr blijven donker, zoals in de oorspronkelijke apps.": {
       "localizations": {
         "en": {
@@ -2914,6 +2930,38 @@
         }
       }
     },
+    "Herinnerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reminded"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Herinnerd"
+          }
+        }
+      }
+    },
+    "Herinnering": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reminder"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Herinnering"
+          }
+        }
+      }
+    },
     "Herinnering versturen": {
       "localizations": {
         "en": {
@@ -3518,6 +3566,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Klaar"
+          }
+        }
+      }
+    },
+    "Klaar in Stripe": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ready in Stripe"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klaar in Stripe"
           }
         }
       }
@@ -6306,6 +6370,22 @@
         }
       }
     },
+    "Testmail naar (leeg = beheeradres, support@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test email to (empty = admin address, support@)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testmail naar (leeg = beheeradres, support@)"
+          }
+        }
+      }
+    },
     "Testmelding verstuurd": {
       "localizations": {
         "en": {
@@ -6882,6 +6962,22 @@
         }
       }
     },
+    "Voorbeeld bekijken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View preview"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voorbeeld bekijken"
+          }
+        }
+      }
+    },
     "Vraag": {
       "localizations": {
         "en": {
@@ -7166,6 +7262,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Weet je het zeker?"
+          }
+        }
+      }
+    },
+    "Welke mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welke mail"
           }
         }
       }
