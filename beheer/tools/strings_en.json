@@ -368,5 +368,12 @@
 "live": "live",
 "beta": "beta",
 "dev": "dev",
-"Nieuwe app op lrvdlinden.app": "New app on lrvdlinden.app"
+"Nieuwe app op lrvdlinden.app": "New app on lrvdlinden.app",
+"Eén inlog voor alle omgevingen": "One login for all environments",
+"Eén inlog": "One login",
+"Inloggen bij alle omgevingen": "Sign in to all environments",
+"Dezelfde beheer-inlog voor alle zes omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt.": "The same admin login for all six environments. Stored only on this device, in the keychain; LRbeheer silently signs in again when a session expires.",
+"Resultaat": "Result",
+"Bewaard": "Saved",
+"Beheer-inlog vergeten": "Forget admin login"
 }

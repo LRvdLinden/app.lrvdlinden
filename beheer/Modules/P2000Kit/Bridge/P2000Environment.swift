@@ -24,6 +24,12 @@ public enum P2000Environment {
 
     public static var isSignedIn: Bool { Session.shared.isLoggedIn }
 
+    /// Inloggen met de gedeelde beheer-inlog van LRbeheer (zelfde route als het inlogscherm van P2000Beheer).
+    public static func login(user: String, password: String) async throws {
+        try await Session.shared.login(user: user, password: password)
+        PushRegistrar.shared.start()
+    }
+
     public static func didRegister(deviceToken: Data) {
         PushRegistrar.shared.didRegister(deviceToken)
     }

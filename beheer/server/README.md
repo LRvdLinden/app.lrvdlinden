@@ -119,6 +119,26 @@ verzoek doen. **Dit is niet toegepast** (de websites blijven ongewijzigd); het i
 ]]));
 ```
 
+## Eén beheer-inlog voor alle omgevingen
+
+Alle beheeromgevingen gebruiken dezelfde gebruikersnaam en hetzelfde wachtwoord: `BEHEER_APP_USER` en
+`BEHEER_APP_PASSWORD` uit **LRvdLinden/app.lrvdlinden.secrets**. De workflow `github/beheer-login-sync.yml`
+(*Beheer-inlog verdelen*, staat ook in die repo) zet ze in de zes repo's onder de namen die daar al bestaan en start hun
+deploy:
+
+| Repo | Secrets | Deploy |
+| --- | --- | --- |
+| bingr-beheer | `BINGR_ADMIN_USER`, `BINGR_ADMIN_PASSWORD` | `deploy-admin.yml` |
+| tunr-beheer | `TUNR_ADMIN_USER`, `TUNR_ADMIN_PASSWORD` | `backend.yml` |
+| app.lrvdlinden.pasr | `PASR_ADMIN_USER`, `PASR_ADMIN_PASSWORD` | `backend.yml` |
+| p2000-apeldoorn | `BEHEER_USER`, `BEHEER_PASSWORD` | `worker.yml` |
+| app.lrvdlinden | `BEHEER_USER`, `BEHEER_PASSWORD` | `release.yml` (.htpasswd) |
+| pixelforges | `BEHEER_USER`, `BEHEER_PASSWORD` | `release.yml` (.htpasswd) |
+
+Voorwaarden: het wachtwoord heeft minstens 12 tekens (eis van Bingr) en geen `:`, en
+`FINE_GRAINED_PERSONAL_ACCESS_TOKEN` heeft voor die zes repo's *Secrets: Read and write* en *Actions: Read and write*.
+Daarna in LRbeheer: overzicht → sleutel-icoon (of Instellingen → *Eén inlog voor alle omgevingen*), één keer inloggen.
+
 ## Secrets
 
 De centrale bron is **LRvdLinden/app.lrvdlinden.secrets**: de waarden staan daar als GitHub Actions-secrets

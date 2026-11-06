@@ -21,6 +21,11 @@ public enum TunrEnvironment {
 
     public static var isSignedIn: Bool { session.isSignedIn }
 
+    /// Inloggen met de gedeelde beheer-inlog van LRbeheer (zelfde actie `login` als het inlogscherm van BeheerTunr).
+    public static func login(user: String, password: String) async throws {
+        try await session.login(user: user, password: password)
+    }
+
     /// Beheer-token van Tunr (12 uur, functie `admin`). LRbeheer gebruikt het om zich aan te melden bij de centrale
     /// pushfunctie `lrbeheer`, die in hetzelfde Supabase-project draait en het token met dezelfde sleutel controleert.
     public static var adminToken: String? { session.token }

@@ -21,6 +21,9 @@ struct SettingsView: View {
                 NavigationLink { NotificationSettingsView() } label: {
                     Label("Meldingen", systemImage: "bell.badge")
                 }
+                NavigationLink { SharedLoginForm() } label: {
+                    Label("Eén inlog voor alle omgevingen", systemImage: "person.badge.key")
+                }
             } header: { Text("LRbeheer") } footer: {
                 Text("De vergrendeling geldt voor het overzicht, LRvdLinden en PixelForges. Bingr, Tunr, Pasr en P2000 houden hun eigen vergrendeling, in hun eigen Instellingen.")
             }

@@ -30,6 +30,11 @@ public enum BingrEnvironment {
 
     public static var isSignedIn: Bool { session.isSignedIn }
 
+    /// Inloggen met de gedeelde beheer-inlog van LRbeheer (zelfde actie `login` als het inlogscherm van BingrBeheer).
+    public static func login(user: String, password: String) async throws {
+        try await session.login(user: user, password: password)
+    }
+
     // MARK: pushmeldingen
 
     public static func didRegister(deviceToken: Data) {

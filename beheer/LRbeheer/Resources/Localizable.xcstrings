@@ -706,6 +706,22 @@
         }
       }
     },
+    "Beheer-inlog vergeten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forget admin login"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beheer-inlog vergeten"
+          }
+        }
+      }
+    },
     "Bekijk JSON van deze app": {
       "localizations": {
         "en": {
@@ -846,6 +862,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Beta / TestFlight"
+          }
+        }
+      }
+    },
+    "Bewaard": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewaard"
           }
         }
       }
@@ -1410,6 +1442,22 @@
         }
       }
     },
+    "Dezelfde beheer-inlog voor alle zes omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The same admin login for all six environments. Stored only on this device, in the keychain; LRbeheer silently signs in again when a session expires."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dezelfde beheer-inlog voor alle zes omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt."
+          }
+        }
+      }
+    },
     "Dezelfde inlog als de beheerpagina op de website. Wordt alleen op dit apparaat bewaard, in de sleutelhanger.": {
       "localizations": {
         "en": {
@@ -1758,6 +1806,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eén app voor LRvdLinden, PixelForges, Bingr, Tunr, Pasr en P2000 Apeldoorn"
+          }
+        }
+      }
+    },
+    "Eén inlog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One login"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eén inlog"
+          }
+        }
+      }
+    },
+    "Eén inlog voor alle omgevingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One login for all environments"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eén inlog voor alle omgevingen"
           }
         }
       }
@@ -2398,6 +2478,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inloggen"
+          }
+        }
+      }
+    },
+    "Inloggen bij alle omgevingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in to all environments"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inloggen bij alle omgevingen"
           }
         }
       }
@@ -4494,6 +4590,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Responstijd"
+          }
+        }
+      }
+    },
+    "Resultaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Result"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resultaat"
           }
         }
       }

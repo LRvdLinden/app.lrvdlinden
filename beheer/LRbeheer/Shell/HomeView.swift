@@ -32,12 +32,23 @@ struct HomeView: View {
             .background(Theme.bg.ignoresSafeArea())
             .navigationTitle("LRbeheer")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { SharedLogin.shared.showSheet = true } label: { Image(systemName: "person.badge.key") }
+                        .accessibilityLabel("Eén inlog voor alle omgevingen")
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Button { model.showSettings = true } label: { Image(systemName: "gearshape") }
                         .accessibilityLabel("Instellingen")
                 }
             }
-            .onAppear { tick += 1 }
+            .onAppear {
+                tick += 1
+                if !SharedLogin.shared.hasCredentials && BeheerEnvironment.allCases.allSatisfy({ !$0.isSignedIn }) {
+                    SharedLogin.shared.showSheet = true
+                }
+            }
+            .sheet(isPresented: Binding(get: { SharedLogin.shared.showSheet }, set: { SharedLogin.shared.showSheet = $0 }),
+                   onDismiss: { tick += 1 }) { SharedLoginView() }
         }
     }
 

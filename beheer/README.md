@@ -92,7 +92,11 @@ originele code.
   Eén tik wisselt direct, zonder terug naar het overzicht. De actieve omgeving is altijd zichtbaar (naam, logo en een
   lijn in de kleur van de omgeving).
 - **Laatst gebruikt**: standaard opent LRbeheer de laatstgebruikte omgeving (uit te zetten in Instellingen).
-- **Inloggen** gebeurt per omgeving, met de bestaande inlog: Bingr/Tunr/Pasr/P2000 met hun eigen beheer-inlog (zelfde
+- **Eén inlog**: overzicht → sleutel-icoon, of Instellingen → *Eén inlog voor alle omgevingen*. Eén keer gebruikersnaam
+  en wachtwoord (`BEHEER_APP_USER` / `BEHEER_APP_PASSWORD` uit app.lrvdlinden.secrets, op de servers gezet met de workflow
+  *Beheer-inlog verdelen*, zie `server/README.md`). LRbeheer logt daarmee in bij alle zes en logt stil opnieuw in als een
+  sessie verloopt. De inlog staat alleen in de sleutelhanger van het toestel.
+- **Inloggen per omgeving** blijft ook kunnen, met de bestaande inlogschermen: Bingr/Tunr/Pasr/P2000 met hun eigen beheer-inlog (zelfde
   functies en tokens als de losse apps), LRvdLinden en PixelForges met dezelfde gebruikersnaam en hetzelfde wachtwoord als
   hun `beheer.html` (opgeslagen in de sleutelhanger). Wisselen logt nergens uit.
 - **Vergrendeling**: Bingr, Tunr, Pasr en P2000 houden hun eigen Face ID-vergrendeling en schakelaar; LRbeheer zelf

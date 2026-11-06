@@ -63,10 +63,16 @@ final class AppModel {
         PasrEnvironment.start()
         P2000Environment.start()
         CentralPush.shared.start()
+        // gedeelde beheer-inlog: stil inloggen waar de sessie verlopen is
+        Task {
+            await SharedLogin.shared.autoSignIn()
+            CentralPush.shared.sync(force: false)
+        }
     }
 
     func switchTo(_ env: BeheerEnvironment?) {
         withAnimation(.snappy(duration: 0.25)) { active = env }
+        if let env, !env.isSignedIn { Task { await SharedLogin.shared.autoSignIn([env]) } }
     }
 
     /// Deeplink (lrbeheer://bingr/support/1001, bingrbeheer://…, pasrbeheer://…, widgets van Bingr).

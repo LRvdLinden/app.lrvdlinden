@@ -23,6 +23,11 @@ public enum PasrEnvironment {
 
     public static var isSignedIn: Bool { session.isSignedIn }
 
+    /// Inloggen met de gedeelde beheer-inlog van LRbeheer (zelfde actie `login` als het inlogscherm van PasrBeheer).
+    public static func login(user: String, password: String) async throws {
+        try await session.login(user: user, password: password)
+    }
+
     public static func didRegister(deviceToken: Data) {
         PushService.shared.didRegister(deviceToken: deviceToken)
     }
