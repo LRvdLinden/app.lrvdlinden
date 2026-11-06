@@ -226,6 +226,22 @@
         }
       }
     },
+    "A-Alerts: nieuwe iconen voor NL-Alert en KNMI, net als in de app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: new NL-Alert and KNMI icons, same as the app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: nieuwe iconen voor NL-Alert en KNMI, net als in de app"
+          }
+        }
+      }
+    },
     "A-Alerts: nieuwe tekst Cookies bewerken, links naar a-alerts.nl": {
       "localizations": {
         "en": {

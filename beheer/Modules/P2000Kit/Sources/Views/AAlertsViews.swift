@@ -95,7 +95,8 @@ struct WaarschuwingIcoon: View {
     var size: CGFloat = 32
 
     var body: some View {
-        if bron == "nlalert" || bron == "burgernet" {
+        // KNMI with a code shows the code colour; without one the KNMI tile, like the app.
+        if bron == "nlalert" || bron == "burgernet" || (bron == "knmi" && niveau == nil) {
             Image("aalerts_icon_\(bron)")
                 .resizable()
                 .scaledToFit()
