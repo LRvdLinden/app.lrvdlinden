@@ -226,6 +226,38 @@
         }
       }
     },
+    "A-Alerts: Android-installaties, push-toestellen en status van Firebase": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: Android installs, push devices and Firebase status"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: Android-installaties, push-toestellen en status van Firebase"
+          }
+        }
+      }
+    },
+    "A-Alerts: downloads van de Android-app (totaal, 30 dagen, per dag en per versie)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: Android app downloads (total, 30 days, per day and per version)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: downloads van de Android-app (totaal, 30 dagen, per dag en per versie)"
+          }
+        }
+      }
+    },
     "A-Alerts: nieuwe iconen voor NL-Alert en KNMI, net als in de app": {
       "localizations": {
         "en": {

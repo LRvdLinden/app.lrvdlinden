@@ -22,6 +22,7 @@ struct DashboardView: View {
                             visitorsCard(d.website)
                             activeCard(d.app)
                             platformCard(d.app)
+                            if let a = d.android { androidCard(a) }
                             versionsCard(d.app)
                             meldingenCard(d.meldingen)
                             websiteDetailCard(d.website)
@@ -88,6 +89,9 @@ struct DashboardView: View {
             StatusRow(ok: feedOK, title: "P2000-feed", detail: s.feed.lastError ?? "laatst gelezen \(Fmt.relative(s.feed.lastOk))")
             StatusRow(ok: (Fmt.parse(s.cron).map { Date.now.timeIntervalSince($0) < 5 * 60 }) ?? false, title: "Cron (elke minuut)", detail: Fmt.relative(s.cron))
             StatusRow(ok: s.apns, title: "Pushmeldingen (APNs)", detail: s.apns ? "sleutel actief" : "sleutel ontbreekt")
+            if let fcm = s.fcm {
+                StatusRow(ok: fcm, title: "Android-push (Firebase)", detail: fcm ? "serviceaccount actief" : "FCM_SERVICE_ACCOUNT ontbreekt")
+            }
             StatusRow(ok: s.weatherkit, title: "WeatherKit", detail: s.weatherkit ? "actief" : "niet ingesteld")
             StatusRow(ok: s.mapkit && s.mapsServer, title: "Apple Maps", detail: "MapKit JS \(s.mapkit ? "✓" : "✗") · Server API \(s.mapsServer ? "✓" : "✗")")
             Divider()
@@ -191,6 +195,50 @@ struct DashboardView: View {
         }
     }
 
+    /// A-Alerts voor Android: downloads van de APK op a-alerts.nl (zoals de PressKit-kaart van Tunr).
+    private func androidCard(_ a: AndroidStats) -> some View {
+        Card(title: "Android-app · downloads", icon: "arrow.down.circle") {
+            HStack(spacing: 10) {
+                miniKPI("Totaal", a.totaal)
+                miniKPI("30 dagen", a.dagen30)
+                miniKPI("Vandaag", a.vandaag)
+            }
+            if a.perDag.allSatisfy({ $0.n == 0 }) {
+                EmptyChart(text: "Nog geen downloads in de laatste 30 dagen")
+            } else {
+                Chart(a.perDag) { d in
+                    BarMark(x: .value("Dag", Fmt.dayDate(d.day), unit: .day), y: .value("Downloads", d.n))
+                        .foregroundStyle(Color.teal.gradient)
+                        .cornerRadius(3)
+                }
+                .chartXAxis { AxisMarks(values: .stride(by: .day, count: 7)) { _ in AxisGridLine(); AxisValueLabel(format: .dateTime.day().month(.abbreviated)) } }
+                .frame(height: 150)
+            }
+            if !a.perVersie.isEmpty {
+                Divider()
+                ForEach(a.perVersie) { v in
+                    HStack {
+                        Text(v.version).font(.callout.monospacedDigit())
+                        Spacer()
+                        Text("\(v.n)×").font(.callout.bold().monospacedDigit())
+                    }
+                }
+            }
+            Divider()
+            LegendRow(color: .teal, title: "Android-installaties (actief 30 dagen)", value: a.actief)
+            LegendRow(color: .green, title: "Android-toestellen met push", value: a.pushToestellen)
+            Text("Een download telt één keer per apparaat per dag, zonder cookies.").font(.caption2).foregroundStyle(.secondary)
+        }
+    }
+
+    private func miniKPI(_ title: String, _ value: Int) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text("\(value)").font(.system(size: 24, weight: .black, design: .rounded)).contentTransition(.numericText())
+            Text(title).font(.caption).foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
     private func versionsCard(_ a: Overview.App) -> some View {
         Card(title: "Versies in gebruik", icon: "number") {
             if a.versies.isEmpty {
@@ -254,6 +302,7 @@ struct DashboardView: View {
         switch path {
         case "/": return "Homepage"
         case "/pager/": return "Live pager"
+        case "/android/": return "Android-download"
         case "/info/": return "Privacy / voorwaarden"
         case "/melding/": return "Oude meldinglinks"
         default: return path

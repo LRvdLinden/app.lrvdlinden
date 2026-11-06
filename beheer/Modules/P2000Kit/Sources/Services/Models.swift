@@ -8,6 +8,8 @@ struct Overview: Decodable {
         let feed: Feed
         let cron: String?
         let apns: Bool
+        /// Android-push via Firebase (nieuwere server).
+        let fcm: Bool?
         let weatherkit: Bool
         let mapkit: Bool
         let mapsServer: Bool
@@ -65,6 +67,21 @@ struct Overview: Decodable {
     let topBekeken: [Top]
     /// A-Alerts: bronnen, helikopters, waarschuwingen en profielen (nieuwere server).
     let aAlerts: AAlertsOverview?
+    /// A-Alerts voor Android: APK-downloads van a-alerts.nl, installaties en push-toestellen (nieuwere server).
+    let android: AndroidStats?
+}
+
+/// GET /v1/beheer/downloads (ook als veld android in het overzicht).
+struct AndroidStats: Decodable {
+    struct Versie: Decodable, Identifiable { let version: String; let n: Int; let laatst: String?; var id: String { version } }
+    let totaal: Int
+    let dagen30: Int
+    let vandaag: Int
+    let perDag: [Overview.DayCount]
+    let perVersie: [Versie]
+    let installaties: Int
+    let actief: Int
+    let pushToestellen: Int
 }
 
 // MARK: - Alerts
@@ -208,6 +225,7 @@ enum PlatformName {
         case "watchos": return "Apple Watch"
         case "tvos": return "Apple TV"
         case "visionos": return "Vision Pro"
+        case "android": return "Android"
         default: return p
         }
     }
@@ -218,6 +236,7 @@ enum PlatformName {
         case "macos": return .blue
         case "watchos": return .green
         case "tvos": return .purple
+        case "android": return .teal
         default: return .gray
         }
     }

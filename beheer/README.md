@@ -176,6 +176,7 @@ originele code.
 | Dashboard: notificatieprofielen (toestellen, verdeling, tijden, waarschuwingen, populairste plaatsen) | ✓ |
 | Pushmelding bij storing/herstel van NL-Alert, Burgernet of KNMI (> 30 min), schakelaar *Storing bronnen* | ✓ na deploy van de worker |
 | Teksten: cookieverklaring (nieuw, naast privacy, voorwaarden, disclaimer en changelog); links naar a-alerts.nl | ✓ (ook P2000Beheer en web-beheer) |
+| Dashboard: **Android-app** – APK-downloads van a-alerts.nl (totaal, 30 dagen, vandaag, per dag, per versie), Android-installaties en push-toestellen; status Firebase-push | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/downloads`) |
 | Mac (native) | Mac-app van LRbeheer (Catalyst) |
 
 ### lrvdlinden.app/beheer → LRvdLinden (nieuw, native)

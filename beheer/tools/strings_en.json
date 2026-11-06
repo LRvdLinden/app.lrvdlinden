@@ -411,5 +411,7 @@
  "Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)": "Notification when NL-Alert, Burgernet or KNMI has an outage (with switch)",
  "A-Alerts gebruikt dezelfde iconen als de app": "A-Alerts uses the same icons as the app",
  "A-Alerts: nieuwe tekst Cookies bewerken, links naar a-alerts.nl": "A-Alerts: edit the new Cookies text, links to a-alerts.nl",
- "A-Alerts: nieuwe iconen voor NL-Alert en KNMI, net als in de app": "A-Alerts: new NL-Alert and KNMI icons, same as the app"
+ "A-Alerts: nieuwe iconen voor NL-Alert en KNMI, net als in de app": "A-Alerts: new NL-Alert and KNMI icons, same as the app",
+ "A-Alerts: downloads van de Android-app (totaal, 30 dagen, per dag en per versie)": "A-Alerts: Android app downloads (total, 30 days, per day and per version)",
+ "A-Alerts: Android-installaties, push-toestellen en status van Firebase": "A-Alerts: Android installs, push devices and Firebase status"
 }

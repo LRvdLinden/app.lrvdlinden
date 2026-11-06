@@ -102,6 +102,8 @@ struct WhatsNewView: View {
                     Label("A-Alerts gebruikt dezelfde iconen als de app", systemImage: "app.badge.checkmark")
                     Label("A-Alerts: nieuwe tekst Cookies bewerken, links naar a-alerts.nl", systemImage: "checkmark.shield")
                     Label("A-Alerts: nieuwe iconen voor NL-Alert en KNMI, net als in de app", systemImage: "photo")
+                    Label("A-Alerts: downloads van de Android-app (totaal, 30 dagen, per dag en per versie)", systemImage: "arrow.down.circle")
+                    Label("A-Alerts: Android-installaties, push-toestellen en status van Firebase", systemImage: "iphone.gen3.radiowaves.left.and.right")
                 }
                 Section(String(format: String(localized: "Versie %@"), Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")) {
                     Label("Eén app voor LRvdLinden, PixelForges, Bingr, Tunr, Pasr en P2000 Apeldoorn", systemImage: "square.grid.2x2")
