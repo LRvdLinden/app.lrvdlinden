@@ -10,7 +10,8 @@ final class PixelForgesStore {
     static let shared = PixelForgesStore()
     static let site = URL(string: "https://pixelforges.nl/")!
 
-    let account = SiteAccount(id: "pixelforges", base: site, headerName: "X-PF-Beheer")
+    // fetch-meta.php met een lege url: achter de .htaccess-login, antwoordt 400 en verandert niets
+    let account = SiteAccount(id: "pixelforges", base: site, headerName: "X-PF-Beheer", verifyMethod: "POST", verifyPath: "fetch-meta.php")
 
     private(set) var original: JSON = .object([])
     var data: JSON = .object([]) { didSet { save() } }

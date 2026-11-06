@@ -10,7 +10,8 @@ final class LRvdLindenStore {
     static let shared = LRvdLindenStore()
     static let site = URL(string: "https://lrvdlinden.app/")!
 
-    let account = SiteAccount(id: "lrvdlinden", base: site, headerName: "X-LR-Beheer")
+    // store-log.php: GET, achter de .htaccess-login, verandert niets
+    let account = SiteAccount(id: "lrvdlinden", base: site, headerName: "X-LR-Beheer", verifyMethod: "GET", verifyPath: "store-log.php")
 
     private(set) var original: JSON = .object([("apps", .array([]))])
     var data: JSON = .object([("apps", .array([]))]) { didSet { save() } }

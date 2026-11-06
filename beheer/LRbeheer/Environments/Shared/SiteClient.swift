@@ -92,9 +92,25 @@ struct SiteClient: Sendable {
         return o
     }
 
-    /// Controleert de inlog met een verzoek naar beheer.html (achter dezelfde .htaccess-login).
-    func verify() async throws {
-        _ = try await request("GET", "beheer.html", beheerHeader: false)
+    /// Controleert de inlog met een beveiligd PHP-endpoint (achter dezelfde .htaccess-login als beheer.html).
+    /// Niet via beheer.html zelf: beide sites sturen /beheer.html door naar /beheer, en bij die doorverwijzing valt de
+    /// inlog weg. PHP-bestanden worden niet doorverwezen. Alleen 401 betekent een verkeerde inlog; elk ander antwoord
+    /// (ook 400 of 403 van het PHP-bestand zelf) komt pas na een geslaagde .htaccess-controle.
+    func verify(method: String, path: String) async throws {
+        var req = URLRequest(url: base.appendingPathComponent(path))
+        req.httpMethod = method
+        req.setValue(authHeader, forHTTPHeaderField: "Authorization")
+        req.setValue("1", forHTTPHeaderField: headerName)
+        req.setValue("application/json", forHTTPHeaderField: "Accept")
+        if method == "POST" {
+            req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            req.httpBody = Data("{}".utf8)
+        }
+        let resp: URLResponse
+        do { (_, resp) = try await Self.session.data(for: req) } catch { throw Failure.network }
+        let status = (resp as? HTTPURLResponse)?.statusCode ?? 0
+        if status == 401 { throw Failure.unauthorized }
+        if status == 0 || status == 502 || status == 503 || status == 504 { throw Failure.server(String(format: String(localized: "De server gaf HTTP %lld."), status)) }
     }
 }
 
@@ -107,13 +123,18 @@ final class SiteAccount {
     let id: String
     let base: URL
     let headerName: String
+    /// Beveiligd endpoint om de inlog te controleren (zie SiteClient.verify).
+    let verifyMethod: String
+    let verifyPath: String
     private(set) var credentials: Credentials?
     var isSignedIn: Bool { credentials != nil }
 
-    init(id: String, base: URL, headerName: String) {
+    init(id: String, base: URL, headerName: String, verifyMethod: String, verifyPath: String) {
         self.id = id
         self.base = base
         self.headerName = headerName
+        self.verifyMethod = verifyMethod
+        self.verifyPath = verifyPath
         credentials = Keychain.readCodable("site.\(id)", as: Credentials.self)
     }
 
@@ -123,7 +144,7 @@ final class SiteAccount {
 
     func signIn(user: String, password: String) async throws {
         let c = SiteClient(base: base, headerName: headerName, user: user, password: password)
-        try await c.verify()
+        try await c.verify(method: verifyMethod, path: verifyPath)
         let cred = Credentials(user: user, password: password)
         Keychain.writeCodable("site.\(id)", cred)
         credentials = cred
