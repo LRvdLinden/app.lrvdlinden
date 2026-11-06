@@ -26,6 +26,7 @@ struct DashboardView: View {
                             meldingenCard(d.meldingen)
                             websiteDetailCard(d.website)
                             topCard(d.topBekeken)
+                            if let a = d.aAlerts { AAlertsDashboardCards(a: a) }
                         }
                         Text("Bijgewerkt \(Fmt.relative(d.generated))")
                             .font(.caption).foregroundStyle(.secondary).frame(maxWidth: .infinity)

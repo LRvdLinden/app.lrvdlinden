@@ -58,6 +58,16 @@ struct BeheerAPI: Sendable {
         try JSONDecoder().decode(T.self, from: try await request("GET", path, query: query, token: token))
     }
 
+    /// GET and decode (used by the A-Alerts views).
+    func getJSON<T: Decodable>(_ path: String, query: [String: String] = [:], token: String) async throws -> T {
+        try await get(path, query: query, token: token)
+    }
+
+    /// PATCH/PUT/POST with a JSON body and decode the answer.
+    func sendJSON<T: Decodable>(_ method: String, _ path: String, body: Encodable, token: String) async throws -> T {
+        try JSONDecoder().decode(T.self, from: try await request(method, path, body: body, token: token))
+    }
+
     // MARK: Session
 
     func login(user: String, password: String) async throws -> (token: String, user: String, expires: Date?) {
@@ -113,7 +123,8 @@ struct BeheerAPI: Sendable {
         _ = try await request("PUT", "v1/beheer/content/changelog", body: entries, token: token)
     }
 
-    struct DeviceRequest: Encodable { let token: String; let environment: String; let platform: String }
+    /// `bronnen`: pushmeldingen bij een storing van NL-Alert, Burgernet of KNMI (A-Alerts).
+    struct DeviceRequest: Encodable { let token: String; let environment: String; let platform: String; var bronnen: Bool = true }
     func registerDevice(_ d: DeviceRequest, token: String) async throws {
         _ = try await request("POST", "v1/beheer/devices", body: d, token: token)
     }

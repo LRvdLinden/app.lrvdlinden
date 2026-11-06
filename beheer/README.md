@@ -162,7 +162,7 @@ originele code.
 | Deeplinks `pasrbeheer://…` | ✓ |
 | Mac (native) | Mac-app van LRbeheer (Catalyst) |
 
-### P2000Beheer → P2000 Apeldoorn
+### P2000Beheer → A-Alerts (P2000 Apeldoorn)
 
 | Onderdeel | In LRbeheer |
 | --- | --- |
@@ -170,6 +170,11 @@ originele code.
 | Dashboard (status, Apple-login, bezoekers, actief, platforms, versies, meldingen, top) | ✓ |
 | Meldingen, Push (versturen per plaats, geschiedenis), Teksten (app- en webteksten, changelog) | ✓ |
 | Instellingen, pushmeldingen van de feed (storing/hersteld, test) | ✓ originele registratie; ontvangen na `server/patches` |
+| **A-Alerts** (nieuw, ook in P2000Beheer en het web-beheer): omgeving heet A-Alerts met het nieuwe icoon | ✓ |
+| Waarschuwingen: NL-Alert, Burgernet en KNMI zoeken/filteren, verbergen, handmatig beëindigen | ✓ (`/v1/beheer/waarschuwingen`) |
+| Dashboard: status van NL-Alert, Burgernet, KNMI en adsb.lol; helikopters in de lucht | ✓ |
+| Dashboard: notificatieprofielen (toestellen, verdeling, tijden, waarschuwingen, populairste plaatsen) | ✓ |
+| Pushmelding bij storing/herstel van NL-Alert, Burgernet of KNMI (> 30 min), schakelaar *Storing bronnen* | ✓ na deploy van de worker |
 | Mac (native) | Mac-app van LRbeheer (Catalyst) |
 
 ### lrvdlinden.app/beheer → LRvdLinden (nieuw, native)

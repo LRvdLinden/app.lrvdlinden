@@ -11,6 +11,11 @@ import AppKit
 final class PushRegistrar: NSObject, UNUserNotificationCenterDelegate {
     static let shared = PushRegistrar()
     private(set) var deviceToken: String?
+    /// Pushmeldingen bij een storing van NL-Alert, Burgernet of KNMI (A-Alerts), standaard aan.
+    var bronnen: Bool {
+        get { UserDefaults.module.object(forKey: "beheer.push.bronnen") as? Bool ?? true }
+        set { UserDefaults.module.set(newValue, forKey: "beheer.push.bronnen"); syncIfPossible() }
+    }
     var enabled: Bool {
         get { UserDefaults.module.object(forKey: "beheer.push") as? Bool ?? true }
         set { UserDefaults.module.set(newValue, forKey: "beheer.push"); if newValue { start() } }
@@ -46,9 +51,10 @@ final class PushRegistrar: NSObject, UNUserNotificationCenterDelegate {
         #else
         let platform = "ios"
         #endif
+        let bronnen = self.bronnen
         Task {
             try? await Session.shared.call { token in
-                try await BeheerAPI.shared.registerDevice(.init(token: deviceToken, environment: environment, platform: platform), token: token)
+                try await BeheerAPI.shared.registerDevice(.init(token: deviceToken, environment: environment, platform: platform, bronnen: bronnen), token: token)
             }
         }
     }

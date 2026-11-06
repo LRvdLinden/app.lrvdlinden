@@ -36,6 +36,7 @@ struct MainTabs: View {
         TabView(selection: $tab) {
             Tab("Dashboard", systemImage: "chart.xyaxis.line", value: "dashboard") { DashboardView() }
             Tab("Meldingen", systemImage: "list.bullet.rectangle", value: "meldingen") { MeldingenView() }
+            Tab("Waarschuwingen", systemImage: "exclamationmark.triangle", value: "waarschuwingen") { WaarschuwingenView() }
             Tab("Push", systemImage: "paperplane.fill", value: "push") { PushView() }
             Tab("Teksten", systemImage: "doc.text", value: "teksten") { TekstenView() }
             Tab("Instellingen", systemImage: "gearshape", value: "instellingen") { SettingsView() }
@@ -49,7 +50,7 @@ struct LockView: View {
     var body: some View {
         VStack(spacing: 18) {
             Image("BrandMark").resizable().frame(width: 96, height: 96).clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-            Text("P2000Beheer is vergrendeld").font(.title3.bold())
+            Text("A-Alerts-beheer is vergrendeld").font(.title3.bold())
             Button {
                 Task { await session.unlock() }
             } label: {

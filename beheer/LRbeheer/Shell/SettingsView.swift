@@ -93,6 +93,13 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("A-Alerts") {
+                    Label("P2000 Apeldoorn heet nu A-Alerts, met het nieuwe icoon", systemImage: "app.badge")
+                    Label("Waarschuwingen: NL-Alert, Burgernet en KNMI bekijken, verbergen of handmatig beëindigen", systemImage: "exclamationmark.triangle")
+                    Label("Dashboard: status van de bronnen en helikopters in de lucht", systemImage: "antenna.radiowaves.left.and.right")
+                    Label("Dashboard: gebruik van de notificatieprofielen", systemImage: "person.2.badge.gearshape")
+                    Label("Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)", systemImage: "bell.badge")
+                }
                 Section(String(format: String(localized: "Versie %@"), Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")) {
                     Label("Eén app voor LRvdLinden, PixelForges, Bingr, Tunr, Pasr en P2000 Apeldoorn", systemImage: "square.grid.2x2")
                     Label("Direct wisselen tussen omgevingen bovenin het scherm", systemImage: "arrow.left.arrow.right")

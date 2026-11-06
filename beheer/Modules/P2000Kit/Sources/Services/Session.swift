@@ -73,7 +73,7 @@ final class Session {
         let ctx = LAContext()
         ctx.localizedCancelTitle = "Annuleer"
         do {
-            if try await ctx.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Ontgrendel P2000Beheer") {
+            if try await ctx.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Ontgrendel A-Alerts-beheer") {
                 isLocked = false
             }
         } catch {}

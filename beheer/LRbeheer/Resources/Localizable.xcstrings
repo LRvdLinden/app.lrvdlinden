@@ -194,6 +194,22 @@
         }
       }
     },
+    "A-Alerts-beheer is vergrendeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts admin is locked"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts-beheer is vergrendeld"
+          }
+        }
+      }
+    },
     "Aangemeld": {
       "localizations": {
         "en": {
@@ -370,6 +386,22 @@
         }
       }
     },
+    "Alle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle"
+          }
+        }
+      }
+    },
     "Alle apps worden bijgewerkt.": {
       "localizations": {
         "en": {
@@ -382,6 +414,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alle apps worden bijgewerkt."
+          }
+        }
+      }
+    },
+    "Alle bronnen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All sources"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle bronnen"
           }
         }
       }
@@ -706,6 +754,22 @@
         }
       }
     },
+    "Beheer van A-Alerts (P2000 Apeldoorn)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts admin (P2000 Apeldoorn)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beheer van A-Alerts (P2000 Apeldoorn)"
+          }
+        }
+      }
+    },
     "Beheer-inlog vergeten": {
       "localizations": {
         "en": {
@@ -734,6 +798,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bekijk JSON van deze app"
+          }
+        }
+      }
+    },
+    "Bekijk bij de bron": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View at the source"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekijk bij de bron"
           }
         }
       }
@@ -798,6 +878,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Beoordeling"
+          }
+        }
+      }
+    },
+    "Bericht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bericht"
           }
         }
       }
@@ -1122,6 +1218,22 @@
         }
       }
     },
+    "Bron": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bron"
+          }
+        }
+      }
+    },
     "Bundle ID (Homey)": {
       "localizations": {
         "en": {
@@ -1166,6 +1278,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cijfers"
+          }
+        }
+      }
+    },
+    "Code": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code"
           }
         }
       }
@@ -1262,6 +1390,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dagelijkse check"
+          }
+        }
+      }
+    },
+    "Dashboard: gebruik van de notificatieprofielen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashboard: use of the notification profiles"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashboard: gebruik van de notificatieprofielen"
+          }
+        }
+      }
+    },
+    "Dashboard: status van de bronnen en helikopters in de lucht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashboard: status of the sources and helicopters in the air"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashboard: status van de bronnen en helikopters in de lucht"
           }
         }
       }
@@ -1714,6 +1874,22 @@
         }
       }
     },
+    "Einde": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "End"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einde"
+          }
+        }
+      }
+    },
     "Er kwam geen vertaling terug": {
       "localizations": {
         "en": {
@@ -2130,6 +2306,22 @@
         }
       }
     },
+    "Geen waarschuwingen in de laatste 30 dagen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No warnings in the last 30 days."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen waarschuwingen in de laatste 30 dagen."
+          }
+        }
+      }
+    },
     "Geen wijzigingen": {
       "localizations": {
         "en": {
@@ -2238,6 +2430,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Grootte"
+          }
+        }
+      }
+    },
+    "Handmatig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manual"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handmatig"
+          }
+        }
+      }
+    },
+    "Handmatig beëindigd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ended manually"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handmatig beëindigd"
           }
         }
       }
@@ -2638,6 +2862,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Je concept is teruggezet"
+          }
+        }
+      }
+    },
+    "Je krijgt een melding als de P2000-feed langer dan 10 minuten niets binnenkrijgt, of NL-Alert, Burgernet of KNMI langer dan 30 minuten, en als het weer werkt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You get a notification when the P2000 feed receives nothing for more than 10 minutes, or NL-Alert, Burgernet or KNMI for more than 30 minutes, and when it works again."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je krijgt een melding als de P2000-feed langer dan 10 minuten niets binnenkrijgt, of NL-Alert, Burgernet of KNMI langer dan 30 minuten, en als het weer werkt."
           }
         }
       }
@@ -3486,6 +3726,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meldingen, push, teksten en statistieken"
+          }
+        }
+      }
+    },
+    "Meldingen, waarschuwingen, push en statistieken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alerts, warnings, push and statistics"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meldingen, waarschuwingen, push en statistieken"
           }
         }
       }
@@ -4402,6 +4658,22 @@
         }
       }
     },
+    "P2000 Apeldoorn heet nu A-Alerts, met het nieuwe icoon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "P2000 Apeldoorn is now A-Alerts, with the new icon"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "P2000 Apeldoorn heet nu A-Alerts, met het nieuwe icoon"
+          }
+        }
+      }
+    },
     "Pakketten": {
       "localizations": {
         "en": {
@@ -4610,6 +4882,22 @@
         }
       }
     },
+    "Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification when NL-Alert, Burgernet or KNMI has an outage (with switch)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)"
+          }
+        }
+      }
+    },
     "Pushmeldingen van alle omgevingen; een tik opent de juiste omgeving": {
       "localizations": {
         "en": {
@@ -4802,6 +5090,22 @@
         }
       }
     },
+    "Soort": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soort"
+          }
+        }
+      }
+    },
     "Sport": {
       "localizations": {
         "en": {
@@ -4830,6 +5134,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Staat in Nieuw en onderweg"
+          }
+        }
+      }
+    },
+    "Start": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
           }
         }
       }
@@ -4894,6 +5214,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stores"
+          }
+        }
+      }
+    },
+    "Storing bronnen (NL-Alert, Burgernet, KNMI)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source outages (NL-Alert, Burgernet, KNMI)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Storing bronnen (NL-Alert, Burgernet, KNMI)"
           }
         }
       }
@@ -5154,6 +5490,22 @@
         }
       }
     },
+    "Tonen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonen"
+          }
+        }
+      }
+    },
     "Tonen in Nieuw en onderweg": {
       "localizations": {
         "en": {
@@ -5278,6 +5630,70 @@
           "stringUnit": {
             "state": "translated",
             "value": "Upload afbeelding"
+          }
+        }
+      }
+    },
+    "Verberg": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verberg"
+          }
+        }
+      }
+    },
+    "Verbergen haalt een waarschuwing weg uit de apps en de website. Beëindigen zet hem op beëindigd als de bron dat niet zelf doet. De brongegevens blijven ongewijzigd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hiding removes a warning from the apps and the website. Ending marks it as ended when the source does not do so itself. The source data stays unchanged."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbergen haalt een waarschuwing weg uit de apps en de website. Beëindigen zet hem op beëindigd als de bron dat niet zelf doet. De brongegevens blijven ongewijzigd."
+          }
+        }
+      }
+    },
+    "Verbergen in apps en website": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide in apps and website"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbergen in apps en website"
+          }
+        }
+      }
+    },
+    "Verborgen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hidden"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verborgen"
           }
         }
       }
@@ -5570,6 +5986,38 @@
         }
       }
     },
+    "Waarschuwingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warnings"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waarschuwingen"
+          }
+        }
+      }
+    },
+    "Waarschuwingen: NL-Alert, Burgernet en KNMI bekijken, verbergen of handmatig beëindigen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warnings: view, hide or manually end NL-Alert, Burgernet and KNMI"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waarschuwingen: NL-Alert, Burgernet en KNMI bekijken, verbergen of handmatig beëindigen"
+          }
+        }
+      }
+    },
     "Wachtwoord": {
       "localizations": {
         "en": {
@@ -5710,6 +6158,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Weergave"
+          }
+        }
+      }
+    },
+    "Werkt direct in de apps (binnen een minuut). Zet je het terug, dan geldt weer wat de bron zegt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takes effect in the apps within a minute. Switch it back and the source decides again."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Werkt direct in de apps (binnen een minuut). Zet je het terug, dan geldt weer wat de bron zegt."
           }
         }
       }

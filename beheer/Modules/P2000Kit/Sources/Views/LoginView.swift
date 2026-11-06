@@ -22,8 +22,8 @@ struct LoginView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
                     .shadow(color: .black.opacity(0.4), radius: 20, y: 10)
                 VStack(spacing: 6) {
-                    Text("P2000Beheer").font(.largeTitle.weight(.heavy)).foregroundStyle(.white)
-                    Text("Beheer van P2000 Apeldoorn").foregroundStyle(.white.opacity(0.7))
+                    Text("A-Alerts").font(.largeTitle.weight(.heavy)).foregroundStyle(.white)
+                    Text("Beheer van A-Alerts (P2000 Apeldoorn)").foregroundStyle(.white.opacity(0.7))
                 }
                 VStack(spacing: 12) {
                     TextField("Gebruikersnaam", text: $user)

@@ -17,7 +17,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bingr: "Bingr"
         case .tunr: "Tunr"
         case .pasr: "Pasr"
-        case .p2000: "P2000 Apeldoorn"
+        case .p2000: "A-Alerts"
         }
     }
 
@@ -29,7 +29,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bingr: "Gebruikers, support, push, nieuwsbrief en omzet"
         case .tunr: "Installaties, statistieken en downloads"
         case .pasr: "Accounts, insights en pushmeldingen"
-        case .p2000: "Meldingen, push, teksten en statistieken"
+        case .p2000: "Meldingen, waarschuwingen, push en statistieken"
         }
     }
 

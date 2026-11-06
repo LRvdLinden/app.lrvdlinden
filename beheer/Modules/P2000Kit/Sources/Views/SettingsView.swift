@@ -4,6 +4,7 @@ import UserNotifications
 struct SettingsView: View {
     @Environment(Session.self) private var session
     @State private var pushOn = PushRegistrar.shared.enabled
+    @State private var bronnenOn = PushRegistrar.shared.bronnen
     @State private var testResult: String?
     @State private var confirmLogout = false
 
@@ -28,17 +29,20 @@ struct SettingsView: View {
                     Toggle("Vergrendel met \(Session.biometryName)", isOn: $session.faceIDEnabled)
                         .disabled(!Session.biometricsAvailable)
                 } footer: {
-                    Text("Bij het openen van P2000Beheer vraagt de app om \(Session.biometryName).")
+                    Text("Bij het openen van A-Alerts-beheer vraagt de app om \(Session.biometryName).")
                 }
                 Section {
                     Toggle("Meldingen bij storingen", isOn: $pushOn)
                         .onChange(of: pushOn) { _, on in PushRegistrar.shared.enabled = on }
+                    Toggle("Storing bronnen (NL-Alert, Burgernet, KNMI)", isOn: $bronnenOn)
+                        .onChange(of: bronnenOn) { _, on in PushRegistrar.shared.bronnen = on }
+                        .disabled(!pushOn)
                     Button("Stuur een testmelding") { Task { await test() } }
                     if let testResult { Text(testResult).font(.callout).foregroundStyle(.secondary) }
                 } header: {
                     Text("Pushmeldingen")
                 } footer: {
-                    Text("Je krijgt een melding als de P2000-feed langer dan 10 minuten niets binnenkrijgt, en als hij weer werkt.")
+                    Text("Je krijgt een melding als de P2000-feed langer dan 10 minuten niets binnenkrijgt, of NL-Alert, Burgernet of KNMI langer dan 30 minuten, en als het weer werkt.")
                 }
                 Section("Over") {
                     LabeledContent("Versie", value: version)

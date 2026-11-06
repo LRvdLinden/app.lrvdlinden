@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PushView: View {
     @Environment(Session.self) private var session
-    @State private var title = "P2000 Apeldoorn"
+    @State private var title = "A-Alerts"
     @State private var message = ""
     @State private var plaatsen: Set<String> = []
     @State private var history: [BroadcastItem] = []

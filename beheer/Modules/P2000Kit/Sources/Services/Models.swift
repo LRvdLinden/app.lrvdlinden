@@ -63,6 +63,8 @@ struct Overview: Decodable {
     let app: App
     let website: Website
     let topBekeken: [Top]
+    /// A-Alerts: bronnen, helikopters, waarschuwingen en profielen (nieuwere server).
+    let aAlerts: AAlertsOverview?
 }
 
 // MARK: - Alerts
