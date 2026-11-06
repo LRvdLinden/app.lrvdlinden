@@ -194,6 +194,22 @@
         }
       }
     },
+    "A-Alerts gebruikt dezelfde iconen als de app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts uses the same icons as the app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts gebruikt dezelfde iconen als de app"
+          }
+        }
+      }
+    },
     "A-Alerts-beheer is vergrendeld": {
       "localizations": {
         "en": {

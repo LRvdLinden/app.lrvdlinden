@@ -88,6 +88,28 @@ enum WaarschuwingStijl {
     }
 }
 
+/// Zelfde iconen als in de A-Alerts-app: NL-Alert-driehoek en Burgernet-huisje; KNMI als gekleurd vlak.
+struct WaarschuwingIcoon: View {
+    let bron: String
+    var niveau: String? = nil
+    var size: CGFloat = 32
+
+    var body: some View {
+        if bron == "nlalert" || bron == "burgernet" {
+            Image("aalerts_icon_\(bron)")
+                .resizable()
+                .scaledToFit()
+                .frame(width: size, height: size)
+        } else {
+            Image(systemName: WaarschuwingStijl.symbol(bron))
+                .font(.system(size: size * 0.5, weight: .semibold))
+                .foregroundStyle(niveau == "yellow" ? Color.black : Color.white)
+                .frame(width: size, height: size)
+                .background(WaarschuwingStijl.color(bron, niveau), in: RoundedRectangle(cornerRadius: size * 0.25, style: .continuous))
+        }
+    }
+}
+
 // MARK: - API
 
 extension BeheerAPI {
@@ -138,7 +160,11 @@ struct AAlertsDashboardCards: View {
             } else {
                 ForEach(a.inDeLucht) { h in
                     HStack {
-                        Image(systemName: "helicopter").foregroundStyle(h.soort == "trauma" ? Color.purple : Color.blue)
+                        Image(systemName: "helicopter")
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundStyle(.white)
+                            .frame(width: 26, height: 26)
+                            .background(Dienst.color(h.soort == "trauma" ? "traumaheli" : "politie"), in: Circle())
                         Text(h.naam).font(.callout.weight(.semibold))
                         Spacer()
                         Text([h.hoogte_m.map { $0 == 0 ? "op de grond" : "\($0) m" }, h.snelheid_kmh.map { "\($0) km/u" }].compactMap { $0 }.joined(separator: " · "))
@@ -259,10 +285,7 @@ struct WaarschuwingenView: View {
 
     private func row(_ w: AdminWaarschuwing) -> some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: WaarschuwingStijl.symbol(w.bron))
-                .foregroundStyle(w.bron == "nlalert" ? Color.black : Color.white)
-                .frame(width: 32, height: 32)
-                .background(WaarschuwingStijl.color(w.bron, w.niveau), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+            WaarschuwingIcoon(bron: w.bron, niveau: w.niveau, size: 32)
             VStack(alignment: .leading, spacing: 3) {
                 Text(w.kop).font(.caption.weight(.semibold)).foregroundStyle(.secondary)
                 Text(w.titel ?? "–").font(.callout.weight(.semibold)).lineLimit(2)

@@ -212,7 +212,7 @@ struct DashboardView: View {
         Card(title: "Meldingen vandaag vs. gisteren", icon: "light.beacon.max") {
             ForEach(Dienst.all, id: \.self) { d in
                 HStack(spacing: 10) {
-                    Image(systemName: Dienst.symbol(d)).foregroundStyle(Dienst.color(d)).frame(width: 24)
+                    DienstIcoon(dienst: d, size: 24)
                     Text(Dienst.label(d))
                     Spacer()
                     Text("\(m.perDienst[d] ?? 0)").font(.headline.monospacedDigit())
@@ -267,7 +267,7 @@ struct DashboardView: View {
             } else {
                 ForEach(list) { t in
                     HStack(spacing: 10) {
-                        Image(systemName: Dienst.symbol(t.dienst)).foregroundStyle(Dienst.color(t.dienst)).frame(width: 22)
+                        DienstIcoon(dienst: t.dienst, size: 22)
                         VStack(alignment: .leading, spacing: 1) {
                             Text(t.title).font(.callout).lineLimit(1)
                             Text(Fmt.relative(t.datum_tijd)).font(.caption2).foregroundStyle(.secondary)

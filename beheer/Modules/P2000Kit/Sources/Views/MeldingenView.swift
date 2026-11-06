@@ -84,10 +84,7 @@ struct MeldingRow: View {
     let m: AdminMelding
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: Dienst.symbol(m.dienst))
-                .font(.title3)
-                .foregroundStyle(Dienst.color(m.dienst))
-                .frame(width: 28)
+            DienstIcoon(dienst: m.dienst, size: 28)
             VStack(alignment: .leading, spacing: 3) {
                 Text("\(Fmt.dateTime(m.date)) · \(m.stad ?? "")").font(.caption).foregroundStyle(.secondary)
                 Text(m.title).font(.callout.weight(.semibold)).lineLimit(2)

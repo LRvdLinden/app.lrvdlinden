@@ -408,5 +408,6 @@
  "Waarschuwingen: NL-Alert, Burgernet en KNMI bekijken, verbergen of handmatig beëindigen": "Warnings: view, hide or manually end NL-Alert, Burgernet and KNMI",
  "Dashboard: status van de bronnen en helikopters in de lucht": "Dashboard: status of the sources and helicopters in the air",
  "Dashboard: gebruik van de notificatieprofielen": "Dashboard: use of the notification profiles",
- "Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)": "Notification when NL-Alert, Burgernet or KNMI has an outage (with switch)"
+ "Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)": "Notification when NL-Alert, Burgernet or KNMI has an outage (with switch)",
+ "A-Alerts gebruikt dezelfde iconen als de app": "A-Alerts uses the same icons as the app"
 }

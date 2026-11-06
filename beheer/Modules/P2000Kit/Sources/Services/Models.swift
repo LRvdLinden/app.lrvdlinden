@@ -146,11 +146,31 @@ enum Dienst {
         case "brandweer": return "Brandweer"
         case "ambulance": return "Ambulance"
         case "politie": return "Politie"
-        case "traumaheli": return "Lifeliner"
+        case "traumaheli": return "Traumaheli"
         default: return "Overig"
         }
     }
     static let all = ["brandweer", "ambulance", "politie", "traumaheli"]
+}
+
+/// Het pager-icoon van de A-Alerts-app (zelfde artwork als in de app); SF Symbol voor onbekende soorten.
+struct DienstIcoon: View {
+    let dienst: String?
+    var size: CGFloat = 24
+
+    var body: some View {
+        if let d = dienst, Dienst.all.contains(d) {
+            Image("aalerts_icon_\(d)")
+                .resizable()
+                .scaledToFit()
+                .frame(width: size, height: size)
+                .accessibilityLabel(Dienst.label(d))
+        } else {
+            Image(systemName: Dienst.symbol(dienst))
+                .foregroundStyle(Dienst.color(dienst))
+                .frame(width: size, height: size)
+        }
+    }
 }
 
 enum Fmt {
