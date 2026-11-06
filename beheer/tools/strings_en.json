@@ -375,5 +375,9 @@
 "Dezelfde beheer-inlog voor alle zes omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt.": "The same admin login for all six environments. Stored only on this device, in the keychain; LRbeheer silently signs in again when a session expires.",
 "Resultaat": "Result",
 "Bewaard": "Saved",
-"Beheer-inlog vergeten": "Forget admin login"
+"Beheer-inlog vergeten": "Forget admin login",
+"Instellingen…": "Settings…",
+"Omgeving": "Environment",
+"Eén inlog voor alle omgevingen…": "One login for all environments…",
+"Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)": "Real Mac app with a menu bar (⌘1…⌘6 switches environment)"
 }

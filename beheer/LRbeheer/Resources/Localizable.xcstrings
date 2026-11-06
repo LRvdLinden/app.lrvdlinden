@@ -1650,6 +1650,22 @@
         }
       }
     },
+    "Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Real Mac app with a menu bar (⌘1…⌘6 switches environment)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)"
+          }
+        }
+      }
+    },
     "Eigen pushsysteem van BingrBeheer: tickets, antwoorden, builds en status. Per soort in Bingr → Instellingen.": {
       "localizations": {
         "en": {
@@ -1838,6 +1854,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eén inlog voor alle omgevingen"
+          }
+        }
+      }
+    },
+    "Eén inlog voor alle omgevingen…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One login for all environments…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eén inlog voor alle omgevingen…"
           }
         }
       }
@@ -2542,6 +2574,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Instellingen van LRbeheer"
+          }
+        }
+      }
+    },
+    "Instellingen…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instellingen…"
           }
         }
       }
@@ -3934,6 +3982,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog niets toegevoegd"
+          }
+        }
+      }
+    },
+    "Omgeving": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Environment"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omgeving"
           }
         }
       }

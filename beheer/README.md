@@ -8,14 +8,14 @@ Elke omgeving is de volledige beheerapp of het volledige webbeheer, niet een ver
 | Appnaam | LRbeheer |
 | Bundle-id | `app.lrvdlinden.lrbeheer` (widgets: `app.lrvdlinden.lrbeheer.widget`) |
 | Versie / build | 1.0.0 (1) |
-| Platform | iPhone en iPad, iOS/iPadOS 18+ (P2000Beheer vroeg al iOS 18; Bingr, Tunr en Pasr 17); op een Mac met Apple silicon als "Designed for iPad" |
+| Platform | iPhone en iPad (iOS/iPadOS 18+; P2000Beheer vroeg al iOS 18) en een echte Mac-app via Mac Catalyst (macOS 15+), met menubalk, zelfde bundle-id (universal purchase) |
 | Team | EU3UY476T6, automatisch ondertekenen |
 | URL-schema | `lrbeheer://<omgeving>/…` |
 
 ## Openen en bouwen
 
 1. Open `LRbeheer.xcodeproj` in **Xcode 16 of nieuwer** (het project gebruikt gesynchroniseerde mappen).
-2. Kies het scheme **LRbeheer** en een iPhone, iPad of simulator. Team en signing staan al ingevuld.
+2. Kies het scheme **LRbeheer** en een iPhone, iPad, simulator of **My Mac (Mac Catalyst)**. Team en signing staan al ingevuld.
 3. Eerste keer op een echt toestel: Xcode maakt de App ID `app.lrvdlinden.lrbeheer` met de capabilities
    *Push Notifications* en *Keychain Sharing* (staat in `Config/LRbeheer.entitlements`). Bij *Signing & Capabilities*
    staat dan niets rood.
@@ -137,7 +137,7 @@ originele code.
 | Beheer-pushmeldingen (tickets, antwoorden, builds, status) + schakelaars + testmelding | ✓ originele registratie; ontvangen na `server/patches` |
 | Widgets: servicestatus, support, overzicht | ✓ widget-extensie van LRbeheer |
 | Deeplinks `bingrbeheer://…` uit widgets en meldingen | ✓ |
-| Mac (Catalyst) met menubalk | Mac met Apple silicon als iPad-app; de losse BingrBeheer voor Mac blijft bestaan |
+| Mac (Catalyst) met menubalk | ✓ Mac-app van LRbeheer (Catalyst), menu Omgeving met ⌘1…⌘6 |
 
 ### BeheerTunr → Tunr
 
@@ -148,7 +148,7 @@ originele code.
 | Downloads (builds, kortgeldige links) | ✓ |
 | Instellingen (nl/en-teksten) | ✓ (`Tunr.strings`) |
 | Pushmeldingen | **nieuw**: installaties en perskit via de centrale functie |
-| Mac (native) met menubalk | Mac met Apple silicon als iPad-app; de losse BeheerTunr voor Mac blijft bestaan |
+| Mac (native) met menubalk | Mac-app van LRbeheer (Catalyst) met eigen menubalk; de Tunr-specifieke menu-items (⌘R) niet |
 
 ### PasrBeheer → Pasr
 
@@ -159,7 +159,7 @@ originele code.
 | Beheer-pushmeldingen (soorten, testmelding, uitleg na inloggen) | ✓ originele registratie; ontvangen na `server/patches` |
 | Instellingen met MoreAppsCard | ✓ |
 | Deeplinks `pasrbeheer://…` | ✓ |
-| Mac (native) | Mac met Apple silicon als iPad-app |
+| Mac (native) | Mac-app van LRbeheer (Catalyst) |
 
 ### P2000Beheer → P2000 Apeldoorn
 
@@ -169,7 +169,7 @@ originele code.
 | Dashboard (status, Apple-login, bezoekers, actief, platforms, versies, meldingen, top) | ✓ |
 | Meldingen, Push (versturen per plaats, geschiedenis), Teksten (app- en webteksten, changelog) | ✓ |
 | Instellingen, pushmeldingen van de feed (storing/hersteld, test) | ✓ originele registratie; ontvangen na `server/patches` |
-| Mac (native) | Mac met Apple silicon als iPad-app |
+| Mac (native) | Mac-app van LRbeheer (Catalyst) |
 
 ### lrvdlinden.app/beheer → LRvdLinden (nieuw, native)
 

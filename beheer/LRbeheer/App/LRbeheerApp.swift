@@ -8,6 +8,17 @@ struct LRbeheerApp: App {
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
+        #if targetEnvironment(macCatalyst)
+        // Mac: standaard venstergrootte (daarna onthoudt macOS hem) en een eigen menubalk
+        window
+            .defaultSize(width: 1320, height: 860)
+            .commands { LRbeheerCommands(model: model) }
+        #else
+        window
+        #endif
+    }
+
+    private var window: some Scene {
         WindowGroup {
             RootContainer()
                 .environment(model)
@@ -15,6 +26,9 @@ struct LRbeheerApp: App {
                 .preferredColorScheme(model.active?.forcedScheme ?? appearance.colorScheme)
                 .onOpenURL { model.open($0) }
                 .task { model.start() }
+                #if targetEnvironment(macCatalyst)
+                .background { MacWindowSetup() }
+                #endif
         }
         .onChange(of: scenePhase) { _, phase in model.scenePhaseChanged(phase) }
     }

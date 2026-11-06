@@ -22,7 +22,7 @@ NAME = "LRbeheer"
 BUNDLE = "app.lrvdlinden.lrbeheer"
 TEAM = "EU3UY476T6"
 VERSION = "1.0.0"
-BUILD = "2"
+BUILD = "3"
 IOS = "18.0"  # P2000Beheer vraagt iOS 18 (TabView met Tab, sidebarAdaptable); Bingr, Tunr en Pasr 17
 
 FRAMEWORKS = [
@@ -69,6 +69,7 @@ PROJECT = {
     "GCC_C_LANGUAGE_STANDARD": "gnu17",
     "IPHONEOS_DEPLOYMENT_TARGET": IOS,
     "LOCALIZATION_PREFERS_STRING_CATALOGS": "YES",
+    "MACOSX_DEPLOYMENT_TARGET": "15.0",
     "MARKETING_VERSION": VERSION,
     "SDKROOT": "iphoneos",
     "SWIFT_VERSION": "5.0",
@@ -86,7 +87,11 @@ COMMON_TARGET = {
     "DEVELOPMENT_TEAM": TEAM,
     "IPHONEOS_DEPLOYMENT_TARGET": IOS,
     "MARKETING_VERSION": VERSION,
-    "SUPPORTS_MACCATALYST": "NO",
+    # Mac: echte Mac-app via Mac Catalyst (zoals BingrBeheer), zelfde bundle-id als iOS (universal purchase).
+    # macOS 15 = de Catalyst-versie van iOS 18.
+    "SUPPORTS_MACCATALYST": "YES",
+    "DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER": "NO",
+    "MACOSX_DEPLOYMENT_TARGET": "15.0",
     "SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD": "NO",
     "SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD": "NO",
     "SWIFT_EMIT_LOC_STRINGS": "YES",
@@ -114,8 +119,7 @@ APP = {
     "PRODUCT_BUNDLE_IDENTIFIER": BUNDLE,
     "PRODUCT_NAME": NAME,
     "SWIFT_EMIT_LOC_STRINGS": "YES",
-    # Mac met Apple silicon: dezelfde iPad-app ("Designed for iPad"), zonder aparte Mac-build
-    "SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD": "YES",
+    "CODE_SIGN_ENTITLEMENTS[sdk=macosx*]": "Config/LRbeheer-macOS.entitlements",
 }
 
 
@@ -146,6 +150,7 @@ WIDGETS = {
     **COMMON_TARGET,
     "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor",
     "CODE_SIGN_ENTITLEMENTS": "Config/Widgets.entitlements",
+    "CODE_SIGN_ENTITLEMENTS[sdk=macosx*]": "Config/Widgets-macOS.entitlements",
     "GENERATE_INFOPLIST_FILE": "YES",
     "INFOPLIST_FILE": "Config/Widgets-Info.plist",
     "INFOPLIST_KEY_CFBundleDisplayName": "LRbeheer",
@@ -166,7 +171,8 @@ def build():
     targets.append(("widgets", "LRbeheerWidgets", "LRbeheerWidgets.appex", "com.apple.product-type.app-extension",
                     "wrapper.app-extension", "Widgets/BingrWidgets", WIDGETS))
 
-    config_files = ["Info.plist", "LRbeheer.entitlements", "Widgets-Info.plist", "Widgets.entitlements"]
+    config_files = ["Info.plist", "LRbeheer.entitlements", "LRbeheer-macOS.entitlements", "Widgets-Info.plist",
+                    "Widgets.entitlements", "Widgets-macOS.entitlements"]
     I = lambda k: oid(k)
 
     s = []

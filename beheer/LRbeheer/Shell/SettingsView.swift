@@ -98,6 +98,7 @@ struct WhatsNewView: View {
                     Label("Direct wisselen tussen omgevingen bovenin het scherm", systemImage: "arrow.left.arrow.right")
                     Label("Alle functies van BingrBeheer, BeheerTunr, PasrBeheer en P2000Beheer", systemImage: "checkmark.seal")
                     Label("Native beheer van lrvdlinden.app en pixelforges.nl", systemImage: "globe")
+                    Label("Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)", systemImage: "macbook")
                     Label("Pushmeldingen van alle omgevingen; een tik opent de juiste omgeving", systemImage: "bell.badge")
                 }
             }

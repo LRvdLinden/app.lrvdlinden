@@ -147,7 +147,13 @@ final class CentralPush {
         }
     }
 
-    static var platform: String { UIDevice.current.userInterfaceIdiom == .pad ? "ipados" : "ios" }
+    static var platform: String {
+        #if targetEnvironment(macCatalyst)
+        return "macos"
+        #else
+        return UIDevice.current.userInterfaceIdiom == .pad ? "ipados" : "ios"
+        #endif
+    }
 
     // MARK: server
 
@@ -187,13 +193,17 @@ final class CentralPush {
 /// `aps-environment` uit het ingebedde provisioning-profiel (zoals ProvisioningProfile in BingrBeheer en PasrBeheer).
 enum ProvisioningProfileInfo {
     static let apsEnvironment: String? = {
+        #if targetEnvironment(macCatalyst)
+        let url = Bundle.main.bundleURL.appendingPathComponent("Contents/embedded.provisionprofile")
+        #else
         let url = Bundle.main.bundleURL.appendingPathComponent("embedded.mobileprovision")
+        #endif
         guard let data = try? Data(contentsOf: url),
               let start = data.range(of: Data("<?xml".utf8)),
               let end = data.range(of: Data("</plist>".utf8), in: start.lowerBound..<data.endIndex) else { return nil }
         let plist = data.subdata(in: start.lowerBound..<end.upperBound)
         guard let dict = (try? PropertyListSerialization.propertyList(from: plist, format: nil)) as? [String: Any],
               let ent = dict["Entitlements"] as? [String: Any] else { return nil }
-        return ent["aps-environment"] as? String
+        return (ent["com.apple.developer.aps-environment"] ?? ent["aps-environment"]) as? String
     }()
 }
