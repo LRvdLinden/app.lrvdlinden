@@ -4,7 +4,10 @@
   beheerapps (bingr-beheer/ios, tunr-beheer/apple, app.lrvdlinden.pasr/beheer/apple, p2000-apeldoorn/beheer) nog in gebruik
   zijn, krijgen die **dezelfde wijziging met de hand**, zodat beide gelijk blijven.
 - Nieuwe app met beheer = nieuwe omgeving in LRbeheer (achteraan in het overzicht), geen losse beheerapp.
-- Web-dashboards: per wijziging aan Léon vragen of het web-beheer ook mee moet.
+- Web-beheer blijft bestaan en in gebruik (beheer.bingr.online, beheer.tunr.online, beheer.pasr.nl, site/beheer.html van
+  lrvdlinden.app en pixelforges.nl, en het web-beheer van P2000). Alleen de app is verhuisd naar LRbeheer. Een nieuwe of
+  gewijzigde beheerfunctie komt **altijd ook in het web-beheer** van die omgeving, in de eigen repo en volgens de
+  afspraken daar (deploy pas na akkoord).
 - Bij elke nieuwe beheerfunctie: Wat is nieuw (Shell/SettingsView.swift, WhatsNewView) bijwerken, pushmelding voorstellen,
   functievergelijking in README.md bijwerken, teksten nl + en.
 - Oplevering: BUILD in tools/make_project.py +1 en het script draaien, commit direct op main, Xcode-ZIP van beheer/ meeleveren.
