@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Push Notifications (Xcode zet "development" bij archiveren voor TestFlight/App Store om naar productie) en de
+     Keychain-groepen: eerst de eigen groep (sessietokens en inloggegevens van alle omgevingen), daarna de gedeelde groep
+     voor het widget-token van de Bingr-widgets. -->
+<plist version="1.0">
+<dict>
+	<key>aps-environment</key>
+	<string>development</string>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)app.lrvdlinden.lrbeheer</string>
+		<string>$(AppIdentifierPrefix)app.lrvdlinden.lrbeheer.shared</string>
+	</array>
+</dict>
+</plist>

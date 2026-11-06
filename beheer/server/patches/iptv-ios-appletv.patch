@@ -1,0 +1,27 @@
+--- a/supabase/functions/push/beheer.ts
++++ b/supabase/functions/push/beheer.ts
+@@ -16,6 +16,9 @@
+ export type BeheerResult = { notices: number; sent: number; invalid: number; failed: number; skipped?: string };
+ 
+ const DEFAULT_TOPIC = "nl.lrvdlinden.bingr.beheer";
++// LRbeheer (centrale beheer-app, bundle-id app.lrvdlinden.lrbeheer) registreert zich met dezelfde actie admin_push_register.
++// Zijn token hoort bij een ander topic: APNs antwoordt dan DeviceTokenNotForTopic en we proberen het één keer met dit topic.
++const LRBEHEER_TOPIC = "app.lrvdlinden.lrbeheer";
+ 
+ async function maxOf(db: Db, table: string, col: string): Promise<number> {
+   const { data, error } = await db.from(table).select(col).order(col, { ascending: false }).limit(1);
+@@ -178,7 +181,13 @@
+     const payload = beheerPayload(n);
+     await Promise.all(devices.filter((d) => !gone.has(d.id) && wants(d.prefs, n.kind)).map(async (d) => {
+       let o;
+-      try { o = await apns.post(d.token, d.sandbox === true, payload, { topic, ttlS: 86400 }); }
++      try {
++        o = await apns.post(d.token, d.sandbox === true, payload, { topic, ttlS: 86400 });
++        if (o.state === "invalid" && o.error === "apns_DeviceTokenNotForTopic") {
++          o = await apns.post(d.token, d.sandbox === true, { ...(payload as Record<string, unknown>), lrenv: "bingr" },
++            { topic: env("LRBEHEER_APNS_TOPIC") || LRBEHEER_TOPIC, ttlS: 86400 });
++        }
++      }
+       catch (e) { o = { state: "failed" as const, error: `network_${(e instanceof Error ? e.name : "error").slice(0, 40)}` }; }
+       if (o.state === "sent") { res.sent++; okIds.add(d.id); return; }
+       if (o.state === "invalid") { res.invalid++; gone.add(d.id); return; }

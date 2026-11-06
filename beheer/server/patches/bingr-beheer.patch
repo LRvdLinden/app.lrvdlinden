@@ -1,0 +1,37 @@
+--- a/supabase/functions/admin/index.ts
++++ b/supabase/functions/admin/index.ts
+@@ -715,7 +715,8 @@
+   apnsAuth = { jwt, at: iat * 1000, kid };
+   return jwt;
+ }
+-async function sendApnsTest(token: string, sandbox: boolean): Promise<{ ok: true } | { ok: false; invalid: boolean; error: string }> {
++// LRbeheer (app.lrvdlinden.lrbeheer) gebruikt dezelfde registratie; bij DeviceTokenNotForTopic één keer met dat topic.
++async function sendApnsTest(token: string, sandbox: boolean, topic = env("BEHEER_APNS_TOPIC") || DEFAULT_TOPIC): Promise<{ ok: true } | { ok: false; invalid: boolean; error: string }> {
+   let bearer: string;
+   try { bearer = await apnsBearer(); } catch (e) {
+     console.error("admin", "push_test", "sleutel", e instanceof Error ? e.name : "key");
+@@ -728,13 +729,13 @@
+       method: "POST",
+       headers: {
+         authorization: `bearer ${bearer}`,
+-        "apns-topic": env("BEHEER_APNS_TOPIC") || DEFAULT_TOPIC,
++        "apns-topic": topic,
+         "apns-push-type": "alert",
+         "apns-priority": "10",
+         "apns-expiration": String(Math.floor(Date.now() / 1000) + 3600),
+         "content-type": "application/json",
+       },
+-      body: JSON.stringify(testPayload()),
++      body: JSON.stringify({ ...testPayload(), lrenv: "bingr" }),
+       signal: AbortSignal.timeout(15000),
+     });
+   } catch (e) {
+@@ -744,6 +745,8 @@
+   let reason = "";
+   if (res.status !== 200) { try { reason = String((await res.json())?.reason ?? ""); } catch { /* geen json */ } }
+   else await res.body?.cancel().catch(() => {});
++  const lr = env("LRBEHEER_APNS_TOPIC") || "app.lrvdlinden.lrbeheer";
++  if (reason === "DeviceTokenNotForTopic" && topic !== lr) return await sendApnsTest(token, sandbox, lr);
+   const r = apnsResult(res.status, reason);
+   if (!r.ok) {
+     if (/^(Expired|Invalid)ProviderToken$/.test(reason)) apnsAuth = null; // niet bij TooManyProviderTokenUpdates

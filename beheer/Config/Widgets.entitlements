@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Alleen de gedeelde groep: de widget ziet het widget-token van Bingr, niet de sessietokens van de app. -->
+<plist version="1.0">
+<dict>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)app.lrvdlinden.lrbeheer.shared</string>
+	</array>
+</dict>
+</plist>

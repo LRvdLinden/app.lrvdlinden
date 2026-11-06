@@ -1,0 +1,33 @@
+--- a/supabase/functions/admin/index.ts
++++ b/supabase/functions/admin/index.ts
+@@ -118,7 +118,9 @@
+   apnsAuth = { jwt, at: iat * 1000, kid };
+   return jwt;
+ }
+-async function apnsSend(token: string, sandbox: boolean, payload: unknown) {
++// LRbeheer (app.lrvdlinden.lrbeheer) registreert zich met dezelfde actie push_register; zijn token hoort bij dat topic.
++// Bij DeviceTokenNotForTopic één keer opnieuw met het LRbeheer-topic (en lrenv, zodat LRbeheer Pasr opent).
++async function apnsSend(token: string, sandbox: boolean, payload: unknown, topic = env("PASR_APNS_TOPIC") || DEFAULT_TOPIC): Promise<{ ok: true } | { ok: false; invalid: boolean; error: string }> {
+   let auth: string;
+   try { auth = await apnsBearer(); } catch (e) {
+     console.error("admin", "apns_key", e instanceof Error ? e.name : "?");
+@@ -130,7 +132,7 @@
+       method: "POST",
+       headers: {
+         authorization: `bearer ${auth}`,
+-        "apns-topic": env("PASR_APNS_TOPIC") || DEFAULT_TOPIC,
++        "apns-topic": topic,
+         "apns-push-type": "alert",
+         "apns-priority": "10",
+         "apns-expiration": String(Math.floor(Date.now() / 1000) + 3600),
+@@ -144,6 +146,10 @@
+   }
+   let reason = "";
+   try { reason = String((await res.json())?.reason ?? ""); } catch { /* leeg antwoord bij 200 */ }
++  const lr = env("LRBEHEER_APNS_TOPIC") || "app.lrvdlinden.lrbeheer";
++  if (reason === "DeviceTokenNotForTopic" && topic !== lr) {
++    return await apnsSend(token, sandbox, { ...(payload as Record<string, unknown>), lrenv: "pasr" }, lr);
++  }
+   const r = apnsResult(res.status, reason);
+   if (!r.ok && /^(Expired|Invalid)ProviderToken$/.test(reason)) apnsAuth = null;
+   return r;
