@@ -60,8 +60,9 @@ botst er niets. Alleen een klein, openbaar `…Environment`-type per module (`Mo
 `@main`-app deed: één sessie, de root-view, pushregistratie en deeplinks.
 
 **Bron van waarheid.** Sinds 6 november 2026 wordt het beheer van alle apps **hier** bijgewerkt, in
-`Modules/<App>Kit/Sources/`. De `beheer`-mappen in de oude repo's (bingr-beheer/ios, tunr-beheer/apple,
-app.lrvdlinden.pasr/beheer/apple, p2000-apeldoorn/beheer) staan stil. De serverkant (API's, Edge Functions, worker)
+`Modules/<App>Kit/Sources/`. Zolang de losse beheerapps (bingr-beheer/ios, tunr-beheer/apple,
+app.lrvdlinden.pasr/beheer/apple, p2000-apeldoorn/beheer) nog in gebruik zijn, krijgen die dezelfde wijziging met de
+hand. Werkafspraken: `CLAUDE.md` en de skill `/beheer`. De serverkant (API's, Edge Functions, worker)
 blijft in die repo's; LRbeheer gebruikt die direct.
 
 `tools/import_modules.py` was voor de eerste overname en staat nu op slot: het zou wijzigingen hier overschrijven. Alleen
