@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TekstenView: View {
-    private let docs = [("privacy", "Privacyverklaring", "hand.raised"), ("terms", "Gebruiksvoorwaarden", "doc.plaintext"),
+    private let docs = [("privacy", "Privacyverklaring", "hand.raised"), ("cookies", "Cookies", "checkmark.shield"), ("terms", "Gebruiksvoorwaarden", "doc.plaintext"),
                         ("disclaimer", "Disclaimer", "exclamationmark.bubble")]
 
     var body: some View {

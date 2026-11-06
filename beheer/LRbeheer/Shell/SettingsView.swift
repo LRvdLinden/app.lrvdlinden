@@ -100,6 +100,7 @@ struct WhatsNewView: View {
                     Label("Dashboard: gebruik van de notificatieprofielen", systemImage: "person.2.badge.gearshape")
                     Label("Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)", systemImage: "bell.badge")
                     Label("A-Alerts gebruikt dezelfde iconen als de app", systemImage: "app.badge.checkmark")
+                    Label("A-Alerts: nieuwe tekst Cookies bewerken, links naar a-alerts.nl", systemImage: "checkmark.shield")
                 }
                 Section(String(format: String(localized: "Versie %@"), Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")) {
                     Label("Eén app voor LRvdLinden, PixelForges, Bingr, Tunr, Pasr en P2000 Apeldoorn", systemImage: "square.grid.2x2")

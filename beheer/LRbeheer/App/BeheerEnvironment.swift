@@ -40,7 +40,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bingr: "beheer.bingr.online"
         case .tunr: "beheer.tunr.online"
         case .pasr: "beheer.pasr.nl"
-        case .p2000: "p2000-apeldoorn"
+        case .p2000: "a-alerts.nl"
         }
     }
 

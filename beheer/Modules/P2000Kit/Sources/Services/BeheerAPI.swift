@@ -1,6 +1,6 @@
 import Foundation
 
-/// Client for the beheer part of the P2000 Apeldoorn API (/v1/beheer/…).
+/// Client for the beheer part of the A-Alerts API (/v1/beheer/…).
 struct BeheerAPI: Sendable {
     static let shared = BeheerAPI()
 

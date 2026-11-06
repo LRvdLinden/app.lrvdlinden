@@ -226,6 +226,22 @@
         }
       }
     },
+    "A-Alerts: nieuwe tekst Cookies bewerken, links naar a-alerts.nl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: edit the new Cookies text, links to a-alerts.nl"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: nieuwe tekst Cookies bewerken, links naar a-alerts.nl"
+          }
+        }
+      }
+    },
     "Aangemeld": {
       "localizations": {
         "en": {

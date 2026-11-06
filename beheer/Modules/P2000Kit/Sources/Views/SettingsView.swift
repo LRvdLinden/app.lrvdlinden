@@ -47,7 +47,7 @@ struct SettingsView: View {
                 Section("Over") {
                     LabeledContent("Versie", value: version)
                     LabeledContent("API", value: BeheerAPI.base.host ?? "–")
-                    Link(destination: URL(string: "https://p2000-apeldoorn.nl")!) { Label("p2000-apeldoorn.nl", systemImage: "safari") }
+                    Link(destination: URL(string: "https://a-alerts.nl")!) { Label("a-alerts.nl", systemImage: "safari") }
                     Link(destination: BeheerAPI.base.appendingPathComponent("health")) { Label("API-status (health)", systemImage: "waveform.path.ecg") }
                 }
             }

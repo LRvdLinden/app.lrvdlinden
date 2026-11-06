@@ -175,6 +175,7 @@ originele code.
 | Dashboard: status van NL-Alert, Burgernet, KNMI en adsb.lol; helikopters in de lucht | ✓ |
 | Dashboard: notificatieprofielen (toestellen, verdeling, tijden, waarschuwingen, populairste plaatsen) | ✓ |
 | Pushmelding bij storing/herstel van NL-Alert, Burgernet of KNMI (> 30 min), schakelaar *Storing bronnen* | ✓ na deploy van de worker |
+| Teksten: cookieverklaring (nieuw, naast privacy, voorwaarden, disclaimer en changelog); links naar a-alerts.nl | ✓ (ook P2000Beheer en web-beheer) |
 | Mac (native) | Mac-app van LRbeheer (Catalyst) |
 
 ### lrvdlinden.app/beheer → LRvdLinden (nieuw, native)
