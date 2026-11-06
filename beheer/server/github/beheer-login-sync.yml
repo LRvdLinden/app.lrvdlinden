@@ -1,0 +1,86 @@
+# Workflow voor LRvdLinden/app.lrvdlinden.secrets: één beheer-inlog voor alle beheeromgevingen.
+#
+# Zet BEHEER_APP_USER en BEHEER_APP_PASSWORD (repository-secrets hier) als inlog-secrets in de zes repo's, onder de
+# namen die daar al gebruikt worden, en start daarna hun eigen deploy-workflow, zodat de servers de nieuwe inlog
+# gebruiken. Daarna werkt de inlog in LRbeheer (Eén inlog voor alle omgevingen), in de losse beheerapps en op de
+# beheerpagina's op het web voor alle omgevingen hetzelfde.
+#
+#   repo                          secrets die gezet worden                    deploy-workflow
+#   LRvdLinden/bingr-beheer       BINGR_ADMIN_USER / BINGR_ADMIN_PASSWORD     deploy-admin.yml  (functie admin)
+#   LRvdLinden/tunr-beheer        TUNR_ADMIN_USER  / TUNR_ADMIN_PASSWORD      backend.yml       (functie admin)
+#   LRvdLinden/app.lrvdlinden.pasr PASR_ADMIN_USER / PASR_ADMIN_PASSWORD      backend.yml       (functie admin)
+#   LRvdLinden/p2000-apeldoorn    BEHEER_USER      / BEHEER_PASSWORD          worker.yml        (worker /v1/beheer)
+#   LRvdLinden/app.lrvdlinden     BEHEER_USER      / BEHEER_PASSWORD          release.yml       (.htpasswd van beheer.html)
+#   LRvdLinden/pixelforges        BEHEER_USER      / BEHEER_PASSWORD          release.yml       (.htpasswd van beheer.html)
+#
+# Alleen met de hand: Actions → Beheer-inlog verdelen → Run workflow. Kies eventueel één repo, of zet "deploy" uit om
+# alleen de secrets te zetten.
+#
+# Nodig: FINE_GRAINED_PERSONAL_ACCESS_TOKEN met voor die zes repo's de permissies
+#   Secrets: Read and write   en   Actions: Read and write
+# Waarden komen nooit in het log (gh secret set leest ze van stdin).
+name: Beheer-inlog verdelen
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Alleen deze repo (leeg = alle zes), bv. LRvdLinden/bingr-beheer"
+        required: false
+        default: ""
+      deploy:
+        description: "Daarna de deploy-workflow van elke repo starten"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ secrets.FINE_GRAINED_PERSONAL_ACCESS_TOKEN }}
+      B_USER: ${{ secrets.BEHEER_APP_USER }}
+      B_PASS: ${{ secrets.BEHEER_APP_PASSWORD }}
+      ONLY: ${{ inputs.only }}
+      DEPLOY: ${{ inputs.deploy }}
+    steps:
+      - name: Controleer secrets
+        run: |
+          [ -n "$GH_TOKEN" ] || { echo "::error::FINE_GRAINED_PERSONAL_ACCESS_TOKEN ontbreekt"; exit 1; }
+          [ -n "$B_USER" ] || { echo "::error::BEHEER_APP_USER ontbreekt"; exit 1; }
+          [ -n "$B_PASS" ] || { echo "::error::BEHEER_APP_PASSWORD ontbreekt"; exit 1; }
+          # Bingr eist minstens 12 tekens (deploy-admin.yml); Pasr minstens 6
+          [ ${#B_PASS} -ge 12 ] || { echo "::error::BEHEER_APP_PASSWORD moet minstens 12 tekens hebben (eis van Bingr)"; exit 1; }
+          case "$B_USER$B_PASS" in *:*) echo "::error::Geen dubbele punt in gebruikersnaam of wachtwoord (HTTP Basic van beheer.html)"; exit 1;; esac
+
+      - name: Secrets zetten en deploys starten
+        run: |
+          set -u
+          failed=0
+          sync() {
+            repo="$1"; user_name="$2"; pass_name="$3"; workflow="$4"
+            if [ -n "$ONLY" ] && [ "$ONLY" != "$repo" ]; then return; fi
+            if printf '%s' "$B_USER" | gh secret set "$user_name" --repo "$repo" > /dev/null 2>&1 &&
+               printf '%s' "$B_PASS" | gh secret set "$pass_name" --repo "$repo" > /dev/null 2>&1; then
+              echo "::notice::$repo: $user_name en $pass_name gezet"
+            else
+              echo "::error::$repo: secrets zetten mislukt (token heeft Secrets: Read and write op deze repo nodig)"
+              failed=1; return
+            fi
+            if [ "$DEPLOY" = "true" ]; then
+              if gh workflow run "$workflow" --repo "$repo" --ref main > /dev/null 2>&1; then
+                echo "::notice::$repo: $workflow gestart"
+              else
+                echo "::warning::$repo: $workflow starten mislukt (token heeft Actions: Read and write nodig); start hem met de hand"
+              fi
+            fi
+          }
+          sync LRvdLinden/bingr-beheer        BINGR_ADMIN_USER BINGR_ADMIN_PASSWORD deploy-admin.yml
+          sync LRvdLinden/tunr-beheer         TUNR_ADMIN_USER  TUNR_ADMIN_PASSWORD  backend.yml
+          sync LRvdLinden/app.lrvdlinden.pasr PASR_ADMIN_USER  PASR_ADMIN_PASSWORD  backend.yml
+          sync LRvdLinden/p2000-apeldoorn     BEHEER_USER      BEHEER_PASSWORD      worker.yml
+          sync LRvdLinden/app.lrvdlinden      BEHEER_USER      BEHEER_PASSWORD      release.yml
+          sync LRvdLinden/pixelforges         BEHEER_USER      BEHEER_PASSWORD      release.yml
+          exit $failed

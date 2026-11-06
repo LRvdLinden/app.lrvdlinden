@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Aanvulling op de gegenereerde Info.plist (GENERATE_INFOPLIST_FILE = YES) van LRbeheer. -->
+<plist version="1.0">
+<dict>
+	<!-- lrbeheer://<omgeving>/… opent een omgeving (widgets en meldingen sturen hun eigen links ook naar deze app) -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>app.lrvdlinden.lrbeheer</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>lrbeheer</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>nl</string>
+		<string>en</string>
+	</array>
+	<!-- pushmeldingen van alle omgevingen, ook als de app op de achtergrond draait -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
+	<!-- Team-prefix voor de gedeelde Keychain-groep van de Bingr-widgets (WidgetTokenStore) -->
+	<key>AppIdentifierPrefix</key>
+	<string>$(AppIdentifierPrefix)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+</dict>
+</plist>

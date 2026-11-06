@@ -1,0 +1,23 @@
+--- a/worker/src/admin.js
++++ b/worker/src/admin.js
+@@ -12,6 +12,8 @@
+ const fromB64url = (s) => atob(s.replace(/-/g, "+").replace(/_/g, "/"));
+ 
+ export const BEHEER_TOPIC = "nl.lrvdlinden.p2000beheer";
++/** LRbeheer (centrale beheer-app) registreert zich via dezelfde route; zijn token hoort bij dit topic. */
++export const LRBEHEER_TOPIC = "app.lrvdlinden.lrbeheer";
+ export const dayKey = (d = new Date()) => d.toLocaleDateString("en-CA", { timeZone: TIME_ZONE });
+ const daysAgo = (n) => dayKey(new Date(Date.now() - n * 86_400_000));
+ 
+@@ -295,7 +297,10 @@
+   const list = await rows(env, "SELECT * FROM admin_devices");
+   let sent = 0;
+   for (const d of list) {
+-    const r = await sendPush(env, d, { aps: { alert: { title, body }, sound: "default" } }, { topic: BEHEER_TOPIC });
++    let r = await sendPush(env, d, { aps: { alert: { title, body }, sound: "default" } }, { topic: BEHEER_TOPIC });
++    if (!r.ok && r.reason === "DeviceTokenNotForTopic") {
++      r = await sendPush(env, d, { aps: { alert: { title, body }, sound: "default" }, lrenv: "p2000" }, { topic: env.LRBEHEER_TOPIC || LRBEHEER_TOPIC });
++    }
+     if (r.ok) sent++;
+     else if (isDeadToken(r)) await env.DB.prepare("DELETE FROM admin_devices WHERE token = ?").bind(d.token).run();
+   }

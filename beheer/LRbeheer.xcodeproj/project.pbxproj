@@ -1,0 +1,1100 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FD0015FBE1FDA1FC73BE3BD /* BingrKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71B09EE70330C1213C3E03D /* BingrKit.framework */; };
+		3CC4B2203BEB7731C2B6DC3C /* BingrKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C71B09EE70330C1213C3E03D /* BingrKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		80866527034003001F03EC75 /* TunrKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD59E06D48D27D8984B0B8F /* TunrKit.framework */; };
+		4710C63D19752575114A30A4 /* TunrKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD59E06D48D27D8984B0B8F /* TunrKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D498EA4890CBC50080FDEDDC /* PasrKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF76E4DB4E7E5906EF7840C /* PasrKit.framework */; };
+		FC8D545F4C3E65CBBF7DA82C /* PasrKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAF76E4DB4E7E5906EF7840C /* PasrKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		108FC5A2F7C6D070D3E769F8 /* P2000Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F229005F9BC6F90F40C603B7 /* P2000Kit.framework */; };
+		04790E531BE2D006593AEA9B /* P2000Kit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F229005F9BC6F90F40C603B7 /* P2000Kit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5FBA38D752DA599C8B332F2 /* LRbeheerWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BDD853882BD808464DBC7CAE /* LRbeheerWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3A6A4732260FBE67DC0C514 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD31BD4D729835D332EDAA04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E605AC5BC9E59B26BD6B6CF1;
+			remoteInfo = BingrKit;
+		};
+		F75BCFE8FF4C7CCEF68CC235 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD31BD4D729835D332EDAA04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90D45F0112FF3B24AD8B51D7;
+			remoteInfo = TunrKit;
+		};
+		8C2000CCA5572293B6C3C801 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD31BD4D729835D332EDAA04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 081D92C220C0562A3269B6DE;
+			remoteInfo = PasrKit;
+		};
+		05FA2CFDD5BF3B035C86FD33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD31BD4D729835D332EDAA04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A214FE2C21E3F51A7EFB167A;
+			remoteInfo = P2000Kit;
+		};
+		80F753F545A12B9B3CB704B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD31BD4D729835D332EDAA04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1E97BF1DE1A09B1AC579568;
+			remoteInfo = LRbeheerWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		49AB8F77F8AA4A4DF5BC270A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3CC4B2203BEB7731C2B6DC3C /* BingrKit.framework in Embed Frameworks */,
+				4710C63D19752575114A30A4 /* TunrKit.framework in Embed Frameworks */,
+				FC8D545F4C3E65CBBF7DA82C /* PasrKit.framework in Embed Frameworks */,
+				04790E531BE2D006593AEA9B /* P2000Kit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39CF13D62D161BEF17862904 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C5FBA38D752DA599C8B332F2 /* LRbeheerWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		85390A1CC021B65F1D0D38CF /* LRbeheer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRbeheer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71B09EE70330C1213C3E03D /* BingrKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BingrKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AD59E06D48D27D8984B0B8F /* TunrKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TunrKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF76E4DB4E7E5906EF7840C /* PasrKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PasrKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F229005F9BC6F90F40C603B7 /* P2000Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = P2000Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDD853882BD808464DBC7CAE /* LRbeheerWidgets.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = LRbeheerWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0684037EE57AE396736F4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EE51B2B96F7F2DF49B682A4 /* LRbeheer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LRbeheer.entitlements; sourceTree = "<group>"; };
+		48A40B44EEBA769F3EA4BFEA /* Widgets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Widgets-Info.plist"; sourceTree = "<group>"; };
+		3C0E3E253AF202746A54FB21 /* Widgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widgets.entitlements; sourceTree = "<group>"; };
+		4512BFBA7392D8810708F0D6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		29047EA672530100945F3AF6 /* LRbeheer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LRbeheer;
+			sourceTree = "<group>";
+		};
+		3DD66522126CC37E7A87D43A /* Modules/BingrKit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Modules/BingrKit;
+			sourceTree = "<group>";
+		};
+		1C200FF514F2D356DBD36843 /* Modules/TunrKit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Modules/TunrKit;
+			sourceTree = "<group>";
+		};
+		962C60F0801DDF678DE94C76 /* Modules/PasrKit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Modules/PasrKit;
+			sourceTree = "<group>";
+		};
+		0AFCFAED6A0C7B85F69CC68D /* Modules/P2000Kit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Modules/P2000Kit;
+			sourceTree = "<group>";
+		};
+		5055A6598CA276F78249EB10 /* Widgets/BingrWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Widgets/BingrWidgets;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8F098CA254FED0742D06581 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD0015FBE1FDA1FC73BE3BD /* BingrKit.framework in Frameworks */,
+				80866527034003001F03EC75 /* TunrKit.framework in Frameworks */,
+				D498EA4890CBC50080FDEDDC /* PasrKit.framework in Frameworks */,
+				108FC5A2F7C6D070D3E769F8 /* P2000Kit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22003A51F41DA26DD8EFFDD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1B692F4B725CA014BBBB4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3248BD20CDC89C224BCAE7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0BC42AE46CC10BC160A2D43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C2A97737ADF9B1A28937E87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBE25B12BA84D067BEE35301 = {
+			isa = PBXGroup;
+			children = (
+				4512BFBA7392D8810708F0D6 /* README.md */,
+				29047EA672530100945F3AF6 /* LRbeheer */,
+				58BE6FF28C82C069D043942F /* Modules */,
+				5055A6598CA276F78249EB10 /* Widgets/BingrWidgets */,
+				AF8A42714C5E608BFC4B8230 /* Config */,
+				A12AE121CC92C5FED723C2F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58BE6FF28C82C069D043942F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3DD66522126CC37E7A87D43A /* Modules/BingrKit */,
+				1C200FF514F2D356DBD36843 /* Modules/TunrKit */,
+				962C60F0801DDF678DE94C76 /* Modules/PasrKit */,
+				0AFCFAED6A0C7B85F69CC68D /* Modules/P2000Kit */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		AF8A42714C5E608BFC4B8230 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F0684037EE57AE396736F4F1 /* Info.plist */,
+				6EE51B2B96F7F2DF49B682A4 /* LRbeheer.entitlements */,
+				48A40B44EEBA769F3EA4BFEA /* Widgets-Info.plist */,
+				3C0E3E253AF202746A54FB21 /* Widgets.entitlements */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		A12AE121CC92C5FED723C2F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85390A1CC021B65F1D0D38CF /* LRbeheer.app */,
+				C71B09EE70330C1213C3E03D /* BingrKit.framework */,
+				5AD59E06D48D27D8984B0B8F /* TunrKit.framework */,
+				AAF76E4DB4E7E5906EF7840C /* PasrKit.framework */,
+				F229005F9BC6F90F40C603B7 /* P2000Kit.framework */,
+				BDD853882BD808464DBC7CAE /* LRbeheerWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95B3E7DDE448C140EF140B22 /* LRbeheer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5D7A2C6242791C921A14667 /* Build configuration list for PBXNativeTarget "LRbeheer" */;
+			buildPhases = (
+				56867C7051BED7A1E1B12C76 /* Sources */,
+				D8F098CA254FED0742D06581 /* Frameworks */,
+				1FC225EA7043166E969660A0 /* Resources */,
+				49AB8F77F8AA4A4DF5BC270A /* Embed Frameworks */,
+				39CF13D62D161BEF17862904 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6553BEF5CACD78102DFCF4F2 /* PBXTargetDependency */,
+				8142DA055A9C982D75B23852 /* PBXTargetDependency */,
+				6117A0E8BA6CB679E1B5B8C1 /* PBXTargetDependency */,
+				DE9AB887DD04253ECF21A281 /* PBXTargetDependency */,
+				1D378ADF1DE50EBD7F8F00A4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				29047EA672530100945F3AF6 /* LRbeheer */,
+			);
+			name = LRbeheer;
+			packageProductDependencies = (
+			);
+			productName = LRbeheer;
+			productReference = 85390A1CC021B65F1D0D38CF /* LRbeheer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E605AC5BC9E59B26BD6B6CF1 /* BingrKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3903E36009DCCDBC6D4B6C9 /* Build configuration list for PBXNativeTarget "BingrKit" */;
+			buildPhases = (
+				DFFF9C2FFA92D670DE8D3EBE /* Sources */,
+				22003A51F41DA26DD8EFFDD1 /* Frameworks */,
+				E0D066440804F7B684A4C707 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3DD66522126CC37E7A87D43A /* Modules/BingrKit */,
+			);
+			name = BingrKit;
+			packageProductDependencies = (
+			);
+			productName = BingrKit;
+			productReference = C71B09EE70330C1213C3E03D /* BingrKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		90D45F0112FF3B24AD8B51D7 /* TunrKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9C81403C691619A2529BE7 /* Build configuration list for PBXNativeTarget "TunrKit" */;
+			buildPhases = (
+				19EC25BC587246C3E0EAA19D /* Sources */,
+				9A1B692F4B725CA014BBBB4E /* Frameworks */,
+				9B1EB02CDC9A13C471195ABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1C200FF514F2D356DBD36843 /* Modules/TunrKit */,
+			);
+			name = TunrKit;
+			packageProductDependencies = (
+			);
+			productName = TunrKit;
+			productReference = 5AD59E06D48D27D8984B0B8F /* TunrKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		081D92C220C0562A3269B6DE /* PasrKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E05705B08444BB68D35B02A8 /* Build configuration list for PBXNativeTarget "PasrKit" */;
+			buildPhases = (
+				FAFC230F8EA4869FFCF3E38F /* Sources */,
+				D3248BD20CDC89C224BCAE7C /* Frameworks */,
+				0083E2BFE447EAD601F9CF1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				962C60F0801DDF678DE94C76 /* Modules/PasrKit */,
+			);
+			name = PasrKit;
+			packageProductDependencies = (
+			);
+			productName = PasrKit;
+			productReference = AAF76E4DB4E7E5906EF7840C /* PasrKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A214FE2C21E3F51A7EFB167A /* P2000Kit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF7D16187258C13ED09364E6 /* Build configuration list for PBXNativeTarget "P2000Kit" */;
+			buildPhases = (
+				FC5050F13DB3028E6C1AAA9E /* Sources */,
+				B0BC42AE46CC10BC160A2D43 /* Frameworks */,
+				5112D5FD264CF0C02CAF5E69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0AFCFAED6A0C7B85F69CC68D /* Modules/P2000Kit */,
+			);
+			name = P2000Kit;
+			packageProductDependencies = (
+			);
+			productName = P2000Kit;
+			productReference = F229005F9BC6F90F40C603B7 /* P2000Kit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E1E97BF1DE1A09B1AC579568 /* LRbeheerWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70FB27ACD57093133F23B308 /* Build configuration list for PBXNativeTarget "LRbeheerWidgets" */;
+			buildPhases = (
+				5317CA77B704240E9DC782A1 /* Sources */,
+				9C2A97737ADF9B1A28937E87 /* Frameworks */,
+				3ED10C3036CAAAEAECED719D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5055A6598CA276F78249EB10 /* Widgets/BingrWidgets */,
+			);
+			name = LRbeheerWidgets;
+			packageProductDependencies = (
+			);
+			productName = LRbeheerWidgets;
+			productReference = BDD853882BD808464DBC7CAE /* LRbeheerWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD31BD4D729835D332EDAA04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					95B3E7DDE448C140EF140B22 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					E605AC5BC9E59B26BD6B6CF1 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					90D45F0112FF3B24AD8B51D7 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					081D92C220C0562A3269B6DE = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					A214FE2C21E3F51A7EFB167A = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					E1E97BF1DE1A09B1AC579568 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = DC5CA19958B783410B2C4CBF /* Build configuration list for PBXProject "LRbeheer" */;
+			developmentRegion = nl;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				nl,
+				en,
+				Base,
+			);
+			mainGroup = FBE25B12BA84D067BEE35301;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A12AE121CC92C5FED723C2F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95B3E7DDE448C140EF140B22 /* LRbeheer */,
+				E605AC5BC9E59B26BD6B6CF1 /* BingrKit */,
+				90D45F0112FF3B24AD8B51D7 /* TunrKit */,
+				081D92C220C0562A3269B6DE /* PasrKit */,
+				A214FE2C21E3F51A7EFB167A /* P2000Kit */,
+				E1E97BF1DE1A09B1AC579568 /* LRbeheerWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FC225EA7043166E969660A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0D066440804F7B684A4C707 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1EB02CDC9A13C471195ABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0083E2BFE447EAD601F9CF1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5112D5FD264CF0C02CAF5E69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ED10C3036CAAAEAECED719D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56867C7051BED7A1E1B12C76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFFF9C2FFA92D670DE8D3EBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19EC25BC587246C3E0EAA19D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFC230F8EA4869FFCF3E38F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC5050F13DB3028E6C1AAA9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5317CA77B704240E9DC782A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6553BEF5CACD78102DFCF4F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E605AC5BC9E59B26BD6B6CF1 /* BingrKit */;
+			targetProxy = E3A6A4732260FBE67DC0C514 /* PBXContainerItemProxy */;
+		};
+		8142DA055A9C982D75B23852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90D45F0112FF3B24AD8B51D7 /* TunrKit */;
+			targetProxy = F75BCFE8FF4C7CCEF68CC235 /* PBXContainerItemProxy */;
+		};
+		6117A0E8BA6CB679E1B5B8C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 081D92C220C0562A3269B6DE /* PasrKit */;
+			targetProxy = 8C2000CCA5572293B6C3C801 /* PBXContainerItemProxy */;
+		};
+		DE9AB887DD04253ECF21A281 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A214FE2C21E3F51A7EFB167A /* P2000Kit */;
+			targetProxy = 05FA2CFDD5BF3B035C86FD33 /* PBXContainerItemProxy */;
+		};
+		1D378ADF1DE50EBD7F8F00A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1E97BF1DE1A09B1AC579568 /* LRbeheerWidgets */;
+			targetProxy = 80F753F545A12B9B3CB704B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8ABD581ABE03C1EDCBA7CC1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = "0";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = "1.0.0";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "5.0";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6F9FC8FBD5FF023C3769D57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = "1.0.0";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = "5.0";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF2938547AFEF87A6F6D720C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Config/LRbeheer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LRbeheer;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "LRbeheer gebruikt Face ID om de app en de beheeromgevingen te ontgrendelen.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "LRbeheer gebruikt je foto's alleen als je een icoon, banner of afbeelding uploadt.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer;
+				PRODUCT_NAME = LRbeheer;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04B7C473C5DA7AAA360C2DAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Config/LRbeheer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LRbeheer;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "LRbeheer gebruikt Face ID om de app en de beheeromgevingen te ontgrendelen.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "LRbeheer gebruikt je foto's alleen als je een icoon, banner of afbeelding uploadt.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer;
+				PRODUCT_NAME = LRbeheer;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		029D8D2C6C6CD0B1BD07FCEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				DYLIB_COMPATIBILITY_VERSION = "1";
+				DYLIB_CURRENT_VERSION = "1";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.bingrkit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C500902202B87D732AA30802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				DYLIB_COMPATIBILITY_VERSION = "1";
+				DYLIB_CURRENT_VERSION = "1";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.bingrkit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		485EF21C80B77801DDAEB291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				DYLIB_COMPATIBILITY_VERSION = "1";
+				DYLIB_CURRENT_VERSION = "1";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.tunrkit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B98FF87DF855EF14AE4D3362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				DYLIB_COMPATIBILITY_VERSION = "1";
+				DYLIB_CURRENT_VERSION = "1";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.tunrkit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D202ECE5FF6484F7B62399D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				DYLIB_COMPATIBILITY_VERSION = "1";
+				DYLIB_CURRENT_VERSION = "1";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.pasrkit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7F8F2E72A3BE7E046DD27C31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				DYLIB_COMPATIBILITY_VERSION = "1";
+				DYLIB_CURRENT_VERSION = "1";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.pasrkit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		12535B9FA8BA0DFF7E5BF649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				DYLIB_COMPATIBILITY_VERSION = "1";
+				DYLIB_CURRENT_VERSION = "1";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.p2000kit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		80BC18666065743A31AE1517 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				DYLIB_COMPATIBILITY_VERSION = "1";
+				DYLIB_CURRENT_VERSION = "1";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.p2000kit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		789932C6D8226ACA6CD426C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Config/Widgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/Widgets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = LRbeheer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.widget;
+				PRODUCT_NAME = LRbeheerWidgets;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3DB2E89B52A489644A6BE9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Config/Widgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "1";
+				DEVELOPMENT_TEAM = EU3UY476T6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/Widgets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = LRbeheer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = "18.0";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = app.lrvdlinden.lrbeheer.widget;
+				PRODUCT_NAME = LRbeheerWidgets;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC5CA19958B783410B2C4CBF /* Build configuration list for PBXProject "LRbeheer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ABD581ABE03C1EDCBA7CC1A /* Debug */,
+				A6F9FC8FBD5FF023C3769D57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5D7A2C6242791C921A14667 /* Build configuration list for PBXNativeTarget "LRbeheer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF2938547AFEF87A6F6D720C /* Debug */,
+				04B7C473C5DA7AAA360C2DAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3903E36009DCCDBC6D4B6C9 /* Build configuration list for PBXNativeTarget "BingrKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029D8D2C6C6CD0B1BD07FCEA /* Debug */,
+				C500902202B87D732AA30802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A9C81403C691619A2529BE7 /* Build configuration list for PBXNativeTarget "TunrKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				485EF21C80B77801DDAEB291 /* Debug */,
+				B98FF87DF855EF14AE4D3362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E05705B08444BB68D35B02A8 /* Build configuration list for PBXNativeTarget "PasrKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D202ECE5FF6484F7B62399D3 /* Debug */,
+				7F8F2E72A3BE7E046DD27C31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF7D16187258C13ED09364E6 /* Build configuration list for PBXNativeTarget "P2000Kit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12535B9FA8BA0DFF7E5BF649 /* Debug */,
+				80BC18666065743A31AE1517 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70FB27ACD57093133F23B308 /* Build configuration list for PBXNativeTarget "LRbeheerWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				789932C6D8226ACA6CD426C2 /* Debug */,
+				B3DB2E89B52A489644A6BE9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD31BD4D729835D332EDAA04 /* Project object */;
+}

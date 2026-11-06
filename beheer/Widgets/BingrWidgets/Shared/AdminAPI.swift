@@ -1,0 +1,206 @@
+import Foundation
+
+/// Publieke Supabase-instellingen (dezelfde als web/config.js; de publishable key is bedoeld om openbaar te zijn).
+enum Config {
+    static let supabaseURL = URL(string: "https://vjewsncmsxmhmhnoxwqx.supabase.co")!
+    static let publishableKey = "sb_publishable_lpIup6Omq5kW2k3oICGZ4g_HPGac5A3"
+    static var adminFunction: URL { supabaseURL.appendingPathComponent("functions/v1/admin") }
+
+    static let beheerSite = URL(string: "https://beheer.bingr.online/")!
+    static let supportSite = URL(string: "https://support.bingr.online/")!
+    static let statusPage = URL(string: "https://bingr.online/status/")!
+}
+
+/// Fout van de functie `admin`: `code` is het veld `error` uit het antwoord (of "network" / "server_error").
+struct APIError: Error, LocalizedError {
+    let code: String
+    let status: Int
+    let body: JSON
+
+    var errorDescription: String? { APIError.text(code) }
+
+    static func text(_ code: String) -> String {
+        messages[code] ?? messages["server_error"]!
+    }
+
+    /// Zelfde teksten als ERR in web/admin.js.
+    static let messages: [String: String] = [
+        "network": "Geen verbinding met de server.",
+        "server_error": "Er ging iets mis op de server.",
+        "not_found": "Niet gevonden.",
+        "auth": "Je sessie is verlopen. Log opnieuw in.",
+        "too_soon": "Er is net al een reset-mail gestuurd. Probeer het over een minuut opnieuw.",
+        "reset_failed": "De reset-mail kon niet worden verstuurd.",
+        "confirm_failed": "Het e-mailadres kon niet worden bevestigd.",
+        "resend_failed": "De bevestigingsmail kon niet worden verstuurd.",
+        "already_confirmed": "Dit e-mailadres is al bevestigd.",
+        "confirm_too_soon": "Er is net al een bevestigingsmail gestuurd. Probeer het over een minuut opnieuw.",
+        "smtp_not_configured": "E-mail is niet ingesteld op de server.",
+        "text_missing": "Vul een Nederlandse titel en tekst in.",
+        "bad_expires_at": "De verloopdatum moet in de toekomst liggen.",
+        "status_not_configured": "De statusmonitor is nog niet ingesteld (Backend-workflow draaien).",
+        "bad_url": "Vul een geldig http(s)-adres in (geen intern adres).",
+        "bad_interval": "Kies een geldig interval.",
+        "name_missing": "Vul een Nederlandse naam in.",
+        "bad_group": "Kies een groep.",
+        "builtin": "Een standaardmonitor kun je niet verwijderen; zet hem uit.",
+        "forbidden": "De statusfunctie weigerde de aanvraag.",
+        "support_not_configured": "Support is nog niet ingesteld (workflow Backend in iptv-ios-appletv draaien).",
+        "support_not_deployed": "De functie support staat nog niet online (workflow Backend in iptv-ios-appletv draaien).",
+        "support_forbidden": "De functie support weigerde de aanvraag (SUPPORT_ADMIN_SECRET klopt niet).",
+        "message_missing": "Typ eerst een bericht.",
+        "message_too_long": "Het bericht is te lang (max. 5000 tekens).",
+        "too_many_links": "Het bericht bevat te veel links.",
+        "bad_status": "Ongeldige status.",
+        "bad_priority": "Ongeldige prioriteit.",
+        "bad_number": "Ongeldig ticketnummer.",
+        "invalid_credentials": "Onjuiste gebruikersnaam of wachtwoord.",
+        "not_configured": "Beheer is nog niet ingesteld (BINGR_ADMIN_USER / BINGR_ADMIN_PASSWORD).",
+        "bad_id": "Ongeldig account.",
+        "bad_releases": "Ongeldige versie: vul versie (bijv. 1.0.3) én build (een heel getal) in, of laat allebei leeg.",
+        "reason_missing": "Vul een reden in (de klant ziet hem in de mail).",
+        "bad_until": "Kies een einddatum in de toekomst (minstens 1 minuut, hoogstens 10 jaar), of onbepaald.",
+        "block_failed": "Blokkeren is mislukt. Probeer het opnieuw.",
+        "unblock_failed": "Opheffen is mislukt. Probeer het opnieuw.",
+        "confirm_mismatch": "Het e-mailadres klopt niet. Typ het volledige adres of precies het adres zoals hierboven.",
+        "delete_failed": "Verwijderen is mislukt; er is niets gemaild. Probeer het opnieuw.",
+        "bad_plan": "Kies Gratis of Lifetime.",
+        "bad_max_streams": "Tegelijk kijken: een heel getal van 1 tot 50, of leeg voor de standaard.",
+        "bad_max_devices": "Apparaten: een heel getal van 1 tot 200, of leeg voor de standaard.",
+        "bad_settings": "Ongeldige instellingen.",
+        "revenue_not_configured": "Omzet is nog niet ingericht (workflow Backend in iptv-ios-appletv draaien).",
+        "bad_rate": "Kies een btw-tarief tussen 0 en 50%.",
+        "billing_unavailable": "Betalen staat uit (geen STRIPE_SECRET_KEY).",
+        "bad_bucket": "Deze resolutie past niet bij de periode.",
+        "bad_mode": "Ongeldige keuze.",
+        // build 97
+        "invalid_token": "Ongeldige of verlopen link.",
+        "unknown_action": "Onbekende actie (werk de app bij; de server is misschien nieuwer).",
+        "rate_limited": "Te veel verzoeken achter elkaar. Wacht een minuut en probeer het opnieuw.",
+        // meldingen (status: notice_save / notice_update / notice_delete), zelfde teksten als web/admin.js
+        "title_missing": "Vul een Nederlandse titel in.",
+        "notice_message_missing": "Schrijf een bericht (Nederlands) voor de tijdlijn.",
+        "bad_window": "Kies een geldig tijdvak (einde na begin, max. 31 dagen).",
+        "bad_component": "Onbekend onderdeel.",
+        "bad_impact": "Ongeldige impact.",
+        "bad_time": "Ongeldige begintijd.",
+        "too_many_components": "Te veel onderdelen.",
+        // downloads (builds / build_link), zelfde teksten als web/admin.js
+        "bad_platform": "Onbekend platform.",
+        "bad_file": "Ongeldige bestandsnaam.",
+        "build_not_found": "Deze build staat niet (meer) op de server. Vernieuw de lijst.",
+        "builds_not_configured": "Downloads nog niet ingericht: draai de workflow Builds.",
+        "builds_unreachable": "De server met de builds is niet bereikbaar. Probeer het later opnieuw.",
+        // naam van een account (user_set_name), zelfde teksten als web/admin.js
+        "bad_name": "Ongeldige naam: gebruik geen regeleinden of tekens als < en >.",
+        "name_too_long": "Een naam mag hoogstens 50 tekens zijn.",
+        "name_failed": "De naam kon niet worden opgeslagen. Probeer het opnieuw.",
+        // pushmeldingen (push_count / push_send / push_progress / push_history), zelfde teksten als web/admin.js
+        "push_not_configured": "Pushmeldingen zijn nog niet ingesteld (PUSH_ADMIN_SECRET; workflow Backend in iptv-ios-appletv draaien).",
+        "push_not_deployed": "De functie push staat nog niet online (workflow Backend in iptv-ios-appletv draaien).",
+        "push_forbidden": "De functie push weigerde de aanvraag (PUSH_ADMIN_SECRET klopt niet).",
+        "push_unreachable": "De functie push is niet bereikbaar. Probeer het later opnieuw.",
+        "title_too_long": "De titel is te lang (max. 100 tekens).",
+        "body_too_long": "De tekst is te lang (max. 600 tekens).",
+        "en_incomplete": "Vul bij Engels zowel titel als tekst in (of laat beide leeg).",
+        "text_too_large": "De tekst is te lang voor een pushmelding.",
+        "bad_link": "De link moet met https:// beginnen en naar een echte website gaan.",
+        "bad_target": "Kies een doelgroep.",
+        "no_accounts": "Kies minstens één account.",
+        "too_many_accounts": "Kies hoogstens 500 accounts.",
+        "bad_account": "Ongeldig account in de lijst.",
+        "no_platforms": "Kies minstens één platform.",
+        "no_push_platform": "Apple TV en Android TV hebben geen systeem-push.",
+        // pushmeldingen van deze app (admin_push_register / _prefs / _test)
+        "bad_device_id": "Ongeldige apparaat-id voor pushmeldingen.",
+        "bad_apns_token": "Ongeldig pushtoken van Apple.",
+        "bad_prefs": "Ongeldige keuze voor de meldingen.",
+        "bad_sandbox": "Ongeldige push-omgeving.",
+        "bad_app_build": "Ongeldig buildnummer.",
+        "not_registered": "Dit apparaat is nog niet aangemeld voor pushmeldingen. Sta meldingen toe en probeer het opnieuw.",
+        "apns_not_configured": "APNs (Apple) is nog niet ingesteld op de server (APNS_KEY_P8, APNS_KEY_ID, APNS_TEAM_ID).",
+        "apns_invalid": "Apple weigerde het pushtoken van dit apparaat (verlopen of andere omgeving). Open de app opnieuw om je opnieuw aan te melden.",
+        "apns_failed": "De testmelding kon niet worden verstuurd. Probeer het later opnieuw.",
+        // nieuwsbrief (newsletter_* en user_newsletter_set), zelfde teksten als web/admin.js
+        "newsletter_not_configured": "De nieuwsbrief is nog niet ingesteld (NEWSLETTER_ADMIN_SECRET; workflow Backend in iptv-ios-appletv draaien).",
+        "newsletter_not_deployed": "De functie newsletter staat nog niet online (workflow Backend in iptv-ios-appletv draaien).",
+        "newsletter_forbidden": "De functie newsletter weigerde de aanvraag (NEWSLETTER_ADMIN_SECRET klopt niet).",
+        "newsletter_unreachable": "De functie newsletter is niet bereikbaar. Probeer het later opnieuw.",
+        "bad_email": "Vul een geldig e-mailadres in.",
+        "bad_lang": "Kies Nederlands of Engels.",
+        "bad_enabled": "Ongeldige keuze (aan of uit).",
+        "tmdb_unavailable": "De films en series konden niet worden opgehaald (TMDB). Probeer het later opnieuw.",
+        "email_opted_out": "Deze klant heeft alle mail van Bingr uitgezet; alleen de klant kan dat weer aanzetten.",
+        "newsletter_prefs_unavailable": "De nieuwsbriefstand per account is nog niet beschikbaar (databaseschema bijwerken: workflow Backend in iptv-ios-appletv).",
+        // eigen mailing (mailing_*), zelfde teksten als web/admin.js
+        "bad_content": "De inhoud van de mail is ongeldig.",
+        "bad_audience": "Kies een doelgroep.",
+        "bad_subject_nl": "Vul een Nederlands onderwerp in (max. 150 tekens).",
+        "bad_subject_en": "Vul een Engels onderwerp in (max. 150 tekens).",
+        "bad_body_nl": "Vul een Nederlandse tekst in (max. 8000 tekens).",
+        "bad_body_en": "Vul een Engelse tekst in (max. 8000 tekens).",
+        "bad_button_text_nl": "Vul een Nederlandse knoptekst in (max. 40 tekens) of laat de knop-URL leeg.",
+        "bad_button_text_en": "Vul een Engelse knoptekst in (max. 40 tekens) of laat de knop-URL leeg.",
+        "bad_button_url": "De knop-URL moet met https:// beginnen (en met een knoptekst in beide talen).",
+        "bad_image_url": "De afbeelding-URL moet een openbare https-link zijn (zonder poort of inloggegevens).",
+        "bad_request_id": "Ongeldige verzendopdracht; probeer het opnieuw.",
+        "service_ack_required": "Bevestig dat het servicebericht alleen belangrijke service-informatie bevat.",
+        "mailing_busy": "Er wordt al een mailing verstuurd. Wacht tot die klaar is of annuleer hem.",
+        "no_recipients": "Er zijn geen ontvangers in deze doelgroep.",
+        "not_active": "Deze mailing is al klaar of geannuleerd.",
+        "bad_mailing_id": "Onbekende mailing.",
+        "send_failed": "De mail kon niet worden verstuurd.",
+        // afbeelding van een eigen mailing (mailing_image_check / mailing_image_upload), zelfde teksten als web/admin.js
+        "image_page": "Deze link is geen afbeelding (het is een webpagina). Upload de afbeelding of gebruik een directe link naar een PNG, JPG of GIF.",
+        "image_share_link": "Deze link is een deelpagina, geen afbeelding. Upload de afbeelding hier of gebruik een directe link naar een PNG, JPG of GIF.",
+        "image_login": "De afbeelding staat achter een inlog of is niet openbaar (toegang geweigerd). Upload de afbeelding of gebruik een openbare directe link.",
+        "image_http": "Op die link staat geen afbeelding (de server gaf een fout, bijvoorbeeld niet gevonden). Controleer de link of upload de afbeelding.",
+        "image_svg": "SVG wordt door veel mailprogramma's (o.a. Gmail en Outlook) niet getoond. Gebruik een PNG, JPG of GIF.",
+        "image_webp": "WebP wordt niet door alle mailprogramma's getoond (o.a. Outlook). Gebruik een PNG, JPG of GIF.",
+        "image_type": "Dit is geen PNG, JPG of GIF (of de server geeft een verkeerd type door). Upload de afbeelding of gebruik een directe link naar een PNG, JPG of GIF.",
+        "image_too_large": "De afbeelding is groter dan 2 MB. Upload hem hier (grote foto's worden verkleind) of gebruik een kleinere afbeelding.",
+        "image_empty": "Op die link staat een leeg bestand.",
+        "image_timeout": "De afbeelding laadt te traag (langer dan 8 seconden).",
+        "image_unreachable": "De afbeelding is niet te bereiken (host niet gevonden of geen verbinding).",
+        "image_redirects": "De link verwijst te vaak door (meer dan 3 keer). Gebruik de directe link naar de afbeelding.",
+        "image_blocked_host": "Deze link wijst naar een intern of niet-openbaar adres; dat is niet toegestaan.",
+        "bad_image_data": "Dit bestand kon niet worden gelezen. Kies een PNG, JPG of GIF.",
+        "upload_not_configured": "Uploaden is nog niet ingericht (bucket mail-assets ontbreekt: workflow Backend in iptv-ios-appletv draaien).",
+        "upload_failed": "Uploaden is mislukt. Probeer het opnieuw.",
+        "too_large": "Het bestand is te groot.",
+    ]
+}
+
+/// Praat met de Edge Function `admin`: POST JSON {action, token?, …} met header `apikey`.
+/// Een native app stuurt geen Origin-header; de functie accepteert dat (CORS geldt alleen voor browsers).
+struct AdminAPI {
+    var session: URLSession = .shared
+
+    func send(_ action: String, token: String?, params: [String: Any?] = [:]) async throws -> JSON {
+        var payload: [String: Any] = ["action": action]
+        if let token { payload["token"] = token }
+        for (k, v) in params {
+            if let v { payload[k] = v }
+        }
+        var req = URLRequest(url: Config.adminFunction, timeoutInterval: 75)
+        req.httpMethod = "POST"
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.setValue(Config.publishableKey, forHTTPHeaderField: "apikey")
+        req.httpBody = try JSONSerialization.data(withJSONObject: payload)
+
+        let data: Data
+        let response: URLResponse
+        do {
+            (data, response) = try await session.data(for: req)
+        } catch {
+            if (error as? URLError)?.code == .cancelled || error is CancellationError { throw CancellationError() }
+            throw APIError(code: "network", status: 0, body: .null)
+        }
+        let status = (response as? HTTPURLResponse)?.statusCode ?? 0
+        let body = (try? JSONDecoder().decode(JSON.self, from: data)) ?? .null
+        guard (200..<300).contains(status) else {
+            throw APIError(code: body["error"].text ?? "server_error", status: status, body: body)
+        }
+        return body
+    }
+}
