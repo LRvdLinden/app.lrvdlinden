@@ -93,6 +93,14 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Bingr: Lifetime-only") {
+                    Label("Instellingen → Lifetime-only: aankondiging, overgangsdatum, korting, proefperiode, Apple-koopknop en EU-link, met bevestiging", systemImage: "star.circle")
+                    Label("Kortingscodes genereren (droog en echt) met de totalen", systemImage: "ticket")
+                    Label("Mail Bingr wordt Lifetime testen en versturen, en de herinnering", systemImage: "envelope")
+                    Label("Niet geclaimde aankopen, en een aankoop handmatig aan een account koppelen", systemImage: "link")
+                    Label("Gebruikers: kortingscode en status bij het account", systemImage: "person.text.rectangle")
+                    Label("Omzet: per aanbieder (website via Stripe en Apple)", systemImage: "eurosign.circle")
+                }
                 Section("A-Alerts") {
                     Label("P2000 Apeldoorn heet nu A-Alerts, met het nieuwe icoon", systemImage: "app.badge")
                     Label("Waarschuwingen: NL-Alert, Burgernet en KNMI bekijken, verbergen of handmatig beëindigen", systemImage: "exclamationmark.triangle")

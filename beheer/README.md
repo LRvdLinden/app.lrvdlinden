@@ -139,6 +139,7 @@ originele code.
 | Widgets: servicestatus, support, overzicht | ✓ widget-extensie van LRbeheer |
 | Deeplinks `bingrbeheer://…` uit widgets en meldingen | ✓ |
 | Mac (Catalyst) met menubalk | ✓ Mac-app van LRbeheer (Catalyst), menu Omgeving met ⌘1…⌘6 |
+| **Lifetime-only** (build 167 van de server, ook in BingrBeheer build 47 en het web-beheer): instellingen met bevestiging, kortingscodes (genereren, totalen), mail en herinnering, niet geclaimde aankopen en Aankoop koppelen, code per account, omzet per aanbieder (Stripe en Apple) | ✓ (Instellingen → Lifetime-only) |
 
 ### BeheerTunr → Tunr
 

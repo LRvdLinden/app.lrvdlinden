@@ -290,6 +290,22 @@
         }
       }
     },
+    "Aangemaakt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Created"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aangemaakt"
+          }
+        }
+      }
+    },
     "Aangemeld": {
       "localizations": {
         "en": {
@@ -322,6 +338,102 @@
         }
       }
     },
+    "Aankondiging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Announcement"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankondiging"
+          }
+        }
+      }
+    },
+    "Aankoop": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankoop"
+          }
+        }
+      }
+    },
+    "Aankoop #%lld koppelen aan dit account. Het account krijgt Lifetime.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link purchase #%lld to this account. The account gets Lifetime."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankoop #%lld koppelen aan dit account. Het account krijgt Lifetime."
+          }
+        }
+      }
+    },
+    "Aankoop koppelen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link purchase"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankoop koppelen"
+          }
+        }
+      }
+    },
+    "Aankoop koppelen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link purchase?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankoop koppelen?"
+          }
+        }
+      }
+    },
+    "Aankopen zonder account (eerst betalen, dan het account). Handmatig koppelen kan bij Gebruikers → account → Aankoop koppelen. Geen e-mailadressen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases without an account (pay first, then create the account). Link one manually under Users → account → Link purchase. No email addresses."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankopen zonder account (eerst betalen, dan het account). Handmatig koppelen kan bij Gebruikers → account → Aankoop koppelen. Geen e-mailadressen."
+          }
+        }
+      }
+    },
     "Aantal reviews": {
       "localizations": {
         "en": {
@@ -334,6 +446,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aantal reviews"
+          }
+        }
+      }
+    },
+    "Aantallen (droog)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Counts (dry run)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aantallen (droog)"
           }
         }
       }
@@ -546,6 +674,22 @@
         }
       }
     },
+    "Alleen aanzetten als Apple de entitlement heeft toegekend.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only turn on once Apple has granted the entitlement."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen aanzetten als Apple de entitlement heeft toegekend."
+          }
+        }
+      }
+    },
     "Alleen het ID uit je CookieYes-script (…/client_data/ID/script.js). Leeg = de eigen cookiemelding van de site.": {
       "localizations": {
         "en": {
@@ -702,6 +846,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "App Store-gegevens"
+          }
+        }
+      }
+    },
+    "Apple-koopknop": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple purchase button"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple-koopknop"
           }
         }
       }
@@ -1266,6 +1426,22 @@
         }
       }
     },
+    "Bingr: Lifetime-only": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Lifetime only"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Lifetime-only"
+          }
+        }
+      }
+    },
     "Boeken": {
       "localizations": {
         "en": {
@@ -1374,6 +1550,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Code"
+          }
+        }
+      }
+    },
+    "Codes genereren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generate codes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codes genereren"
           }
         }
       }
@@ -1714,6 +1906,22 @@
         }
       }
     },
+    "Dienstmelding aan gratis accounts met een bevestigd e-mailadres, in de taal van het account, met de persoonlijke code. De herinnering gaat 7 dagen voor de overgang naar wie nog niet gekocht heeft. De melding in de apps zet je klaar als bericht (announcements).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Service notice to free accounts with a confirmed email address, in the account's language, with the personal code. The reminder goes out 7 days before the switch to those who have not bought yet. Prepare the in-app notice as an announcement."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dienstmelding aan gratis accounts met een bevestigd e-mailadres, in de taal van het account, met de persoonlijke code. De herinnering gaat 7 dagen voor de overgang naar wie nog niet gekocht heeft. De melding in de apps zet je klaar als bericht (announcements)."
+          }
+        }
+      }
+    },
     "Direct live en opgeslagen in GitHub": {
       "localizations": {
         "en": {
@@ -1826,6 +2034,22 @@
         }
       }
     },
+    "Doorgaan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doorgaan"
+          }
+        }
+      }
+    },
     "Download apps.json": {
       "localizations": {
         "en": {
@@ -1890,6 +2114,38 @@
         }
       }
     },
+    "EU-link": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EU link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EU-link"
+          }
+        }
+      }
+    },
+    "EU-link (External Purchase Link)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EU link (External Purchase Link)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EU-link (External Purchase Link)"
+          }
+        }
+      }
+    },
     "Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)": {
       "localizations": {
         "en": {
@@ -1902,6 +2158,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)"
+          }
+        }
+      }
+    },
+    "Een betaalde aankoop zonder account aan dit account koppelen. Het account krijgt Lifetime. Doe dit alleen als je zeker weet dat deze klant de koper is.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link a paid purchase without an account to this account. The account gets Lifetime. Only do this if you are sure this customer is the buyer."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een betaalde aankoop zonder account aan dit account koppelen. Het account krijgt Lifetime. Doe dit alleen als je zeker weet dat deze klant de koper is."
           }
         }
       }
@@ -1966,6 +2238,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Einde"
+          }
+        }
+      }
+    },
+    "Engels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "English"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engels"
           }
         }
       }
@@ -2146,6 +2434,22 @@
         }
       }
     },
+    "Eén persoonlijke code per gratis account, één keer te gebruiken en alleen door dat account. De server maakt ze aan in Stripe, in batches en zonder dubbele codes.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One personal code per free account, usable once and only by that account. The server creates them in Stripe, in batches and without duplicates."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eén persoonlijke code per gratis account, één keer te gebruiken en alleen door dat account. De server maakt ze aan in Stripe, in batches en zonder dubbele codes."
+          }
+        }
+      }
+    },
     "Filter": {
       "localizations": {
         "en": {
@@ -2242,6 +2546,22 @@
         }
       }
     },
+    "Gebruikers: kortingscode en status bij het account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users: discount code and status on the account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruikers: kortingscode en status bij het account"
+          }
+        }
+      }
+    },
     "Gebruikersnaam": {
       "localizations": {
         "en": {
@@ -2254,6 +2574,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gebruikersnaam"
+          }
+        }
+      }
+    },
+    "Gebruikt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redeemed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruikt"
           }
         }
       }
@@ -2418,6 +2754,22 @@
         }
       }
     },
+    "Gemaild": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emailed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemaild"
+          }
+        }
+      }
+    },
     "Gemiddelde levertijd": {
       "localizations": {
         "en": {
@@ -2430,6 +2782,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gemiddelde levertijd"
+          }
+        }
+      }
+    },
+    "Genereren (droog)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generate (dry run)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genereren (droog)"
           }
         }
       }
@@ -2542,6 +2910,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Handmatig beëindigd"
+          }
+        }
+      }
+    },
+    "Herinnering versturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send reminder"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Herinnering versturen"
           }
         }
       }
@@ -2882,6 +3266,22 @@
         }
       }
     },
+    "Instellingen → Lifetime-only: aankondiging, overgangsdatum, korting, proefperiode, Apple-koopknop en EU-link, met bevestiging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings → Lifetime only: announcement, switch date, discount, trial, Apple purchase button and EU link, with confirmation"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instellingen → Lifetime-only: aankondiging, overgangsdatum, korting, proefperiode, Apple-koopknop en EU-link, met bevestiging"
+          }
+        }
+      }
+    },
     "Instellingen…": {
       "localizations": {
         "en": {
@@ -3202,6 +3602,22 @@
         }
       }
     },
+    "Koopknop in de Apple-apps": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase button in the Apple apps"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koopknop in de Apple-apps"
+          }
+        }
+      }
+    },
     "Kop": {
       "localizations": {
         "en": {
@@ -3266,6 +3682,38 @@
         }
       }
     },
+    "Koppelen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koppelen"
+          }
+        }
+      }
+    },
+    "Koppelen aan dit account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link to this account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koppelen aan dit account"
+          }
+        }
+      }
+    },
     "Korte omschrijving van de wijziging (komt in GitHub)": {
       "localizations": {
         "en": {
@@ -3278,6 +3726,70 @@
           "stringUnit": {
             "state": "translated",
             "value": "Korte omschrijving van de wijziging (komt in GitHub)"
+          }
+        }
+      }
+    },
+    "Korting": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discount"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korting"
+          }
+        }
+      }
+    },
+    "Korting: %lld%%": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discount: %lld%%"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Korting: %lld%%"
+          }
+        }
+      }
+    },
+    "Kortingscodes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discount codes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kortingscodes"
+          }
+        }
+      }
+    },
+    "Kortingscodes genereren (droog en echt) met de totalen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generate discount codes (dry run and for real) with the totals"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kortingscodes genereren (droog en echt) met de totalen"
           }
         }
       }
@@ -3506,6 +4018,38 @@
         }
       }
     },
+    "Lifetime-only": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifetime only"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifetime-only"
+          }
+        }
+      }
+    },
+    "Lifetime-only aan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifetime only on"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifetime-only aan"
+          }
+        }
+      }
+    },
     "Liggend beeld, ideaal 1600 × 900 pixels. Upload per taal een eigen banner, of één voor beide. Laat de titel leeg om de appnaam te tonen.": {
       "localizations": {
         "en": {
@@ -3694,6 +4238,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "Logboek laden mislukt."
+          }
+        }
+      }
+    },
+    "Mail Bingr wordt Lifetime testen en versturen, en de herinnering": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test and send the Bingr is going Lifetime email, and the reminder"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail Bingr wordt Lifetime testen en versturen, en de herinnering"
+          }
+        }
+      }
+    },
+    "Mail testen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail testen"
+          }
+        }
+      }
+    },
+    "Mail versturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail versturen"
+          }
+        }
+      }
+    },
+    "Mail “Bingr wordt Lifetime”": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email “Bingr is going Lifetime”"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail “Bingr wordt Lifetime”"
+          }
+        }
+      }
+    },
+    "Mailfout": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email error"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mailfout"
           }
         }
       }
@@ -3954,6 +4578,38 @@
         }
       }
     },
+    "Nederlands": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dutch"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nederlands"
+          }
+        }
+      }
+    },
+    "Nederlands en Engels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dutch and English"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nederlands en Engels"
+          }
+        }
+      }
+    },
     "Niet aangemeld": {
       "localizations": {
         "en": {
@@ -3966,6 +4622,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Niet aangemeld"
+          }
+        }
+      }
+    },
+    "Niet geclaimd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unclaimed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet geclaimd"
+          }
+        }
+      }
+    },
+    "Niet geclaimde aankopen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unclaimed purchases"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet geclaimde aankopen"
+          }
+        }
+      }
+    },
+    "Niet geclaimde aankopen, en een aankoop handmatig aan een account koppelen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unclaimed purchases, and linking a purchase to an account manually"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet geclaimde aankopen, en een aankoop handmatig aan een account koppelen"
           }
         }
       }
@@ -4450,6 +5154,22 @@
         }
       }
     },
+    "Omzet: per aanbieder (website via Stripe en Apple)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revenue: per provider (website via Stripe and Apple)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omzet: per aanbieder (website via Stripe en Apple)"
+          }
+        }
+      }
+    },
     "Onbekende fout.": {
       "localizations": {
         "en": {
@@ -4610,6 +5330,22 @@
         }
       }
     },
+    "Open": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open"
+          }
+        }
+      }
+    },
     "Open Instellingen": {
       "localizations": {
         "en": {
@@ -4706,6 +5442,22 @@
         }
       }
     },
+    "Opslaan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opslaan"
+          }
+        }
+      }
+    },
     "Over ons": {
       "localizations": {
         "en": {
@@ -4718,6 +5470,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Over ons"
+          }
+        }
+      }
+    },
+    "Overgang": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overgang"
+          }
+        }
+      }
+    },
+    "Overgang naar alleen Lifetime: aankondiging, overgangsdatum, kortingscodes, de mail “Bingr wordt Lifetime” en de Apple-koopknop.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch to Lifetime only: announcement, switch date, discount codes, the “Bingr is going Lifetime” email and the Apple purchase button."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overgang naar alleen Lifetime: aankondiging, overgangsdatum, kortingscodes, de mail “Bingr wordt Lifetime” en de Apple-koopknop."
           }
         }
       }
@@ -4766,6 +5550,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pakketten"
+          }
+        }
+      }
+    },
+    "Pas aanzetten als het product in App Store Connect klaarstaat en de server Apple-aankopen verwerkt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only turn on once the product is ready in App Store Connect and the server processes Apple purchases."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas aanzetten als het product in App Store Connect klaarstaat en de server Apple-aankopen verwerkt."
           }
         }
       }
@@ -4910,6 +5710,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Productiviteit"
+          }
+        }
+      }
+    },
+    "Proefperiode: %lld dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trial: %lld days"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proefperiode: %lld dagen"
           }
         }
       }
@@ -5218,6 +6034,22 @@
         }
       }
     },
+    "Stand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand"
+          }
+        }
+      }
+    },
     "Start": {
       "localizations": {
         "en": {
@@ -5362,6 +6194,22 @@
         }
       }
     },
+    "Taal testmail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test email language"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taal testmail"
+          }
+        }
+      }
+    },
     "Talen": {
       "localizations": {
         "en": {
@@ -5438,6 +6286,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Telefoon"
+          }
+        }
+      }
+    },
+    "Testmail naar (leeg = beheeradres)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test email to (empty = admin address)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testmail naar (leeg = beheeradres)"
           }
         }
       }
@@ -5618,6 +6482,22 @@
         }
       }
     },
+    "Totaal: ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total: "
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Totaal: "
+          }
+        }
+      }
+    },
     "Uitgelicht (eerst getoond)": {
       "localizations": {
         "en": {
@@ -5794,6 +6674,22 @@
         }
       }
     },
+    "Verlopen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expired"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlopen"
+          }
+        }
+      }
+    },
     "Versie": {
       "localizations": {
         "en": {
@@ -5950,6 +6846,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verwijderen"
+          }
+        }
+      }
+    },
+    "Volgorde: instellingen invullen (nog uit laten), codes genereren (eerst droog), mail testen; op dag D Lifetime-only aan, mail versturen en de melding in de apps klaarzetten; 7 dagen voor de overgang de herinnering.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Order: fill in the settings (leave off), generate codes (dry run first), test the email; on day D turn Lifetime only on, send the email and prepare the in-app notice; 7 days before the switch the reminder."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volgorde: instellingen invullen (nog uit laten), codes genereren (eerst droog), mail testen; op dag D Lifetime-only aan, mail versturen en de melding in de apps klaarzetten; 7 dagen voor de overgang de herinnering."
           }
         }
       }
@@ -6242,6 +7154,22 @@
         }
       }
     },
+    "Weet je het zeker?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Are you sure?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weet je het zeker?"
+          }
+        }
+      }
+    },
     "Werkt direct in de apps (binnen een minuut). Zet je het terug, dan geldt weer wat de bron zegt.": {
       "localizations": {
         "en": {
@@ -6434,6 +7362,22 @@
         }
       }
     },
+    "Zolang Lifetime-only uit staat, werkt alles zoals nu. Na de overgangsdatum zien gratis accounts alleen nog Activeer Lifetime. Tijden in Nederlandse tijd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "While Lifetime only is off, everything works as now. After the switch date free accounts only see Activate Lifetime. Times in Dutch time."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zolang Lifetime-only uit staat, werkt alles zoals nu. Na de overgangsdatum zien gratis accounts alleen nog Activeer Lifetime. Tijden in Nederlandse tijd."
+          }
+        }
+      }
+    },
     "apps.json laden mislukt.": {
       "localizations": {
         "en": {
@@ -6510,6 +7454,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "dev"
+          }
+        }
+      }
+    },
+    "e-mail bekend: wordt vanzelf gekoppeld bij inloggen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "email known: linked automatically on sign-in"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e-mail bekend: wordt vanzelf gekoppeld bij inloggen"
           }
         }
       }
