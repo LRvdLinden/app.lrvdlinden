@@ -93,6 +93,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: winkels zonder update") {
+                    Label("Tabblad Winkels: aanvragen uit de app, gebundeld per winkel, ook cadeaukaarten en vouchers", systemImage: "storefront")
+                    Label("Website opzoeken: logo en merkkleuren automatisch, of zelf een logo kiezen", systemImage: "wand.and.stars")
+                    Label("Publiceren zonder app-update; aanvragen worden gesloten en de aanvragers krijgen een pushmelding", systemImage: "paperplane")
+                    Label("Pushmelding bij een nieuwe winkelaanvraag (schakelaar Winkel aangevraagd)", systemImage: "bell.badge")
+                }
                 Section("Pasr: delen") {
                     Label("Kerncijfers Gedeelde Pasrs (met personen en kaarten) en Tijdelijk gedeeld (nu geldig)", systemImage: "person.2.fill")
                     Label("Kaart Delen: uitnodigingen, gedeelde kaarten, keren geopend en eerder gestopt", systemImage: "clock.badge.checkmark")

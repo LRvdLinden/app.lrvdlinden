@@ -498,6 +498,38 @@
         }
       }
     },
+    "Aanvraag afwijzen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reject request"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aanvraag afwijzen"
+          }
+        }
+      }
+    },
+    "Aanvragen komen uit de app (alleen met een account). Publiceer je een winkel, dan staat hij meteen in Pasr en krijgen de aanvragers een pushmelding.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requests come from the app (account required). Publish a store and it appears in Pasr right away; requesters get a push notification."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aanvragen komen uit de app (alleen met een account). Publiceer je een winkel, dan staat hij meteen in Pasr en krijgen de aanvragers een pushmelding."
+          }
+        }
+      }
+    },
     "Accounts, insights en pushmeldingen": {
       "localizations": {
         "en": {
@@ -610,6 +642,22 @@
         }
       }
     },
+    "Afgewezen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rejected"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afgewezen"
+          }
+        }
+      }
+    },
     "Afronden": {
       "localizations": {
         "en": {
@@ -638,6 +686,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Afwijkingen (alleen beheer)"
+          }
+        }
+      }
+    },
+    "Afwijzen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reject"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afwijzen"
           }
         }
       }
@@ -910,6 +974,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ander apparaat, bijv. LG TV"
+          }
+        }
+      }
+    },
+    "Andere namen (komma's)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other names (commas)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere namen (komma's)"
           }
         }
       }
@@ -1790,6 +1870,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bundle ID (Homey)"
+          }
+        }
+      }
+    },
+    "Cadeaukaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gift card"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cadeaukaart"
           }
         }
       }
@@ -3026,6 +3122,22 @@
         }
       }
     },
+    "Geen logo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No logo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen logo"
+          }
+        }
+      }
+    },
     "Geen nieuwe apps. Alle apps uit de App Store en de Homey App Store staan al op de site.": {
       "localizations": {
         "en": {
@@ -3054,6 +3166,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen omschrijving gevonden; vul die zelf in."
+          }
+        }
+      }
+    },
+    "Geen open aanvragen. Mooi zo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No open requests. Nice."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen open aanvragen. Mooi zo."
           }
         }
       }
@@ -3522,6 +3650,22 @@
         }
       }
     },
+    "In de app ziet de aanvrager 'Niet toegevoegd'.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In the app the requester sees 'Not added'."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In de app ziet de aanvrager 'Niet toegevoegd'."
+          }
+        }
+      }
+    },
     "In de wachtrij (%lld s)…": {
       "localizations": {
         "en": {
@@ -3874,6 +4018,22 @@
         }
       }
     },
+    "Kaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaart"
+          }
+        }
+      }
+    },
     "Kaart Delen: uitnodigingen, gedeelde kaarten, keren geopend en eerder gestopt": {
       "localizations": {
         "en": {
@@ -3886,6 +4046,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kaart Delen: uitnodigingen, gedeelde kaarten, keren geopend en eerder gestopt"
+          }
+        }
+      }
+    },
+    "Kaartkleur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card colour"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaartkleur"
           }
         }
       }
@@ -3986,6 +4162,22 @@
         }
       }
     },
+    "Kies logo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose logo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies logo"
+          }
+        }
+      }
+    },
     "Kinderen": {
       "localizations": {
         "en": {
@@ -4030,6 +4222,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Klaar in Stripe"
+          }
+        }
+      }
+    },
+    "Klantenkaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loyalty card"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klantenkaart"
           }
         }
       }
@@ -4786,6 +4994,22 @@
         }
       }
     },
+    "Logo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo"
+          }
+        }
+      }
+    },
     "Lopend": {
       "localizations": {
         "en": {
@@ -5298,6 +5522,22 @@
         }
       }
     },
+    "Niets afgewezen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing rejected."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niets afgewezen."
+          }
+        }
+      }
+    },
     "Niets gevonden om te controleren.": {
       "localizations": {
         "en": {
@@ -5618,6 +5858,22 @@
         }
       }
     },
+    "Nieuwe winkel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New store"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe winkel"
+          }
+        }
+      }
+    },
     "Nieuws": {
       "localizations": {
         "en": {
@@ -5650,6 +5906,22 @@
         }
       }
     },
+    "Nog geen winkels toegevoegd via het beheer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No stores added through admin yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen winkels toegevoegd via het beheer."
+          }
+        }
+      }
+    },
     "Nog niets gedeeld.": {
       "localizations": {
         "en": {
@@ -5678,6 +5950,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog niets toegevoegd"
+          }
+        }
+      }
+    },
+    "Offline halen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take offline"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline halen"
           }
         }
       }
@@ -6178,6 +6466,54 @@
         }
       }
     },
+    "Opslaan als concept": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save as draft"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opslaan als concept"
+          }
+        }
+      }
+    },
+    "Opslaan en bijwerken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save and update"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opslaan en bijwerken"
+          }
+        }
+      }
+    },
+    "Opzoeken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look up"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opzoeken"
+          }
+        }
+      }
+    },
     "Over ons": {
       "localizations": {
         "en": {
@@ -6302,6 +6638,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: delen"
+          }
+        }
+      }
+    },
+    "Pasr: winkels zonder update": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: stores without an update"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: winkels zonder update"
           }
         }
       }
@@ -6514,6 +6866,38 @@
         }
       }
     },
+    "Publiceren zonder app-update; aanvragen worden gesloten en de aanvragers krijgen een pushmelding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publish without an app update; requests are closed and requesters get a push notification"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publiceren zonder app-update; aanvragen worden gesloten en de aanvragers krijgen een pushmelding"
+          }
+        }
+      }
+    },
+    "Pushmelding bij een nieuwe winkelaanvraag (schakelaar Winkel aangevraagd)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push notification for a new store request (Store requested toggle)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushmelding bij een nieuwe winkelaanvraag (schakelaar Winkel aangevraagd)"
+          }
+        }
+      }
+    },
     "Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)": {
       "localizations": {
         "en": {
@@ -6526,6 +6910,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pushmelding bij een storing van NL-Alert, Burgernet of KNMI (met schakelaar)"
+          }
+        }
+      }
+    },
+    "Pushmelding sturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send push notification"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushmelding sturen"
           }
         }
       }
@@ -6738,6 +7138,22 @@
         }
       }
     },
+    "Sluit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sluit"
+          }
+        }
+      }
+    },
     "Sluiten": {
       "localizations": {
         "en": {
@@ -6782,6 +7198,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Soort"
+          }
+        }
+      }
+    },
+    "Soort code": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barcode type"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soort code"
+          }
+        }
+      }
+    },
+    "Soort kaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card type"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soort kaart"
           }
         }
       }
@@ -7058,6 +7506,22 @@
         }
       }
     },
+    "Tabblad Winkels: aanvragen uit de app, gebundeld per winkel, ook cadeaukaarten en vouchers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stores tab: requests from the app, grouped per store, including gift cards and vouchers"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tabblad Winkels: aanvragen uit de app, gebundeld per winkel, ook cadeaukaarten en vouchers"
+          }
+        }
+      }
+    },
     "Talen": {
       "localizations": {
         "en": {
@@ -7298,6 +7762,22 @@
         }
       }
     },
+    "Toegevoegd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Added"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toegevoegd"
+          }
+        }
+      }
+    },
     "Toevoegen": {
       "localizations": {
         "en": {
@@ -7310,6 +7790,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toevoegen"
+          }
+        }
+      }
+    },
+    "Toevoegen en publiceren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add and publish"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toevoegen en publiceren"
           }
         }
       }
@@ -7406,6 +7902,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Totaal: "
+          }
+        }
+      }
+    },
+    "Uit logo en website": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From logo and website"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uit logo en website"
           }
         }
       }
@@ -8162,6 +8674,22 @@
         }
       }
     },
+    "Website opzoeken: logo en merkkleuren automatisch, of zelf een logo kiezen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look up the website: logo and brand colours automatically, or choose your own logo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Website opzoeken: logo en merkkleuren automatisch, of zelf een logo kiezen"
+          }
+        }
+      }
+    },
     "Website, pakketten, portfolio en reviews": {
       "localizations": {
         "en": {
@@ -8322,6 +8850,38 @@
         }
       }
     },
+    "Winkel aangevraagd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Store requested"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkel aangevraagd"
+          }
+        }
+      }
+    },
+    "Winkel publiceren?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publish store?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkel publiceren?"
+          }
+        }
+      }
+    },
     "Winkelen": {
       "localizations": {
         "en": {
@@ -8334,6 +8894,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Winkelen"
+          }
+        }
+      }
+    },
+    "Winkels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stores"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkels"
           }
         }
       }
