@@ -818,6 +818,22 @@
         }
       }
     },
+    "Alle cadeaukaarten uit de app staan klaar: alleen het adres invullen, met een zoekknop": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All gift cards from the app are listed: just fill in the address, with a search button"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle cadeaukaarten uit de app staan klaar: alleen het adres invullen, met een zoekknop"
+          }
+        }
+      }
+    },
     "Alle functies van BingrBeheer, BeheerTunr, PasrBeheer en P2000Beheer": {
       "localizations": {
         "en": {
@@ -1006,6 +1022,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Andere namen (komma's)"
+          }
+        }
+      }
+    },
+    "Andere winkel: winkel-id, bijv. kwantum": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other store: store id, e.g. kwantum"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere winkel: winkel-id, bijv. kwantum"
+          }
+        }
+      }
+    },
+    "Andere winkels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other stores"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere winkels"
           }
         }
       }
@@ -1918,6 +1966,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cadeaukaart"
+          }
+        }
+      }
+    },
+    "Cadeaukaarten in de app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gift cards in the app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cadeaukaarten in de app"
           }
         }
       }
@@ -9250,6 +9314,22 @@
         }
       }
     },
+    "Wis": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wis"
+          }
+        }
+      }
+    },
     "Wissel daarna bovenin, zonder terug te gaan.": {
       "localizations": {
         "en": {
@@ -9342,6 +9422,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zelf een wachtwoord kiezen of een sterk wachtwoord laten maken; de server bewaart het niet"
+          }
+        }
+      }
+    },
+    "Zoek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek"
           }
         }
       }
@@ -9534,6 +9630,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "handmatig"
+          }
+        }
+      }
+    },
+    "https://… (saldo-pagina)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://… (balance page)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https://… (saldo-pagina)"
           }
         }
       }

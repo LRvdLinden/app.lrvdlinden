@@ -95,6 +95,7 @@ struct WhatsNewView: View {
             List {
                 Section("Pasr: saldo-pagina's") {
                     Label("Winkels › Saldo: per winkel de pagina waar je het tegoed van een cadeaukaart nakijkt", systemImage: "eurosign.circle")
+                    Label("Alle cadeaukaarten uit de app staan klaar: alleen het adres invullen, met een zoekknop", systemImage: "list.bullet.rectangle")
                     Label("Werkt ook voor winkels die al in de app zitten, zonder app-update", systemImage: "arrow.down.app")
                 }
                 Section("Pasr: review-account") {
