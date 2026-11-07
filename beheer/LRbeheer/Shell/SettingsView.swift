@@ -93,6 +93,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Bingr: omzet van Apple") {
+                    Label("Omzet: website (Stripe) en Apple (App Store) apart, met bruto, inhouding, netto opbrengst, aantal en terugbetaald", systemImage: "chart.bar.doc.horizontal")
+                    Label("Apple-cijfers uit App Store Connect, met Apple bijgewerkt t/m en gekoppelde aankopen", systemImage: "apple.logo")
+                    Label("Reeksen Website en Apple in de grafiek en de knop Apple-omzet bijwerken", systemImage: "arrow.clockwise")
+                    Label("Apple-commissie en vaste koersen instellen", systemImage: "eurosign.circle")
+                }
                 Section("Bingr: nieuwe accounts eerst kopen") {
                     Label("Lifetime-only: Nieuwe accounts eerst kopen, apart voor web en Android en voor de Apple-apps, met bevestiging", systemImage: "cart.badge.plus")
                     Label("Waarschuwing als de datum voor de Apple-apps staat terwijl de Apple-koopknop uit staat", systemImage: "exclamationmark.triangle")

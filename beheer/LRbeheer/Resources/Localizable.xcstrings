@@ -434,6 +434,22 @@
         }
       }
     },
+    "Aantal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Count"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aantal"
+          }
+        }
+      }
+    },
     "Aantal reviews": {
       "localizations": {
         "en": {
@@ -850,6 +866,70 @@
         }
       }
     },
+    "Apple": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple"
+          }
+        }
+      }
+    },
+    "Apple-cijfers uit App Store Connect, met Apple bijgewerkt t/m en gekoppelde aankopen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple figures from App Store Connect, with Apple updated through and linked purchases"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple-cijfers uit App Store Connect, met Apple bijgewerkt t/m en gekoppelde aankopen"
+          }
+        }
+      }
+    },
+    "Apple-commissie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple commission"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple-commissie"
+          }
+        }
+      }
+    },
+    "Apple-commissie en vaste koersen instellen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set Apple commission and fixed exchange rates"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple-commissie en vaste koersen instellen"
+          }
+        }
+      }
+    },
     "Apple-koopknop": {
       "localizations": {
         "en": {
@@ -862,6 +942,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apple-koopknop"
+          }
+        }
+      }
+    },
+    "Apple-omzet bijwerken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update Apple revenue"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple-omzet bijwerken"
           }
         }
       }
@@ -1474,6 +1570,22 @@
         }
       }
     },
+    "Bingr: omzet van Apple": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Apple revenue"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: omzet van Apple"
+          }
+        }
+      }
+    },
     "Boeken": {
       "localizations": {
         "en": {
@@ -1518,6 +1630,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bron"
+          }
+        }
+      }
+    },
+    "Bruto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gross"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bruto"
           }
         }
       }
@@ -1598,6 +1726,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Codes genereren"
+          }
+        }
+      }
+    },
+    "Commissie en koersen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commission and exchange rates"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commissie en koersen"
           }
         }
       }
@@ -2914,6 +3058,22 @@
         }
       }
     },
+    "Haalt de dagrapporten opnieuw op bij App Store Connect (max. 365 dagen) en overschrijft die dagen. Elke dag gebeurt dit vanzelf voor de laatste 7 dagen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetches the daily reports again from App Store Connect (max. 365 days) and overwrites those days. This happens automatically every day for the last 7 days."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haalt de dagrapporten opnieuw op bij App Store Connect (max. 365 dagen) en overschrijft die dagen. Elke dag gebeurt dit vanzelf voor de laatste 7 dagen."
+          }
+        }
+      }
+    },
     "Handmatig": {
       "localizations": {
         "en": {
@@ -3246,6 +3406,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inhoud gewijzigd"
+          }
+        }
+      }
+    },
+    "Inhouding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deductions"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inhouding"
           }
         }
       }
@@ -4706,6 +4882,22 @@
         }
       }
     },
+    "Netto opbrengst": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Net proceeds"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Netto opbrengst"
+          }
+        }
+      }
+    },
     "Niet aangemeld": {
       "localizations": {
         "en": {
@@ -5294,6 +5486,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Omzet: per aanbieder (website via Stripe en Apple)"
+          }
+        }
+      }
+    },
+    "Omzet: website (Stripe) en Apple (App Store) apart, met bruto, inhouding, netto opbrengst, aantal en terugbetaald": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revenue: website (Stripe) and Apple (App Store) separately, with gross, deductions, net proceeds, count and refunded"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omzet: website (Stripe) en Apple (App Store) apart, met bruto, inhouding, netto opbrengst, aantal en terugbetaald"
           }
         }
       }
@@ -5938,6 +6146,22 @@
         }
       }
     },
+    "Reeksen Website en Apple in de grafiek en de knop Apple-omzet bijwerken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Website and Apple series in the chart and the Update Apple revenue button"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reeksen Website en Apple in de grafiek en de knop Apple-omzet bijwerken"
+          }
+        }
+      }
+    },
     "Reizen": {
       "localizations": {
         "en": {
@@ -6274,6 +6498,22 @@
         }
       }
     },
+    "Stripe-kosten / Apple-commissie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stripe fees / Apple commission"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stripe-kosten / Apple-commissie"
+          }
+        }
+      }
+    },
     "Stuur een testmelding": {
       "localizations": {
         "en": {
@@ -6414,6 +6654,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Telefoon"
+          }
+        }
+      }
+    },
+    "Terugbetaald": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refunded"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terugbetaald"
           }
         }
       }
@@ -6626,6 +6882,38 @@
         }
       }
     },
+    "Tot en met": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Through"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tot en met"
+          }
+        }
+      }
+    },
+    "Totaal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Totaal"
+          }
+        }
+      }
+    },
     "Totaal: ": {
       "localizations": {
         "en": {
@@ -6766,6 +7054,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Upload afbeelding"
+          }
+        }
+      }
+    },
+    "Van": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Van"
+          }
+        }
+      }
+    },
+    "Vaste koersen (EUR per 1 eenheid, één per regel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed exchange rates (EUR per 1 unit, one per line)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vaste koersen (EUR per 1 eenheid, één per regel)"
           }
         }
       }
@@ -7778,6 +8098,38 @@
         }
       }
     },
+    "incl. btw": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "incl. VAT"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "incl. btw"
+          }
+        }
+      }
+    },
+    "klantprijs incl. btw": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "customer price incl. VAT"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "klantprijs incl. btw"
+          }
+        }
+      }
+    },
     "live": {
       "localizations": {
         "en": {
@@ -7790,6 +8142,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "live"
+          }
+        }
+      }
+    },
+    "na btw, inhouding en terugbetalingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "after VAT, deductions and refunds"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "na btw, inhouding en terugbetalingen"
           }
         }
       }
