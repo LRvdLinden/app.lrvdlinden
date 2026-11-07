@@ -2,6 +2,32 @@
     "_uitleg": "Pas dit bestand aan om apps toe te voegen, platformen te wijzigen of de status te veranderen. status: live | beta | dev. section: ios | homey. featured: true zet een live app bovenaan in 'Nieuw en onderweg'. Makkelijker: open beheer.html.",
     "apps": [
         {
+            "id": "app-lrvdlinden-pairr",
+            "name": "Pairr",
+            "section": "ios",
+            "status": "dev",
+            "featured": true,
+            "category": "utilities",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac",
+                "Apple Watch"
+            ],
+            "subtitle": {
+                "nl": "Al je koppelcodes veilig bewaard",
+                "en": "All your pairing codes, kept safe"
+            },
+            "description": {
+                "nl": "Een kluis voor alle koppelcodes van je slimme huis: HomeKit, Matter, Zigbee, Philips Hue, Z-Wave, wifi en pincodes. Scan een code, en hij staat versleuteld in iCloud. Gratis, zonder in-app aankopen.",
+                "en": "A vault for all the pairing codes in your smart home: HomeKit, Matter, Zigbee, Philips Hue, Z-Wave, Wi-Fi and PINs. Scan a code and it's stored encrypted in iCloud. Free, with no in-app purchases."
+            },
+            "links": {},
+            "history": [],
+            "icon": "img/app-lrvdlinden-pairr.webp",
+            "languages": "NL + 9"
+        },
+        {
             "id": "nl-lrvdlinden-liftr",
             "name": "Liftr",
             "section": "ios",
