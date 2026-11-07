@@ -530,6 +530,22 @@
         }
       }
     },
+    "Accounts › Review-account maken: bevestigd account voor Apple App Review met voorbeeldkaarten en een gedeelde Pasr": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts › Create review account: confirmed account for Apple App Review with sample cards and a shared Pasr"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts › Review-account maken: bevestigd account voor Apple App Review met voorbeeldkaarten en een gedeelde Pasr"
+          }
+        }
+      }
+    },
     "Accounts, insights en pushmeldingen": {
       "localizations": {
         "en": {
@@ -1454,6 +1470,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bestaande meldingen"
+          }
+        }
+      }
+    },
+    "Bestaat al: wachtwoord vervangen en kaarten terugzetten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Already exists: replace password and reset cards"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bestaat al: wachtwoord vervangen en kaarten terugzetten"
           }
         }
       }
@@ -4418,6 +4450,22 @@
         }
       }
     },
+    "Kopieer wachtwoord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy password"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer wachtwoord"
+          }
+        }
+      }
+    },
     "Koppelen": {
       "localizations": {
         "en": {
@@ -5026,6 +5074,54 @@
         }
       }
     },
+    "Maak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maak"
+          }
+        }
+      }
+    },
+    "Maak sterk wachtwoord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generate strong password"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maak sterk wachtwoord"
+          }
+        }
+      }
+    },
+    "Maakt een bevestigd account met drie voorbeeldkaarten en een gedeelde Pasr “Gezin” met twee kaarten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creates a confirmed account with three sample cards and a shared Pasr “Gezin” with two cards."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maakt een bevestigd account met drie voorbeeldkaarten en een gedeelde Pasr “Gezin” met twee kaarten."
+          }
+        }
+      }
+    },
     "Mail Bingr wordt Lifetime testen en versturen, en de herinnering": {
       "localizations": {
         "en": {
@@ -5262,6 +5358,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Met wijzigingen"
+          }
+        }
+      }
+    },
+    "Minimaal 10 tekens, met letters en cijfers. Het wachtwoord wordt nergens bewaard; zet het in App Store Connect › App Review › Sign-in information.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At least 10 characters, with letters and digits. The password is not stored anywhere; enter it in App Store Connect › App Review › Sign-in information."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minimaal 10 tekens, met letters en cijfers. Het wachtwoord wordt nergens bewaard; zet het in App Store Connect › App Review › Sign-in information."
           }
         }
       }
@@ -6642,6 +6754,22 @@
         }
       }
     },
+    "Pasr: review-account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: review account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: review-account"
+          }
+        }
+      }
+    },
     "Pasr: winkels zonder update": {
       "localizations": {
         "en": {
@@ -7038,6 +7166,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Review"
+          }
+        }
+      }
+    },
+    "Review-account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review-account"
+          }
+        }
+      }
+    },
+    "Review-account maken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create review account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review-account maken"
           }
         }
       }
@@ -7858,6 +8018,22 @@
         }
       }
     },
+    "Toon wachtwoord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show password"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toon wachtwoord"
+          }
+        }
+      }
+    },
     "Tot en met": {
       "localizations": {
         "en": {
@@ -8126,6 +8302,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verberg"
+          }
+        }
+      }
+    },
+    "Verberg wachtwoord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide password"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verberg wachtwoord"
           }
         }
       }
@@ -8430,6 +8622,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Voorbeeld bekijken"
+          }
+        }
+      }
+    },
+    "Voornaam": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First name"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voornaam"
           }
         }
       }
@@ -8990,6 +9198,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zakelijk"
+          }
+        }
+      }
+    },
+    "Zelf een wachtwoord kiezen of een sterk wachtwoord laten maken; de server bewaart het niet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a password yourself or have a strong one generated; the server does not store it"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zelf een wachtwoord kiezen of een sterk wachtwoord laten maken; de server bewaart het niet"
           }
         }
       }

@@ -162,6 +162,7 @@ originele code.
 | Overzicht, Insights (bronnen, periode), Accounts | ✓ |
 | Delen: Gedeelde Pasrs en Tijdelijk gedeeld (kerncijfers, kaart Delen, Insights-reeksen, per account) | ✓ (ook in web-beheer en PasrBeheer build 4) |
 | Winkels: aanvragen, website opzoeken, kaart maken, publiceren zonder update met push, afwijzen, offline halen | ✓ (ook in web-beheer en PasrBeheer build 5) |
+| Review-account voor Apple App Review maken (voorbeeldkaarten en gedeelde Pasr, wachtwoord niet bewaard) | ✓ (ook in web-beheer en PasrBeheer build 6) |
 | Beheer-pushmeldingen (soorten, testmelding, uitleg na inloggen) | ✓ originele registratie; ontvangen na `server/patches` |
 | Instellingen met MoreAppsCard | ✓ |
 | Deeplinks `pasrbeheer://…` | ✓ |

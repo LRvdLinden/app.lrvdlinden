@@ -93,6 +93,10 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: review-account") {
+                    Label("Accounts › Review-account maken: bevestigd account voor Apple App Review met voorbeeldkaarten en een gedeelde Pasr", systemImage: "person.badge.key")
+                    Label("Zelf een wachtwoord kiezen of een sterk wachtwoord laten maken; de server bewaart het niet", systemImage: "key.fill")
+                }
                 Section("Pasr: winkels zonder update") {
                     Label("Tabblad Winkels: aanvragen uit de app, gebundeld per winkel, ook cadeaukaarten en vouchers", systemImage: "storefront")
                     Label("Website opzoeken: logo en merkkleuren automatisch, of zelf een logo kiezen", systemImage: "wand.and.stars")
