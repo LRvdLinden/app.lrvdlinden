@@ -5378,6 +5378,22 @@
         }
       }
     },
+    "Meldingen van Pasr (nieuwe accounts, winkelaanvragen) komen nu ook in LRbeheer aan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr notifications (new accounts, store requests) now also arrive in LRbeheer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meldingen van Pasr (nieuwe accounts, winkelaanvragen) komen nu ook in LRbeheer aan"
+          }
+        }
+      }
+    },
     "Meldingen, push, teksten en statistieken": {
       "localizations": {
         "en": {
@@ -6846,6 +6862,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: delen"
+          }
+        }
+      }
+    },
+    "Pasr: pushmeldingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: push notifications"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: pushmeldingen"
           }
         }
       }

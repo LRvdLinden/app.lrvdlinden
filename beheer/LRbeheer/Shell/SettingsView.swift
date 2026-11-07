@@ -93,6 +93,9 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: pushmeldingen") {
+                    Label("Meldingen van Pasr (nieuwe accounts, winkelaanvragen) komen nu ook in LRbeheer aan", systemImage: "bell.badge.fill")
+                }
                 Section("Pasr: saldo-pagina's") {
                     Label("Winkels › Saldo: per winkel de pagina waar je het tegoed van een cadeaukaart nakijkt", systemImage: "eurosign.circle")
                     Label("Alle cadeaukaarten uit de app staan klaar: alleen het adres invullen, met een zoekknop", systemImage: "list.bullet.rectangle")
