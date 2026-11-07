@@ -2162,6 +2162,22 @@
         }
       }
     },
+    "De knop Saldo checken bij een cadeaukaart in de app opent deze pagina, met het kaartnummer klaar om te plakken. Werkt ook voor winkels die al in de app zitten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Check balance button on a gift card in the app opens this page, with the card number ready to paste. Also works for stores already in the app."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De knop Saldo checken bij een cadeaukaart in de app opent deze pagina, met het kaartnummer klaar om te plakken. Werkt ook voor winkels die al in de app zitten."
+          }
+        }
+      }
+    },
     "De pushfunctie gaf een fout (%@).": {
       "localizations": {
         "en": {
@@ -6018,6 +6034,22 @@
         }
       }
     },
+    "Nog geen saldo-pagina's.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No balance pages yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen saldo-pagina's."
+          }
+        }
+      }
+    },
     "Nog geen winkels toegevoegd via het beheer.": {
       "localizations": {
         "en": {
@@ -6770,6 +6802,22 @@
         }
       }
     },
+    "Pasr: saldo-pagina's": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: balance pages"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: saldo-pagina's"
+          }
+        }
+      }
+    },
     "Pasr: winkels zonder update": {
       "localizations": {
         "en": {
@@ -7230,6 +7278,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rond af"
+          }
+        }
+      }
+    },
+    "Saldo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balance"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saldo"
+          }
+        }
+      }
+    },
+    "Saldo-pagina toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add balance page"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saldo-pagina toevoegen"
           }
         }
       }
@@ -8994,6 +9074,22 @@
         }
       }
     },
+    "Werkt ook voor winkels die al in de app zitten, zonder app-update": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also works for stores already in the app, without an app update"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Werkt ook voor winkels die al in de app zitten, zonder app-update"
+          }
+        }
+      }
+    },
     "Werkwijze": {
       "localizations": {
         "en": {
@@ -9090,6 +9186,22 @@
         }
       }
     },
+    "Winkel-id, bijv. vvv": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Store id, e.g. vvv"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkel-id, bijv. vvv"
+          }
+        }
+      }
+    },
     "Winkelen": {
       "localizations": {
         "en": {
@@ -9118,6 +9230,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Winkels"
+          }
+        }
+      }
+    },
+    "Winkels › Saldo: per winkel de pagina waar je het tegoed van een cadeaukaart nakijkt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stores › Balance: per store the page where you check a gift card's balance"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkels › Saldo: per winkel de pagina waar je het tegoed van een cadeaukaart nakijkt"
           }
         }
       }

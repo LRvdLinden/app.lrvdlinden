@@ -93,6 +93,10 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: saldo-pagina's") {
+                    Label("Winkels › Saldo: per winkel de pagina waar je het tegoed van een cadeaukaart nakijkt", systemImage: "eurosign.circle")
+                    Label("Werkt ook voor winkels die al in de app zitten, zonder app-update", systemImage: "arrow.down.app")
+                }
                 Section("Pasr: review-account") {
                     Label("Accounts › Review-account maken: bevestigd account voor Apple App Review met voorbeeldkaarten en een gedeelde Pasr", systemImage: "person.badge.key")
                     Label("Zelf een wachtwoord kiezen of een sterk wachtwoord laten maken; de server bewaart het niet", systemImage: "key.fill")
