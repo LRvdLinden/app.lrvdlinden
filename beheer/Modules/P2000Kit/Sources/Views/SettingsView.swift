@@ -34,7 +34,7 @@ struct SettingsView: View {
                 Section {
                     Toggle("Meldingen bij storingen", isOn: $pushOn)
                         .onChange(of: pushOn) { _, on in PushRegistrar.shared.enabled = on }
-                    Toggle("Storing bronnen (NL-Alert, Burgernet, KNMI)", isOn: $bronnenOn)
+                    Toggle("Storingen en afwijkingen", isOn: $bronnenOn)
                         .onChange(of: bronnenOn) { _, on in PushRegistrar.shared.bronnen = on }
                         .disabled(!pushOn)
                     Button("Stuur een testmelding") { Task { await test() } }
@@ -42,7 +42,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Pushmeldingen")
                 } footer: {
-                    Text("Je krijgt een melding als de P2000-feed langer dan 10 minuten niets binnenkrijgt, of NL-Alert, Burgernet of KNMI langer dan 30 minuten, en als het weer werkt.")
+                    Text("Je krijgt een melding zodra een onderdeel van de statuspagina 3 minuten afwijkt van normaal (P2000, NL-Alert, Burgernet, KNMI, pushmeldingen, helikopters, weer, server of website), bij een push-wachtrij die achterloopt of een ongewoon lange stilte zonder meldingen, en weer als alles normaal is.")
                 }
                 Section("Over") {
                     LabeledContent("Versie", value: version)

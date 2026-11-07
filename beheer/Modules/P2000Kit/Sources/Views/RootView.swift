@@ -35,6 +35,7 @@ struct MainTabs: View {
     var body: some View {
         TabView(selection: $tab) {
             Tab("Dashboard", systemImage: "chart.xyaxis.line", value: "dashboard") { DashboardView() }
+            Tab("Status", systemImage: "waveform.path.ecg", value: "status") { StatusBeheerView() }
             Tab("Meldingen", systemImage: "list.bullet.rectangle", value: "meldingen") { MeldingenView() }
             Tab("Waarschuwingen", systemImage: "exclamationmark.triangle", value: "waarschuwingen") { WaarschuwingenView() }
             Tab("Push", systemImage: "paperplane.fill", value: "push") { PushView() }

@@ -111,6 +111,11 @@ struct WhatsNewView: View {
                     Label("Gebruikers: kortingscode en status bij het account", systemImage: "person.text.rectangle")
                     Label("Omzet: per aanbieder (website via Stripe en Apple)", systemImage: "eurosign.circle")
                 }
+                Section("A-Alerts: status") {
+                    Label("Nieuw tabblad Status: alle onderdelen van a-alerts.nl/status met uptime en foutmelding", systemImage: "waveform.path.ecg")
+                    Label("Storing of gepland onderhoud melden, bijwerken en afronden; staat direct op de statuspagina en in de apps", systemImage: "exclamationmark.bubble")
+                    Label("Pushmelding zodra iets afwijkt van normaal en weer als het hersteld is (schakelaar Storingen en afwijkingen)", systemImage: "bell.badge")
+                }
                 Section("A-Alerts") {
                     Label("P2000 Apeldoorn heet nu A-Alerts, met het nieuwe icoon", systemImage: "app.badge")
                     Label("Waarschuwingen: NL-Alert, Burgernet en KNMI bekijken, verbergen of handmatig beëindigen", systemImage: "exclamationmark.triangle")
