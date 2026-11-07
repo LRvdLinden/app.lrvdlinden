@@ -1458,6 +1458,22 @@
         }
       }
     },
+    "Bingr: nieuwe accounts eerst kopen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: new accounts buy first"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: nieuwe accounts eerst kopen"
+          }
+        }
+      }
+    },
     "Boeken": {
       "localizations": {
         "en": {
@@ -4114,6 +4130,22 @@
         }
       }
     },
+    "Lifetime-only: Nieuwe accounts eerst kopen, apart voor web en Android en voor de Apple-apps, met bevestiging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifetime only: New accounts buy first, separately for web and Android and for the Apple apps, with confirmation"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifetime-only: Nieuwe accounts eerst kopen, apart voor web en Android en voor de Apple-apps, met bevestiging"
+          }
+        }
+      }
+    },
     "Liggend beeld, ideaal 1600 × 900 pixels. Upload per taal een eigen banner, of één voor beide. Laat de titel leeg om de appnaam te tonen.": {
       "localizations": {
         "en": {
@@ -4862,6 +4894,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe aanvraag via het contactformulier"
+          }
+        }
+      }
+    },
+    "Nieuwe accounts eerst kopen — Apple-apps": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New accounts buy first — Apple apps"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe accounts eerst kopen — Apple-apps"
+          }
+        }
+      }
+    },
+    "Nieuwe accounts eerst kopen — web en Android": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New accounts buy first — web and Android"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe accounts eerst kopen — web en Android"
           }
         }
       }
@@ -6578,6 +6642,38 @@
         }
       }
     },
+    "Uit. Android, Android TV, webspeler, Windows en de website.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off. Android, Android TV, web player, Windows and the website."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uit. Android, Android TV, webspeler, Windows en de website."
+          }
+        }
+      }
+    },
+    "Uit. iPhone, iPad, Apple TV en Mac; pas na de goedkeuring van Apple.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off. iPhone, iPad, Apple TV and Mac; only after Apple's approval."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uit. iPhone, iPad, Apple TV en Mac; pas na de goedkeuring van Apple."
+          }
+        }
+      }
+    },
     "Uitgelicht (eerst getoond)": {
       "localizations": {
         "en": {
@@ -7074,6 +7170,22 @@
         }
       }
     },
+    "Waarschuwing als de datum voor de Apple-apps staat terwijl de Apple-koopknop uit staat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warning when the date for the Apple apps is set while the Apple purchase button is off"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waarschuwing als de datum voor de Apple-apps staat terwijl de Apple-koopknop uit staat"
+          }
+        }
+      }
+    },
     "Waarschuwingen": {
       "localizations": {
         "en": {
@@ -7474,6 +7586,22 @@
         }
       }
     },
+    "Zolang Lifetime-only uit staat, werkt alles zoals nu. Na de overgangsdatum zien gratis accounts alleen nog Activeer Lifetime. Nieuwe accounts eerst kopen: accounts die op of na die datum worden aangemaakt, moeten op dat platform eerst Lifetime kopen; bestaande gratis accounts blijven gratis tot de overgangsdatum. Tijden in Nederlandse tijd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "While Lifetime only is off, everything works as now. After the switch date free accounts only see Activate Lifetime. New accounts buy first: accounts created on or after that date must buy Lifetime first on that platform; existing free accounts stay free until the switch date. Times in Dutch time."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zolang Lifetime-only uit staat, werkt alles zoals nu. Na de overgangsdatum zien gratis accounts alleen nog Activeer Lifetime. Nieuwe accounts eerst kopen: accounts die op of na die datum worden aangemaakt, moeten op dat platform eerst Lifetime kopen; bestaande gratis accounts blijven gratis tot de overgangsdatum. Tijden in Nederlandse tijd."
+          }
+        }
+      }
+    },
     "Zolang Lifetime-only uit staat, werkt alles zoals nu. Na de overgangsdatum zien gratis accounts alleen nog Activeer Lifetime. Tijden in Nederlandse tijd.": {
       "localizations": {
         "en": {
@@ -7678,6 +7806,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "toegangscode"
+          }
+        }
+      }
+    },
+    "uit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "off"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "uit"
           }
         }
       }

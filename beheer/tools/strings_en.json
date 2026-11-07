@@ -480,5 +480,14 @@
  "Bingr wordt Lifetime": "Bingr is going Lifetime",
  "Herinnering": "Reminder",
  "Voorbeeld bekijken": "View preview",
- "Testmail naar (leeg = beheeradres, support@)": "Test email to (empty = admin address, support@)"
+ "Testmail naar (leeg = beheeradres, support@)": "Test email to (empty = admin address, support@)",
+ "Bingr: nieuwe accounts eerst kopen": "Bingr: new accounts buy first",
+ "Lifetime-only: Nieuwe accounts eerst kopen, apart voor web en Android en voor de Apple-apps, met bevestiging": "Lifetime only: New accounts buy first, separately for web and Android and for the Apple apps, with confirmation",
+ "Nieuwe accounts eerst kopen — Apple-apps": "New accounts buy first — Apple apps",
+ "Nieuwe accounts eerst kopen — web en Android": "New accounts buy first — web and Android",
+ "Uit. Android, Android TV, webspeler, Windows en de website.": "Off. Android, Android TV, web player, Windows and the website.",
+ "Uit. iPhone, iPad, Apple TV en Mac; pas na de goedkeuring van Apple.": "Off. iPhone, iPad, Apple TV and Mac; only after Apple's approval.",
+ "Waarschuwing als de datum voor de Apple-apps staat terwijl de Apple-koopknop uit staat": "Warning when the date for the Apple apps is set while the Apple purchase button is off",
+ "Zolang Lifetime-only uit staat, werkt alles zoals nu. Na de overgangsdatum zien gratis accounts alleen nog Activeer Lifetime. Nieuwe accounts eerst kopen: accounts die op of na die datum worden aangemaakt, moeten op dat platform eerst Lifetime kopen; bestaande gratis accounts blijven gratis tot de overgangsdatum. Tijden in Nederlandse tijd.": "While Lifetime only is off, everything works as now. After the switch date free accounts only see Activate Lifetime. New accounts buy first: accounts created on or after that date must buy Lifetime first on that platform; existing free accounts stay free until the switch date. Times in Dutch time.",
+ "uit": "off"
 }

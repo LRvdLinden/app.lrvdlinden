@@ -93,6 +93,10 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Bingr: nieuwe accounts eerst kopen") {
+                    Label("Lifetime-only: Nieuwe accounts eerst kopen, apart voor web en Android en voor de Apple-apps, met bevestiging", systemImage: "cart.badge.plus")
+                    Label("Waarschuwing als de datum voor de Apple-apps staat terwijl de Apple-koopknop uit staat", systemImage: "exclamationmark.triangle")
+                }
                 Section("Bingr: Lifetime-only") {
                     Label("Instellingen → Lifetime-only: aankondiging, overgangsdatum, korting, proefperiode, Apple-koopknop en EU-link, met bevestiging", systemImage: "star.circle")
                     Label("Kortingscodes genereren (droog en echt) met de totalen", systemImage: "ticket")

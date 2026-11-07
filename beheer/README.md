@@ -140,6 +140,7 @@ originele code.
 | Deeplinks `bingrbeheer://…` uit widgets en meldingen | ✓ |
 | Mac (Catalyst) met menubalk | ✓ Mac-app van LRbeheer (Catalyst), menu Omgeving met ⌘1…⌘6 |
 | **Lifetime-only** (build 167 van de server, ook in BingrBeheer build 47 en het web-beheer): instellingen met bevestiging, kortingscodes (genereren, totalen), mail en herinnering, niet geclaimde aankopen en Aankoop koppelen, code per account, omzet per aanbieder (Stripe en Apple) | ✓ (Instellingen → Lifetime-only) |
+| **Nieuwe accounts eerst kopen** (build 168 van de server, ook in BingrBeheer build 48 en het web-beheer): twee datums in Lifetime-only, web en Android (`new_paid_from`) en Apple-apps (`new_paid_from_apple`), met bevestiging en een waarschuwing als de Apple-koopknop uit staat | ✓ (Instellingen → Lifetime-only) |
 
 ### BeheerTunr → Tunr
 
