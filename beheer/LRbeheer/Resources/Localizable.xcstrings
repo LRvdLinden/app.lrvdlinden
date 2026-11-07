@@ -2946,6 +2946,22 @@
         }
       }
     },
+    "Gedeelde Pasrs": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared Pasrs"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gedeelde Pasrs"
+          }
+        }
+      }
+    },
     "Geen Engelse banner: de Nederlandse wordt gebruikt": {
       "localizations": {
         "en": {
@@ -3634,6 +3650,22 @@
         }
       }
     },
+    "Insights: reeksen Gedeelde Pasrs en Tijdelijk gedeeld; per account het aantal gedeelde Pasrs": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insights: Shared Pasrs and Temporarily shared series; number of shared Pasrs per account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insights: reeksen Gedeelde Pasrs en Tijdelijk gedeeld; per account het aantal gedeelde Pasrs"
+          }
+        }
+      }
+    },
     "Installaties, statistieken en downloads": {
       "localizations": {
         "en": {
@@ -3838,6 +3870,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Je wijzigingen staan nog op dit apparaat, probeer het opnieuw."
+          }
+        }
+      }
+    },
+    "Kaart Delen: uitnodigingen, gedeelde kaarten, keren geopend en eerder gestopt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sharing card: invitations, shared cards, times opened and stopped early"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaart Delen: uitnodigingen, gedeelde kaarten, keren geopend en eerder gestopt"
+          }
+        }
+      }
+    },
+    "Kerncijfers Gedeelde Pasrs (met personen en kaarten) en Tijdelijk gedeeld (nu geldig)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Key figures Shared Pasrs (with people and cards) and Temporarily shared (valid now)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kerncijfers Gedeelde Pasrs (met personen en kaarten) en Tijdelijk gedeeld (nu geldig)"
           }
         }
       }
@@ -5586,6 +5650,22 @@
         }
       }
     },
+    "Nog niets gedeeld.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing shared yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog niets gedeeld."
+          }
+        }
+      }
+    },
     "Nog niets toegevoegd": {
       "localizations": {
         "en": {
@@ -6206,6 +6286,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pas aanzetten als het product in App Store Connect klaarstaat en de server Apple-aankopen verwerkt."
+          }
+        }
+      }
+    },
+    "Pasr: delen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: sharing"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: delen"
           }
         }
       }

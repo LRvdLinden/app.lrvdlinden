@@ -93,6 +93,11 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: delen") {
+                    Label("Kerncijfers Gedeelde Pasrs (met personen en kaarten) en Tijdelijk gedeeld (nu geldig)", systemImage: "person.2.fill")
+                    Label("Kaart Delen: uitnodigingen, gedeelde kaarten, keren geopend en eerder gestopt", systemImage: "clock.badge.checkmark")
+                    Label("Insights: reeksen Gedeelde Pasrs en Tijdelijk gedeeld; per account het aantal gedeelde Pasrs", systemImage: "chart.bar.xaxis")
+                }
                 Section("Bingr: omzet van Apple") {
                     Label("Omzet: website (Stripe) en Apple (App Store) apart, met bruto, inhouding, netto opbrengst, aantal en terugbetaald", systemImage: "chart.bar.doc.horizontal")
                     Label("Apple-cijfers uit App Store Connect, met Apple bijgewerkt t/m en gekoppelde aankopen", systemImage: "apple.logo")
