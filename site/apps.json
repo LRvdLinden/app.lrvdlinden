@@ -248,8 +248,8 @@
                 "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
                 "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
             },
-            "rating": 5,
-            "reviews": 1,
+            "rating": 5.0,
+            "reviews": 2,
             "size": "116,1 MB",
             "languages": "NL + 10",
             "links": {
@@ -358,7 +358,7 @@
                     }
                 }
             ],
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "promo": {
                 "image": {
@@ -531,7 +531,7 @@
                 "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
                 "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "size": "23,1 MB",
             "languages": "EN",
@@ -575,7 +575,7 @@
                 "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 15,
             "size": "15,3 MB",
             "languages": "EN",
@@ -723,7 +723,8 @@
                 "en": "Your Weekdot calendar in Homey: Flows for your appointments and daily agenda, plus a calendar widget."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
             },
             "promo": {
                 "image": {
@@ -967,7 +968,8 @@
                 "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-weekdot/161566",
                 "category": "tools",
-                "live": "1.0.1"
+                "live": "1.0.1",
+                "test": "1.0.2"
             }
         },
         {
@@ -1015,7 +1017,7 @@
                 "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
                 "en": "Learn chess the easy way. With dark mode and several board themes."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 3,
             "size": "1,7 MB",
             "languages": "NL + 3",
@@ -1526,10 +1528,23 @@
                 "en": "Live 112 alerts from fire, ambulance and police across the Netherlands."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/P2000/test/"
             },
             "rating": 4.5,
             "history": [
+                {
+                    "version": "6.2.5",
+                    "date": "2026-11-07",
+                    "notes": {
+                        "nl": "Stabiliteitsverbeteringen: geen crashes meer bij het stoppen van de app of een time-out van de verbinding. Nu beschikbaar in alle 13 Homey-talen, inclusief Flow-kaarten, widgets en de instellingenpagina. De filters van de P2000 Pager Custom-widget tonen weer leesbare namen en de namen van Flow-kaarten zijn duidelijker. Een fout op de instellingenpagina in donkere modus en een ontbrekende afbeelding op de pagina gegevensbron zijn opgelost. De WebSocket-bibliotheek is bijgewerkt met een beveiligingsfix.",
+                        "en": "Stability fixes: no more crashes when the app is stopped or the connection times out. Now available in all 13 Homey languages, including Flow cards, widgets and the settings page. The filters of the P2000 Pager Custom widget show readable names again, and Flow card names are clearer. Fixed an error on the settings page in dark mode and a missing image on the data source page. Updated the WebSocket library with a security fix."
+                    },
+                    "_src": {
+                        "nl": "Stabiliteitsverbeteringen: geen crashes meer bij het stoppen van de app of een time-out van de verbinding. Nu beschikbaar in alle 13 Homey-talen, inclusief Flow-kaarten, widgets en de instellingenpagina. De filters van de P2000 Pager Custom-widget tonen weer leesbare namen en de namen van Flow-kaarten zijn duidelijker. Een fout op de instellingenpagina in donkere modus en een ontbrekende afbeelding op de pagina gegevensbron zijn opgelost. De WebSocket-bibliotheek is bijgewerkt met een beveiligingsfix.",
+                        "en": "Stability fixes: no more crashes when the app is stopped or the connection times out. Now available in all 13 Homey languages, including Flow cards, widgets and the settings page. The filters of the P2000 Pager Custom widget show readable names again, and Flow card names are clearer. Fixed an error on the settings page in dark mode and a missing image on the data source page. Updated the WebSocket library with a security fix."
+                    }
+                },
                 {
                     "version": "6.2.4",
                     "date": "2026-05-17",
@@ -1627,17 +1642,6 @@
                     },
                     "_src": {
                         "en": "app improvement"
-                    }
-                },
-                {
-                    "version": "6.1.8",
-                    "date": "2026-05-15",
-                    "notes": {
-                        "en": "Bug fix",
-                        "nl": "Bugfix"
-                    },
-                    "_src": {
-                        "en": "Bug fix"
                     }
                 }
             ],
@@ -1837,7 +1841,8 @@
                 "homepage": "https://p2000.xyz",
                 "support": "https://community.homey.app/t/app-pro-p2000/83738",
                 "category": "internet",
-                "live": "6.2.4"
+                "live": "6.2.4",
+                "test": "6.2.6"
             }
         },
         {
@@ -2253,9 +2258,10 @@
                 "en": "Live 112 alerts from the Lifeliner across the Netherlands."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/Lifeliner/test/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
                 {
                     "version": "6.1.1",
@@ -2537,7 +2543,8 @@
                 "homepage": "https://p2000.xyz",
                 "support": "https://community.homey.app/t/app-pro-lifeline-alerts-for-homey/83742",
                 "category": "internet",
-                "live": "6.1.1"
+                "live": "6.1.1",
+                "test": "6.1.2"
             }
         },
         {
@@ -2554,7 +2561,7 @@
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
                 {
                     "version": "4.2.4",
