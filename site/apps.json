@@ -28,6 +28,32 @@
             "languages": "NL + 9"
         },
         {
+            "id": "nl-lrvdlinden-homio",
+            "name": "Homio",
+            "section": "ios",
+            "status": "dev",
+            "featured": true,
+            "category": "utilities",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac",
+                "Apple Watch"
+            ],
+            "subtitle": {
+                "nl": "Je slimme huis, op de Homey-manier",
+                "en": "Your smart home, the Homey way"
+            },
+            "description": {
+                "nl": "Een slimme-huis-app gebouwd op Apple Woning (HomeKit en Matter), met de opbouw van Homey: zones, dashboards met widgets, flows en inzichten. Plus een weergavemodus voor een iPad aan de muur.",
+                "en": "A smart home app built on Apple Home (HomeKit and Matter), laid out like Homey: zones, dashboards with widgets, flows and insights. Plus a display mode for an iPad on the wall."
+            },
+            "links": {},
+            "history": [],
+            "icon": "img/nl-lrvdlinden-homio.webp",
+            "languages": "NL"
+        },
+        {
             "id": "nl-lrvdlinden-liftr",
             "name": "Liftr",
             "section": "ios",
