@@ -22,7 +22,7 @@
                 "nl": "Een kluis voor alle koppelcodes van je slimme huis: HomeKit, Matter, Zigbee, Philips Hue, Z-Wave, wifi en pincodes. Scan een code, en hij staat versleuteld in iCloud. Gratis, zonder in-app aankopen.",
                 "en": "A vault for all the pairing codes in your smart home: HomeKit, Matter, Zigbee, Philips Hue, Z-Wave, Wi-Fi and PINs. Scan a code and it's stored encrypted in iCloud. Free, with no in-app purchases."
             },
-            "links": {},
+            "links": [],
             "history": [],
             "icon": "img/app-lrvdlinden-pairr.webp",
             "languages": "NL + 9"
@@ -48,7 +48,7 @@
                 "nl": "Een slimme-huis-app gebouwd op Apple Woning (HomeKit en Matter), met de opbouw van Homey: zones, dashboards met widgets, flows en inzichten. Plus een weergavemodus voor een iPad aan de muur.",
                 "en": "A smart home app built on Apple Home (HomeKit and Matter), laid out like Homey: zones, dashboards with widgets, flows and insights. Plus a display mode for an iPad on the wall."
             },
-            "links": {},
+            "links": [],
             "history": [],
             "icon": "img/nl-lrvdlinden-homio.webp",
             "languages": "NL"
@@ -88,39 +88,8 @@
             "featured": true
         },
         {
-            "id": "nieuwe-app-1",
-            "name": "Stookwijzer",
-            "section": "ios",
-            "status": "beta",
-            "category": "utilities",
-            "platforms": [
-                "iPhone",
-                "iPad"
-            ],
-            "description": {
-                "nl": "Weet in één oogopslag of je je houtkachel of open haard kunt aansteken. Met verwachting per 6 uur, widgets en een pushmelding zodra het code rood wordt.\n",
-                "en": "Know at a glance whether you can light your wood stove or open fireplace. With forecasts every 6 hours, widgets, and a push notification as soon as it turns code red."
-            },
-            "history": [],
-            "icon": "img/nieuwe-app-1.webp",
-            "promo": {
-                "image": {
-                    "en": "img/promo-nieuwe-app-1-en.webp",
-                    "nl": "img/promo-nieuwe-app-1-nl.webp"
-                }
-            },
-            "subtitle": {
-                "nl": "Kan ik vandaag hout stoken?",
-                "en": "Can I burn wood today?"
-            },
-            "languages": "NL",
-            "links": {
-                "testflight": "https://testflight.apple.com/join/UrwyYgG8"
-            }
-        },
-        {
-            "id": "nl-lrvdlinden-p2000-apeldoorn",
-            "name": "P2000 Apeldoorn",
+            "id": "nl-lrvdlinden-aalerts",
+            "name": "A-Alerts",
             "section": "ios",
             "status": "beta",
             "category": "utilities",
@@ -133,25 +102,25 @@
                 "Web"
             ],
             "description": {
-                "nl": "P2000 Apeldoorn is de officiële app van p2000-apeldoorn.nl. Je ziet direct welke hulpdiensten er in de gemeente Apeldoorn worden opgeroepen: brandweer, ambulance, politie en traumaheli.",
-                "en": "P2000 Apeldoorn is the official app of p2000-apeldoorn.nl. You instantly see which emergency services are being dispatched in the municipality of Apeldoorn: fire brigade, ambulance, police and trauma helicopter."
+                "nl": "Alle P2000-meldingen van Apeldoorn, met NL-Alert, Burgernet, KNMI en live Lifeliners met route en bestemming. Op de kaart, als pushmelding en op al je Apple-apparaten.\n",
+                "en": "Every P2000 alert in Apeldoorn, with NL-Alert, Burgernet, KNMI and live Lifeliners with route and destination. On the map, as a notification and on all your Apple devices.\n"
             },
             "links": {
                 "testflight": "https://testflight.apple.com/join/xjwuY299",
                 "website": "https://p2000-apeldoorn.nl"
             },
             "history": [],
-            "icon": "img/nl-lrvdlinden-p2000-apeldoorn.webp",
+            "icon": "img/nl-lrvdlinden-aalerts.webp",
             "subtitle": {
-                "nl": "Live P2000-meldingen Apeldoorn",
-                "en": "Live P2000 alerts Apeldoorn"
+                "nl": "P2000 en alerts in Apeldoorn",
+                "en": "P2000 and alerts in Apeldoorn"
             },
             "promo": {
+                "show": true,
                 "image": {
-                    "nl": "img/promo-nl-lrvdlinden-p2000-apeldoorn-nl.webp",
-                    "en": "img/promo-nl-lrvdlinden-p2000-apeldoorn-en.webp"
-                },
-                "show": true
+                    "nl": "img/promo-nl-lrvdlinden-aalerts-nl.webp",
+                    "en": "img/promo-nl-lrvdlinden-aalerts-en.webp"
+                }
             },
             "languages": "NL"
         },
@@ -300,7 +269,7 @@
                 "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
                 "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
             },
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 2,
             "size": "116,6 MB",
             "languages": "NL + 10",
@@ -421,7 +390,7 @@
                     }
                 }
             ],
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 1,
             "promo": {
                 "image": {
@@ -594,7 +563,7 @@
                 "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
                 "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
             },
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 1,
             "size": "23,1 MB",
             "languages": "EN",
@@ -638,7 +607,7 @@
                 "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 15,
             "size": "15,3 MB",
             "languages": "EN",
@@ -1080,7 +1049,7 @@
                 "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
                 "en": "Learn chess the easy way. With dark mode and several board themes."
             },
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 3,
             "size": "1,7 MB",
             "languages": "NL + 3",
@@ -2324,7 +2293,7 @@
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/",
                 "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/Lifeliner/test/"
             },
-            "rating": 5.0,
+            "rating": 5,
             "history": [
                 {
                     "version": "6.1.1",
@@ -2625,7 +2594,7 @@
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/",
                 "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/KNMI/test/"
             },
-            "rating": 5.0,
+            "rating": 5,
             "history": [
                 {
                     "version": "4.3.3",
