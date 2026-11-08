@@ -38,6 +38,7 @@ struct MainTabs: View {
             Tab("Status", systemImage: "waveform.path.ecg", value: "status") { StatusBeheerView() }
             Tab("Meldingen", systemImage: "list.bullet.rectangle", value: "meldingen") { MeldingenView() }
             Tab("Waarschuwingen", systemImage: "exclamationmark.triangle", value: "waarschuwingen") { WaarschuwingenView() }
+            Tab("Gemelde fouten", systemImage: "exclamationmark.bubble", value: "fouten") { FoutenView() }
             Tab("Push", systemImage: "paperplane.fill", value: "push") { PushView() }
             Tab("Teksten", systemImage: "doc.text", value: "teksten") { TekstenView() }
             Tab("Instellingen", systemImage: "gearshape", value: "instellingen") { SettingsView() }

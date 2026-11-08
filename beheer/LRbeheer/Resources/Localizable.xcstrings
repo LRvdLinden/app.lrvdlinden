@@ -130,6 +130,22 @@
         }
       }
     },
+    "(melding verwijderd)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "(alert deleted)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "(melding verwijderd)"
+          }
+        }
+      }
+    },
     "(naamloos)": {
       "localizations": {
         "en": {
@@ -254,6 +270,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "A-Alerts: downloads van de Android-app (totaal, 30 dagen, per dag en per versie)"
+          }
+        }
+      }
+    },
+    "A-Alerts: gemelde fouten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: reported errors"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: gemelde fouten"
           }
         }
       }
@@ -642,6 +674,22 @@
         }
       }
     },
+    "Afgehandeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolved"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afgehandeld"
+          }
+        }
+      }
+    },
     "Afgelopen 30 dagen": {
       "localizations": {
         "en": {
@@ -686,6 +734,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Afgewezen"
+          }
+        }
+      }
+    },
+    "Afhandelen, heropenen of de melding meteen bewerken; een pushmelding bij elke nieuwe melding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolve, reopen or edit the alert right away; a notification for every new report"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afhandelen, heropenen of de melding meteen bewerken; een pushmelding bij elke nieuwe melding"
           }
         }
       }
@@ -1614,6 +1678,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bewaard"
+          }
+        }
+      }
+    },
+    "Bewerk melding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit alert"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewerk melding"
           }
         }
       }
@@ -3090,6 +3170,22 @@
         }
       }
     },
+    "Gebruikers melden dit anoniem via \"Klopt deze melding niet?\" onderaan een melding.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users report this anonymously via \"Is this alert wrong?\" at the bottom of an alert."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruikers melden dit anoniem via \"Klopt deze melding niet?\" onderaan een melding."
+          }
+        }
+      }
+    },
     "Gebruikers, support, push, nieuwsbrief en omzet": {
       "localizations": {
         "en": {
@@ -3250,6 +3346,22 @@
         }
       }
     },
+    "Geen gemelde fouten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No reported errors"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen gemelde fouten"
+          }
+        }
+      }
+    },
     "Geen logo": {
       "localizations": {
         "en": {
@@ -3374,6 +3486,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gemaild"
+          }
+        }
+      }
+    },
+    "Gemelde fouten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reported errors"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemelde fouten"
+          }
+        }
+      }
+    },
+    "Gemelde fouten: meldingen die gebruikers als onjuist aangeven, met reden, toelichting en de juiste plek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reported errors: alerts users mark as wrong, with reason, note and the right spot"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemelde fouten: meldingen die gebruikers als onjuist aangeven, met reden, toelichting en de juiste plek"
           }
         }
       }
@@ -3614,6 +3758,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hero (bovenaan de site)"
+          }
+        }
+      }
+    },
+    "Heropen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reopen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heropen"
           }
         }
       }
@@ -4158,6 +4318,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Je wijzigingen staan nog op dit apparaat, probeer het opnieuw."
+          }
+        }
+      }
+    },
+    "Juiste plek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Right spot"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juiste plek"
           }
         }
       }
@@ -5326,6 +5502,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meer"
+          }
+        }
+      }
+    },
+    "Melding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alert"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Melding"
           }
         }
       }
@@ -6574,6 +6766,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Open"
+          }
+        }
+      }
+    },
+    "Open (%lld)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open (%lld)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open (%lld)"
           }
         }
       }

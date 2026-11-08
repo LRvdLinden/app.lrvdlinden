@@ -185,6 +185,7 @@ originele code.
 | **Status** (nieuw tabblad): onderdelen van a-alerts.nl/status met uptime en ruwe fout, afwijkingen, storingen en gepland onderhoud plaatsen/bijwerken/afronden/verwijderen | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/status`) |
 | Teksten: cookieverklaring (nieuw, naast privacy, voorwaarden, disclaimer en changelog); links naar a-alerts.nl | ✓ (ook P2000Beheer en web-beheer) |
 | Teksten: **Hulp en veelgestelde vragen** (nieuw): hulppagina in de apps (Instellingen) | ✓ (ook P2000Beheer en web-beheer; `/v1/content/hulp`) |
+| **Gemelde fouten** (nieuw): meldingen die gebruikers via "Klopt deze melding niet?" als onjuist aangeven (reden, toelichting, juiste plek); afhandelen, heropenen, verwijderen of de melding bewerken; beheer-push bij een nieuwe melding | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/feedback`) |
 | Dashboard: **Android-app** – APK-downloads van a-alerts.nl (totaal, 30 dagen, vandaag, per dag, per versie), Android-installaties en push-toestellen; status Firebase-push | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/downloads`) |
 | Mac (native) | Mac-app van LRbeheer (Catalyst) |
 

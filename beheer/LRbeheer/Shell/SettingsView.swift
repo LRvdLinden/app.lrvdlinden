@@ -93,6 +93,10 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("A-Alerts: gemelde fouten") {
+                    Label("Gemelde fouten: meldingen die gebruikers als onjuist aangeven, met reden, toelichting en de juiste plek", systemImage: "exclamationmark.bubble")
+                    Label("Afhandelen, heropenen of de melding meteen bewerken; een pushmelding bij elke nieuwe melding", systemImage: "checkmark.circle")
+                }
                 Section("A-Alerts: hulp in de app") {
                     Label("Teksten › Hulp en veelgestelde vragen: de hulppagina van de app en a-alerts.nl/hulp aanpassen", systemImage: "questionmark.circle")
                 }
