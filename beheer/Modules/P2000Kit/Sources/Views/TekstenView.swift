@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TekstenView: View {
     private let docs = [("privacy", "Privacyverklaring", "hand.raised"), ("cookies", "Cookies", "checkmark.shield"), ("terms", "Gebruiksvoorwaarden", "doc.plaintext"),
-                        ("disclaimer", "Disclaimer", "exclamationmark.bubble")]
+                        ("disclaimer", "Disclaimer", "exclamationmark.bubble"), ("hulp", "Hulp en veelgestelde vragen", "questionmark.circle")]
 
     var body: some View {
         NavigationStack {

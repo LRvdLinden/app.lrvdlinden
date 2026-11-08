@@ -93,6 +93,9 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("A-Alerts: hulp in de app") {
+                    Label("Teksten › Hulp en veelgestelde vragen: de hulppagina van de app en a-alerts.nl/hulp aanpassen", systemImage: "questionmark.circle")
+                }
                 Section("Pasr: pushmeldingen") {
                     Label("Meldingen van Pasr (nieuwe accounts, winkelaanvragen) komen nu ook in LRbeheer aan", systemImage: "bell.badge.fill")
                 }

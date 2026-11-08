@@ -184,6 +184,7 @@ originele code.
 | Pushmelding bij afwijkingen (schakelaar *Storingen en afwijkingen*): elk onderdeel van de statuspagina dat 3 minuten afwijkt, push-wachtrij die achterloopt, lange stilte zonder meldingen, en weer als het normaal is (vervangt de feed- en bronmeldingen) | ✓ (ook P2000Beheer; na deploy van de worker) |
 | **Status** (nieuw tabblad): onderdelen van a-alerts.nl/status met uptime en ruwe fout, afwijkingen, storingen en gepland onderhoud plaatsen/bijwerken/afronden/verwijderen | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/status`) |
 | Teksten: cookieverklaring (nieuw, naast privacy, voorwaarden, disclaimer en changelog); links naar a-alerts.nl | ✓ (ook P2000Beheer en web-beheer) |
+| Teksten: **Hulp en veelgestelde vragen** (nieuw): hulppagina in de apps (Instellingen) | ✓ (ook P2000Beheer en web-beheer; `/v1/content/hulp`) |
 | Dashboard: **Android-app** – APK-downloads van a-alerts.nl (totaal, 30 dagen, vandaag, per dag, per versie), Android-installaties en push-toestellen; status Firebase-push | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/downloads`) |
 | Mac (native) | Mac-app van LRbeheer (Catalyst) |
 

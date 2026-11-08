@@ -258,6 +258,22 @@
         }
       }
     },
+    "A-Alerts: hulp in de app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: help in the app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: hulp in de app"
+          }
+        }
+      }
+    },
     "A-Alerts: nieuwe iconen voor NL-Alert en KNMI, net als in de app": {
       "localizations": {
         "en": {
@@ -3678,6 +3694,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Homey"
+          }
+        }
+      }
+    },
+    "Hulp en veelgestelde vragen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help and FAQ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hulp en veelgestelde vragen"
           }
         }
       }
@@ -7918,6 +7950,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Teksten"
+          }
+        }
+      }
+    },
+    "Teksten › Hulp en veelgestelde vragen: de hulppagina van de app en a-alerts.nl/hulp aanpassen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texts › Help and FAQ: edit the help page of the app and a-alerts.nl/hulp"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teksten › Hulp en veelgestelde vragen: de hulppagina van de app en a-alerts.nl/hulp aanpassen"
           }
         }
       }
