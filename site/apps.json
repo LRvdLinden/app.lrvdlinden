@@ -128,7 +128,7 @@
             "id": "nl-lrvdlinden-pasr",
             "name": "Pasr",
             "section": "ios",
-            "status": "beta",
+            "status": "live",
             "featured": true,
             "category": "utilities",
             "platforms": [
@@ -143,7 +143,8 @@
             },
             "links": {
                 "website": "https://pasr.nl",
-                "testflight": "https://testflight.apple.com/join/fPy2Zapa"
+                "testflight": "https://testflight.apple.com/join/fPy2Zapa",
+                "appstore": "https://apps.apple.com/nl/app/pasr-klantenkaarten/id6829229123"
             },
             "history": [],
             "icon": "img/nl-lrvdlinden-pasr.webp",
