@@ -302,7 +302,7 @@
             },
             "rating": 5.0,
             "reviews": 2,
-            "size": "116,1 MB",
+            "size": "116,6 MB",
             "languages": "NL + 10",
             "links": {
                 "appstore": "https://apps.apple.com/nl/app/bingr/id6821401598",
@@ -310,6 +310,17 @@
                 "testflight": "https://testflight.apple.com/join/JW915fdA"
             },
             "history": [
+                {
+                    "version": "1.0.5",
+                    "date": "2026-11-08",
+                    "notes": {
+                        "en": "New in Bingr 1.0.5\n\n• All-new TV guide\nThe TV guide has been completely redesigned. On iPhone the selected channel plays live at the top, with channels on the left and the day's programmes on the right. On iPad and Mac you get a large live preview with Watch live and Start over. On Apple TV the guide uses the full screen: browse the channel columns, and the channel you're on starts playing live in the NOW card after a second.\n\n• Live TV opens in the guide\nLive TV now always starts in the TV guide. Use the existing button to switch to the list.\n\n• Only days with programmes\nThe guide now only shows days that have programme information. Earlier days are shown for channels with catch-up.\n\n• Live preview your way\nChoose in Settings whether the live preview in the guide plays always, on Wi-Fi only, or never.\n\n• Bingr Lifetime in the app\nBuy Bingr Lifetime right in the app, with Restore Purchases for your other devices. New to Bingr? Buy Lifetime first, then create your account.\n\n• Bingr is going Lifetime\nFrom 1 December 2026, Bingr is available with Lifetime only. On Free today? Your servers, lists, profiles and settings stay saved.\n\nPlus small improvements and fixes.",
+                        "nl": "Nieuw in Bingr 1.0.5\n\n• Helemaal nieuwe tv-gids\nDe tv-gids is helemaal opnieuw ontworpen. Op iPhone speelt het geselecteerde kanaal live bovenaan, met zenders links en de programma's van die dag rechts. Op iPad en Mac krijg je een grote live preview met Live kijken en Opnieuw beginnen. Op Apple TV gebruikt de gids het hele scherm: blader door de kolommen met zenders, en het kanaal waarop je zit begint na een seconde live af te spelen in de NOW-kaart.\n\n• Live tv opent in de gids\nLive tv begint nu altijd in de tv-gids. Gebruik de bestaande knop om naar de lijst te schakelen.\n\n• Alleen dagen met programma's\nDe gids toont nu alleen dagen waarvoor programma-informatie beschikbaar is. Eerdere dagen worden getoond voor zenders met terugkijken.\n\n• Live preview naar wens\nKies in Instellingen of de live preview in de gids altijd, alleen op wifi of nooit wordt afgespeeld.\n\n• Bingr Lifetime in de app\nKoop Bingr Lifetime direct in de app, met Aankopen herstellen voor je andere apparaten. Nieuw bij Bingr? Koop eerst Lifetime en maak daarna je account aan.\n\n• Bingr gaat over op Lifetime\nVanaf 1 december 2026 is Bingr alleen nog beschikbaar met Lifetime. Heb je nu een Gratis abonnement? Je servers, lijsten, profielen en instellingen blijven bewaard.\n\nDaarnaast kleine verbeteringen en oplossingen."
+                    },
+                    "_src": {
+                        "en": "New in Bingr 1.0.5\n\n• All-new TV guide\nThe TV guide has been completely redesigned. On iPhone the selected channel plays live at the top, with channels on the left and the day's programmes on the right. On iPad and Mac you get a large live preview with Watch live and Start over. On Apple TV the guide uses the full screen: browse the channel columns, and the channel you're on starts playing live in the NOW card after a second.\n\n• Live TV opens in the guide\nLive TV now always starts in the TV guide. Use the existing button to switch to the list.\n\n• Only days with programmes\nThe guide now only shows days that have programme information. Earlier days are shown for channels with catch-up.\n\n• Live preview your way\nChoose in Settings whether the live preview in the guide plays always, on Wi-Fi only, or never.\n\n• Bingr Lifetime in the app\nBuy Bingr Lifetime right in the app, with Restore Purchases for your other devices. New to Bingr? Buy Lifetime first, then create your account.\n\n• Bingr is going Lifetime\nFrom 1 December 2026, Bingr is available with Lifetime only. On Free today? Your servers, lists, profiles and settings stay saved.\n\nPlus small improvements and fixes."
+                    }
+                },
                 {
                     "version": "1.0.4",
                     "date": "2026-11-02",
@@ -2611,10 +2622,59 @@
                 "en": "Dutch KNMI weather conditions and forecasts."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/KNMI/test/"
             },
             "rating": 5.0,
             "history": [
+                {
+                    "version": "4.3.3",
+                    "date": "2026-11-08",
+                    "notes": {
+                        "nl": "Kleine verbeteringen: een waarschuwing zonder KNMI-naam toont het verschijnsel nu netjes met hoofdletter, en de kaartwidget heeft nieuwe voorbeeldafbeeldingen met de knoppen per tijdvak.",
+                        "en": "Small improvements: a warning without a KNMI name now shows a neatly capitalised phenomenon, and the weather alert map widget has new preview images showing the time-block buttons."
+                    },
+                    "_src": {
+                        "nl": "Kleine verbeteringen: een waarschuwing zonder KNMI-naam toont het verschijnsel nu netjes met hoofdletter, en de kaartwidget heeft nieuwe voorbeeldafbeeldingen met de knoppen per tijdvak.",
+                        "en": "Small improvements: a warning without a KNMI name now shows a neatly capitalised phenomenon, and the weather alert map widget has new preview images showing the time-block buttons."
+                    }
+                },
+                {
+                    "version": "4.3.2",
+                    "date": "2026-11-08",
+                    "notes": {
+                        "nl": "Waarschuwingskaarten werken nu zoals op knmi.nl: één kaart per tijdvak, met de tijd en alle tijdvakken van de dag. Nieuwe camera Weeralarm – nu, nieuwe trigger voor een nieuw tijdvak en de kop, beschrijving en uitgifte van het KNMI als tokens. De kaartwidget heeft knoppen per tijdvak.",
+                        "en": "Warning maps now work like knmi.nl: one map per time block, with the time and all time blocks of the day. New camera Weather alert – now, new trigger for a new time block, and KNMI's headline, description and issue time as tokens. The map widget has time-block buttons."
+                    },
+                    "_src": {
+                        "nl": "Waarschuwingskaarten werken nu zoals op knmi.nl: één kaart per tijdvak, met de tijd en alle tijdvakken van de dag. Nieuwe camera Weeralarm – nu, nieuwe trigger voor een nieuw tijdvak en de kop, beschrijving en uitgifte van het KNMI als tokens. De kaartwidget heeft knoppen per tijdvak.",
+                        "en": "Warning maps now work like knmi.nl: one map per time block, with the time and all time blocks of the day. New camera Weather alert – now, new trigger for a new time block, and KNMI's headline, description and issue time as tokens. The map widget has time-block buttons."
+                    }
+                },
+                {
+                    "version": "4.3.1",
+                    "date": "2026-11-08",
+                    "notes": {
+                        "nl": "Weerwaarschuwingen gebruiken nu de teksten van het KNMI zelf: wat je kunt verwachten en wat je moet doen. Verschijnselen heten zoals bij het KNMI, bijvoorbeeld Mist. Een waarschuwing over meerdere tijdvakken start de Flow nog maar één keer. Nieuwe tokens Gevolgen en Advies.",
+                        "en": "Weather warnings now use KNMI's own texts: what to expect and what to do. The Dutch app shows KNMI's names, like Mist. A warning that spans several time slots triggers the Flow only once. New tokens Impact and Advice."
+                    },
+                    "_src": {
+                        "nl": "Weerwaarschuwingen gebruiken nu de teksten van het KNMI zelf: wat je kunt verwachten en wat je moet doen. Verschijnselen heten zoals bij het KNMI, bijvoorbeeld Mist. Een waarschuwing over meerdere tijdvakken start de Flow nog maar één keer. Nieuwe tokens Gevolgen en Advies.",
+                        "en": "Weather warnings now use KNMI's own texts: what to expect and what to do. The Dutch app shows KNMI's names, like Mist. A warning that spans several time slots triggers the Flow only once. New tokens Impact and Advice."
+                    }
+                },
+                {
+                    "version": "4.3.0",
+                    "date": "2026-11-07",
+                    "notes": {
+                        "nl": "Nieuwe KNMI-weeralarmen: het KNMI waarschuwt nu per gebied in plaats van per provincie. De app gebruikt deze nieuwe waarschuwingen, tekent eigen waarschuwingskaarten voor vandaag, morgen en overmorgen (camerabeelden en afbeeldingstokens) en heeft nieuwe capabilities, Flowkaarten en tokens, waaronder het alarmniveau op je Homey-locatie. Ook nieuw: vijf dashboardwidgets (weer nu, 5-daagse verwachting, weeralarm, waarschuwingskaart, wind & zon).",
+                        "en": "New KNMI weather alerts: KNMI now warns for local areas instead of provinces. The app uses these new alerts, draws its own warning maps for today, tomorrow and the day after tomorrow (camera images and image tokens) and adds new capabilities, Flow cards and tokens, including the alert level at your Homey location. Also new: five dashboard widgets (weather now, 5-day forecast, weather alerts, weather alert map, wind & sun)."
+                    },
+                    "_src": {
+                        "nl": "Nieuwe KNMI-weeralarmen: het KNMI waarschuwt nu per gebied in plaats van per provincie. De app gebruikt deze nieuwe waarschuwingen, tekent eigen waarschuwingskaarten voor vandaag, morgen en overmorgen (camerabeelden en afbeeldingstokens) en heeft nieuwe capabilities, Flowkaarten en tokens, waaronder het alarmniveau op je Homey-locatie. Ook nieuw: vijf dashboardwidgets (weer nu, 5-daagse verwachting, weeralarm, waarschuwingskaart, wind & zon).",
+                        "en": "New KNMI weather alerts: KNMI now warns for local areas instead of provinces. The app uses these new alerts, draws its own warning maps for today, tomorrow and the day after tomorrow (camera images and image tokens) and adds new capabilities, Flow cards and tokens, including the alert level at your Homey location. Also new: five dashboard widgets (weather now, 5-day forecast, weather alerts, weather alert map, wind & sun)."
+                    }
+                },
                 {
                     "version": "4.2.4",
                     "date": "2026-11-05",
@@ -2682,50 +2742,6 @@
                     },
                     "_src": {
                         "en": "App Improvement"
-                    }
-                },
-                {
-                    "version": "4.1.7",
-                    "date": "2026-05-18",
-                    "notes": {
-                        "en": "app improvement",
-                        "nl": "app-verbetering"
-                    },
-                    "_src": {
-                        "en": "app improvement"
-                    }
-                },
-                {
-                    "version": "4.1.6",
-                    "date": "2026-05-17",
-                    "notes": {
-                        "en": "fix buienradar image",
-                        "nl": "buienradar-afbeelding repareren"
-                    },
-                    "_src": {
-                        "en": "fix buienradar image"
-                    }
-                },
-                {
-                    "version": "4.1.5",
-                    "date": "2026-05-17",
-                    "notes": {
-                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data.",
-                        "nl": "Toegevoegd: uitgebreide weerdata, inclusief tijdstempels, weericonen, windsnelheid in knopen, verbeterde voorspellingsvelden en een nieuwe mogelijkheid voor een knop om handmatig te vernieuwen, zodat je direct de nieuwste KNMI-/weerdata ophaalt."
-                    },
-                    "_src": {
-                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
-                    }
-                },
-                {
-                    "version": "4.1.4",
-                    "date": "2026-05-17",
-                    "notes": {
-                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data.",
-                        "nl": "Toegevoegd: uitgebreide weerdata, inclusief tijdstempels, weericonen, windsnelheid in knopen, verbeterde voorspellingsvelden en een nieuwe mogelijkheid voor een knop om handmatig te vernieuwen, zodat je direct de nieuwste KNMI-/weerdata ophaalt."
-                    },
-                    "_src": {
-                        "en": "Added expanded weather data support including timestamps, weather icons, wind speed in knots, improved forecast fields, and a new manual refresh button capability to instantly fetch the latest KNMI/weather data."
                     }
                 }
             ],
@@ -3459,7 +3475,8 @@
                 "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268",
                 "category": "internet",
-                "live": "4.2.4"
+                "live": "4.2.4",
+                "test": "4.3.5"
             }
         },
         {
