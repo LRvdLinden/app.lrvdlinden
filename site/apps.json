@@ -134,6 +134,7 @@
             "platforms": [
                 "iPhone",
                 "iPad",
+                "Mac",
                 "Apple Watch"
             ],
             "description": {
