@@ -134,7 +134,7 @@ andere acties blijven zonder Origin.
   per apparaat (iPhone, iPad, Mac) eerste downloads, opnieuw gedownload en updates. Tabel `lrbeheer_bekendr_daily`.
 - **App Store Connect**: function-secrets `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (API-sleutel met rol Sales of
   Finance) en `ASC_VENDOR_NUMBER`; optioneel `ASC_BEKENDR_APPLE_ID` (anders op titel "Bekendr"). De workflows
-  zetten ze uit `KEY_ID_APPSTORE_CONNECT`, `ISSUER_ID_APPSTORE_CONNECT`, `P8_APPSTORE_CONNECT` en
+  zetten ze uit `KEY_ID_APPSTORE_CONNECT`, `ISSUER_ID_APPSTORE_CONNECT`, `APPSTORE_CONNECT_P8` en
   `VENDOR_APPSTORE_CONNECT` (app.lrvdlinden.secrets). Zonder .p8 of vendornummer telt alleen Android.
 
 ## Eén beheer-inlog voor alle omgevingen

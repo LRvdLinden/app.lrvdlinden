@@ -214,7 +214,7 @@ async function getJSON(url: string, github = false): Promise<unknown> {
   return await r.json();
 }
 
-async function cron() {
+async function cron(forceBekendr = false) {
   const notices: Notice[] = [];
   const errors: string[] = [];
   const step = async (name: string, f: () => Promise<void>) => { try { await f(); } catch (e) { errors.push(`${name}: ${e instanceof Error ? e.message : "fout"}`); } };
@@ -278,14 +278,15 @@ async function cron() {
   await step("bekendr", async () => {
     const { day, hour } = amsterdam(new Date());
     const stamp = `${day}T${hour}`;
-    if ((await getState<string>("bekendr_hour")) === stamp) return;
+    if (!forceBekendr && (await getState<string>("bekendr_hour")) === stamp) return;
     await setState("bekendr_hour", stamp);
     await bekendrSync(day);
   });
 
   const res = await deliver(notices);
   if (errors.length) console.error("lrbeheer", "cron", errors.join("; "));
-  return { notices: notices.length, ...res, errors: errors.length };
+  const bekendr = errors.find((e) => e.startsWith("bekendr:"))?.slice(9).trim() ?? "ok";
+  return { notices: notices.length, ...res, errors: errors.length, bekendr };
 }
 
 Deno.serve(async (req) => {
@@ -327,7 +328,7 @@ Deno.serve(async (req) => {
 
     if (action === "cron") {
       if (!(await sameSecret(req.headers.get("x-lrbeheer-cron"), env("LRBEHEER_CRON_SECRET")))) return json({ error: "unauthorized" }, 401);
-      return json({ ok: true, ...(await cron()) });
+      return json({ ok: true, ...(await cron(body.force_bekendr === true)) });
     }
     if (action === "notify") {
       if (!(await sameSecret(req.headers.get("x-lrbeheer-secret"), env("LRBEHEER_NOTIFY_SECRET")))) return json({ error: "unauthorized" }, 401);

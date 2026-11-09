@@ -13,7 +13,7 @@
 #   BEHEER_APP_USER, BEHEER_APP_PASSWORD                   gedeelde beheer-inlog (Bekendr-beheer)
 #   KEY_ID_APPSTORE_CONNECT, ISSUER_ID_APPSTORE_CONNECT,
 #   VENDOR_APPSTORE_CONNECT                                App Store Connect (Bekendr: Apple-downloads)
-#   P8_APPSTORE_CONNECT                                    .p8 van die API-sleutel; zonder dit wordt APN_P8_CERT alleen
+#   APPSTORE_CONNECT_P8                                    .p8 van die API-sleutel; zonder dit wordt APN_P8_CERT alleen
 #                                                          gebruikt als KEY_ID_APPSTORE_CONNECT gelijk is aan APN_KEY_ID
 name: LRbeheer push
 
@@ -39,7 +39,7 @@ jobs:
           B_PASS: ${{ secrets.BEHEER_APP_PASSWORD }}
           ASC_KEY_ID: ${{ secrets.KEY_ID_APPSTORE_CONNECT }}
           ASC_ISSUER_ID: ${{ secrets.ISSUER_ID_APPSTORE_CONNECT }}
-          ASC_P8: ${{ secrets.P8_APPSTORE_CONNECT }}
+          ASC_P8: ${{ secrets.APPSTORE_CONNECT_P8 || secrets.P8_APPSTORE_CONNECT }}
           ASC_VENDOR: ${{ secrets.VENDOR_APPSTORE_CONNECT || secrets.VENDOR_NUMBER_APPSTORE_CONNECT }}
           SB_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN || secrets.SUPABASE_ACCES_TOKEN }}
         run: |
@@ -64,7 +64,7 @@ jobs:
           put LRBEHEER_ASC_VENDOR "$ASC_VENDOR"
           if [ -n "$SB_TOKEN" ]; then put SUPABASE_ACCESS_TOKEN "$SB_TOKEN" && echo "::notice::SUPABASE_ACCESS_TOKEN bijgewerkt in $R"; fi
           [ "$failed" = 0 ] || exit 1
-          [ -n "$ASC_P8" ] || echo "::warning::Geen .p8 voor App Store Connect (P8_APPSTORE_CONNECT): Bekendr telt alleen Android"
+          [ -n "$ASC_P8" ] || echo "::warning::Geen .p8 voor App Store Connect (APPSTORE_CONNECT_P8): Bekendr telt alleen Android"
           [ -n "$ASC_VENDOR" ] || echo "::warning::VENDOR_APPSTORE_CONNECT ontbreekt: Bekendr telt alleen Android"
           echo "::notice::Secrets gezet in $R"
 
