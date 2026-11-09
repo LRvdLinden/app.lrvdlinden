@@ -130,7 +130,7 @@ export function pemToDer(pem: string): Uint8Array {
   return Uint8Array.from(atob(body), (c) => c.charCodeAt(0));
 }
 export function importApnsKey(pem: string): Promise<CryptoKey> {
-  return crypto.subtle.importKey("pkcs8", pemToDer(pem), { name: "ECDSA", namedCurve: "P-256" }, false, ["sign"]);
+  return crypto.subtle.importKey("pkcs8", new Uint8Array(pemToDer(pem)), { name: "ECDSA", namedCurve: "P-256" }, false, ["sign"]);
 }
 export async function apnsJwt(key: CryptoKey, keyId: string, teamId: string, nowS: number): Promise<string> {
   const input = `${b64u(enc.encode(JSON.stringify({ alg: "ES256", kid: keyId })))}.${b64u(enc.encode(JSON.stringify({ iss: teamId, iat: nowS })))}`;
