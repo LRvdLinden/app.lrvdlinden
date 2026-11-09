@@ -1,22 +1,19 @@
-# Workflow voor de repo LRvdLinden/app.lrvdlinden.secrets (kopieer naar .github/workflows/lrbeheer-push.yml daar).
-# Zet de centrale pushfunctie `lrbeheer` van LRbeheer op in het Supabase-project van Tunr, met de APNs-sleutel uit de
-# repository-secrets van app.lrvdlinden.secrets. Alleen met de hand te starten (Actions → LRbeheer push → Run workflow).
+# Workflow voor de repo LRvdLinden/app.lrvdlinden.secrets (kopie van .github/workflows/lrbeheer-push.yml daar).
+# Zet de centrale functie `lrbeheer` van LRbeheer (pushmeldingen en het Bekendr-beheer) live in het Supabase-project van
+# Tunr. Alleen met de hand te starten (Actions → LRbeheer push → Run workflow).
 #
-# Gebruikt de bestaande secrets:  APN_KEY_ID, APN_P8_CERT, TEAM_ID
-# Nodig:                          SUPABASE_ACCESS_TOKEN (supabase.com/dashboard/account/tokens, zelfde als in tunr-beheer)
-# Optioneel:                      TUNR_PROJECT_REF      (standaard vbhkewgyujzgbukkbtml, het Tunr-project)
-#                                 LRBEHEER_CRON_SECRET  (zonder: elke run een nieuwe willekeurige waarde, die de workflow
-#                                                        zelf in de functie én in de pg_cron-taak zet)
-# De workflow plant ook de cron in (pg_cron + pg_net, elke 5 minuten) en ruimt de geschiedenis dagelijks op.
-# Optioneel:                      FINE_GRAINED_PERSONAL_ACCESS_TOKEN → wordt GITHUB_TOKEN van de functie (alleen lezen)
-# Bekendr (downloads in LRbeheer en op bekendr.lrvdlinden.app/beheer):
-#   BEHEER_APP_USER / BEHEER_APP_PASSWORD           gedeelde beheer-inlog (bestaan al)
-#   KEY_ID_APPSTORE_CONNECT / ISSUER_ID_APPSTORE_CONNECT   API-sleutel van App Store Connect (bestaan al)
-#   P8_APPSTORE_CONNECT                             inhoud van het .p8-bestand van die API-sleutel (rol Sales of Finance)
-#   VENDOR_NUMBER_APPSTORE_CONNECT                  vendornummer (App Store Connect → Betalingen en financiële rapporten)
-#   Zonder de .p8 of het vendornummer werkt alleen het Android-deel.
+# Het deployen zelf gebeurt in LRvdLinden/tunr-beheer (workflow *LRbeheer*, lrbeheer.yml), met het SUPABASE_ACCESS_TOKEN
+# dat daar al staat. Deze workflow zet eerst de benodigde waarden uit deze repo als secrets in tunr-beheer en start
+# daarna die workflow. Geen enkele waarde komt in het log (gh secret set leest van stdin).
 #
-# Geen enkele waarde komt in het log: de secrets gaan via een tijdelijk env-bestand naar `supabase secrets set`.
+# Gebruikt de secrets hier:
+#   APN_KEY_ID, APN_P8_CERT, TEAM_ID                       APNs-sleutel (verplicht)
+#   FINE_GRAINED_PERSONAL_ACCESS_TOKEN                     Secrets + Actions: Read and write op tunr-beheer (verplicht)
+#   BEHEER_APP_USER, BEHEER_APP_PASSWORD                   gedeelde beheer-inlog (Bekendr-beheer)
+#   KEY_ID_APPSTORE_CONNECT, ISSUER_ID_APPSTORE_CONNECT,
+#   VENDOR_APPSTORE_CONNECT                                App Store Connect (Bekendr: Apple-downloads)
+#   P8_APPSTORE_CONNECT                                    .p8 van die API-sleutel; zonder dit wordt APN_P8_CERT alleen
+#                                                          gebruikt als KEY_ID_APPSTORE_CONNECT gelijk is aan APN_KEY_ID
 name: LRbeheer push
 
 on:
@@ -26,120 +23,50 @@ permissions:
   contents: read
 
 jobs:
-  deploy:
+  push:
     runs-on: ubuntu-24.04
     env:
-      REF: ${{ secrets.TUNR_PROJECT_REF || 'vbhkewgyujzgbukkbtml' }}
+      GH_TOKEN: ${{ secrets.FINE_GRAINED_PERSONAL_ACCESS_TOKEN }}
+      R: LRvdLinden/tunr-beheer
     steps:
-      - name: Code van LRbeheer ophalen (functie lrbeheer)
-        uses: actions/checkout@v5
-        with:
-          repository: LRvdLinden/app.lrvdlinden
-          ref: main
-          sparse-checkout: beheer/server
-
-      - uses: supabase/setup-cli@v1
-        with:
-          version: 2.54.11
-
-      - name: Controleer secrets
+      - name: Secrets naar tunr-beheer
         env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-          APN_KEY_ID: ${{ secrets.APN_KEY_ID }}
-          APN_P8_CERT: ${{ secrets.APN_P8_CERT }}
-          CRON_FIXED: ${{ secrets.LRBEHEER_CRON_SECRET }}
-        run: |
-          missing=""
-          for v in SUPABASE_ACCESS_TOKEN APN_KEY_ID APN_P8_CERT; do
-            [ -n "${!v}" ] || missing="$missing $v"
-          done
-          if [ -n "$missing" ]; then echo "::error::Ontbrekende secrets:$missing"; exit 1; fi
-          if [ -n "$CRON_FIXED" ]; then c="$CRON_FIXED"; else c="$(openssl rand -hex 32)"; fi
-          echo "::add-mask::$c"
-          echo "CRON_SECRET=$c" >> "$GITHUB_ENV"
-
-      - name: Schema (alleen tabellen lrbeheer_*)
-        env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-        run: |
-          body=$(jq -Rs '{query: .}' beheer/server/supabase/schema.sql)
-          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
-            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" -H 'Content-Type: application/json' -d "$body")
-          if [ "$code" -ge 300 ]; then echo "::error::Schema gaf HTTP $code"; exit 1; fi
-          echo "::notice::Schema toegepast"
-
-      - name: Function-secrets zetten
-        env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
           APN_KEY_ID: ${{ secrets.APN_KEY_ID }}
           APN_P8_CERT: ${{ secrets.APN_P8_CERT }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
-          GH_READ: ${{ secrets.FINE_GRAINED_PERSONAL_ACCESS_TOKEN }}
           B_USER: ${{ secrets.BEHEER_APP_USER }}
           B_PASS: ${{ secrets.BEHEER_APP_PASSWORD }}
           ASC_KEY_ID: ${{ secrets.KEY_ID_APPSTORE_CONNECT }}
           ASC_ISSUER_ID: ${{ secrets.ISSUER_ID_APPSTORE_CONNECT }}
-          ASC_KEY_P8: ${{ secrets.P8_APPSTORE_CONNECT }}
-          ASC_VENDOR_NUMBER: ${{ secrets.VENDOR_NUMBER_APPSTORE_CONNECT }}
+          ASC_P8: ${{ secrets.P8_APPSTORE_CONNECT }}
+          ASC_VENDOR: ${{ secrets.VENDOR_APPSTORE_CONNECT || secrets.VENDOR_NUMBER_APPSTORE_CONNECT }}
         run: |
-          f="$(mktemp)"
-          {
-            printf 'APN_KEY_ID=%s\n' "$APN_KEY_ID"
-            # .p8 op één regel (de functie zet \n terug)
-            printf 'APN_P8_CERT=%s\n' "$(printf '%s' "$APN_P8_CERT" | awk 'BEGIN{ORS="\\n"} {print}')"
-            printf 'TEAM_ID=%s\n' "${TEAM_ID:-EU3UY476T6}"
-            printf 'LRBEHEER_CRON_SECRET=%s\n' "$CRON_SECRET"
-            if [ -n "$GH_READ" ]; then printf 'GITHUB_TOKEN=%s\n' "$GH_READ"; fi
-            # Bekendr
-            if [ -n "$B_USER" ] && [ -n "$B_PASS" ]; then
-              printf 'BEHEER_APP_USER=%s\n' "$B_USER"
-              printf 'BEHEER_APP_PASSWORD=%s\n' "$B_PASS"
-            else
-              echo "::warning::BEHEER_APP_USER/BEHEER_APP_PASSWORD ontbreken: inloggen in het Bekendr-beheer lukt niet" >&2
-            fi
-            if [ -n "$ASC_KEY_ID" ]; then printf 'ASC_KEY_ID=%s\n' "$ASC_KEY_ID"; fi
-            if [ -n "$ASC_ISSUER_ID" ]; then printf 'ASC_ISSUER_ID=%s\n' "$ASC_ISSUER_ID"; fi
-            if [ -n "$ASC_KEY_P8" ]; then printf 'ASC_KEY_P8=%s\n' "$(printf '%s' "$ASC_KEY_P8" | awk 'BEGIN{ORS="\\n"} {print}')"; fi
-            if [ -n "$ASC_VENDOR_NUMBER" ]; then printf 'ASC_VENDOR_NUMBER=%s\n' "$ASC_VENDOR_NUMBER"; fi
-            if [ -z "$ASC_KEY_P8" ] || [ -z "$ASC_VENDOR_NUMBER" ]; then
-              echo "::warning::P8_APPSTORE_CONNECT of VENDOR_NUMBER_APPSTORE_CONNECT ontbreekt: Bekendr toont alleen Android-downloads" >&2
-            fi
-          } > "$f"
-          supabase secrets set --project-ref "$REF" --env-file "$f" > /dev/null
-          rm -f "$f"
-          echo "::notice::Function-secrets van lrbeheer gezet"
+          missing=""
+          for v in GH_TOKEN APN_KEY_ID APN_P8_CERT; do [ -n "${!v}" ] || missing="$missing $v"; done
+          if [ -n "$missing" ]; then echo "::error::Ontbrekende secrets:$missing"; exit 1; fi
+          if [ -z "$ASC_P8" ] && [ -n "$ASC_KEY_ID" ] && [ "$ASC_KEY_ID" = "$APN_KEY_ID" ]; then ASC_P8="$APN_P8_CERT"; fi
+          failed=0
+          put() { # naam waarde
+            [ -n "$2" ] || return 0
+            printf '%s' "$2" | gh secret set "$1" --repo "$R" > /dev/null 2>&1 || { echo "::error::$1 zetten in $R mislukt (token heeft Secrets: Read and write nodig)"; failed=1; }
+          }
+          put LRBEHEER_APN_KEY_ID "$APN_KEY_ID"
+          put LRBEHEER_APN_P8 "$APN_P8_CERT"
+          put LRBEHEER_TEAM_ID "${TEAM_ID:-EU3UY476T6}"
+          put LRBEHEER_GH_READ "$GH_TOKEN"
+          put LRBEHEER_ADMIN_USER "$B_USER"
+          put LRBEHEER_ADMIN_PASSWORD "$B_PASS"
+          put LRBEHEER_ASC_KEY_ID "$ASC_KEY_ID"
+          put LRBEHEER_ASC_ISSUER_ID "$ASC_ISSUER_ID"
+          put LRBEHEER_ASC_KEY_P8 "$ASC_P8"
+          put LRBEHEER_ASC_VENDOR "$ASC_VENDOR"
+          [ "$failed" = 0 ] || exit 1
+          [ -n "$ASC_P8" ] || echo "::warning::Geen .p8 voor App Store Connect (P8_APPSTORE_CONNECT): Bekendr telt alleen Android"
+          [ -n "$ASC_VENDOR" ] || echo "::warning::VENDOR_APPSTORE_CONNECT ontbreekt: Bekendr telt alleen Android"
+          echo "::notice::Secrets gezet in $R"
 
-      - name: Functie deployen
-        env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-        working-directory: beheer/server
+      - name: Deploy starten in tunr-beheer
         run: |
-          supabase functions deploy lrbeheer --project-ref "$REF" --no-verify-jwt > /dev/null
-          echo "::notice::Functie lrbeheer gedeployd"
-
-      - name: Cron inplannen (pg_cron + pg_net)
-        env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-        run: |
-          sql=$(cat <<SQL
-          create extension if not exists pg_cron;
-          create extension if not exists pg_net;
-          select cron.unschedule(jobid) from cron.job where jobname in ('lrbeheer-push', 'lrbeheer-cleanup');
-          select cron.schedule('lrbeheer-push', '*/5 * * * *', \$job\$ select net.http_post(
-            url := 'https://$REF.supabase.co/functions/v1/lrbeheer',
-            headers := jsonb_build_object('Content-Type','application/json','x-lrbeheer-cron','$CRON_SECRET'),
-            body := '{"action":"cron"}'::jsonb); \$job\$);
-          select cron.schedule('lrbeheer-cleanup', '17 3 * * *', \$job\$ select public.lrbeheer_cleanup(); \$job\$);
-          SQL
-          )
-          body=$(printf '%s' "$sql" | jq -Rs '{query: .}')
-          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
-            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" -H 'Content-Type: application/json' -d "$body")
-          if [ "$code" -ge 300 ]; then echo "::error::Cron inplannen gaf HTTP $code"; exit 1; fi
-          echo "::notice::Cron ingepland (elke 5 minuten; Bekendr elk uur)"
-
-      - name: Rooktest (zonder token = 401)
-        run: |
-          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "https://$REF.supabase.co/functions/v1/lrbeheer" \
-            -H 'Content-Type: application/json' -d '{"action":"history"}')
-          if [ "$code" = "401" ]; then echo "::notice::lrbeheer antwoordt (401 zonder token, zoals bedoeld)"; else echo "::warning::lrbeheer gaf HTTP $code"; fi
+          gh workflow run lrbeheer.yml --repo "$R" --ref main > /dev/null 2>&1 \
+            || { echo "::error::Workflow LRbeheer in $R starten mislukt (token heeft Actions: Read and write nodig)"; exit 1; }
+          echo "::notice::Workflow LRbeheer gestart in $R"

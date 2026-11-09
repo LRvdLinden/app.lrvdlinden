@@ -84,7 +84,7 @@ struct BekendrMain: View {
 
     @ViewBuilder private func content(_ s: BekendrStats) -> some View {
         if !s.apple.configured {
-            Label("App Store Connect is nog niet gekoppeld; alleen Android wordt geteld. Zet P8_APPSTORE_CONNECT en VENDOR_NUMBER_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push.",
+            Label("App Store Connect is nog niet gekoppeld; alleen Android wordt geteld. Zet P8_APPSTORE_CONNECT en VENDOR_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push.",
                   systemImage: "info.circle")
                 .font(.footnote)
                 .frame(maxWidth: .infinity, alignment: .leading)

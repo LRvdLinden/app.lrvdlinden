@@ -58,11 +58,12 @@ Ze zijn **niet** toegepast of gedeployd: dat raakt productie en is jouw beslissi
 ## De centrale functie `lrbeheer` installeren (Supabase-project van Tunr)
 
 1. **Schema**: voer `supabase/schema.sql` uit (SQL Editor of Management API). Alleen nieuwe tabellen `lrbeheer_*`.
-2. **Snelste weg: de workflow** `github/lrbeheer-push.yml`. Kopieer hem naar `.github/workflows/` in
-   **LRvdLinden/app.lrvdlinden.secrets** en start hem met de hand. Hij past het schema toe, zet de function-secrets en
-   deployt de functie, met de APNs-sleutel die daar al staat. Daarvoor is in die repo alleen `SUPABASE_ACCESS_TOKEN` nodig
-   (zelfde waarde als in tunr-beheer). `TUNR_PROJECT_REF` is optioneel (standaard het Tunr-project) en zonder
-   `LRBEHEER_CRON_SECRET` maakt de workflow elke run zelf een nieuw geheim. De workflow plant ook de cron in (stap 3).
+2. **Snelste weg: de workflow** *LRbeheer push* (`github/lrbeheer-push.yml`, staat in **LRvdLinden/app.lrvdlinden.secrets**),
+   met de hand starten. Die zet de APNs-sleutel, de beheer-inlog en de App Store Connect-sleutel als secrets
+   `LRBEHEER_*` in **LRvdLinden/tunr-beheer** en start daar de workflow *LRbeheer* (`lrbeheer.yml`). Die test de functie,
+   past het schema toe, zet de function-secrets, deployt `lrbeheer`, plant de cron in (met een nieuw cron-geheim per
+   run) en doet een rooktest, met het `SUPABASE_ACCESS_TOKEN` dat al in tunr-beheer staat. Er staat geen
+   Supabase-token in app.lrvdlinden.secrets.
 
    Of met de hand (Supabase → Edge Functions → Secrets):
 
@@ -132,9 +133,9 @@ andere acties blijven zonder Origin.
   downloads per dag; en de dagelijkse verkoopoverzichten van App Store Connect (SALES/SUMMARY, laatste 30 dagen) →
   per apparaat (iPhone, iPad, Mac) eerste downloads, opnieuw gedownload en updates. Tabel `lrbeheer_bekendr_daily`.
 - **App Store Connect**: function-secrets `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (API-sleutel met rol Sales of
-  Finance) en `ASC_VENDOR_NUMBER`; optioneel `ASC_BEKENDR_APPLE_ID` (anders op titel "Bekendr"). De workflow
-  `lrbeheer-push.yml` zet ze uit `KEY_ID_APPSTORE_CONNECT`, `ISSUER_ID_APPSTORE_CONNECT`, `P8_APPSTORE_CONNECT` en
-  `VENDOR_NUMBER_APPSTORE_CONNECT`. Zonder .p8 of vendornummer telt alleen Android.
+  Finance) en `ASC_VENDOR_NUMBER`; optioneel `ASC_BEKENDR_APPLE_ID` (anders op titel "Bekendr"). De workflows
+  zetten ze uit `KEY_ID_APPSTORE_CONNECT`, `ISSUER_ID_APPSTORE_CONNECT`, `P8_APPSTORE_CONNECT` en
+  `VENDOR_APPSTORE_CONNECT` (app.lrvdlinden.secrets). Zonder .p8 of vendornummer telt alleen Android.
 
 ## Eén beheer-inlog voor alle omgevingen
 
@@ -151,7 +152,7 @@ deploy:
 | p2000-apeldoorn | `BEHEER_USER`, `BEHEER_PASSWORD` | `worker.yml` |
 | app.lrvdlinden | `BEHEER_USER`, `BEHEER_PASSWORD` | `release.yml` (.htpasswd) |
 | pixelforges | `BEHEER_USER`, `BEHEER_PASSWORD` | `release.yml` (.htpasswd) |
-| Bekendr (functie `lrbeheer`, Tunr-project) | `BEHEER_APP_USER`, `BEHEER_APP_PASSWORD` (function-secrets) | geen deploy nodig |
+| tunr-beheer (functie `lrbeheer`: Bekendr) | `LRBEHEER_ADMIN_USER`, `LRBEHEER_ADMIN_PASSWORD` | `lrbeheer.yml` |
 
 Voorwaarden: het wachtwoord heeft minstens 12 tekens (eis van Bingr) en geen `:`, en
 `FINE_GRAINED_PERSONAL_ACCESS_TOKEN` heeft voor die zes repo's *Secrets: Read and write* en *Actions: Read and write*.

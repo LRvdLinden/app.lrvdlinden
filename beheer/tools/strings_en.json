@@ -669,7 +669,7 @@
  "Trek omlaag om de downloads op te halen.": "Pull down to fetch the downloads.",
  "Web-beheer openen": "Open web admin",
  "Uitloggen bij Bekendr?": "Sign out of Bekendr?",
- "App Store Connect is nog niet gekoppeld; alleen Android wordt geteld. Zet P8_APPSTORE_CONNECT en VENDOR_NUMBER_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push.": "App Store Connect is not connected yet; only Android is counted. Add P8_APPSTORE_CONNECT and VENDOR_NUMBER_APPSTORE_CONNECT to app.lrvdlinden.secrets and run LRbeheer push.",
+ "App Store Connect is nog niet gekoppeld; alleen Android wordt geteld. Zet P8_APPSTORE_CONNECT en VENDOR_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push.": "App Store Connect is not connected yet; only Android is counted. Add P8_APPSTORE_CONNECT and VENDOR_APPSTORE_CONNECT to app.lrvdlinden.secrets and run LRbeheer push.",
  "Apple + Android": "Apple + Android",
  "APK-downloads": "APK downloads",
  "Eerste downloads": "First-time downloads",
