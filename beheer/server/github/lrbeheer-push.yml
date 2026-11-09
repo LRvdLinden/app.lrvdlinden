@@ -3,9 +3,11 @@
 # repository-secrets van app.lrvdlinden.secrets. Alleen met de hand te starten (Actions → LRbeheer push → Run workflow).
 #
 # Gebruikt de bestaande secrets:  APN_KEY_ID, APN_P8_CERT, TEAM_ID
-# Nog toe te voegen secrets:      SUPABASE_ACCESS_TOKEN (supabase.com/dashboard/account/tokens, zelfde als in tunr-beheer)
-#                                 TUNR_PROJECT_REF      (project-ref van Tunr, het deel vóór .supabase.co)
-#                                 LRBEHEER_CRON_SECRET  (lange willekeurige tekst; zelfde waarde als in de pg_cron-taak)
+# Nodig:                          SUPABASE_ACCESS_TOKEN (supabase.com/dashboard/account/tokens, zelfde als in tunr-beheer)
+# Optioneel:                      TUNR_PROJECT_REF      (standaard vbhkewgyujzgbukkbtml, het Tunr-project)
+#                                 LRBEHEER_CRON_SECRET  (zonder: elke run een nieuwe willekeurige waarde, die de workflow
+#                                                        zelf in de functie én in de pg_cron-taak zet)
+# De workflow plant ook de cron in (pg_cron + pg_net, elke 5 minuten) en ruimt de geschiedenis dagelijks op.
 # Optioneel:                      FINE_GRAINED_PERSONAL_ACCESS_TOKEN → wordt GITHUB_TOKEN van de functie (alleen lezen)
 # Bekendr (downloads in LRbeheer en op bekendr.lrvdlinden.app/beheer):
 #   BEHEER_APP_USER / BEHEER_APP_PASSWORD           gedeelde beheer-inlog (bestaan al)
@@ -26,6 +28,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-24.04
+    env:
+      REF: ${{ secrets.TUNR_PROJECT_REF || 'vbhkewgyujzgbukkbtml' }}
     steps:
       - name: Code van LRbeheer ophalen (functie lrbeheer)
         uses: actions/checkout@v5
@@ -41,21 +45,22 @@ jobs:
       - name: Controleer secrets
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-          TUNR_PROJECT_REF: ${{ secrets.TUNR_PROJECT_REF }}
           APN_KEY_ID: ${{ secrets.APN_KEY_ID }}
           APN_P8_CERT: ${{ secrets.APN_P8_CERT }}
-          LRBEHEER_CRON_SECRET: ${{ secrets.LRBEHEER_CRON_SECRET }}
+          CRON_FIXED: ${{ secrets.LRBEHEER_CRON_SECRET }}
         run: |
           missing=""
-          for v in SUPABASE_ACCESS_TOKEN TUNR_PROJECT_REF APN_KEY_ID APN_P8_CERT LRBEHEER_CRON_SECRET; do
+          for v in SUPABASE_ACCESS_TOKEN APN_KEY_ID APN_P8_CERT; do
             [ -n "${!v}" ] || missing="$missing $v"
           done
           if [ -n "$missing" ]; then echo "::error::Ontbrekende secrets:$missing"; exit 1; fi
+          if [ -n "$CRON_FIXED" ]; then c="$CRON_FIXED"; else c="$(openssl rand -hex 32)"; fi
+          echo "::add-mask::$c"
+          echo "CRON_SECRET=$c" >> "$GITHUB_ENV"
 
       - name: Schema (alleen tabellen lrbeheer_*)
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-          REF: ${{ secrets.TUNR_PROJECT_REF }}
         run: |
           body=$(jq -Rs '{query: .}' beheer/server/supabase/schema.sql)
           code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
@@ -66,11 +71,9 @@ jobs:
       - name: Function-secrets zetten
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-          REF: ${{ secrets.TUNR_PROJECT_REF }}
           APN_KEY_ID: ${{ secrets.APN_KEY_ID }}
           APN_P8_CERT: ${{ secrets.APN_P8_CERT }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
-          LRBEHEER_CRON_SECRET: ${{ secrets.LRBEHEER_CRON_SECRET }}
           GH_READ: ${{ secrets.FINE_GRAINED_PERSONAL_ACCESS_TOKEN }}
           B_USER: ${{ secrets.BEHEER_APP_USER }}
           B_PASS: ${{ secrets.BEHEER_APP_PASSWORD }}
@@ -85,7 +88,7 @@ jobs:
             # .p8 op één regel (de functie zet \n terug)
             printf 'APN_P8_CERT=%s\n' "$(printf '%s' "$APN_P8_CERT" | awk 'BEGIN{ORS="\\n"} {print}')"
             printf 'TEAM_ID=%s\n' "${TEAM_ID:-EU3UY476T6}"
-            printf 'LRBEHEER_CRON_SECRET=%s\n' "$LRBEHEER_CRON_SECRET"
+            printf 'LRBEHEER_CRON_SECRET=%s\n' "$CRON_SECRET"
             if [ -n "$GH_READ" ]; then printf 'GITHUB_TOKEN=%s\n' "$GH_READ"; fi
             # Bekendr
             if [ -n "$B_USER" ] && [ -n "$B_PASS" ]; then
@@ -109,15 +112,33 @@ jobs:
       - name: Functie deployen
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-          REF: ${{ secrets.TUNR_PROJECT_REF }}
         working-directory: beheer/server
         run: |
           supabase functions deploy lrbeheer --project-ref "$REF" --no-verify-jwt > /dev/null
           echo "::notice::Functie lrbeheer gedeployd"
 
-      - name: Rooktest (zonder token = 401)
+      - name: Cron inplannen (pg_cron + pg_net)
         env:
-          REF: ${{ secrets.TUNR_PROJECT_REF }}
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          sql=$(cat <<SQL
+          create extension if not exists pg_cron;
+          create extension if not exists pg_net;
+          select cron.unschedule(jobid) from cron.job where jobname in ('lrbeheer-push', 'lrbeheer-cleanup');
+          select cron.schedule('lrbeheer-push', '*/5 * * * *', \$job\$ select net.http_post(
+            url := 'https://$REF.supabase.co/functions/v1/lrbeheer',
+            headers := jsonb_build_object('Content-Type','application/json','x-lrbeheer-cron','$CRON_SECRET'),
+            body := '{"action":"cron"}'::jsonb); \$job\$);
+          select cron.schedule('lrbeheer-cleanup', '17 3 * * *', \$job\$ select public.lrbeheer_cleanup(); \$job\$);
+          SQL
+          )
+          body=$(printf '%s' "$sql" | jq -Rs '{query: .}')
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" -H 'Content-Type: application/json' -d "$body")
+          if [ "$code" -ge 300 ]; then echo "::error::Cron inplannen gaf HTTP $code"; exit 1; fi
+          echo "::notice::Cron ingepland (elke 5 minuten; Bekendr elk uur)"
+
+      - name: Rooktest (zonder token = 401)
         run: |
           code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "https://$REF.supabase.co/functions/v1/lrbeheer" \
             -H 'Content-Type: application/json' -d '{"action":"history"}')

@@ -60,8 +60,9 @@ Ze zijn **niet** toegepast of gedeployd: dat raakt productie en is jouw beslissi
 1. **Schema**: voer `supabase/schema.sql` uit (SQL Editor of Management API). Alleen nieuwe tabellen `lrbeheer_*`.
 2. **Snelste weg: de workflow** `github/lrbeheer-push.yml`. Kopieer hem naar `.github/workflows/` in
    **LRvdLinden/app.lrvdlinden.secrets** en start hem met de hand. Hij past het schema toe, zet de function-secrets en
-   deployt de functie, met de APNs-sleutel die daar al staat. Voeg in die repo nog toe: `SUPABASE_ACCESS_TOKEN`,
-   `TUNR_PROJECT_REF` en `LRBEHEER_CRON_SECRET`.
+   deployt de functie, met de APNs-sleutel die daar al staat. Daarvoor is in die repo alleen `SUPABASE_ACCESS_TOKEN` nodig
+   (zelfde waarde als in tunr-beheer). `TUNR_PROJECT_REF` is optioneel (standaard het Tunr-project) en zonder
+   `LRBEHEER_CRON_SECRET` maakt de workflow elke run zelf een nieuw geheim. De workflow plant ook de cron in (stap 3).
 
    Of met de hand (Supabase → Edge Functions → Secrets):
 
