@@ -187,6 +187,7 @@ originele code.
 | Teksten: **Hulp en veelgestelde vragen** (nieuw): hulppagina in de apps (Instellingen) | ✓ (ook P2000Beheer en web-beheer; `/v1/content/hulp`) |
 | **Gemelde fouten** (nieuw): meldingen die gebruikers via "Klopt deze melding niet?" als onjuist aangeven (reden, toelichting, juiste plek); afhandelen, heropenen, verwijderen of de melding bewerken; beheer-push bij een nieuwe melding | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/feedback`) |
 | **Toestel zoeken** (nieuw): een gebruiker opzoeken met het toestel-ID uit de app (Instellingen, onder Disclaimer): toestel, appversie, pushregistratie en -instellingen; testmelding naar dat toestel | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/toestel/:code`) |
+| A-Alerts: **AMBER Alert en Vermist Kind Alert** (nieuw): eigen bronnen in de waarschuwingenlijst, filter en cijfers per bron; status van de Burgernet-bron; aantal toestellen dat ze wil ontvangen | ✓ (ook P2000Beheer en web-beheer) |
 | Dashboard: **Android-app** – APK-downloads van a-alerts.nl (totaal, 30 dagen, vandaag, per dag, per versie), Android-installaties en push-toestellen; status Firebase-push | ✓ (ook P2000Beheer en web-beheer; `/v1/beheer/downloads`) |
 | Mac (native) | Mac-app van LRbeheer (Catalyst) |
 

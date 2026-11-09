@@ -60,14 +60,16 @@ struct AdminWaarschuwing: Codable, Identifiable, Hashable {
     var kop: String {
         if bron == "knmi" { return "\(WaarschuwingStijl.code(niveau)) · \(soort ?? "KNMI")" }
         if bron == "burgernet" { return "Burgernet · \(plaats ?? "Apeldoorn")" }
+        if bron == "amber" { return "AMBER Alert" }
+        if bron == "vermistkind" { return "Vermist Kind Alert · \(plaats ?? "Apeldoorn")" }
         return "NL-Alert"
     }
 }
 
 enum WaarschuwingStijl {
-    static let bronnen = ["nlalert", "burgernet", "knmi"]
+    static let bronnen = ["nlalert", "burgernet", "knmi", "amber", "vermistkind"]
     static func naam(_ b: String) -> String {
-        switch b { case "nlalert": "NL-Alert"; case "burgernet": "Burgernet"; case "knmi": "KNMI"; case "helikopters": "Helikopters (adsb.lol)"; default: b }
+        switch b { case "nlalert": "NL-Alert"; case "burgernet": "Burgernet"; case "knmi": "KNMI"; case "amber": "AMBER Alert"; case "vermistkind": "Vermist Kind Alert"; case "kind": "AMBER Alert / Vermist Kind (Burgernet)"; case "helikopters": "Helikopters (adsb.lol)"; default: b }
     }
     static func code(_ n: String?) -> String {
         switch n { case "yellow": "Code geel"; case "orange": "Code oranje"; case "red": "Code rood"; default: "Code" }
@@ -76,12 +78,14 @@ enum WaarschuwingStijl {
         switch b {
         case "nlalert": return Color(red: 1, green: 0.78, blue: 0)
         case "burgernet": return Color(red: 0, green: 0.4, blue: 0.69)
+        case "amber", "kind": return Color(red: 0.93, green: 0.43, blue: 0.14)
+        case "vermistkind": return Color(red: 0.11, green: 0.15, blue: 0.37)
         default:
             switch niveau { case "red": return .red; case "orange": return .orange; default: return Color(red: 1, green: 0.84, blue: 0) }
         }
     }
     static func symbol(_ b: String) -> String {
-        switch b { case "nlalert": "exclamationmark.triangle.fill"; case "burgernet": "megaphone.fill"; case "helikopters": "airplane"; default: "cloud.sun.rain.fill" }
+        switch b { case "nlalert": "exclamationmark.triangle.fill"; case "burgernet": "megaphone.fill"; case "amber", "vermistkind", "kind": "figure.child"; case "helikopters": "airplane"; default: "cloud.sun.rain.fill" }
     }
     static func status(_ s: String) -> String {
         switch s { case "actief": "Actief"; case "verwacht": "Verwacht"; case "beeindigd": "Beëindigd"; default: s }
@@ -143,7 +147,7 @@ struct AAlertsDashboardCards: View {
 
     private var bronnenCard: some View {
         Card(title: "A-Alerts-bronnen", icon: "antenna.radiowaves.left.and.right") {
-            ForEach(WaarschuwingStijl.bronnen + ["helikopters"], id: \.self) { key in
+            ForEach(["nlalert", "burgernet", "knmi", "kind", "helikopters"], id: \.self) { key in
                 if let b = a.bronnen[key] {
                     StatusRow(ok: !b.storing, title: WaarschuwingStijl.naam(key),
                               detail: b.storing ? (b.laatsteFout ?? "geen gegevens") : "\(Fmt.relative(b.laatstOk)) · \(b.laatsteStatus ?? "")")

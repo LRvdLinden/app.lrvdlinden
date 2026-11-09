@@ -93,6 +93,10 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("A-Alerts: AMBER Alert en Vermist Kind Alert") {
+                    Label("Twee nieuwe soorten waarschuwingen (vermiste kinderen, van de politie via Burgernet) in de lijst, het filter en de cijfers per bron", systemImage: "figure.child")
+                    Label("Status van de nieuwe bron en hoeveel toestellen ze willen ontvangen; verbergen of beëindigen werkt zoals bij de andere waarschuwingen", systemImage: "antenna.radiowaves.left.and.right")
+                }
                 Section("A-Alerts: toestel zoeken") {
                     Label("Zoek een gebruiker op met het toestel-ID uit de app (Instellingen, onder Disclaimer): toestel, appversie en pushinstellingen", systemImage: "magnifyingglass")
                     Label("Stuur dat toestel meteen een testmelding", systemImage: "bell.badge")
