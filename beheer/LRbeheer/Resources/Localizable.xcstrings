@@ -210,6 +210,22 @@
         }
       }
     },
+    "30 dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 days"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 dagen"
+          }
+        }
+      }
+    },
     "A-Alerts gebruikt dezelfde iconen als de app": {
       "localizations": {
         "en": {
@@ -382,6 +398,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "A-Alerts: toestel zoeken"
+          }
+        }
+      }
+    },
+    "APK-downloads": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APK downloads"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APK-downloads"
           }
         }
       }
@@ -1122,6 +1154,22 @@
         }
       }
     },
+    "Andere apparaten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other devices"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere apparaten"
+          }
+        }
+      }
+    },
     "Andere namen (komma's)": {
       "localizations": {
         "en": {
@@ -1166,6 +1214,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Andere winkels"
+          }
+        }
+      }
+    },
+    "Android: downloads van de APK, totaal en per versie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android: APK downloads, total and per version"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android: downloads van de APK, totaal en per versie"
           }
         }
       }
@@ -1234,6 +1298,22 @@
         }
       }
     },
+    "App Store Connect is nog niet gekoppeld; alleen Android wordt geteld. Zet P8_APPSTORE_CONNECT en VENDOR_NUMBER_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store Connect is not connected yet; only Android is counted. Add P8_APPSTORE_CONNECT and VENDOR_NUMBER_APPSTORE_CONNECT to app.lrvdlinden.secrets and run LRbeheer push."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store Connect is nog niet gekoppeld; alleen Android wordt geteld. Zet P8_APPSTORE_CONNECT en VENDOR_NUMBER_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push."
+          }
+        }
+      }
+    },
     "App Store-gegevens": {
       "localizations": {
         "en": {
@@ -1262,6 +1342,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apple"
+          }
+        }
+      }
+    },
+    "Apple + Android": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple + Android"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple + Android"
           }
         }
       }
@@ -1518,6 +1614,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Beheer-inlog vergeten"
+          }
+        }
+      }
+    },
+    "Bekendr beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekendr admin"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekendr beheer"
           }
         }
       }
@@ -1854,6 +1966,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bezig…"
+          }
+        }
+      }
+    },
+    "Bijgewerkt %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updated %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bijgewerkt %@"
           }
         }
       }
@@ -2418,6 +2546,22 @@
         }
       }
     },
+    "De gedeelde beheer-inlog. Je sessie (12 uur) wordt alleen op dit apparaat bewaard, in de sleutelhanger.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The shared admin login. Your session (12 hours) is stored only on this device, in the keychain."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De gedeelde beheer-inlog. Je sessie (12 uur) wordt alleen op dit apparaat bewaard, in de sleutelhanger."
+          }
+        }
+      }
+    },
     "De knop Saldo checken bij een cadeaukaart in de app opent deze pagina, met het kaartnummer klaar om te plakken. Werkt ook voor winkels die al in de app zitten.": {
       "localizations": {
         "en": {
@@ -2578,18 +2722,18 @@
         }
       }
     },
-    "Dezelfde beheer-inlog voor alle zes omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt.": {
+    "Dezelfde beheer-inlog voor alle omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The same admin login for all six environments. Stored only on this device, in the keychain; LRbeheer silently signs in again when a session expires."
+            "value": "The same admin login for all environments. Stored only on this device, in the keychain; LRbeheer silently signs in again when a session expires."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dezelfde beheer-inlog voor alle zes omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt."
+            "value": "Dezelfde beheer-inlog voor alle omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt."
           }
         }
       }
@@ -2786,6 +2930,70 @@
         }
       }
     },
+    "Downloads op iPhone, iPad, Mac en Android": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads on iPhone, iPad, Mac and Android"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads op iPhone, iPad, Mac en Android"
+          }
+        }
+      }
+    },
+    "Downloads per apparaat: iPhone, iPad en Mac uit App Store Connect": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads per device: iPhone, iPad and Mac from App Store Connect"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads per apparaat: iPhone, iPad en Mac uit App Store Connect"
+          }
+        }
+      }
+    },
+    "Downloads per dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads per day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads per dag"
+          }
+        }
+      }
+    },
+    "Downloads van de APK in GitHub Releases (ook via de vaste link naar de nieuwste versie).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads of the APK in GitHub Releases (including the fixed link to the latest version)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads van de APK in GitHub Releases (ook via de vaste link naar de nieuwste versie)."
+          }
+        }
+      }
+    },
     "Dupliceren": {
       "localizations": {
         "en": {
@@ -2850,18 +3058,18 @@
         }
       }
     },
-    "Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)": {
+    "Echte Mac-app met menubalk (⌘1…⌘7 wisselt van omgeving)": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Real Mac app with a menu bar (⌘1…⌘6 switches environment)"
+            "value": "Real Mac app with a menu bar (⌘1…⌘7 switches environment)"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)"
+            "value": "Echte Mac-app met menubalk (⌘1…⌘7 wisselt van omgeving)"
           }
         }
       }
@@ -2894,6 +3102,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eerst gezien"
+          }
+        }
+      }
+    },
+    "Eerste downloads": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First-time downloads"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerste downloads"
           }
         }
       }
@@ -3794,6 +4018,38 @@
         }
       }
     },
+    "GitHub was niet bereikbaar; probeer het zo opnieuw.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub could not be reached; try again shortly."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub was niet bereikbaar; probeer het zo opnieuw."
+          }
+        }
+      }
+    },
+    "Grafiek met downloads per dag over 30 dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chart with downloads per day over 30 days"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grafiek met downloads per dag over 30 dagen"
+          }
+        }
+      }
+    },
     "Grafisch en ontwerp": {
       "localizations": {
         "en": {
@@ -3950,6 +4206,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Heropen"
+          }
+        }
+      }
+    },
+    "Het Bekendr-beheer is nog niet ingesteld op de server.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekendr admin is not set up on the server yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het Bekendr-beheer is nog niet ingesteld op de server."
           }
         }
       }
@@ -5166,6 +5438,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Laatst gezien"
+          }
+        }
+      }
+    },
+    "Laatste dag van App Store Connect: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latest day from App Store Connect: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatste dag van App Store Connect: %@"
           }
         }
       }
@@ -6482,6 +6770,22 @@
         }
       }
     },
+    "Nieuwe omgeving Bekendr, met dezelfde beheer-inlog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New environment Bekendr, with the same admin login"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe omgeving Bekendr, met dezelfde beheer-inlog"
+          }
+        }
+      }
+    },
     "Nieuwe review": {
       "localizations": {
         "en": {
@@ -6590,6 +6894,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog geen berichten."
+          }
+        }
+      }
+    },
+    "Nog geen downloads in de afgelopen 30 dagen. Android telt per dag vanaf de eerste meting; Apple komt een dag later binnen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No downloads in the last 30 days. Android counts per day from the first measurement; Apple arrives a day later."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen downloads in de afgelopen 30 dagen. Android telt per dag vanaf de eerste meting; Apple komt een dag later binnen."
+          }
+        }
+      }
+    },
+    "Nog geen gegevens": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No data yet"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen gegevens"
           }
         }
       }
@@ -7042,6 +7378,22 @@
         }
       }
     },
+    "Ook op het web: bekendr.lrvdlinden.app/beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: bekendr.lrvdlinden.app/beheer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: bekendr.lrvdlinden.app/beheer"
+          }
+        }
+      }
+    },
     "Opdracht wordt gestart…": {
       "localizations": {
         "en": {
@@ -7202,6 +7554,22 @@
         }
       }
     },
+    "Opnieuw gedownload": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redownloads"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opnieuw gedownload"
+          }
+        }
+      }
+    },
     "Opnieuw ophalen": {
       "localizations": {
         "en": {
@@ -7326,6 +7694,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Overgang naar alleen Lifetime: aankondiging, overgangsdatum, kortingscodes, de mail “Bingr wordt Lifetime” en de Apple-koopknop."
+          }
+        }
+      }
+    },
+    "Overig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overig"
           }
         }
       }
@@ -8994,6 +9378,38 @@
         }
       }
     },
+    "Trek omlaag om de downloads op te halen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pull down to fetch the downloads."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trek omlaag om de downloads op te halen."
+          }
+        }
+      }
+    },
+    "Uit de dagelijkse verkoopoverzichten van App Store Connect; die komen een dag later binnen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From the daily sales reports in App Store Connect; they arrive a day later."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uit de dagelijkse verkoopoverzichten van App Store Connect; die komen een dag later binnen."
+          }
+        }
+      }
+    },
     "Uit logo en website": {
       "localizations": {
         "en": {
@@ -9090,6 +9506,22 @@
         }
       }
     },
+    "Uitloggen bij Bekendr?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign out of Bekendr?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitloggen bij Bekendr?"
+          }
+        }
+      }
+    },
     "Uitloggen bij lrvdlinden.app?": {
       "localizations": {
         "en": {
@@ -9150,6 +9582,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Update plaatsen"
+          }
+        }
+      }
+    },
+    "Updates": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
           }
         }
       }
@@ -9822,6 +10270,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wat zit erin"
+          }
+        }
+      }
+    },
+    "Web-beheer openen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open web admin"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Web-beheer openen"
           }
         }
       }

@@ -147,6 +147,13 @@ struct WhatsNewView: View {
                     Label("Lifetime-only: Nieuwe accounts eerst kopen, apart voor web en Android en voor de Apple-apps, met bevestiging", systemImage: "cart.badge.plus")
                     Label("Waarschuwing als de datum voor de Apple-apps staat terwijl de Apple-koopknop uit staat", systemImage: "exclamationmark.triangle")
                 }
+                Section("Bekendr") {
+                    Label("Nieuwe omgeving Bekendr, met dezelfde beheer-inlog", systemImage: "app.badge")
+                    Label("Downloads per apparaat: iPhone, iPad en Mac uit App Store Connect", systemImage: "iphone")
+                    Label("Android: downloads van de APK, totaal en per versie", systemImage: "arrow.down.circle")
+                    Label("Grafiek met downloads per dag over 30 dagen", systemImage: "chart.bar.xaxis")
+                    Label("Ook op het web: bekendr.lrvdlinden.app/beheer", systemImage: "safari")
+                }
                 Section("Bingr: Lifetime-only") {
                     Label("Instellingen → Lifetime-only: aankondiging, overgangsdatum, korting, proefperiode, Apple-koopknop en EU-link, met bevestiging", systemImage: "star.circle")
                     Label("Kortingscodes genereren (droog en echt) met de totalen", systemImage: "ticket")
@@ -177,7 +184,7 @@ struct WhatsNewView: View {
                     Label("Direct wisselen tussen omgevingen bovenin het scherm", systemImage: "arrow.left.arrow.right")
                     Label("Alle functies van BingrBeheer, BeheerTunr, PasrBeheer en P2000Beheer", systemImage: "checkmark.seal")
                     Label("Native beheer van lrvdlinden.app en pixelforges.nl", systemImage: "globe")
-                    Label("Echte Mac-app met menubalk (⌘1…⌘6 wisselt van omgeving)", systemImage: "macbook")
+                    Label("Echte Mac-app met menubalk (⌘1…⌘7 wisselt van omgeving)", systemImage: "macbook")
                     Label("Pushmeldingen van alle omgevingen; een tik opent de juiste omgeving", systemImage: "bell.badge")
                 }
             }

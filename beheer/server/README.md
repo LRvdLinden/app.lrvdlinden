@@ -86,7 +86,7 @@ Ze zijn **niet** toegepast of gedeployd: dat raakt productie en is jouw beslissi
 
 5. **Test**: log in LRbeheer in bij Tunr, ga naar Instellingen → Meldingen en tik *Stuur een testmelding*.
 
-Tests van de logica: `deno test supabase/functions/lrbeheer/logic_test.ts` (9 tests).
+Tests van de logica: `deno test supabase/functions/lrbeheer/logic_test.ts` (14 tests).
 
 ## Welke meldingen de centrale functie stuurt
 
@@ -119,6 +119,22 @@ verzoek doen. **Dit is niet toegepast** (de websites blijven ongewijzigd); het i
 ]]));
 ```
 
+## Bekendr: downloads (acties `bekendr_login` en `bekendr_stats`)
+
+Bekendr heeft geen eigen server; het beheer in LRbeheer en op `https://bekendr.lrvdlinden.app/beheer/` gebruikt deze
+functie. Alleen voor de `bekendr_*`-acties mag de browser (Origin `https://bekendr.lrvdlinden.app`, met CORS); alle
+andere acties blijven zonder Origin.
+
+- **Inloggen**: `bekendr_login` met `BEHEER_APP_USER` / `BEHEER_APP_PASSWORD` (function-secrets) → token van 12 uur,
+  ondertekend met `BEKENDR_TOKEN_SECRET` of, als dat er niet is, een sleutel afgeleid van `LRBEHEER_CRON_SECRET`.
+- **Elk uur** (in de cron): de downloadtellers van de APK in GitHub Releases (`LRvdLinden/app.lrvdlinden.bekendr`) →
+  downloads per dag; en de dagelijkse verkoopoverzichten van App Store Connect (SALES/SUMMARY, laatste 30 dagen) →
+  per apparaat (iPhone, iPad, Mac) eerste downloads, opnieuw gedownload en updates. Tabel `lrbeheer_bekendr_daily`.
+- **App Store Connect**: function-secrets `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (API-sleutel met rol Sales of
+  Finance) en `ASC_VENDOR_NUMBER`; optioneel `ASC_BEKENDR_APPLE_ID` (anders op titel "Bekendr"). De workflow
+  `lrbeheer-push.yml` zet ze uit `KEY_ID_APPSTORE_CONNECT`, `ISSUER_ID_APPSTORE_CONNECT`, `P8_APPSTORE_CONNECT` en
+  `VENDOR_NUMBER_APPSTORE_CONNECT`. Zonder .p8 of vendornummer telt alleen Android.
+
 ## Eén beheer-inlog voor alle omgevingen
 
 Alle beheeromgevingen gebruiken dezelfde gebruikersnaam en hetzelfde wachtwoord: `BEHEER_APP_USER` en
@@ -134,6 +150,7 @@ deploy:
 | p2000-apeldoorn | `BEHEER_USER`, `BEHEER_PASSWORD` | `worker.yml` |
 | app.lrvdlinden | `BEHEER_USER`, `BEHEER_PASSWORD` | `release.yml` (.htpasswd) |
 | pixelforges | `BEHEER_USER`, `BEHEER_PASSWORD` | `release.yml` (.htpasswd) |
+| Bekendr (functie `lrbeheer`, Tunr-project) | `BEHEER_APP_USER`, `BEHEER_APP_PASSWORD` (function-secrets) | geen deploy nodig |
 
 Voorwaarden: het wachtwoord heeft minstens 12 tekens (eis van Bingr) en geen `:`, en
 `FINE_GRAINED_PERSONAL_ACCESS_TOKEN` heeft voor die zes repo's *Secrets: Read and write* en *Actions: Read and write*.

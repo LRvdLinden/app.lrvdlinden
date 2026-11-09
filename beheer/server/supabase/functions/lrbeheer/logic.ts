@@ -257,3 +257,163 @@ export function amsterdam(now: Date): { day: string; hour: number } {
   const p = Object.fromEntries(f.formatToParts(now).map((x) => [x.type, x.value]));
   return { day: `${p.year}-${p.month}-${p.day}`, hour: Number(p.hour) % 24 };
 }
+
+// ---- Bekendr: downloads (App Store Connect + GitHub Releases) ----
+// Bekendr heeft geen eigen server. Het beheer (LRbeheer en bekendr.lrvdlinden.app/beheer) praat met deze functie:
+// inlog met de gedeelde beheer-inlog, downloads uit de verkoopoverzichten van App Store Connect (per apparaat) en de
+// downloadtellers van de APK in GitHub Releases.
+
+export const BEKENDR_ORIGIN = "https://bekendr.lrvdlinden.app";
+export const BEKENDR_REPO = "LRvdLinden/app.lrvdlinden.bekendr";
+const BEKENDR_TTL = 12 * 3600;
+
+/** Token van het Bekendr-beheer: {s:"bekendr", e} met HMAC-handtekening. */
+export async function makeBekendrToken(secret: string, nowMs = Date.now()): Promise<{ token: string; expires: number }> {
+  const e = Math.floor(nowMs / 1000) + BEKENDR_TTL;
+  const p = b64u(enc.encode(JSON.stringify({ s: "bekendr", e })));
+  return { token: `${p}.${b64u(await hmac(secret, p))}`, expires: e };
+}
+
+export async function readBekendrToken(secret: string, token: unknown, nowMs = Date.now()): Promise<boolean> {
+  if (!secret || typeof token !== "string" || token.length > MAX_TOKEN) return false;
+  const [p, sig] = token.split(".");
+  if (!p || !sig) return false;
+  let given: Uint8Array;
+  try { given = unb64u(sig); } catch { return false; }
+  if (!sameBytes(given, await hmac(secret, p))) return false;
+  try {
+    const o = JSON.parse(new TextDecoder().decode(unb64u(p)));
+    return o?.s === "bekendr" && typeof o.e === "number" && o.e * 1000 > nowMs;
+  } catch { return false; }
+}
+
+/** JWT voor de App Store Connect API (ES256, max. 20 minuten geldig). */
+export async function ascJwt(key: CryptoKey, keyId: string, issuer: string, nowS: number): Promise<string> {
+  const head = { alg: "ES256", kid: keyId, typ: "JWT" };
+  const body = { iss: issuer, iat: nowS, exp: nowS + 15 * 60, aud: "appstoreconnect-v1" };
+  const input = `${b64u(enc.encode(JSON.stringify(head)))}.${b64u(enc.encode(JSON.stringify(body)))}`;
+  const sig = await crypto.subtle.sign({ name: "ECDSA", hash: "SHA-256" }, key, enc.encode(input));
+  return `${input}.${b64u(sig)}`;
+}
+
+export type SalesKind = "download" | "redownload" | "update";
+/** Product Type Identifier → soort (apps: iPhone 1/3/7, universeel 1F/3F/7F, iPad 1T/3T/7T, Mac F1/F3/F7). */
+export function salesKind(type: string): SalesKind | null {
+  const t = type.trim().toUpperCase();
+  if (["1", "1F", "1T", "F1", "1E", "1EP", "1EU"].includes(t)) return "download";
+  if (["3", "3F", "3T", "F3"].includes(t)) return "redownload";
+  if (["7", "7F", "7T", "F7"].includes(t)) return "update";
+  return null;
+}
+
+/** Kolom Device → apparaat zoals in het beheer. */
+export function salesDevice(device: string, type: string): string {
+  const d = device.trim().toLowerCase();
+  if (d === "iphone" || d === "ipod touch" || d === "ipod") return "iPhone";
+  if (d === "ipad") return "iPad";
+  if (d === "desktop" || d === "mac" || type.trim().toUpperCase().startsWith("F")) return "Mac";
+  if (d === "apple tv") return "Apple TV";
+  if (d === "apple vision" || d === "apple vision pro") return "Vision Pro";
+  return d ? device.trim() : "Overig";
+}
+
+export type SalesRow = { device: string; kind: SalesKind; units: number };
+
+/** Verkoopoverzicht (SALES/SUMMARY, tab-gescheiden) → rijen van Bekendr, opgeteld per apparaat en soort. */
+export function parseSalesReport(tsv: string, match: { appleId?: string; title?: string }): SalesRow[] {
+  const lines = tsv.split(/\r?\n/).filter((l) => l.trim());
+  if (!lines.length) return [];
+  const head = lines[0].split("\t").map((h) => h.trim().toLowerCase());
+  const col = (n: string) => head.indexOf(n);
+  const iType = col("product type identifier"), iUnits = col("units"), iDevice = col("device");
+  const iApple = col("apple identifier"), iTitle = col("title"), iParent = col("parent identifier");
+  if (iType < 0 || iUnits < 0) return [];
+  const sum = new Map<string, SalesRow>();
+  for (const line of lines.slice(1)) {
+    const c = line.split("\t");
+    if (iParent >= 0 && (c[iParent] ?? "").trim()) continue; // in-app aankopen
+    const ok = match.appleId ? (c[iApple] ?? "").trim() === match.appleId
+      : (c[iTitle] ?? "").trim().toLowerCase() === (match.title ?? "bekendr").toLowerCase();
+    if (!ok) continue;
+    const kind = salesKind(c[iType] ?? "");
+    const units = Number((c[iUnits] ?? "").trim());
+    if (!kind || !Number.isFinite(units) || units === 0) continue;
+    const device = salesDevice(iDevice >= 0 ? c[iDevice] ?? "" : "", c[iType] ?? "");
+    const k = `${device}|${kind}`;
+    const r = sum.get(k) ?? { device, kind, units: 0 };
+    r.units += units;
+    sum.set(k, r);
+  }
+  return [...sum.values()];
+}
+
+export type Release = { tag: string; name: string; published_at: string; downloads: number };
+
+/** GitHub Releases van Bekendr → downloads per Android-release (alle .apk-bestanden opgeteld). */
+export function apkReleases(releases: unknown): Release[] {
+  if (!Array.isArray(releases)) return [];
+  return releases
+    .filter((r) => r && typeof r === "object" && String((r as { tag_name?: unknown }).tag_name ?? "").startsWith("android-"))
+    .map((r) => {
+      const o = r as { tag_name: string; name?: unknown; published_at?: unknown; assets?: unknown };
+      const assets = Array.isArray(o.assets) ? o.assets as { name?: unknown; download_count?: unknown }[] : [];
+      const downloads = assets.filter((a) => String(a?.name ?? "").toLowerCase().endsWith(".apk"))
+        .reduce((s, a) => s + (Number(a?.download_count) || 0), 0);
+      return { tag: o.tag_name, name: String(o.name ?? o.tag_name), published_at: String(o.published_at ?? ""), downloads };
+    })
+    .sort((a, b) => b.published_at.localeCompare(a.published_at));
+}
+
+export type AndroidState = { day: string; base: number; last: number };
+
+/** Nieuwe dagtoestand van de Android-teller: downloads van vandaag = totaal − stand aan het begin van de dag. */
+export function androidStep(prev: AndroidState | null, day: string, total: number): { state: AndroidState; today: number } {
+  let s: AndroidState;
+  if (!prev) s = { day, base: total, last: total };
+  else if (prev.day !== day) s = { day, base: Math.min(prev.last, total), last: total };
+  else s = { day, base: Math.min(prev.base, total), last: total };
+  return { state: s, today: Math.max(0, total - s.base) };
+}
+
+/** Dagen (YYYY-MM-DD, nieuwste eerst) waarvan het Apple-overzicht nog opgehaald moet worden. */
+export function appleDaysToFetch(today: string, have: string[], back = 30, max = 8): string[] {
+  const out: string[] = [];
+  const t = Date.parse(`${today}T00:00:00Z`);
+  for (let i = 1; i <= back && out.length < max; i++) {
+    const d = new Date(t - i * 86400_000).toISOString().slice(0, 10);
+    if (!have.includes(d)) out.push(d);
+  }
+  return out;
+}
+
+export type DailyRow = { day: string; source: string; device: string; kind: string; units: number };
+
+/** Overzicht voor het beheer: totalen per apparaat en per dag (laatste `days` dagen). */
+export function bekendrSummary(rows: DailyRow[], today: string, days = 30) {
+  const appleTotals: Record<SalesKind, number> = { download: 0, redownload: 0, update: 0 };
+  const byDevice: Record<string, number> = {};
+  const perDay = new Map<string, { day: string; iPhone: number; iPad: number; Mac: number; other: number; android: number }>();
+  const t = Date.parse(`${today}T00:00:00Z`);
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(t - i * 86400_000).toISOString().slice(0, 10);
+    perDay.set(d, { day: d, iPhone: 0, iPad: 0, Mac: 0, other: 0, android: 0 });
+  }
+  let lastAppleDay = "";
+  for (const r of rows) {
+    const units = Number(r.units) || 0;
+    if (r.source === "apple") {
+      if (r.kind in appleTotals) appleTotals[r.kind as SalesKind] += units;
+      if (r.day > lastAppleDay) lastAppleDay = r.day;
+      if (r.kind !== "download") continue;
+      byDevice[r.device] = (byDevice[r.device] ?? 0) + units;
+      const p = perDay.get(r.day);
+      if (p) {
+        if (r.device === "iPhone" || r.device === "iPad" || r.device === "Mac") p[r.device] += units; else p.other += units;
+      }
+    } else if (r.source === "android") {
+      const p = perDay.get(r.day);
+      if (p) p.android += units;
+    }
+  }
+  return { apple: { totals: appleTotals, by_device: byDevice, last_day: lastAppleDay || null }, days: [...perDay.values()] };
+}

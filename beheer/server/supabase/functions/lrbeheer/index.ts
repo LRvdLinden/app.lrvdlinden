@@ -7,13 +7,20 @@
 //   Cron (x-lrbeheer-cron: LRBEHEER_CRON_SECRET):   {action: "cron"}   — pg_cron elke 5 minuten
 //   Haak (x-lrbeheer-secret: LRBEHEER_NOTIFY_SECRET): {action: "notify", env, kind, title, body?, url?}
 //
+//   Bekendr-beheer (ook vanuit de browser op https://bekendr.lrvdlinden.app/beheer):
+//     {action: "bekendr_login", user, password}  → token (12 uur), met de gedeelde beheer-inlog
+//     {action: "bekendr_stats"} met Authorization: Bearer <Bekendr-token> → downloads Apple (per apparaat) en Android
+//
 // Function-secrets: TUNR_TOKEN_SECRET (bestaat al, van `admin`), APNS_KEY_P8 / APNS_KEY_ID / APNS_TEAM_ID (dezelfde
 // APNs-sleutel als Bingr/Pasr), LRBEHEER_APNS_TOPIC (optioneel, standaard app.lrvdlinden.lrbeheer),
 // LRBEHEER_CRON_SECRET, LRBEHEER_NOTIFY_SECRET (optioneel), GITHUB_TOKEN (optioneel, alleen lezen van openbare repo's).
+// Bekendr: BEHEER_APP_USER / BEHEER_APP_PASSWORD (gedeelde beheer-inlog), ASC_KEY_ID / ASC_ISSUER_ID / ASC_KEY_P8 /
+// ASC_VENDOR_NUMBER (App Store Connect-API, verkoopoverzichten), optioneel ASC_BEKENDR_APPLE_ID en BEKENDR_TOKEN_SECRET.
 // Nooit tokens, sleutels of apparaat-id's loggen.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import {
-  amsterdam, apnsHost, apnsJwt, apnsResult, bearer, cleanNotify, cleanPrefs, cleanRegister, contentNotice, deployNotices,
+  amsterdam, androidStep, type AndroidState, apkReleases, apnsHost, apnsJwt, apnsResult, appleDaysToFetch, ascJwt,
+  BEKENDR_ORIGIN, BEKENDR_REPO, bekendrSummary, bearer, type DailyRow, makeBekendrToken, parseSalesReport, readBekendrToken, cleanNotify, cleanPrefs, cleanRegister, contentNotice, deployNotices,
   hmac, importApnsKey, installsNotice, newAppNotices, type Notice, payload, presskitNotice, readTunrToken, sameBytes,
   storeNotices, wants,
 } from "./logic.ts";
@@ -25,8 +32,17 @@ const apnsKeyId = () => env("APNS_KEY_ID") || env("APN_KEY_ID");
 const apnsTeam = () => env("APNS_TEAM_ID") || env("TEAM_ID") || "EU3UY476T6";
 const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"), { auth: { autoRefreshToken: false, persistSession: false } });
 
-const json = (body: unknown, status = 200) =>
-  new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
+const json = (body: unknown, status = 200, extra: Record<string, string> = {}) =>
+  new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store", ...extra } });
+
+/** CORS alleen voor het web-beheer van Bekendr, en alleen voor de bekendr_*-acties. */
+const bekendrCors = {
+  "Access-Control-Allow-Origin": BEKENDR_ORIGIN,
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "authorization, content-type, apikey, x-client-info",
+  "Access-Control-Max-Age": "86400",
+  Vary: "Origin",
+};
 
 async function sameSecret(given: string | null, expected: string): Promise<boolean> {
   if (!given || !expected) return false;
@@ -99,6 +115,85 @@ async function deliver(notices: Notice[]): Promise<{ sent: number; failed: numbe
   }
   if (gone.size) await db.from("lrbeheer_devices").delete().in("device_id", [...gone]);
   return { sent, failed };
+}
+
+// ---- Bekendr ----
+async function bekendrSecret(): Promise<string> {
+  if (env("BEKENDR_TOKEN_SECRET")) return env("BEKENDR_TOKEN_SECRET");
+  const base = env("LRBEHEER_CRON_SECRET");
+  if (!base) return "";
+  return [...await hmac(base, "bekendr-token")].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+const ascConfigured = () => !!(env("ASC_KEY_ID") && env("ASC_ISSUER_ID") && env("ASC_KEY_P8") && env("ASC_VENDOR_NUMBER"));
+
+/** Eén dag uit de verkoopoverzichten: rijen, of null als er (nog) geen overzicht is. */
+async function appleSalesDay(day: string, jwt: string): Promise<ReturnType<typeof parseSalesReport> | null> {
+  const q = new URLSearchParams({
+    "filter[frequency]": "DAILY", "filter[reportDate]": day, "filter[reportSubType]": "SUMMARY",
+    "filter[reportType]": "SALES", "filter[vendorNumber]": env("ASC_VENDOR_NUMBER"), "filter[version]": "1_1",
+  });
+  const r = await fetch(`https://api.appstoreconnect.apple.com/v1/salesReports?${q}`, {
+    headers: { Authorization: `Bearer ${jwt}`, Accept: "application/a-gzip" }, signal: AbortSignal.timeout(30000),
+  });
+  if (r.status === 404) { await r.body?.cancel().catch(() => {}); return null; }
+  if (!r.ok || !r.body) { await r.body?.cancel().catch(() => {}); throw new Error(`App Store Connect HTTP ${r.status}`); }
+  const tsv = await new Response(r.body.pipeThrough(new DecompressionStream("gzip"))).text();
+  return parseSalesReport(tsv, env("ASC_BEKENDR_APPLE_ID") ? { appleId: env("ASC_BEKENDR_APPLE_ID") } : { title: "Bekendr" });
+}
+
+async function bekendrReleases() {
+  return apkReleases(await getJSON(`https://api.github.com/repos/${BEKENDR_REPO}/releases?per_page=100`, true));
+}
+
+/** Elk uur: Android-teller bijwerken en ontbrekende Apple-dagen ophalen. */
+async function bekendrSync(today: string) {
+  const releases = await bekendrReleases();
+  const total = releases.reduce((s, r) => s + r.downloads, 0);
+  const a = androidStep(await getState<AndroidState>("bekendr_android"), today, total);
+  await setState("bekendr_android", a.state);
+  const { error } = await db.from("lrbeheer_bekendr_daily").upsert({ day: today, source: "android", device: "Android", kind: "download", units: a.today });
+  if (error) throw new Error(`bekendr android: ${error.code ?? "db"}`);
+
+  if (!ascConfigured()) return;
+  const have = (await getState<string[]>("bekendr_apple_days")) ?? [];
+  const todo = appleDaysToFetch(today, have);
+  if (!todo.length) return;
+  const jwt = await ascJwt(await importApnsKey(env("ASC_KEY_P8")), env("ASC_KEY_ID"), env("ASC_ISSUER_ID"), Math.floor(Date.now() / 1000));
+  const done = new Set(have);
+  for (const day of todo) {
+    const rows = await appleSalesDay(day, jwt);
+    const age = (Date.parse(`${today}T00:00:00Z`) - Date.parse(`${day}T00:00:00Z`)) / 86400_000;
+    if (rows === null) { if (age >= 3) done.add(day); continue; } // geen overzicht = geen verkoop (na 3 dagen definitief)
+    await db.from("lrbeheer_bekendr_daily").delete().eq("day", day).eq("source", "apple");
+    if (rows.length) {
+      const { error: e } = await db.from("lrbeheer_bekendr_daily").insert(rows.map((r) => ({ day, source: "apple", ...r })));
+      if (e) throw new Error(`bekendr apple: ${e.code ?? "db"}`);
+    }
+    done.add(day);
+  }
+  const keep = [...done].sort().reverse().slice(0, 60);
+  await setState("bekendr_apple_days", keep);
+}
+
+async function bekendrStats() {
+  const { day: today } = amsterdam(new Date());
+  const since = new Date(Date.parse(`${today}T00:00:00Z`) - 400 * 86400_000).toISOString().slice(0, 10);
+  const { data, error } = await db.from("lrbeheer_bekendr_daily").select("day, source, device, kind, units").gte("day", since).limit(20000);
+  if (error) throw new Error(error.message);
+  let releases: Awaited<ReturnType<typeof bekendrReleases>> = [];
+  let githubOk = true;
+  try { releases = await bekendrReleases(); } catch { githubOk = false; }
+  const sum = bekendrSummary((data ?? []) as DailyRow[], today);
+  const { data: st } = await db.from("lrbeheer_state").select("updated_at").eq("key", "bekendr_android").maybeSingle();
+  return {
+    ok: true,
+    today,
+    synced_at: st?.updated_at ?? null,
+    apple: { configured: ascConfigured(), ...sum.apple },
+    android: { total: releases.reduce((s, r) => s + r.downloads, 0), releases: releases.slice(0, 20), available: githubOk },
+    days: sum.days,
+  };
 }
 
 // ---- toestand ----
@@ -179,15 +274,27 @@ async function cron() {
     await setState("installs_day", day);
   });
 
+  // Bekendr: downloads (elk uur)
+  await step("bekendr", async () => {
+    const { day, hour } = amsterdam(new Date());
+    const stamp = `${day}T${hour}`;
+    if ((await getState<string>("bekendr_hour")) === stamp) return;
+    await setState("bekendr_hour", stamp);
+    await bekendrSync(day);
+  });
+
   const res = await deliver(notices);
   if (errors.length) console.error("lrbeheer", "cron", errors.join("; "));
   return { notices: notices.length, ...res, errors: errors.length };
 }
 
 Deno.serve(async (req) => {
+  const origin = req.headers.get("Origin");
+  const web = origin === BEKENDR_ORIGIN;
+  if (req.method === "OPTIONS") return web ? new Response(null, { status: 204, headers: bekendrCors }) : json({ error: "forbidden" }, 403);
   if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
-  // geen browsers: de app en de cron sturen geen Origin
-  if (req.headers.get("Origin")) return json({ error: "forbidden" }, 403);
+  // geen browsers, behalve het web-beheer van Bekendr voor de bekendr_*-acties; de app en de cron sturen geen Origin
+  if (origin && !web) return json({ error: "forbidden" }, 403);
   let body: Record<string, unknown>;
   try {
     const t = await req.text();
@@ -197,8 +304,27 @@ Deno.serve(async (req) => {
     body = b;
   } catch { return json({ error: "bad_json" }, 400); }
   const action = typeof body.action === "string" ? body.action : "";
+  if (web && !action.startsWith("bekendr_")) return json({ error: "forbidden" }, 403);
+  const cors = web ? bekendrCors : {};
 
   try {
+    if (action === "bekendr_login") {
+      const user = typeof body.user === "string" ? body.user.trim() : "";
+      const pass = typeof body.password === "string" ? body.password : "";
+      const secret = await bekendrSecret();
+      const okUser = await sameSecret(user, env("BEHEER_APP_USER"));
+      const okPass = await sameSecret(pass, env("BEHEER_APP_PASSWORD"));
+      if (!secret || !okUser || !okPass) {
+        await new Promise((r) => setTimeout(r, 700));
+        return json({ error: secret ? "unauthorized" : "not_configured" }, secret ? 401 : 503, cors);
+      }
+      return json({ ok: true, ...(await makeBekendrToken(secret)) }, 200, cors);
+    }
+    if (action === "bekendr_stats") {
+      if (!(await readBekendrToken(await bekendrSecret(), bearer(req.headers)))) return json({ error: "unauthorized" }, 401, cors);
+      return json(await bekendrStats(), 200, cors);
+    }
+
     if (action === "cron") {
       if (!(await sameSecret(req.headers.get("x-lrbeheer-cron"), env("LRBEHEER_CRON_SECRET")))) return json({ error: "unauthorized" }, 401);
       return json({ ok: true, ...(await cron()) });
@@ -252,6 +378,6 @@ Deno.serve(async (req) => {
     }
   } catch (e) {
     console.error("lrbeheer", action, e instanceof Error ? e.name : "fout");
-    return json({ error: "server_error" }, 500);
+    return json({ error: "server_error" }, 500, cors);
   }
 });

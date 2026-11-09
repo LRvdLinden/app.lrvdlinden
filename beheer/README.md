@@ -31,7 +31,7 @@ Elke omgeving is de volledige beheerapp of het volledige webbeheer, niet een ver
 beheer/
 ├── LRbeheer.xcodeproj           gegenereerd door tools/make_project.py
 ├── LRbeheer/                    de app zelf
-│   ├── App/                     @main, AppModel (actieve omgeving, deeplinks, push-routing), de zes omgevingen
+│   ├── App/                     @main, AppModel (actieve omgeving, deeplinks, push-routing), alle omgevingen
 │   ├── Shell/                   splash, overzicht, omgevingskiezer, vergrendeling, instellingen, meldingen
 │   ├── Push/                    één AppDelegate voor alle omgevingen + centraal pushsysteem
 │   ├── Environments/
@@ -88,7 +88,7 @@ originele code.
 ## Gebruik
 
 - **Splash** (±1 s, geen netwerk) → **vergrendeling** met Face ID (Instellingen → *Vergrendelen met Face ID*) →
-  **overzicht** met de zes omgevingen in vaste volgorde: LRvdLinden, PixelForges, Bingr, Tunr, Pasr, P2000 Apeldoorn,
+  **overzicht** met de omgevingen in vaste volgorde: LRvdLinden, PixelForges, Bingr, Tunr, Pasr, P2000 Apeldoorn, Bekendr,
   elk met eigen logo, of je ingelogd bent en welke het laatst gebruikt is.
 - **Wisselen**: bovenin elke omgeving staat de omgevingskiezer (logo + naam + ⌄, en op brede schermen de andere logo's).
   Eén tik wisselt direct, zonder terug naar het overzicht. De actieve omgeving is altijd zichtbaar (naam, logo en een
@@ -138,7 +138,7 @@ originele code.
 | Beheer-pushmeldingen (tickets, antwoorden, builds, status) + schakelaars + testmelding | ✓ originele registratie; ontvangen na `server/patches` |
 | Widgets: servicestatus, support, overzicht | ✓ widget-extensie van LRbeheer |
 | Deeplinks `bingrbeheer://…` uit widgets en meldingen | ✓ |
-| Mac (Catalyst) met menubalk | ✓ Mac-app van LRbeheer (Catalyst), menu Omgeving met ⌘1…⌘6 |
+| Mac (Catalyst) met menubalk | ✓ Mac-app van LRbeheer (Catalyst), menu Omgeving met ⌘1…⌘7 |
 | **Lifetime-only** (build 167 van de server, ook in BingrBeheer build 47 en het web-beheer): instellingen met bevestiging, kortingscodes (genereren, totalen), mail en herinnering, niet geclaimde aankopen en Aankoop koppelen, code per account, omzet per aanbieder (Stripe en Apple) | ✓ (Instellingen → Lifetime-only) |
 | **Omzet: Apple (App Store Connect)** (ook in BingrBeheer build 49 en het web-beheer): Website (Stripe) en Apple (App Store) apart met bruto, inhouding, netto opbrengst, aantal en terugbetaald, en het totaal; Apple bijgewerkt t/m, gekoppelde Apple-aankopen, reeksen Website en Apple, Apple-omzet bijwerken (bereik) en commissie en vaste koersen | ✓ (Omzet) |
 | **Nieuwe accounts eerst kopen** (build 168 van de server, ook in BingrBeheer build 48 en het web-beheer): twee datums in Lifetime-only, web en Android (`new_paid_from`) en Apple-apps (`new_paid_from_apple`), met bevestiging en een waarschuwing als de Apple-koopknop uit staat | ✓ (Instellingen → Lifetime-only) |
@@ -223,6 +223,20 @@ Alles van `site/beheer.html`, met dezelfde endpoints (`content.json`, `publish.p
 
 Afbeeldingen worden op het toestel verkleind en als JPEG geüpload (iOS kan geen WebP schrijven; `publish.php` accepteert
 webp, png en jpg).
+
+### bekendr.lrvdlinden.app/beheer → Bekendr (nieuw, native)
+
+Bekendr heeft geen eigen server. App en web-beheer (`website/beheer/` in LRvdLinden/app.lrvdlinden.bekendr) praten met
+de centrale functie `lrbeheer` (acties `bekendr_login` en `bekendr_stats`; zie `server/README.md`).
+
+| Onderdeel | In LRbeheer | Web-beheer |
+| --- | --- | --- |
+| Inloggen met de gedeelde beheer-inlog (token 12 uur), doet mee met *Eén inlog* | ✓ (sleutelhanger) | ✓ (alleen dit tabblad) |
+| Downloads totaal en per apparaat: iPhone, iPad, Mac (App Store Connect, verkoopoverzichten) | ✓ | ✓ |
+| Apple: eerste downloads, opnieuw gedownload, updates, laatste dag | ✓ | ✓ |
+| Android: APK-downloads totaal en per release (GitHub Releases) | ✓ | ✓ |
+| Grafiek downloads per dag (30 dagen), per platform gestapeld | ✓ (Swift Charts) | ✓ (SVG) |
+| Pushmelding | nog niet (voorstel: dagelijks overzicht van nieuwe downloads) | – |
 
 ## Standaarden van LRvdLinden-apps
 

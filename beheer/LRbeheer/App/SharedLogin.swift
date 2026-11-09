@@ -5,7 +5,7 @@ import PasrKit
 import SwiftUI
 import TunrKit
 
-/// Eén beheer-inlog voor alle zes omgevingen.
+/// Eén beheer-inlog voor alle omgevingen.
 ///
 /// Op de servers staan dezelfde gebruikersnaam en hetzelfde wachtwoord voor elke beheeromgeving (bron:
 /// BEHEER_APP_USER / BEHEER_APP_PASSWORD in LRvdLinden/app.lrvdlinden.secrets, verdeeld door de workflow
@@ -78,6 +78,8 @@ final class SharedLogin {
             case .tunr: try await TunrEnvironment.login(user: user, password: password)
             case .pasr: try await PasrEnvironment.login(user: user, password: password)
             case .p2000: try await P2000Environment.login(user: user, password: password)
+            case .bekendr: try await BekendrStore.shared.signIn(user: user, password: password)
+                Task { await BekendrStore.shared.load() }
             }
             return .ok
         } catch {
@@ -123,7 +125,7 @@ struct SharedLoginForm: View {
                     }
                     .disabled(login.busy || user.isEmpty || password.isEmpty)
                 } footer: {
-                    Text("Dezelfde beheer-inlog voor alle zes omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt.")
+                    Text("Dezelfde beheer-inlog voor alle omgevingen. Alleen op dit apparaat bewaard, in de sleutelhanger; LRbeheer logt er stil mee opnieuw in als een sessie verloopt.")
                 }
                 if !login.results.isEmpty {
                     Section("Resultaat") {

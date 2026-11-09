@@ -14,7 +14,7 @@ import UIKit
 final class AppModel {
     static let shared = AppModel()
 
-    /// nil = het overzicht met de zes omgevingen.
+    /// nil = het overzicht met alle omgevingen.
     var active: BeheerEnvironment? = nil {
         didSet {
             if let active {

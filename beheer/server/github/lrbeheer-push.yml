@@ -7,6 +7,12 @@
 #                                 TUNR_PROJECT_REF      (project-ref van Tunr, het deel vóór .supabase.co)
 #                                 LRBEHEER_CRON_SECRET  (lange willekeurige tekst; zelfde waarde als in de pg_cron-taak)
 # Optioneel:                      FINE_GRAINED_PERSONAL_ACCESS_TOKEN → wordt GITHUB_TOKEN van de functie (alleen lezen)
+# Bekendr (downloads in LRbeheer en op bekendr.lrvdlinden.app/beheer):
+#   BEHEER_APP_USER / BEHEER_APP_PASSWORD           gedeelde beheer-inlog (bestaan al)
+#   KEY_ID_APPSTORE_CONNECT / ISSUER_ID_APPSTORE_CONNECT   API-sleutel van App Store Connect (bestaan al)
+#   P8_APPSTORE_CONNECT                             inhoud van het .p8-bestand van die API-sleutel (rol Sales of Finance)
+#   VENDOR_NUMBER_APPSTORE_CONNECT                  vendornummer (App Store Connect → Betalingen en financiële rapporten)
+#   Zonder de .p8 of het vendornummer werkt alleen het Android-deel.
 #
 # Geen enkele waarde komt in het log: de secrets gaan via een tijdelijk env-bestand naar `supabase secrets set`.
 name: LRbeheer push
@@ -66,6 +72,12 @@ jobs:
           TEAM_ID: ${{ secrets.TEAM_ID }}
           LRBEHEER_CRON_SECRET: ${{ secrets.LRBEHEER_CRON_SECRET }}
           GH_READ: ${{ secrets.FINE_GRAINED_PERSONAL_ACCESS_TOKEN }}
+          B_USER: ${{ secrets.BEHEER_APP_USER }}
+          B_PASS: ${{ secrets.BEHEER_APP_PASSWORD }}
+          ASC_KEY_ID: ${{ secrets.KEY_ID_APPSTORE_CONNECT }}
+          ASC_ISSUER_ID: ${{ secrets.ISSUER_ID_APPSTORE_CONNECT }}
+          ASC_KEY_P8: ${{ secrets.P8_APPSTORE_CONNECT }}
+          ASC_VENDOR_NUMBER: ${{ secrets.VENDOR_NUMBER_APPSTORE_CONNECT }}
         run: |
           f="$(mktemp)"
           {
@@ -75,6 +87,20 @@ jobs:
             printf 'TEAM_ID=%s\n' "${TEAM_ID:-EU3UY476T6}"
             printf 'LRBEHEER_CRON_SECRET=%s\n' "$LRBEHEER_CRON_SECRET"
             if [ -n "$GH_READ" ]; then printf 'GITHUB_TOKEN=%s\n' "$GH_READ"; fi
+            # Bekendr
+            if [ -n "$B_USER" ] && [ -n "$B_PASS" ]; then
+              printf 'BEHEER_APP_USER=%s\n' "$B_USER"
+              printf 'BEHEER_APP_PASSWORD=%s\n' "$B_PASS"
+            else
+              echo "::warning::BEHEER_APP_USER/BEHEER_APP_PASSWORD ontbreken: inloggen in het Bekendr-beheer lukt niet" >&2
+            fi
+            if [ -n "$ASC_KEY_ID" ]; then printf 'ASC_KEY_ID=%s\n' "$ASC_KEY_ID"; fi
+            if [ -n "$ASC_ISSUER_ID" ]; then printf 'ASC_ISSUER_ID=%s\n' "$ASC_ISSUER_ID"; fi
+            if [ -n "$ASC_KEY_P8" ]; then printf 'ASC_KEY_P8=%s\n' "$(printf '%s' "$ASC_KEY_P8" | awk 'BEGIN{ORS="\\n"} {print}')"; fi
+            if [ -n "$ASC_VENDOR_NUMBER" ]; then printf 'ASC_VENDOR_NUMBER=%s\n' "$ASC_VENDOR_NUMBER"; fi
+            if [ -z "$ASC_KEY_P8" ] || [ -z "$ASC_VENDOR_NUMBER" ]; then
+              echo "::warning::P8_APPSTORE_CONNECT of VENDOR_NUMBER_APPSTORE_CONNECT ontbreekt: Bekendr toont alleen Android-downloads" >&2
+            fi
           } > "$f"
           supabase secrets set --project-ref "$REF" --env-file "$f" > /dev/null
           rm -f "$f"

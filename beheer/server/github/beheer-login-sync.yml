@@ -12,6 +12,8 @@
 #   LRvdLinden/p2000-apeldoorn    BEHEER_USER      / BEHEER_PASSWORD          worker.yml        (worker /v1/beheer)
 #   LRvdLinden/app.lrvdlinden     BEHEER_USER      / BEHEER_PASSWORD          release.yml       (.htpasswd van beheer.html)
 #   LRvdLinden/pixelforges        BEHEER_USER      / BEHEER_PASSWORD          release.yml       (.htpasswd van beheer.html)
+#   Bekendr (functie lrbeheer)    BEHEER_APP_USER  / BEHEER_APP_PASSWORD      function-secrets in het Tunr-project
+#                                 (werkt meteen, geen deploy nodig; vraagt SUPABASE_ACCESS_TOKEN en TUNR_PROJECT_REF)
 #
 # Alleen met de hand: Actions → Beheer-inlog verdelen → Run workflow. Kies eventueel één repo, of zet "deploy" uit om
 # alleen de secrets te zetten.
@@ -25,7 +27,7 @@ on:
   workflow_dispatch:
     inputs:
       only:
-        description: "Alleen deze repo (leeg = alle zes), bv. LRvdLinden/bingr-beheer"
+        description: "Alleen deze repo (leeg = alle), bv. LRvdLinden/bingr-beheer, of bekendr"
         required: false
         default: ""
       deploy:
@@ -84,3 +86,27 @@ jobs:
           sync LRvdLinden/app.lrvdlinden      BEHEER_USER      BEHEER_PASSWORD      release.yml
           sync LRvdLinden/pixelforges         BEHEER_USER      BEHEER_PASSWORD      release.yml
           exit $failed
+
+      - name: Bekendr – Supabase CLI
+        if: ${{ !cancelled() && (inputs.only == '' || inputs.only == 'bekendr') }}
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.54.11
+
+      - name: Bekendr – inlog als function-secrets van lrbeheer
+        if: ${{ !cancelled() && (inputs.only == '' || inputs.only == 'bekendr') }}
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ secrets.TUNR_PROJECT_REF }}
+        run: |
+          if [ -z "$SUPABASE_ACCESS_TOKEN" ] || [ -z "$REF" ]; then
+            echo "::warning::Bekendr overgeslagen: SUPABASE_ACCESS_TOKEN of TUNR_PROJECT_REF ontbreekt"; exit 0
+          fi
+          f="$(mktemp)"
+          { printf 'BEHEER_APP_USER=%s\n' "$B_USER"; printf 'BEHEER_APP_PASSWORD=%s\n' "$B_PASS"; } > "$f"
+          if supabase secrets set --project-ref "$REF" --env-file "$f" > /dev/null 2>&1; then
+            echo "::notice::Bekendr: BEHEER_APP_USER en BEHEER_APP_PASSWORD gezet in de functie lrbeheer"
+          else
+            echo "::error::Bekendr: function-secrets zetten mislukt"; rm -f "$f"; exit 1
+          fi
+          rm -f "$f"

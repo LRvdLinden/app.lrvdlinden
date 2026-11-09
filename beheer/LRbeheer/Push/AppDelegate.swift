@@ -4,7 +4,7 @@ import PasrKit
 import UIKit
 import UserNotifications
 
-/// Eén app-delegate en één meldingencentrum-delegate voor alle zes omgevingen.
+/// Eén app-delegate en één meldingencentrum-delegate voor alle omgevingen.
 ///
 /// - Het APNs-token gaat naar elke omgeving met een eigen pushsysteem (Bingr, Pasr, P2000; elk registreert alleen als
 ///   je daar ingelogd bent, net als in de losse app) en naar het centrale systeem (LRvdLinden, PixelForges, Tunr).
