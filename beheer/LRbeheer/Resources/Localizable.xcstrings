@@ -7010,6 +7010,22 @@
         }
       }
     },
+    "Ook artikelen van 112 Nieuws per plaats (titel en intro met link), met eigen filter": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also articles from 112 Nieuws per place (title and intro with a link), with their own filter"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook artikelen van 112 Nieuws per plaats (titel en intro met link), met eigen filter"
+          }
+        }
+      }
+    },
     "Ook bestaande Engelse teksten overschrijven": {
       "localizations": {
         "en": {
