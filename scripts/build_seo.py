@@ -23,15 +23,27 @@ def last_date(a):
 
 
 # ---------- sitemap.xml ----------
-pages = [("", "weekly", "1.0", max([last_date(a) for a in apps] + [""]) or today)]
-for name, freq, prio in (("donate", "yearly", "0.5"), ("privacy", "yearly", "0.3")):
-    if os.path.isfile(os.path.join(out, name + ".html")):  # nette URL zonder .html
-        pages.append((name, freq, prio, today))
+import subprocess
+
+
+def git_date(path):
+    """Datum van de laatste commit van een bestand: alleen echte inhoudswijzigingen tellen."""
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", path], capture_output=True, text=True).stdout.strip()
+        return out or None
+    except OSError:
+        return None
+
+
+home_mod = max([last_date(a) for a in apps] + [git_date("site/index.html") or ""]) or today
+pages = [("", home_mod)]
+for name in ("donate", "privacy"):  # nette URL's zonder .html
+    if os.path.isfile(os.path.join(out, name + ".html")):
+        pages.append((name, git_date(f"site/{name}.html") or today))
 xml = ['<?xml version="1.0" encoding="UTF-8"?>',
        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
-for path, freq, prio, mod in pages:
-    xml.append(f"  <url>\n    <loc>{BASE}{path}</loc>\n    <lastmod>{mod[:10]}</lastmod>\n"
-               f"    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>")
+for path, mod in pages:
+    xml.append(f"  <url>\n    <loc>{BASE}{path}</loc>\n    <lastmod>{mod[:10]}</lastmod>")
     if path == "":
         xml.append(f"    <image:image><image:loc>{BASE}og-image.jpg</image:loc></image:image>")
     xml.append("  </url>")

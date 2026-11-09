@@ -1,0 +1,15 @@
+{
+  "name": "LRvdLinden Apps",
+  "short_name": "LRvdLinden",
+  "description": "Gratis iOS- en Homey-apps van Léon van der Linden",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F3F5F9",
+  "theme_color": "#0D1018",
+  "lang": "nl",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/logo.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

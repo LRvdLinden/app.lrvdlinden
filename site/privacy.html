@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1471e3c42ec503ecd9bd0f17/script.js"></script> <!-- End cookieyes banner -->
-<title>Privacy · LRvdLinden Apps</title>
-<meta name="description" content="Privacyverklaring van lrvdlinden.app: welke gegevens de website gebruikt, cookies, donaties en je rechten.">
+<title>Privacyverklaring | LRvdLinden Apps</title>
+<meta name="description" content="Privacyverklaring van lrvdlinden.app: welke gegevens de website gebruikt, hoe cookies werken, wat er bij donaties gebeurt en wat je rechten zijn onder de AVG.">
 <meta name="author" content="Léon van der Linden">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lrvdlinden.app/privacy">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LRvdLinden Apps">
 <meta property="og:url" content="https://lrvdlinden.app/privacy">
-<meta property="og:title" content="Privacy · LRvdLinden Apps">
+<meta property="og:title" content="Privacyverklaring | LRvdLinden Apps">
 <meta property="og:description" content="Welke gegevens lrvdlinden.app gebruikt, hoe cookies werken en wat je rechten zijn.">
 <meta property="og:image" content="https://lrvdlinden.app/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -24,10 +24,11 @@
 <meta property="og:locale" content="nl_NL">
 <meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Privacy · LRvdLinden Apps">
+<meta name="twitter:title" content="Privacyverklaring | LRvdLinden Apps">
 <meta name="twitter:description" content="Privacyverklaring van lrvdlinden.app.">
 <meta name="twitter:image" content="https://lrvdlinden.app/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -291,7 +292,7 @@ if (location.hash === "#en") lang = "en";
 if (!T[lang]) lang = "nl";
 function render(){
   document.documentElement.lang = lang;
-  document.title = (lang === "nl" ? "Privacy" : "Privacy policy") + " · LRvdLinden Apps";
+  document.title = (lang === "nl" ? "Privacyverklaring" : "Privacy policy") + " | LRvdLinden Apps";
   document.querySelectorAll("[data-t]").forEach(el => { const v = T[lang][el.dataset.t]; if (v != null) el.textContent = v; });
   document.querySelectorAll("[data-lang-block]").forEach(el => el.hidden = el.dataset.langBlock !== lang);
   document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
