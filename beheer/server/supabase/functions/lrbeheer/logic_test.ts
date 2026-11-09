@@ -173,3 +173,17 @@ Deno.test("Apple-dagen en overzicht", () => {
   assertEquals(sum.days[1].iPhone, 3);
   assertEquals(sum.days[2].android, 2);
 });
+
+import { cleanFeedback } from "./logic.ts";
+Deno.test("Feedback: controle", () => {
+  const base = { notice_id: "gmb-2026-1", notice_title: "Dakkapel", notice_url: "https://zoek.officielebekendmakingen.nl/gmb-2026-1.html", reason: "locatie", message: "", platform: "ios", app_version: "1.0.0 (1)", device: "0F8A2C3E-1111-2222-3333-444455556666" };
+  const ok = cleanFeedback(base);
+  assert(typeof ok !== "string");
+  assertEquals(cleanFeedback({ ...base, reason: "spam" }), "bad_reason");
+  assertEquals(cleanFeedback({ ...base, reason: "anders", message: "" }), "message_required");
+  assertEquals(cleanFeedback({ ...base, device: "x" }), "bad_device");
+  const evil = cleanFeedback({ ...base, notice_url: "https://evil.example/x" });
+  assert(typeof evil !== "string" && evil.notice_url === "");
+  const plat = cleanFeedback({ ...base, platform: "windows" });
+  assert(typeof plat !== "string" && plat.platform === "onbekend");
+});

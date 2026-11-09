@@ -417,3 +417,38 @@ export function bekendrSummary(rows: DailyRow[], today: string, days = 30) {
   }
   return { apple: { totals: appleTotals, by_device: byDevice, last_day: lastAppleDay || null }, days: [...perDay.values()] };
 }
+
+// ---- Bekendr: feedback op een bekendmaking (vanuit de app, zonder account) ----
+export const FEEDBACK_REASONS = ["locatie", "categorie", "gemeente", "link", "anders"] as const;
+export type FeedbackReason = typeof FEEDBACK_REASONS[number];
+export type Feedback = {
+  notice_id: string; notice_title: string; notice_url: string; reason: FeedbackReason; message: string;
+  platform: string; app_version: string; device: string;
+};
+
+const clipText = (v: unknown, n: number) => (typeof v === "string" ? v.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "").trim().slice(0, n) : "");
+
+/** Feedback uit de app controleren. Geeft een foutcode (string) of de schone feedback. */
+export function cleanFeedback(b: Record<string, unknown>): Feedback | string {
+  const reason = clipText(b.reason, 20) as FeedbackReason;
+  if (!FEEDBACK_REASONS.includes(reason)) return "bad_reason";
+  const notice_id = clipText(b.notice_id, 200);
+  if (!notice_id) return "bad_notice";
+  const message = clipText(b.message, 2000);
+  if (reason === "anders" && message.length < 3) return "message_required";
+  let notice_url = clipText(b.notice_url, 500);
+  try {
+    const u = new URL(notice_url);
+    if (u.protocol !== "https:" || !/(^|\.)(officielebekendmakingen\.nl|overheid\.nl)$/.test(u.hostname)) notice_url = "";
+  } catch { notice_url = ""; }
+  const platform = clipText(b.platform, 20);
+  const device = clipText(b.device, 64);
+  if (!/^[A-Za-z0-9-]{8,64}$/.test(device)) return "bad_device";
+  return {
+    notice_id, notice_title: clipText(b.notice_title, 300), notice_url, reason, message,
+    platform: ["ios", "ipados", "macos", "android"].includes(platform) ? platform : "onbekend",
+    app_version: clipText(b.app_version, 40), device,
+  };
+}
+
+export const FEEDBACK_STATUS = ["nieuw", "afgehandeld"] as const;

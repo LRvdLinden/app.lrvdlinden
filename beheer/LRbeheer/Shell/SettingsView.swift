@@ -153,6 +153,8 @@ struct WhatsNewView: View {
                     Label("Android: downloads van de APK, totaal en per versie", systemImage: "arrow.down.circle")
                     Label("Grafiek met downloads per dag over 30 dagen", systemImage: "chart.bar.xaxis")
                     Label("Ook op het web: bekendr.lrvdlinden.app/beheer", systemImage: "safari")
+                    Label("Feedback uit de app: wat er niet klopt aan een bekendmaking, met reden en toelichting", systemImage: "exclamationmark.bubble")
+                    Label("Feedback afhandelen of verwijderen; ook op bekendr.lrvdlinden.app/beheer", systemImage: "checkmark.circle")
                 }
                 Section("Bingr: Lifetime-only") {
                     Label("Instellingen → Lifetime-only: aankondiging, overgangsdatum, korting, proefperiode, Apple-koopknop en EU-link, met bevestiging", systemImage: "star.circle")

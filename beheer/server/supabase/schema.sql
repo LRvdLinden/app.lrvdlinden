@@ -32,6 +32,23 @@ create table if not exists public.lrbeheer_events (
 );
 create index if not exists lrbeheer_events_at on public.lrbeheer_events(at);
 
+-- Bekendr: feedback op een bekendmaking (vanuit de app; geen persoonsgegevens, apparaat alleen als hash)
+create table if not exists public.lrbeheer_bekendr_feedback (
+  id bigserial primary key,
+  at timestamptz not null default now(),
+  notice_id text not null,
+  notice_title text not null default '',
+  notice_url text not null default '',
+  reason text not null check (reason in ('locatie','categorie','gemeente','link','anders')),
+  message text not null default '',
+  platform text not null default '',
+  app_version text not null default '',
+  device_hash text not null default '',
+  status text not null default 'nieuw' check (status in ('nieuw','afgehandeld')),
+  handled_at timestamptz
+);
+create index if not exists lrbeheer_bekendr_feedback_at on public.lrbeheer_bekendr_feedback(at);
+
 -- Bekendr: downloads per dag (Apple per apparaat uit App Store Connect, Android uit GitHub Releases)
 create table if not exists public.lrbeheer_bekendr_daily (
   day date not null,
@@ -46,8 +63,9 @@ alter table public.lrbeheer_devices enable row level security;
 alter table public.lrbeheer_state enable row level security;
 alter table public.lrbeheer_events enable row level security;
 alter table public.lrbeheer_bekendr_daily enable row level security;
+alter table public.lrbeheer_bekendr_feedback enable row level security;
 -- geen policies: alleen de functie (service role) leest en schrijft
-revoke all on table public.lrbeheer_devices, public.lrbeheer_state, public.lrbeheer_events, public.lrbeheer_bekendr_daily from anon, authenticated;
+revoke all on table public.lrbeheer_devices, public.lrbeheer_state, public.lrbeheer_events, public.lrbeheer_bekendr_daily, public.lrbeheer_bekendr_feedback from anon, authenticated;
 
 -- Geschiedenis 90 dagen bewaren
 create or replace function public.lrbeheer_cleanup() returns void language sql security definer as $$

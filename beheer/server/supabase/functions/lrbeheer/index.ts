@@ -10,6 +10,8 @@
 //   Bekendr-beheer (ook vanuit de browser op https://bekendr.lrvdlinden.app/beheer):
 //     {action: "bekendr_login", user, password}  → token (12 uur), met de gedeelde beheer-inlog
 //     {action: "bekendr_stats"} met Authorization: Bearer <Bekendr-token> → downloads Apple (per apparaat) en Android
+//     {action: "bekendr_feedback_list" | "bekendr_feedback_update"} met het Bekendr-token → feedback bekijken en afhandelen
+//   Bekendr-app (zonder account): {action: "bekendr_feedback", notice_id, notice_title, notice_url, reason, message, platform, app_version, device}
 //
 // Function-secrets: TUNR_TOKEN_SECRET (bestaat al, van `admin`), APNS_KEY_P8 / APNS_KEY_ID / APNS_TEAM_ID (dezelfde
 // APNs-sleutel als Bingr/Pasr), LRBEHEER_APNS_TOPIC (optioneel, standaard app.lrvdlinden.lrbeheer),
@@ -20,7 +22,7 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import {
   amsterdam, androidStep, type AndroidState, apkReleases, apnsHost, apnsJwt, apnsResult, appleDaysToFetch, ascJwt,
-  BEKENDR_ORIGIN, BEKENDR_REPO, bekendrSummary, bearer, type DailyRow, makeBekendrToken, parseSalesReport, readBekendrToken, cleanNotify, cleanPrefs, cleanRegister, contentNotice, deployNotices,
+  BEKENDR_ORIGIN, BEKENDR_REPO, bekendrSummary, bearer, cleanFeedback, FEEDBACK_STATUS, type DailyRow, makeBekendrToken, parseSalesReport, readBekendrToken, cleanNotify, cleanPrefs, cleanRegister, contentNotice, deployNotices,
   hmac, importApnsKey, installsNotice, newAppNotices, type Notice, payload, presskitNotice, readTunrToken, sameBytes,
   storeNotices, wants,
 } from "./logic.ts";
@@ -176,6 +178,11 @@ async function bekendrSync(today: string) {
   await setState("bekendr_apple_days", keep);
 }
 
+async function feedbackOpen(): Promise<number> {
+  const { count } = await db.from("lrbeheer_bekendr_feedback").select("id", { count: "exact", head: true }).eq("status", "nieuw");
+  return count ?? 0;
+}
+
 async function bekendrStats() {
   const { day: today } = amsterdam(new Date());
   const since = new Date(Date.parse(`${today}T00:00:00Z`) - 400 * 86400_000).toISOString().slice(0, 10);
@@ -193,6 +200,7 @@ async function bekendrStats() {
     apple: { configured: ascConfigured(), ...sum.apple },
     android: { total: releases.reduce((s, r) => s + r.downloads, 0), releases: releases.slice(0, 20), available: githubOk },
     days: sum.days,
+    feedback_open: await feedbackOpen(),
   };
 }
 
@@ -320,6 +328,45 @@ Deno.serve(async (req) => {
         return json({ error: secret ? "unauthorized" : "not_configured" }, secret ? 401 : 503, cors);
       }
       return json({ ok: true, ...(await makeBekendrToken(secret)) }, 200, cors);
+    }
+    if (action === "bekendr_feedback") {
+      if (web) return json({ error: "forbidden" }, 403, cors);
+      const f = cleanFeedback(body);
+      if (typeof f === "string") return json({ error: f }, 400);
+      const device_hash = [...await hmac(await bekendrSecret() || "bekendr", `device|${f.device}`)].slice(0, 16).map((b) => b.toString(16).padStart(2, "0")).join("");
+      const since = new Date(Date.now() - 3600_000).toISOString();
+      const { count } = await db.from("lrbeheer_bekendr_feedback").select("id", { count: "exact", head: true }).eq("device_hash", device_hash).gte("at", since);
+      if ((count ?? 0) >= 10) return json({ error: "too_many" }, 429);
+      const { device: _d, ...rest } = f;
+      const { error } = await db.from("lrbeheer_bekendr_feedback").insert({ ...rest, device_hash });
+      if (error) throw new Error(error.message);
+      return json({ ok: true });
+    }
+    if (action === "bekendr_feedback_list" || action === "bekendr_feedback_update") {
+      if (!(await readBekendrToken(await bekendrSecret(), bearer(req.headers)))) return json({ error: "unauthorized" }, 401, cors);
+      if (action === "bekendr_feedback_list") {
+        const status = typeof body.status === "string" && (FEEDBACK_STATUS as readonly string[]).includes(body.status) ? body.status : null;
+        let q = db.from("lrbeheer_bekendr_feedback")
+          .select("id, at, notice_id, notice_title, notice_url, reason, message, platform, app_version, status, handled_at")
+          .order("at", { ascending: false }).limit(200);
+        if (status) q = q.eq("status", status);
+        const { data, error } = await q;
+        if (error) throw new Error(error.message);
+        return json({ ok: true, items: data ?? [], open: await feedbackOpen() }, 200, cors);
+      }
+      const id = Number(body.id);
+      if (!Number.isInteger(id) || id <= 0) return json({ error: "bad_id" }, 400, cors);
+      if (body.delete === true) {
+        const { error } = await db.from("lrbeheer_bekendr_feedback").delete().eq("id", id);
+        if (error) throw new Error(error.message);
+      } else {
+        const status = String(body.status ?? "");
+        if (!(FEEDBACK_STATUS as readonly string[]).includes(status)) return json({ error: "bad_status" }, 400, cors);
+        const { error } = await db.from("lrbeheer_bekendr_feedback")
+          .update({ status, handled_at: status === "afgehandeld" ? new Date().toISOString() : null }).eq("id", id);
+        if (error) throw new Error(error.message);
+      }
+      return json({ ok: true, open: await feedbackOpen() }, 200, cors);
     }
     if (action === "bekendr_stats") {
       if (!(await readBekendrToken(await bekendrSecret(), bearer(req.headers)))) return json({ error: "unauthorized" }, 401, cors);

@@ -1058,6 +1058,22 @@
         }
       }
     },
+    "Alleen nieuwe": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only new"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen nieuwe"
+          }
+        }
+      }
+    },
     "Alles": {
       "localizations": {
         "en": {
@@ -1214,6 +1230,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Andere winkels"
+          }
+        }
+      }
+    },
+    "Anders": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anders"
           }
         }
       }
@@ -2930,6 +2962,22 @@
         }
       }
     },
+    "Downloads": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads"
+          }
+        }
+      }
+    },
     "Downloads op iPhone, iPad, Mac en Android": {
       "localizations": {
         "en": {
@@ -3458,6 +3506,86 @@
         }
       }
     },
+    "Feedback": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback"
+          }
+        }
+      }
+    },
+    "Feedback afhandelen of verwijderen; ook op bekendr.lrvdlinden.app/beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handle or delete feedback; also on bekendr.lrvdlinden.app/beheer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback afhandelen of verwijderen; ook op bekendr.lrvdlinden.app/beheer"
+          }
+        }
+      }
+    },
+    "Feedback uit de Bekendr-app (iPhone, iPad, Mac en Android). Geen account of persoonsgegevens; alleen de reden en de toelichting.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback from the Bekendr app (iPhone, iPad, Mac and Android). No account or personal data; only the reason and the explanation."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback uit de Bekendr-app (iPhone, iPad, Mac en Android). Geen account of persoonsgegevens; alleen de reden en de toelichting."
+          }
+        }
+      }
+    },
+    "Feedback uit de app: wat er niet klopt aan een bekendmaking, met reden en toelichting": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback from the app: what is wrong with a notice, with reason and explanation"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback uit de app: wat er niet klopt aan een bekendmaking, met reden en toelichting"
+          }
+        }
+      }
+    },
+    "Feedback verschijnt hier zodra iemand in de app laat weten dat er iets niet klopt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback appears here as soon as someone reports in the app that something is wrong."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback verschijnt hier zodra iemand in de app laat weten dat er iets niet klopt."
+          }
+        }
+      }
+    },
     "Filter": {
       "localizations": {
         "en": {
@@ -3758,6 +3886,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen nieuwe apps. Alle apps uit de App Store en de Homey App Store staan al op de site."
+          }
+        }
+      }
+    },
+    "Geen nieuwe feedback": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No new feedback"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen nieuwe feedback"
           }
         }
       }
@@ -5666,6 +5810,22 @@
         }
       }
     },
+    "Link werkt niet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link does not work"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link werkt niet"
+          }
+        }
+      }
+    },
     "Links": {
       "localizations": {
         "en": {
@@ -5758,6 +5918,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Live gezet. Er was niets veranderd ten opzichte van GitHub."
+          }
+        }
+      }
+    },
+    "Locatie klopt niet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wrong location"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locatie klopt niet"
           }
         }
       }
@@ -6914,6 +7090,22 @@
         }
       }
     },
+    "Nog geen feedback": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No feedback yet"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen feedback"
+          }
+        }
+      }
+    },
     "Nog geen gegevens": {
       "localizations": {
         "en": {
@@ -7218,6 +7410,22 @@
         }
       }
     },
+    "Onderdeel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Section"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onderdeel"
+          }
+        }
+      }
+    },
     "Onderdelen": {
       "localizations": {
         "en": {
@@ -7454,6 +7662,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Open Instellingen"
+          }
+        }
+      }
+    },
+    "Open publicatie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open publication"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open publicatie"
           }
         }
       }
@@ -9774,6 +9998,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vergrendelen met %@"
+          }
+        }
+      }
+    },
+    "Verkeerde categorie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wrong category"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verkeerde categorie"
+          }
+        }
+      }
+    },
+    "Verkeerde gemeente": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wrong municipality"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verkeerde gemeente"
           }
         }
       }

@@ -137,6 +137,13 @@ andere acties blijven zonder Origin.
   zetten ze uit `KEY_ID_APPSTORE_CONNECT`, `ISSUER_ID_APPSTORE_CONNECT`, `APPSTORE_CONNECT_P8` en
   `VENDOR_APPSTORE_CONNECT` (app.lrvdlinden.secrets). Zonder .p8 of vendornummer telt alleen Android.
 
+### Bekendr: feedback (acties `bekendr_feedback`, `bekendr_feedback_list`, `bekendr_feedback_update`)
+
+De Bekendr-app (iPhone, iPad, Mac en Android) stuurt feedback op een bekendmaking zonder account: bekendmaking (id,
+titel, link), reden (`locatie`, `categorie`, `gemeente`, `link`, `anders`), toelichting, platform, appversie en een
+willekeurig apparaatnummer, dat alleen als hash wordt bewaard (max. 10 per uur per apparaat). Tabel
+`lrbeheer_bekendr_feedback`. LRbeheer en het web-beheer lezen en behandelen de feedback met het Bekendr-token.
+
 ## Eén beheer-inlog voor alle omgevingen
 
 Alle beheeromgevingen gebruiken dezelfde gebruikersnaam en hetzelfde wachtwoord: `BEHEER_APP_USER` en

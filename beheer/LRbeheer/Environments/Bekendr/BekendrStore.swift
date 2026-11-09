@@ -33,6 +33,10 @@ final class BekendrStore {
 
     private(set) var session: Session?
     private(set) var stats: BekendrStats?
+    private(set) var feedback: [BekendrFeedback] = []
+    private(set) var feedbackOpen = 0
+    private(set) var feedbackLoading = false
+    var feedbackOnlyOpen = true
     private(set) var loading = false
     var error: String?
 
@@ -80,6 +84,61 @@ final class BekendrStore {
         }
     }
 
+    // MARK: feedback
+
+    private var decoder: JSONDecoder {
+        let d = JSONDecoder()
+        d.keyDecodingStrategy = .convertFromSnakeCase
+        return d
+    }
+
+    func loadFeedback(onlyOpen: Bool) async {
+        guard let s = session, isSignedIn else { return }
+        feedbackLoading = true
+        defer { feedbackLoading = false }
+        do {
+            var body: [String: Any] = ["action": "bekendr_feedback_list"]
+            if onlyOpen { body["status"] = "nieuw" }
+            let r = try decoder.decode(FeedbackList.self, from: try await raw(body, token: s.token))
+            feedback = r.items
+            feedbackOpen = r.open
+            error = nil
+        } catch Failure.unauthorized {
+            signOut()
+        } catch {
+            self.error = error.localizedDescription
+        }
+    }
+
+    func setHandled(_ item: BekendrFeedback, _ handled: Bool) async {
+        await update(["id": item.id, "status": handled ? "afgehandeld" : "nieuw"])
+    }
+
+    func delete(_ item: BekendrFeedback) async {
+        await update(["id": item.id, "delete": true])
+        feedback.removeAll { $0.id == item.id }
+    }
+
+    private func update(_ params: [String: Any]) async {
+        guard let s = session, isSignedIn else { return }
+        do {
+            var body = params
+            body["action"] = "bekendr_feedback_update"
+            let o = try await call(body, token: s.token)
+            feedbackOpen = (o["open"] as? Int) ?? feedbackOpen
+            if let id = params["id"] as? Int, let status = params["status"] as? String,
+               let i = feedback.firstIndex(where: { $0.id == id }) {
+                feedback[i].status = status
+            }
+        } catch Failure.unauthorized {
+            signOut()
+        } catch {
+            self.error = error.localizedDescription
+        }
+    }
+
+    private struct FeedbackList: Decodable { let items: [BekendrFeedback]; let open: Int }
+
     // MARK: netwerk
 
     private func call(_ body: [String: Any], token: String?) async throws -> [String: Any] {
@@ -110,6 +169,54 @@ final class BekendrStore {
     }
 }
 
+/// Feedback uit de app op een bekendmaking.
+struct BekendrFeedback: Decodable, Identifiable, Equatable {
+    let id: Int
+    let at: String
+    let noticeId: String
+    let noticeTitle: String
+    let noticeUrl: String
+    let reason: String
+    let message: String
+    let platform: String
+    let appVersion: String
+    var status: String
+
+    var date: Date? {
+        let f = ISO8601DateFormatter()
+        f.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return f.date(from: at) ?? ISO8601DateFormatter().date(from: at)
+    }
+    var isOpen: Bool { status == "nieuw" }
+    var reasonLabel: String {
+        switch reason {
+        case "locatie": String(localized: "Locatie klopt niet")
+        case "categorie": String(localized: "Verkeerde categorie")
+        case "gemeente": String(localized: "Verkeerde gemeente")
+        case "link": String(localized: "Link werkt niet")
+        default: String(localized: "Anders")
+        }
+    }
+    var reasonSymbol: String {
+        switch reason {
+        case "locatie": "mappin.slash"
+        case "categorie": "square.grid.2x2"
+        case "gemeente": "building.2"
+        case "link": "link"
+        default: "ellipsis.bubble"
+        }
+    }
+    var platformLabel: String {
+        switch platform {
+        case "ios": "iPhone"
+        case "ipados": "iPad"
+        case "macos": "Mac"
+        case "android": "Android"
+        default: platform
+        }
+    }
+}
+
 /// Antwoord van bekendr_stats.
 struct BekendrStats: Decodable {
     let today: String
@@ -117,6 +224,7 @@ struct BekendrStats: Decodable {
     let apple: Apple
     let android: Android
     let days: [Day]
+    let feedbackOpen: Int?
 
     struct Apple: Decodable {
         let configured: Bool

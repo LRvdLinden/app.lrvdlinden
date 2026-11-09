@@ -32,10 +32,39 @@ enum BekendrPalette {
 struct BekendrMain: View {
     @Bindable var store: BekendrStore
     @State private var confirmSignOut = false
+    @State private var section = Part.downloads
     @Environment(\.openURL) private var openURL
+
+    enum Part: Hashable { case downloads, feedback }
 
     var body: some View {
         NavigationStack {
+            VStack(spacing: 0) {
+                Picker("Onderdeel", selection: $section) {
+                    Text("Downloads").tag(Part.downloads)
+                    Text(feedbackTitle).tag(Part.feedback)
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal, 16).padding(.vertical, 8)
+                .frame(maxWidth: 520)
+                if section == .downloads { downloads } else { BekendrFeedbackList(store: store) }
+            }
+            .background(Theme.bg)
+            .navigationTitle("Bekendr")
+            .toolbar { toolbar }
+            .task { if store.stats == nil { await store.load() } }
+            .confirmationDialog("Uitloggen bij Bekendr?", isPresented: $confirmSignOut, titleVisibility: .visible) {
+                Button("Uitloggen", role: .destructive) { store.signOut() }
+            }
+        }
+    }
+
+    private var feedbackTitle: String {
+        let n = store.stats?.feedbackOpen ?? store.feedbackOpen
+        return n > 0 ? String(localized: "Feedback") + " (\(n))" : String(localized: "Feedback")
+    }
+
+    private var downloads: some View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     if let e = store.error {
@@ -58,19 +87,14 @@ struct BekendrMain: View {
                 .frame(maxWidth: .infinity)
             }
             .refreshable { await store.load() }
-            .navigationTitle("Bekendr")
-            .toolbar { toolbar }
-            .task { if store.stats == nil { await store.load() } }
-            .confirmationDialog("Uitloggen bij Bekendr?", isPresented: $confirmSignOut, titleVisibility: .visible) {
-                Button("Uitloggen", role: .destructive) { store.signOut() }
-            }
-        }
     }
 
     @ToolbarContentBuilder private var toolbar: some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
-            Button { Task { await store.load() } } label: { Label("Vernieuwen", systemImage: "arrow.clockwise") }
-                .disabled(store.loading)
+            Button {
+                Task { await store.load(); if section == .feedback { await store.loadFeedback(onlyOpen: store.feedbackOnlyOpen) } }
+            } label: { Label("Vernieuwen", systemImage: "arrow.clockwise") }
+                .disabled(store.loading || store.feedbackLoading)
         }
         ToolbarItem(placement: .secondaryAction) {
             Menu {
@@ -227,6 +251,87 @@ struct BekendrDaysChart: View {
             }
         }
         .lrCard()
+    }
+}
+
+// MARK: feedback
+
+/// Feedback uit de app: wat er niet klopt aan een bekendmaking. Afhandelen of verwijderen.
+struct BekendrFeedbackList: View {
+    @Bindable var store: BekendrStore
+    @Environment(\.openURL) private var openURL
+
+    var body: some View {
+        let onlyOpen = store.feedbackOnlyOpen
+        List {
+            Section {
+                Toggle("Alleen nieuwe", isOn: $store.feedbackOnlyOpen)
+            } footer: {
+                Text("Feedback uit de Bekendr-app (iPhone, iPad, Mac en Android). Geen account of persoonsgegevens; alleen de reden en de toelichting.")
+            }
+            if store.feedback.isEmpty && !store.feedbackLoading {
+                ContentUnavailableView(onlyOpen ? "Geen nieuwe feedback" : "Nog geen feedback", systemImage: "tray",
+                                       description: Text("Feedback verschijnt hier zodra iemand in de app laat weten dat er iets niet klopt."))
+                    .listRowBackground(Color.clear)
+            }
+            ForEach(store.feedback) { item in
+                row(item)
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) { Task { await store.delete(item) } } label: { Label("Verwijder", systemImage: "trash") }
+                        Button { Task { await store.setHandled(item, item.isOpen) } } label: {
+                            Label(item.isOpen ? "Afgehandeld" : "Heropen", systemImage: item.isOpen ? "checkmark" : "arrow.uturn.backward")
+                        }
+                        .tint(item.isOpen ? Theme.good : Theme.build)
+                    }
+                    .contextMenu {
+                        Button { Task { await store.setHandled(item, item.isOpen) } } label: {
+                            Label(item.isOpen ? "Afgehandeld" : "Heropen", systemImage: item.isOpen ? "checkmark" : "arrow.uturn.backward")
+                        }
+                        if let url = URL(string: item.noticeUrl), !item.noticeUrl.isEmpty {
+                            Button { openURL(url) } label: { Label("Open publicatie", systemImage: "safari") }
+                        }
+                        Button(role: .destructive) { Task { await store.delete(item) } } label: { Label("Verwijder", systemImage: "trash") }
+                    }
+            }
+        }
+        .listStyle(.insetGrouped)
+        .overlay { if store.feedbackLoading && store.feedback.isEmpty { ProgressView() } }
+        .refreshable { await store.loadFeedback(onlyOpen: onlyOpen) }
+        .task(id: onlyOpen) { await store.loadFeedback(onlyOpen: onlyOpen) }
+    }
+
+    private func row(_ item: BekendrFeedback) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 6) {
+                Image(systemName: item.reasonSymbol).foregroundStyle(BekendrPalette.brand)
+                Text(item.reasonLabel).font(.subheadline.weight(.semibold))
+                Spacer()
+                if item.isOpen {
+                    Text("Nieuw").font(.caption.weight(.bold)).foregroundStyle(.white)
+                        .padding(.horizontal, 8).padding(.vertical, 2).background(BekendrPalette.brand, in: Capsule())
+                } else {
+                    Text("Afgehandeld").font(.caption.weight(.semibold)).foregroundStyle(Theme.good)
+                }
+            }
+            Text(item.noticeTitle.isEmpty ? item.noticeId : item.noticeTitle).font(.subheadline).lineLimit(3)
+            if !item.message.isEmpty {
+                Text(item.message).font(.callout).padding(10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Theme.bg, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            }
+            HStack(spacing: 6) {
+                if let d = item.date { Text(d.formatted(date: .abbreviated, time: .shortened)) }
+                Text(verbatim: "· \(item.platformLabel) \(item.appVersion)")
+                Spacer()
+                if let url = URL(string: item.noticeUrl), !item.noticeUrl.isEmpty {
+                    Button { openURL(url) } label: { Image(systemName: "arrow.up.right.square") }
+                        .buttonStyle(.borderless)
+                        .accessibilityLabel("Open publicatie")
+                }
+            }
+            .font(.caption).foregroundStyle(.secondary)
+        }
+        .padding(.vertical, 4)
     }
 }
 

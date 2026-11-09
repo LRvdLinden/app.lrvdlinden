@@ -236,7 +236,8 @@ de centrale functie `lrbeheer` (acties `bekendr_login` en `bekendr_stats`; zie `
 | Apple: eerste downloads, opnieuw gedownload, updates, laatste dag | ✓ | ✓ |
 | Android: APK-downloads totaal en per release (GitHub Releases) | ✓ | ✓ |
 | Grafiek downloads per dag (30 dagen), per platform gestapeld | ✓ (Swift Charts) | ✓ (SVG) |
-| Pushmelding | nog niet (voorstel: dagelijks overzicht van nieuwe downloads) | – |
+| Feedback uit de app (reden: locatie, categorie, gemeente, link of anders, met toelichting): lijst, alleen nieuwe, afhandelen, heropenen, verwijderen, publicatie openen | ✓ (Downloads / Feedback) | ✓ |
+| Pushmelding | nog niet (voorstel: melding bij nieuwe feedback en dagelijks overzicht van nieuwe downloads) | – |
 
 ## Standaarden van LRvdLinden-apps
 
