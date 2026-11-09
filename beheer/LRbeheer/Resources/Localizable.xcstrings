@@ -258,6 +258,22 @@
         }
       }
     },
+    "A-Alerts: Nieuws": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: News"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: Nieuws"
+          }
+        }
+      }
+    },
     "A-Alerts: downloads van de Android-app (totaal, 30 dagen, per dag en per versie)": {
       "localizations": {
         "en": {
@@ -1618,6 +1634,38 @@
         }
       }
     },
+    "Bericht toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bericht toevoegen"
+          }
+        }
+      }
+    },
+    "Bericht wijzigen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bericht wijzigen"
+          }
+        }
+      }
+    },
     "Bestaande meldingen": {
       "localizations": {
         "en": {
@@ -2846,6 +2894,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eerst gezien"
+          }
+        }
+      }
+    },
+    "Eigen afbeelding kiezen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose own image"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigen afbeelding kiezen"
+          }
+        }
+      }
+    },
+    "Eigen afbeelding weghalen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove own image"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigen afbeelding weghalen"
           }
         }
       }
@@ -4578,6 +4658,22 @@
         }
       }
     },
+    "Kies foto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose photo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies foto"
+          }
+        }
+      }
+    },
     "Kies links een app om te bewerken, of maak een nieuwe aan.": {
       "localizations": {
         "en": {
@@ -6194,6 +6290,22 @@
         }
       }
     },
+    "Nieuw tabblad Nieuws: politieberichten over Apeldoorn en omgeving, weerartikelen en liveblogs bij Burgernet, AMBER Alert en Vermist Kind Alert": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New News tab: police news about Apeldoorn and surroundings, weather articles and live blogs for Burgernet, AMBER Alert and Missing Child Alert"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw tabblad Nieuws: politieberichten over Apeldoorn en omgeving, weerartikelen en liveblogs bij Burgernet, AMBER Alert en Vermist Kind Alert"
+          }
+        }
+      }
+    },
     "Nieuw tabblad Status: alle onderdelen van a-alerts.nl/status met uptime en foutmelding": {
       "localizations": {
         "en": {
@@ -6462,6 +6574,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuws"
+          }
+        }
+      }
+    },
+    "Nog geen berichten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No messages yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen berichten."
+          }
+        }
+      }
+    },
+    "Nog geen nieuws.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No news yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen nieuws."
           }
         }
       }
@@ -8018,6 +8162,54 @@
         }
       }
     },
+    "Standaard": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standaard"
+          }
+        }
+      }
+    },
+    "Standaardafbeeldingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default images"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standaardafbeeldingen"
+          }
+        }
+      }
+    },
+    "Standaardafbeeldingen politie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Police default images"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standaardafbeeldingen politie"
+          }
+        }
+      }
+    },
     "Start": {
       "localizations": {
         "en": {
@@ -8482,6 +8674,22 @@
         }
       }
     },
+    "Tijdlijn (nieuwste boven)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timeline (newest on top)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tijdlijn (nieuwste boven)"
+          }
+        }
+      }
+    },
     "Titel": {
       "localizations": {
         "en": {
@@ -8622,6 +8830,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toevoegen"
+          }
+        }
+      }
+    },
+    "Toevoegen aan tijdlijn": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add to timeline"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toevoegen aan tijdlijn"
           }
         }
       }
@@ -8978,6 +9202,22 @@
         }
       }
     },
+    "Verberg een bericht, kies een eigen afbeelding, en stel per onderwerp de standaardafbeelding voor politieberichten in": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide an item, choose your own image, and set the default image per subject for police news"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verberg een bericht, kies een eigen afbeelding, en stel per onderwerp de standaardafbeelding voor politieberichten in"
+          }
+        }
+      }
+    },
     "Verberg wachtwoord": {
       "localizations": {
         "en": {
@@ -9022,6 +9262,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verbergen in apps en website"
+          }
+        }
+      }
+    },
+    "Verbergen in de apps en op de website": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide in the apps and on the website"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbergen in de apps en op de website"
           }
         }
       }
@@ -9342,6 +9598,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vragen"
+          }
+        }
+      }
+    },
+    "Vul een liveblog aan met tekst, foto en link, met een pushmelding naar wie die bron volgt; wijzig of verwijder eigen berichten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add text, a photo and a link to a live blog, with a notification to those who follow that source; edit or delete your own messages"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vul een liveblog aan met tekst, foto en link, met een pushmelding naar wie die bron volgt; wijzig of verwijder eigen berichten"
           }
         }
       }

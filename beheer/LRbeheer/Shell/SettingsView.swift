@@ -93,6 +93,11 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("A-Alerts: Nieuws") {
+                    Label("Nieuw tabblad Nieuws: politieberichten over Apeldoorn en omgeving, weerartikelen en liveblogs bij Burgernet, AMBER Alert en Vermist Kind Alert", systemImage: "newspaper")
+                    Label("Vul een liveblog aan met tekst, foto en link, met een pushmelding naar wie die bron volgt; wijzig of verwijder eigen berichten", systemImage: "plus.bubble")
+                    Label("Verberg een bericht, kies een eigen afbeelding, en stel per onderwerp de standaardafbeelding voor politieberichten in", systemImage: "photo.on.rectangle")
+                }
                 Section("A-Alerts: AMBER Alert en Vermist Kind Alert") {
                     Label("Twee nieuwe soorten waarschuwingen (vermiste kinderen, van de politie via Burgernet) in de lijst, het filter en de cijfers per bron", systemImage: "figure.child")
                     Label("Status van de nieuwe bron en hoeveel toestellen ze willen ontvangen; verbergen of beëindigen werkt zoals bij de andere waarschuwingen", systemImage: "antenna.radiowaves.left.and.right")
