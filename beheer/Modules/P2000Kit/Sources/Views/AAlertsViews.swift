@@ -81,7 +81,7 @@ enum WaarschuwingStijl {
         }
     }
     static func symbol(_ b: String) -> String {
-        switch b { case "nlalert": "exclamationmark.triangle.fill"; case "burgernet": "megaphone.fill"; case "helikopters": "helicopter"; default: "cloud.sun.rain.fill" }
+        switch b { case "nlalert": "exclamationmark.triangle.fill"; case "burgernet": "megaphone.fill"; case "helikopters": "airplane"; default: "cloud.sun.rain.fill" }
     }
     static func status(_ s: String) -> String {
         switch s { case "actief": "Actief"; case "verwacht": "Verwacht"; case "beeindigd": "Beëindigd"; default: s }
@@ -155,13 +155,13 @@ struct AAlertsDashboardCards: View {
     }
 
     private var heliCard: some View {
-        Card(title: "Helikopters in de lucht", icon: "helicopter") {
+        Card(title: "Helikopters in de lucht", icon: "airplane") {
             if a.inDeLucht.isEmpty {
                 EmptyChart(text: "Er is nu geen Lifeliner of Zulu in de lucht.")
             } else {
                 ForEach(a.inDeLucht) { h in
                     HStack {
-                        Image(systemName: "helicopter")
+                        Image(systemName: "airplane")
                             .font(.system(size: 13, weight: .bold))
                             .foregroundStyle(.white)
                             .frame(width: 26, height: 26)
