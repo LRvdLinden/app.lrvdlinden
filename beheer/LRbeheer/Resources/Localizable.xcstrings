@@ -354,6 +354,22 @@
         }
       }
     },
+    "A-Alerts: toestel zoeken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: find a device"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: toestel zoeken"
+          }
+        }
+      }
+    },
     "Aangemaakt": {
       "localizations": {
         "en": {
@@ -1182,6 +1198,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Antwoord"
+          }
+        }
+      }
+    },
+    "App": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App"
           }
         }
       }
@@ -2322,6 +2354,22 @@
         }
       }
     },
+    "De gebruiker vindt het toestel-ID in de app bij Instellingen, onder Disclaimer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The user finds the device ID in the app under Settings, below Disclaimer."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De gebruiker vindt het toestel-ID in de app bij Instellingen, onder Disclaimer."
+          }
+        }
+      }
+    },
     "De knop Saldo checken bij een cadeaukaart in de app opent deze pagina, met het kaartnummer klaar om te plakken. Werkt ook voor winkels die al in de app zitten.": {
       "localizations": {
         "en": {
@@ -2782,6 +2830,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Een betaalde aankoop zonder account aan dit account koppelen. Het account krijgt Lifetime. Doe dit alleen als je zeker weet dat deze klant de koper is."
+          }
+        }
+      }
+    },
+    "Eerst gezien": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First seen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerst gezien"
           }
         }
       }
@@ -3422,6 +3486,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen open aanvragen. Mooi zo."
+          }
+        }
+      }
+    },
+    "Geen pushregistratie gekoppeld: pushmeldingen staan uit, of de app is ouder dan build 56.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No push registration linked: notifications are off, or the app is older than build 56."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen pushregistratie gekoppeld: pushmeldingen staan uit, of de app is ouder dan build 56."
+          }
+        }
+      }
+    },
+    "Geen toestel met dit ID. Heeft de app al eens verbinding gehad?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No device with this ID. Has the app been online yet?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen toestel met dit ID. Heeft de app al eens verbinding gehad?"
           }
         }
       }
@@ -4094,6 +4190,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inloggen bij alle omgevingen"
+          }
+        }
+      }
+    },
+    "Inloggen met Apple": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in with Apple"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inloggen met Apple"
           }
         }
       }
@@ -4942,6 +5054,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Laatst gebruikt"
+          }
+        }
+      }
+    },
+    "Laatst gezien": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last seen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatst gezien"
           }
         }
       }
@@ -5918,6 +6046,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Niet geclaimde aankopen, en een aankoop handmatig aan een account koppelen"
+          }
+        }
+      }
+    },
+    "Niet gevonden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not found"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet gevonden"
           }
         }
       }
@@ -7458,6 +7602,22 @@
         }
       }
     },
+    "Pushmeldingen in de app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications in the app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushmeldingen in de app"
+          }
+        }
+      }
+    },
     "Pushmeldingen van alle omgevingen; een tik opent de juiste omgeving": {
       "localizations": {
         "en": {
@@ -8018,6 +8178,22 @@
         }
       }
     },
+    "Stuur dat toestel meteen een testmelding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send that device a test notification right away"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur dat toestel meteen een testmelding"
+          }
+        }
+      }
+    },
     "Stuur een testmelding": {
       "localizations": {
         "en": {
@@ -8030,6 +8206,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stuur een testmelding"
+          }
+        }
+      }
+    },
+    "Stuur testmelding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send test notification"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur testmelding"
           }
         }
       }
@@ -8366,6 +8558,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toegevoegd"
+          }
+        }
+      }
+    },
+    "Toestel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Device"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toestel"
+          }
+        }
+      }
+    },
+    "Toestel zoeken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find device"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toestel zoeken"
+          }
+        }
+      }
+    },
+    "Toestel-ID, bijv. 3F9A-12BC": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Device ID, e.g. 3F9A-12BC"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toestel-ID, bijv. 3F9A-12BC"
           }
         }
       }
@@ -9742,6 +9982,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zoek een app"
+          }
+        }
+      }
+    },
+    "Zoek een gebruiker op met het toestel-ID uit de app (Instellingen, onder Disclaimer): toestel, appversie en pushinstellingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look up a user with the device ID from the app (Settings, under Disclaimer): device, app version and notification settings"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek een gebruiker op met het toestel-ID uit de app (Instellingen, onder Disclaimer): toestel, appversie en pushinstellingen"
           }
         }
       }

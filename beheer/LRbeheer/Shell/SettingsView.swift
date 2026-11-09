@@ -93,6 +93,10 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("A-Alerts: toestel zoeken") {
+                    Label("Zoek een gebruiker op met het toestel-ID uit de app (Instellingen, onder Disclaimer): toestel, appversie en pushinstellingen", systemImage: "magnifyingglass")
+                    Label("Stuur dat toestel meteen een testmelding", systemImage: "bell.badge")
+                }
                 Section("A-Alerts: gemelde fouten") {
                     Label("Gemelde fouten: meldingen die gebruikers als onjuist aangeven, met reden, toelichting en de juiste plek", systemImage: "exclamationmark.bubble")
                     Label("Afhandelen, heropenen of de melding meteen bewerken; een pushmelding bij elke nieuwe melding", systemImage: "checkmark.circle")
