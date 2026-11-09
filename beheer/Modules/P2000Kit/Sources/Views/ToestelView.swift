@@ -56,7 +56,9 @@ struct ToestelView: View {
                     HStack {
                         TextField("Toestel-ID, bijv. 3F9A-12BC", text: $code)
                             .font(.body.monospaced())
+                            #if os(iOS)
                             .textInputAutocapitalization(.characters)
+                            #endif
                             .autocorrectionDisabled()
                             .onSubmit { Task { await zoek() } }
                         Button("Zoek") { Task { await zoek() } }.disabled(code.count < 6 || bezig)
