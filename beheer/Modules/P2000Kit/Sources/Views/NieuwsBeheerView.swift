@@ -69,7 +69,7 @@ struct AdminStock: Decodable, Identifiable {
 
 enum NieuwsStijl {
     static func soort(_ s: String) -> String {
-        switch s { case "liveblog": "Liveblog"; case "weer": "Weer"; default: "Politie" }
+        switch s { case "liveblog": "Liveblog"; case "weer": "Weer"; case "regionaal": "112 Nieuws"; default: "Politie" }
     }
     static func bron(_ b: String) -> String {
         switch b {
@@ -77,6 +77,7 @@ enum NieuwsStijl {
         case "amber": "AMBER Alert"
         case "vermistkind": "Vermist Kind"
         case "knmi": "KNMI"
+        case "112nieuws": "112 Nieuws"
         default: "Politie"
         }
     }
@@ -170,7 +171,7 @@ struct NieuwsBeheerView: View {
                 Section {
                     Picker("Soort", selection: $soort) {
                         Text("Alles").tag(String?.none)
-                        ForEach(["liveblog", "politie", "weer"], id: \.self) { Text(NieuwsStijl.soort($0)).tag(Optional($0)) }
+                        ForEach(["liveblog", "politie", "regionaal", "weer"], id: \.self) { Text(NieuwsStijl.soort($0)).tag(Optional($0)) }
                     }
                     NavigationLink { StockBeheerView() } label: { Label("Standaardafbeeldingen politie", systemImage: "photo.on.rectangle") }
                 }
@@ -195,7 +196,7 @@ struct NieuwsBeheerView: View {
             AsyncImage(url: x.afbeelding.flatMap(URL.init(string:))) { $0.resizable().scaledToFill() } placeholder: { Color.secondary.opacity(0.15) }
                 .frame(width: 84, height: 54).clipShape(RoundedRectangle(cornerRadius: 9, style: .continuous))
             VStack(alignment: .leading, spacing: 3) {
-                Text("\(x.soortNaam) · \(x.soort == "politie" ? (x.plaats ?? "") : NieuwsStijl.bron(x.bron))").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+                Text("\(x.soortNaam) · \(x.soort == "politie" || x.soort == "regionaal" ? (x.plaats ?? "") : NieuwsStijl.bron(x.bron))").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
                 Text(x.titel).font(.callout.weight(.semibold)).lineLimit(2)
                 HStack(spacing: 6) {
                     Text(Fmt.relative(x.at))
@@ -274,7 +275,7 @@ struct NieuwsBeheerDetail: View {
                             Label(fotoData == nil ? "Foto toevoegen (optioneel)" : "Foto gekozen", systemImage: fotoData == nil ? "photo.badge.plus" : "checkmark.circle.fill")
                         }
                     }
-                    Toggle(x.soort == "politie" ? "Pushmelding (wie Politienieuws aan heeft)" : "Pushmelding (wie Liveblogs aan heeft en deze bron volgt)", isOn: $push)
+                    Toggle(x.soort == "regionaal" ? "Pushmelding (wie 112 Nieuws aan heeft)" : x.soort == "politie" ? "Pushmelding (wie Politienieuws aan heeft)" : "Pushmelding (wie Liveblogs aan heeft en deze bron volgt)", isOn: $push)
                     Button { Task { await voegToe() } } label: { Label("Toevoegen aan tijdlijn", systemImage: "plus.circle.fill") }
                         .disabled(busy || (tekst.trimmingCharacters(in: .whitespaces).isEmpty && fotoData == nil && link.isEmpty))
                 } header: { Text("Bericht toevoegen") }
