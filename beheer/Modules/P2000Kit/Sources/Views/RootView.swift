@@ -40,11 +40,14 @@ struct MainTabs: View {
             Tab("Waarschuwingen", systemImage: "exclamationmark.triangle", value: "waarschuwingen") { WaarschuwingenView() }
             Tab("Nieuws", systemImage: "newspaper", value: "nieuws") { NieuwsBeheerView() }
             Tab("Widgets", systemImage: "puzzlepiece.extension", value: "widgets") { WidgetsBeheerView() }
-            Tab("Gemelde fouten", systemImage: "exclamationmark.bubble", value: "fouten") { FoutenView() }
-            Tab("Toestel zoeken", systemImage: "magnifyingglass", value: "toestel") { ToestelView() }
-            Tab("Push", systemImage: "paperplane.fill", value: "push") { PushView() }
-            Tab("Teksten", systemImage: "doc.text", value: "teksten") { TekstenView() }
-            Tab("Instellingen", systemImage: "gearshape", value: "instellingen") { SettingsView() }
+            // Grouped: a tab builder takes at most 10 items.
+            Group {
+                Tab("Gemelde fouten", systemImage: "exclamationmark.bubble", value: "fouten") { FoutenView() }
+                Tab("Toestel zoeken", systemImage: "magnifyingglass", value: "toestel") { ToestelView() }
+                Tab("Push", systemImage: "paperplane.fill", value: "push") { PushView() }
+                Tab("Teksten", systemImage: "doc.text", value: "teksten") { TekstenView() }
+                Tab("Instellingen", systemImage: "gearshape", value: "instellingen") { SettingsView() }
+            }
         }
         .tabViewStyle(.sidebarAdaptable)
     }
