@@ -19,6 +19,8 @@ struct AdminNieuws: Decodable, Identifiable, Hashable {
     let link: String?
     let aantal: Int?
     let hidden: Bool?
+    /// Beheer switch: shown as a liveblog (label and banner).
+    let liveblog: Bool?
 
     var soortNaam: String { NieuwsStijl.soort(soort) }
     var isKindAfgerond: Bool { (bron == "amber" || bron == "vermistkind") && status == "afgerond" }
@@ -76,6 +78,7 @@ enum NieuwsStijl {
         case "burgernet": "Burgernet"
         case "amber": "AMBER Alert"
         case "vermistkind": "Vermist Kind"
+        case "nlalert": "NL-Alert"
         case "knmi": "KNMI"
         case "112nieuws": "112 Nieuws"
         default: "Politie"
@@ -129,9 +132,10 @@ extension BeheerAPI {
     func nieuwsItem(_ id: String, token: String) async throws -> AdminNieuwsDetail {
         try await getJSON("v1/beheer/nieuws/\(id)", token: token)
     }
-    func wijzigNieuws(_ id: String, hidden: Bool? = nil, foto: String?? = .none, token: String) async throws -> AdminNieuwsDetail {
+    func wijzigNieuws(_ id: String, hidden: Bool? = nil, liveblog: Bool? = nil, foto: String?? = .none, token: String) async throws -> AdminNieuwsDetail {
         var b = NieuwsBody()
         if let hidden { b.waarden["hidden"] = hidden }
+        if let liveblog { b.waarden["liveblog"] = liveblog }
         if case .some(let f) = foto { b.waarden.updateValue(f.map { $0 as Encodable }, forKey: "foto") }
         return try await sendJSON("PATCH", "v1/beheer/nieuws/\(id)", body: b, token: token)
     }
@@ -202,6 +206,7 @@ struct NieuwsBeheerView: View {
                     Text(Fmt.relative(x.at))
                     if x.soort == "liveblog" { Text(x.status == "afgerond" ? "· afgerond" : "· loopt") }
                     if let n = x.aantal, n > 0 { Text("· \(n) berichten") }
+                    if x.liveblog == true { Label("Liveblog", systemImage: "dot.radiowaves.left.and.right").foregroundStyle(.red) }
                     if x.hidden == true { Label("Verborgen", systemImage: "eye.slash").foregroundStyle(.orange) }
                 }
                 .font(.caption).foregroundStyle(.secondary)
@@ -256,6 +261,12 @@ struct NieuwsBeheerDetail: View {
                 }
                 Section {
                     Toggle("Verbergen in de apps en op de website", isOn: Binding(get: { x.hidden == true }, set: { v in Task { await wijzig(hidden: v) } }))
+                    if x.soort == "weer" || x.soort == "liveblog" {
+                        Toggle(isOn: Binding(get: { x.liveblog == true }, set: { v in Task { await wijzig(liveblog: v) } })) {
+                            Text("Liveblog")
+                            Text("Label \"Liveblog\" en LIVEBLOG op de afbeelding; staat in het filter Liveblogs")
+                        }
+                    }
                     if !x.isKindAfgerond {
                         PhotosPicker(selection: $eigenFoto, matching: .images) { Label("Eigen afbeelding kiezen", systemImage: "photo") }
                     }
@@ -337,9 +348,9 @@ struct NieuwsBeheerDetail: View {
         catch { self.error = error.localizedDescription }
     }
 
-    private func wijzig(hidden: Bool? = nil, foto: String?? = .none) async {
+    private func wijzig(hidden: Bool? = nil, liveblog: Bool? = nil, foto: String?? = .none) async {
         busy = true; defer { busy = false }
-        do { detail = try await session.call { try await BeheerAPI.shared.wijzigNieuws(id, hidden: hidden, foto: foto, token: $0) }; error = nil }
+        do { detail = try await session.call { try await BeheerAPI.shared.wijzigNieuws(id, hidden: hidden, liveblog: liveblog, foto: foto, token: $0) }; error = nil }
         catch { self.error = error.localizedDescription }
     }
 

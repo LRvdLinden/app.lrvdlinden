@@ -22,7 +22,7 @@ NAME = "LRbeheer"
 BUNDLE = "app.lrvdlinden.lrbeheer"
 TEAM = "EU3UY476T6"
 VERSION = "1.0.0"
-BUILD = "28"
+BUILD = "29"
 IOS = "18.0"  # P2000Beheer vraagt iOS 18 (TabView met Tab, sidebarAdaptable); Bingr, Tunr en Pasr 17
 
 FRAMEWORKS = [

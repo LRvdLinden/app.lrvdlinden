@@ -5634,6 +5634,22 @@
         }
       }
     },
+    "Label \"Liveblog\" en LIVEBLOG op de afbeelding; staat in het filter Liveblogs": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Label \"Live blog\" and LIVEBLOG on the image; listed under the Live blogs filter"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Label \"Liveblog\" en LIVEBLOG op de afbeelding; staat in het filter Liveblogs"
+          }
+        }
+      }
+    },
     "Label NL (optioneel)": {
       "localizations": {
         "en": {
@@ -5918,6 +5934,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Live gezet. Er was niets veranderd ten opzichte van GitHub."
+          }
+        }
+      }
+    },
+    "Liveblog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live blog"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liveblog"
           }
         }
       }
@@ -10958,6 +10990,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zelf een wachtwoord kiezen of een sterk wachtwoord laten maken; de server bewaart het niet"
+          }
+        }
+      }
+    },
+    "Zet per weerartikel, Burgernet, AMBER Alert, NL-Alert en Vermist Kind zelf aan of het een liveblog is: dan staat er \"Liveblog\" bij en LIVEBLOG op de afbeelding (standaard uit). NL-Alert krijgt nu ook een artikel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch on per weather article, Burgernet, AMBER Alert, NL-Alert and Vermist Kind whether it is a live blog: it then says \"Live blog\" and shows LIVEBLOG on the image (off by default). NL-Alert now gets an article too"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zet per weerartikel, Burgernet, AMBER Alert, NL-Alert en Vermist Kind zelf aan of het een liveblog is: dan staat er \"Liveblog\" bij en LIVEBLOG op de afbeelding (standaard uit). NL-Alert krijgt nu ook een artikel"
           }
         }
       }
