@@ -39,6 +39,7 @@ struct MainTabs: View {
             Tab("Meldingen", systemImage: "list.bullet.rectangle", value: "meldingen") { MeldingenView() }
             Tab("Waarschuwingen", systemImage: "exclamationmark.triangle", value: "waarschuwingen") { WaarschuwingenView() }
             Tab("Nieuws", systemImage: "newspaper", value: "nieuws") { NieuwsBeheerView() }
+            Tab("Widgets", systemImage: "puzzlepiece.extension", value: "widgets") { WidgetsBeheerView() }
             Tab("Gemelde fouten", systemImage: "exclamationmark.bubble", value: "fouten") { FoutenView() }
             Tab("Toestel zoeken", systemImage: "magnifyingglass", value: "toestel") { ToestelView() }
             Tab("Push", systemImage: "paperplane.fill", value: "push") { PushView() }

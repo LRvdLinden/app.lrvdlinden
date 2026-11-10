@@ -306,6 +306,22 @@
         }
       }
     },
+    "A-Alerts: Widgets": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: Widgets"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: Widgets"
+          }
+        }
+      }
+    },
     "A-Alerts: downloads van de Android-app (totaal, 30 dagen, per dag en per versie)": {
       "localizations": {
         "en": {
@@ -6766,6 +6782,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuw"
+          }
+        }
+      }
+    },
+    "Nieuw onderdeel Widgets: kopieer de iframe- of scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New section Widgets: copy the iframe or script code of the live map and Traffic now for other websites, see on which sites they are with the number of views, and block a site"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw onderdeel Widgets: kopieer de iframe- of scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site"
           }
         }
       }
