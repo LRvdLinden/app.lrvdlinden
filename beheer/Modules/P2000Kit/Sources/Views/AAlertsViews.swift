@@ -69,7 +69,7 @@ struct AdminWaarschuwing: Codable, Identifiable, Hashable {
 enum WaarschuwingStijl {
     static let bronnen = ["nlalert", "burgernet", "knmi", "amber", "vermistkind"]
     static func naam(_ b: String) -> String {
-        switch b { case "nlalert": "NL-Alert"; case "burgernet": "Burgernet"; case "knmi": "KNMI"; case "amber": "AMBER Alert"; case "vermistkind": "Vermist Kind Alert"; case "kind": "AMBER Alert / Vermist Kind (Burgernet)"; case "helikopters": "Helikopters (adsb.lol)"; default: b }
+        switch b { case "nlalert": "NL-Alert"; case "burgernet": "Burgernet"; case "knmi": "KNMI"; case "amber": "AMBER Alert"; case "vermistkind": "Vermist Kind Alert"; case "kind": "AMBER Alert / Vermist Kind (Burgernet)"; case "helikopters": "Helikopters (adsb.lol)"; case "verkeer": "Verkeer (NDW, Koyeb)"; default: b }
     }
     static func code(_ n: String?) -> String {
         switch n { case "yellow": "Code geel"; case "orange": "Code oranje"; case "red": "Code rood"; default: "Code" }
@@ -147,7 +147,7 @@ struct AAlertsDashboardCards: View {
 
     private var bronnenCard: some View {
         Card(title: "A-Alerts-bronnen", icon: "antenna.radiowaves.left.and.right") {
-            ForEach(["nlalert", "burgernet", "knmi", "kind", "helikopters"], id: \.self) { key in
+            ForEach(["nlalert", "burgernet", "knmi", "kind", "verkeer", "helikopters"], id: \.self) { key in
                 if let b = a.bronnen[key] {
                     StatusRow(ok: !b.storing, title: WaarschuwingStijl.naam(key),
                               detail: b.storing ? (b.laatsteFout ?? "geen gegevens") : "\(Fmt.relative(b.laatstOk)) · \(b.laatsteStatus ?? "")")

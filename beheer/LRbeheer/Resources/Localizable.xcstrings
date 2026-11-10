@@ -290,6 +290,22 @@
         }
       }
     },
+    "A-Alerts: Verkeer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: Traffic"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: Verkeer"
+          }
+        }
+      }
+    },
     "A-Alerts: downloads van de Android-app (totaal, 30 dagen, per dag en per versie)": {
       "localizations": {
         "en": {
@@ -1998,6 +2014,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bezig…"
+          }
+        }
+      }
+    },
+    "Bij A-Alerts-bronnen staat nu ook Verkeer (NDW, Koyeb): je ziet of de verkeersservice werkt en krijgt een pushmelding als hij langer dan 30 minuten geen gegevens geeft": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts sources now include Traffic (NDW, Koyeb): you see whether the traffic service works and get a push notification when it gives no data for more than 30 minutes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bij A-Alerts-bronnen staat nu ook Verkeer (NDW, Koyeb): je ziet of de verkeersservice werkt en krijgt een pushmelding als hij langer dan 30 minuten geen gegevens geeft"
           }
         }
       }

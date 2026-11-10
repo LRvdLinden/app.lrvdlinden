@@ -93,6 +93,9 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("A-Alerts: Verkeer") {
+                    Label("Bij A-Alerts-bronnen staat nu ook Verkeer (NDW, Koyeb): je ziet of de verkeersservice werkt en krijgt een pushmelding als hij langer dan 30 minuten geen gegevens geeft", systemImage: "car.side")
+                }
                 Section("A-Alerts: Nieuws") {
                     Label("Zet per weerartikel, Burgernet, AMBER Alert, NL-Alert en Vermist Kind zelf aan of het een liveblog is: dan staat er \"Liveblog\" bij en LIVEBLOG op de afbeelding (standaard uit). NL-Alert krijgt nu ook een artikel", systemImage: "dot.radiowaves.left.and.right")
                     Label("Nieuw tabblad Nieuws: politieberichten over Apeldoorn en omgeving, weerartikelen en liveblogs bij Burgernet, AMBER Alert en Vermist Kind Alert", systemImage: "newspaper")

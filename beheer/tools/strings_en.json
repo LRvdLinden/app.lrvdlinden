@@ -710,5 +710,7 @@
  "Feedback afhandelen of verwijderen; ook op bekendr.lrvdlinden.app/beheer": "Handle or delete feedback; also on bekendr.lrvdlinden.app/beheer",
  "Zet per weerartikel, Burgernet, AMBER Alert, NL-Alert en Vermist Kind zelf aan of het een liveblog is: dan staat er \"Liveblog\" bij en LIVEBLOG op de afbeelding (standaard uit). NL-Alert krijgt nu ook een artikel": "Switch on per weather article, Burgernet, AMBER Alert, NL-Alert and Vermist Kind whether it is a live blog: it then says \"Live blog\" and shows LIVEBLOG on the image (off by default). NL-Alert now gets an article too",
  "Liveblog": "Live blog",
- "Label \"Liveblog\" en LIVEBLOG op de afbeelding; staat in het filter Liveblogs": "Label \"Live blog\" and LIVEBLOG on the image; listed under the Live blogs filter"
+ "Label \"Liveblog\" en LIVEBLOG op de afbeelding; staat in het filter Liveblogs": "Label \"Live blog\" and LIVEBLOG on the image; listed under the Live blogs filter",
+ "A-Alerts: Verkeer": "A-Alerts: Traffic",
+ "Bij A-Alerts-bronnen staat nu ook Verkeer (NDW, Koyeb): je ziet of de verkeersservice werkt en krijgt een pushmelding als hij langer dan 30 minuten geen gegevens geeft": "A-Alerts sources now include Traffic (NDW, Koyeb): you see whether the traffic service works and get a push notification when it gives no data for more than 30 minutes"
 }
