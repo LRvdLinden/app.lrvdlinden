@@ -249,7 +249,7 @@
             },
             "languages": "NL + 32",
             "size": "32,7 MB",
-            "reviews": 6,
+            "reviews": 8,
             "rating": 4.8
         },
         {
@@ -775,6 +775,18 @@
             },
             "history": [
                 {
+                    "version": "1.0.4",
+                    "date": "2026-11-09",
+                    "notes": {
+                        "nl": "Agenda-widget: het label voor afspraken die de hele dag duren valt niet meer over de titel heen in het Duits en andere talen, en blijft op één regel.",
+                        "en": "Agenda widget: the label for all-day events no longer overlaps the title in German and other languages, and stays on one line."
+                    },
+                    "_src": {
+                        "nl": "Agenda-widget: het label voor afspraken die de hele dag duren valt niet meer over de titel heen in het Duits en andere talen, en blijft op één regel.",
+                        "en": "Agenda widget: the label for all-day events no longer overlaps the title in German and other languages, and stays on one line."
+                    }
+                },
+                {
                     "version": "1.0.2",
                     "date": "2026-11-06",
                     "notes": {
@@ -862,8 +874,8 @@
                             "nl": "Agenda",
                             "en": "Agenda"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/agenda/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/agenda/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/agenda/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/agenda/preview-dark.png"
                     },
                     {
                         "id": "countdown",
@@ -871,8 +883,8 @@
                             "nl": "Aftellen",
                             "en": "Countdown"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/countdown/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/countdown/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/countdown/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/countdown/preview-dark.png"
                     },
                     {
                         "id": "free_busy",
@@ -880,8 +892,8 @@
                             "nl": "Vrij of bezet",
                             "en": "Free or busy"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/free_busy/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/free_busy/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/free_busy/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/free_busy/preview-dark.png"
                     },
                     {
                         "id": "month",
@@ -889,8 +901,8 @@
                             "nl": "Minimaand",
                             "en": "Mini month"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/month/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/month/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/month/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/month/preview-dark.png"
                     },
                     {
                         "id": "next_event",
@@ -898,8 +910,8 @@
                             "nl": "Volgende afspraak",
                             "en": "Next event"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/next_event/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/next_event/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/next_event/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/next_event/preview-dark.png"
                     },
                     {
                         "id": "timeline",
@@ -907,8 +919,8 @@
                             "nl": "Tijdlijn van vandaag",
                             "en": "Today's timeline"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/timeline/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/timeline/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/timeline/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/timeline/preview-dark.png"
                     },
                     {
                         "id": "week",
@@ -916,8 +928,8 @@
                             "nl": "Deze week",
                             "en": "This week"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/week/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/10/e9ba0cb4-e405-4ab4-99e9-6ace3c36d849/widgets/week/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/week/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.weekdot/11/f0206ab4-bdf5-426f-a32f-9a371adaf72a/widgets/week/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -1020,7 +1032,7 @@
                 "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-weekdot/161566",
                 "category": "tools",
-                "live": "1.0.2"
+                "live": "1.0.4"
             }
         },
         {
