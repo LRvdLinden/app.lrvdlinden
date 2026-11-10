@@ -94,7 +94,8 @@ struct WhatsNewView: View {
         NavigationStack {
             List {
                 Section("A-Alerts: Widgets") {
-                    Label("Nieuw onderdeel Widgets: kopieer de iframe- of scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site", systemImage: "puzzlepiece.extension")
+                    Label("Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site", systemImage: "puzzlepiece.extension")
+                    Label("Alleen nog de scriptcode: die past zich vanzelf aan en websites kunnen de widget niet aanpassen", systemImage: "chevron.left.forwardslash.chevron.right")
                 }
                 Section("A-Alerts: Verkeer") {
                     Label("Bij A-Alerts-bronnen staat nu ook Verkeer (NDW, Koyeb): je ziet of de verkeersservice werkt en krijgt een pushmelding als hij langer dan 30 minuten geen gegevens geeft", systemImage: "car.side")

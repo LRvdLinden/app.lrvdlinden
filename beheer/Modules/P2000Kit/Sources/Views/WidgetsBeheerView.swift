@@ -31,11 +31,6 @@ struct WidgetsBeheerView: View {
     @State private var gekopieerd: String?
     @State private var teBlokkeren: WidgetSite?
 
-    private static let hoogte = ["kaart,verkeer": 1180, "kaart": 560, "verkeer": 640]
-
-    private var iframe: String {
-        "<iframe src=\"https://a-alerts.nl/widget/?w=\(soort)&thema=\(thema)\"\n  title=\"A-Alerts: live kaart en verkeer Apeldoorn\" width=\"360\" height=\"\(Self.hoogte[soort] ?? 1180)\"\n  style=\"border:0;max-width:100%\" loading=\"lazy\"></iframe>"
-    }
     private var script: String {
         "<div data-a-alerts-widget=\"\(soort)\" data-thema=\"\(thema)\"></div>\n<script src=\"https://a-alerts.nl/widget/embed.js\" async></script>"
     }
@@ -55,15 +50,14 @@ struct WidgetsBeheerView: View {
                         Text("Licht").tag("licht")
                         Text("Donker").tag("donker")
                     }
-                    code("Iframe (vaste hoogte)", iframe)
-                    code("Script (past de hoogte vanzelf aan)", script)
+                    code("Script", script)
                     if let url = URL(string: "https://a-alerts.nl/widget/?w=\(soort)&thema=\(thema)") {
                         Link(destination: url) { Label("Bekijk voorbeeld", systemImage: "safari") }
                     }
                 } header: {
                     Text("Code om te delen")
                 } footer: {
-                    Text("In de widget staat altijd \"A-Alerts\" in de kop en een link naar a-alerts.nl.")
+                    Text("We bieden alleen de script-code aan: de widget komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en een link naar a-alerts.nl.")
                 }
                 Section {
                     if sites.isEmpty {

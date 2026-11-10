@@ -714,5 +714,8 @@
  "A-Alerts: Verkeer": "A-Alerts: Traffic",
  "Bij A-Alerts-bronnen staat nu ook Verkeer (NDW, Koyeb): je ziet of de verkeersservice werkt en krijgt een pushmelding als hij langer dan 30 minuten geen gegevens geeft": "A-Alerts sources now include Traffic (NDW, Koyeb): you see whether the traffic service works and get a push notification when it gives no data for more than 30 minutes",
  "A-Alerts: Widgets": "A-Alerts: Widgets",
- "Nieuw onderdeel Widgets: kopieer de iframe- of scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site": "New section Widgets: copy the iframe or script code of the live map and Traffic now for other websites, see on which sites they are with the number of views, and block a site"
+ "Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site": "New section Widgets: copy the script code of the live map and Traffic now for other websites, see on which sites they are with the number of views, and block a site",
+ "Alleen nog de scriptcode: die past zich vanzelf aan en websites kunnen de widget niet aanpassen": "Only the script code now: it sizes itself and websites cannot change the widget",
+ "Script": "Script",
+ "We bieden alleen de script-code aan: de widget komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en een link naar a-alerts.nl.": "We only offer the script code: the widget comes from a-alerts.nl, sizes itself and cannot be changed by the website. The widget always shows \"A-Alerts\" in its header and a link to a-alerts.nl."
 }

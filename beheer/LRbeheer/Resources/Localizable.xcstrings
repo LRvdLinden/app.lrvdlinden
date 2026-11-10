@@ -1106,6 +1106,22 @@
         }
       }
     },
+    "Alleen nog de scriptcode: die past zich vanzelf aan en websites kunnen de widget niet aanpassen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only the script code now: it sizes itself and websites cannot change the widget"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen nog de scriptcode: die past zich vanzelf aan en websites kunnen de widget niet aanpassen"
+          }
+        }
+      }
+    },
     "Alles": {
       "localizations": {
         "en": {
@@ -6786,18 +6802,18 @@
         }
       }
     },
-    "Nieuw onderdeel Widgets: kopieer de iframe- of scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site": {
+    "Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "New section Widgets: copy the iframe or script code of the live map and Traffic now for other websites, see on which sites they are with the number of views, and block a site"
+            "value": "New section Widgets: copy the script code of the live map and Traffic now for other websites, see on which sites they are with the number of views, and block a site"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nieuw onderdeel Widgets: kopieer de iframe- of scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site"
+            "value": "Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site"
           }
         }
       }
@@ -8670,6 +8686,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Saldo-pagina toevoegen"
+          }
+        }
+      }
+    },
+    "Script": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Script"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Script"
           }
         }
       }
@@ -10622,6 +10654,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wat zit erin"
+          }
+        }
+      }
+    },
+    "We bieden alleen de script-code aan: de widget komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en een link naar a-alerts.nl.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We only offer the script code: the widget comes from a-alerts.nl, sizes itself and cannot be changed by the website. The widget always shows \"A-Alerts\" in its header and a link to a-alerts.nl."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We bieden alleen de script-code aan: de widget komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en een link naar a-alerts.nl."
           }
         }
       }
