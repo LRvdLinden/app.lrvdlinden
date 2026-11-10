@@ -3330,6 +3330,22 @@
         }
       }
     },
+    "Elke widget heeft een eigen script: de widget verschijnt op de plek van het script, komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en elke link gaat naar a-alerts.nl.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every widget has its own script: the widget appears where the script stands, comes from a-alerts.nl, sizes itself and cannot be changed by the website. The widget always shows \"A-Alerts\" in its header and every link goes to a-alerts.nl."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elke widget heeft een eigen script: de widget verschijnt op de plek van het script, komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en elke link gaat naar a-alerts.nl."
+          }
+        }
+      }
+    },
     "Engels": {
       "localizations": {
         "en": {
@@ -6002,6 +6018,22 @@
         }
       }
     },
+    "Live kaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live map"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live kaart"
+          }
+        }
+      }
+    },
     "Liveblog": {
       "localizations": {
         "en": {
@@ -7134,6 +7166,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe vraag?"
+          }
+        }
+      }
+    },
+    "Nieuwe widget Weerwaarschuwing, en elke widget een eigen script (kaart.js, verkeer.js, weer.js) met een eigen kopieerknop": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New widget Weather warning, and every widget its own script (kaart.js, verkeer.js, weer.js) with its own copy button"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe widget Weerwaarschuwing, en elke widget een eigen script (kaart.js, verkeer.js, weer.js) met een eigen kopieerknop"
           }
         }
       }
@@ -10130,6 +10178,22 @@
         }
       }
     },
+    "Verkeer nu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traffic now"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verkeer nu"
+          }
+        }
+      }
+    },
     "Verkeerde categorie": {
       "localizations": {
         "en": {
@@ -10766,6 +10830,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Weergave"
+          }
+        }
+      }
+    },
+    "Weerwaarschuwing": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weather warning"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weerwaarschuwing"
           }
         }
       }

@@ -24,15 +24,14 @@ private struct BlokBody: Encodable { let site: String; let blok: Bool }
 
 struct WidgetsBeheerView: View {
     @Environment(Session.self) private var session
-    @State private var soort = "kaart,verkeer"
     @State private var thema = "auto"
     @State private var sites: [WidgetSite] = []
     @State private var error: String?
     @State private var gekopieerd: String?
     @State private var teBlokkeren: WidgetSite?
 
-    private var script: String {
-        "<div data-a-alerts-widget=\"\(soort)\" data-thema=\"\(thema)\"></div>\n<script src=\"https://a-alerts.nl/widget/embed.js\" async></script>"
+    private func script(_ w: String) -> String {
+        "<script src=\"https://a-alerts.nl/widget/\(w).js\" data-thema=\"\(thema)\" async></script>"
     }
 
     var body: some View {
@@ -40,24 +39,21 @@ struct WidgetsBeheerView: View {
             Form {
                 if let error { Text(error).foregroundStyle(.red) }
                 Section {
-                    Picker("Widget", selection: $soort) {
-                        Text("Kaart + verkeer").tag("kaart,verkeer")
-                        Text("Alleen kaart").tag("kaart")
-                        Text("Alleen verkeer").tag("verkeer")
-                    }
                     Picker("Thema", selection: $thema) {
                         Text("Automatisch").tag("auto")
                         Text("Licht").tag("licht")
                         Text("Donker").tag("donker")
                     }
-                    code("Script", script)
-                    if let url = URL(string: "https://a-alerts.nl/widget/?w=\(soort)&thema=\(thema)") {
-                        Link(destination: url) { Label("Bekijk voorbeeld", systemImage: "safari") }
+                    ForEach([("kaart", "Live kaart"), ("verkeer", "Verkeer nu"), ("weer", "Weerwaarschuwing")], id: \.0) { item in
+                        code(item.1, script(item.0))
+                        if let url = URL(string: "https://a-alerts.nl/widget/?w=\(item.0)&thema=\(thema)") {
+                            Link(destination: url) { Label("Bekijk voorbeeld", systemImage: "safari") }
+                        }
                     }
                 } header: {
                     Text("Code om te delen")
                 } footer: {
-                    Text("We bieden alleen de script-code aan: de widget komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en een link naar a-alerts.nl.")
+                    Text("Elke widget heeft een eigen script: de widget verschijnt op de plek van het script, komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en elke link gaat naar a-alerts.nl.")
                 }
                 Section {
                     if sites.isEmpty {
