@@ -2,6 +2,41 @@
     "_uitleg": "Pas dit bestand aan om apps toe te voegen, platformen te wijzigen of de status te veranderen. status: live | beta | dev. section: ios | homey. featured: true zet een live app bovenaan in 'Nieuw en onderweg'. Makkelijker: open beheer.html.",
     "apps": [
         {
+            "id": "app-lrvdlinden-bekendr",
+            "name": "bekendr",
+            "section": "ios",
+            "status": "beta",
+            "featured": true,
+            "category": "utilities",
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Mac",
+                "Android TV"
+            ],
+            "description": {
+                "nl": "Zie meteen welke vergunningen, verkeersbesluiten, kap en evenementen er rond je adres worden bekendgemaakt. Zonder account, rechtstreeks van de overheid.\n",
+                "en": "See right away which permits, traffic decisions, tree removals and events are being announced around your address. No account needed, straight from the government."
+            },
+            "links": {
+                "website": "https://bekendr.lrvdlinden.app/",
+                "testflight": "https://testflight.apple.com/join/drXYcfSb"
+            },
+            "history": [],
+            "icon": "img/app-lrvdlinden-bekendr.webp",
+            "subtitle": {
+                "nl": "Bekendmakingen in je buurt",
+                "en": "Public notices nearby"
+            },
+            "promo": {
+                "image": {
+                    "nl": "img/promo-app-lrvdlinden-bekendr-nl.webp",
+                    "en": "img/promo-app-lrvdlinden-bekendr-en.webp"
+                },
+                "show": true
+            }
+        },
+        {
             "id": "app-lrvdlinden-pairr",
             "name": "Pairr",
             "section": "ios",
