@@ -311,7 +311,7 @@
                 "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
                 "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 2,
             "size": "116,6 MB",
             "languages": "NL + 10",
@@ -431,7 +431,7 @@
                     }
                 }
             ],
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "promo": {
                 "image": {
@@ -604,7 +604,7 @@
                 "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
                 "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "size": "23,1 MB",
             "languages": "EN",
@@ -648,7 +648,7 @@
                 "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 15,
             "size": "15,3 MB",
             "languages": "EN",
@@ -796,7 +796,8 @@
                 "en": "Your Weekdot calendar in Homey: Flows for your appointments and daily agenda, plus a calendar widget."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/",
+                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.weekdot/Weekdot/test/"
             },
             "promo": {
                 "image": {
@@ -806,6 +807,18 @@
                 "show": true
             },
             "history": [
+                {
+                    "version": "1.0.5",
+                    "date": "2026-11-11",
+                    "notes": {
+                        "nl": "Videogesprekken: nieuwe kaarten als een videogesprek (Meet, Teams, FaceTime, Zoom…) begint, eindigt of over … minuten begint, een conditie 'Ik zit in een videogesprek' en een widget Volgend videogesprek. Ook nieuw: 'Ik ben bezet', 'eerste afspraak van de dag begint over … minuten' en 'tijd om te vertrekken' (reistijd uit Weekdot), plus waarden voor de gesprekslink, reistijd en vertrektijd. Voor gesprekken is Weekdot 1.0.4 op je iPhone nodig.",
+                        "en": "Video calls: new cards when a video call (Meet, Teams, FaceTime, Zoom…) starts, ends or starts in … minutes, a condition 'I'm in a video call' and a Next video call widget. Also new: 'I'm busy', 'first event of the day starts in … minutes' and 'time to leave' (travel time from Weekdot), plus tokens for the call link, travel time and time to leave. Needs Weekdot 1.0.4 on your iPhone for calls."
+                    },
+                    "_src": {
+                        "nl": "Videogesprekken: nieuwe kaarten als een videogesprek (Meet, Teams, FaceTime, Zoom…) begint, eindigt of over … minuten begint, een conditie 'Ik zit in een videogesprek' en een widget Volgend videogesprek. Ook nieuw: 'Ik ben bezet', 'eerste afspraak van de dag begint over … minuten' en 'tijd om te vertrekken' (reistijd uit Weekdot), plus waarden voor de gesprekslink, reistijd en vertrektijd. Voor gesprekken is Weekdot 1.0.4 op je iPhone nodig.",
+                        "en": "Video calls: new cards when a video call (Meet, Teams, FaceTime, Zoom…) starts, ends or starts in … minutes, a condition 'I'm in a video call' and a Next video call widget. Also new: 'I'm busy', 'first event of the day starts in … minutes' and 'time to leave' (travel time from Weekdot), plus tokens for the call link, travel time and time to leave. Needs Weekdot 1.0.4 on your iPhone for calls."
+                    }
+                },
                 {
                     "version": "1.0.4",
                     "date": "2026-11-09",
@@ -1064,7 +1077,8 @@
                 "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-weekdot/161566",
                 "category": "tools",
-                "live": "1.0.4"
+                "live": "1.0.4",
+                "test": "1.0.6"
             }
         },
         {
@@ -1112,7 +1126,7 @@
                 "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
                 "en": "Learn chess the easy way. With dark mode and several board themes."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 3,
             "size": "1,7 MB",
             "languages": "NL + 3",
@@ -2356,7 +2370,7 @@
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/",
                 "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/Lifeliner/test/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
                 {
                     "version": "6.1.1",
@@ -2657,7 +2671,7 @@
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/",
                 "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/KNMI/test/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
                 {
                     "version": "4.3.3",
