@@ -1,5 +1,5 @@
 """
-Dagelijkse store-check voor lrvdlinden.app.
+Automatische store-check (twee keer per dag) voor lrvdlinden.app.
 
 App Store (iOS-apps met een App Store-link):
   versie, releasedatum, wat-is-nieuw, sterren en aantal beoordelingen (opgeteld over meerdere landen),

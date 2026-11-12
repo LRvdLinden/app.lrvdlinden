@@ -464,7 +464,7 @@ function changedNames(){
 function showResult(kind, html){ $("#result").innerHTML = `<div class="result ${kind}">${html}</div>`; $("#result").scrollIntoView?.({block:"nearest"}); }
 // ---------- Logboek: uitkomst van elke store-check ----------
 let LOG = null, logFilter = "all", logOpenId = null;
-const MODE_LABEL = { bijwerken:"Apps bijwerken", nieuw:"Nieuwe apps ophalen", alles:"Dagelijkse check" };
+const MODE_LABEL = { bijwerken:"Apps bijwerken", nieuw:"Nieuwe apps ophalen", alles:"Automatische check" };
 function toggleLog(show, openId){
   const box = $("#logbook");
   show = show ?? box.hidden;
@@ -489,7 +489,7 @@ function renderLog(){
     .sort((a, b) => new Date(b.time) - new Date(a.time));
   const list = all.filter(r => logFilter === "all" || (logFilter === "changed" ? r.changed
     : logFilter === "nieuw" ? r.mode === "nieuw" : logFilter === "bijwerken" ? (r.mode === "bijwerken" || r.mode === "alles") : true));
-  if (!list.length) { $("#logList").innerHTML = `<p class="muted">${all.length ? "Geen runs voor dit filter." : "Nog geen runs. De volgende check (08:00 of via de knoppen hierboven) verschijnt hier."}</p>`; return; }
+  if (!list.length) { $("#logList").innerHTML = `<p class="muted">${all.length ? "Geen runs voor dit filter." : "Nog geen runs. De volgende check (automatisch rond 07:00 en 17:00, of via de knoppen hierboven) verschijnt hier."}</p>`; return; }
   const dayFmt = new Intl.DateTimeFormat("nl-NL", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
   const tmFmt = new Intl.DateTimeFormat("nl-NL", { hour:"2-digit", minute:"2-digit" });
   let day = "", html = "";
@@ -497,7 +497,7 @@ function renderLog(){
     const d = new Date(r.time), dk = isNaN(d) ? "" : dayFmt.format(d);
     if (dk !== day) { day = dk; html += `<div class="logday">${esc(dk)}</div>`; }
     const who = r.trigger === "schedule" ? "automatisch" : "handmatig";
-    const title = r.pending ? (r.trigger === "schedule" ? "Dagelijkse check" : "Store-check") : (MODE_LABEL[r.mode] || "Store-check");
+    const title = r.pending ? (r.trigger === "schedule" ? "Automatische check" : "Store-check") : (MODE_LABEL[r.mode] || "Store-check");
     const upd = (r.checked || []).filter(c => c.changed).length;
     const tag = r.pending ? (r.state === "running" ? `<span class="tag busy">Bezig</span>` : `<span class="tag bad">Mislukt</span>`)
       : r.changed ? `<span class="tag ok">${(r.lines || []).length || upd} ${((r.lines || []).length || upd) === 1 ? "wijziging" : "wijzigingen"}</span>`

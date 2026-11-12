@@ -1,18 +1,18 @@
 name: Store-check
 
-# Elke dag om 08:00 (Nederlandse tijd) de App Store en de Homey App Store nalopen:
+# Twee keer per dag de App Store en de Homey App Store nalopen (modus "alles"):
 # nieuwe apps toevoegen, beta-apps aanvullen zodra ze in de store staan,
 # versies, wat-is-nieuw (NL en EN), sterren en aantal beoordelingen.
-# Ook te starten in beheer.html: "Nieuwe apps ophalen" (modus nieuw) en "Apps bijwerken" (modus bijwerken).
+# Ook te starten in beheer: "Nieuwe apps ophalen" (modus nieuw) en "Apps bijwerken" (modus bijwerken).
 # Bij wijzigingen wordt site/apps.json bijgewerkt en de site via "Release site" opnieuw live gezet.
 #
-# GitHub-planningen draaien in UTC. Daarom staan er twee tijden (zomer- en wintertijd);
-# de job gaat alleen echt aan de slag als het in Nederland tussen 08:00 en 09:59 is.
+# GitHub start geplande taken vaak uren te laat. Daarom is er geen controle meer op het uur:
+# elke geplande run doet gewoon de volledige check. Tijden in UTC (ca. 07:00 en 17:00 Nederlandse tijd).
 
 on:
   schedule:
-    - cron: "2 6 * * *"
-    - cron: "2 7 * * *"
+    - cron: "13 6 * * *"
+    - cron: "13 16 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -32,77 +32,46 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-24.04
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
+      STORE_MODE: ${{ github.event.inputs.mode || 'alles' }}
     steps:
-      - name: Is het 08:00 in Nederland?
-        id: when
-        run: |
-          H=$(TZ=Europe/Amsterdam date +%H)
-          echo "Nederlandse tijd: $(TZ=Europe/Amsterdam date '+%d-%m-%Y %H:%M')"
-          # 08 of 09 uur: GitHub start geplande taken soms wat later. Een tweede run op dezelfde ochtend
-          # verandert niets, want het script schrijft alleen bij echte wijzigingen.
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$H" = "08" ] || [ "$H" = "09" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "Niet het juiste uur, overslaan."
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
-
       - uses: actions/checkout@v5
-        if: steps.when.outputs.run == 'true'
 
       - name: Stores nalopen
-        if: steps.when.outputs.run == 'true'
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
-          STORE_MODE: ${{ github.event.inputs.mode || 'alles' }}
         run: |
+          echo "Nederlandse tijd: $(TZ=Europe/Amsterdam date '+%d-%m-%Y %H:%M'), modus: $STORE_MODE"
           python3 scripts/store_check.py site/apps.json
           cat store-check-summary.md >> "$GITHUB_STEP_SUMMARY"
           [ -f store-check-overview.md ] && cat store-check-overview.md >> "$GITHUB_STEP_SUMMARY" || true
 
       - name: Opslaan en live zetten
-        if: steps.when.outputs.run == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          SITE_CHANGED=1
-          if git diff --quiet -- site/apps.json && [ -z "$(git status --porcelain -- site/img)" ]; then
-            SITE_CHANGED=0
-            echo "Geen wijzigingen aan de site."
-          fi
           git config user.name "Store-check"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Logboek voor beheer.html: elke run, ook zonder wijzigingen
-          git add logs/store-check.json site/apps.json site/img
-          git diff --cached --quiet && exit 0
-          if [ "$SITE_CHANGED" = "1" ]; then
-            git commit -q -F store-check-summary.md
-          else
-            git commit -q -m "Logboek store-check: geen wijzigingen"
-          fi
-          # Tussentijds gepubliceerd via de beheerpagina? Dan eerst bijwerken.
-          # Tussentijds gepubliceerd via beheer of een andere check? Dan eerst bijwerken.
-          # Botst alleen het logboek, dan de versie van GitHub nemen en deze run er opnieuw in zetten.
-          pushed=0
-          for i in 1 2 3 4 5; do
-            if git push -q origin HEAD:main; then pushed=1; break; fi
-            sleep $((i * 3))
-            if ! git pull -q --rebase origin main; then
-              conflicts=$(git diff --name-only --diff-filter=U)
-              if [ "$conflicts" = "logs/store-check.json" ]; then
-                git checkout -q --ours logs/store-check.json
-                python3 scripts/store_check.py --add-log store-check-entry.json
-                git add logs/store-check.json
-                GIT_EDITOR=true git rebase --continue || { git rebase --abort; echo "::error::Samenvoegen mislukte."; exit 1; }
-              else
-                git rebase --abort
-                echo "::error::Samenvoegen met een tussentijdse wijziging mislukte ($conflicts)."; exit 1
-              fi
-            fi
+          site_changed() { ! git diff --quiet HEAD -- site/apps.json || [ -n "$(git status --porcelain -- site/img)" ]; }
+
+          # Is er intussen iets anders op GitHub gezet (beheer, LRbeheer of een andere check), dan de check
+          # opnieuw draaien op de nieuwste versie in plaats van samen te voegen. Zo gaat er nooit iets verloren.
+          pushed=0; released=0
+          for i in 1 2 3 4; do
+            SITE_CHANGED=0; site_changed && SITE_CHANGED=1
+            git add logs/store-check.json site/apps.json site/img
+            if git diff --cached --quiet; then pushed=1; echo "Geen wijzigingen."; break; fi
+            if [ "$SITE_CHANGED" = "1" ]; then git commit -q -F store-check-summary.md
+            else git commit -q -m "Logboek store-check: geen wijzigingen"; fi
+            if git push -q origin HEAD:main; then pushed=1; released=$SITE_CHANGED; break; fi
+            echo "GitHub is intussen gewijzigd, check opnieuw op de nieuwste versie (poging $((i + 1)))."
+            sleep $((i * 5))
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 scripts/store_check.py site/apps.json
           done
-          [ "$pushed" = "1" ] || { echo "::error::Opslaan op GitHub mislukte na 5 pogingen."; exit 1; }
-          if [ "$SITE_CHANGED" = "1" ]; then
+          [ "$pushed" = "1" ] || { echo "::error::Opslaan op GitHub mislukte na 4 pogingen."; exit 1; }
+          if [ "$released" = "1" ]; then
             # Een push met de standaard-token start geen andere workflows; daarom expliciet de release starten.
             gh workflow run release.yml --ref main
             echo "Site wordt opnieuw live gezet."

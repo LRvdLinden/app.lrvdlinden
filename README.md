@@ -45,9 +45,9 @@ Zodra de store-check een App Store-link vindt, verhuist de app vanzelf naar **In
 Wijzigingen aan de code (bijv. `index.html`) gaan via een commit in `site/`; ook die worden automatisch live gezet.
 Handmatig opnieuw uitrollen: **Actions → Release site → Run workflow**.
 
-## Dagelijkse store-check
+## Automatische store-check
 
-Elke dag om 08:00 loopt **Actions → Store-check** de App Store en de Homey App Store na (alles).
+Twee keer per dag (rond 07:00 en 17:00; GitHub start geplande taken soms later) loopt **Actions → Store-check** de App Store en de Homey App Store na (alles).
 In `beheer.html` kun je het ook zelf starten:
 
 - **Nieuwe apps ophalen**: alleen nieuwe apps zoeken en beta-apps aanvullen (1 tot 3 minuten).
