@@ -98,6 +98,9 @@ struct PairrMain: View {
             BekendrTile(title: "iPhone", value: s.apple.device("iPhone"), symbol: "iphone", color: PairrPalette.iPhone)
             BekendrTile(title: "iPad", value: s.apple.device("iPad"), symbol: "ipad", color: PairrPalette.iPad)
             BekendrTile(title: "Mac", value: s.apple.device("Mac"), symbol: "macbook", color: PairrPalette.mac)
+            if let r = s.revenue {
+                PairrMoneyTile(title: "Omzet", value: r.totalEur, note: String(format: String(localized: "Deze maand %@"), PairrMoney.eur(r.monthEur)))
+            }
             BekendrTile(title: "Meldingen", value: s.issues.open, symbol: "exclamationmark.bubble.fill", color: Theme.build,
                         note: "Open op GitHub")
         }
@@ -122,6 +125,8 @@ struct PairrMain: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .lrCard()
 
+        if let r = s.revenue { PairrRevenueCard(revenue: r) }
+
         PairrIssuesCard(issues: s.issues)
 
         if let d = s.syncedDate {
@@ -129,6 +134,83 @@ struct PairrMain: View {
                 .font(.caption).foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity)
         }
+    }
+}
+
+enum PairrMoney {
+    static func eur(_ v: Double) -> String { v.formatted(.currency(code: "EUR")) }
+    static func amount(_ v: Double, _ code: String) -> String { v.formatted(.currency(code: code)) }
+    static let color = Color(light: 0x0E9F6E, dark: 0x34D399)
+}
+
+struct PairrMoneyTile: View {
+    let title: LocalizedStringKey
+    let value: Double
+    let note: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Label(title, systemImage: "eurosign.circle.fill")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(PairrMoney.color)
+            Text(PairrMoney.eur(value))
+                .font(Theme.display(.title))
+                .monospacedDigit()
+                .minimumScaleFactor(0.6)
+                .lineLimit(1)
+            Text(verbatim: note).font(.caption).foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .lrCard()
+    }
+}
+
+/// Omzet per dag (30 dagen) met totaal, deze maand, verkochte exemplaren en per valuta.
+struct PairrRevenueCard: View {
+    let revenue: PairrStats.Revenue
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text("Omzet per dag").font(Theme.display(.headline))
+                Spacer()
+                Text("30 dagen, in euro").font(.caption).foregroundStyle(.secondary)
+            }
+            if revenue.days.allSatisfy({ $0.eur == 0 }) {
+                Text("Nog geen verkopen in de afgelopen 30 dagen.")
+                    .font(.footnote).foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, minHeight: 100)
+            } else {
+                Chart(revenue.days) { d in
+                    BarMark(x: .value("Dag", d.date, unit: .day), y: .value("Euro", d.eur))
+                        .foregroundStyle(PairrMoney.color)
+                }
+                .chartYAxis { AxisMarks { v in AxisGridLine(); AxisValueLabel { if let e = v.as(Double.self) { Text(PairrMoney.eur(e)) } } } }
+                .chartXAxis { AxisMarks(values: .stride(by: .day, count: 7)) { _ in AxisGridLine(); AxisValueLabel(format: .dateTime.day().month(.abbreviated)) } }
+                .frame(height: 200)
+            }
+            LabeledContent("Totaal (opbrengst)", value: PairrMoney.eur(revenue.totalEur))
+            LabeledContent("Deze maand", value: PairrMoney.eur(revenue.monthEur))
+            LabeledContent("Verkochte exemplaren", value: revenue.units.formatted())
+            if revenue.byCurrency.count > 1 {
+                ForEach(revenue.byCurrency.sorted { $0.value.proceeds > $1.value.proceeds }, id: \.key) { code, c in
+                    LabeledContent {
+                        Text(PairrMoney.amount(c.proceeds, code))
+                    } label: {
+                        Text(verbatim: code)
+                        Text("\(c.units) verkocht")
+                    }
+                }
+            }
+            if revenue.unconverted > 0 {
+                Text("\(revenue.unconverted) dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro.")
+                    .font(.caption).foregroundStyle(Theme.build)
+            }
+            Text("Opbrengst na Apple uit de dagelijkse verkoopoverzichten, terugbetalingen eraf. Andere valuta omgerekend met de ECB-koers; Apple betaalt later definitief uit in euro, dus het bedrag kan iets afwijken.")
+                .font(.caption).foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .lrCard()
     }
 }
 

@@ -318,23 +318,35 @@ export function salesDevice(device: string, type: string): string {
 }
 
 export type SalesRow = { device: string; kind: SalesKind; units: number };
+/** Welke regels bij een app horen: Apple ID, anders SKU (en/of titel); titel ook met een toevoeging ("Pairr: …"). */
+export type SalesMatch = { appleId?: string; title?: string; sku?: string };
 
-/** Verkoopoverzicht (SALES/SUMMARY, tab-gescheiden) → rijen van Bekendr, opgeteld per apparaat en soort. */
-export function parseSalesReport(tsv: string, match: { appleId?: string; title?: string }): SalesRow[] {
+function salesTable(tsv: string) {
   const lines = tsv.split(/\r?\n/).filter((l) => l.trim());
-  if (!lines.length) return [];
-  const head = lines[0].split("\t").map((h) => h.trim().toLowerCase());
-  const col = (n: string) => head.indexOf(n);
-  const iType = col("product type identifier"), iUnits = col("units"), iDevice = col("device");
-  const iApple = col("apple identifier"), iTitle = col("title"), iParent = col("parent identifier");
+  const head = (lines[0] ?? "").split("\t").map((h) => h.trim().toLowerCase());
+  return { rows: lines.slice(1).map((l) => l.split("\t")), col: (n: string) => head.indexOf(n) };
+}
+
+function salesMatcher(col: (n: string) => number, match: SalesMatch) {
+  const iApple = col("apple identifier"), iTitle = col("title"), iSku = col("sku");
+  return (c: string[]) => {
+    if (match.appleId) return (c[iApple] ?? "").trim() === match.appleId;
+    if (match.sku && iSku >= 0 && (c[iSku] ?? "").trim().toLowerCase() === match.sku.toLowerCase()) return true;
+    const t = (c[iTitle] ?? "").trim().toLowerCase(), want = (match.title ?? "bekendr").toLowerCase();
+    return t === want || (!!match.sku && (t.startsWith(want + ":") || t.startsWith(want + " -") || t.startsWith(want + " –")));
+  };
+}
+
+/** Verkoopoverzicht (SALES/SUMMARY, tab-gescheiden) → rijen, opgeteld per apparaat en soort. */
+export function parseSalesReport(tsv: string, match: SalesMatch): SalesRow[] {
+  const { rows, col } = salesTable(tsv);
+  const iType = col("product type identifier"), iUnits = col("units"), iDevice = col("device"), iParent = col("parent identifier");
   if (iType < 0 || iUnits < 0) return [];
+  const ok = salesMatcher(col, match);
   const sum = new Map<string, SalesRow>();
-  for (const line of lines.slice(1)) {
-    const c = line.split("\t");
+  for (const c of rows) {
     if (iParent >= 0 && (c[iParent] ?? "").trim()) continue; // in-app aankopen
-    const ok = match.appleId ? (c[iApple] ?? "").trim() === match.appleId
-      : (c[iTitle] ?? "").trim().toLowerCase() === (match.title ?? "bekendr").toLowerCase();
-    if (!ok) continue;
+    if (!ok(c)) continue;
     const kind = salesKind(c[iType] ?? "");
     const units = Number((c[iUnits] ?? "").trim());
     if (!kind || !Number.isFinite(units) || units === 0) continue;
@@ -345,6 +357,77 @@ export function parseSalesReport(tsv: string, match: { appleId?: string; title?:
     sum.set(k, r);
   }
   return [...sum.values()];
+}
+
+// ---- Omzet (betaalde apps, bv. Pairr) ----
+export type RevenueRow = { currency: string; units: number; proceeds: number };
+
+/** Opbrengst per valuta uit het verkoopoverzicht: Units × Developer Proceeds van de app zelf (terugbetalingen negatief).
+ * Gratis downloads en updates hebben opbrengst 0 en tellen niet mee. */
+export function parseSalesRevenue(tsv: string, match: SalesMatch): RevenueRow[] {
+  const { rows, col } = salesTable(tsv);
+  const iUnits = col("units"), iProc = col("developer proceeds"), iCur = col("currency of proceeds"), iParent = col("parent identifier");
+  if (iUnits < 0 || iProc < 0 || iCur < 0) return [];
+  const ok = salesMatcher(col, match);
+  const sum = new Map<string, RevenueRow>();
+  for (const c of rows) {
+    if (iParent >= 0 && (c[iParent] ?? "").trim()) continue;
+    if (!ok(c)) continue;
+    const units = Number((c[iUnits] ?? "").trim()), per = Number((c[iProc] ?? "").trim().replace(",", "."));
+    const cur = (c[iCur] ?? "").trim().toUpperCase();
+    if (!Number.isFinite(units) || !Number.isFinite(per) || per === 0 || units === 0 || !/^[A-Z]{3}$/.test(cur)) continue;
+    const r = sum.get(cur) ?? { currency: cur, units: 0, proceeds: 0 };
+    r.units += units;
+    r.proceeds = Math.round((r.proceeds + units * per) * 100) / 100;
+    sum.set(cur, r);
+  }
+  return [...sum.values()];
+}
+
+/** ECB-referentiekoersen (eurofxref-daily.xml) → { USD: 1.08, … } (1 EUR = x valuta). */
+export function parseEcbRates(xml: string): Record<string, number> {
+  const out: Record<string, number> = { EUR: 1 };
+  for (const m of xml.matchAll(/currency=['"]([A-Z]{3})['"]\s+rate=['"]([0-9.]+)['"]/g)) {
+    const r = Number(m[2]);
+    if (r > 0) out[m[1]] = r;
+  }
+  return out;
+}
+
+/** Bedrag in euro (2 decimalen) of null als de koers onbekend is. */
+export function toEur(amount: number, currency: string, rates: Record<string, number>): number | null {
+  const r = rates[currency.toUpperCase()];
+  return r ? Math.round((amount / r) * 100) / 100 : null;
+}
+
+export type RevenueDbRow = { day: string; currency: string; units: number; proceeds: number; proceeds_eur: number | null };
+
+/** Omzetoverzicht: totaal, deze maand, laatste 30 dagen per dag, per valuta. */
+export function revenueSummary(rows: RevenueDbRow[], today: string, days = 30) {
+  const t = Date.parse(`${today}T00:00:00Z`);
+  const perDay = new Map<string, { day: string; eur: number; units: number }>();
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(t - i * 86400_000).toISOString().slice(0, 10);
+    perDay.set(d, { day: d, eur: 0, units: 0 });
+  }
+  const month = today.slice(0, 7);
+  let total = 0, monthEur = 0, units = 0, unconverted = 0, last = "";
+  const byCur: Record<string, { units: number; proceeds: number }> = {};
+  for (const r of rows) {
+    const eur = r.proceeds_eur == null ? null : Number(r.proceeds_eur);
+    const u = Number(r.units) || 0;
+    units += u;
+    if (r.day > last) last = r.day;
+    const c = byCur[r.currency] ??= { units: 0, proceeds: 0 };
+    c.units += u; c.proceeds = Math.round((c.proceeds + Number(r.proceeds)) * 100) / 100;
+    if (eur == null) { unconverted++; continue; }
+    total += eur;
+    if (r.day.startsWith(month)) monthEur += eur;
+    const p = perDay.get(r.day);
+    if (p) { p.eur = Math.round((p.eur + eur) * 100) / 100; p.units += u; }
+  }
+  const r2 = (n: number) => Math.round(n * 100) / 100;
+  return { total_eur: r2(total), month_eur: r2(monthEur), units, last_day: last || null, unconverted, by_currency: byCur, days: [...perDay.values()] };
 }
 
 export type Release = { tag: string; name: string; published_at: string; downloads: number };

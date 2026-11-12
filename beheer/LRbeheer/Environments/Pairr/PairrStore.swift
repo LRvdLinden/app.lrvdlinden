@@ -114,6 +114,27 @@ struct PairrStats: Decodable {
     let apple: BekendrStats.Apple
     let days: [Day]
     let issues: Issues
+    let revenue: Revenue?
+
+    /// Omzet: opbrengst na Apple (Units × Developer Proceeds), omgerekend naar euro met de ECB-koers.
+    struct Revenue: Decodable {
+        let totalEur: Double
+        let monthEur: Double
+        let units: Int
+        let lastDay: String?
+        let unconverted: Int
+        let byCurrency: [String: Currency]
+        let days: [Day]
+
+        struct Currency: Decodable { let units: Int; let proceeds: Double }
+        struct Day: Decodable, Identifiable {
+            let day: String
+            let eur: Double
+            let units: Int
+            var id: String { day }
+            var date: Date { BekendrStats.dayFormatter.date(from: day) ?? .distantPast }
+        }
+    }
 
     struct Day: Decodable, Identifiable {
         let day: String

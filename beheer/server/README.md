@@ -178,9 +178,13 @@ gebruikt deze functie (CORS alleen voor die Origin en alleen voor deze twee acti
 
 - **Inloggen**: `pairr_login` met `BEHEER_APP_USER` / `BEHEER_APP_PASSWORD` → token van 12 uur (scope `pairr`),
   ondertekend met `PAIRR_TOKEN_SECRET` of een sleutel afgeleid van `LRBEHEER_CRON_SECRET`.
-- **Elk uur** (in de cron): verkoopoverzichten van App Store Connect (titel "Pairr", of beter `ASC_PAIRR_APPLE_ID`
-  met het Apple ID van de app). Tabel `lrbeheer_pairr_daily`, zelfde vorm als Bekendr. Zelfde App Store
+- **Elk uur** (in de cron): verkoopoverzichten van App Store Connect (SKU `app.lrvdlinden.pairr`, titel "Pairr: …",
+  of `ASC_PAIRR_APPLE_ID` met het Apple ID van de app). Tabel `lrbeheer_pairr_daily`, zelfde vorm als Bekendr. Zelfde App Store
   Connect-sleutel; er zijn geen nieuwe secrets nodig.
+- **Omzet** (Pairr is betaald): uit dezelfde verkoopoverzichten de opbrengst per dag en valuta (Units × Developer
+  Proceeds, terugbetalingen negatief), omgerekend naar euro met de ECB-referentiekoers (eurofxref-daily.xml) van de dag
+  van ophalen. Tabel `lrbeheer_revenue` (kolom `app`, ook bruikbaar voor andere betaalde apps). De app wordt herkend op
+  `ASC_PAIRR_APPLE_ID`, anders op SKU `app.lrvdlinden.pairr` (of `ASC_PAIRR_SKU`) of een titel die met "Pairr:" begint.
 - **Meldingen**: `pairr_stats` geeft ook de open GitHub Issues van `LRvdLinden/app.lrvdlinden.pairr` (de support van de
   app loopt via Issues; openbare repo, `GITHUB_TOKEN` alleen lezen).
 

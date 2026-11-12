@@ -274,3 +274,49 @@ Deno.test("Pairr-meldingen: alleen open issues, geen pull requests, nieuwste eer
   assertEquals(r[1].labels, ["bug"]);
   assertEquals(openIssues(null), []);
 });
+
+// ---- Omzet ----
+import { parseEcbRates, parseSalesRevenue, revenueSummary, toEur } from "./logic.ts";
+
+Deno.test("Omzet: per valuta, alleen de app zelf, match op SKU of titel met toevoeging", () => {
+  const h = ["Provider", "SKU", "Title", "Units", "Developer Proceeds", "Currency of Proceeds", "Product Type Identifier", "Apple Identifier", "Parent Identifier", "Device"].join("\t");
+  const row = (sku: string, title: string, units: string, proc: string, cur: string, type = "1F", parent = "") =>
+    ["APPLE", sku, title, units, proc, cur, type, "123", parent, "iPhone"].join("\t");
+  const tsv = [h,
+    row("app.lrvdlinden.pairr", "Pairr: koppelcodes", "3", "0.59", "EUR"),
+    row("app.lrvdlinden.pairr", "Pairr: koppelcodes", "2", "0.70", "USD"),
+    row("app.lrvdlinden.pairr", "Pairr: koppelcodes", "-1", "0.59", "EUR"),
+    row("app.lrvdlinden.pairr", "Pairr: koppelcodes", "4", "0", "EUR", "7F"),
+    row("iap.x", "Extra", "1", "2.00", "EUR", "IA1", "app.lrvdlinden.pairr"),
+    row("andere.app", "Anders", "9", "1.00", "EUR"),
+  ].join("\n");
+  const r = parseSalesRevenue(tsv, { title: "Pairr", sku: "app.lrvdlinden.pairr" });
+  assertEquals(r.find((x) => x.currency === "EUR"), { currency: "EUR", units: 2, proceeds: 1.18 });
+  assertEquals(r.find((x) => x.currency === "USD"), { currency: "USD", units: 2, proceeds: 1.4 });
+  assertEquals(r.length, 2);
+  // zonder SKU-kolom: titel "Pairr: …" telt alleen als er een SKU-match gevraagd is
+  assertEquals(parseSalesRevenue(tsv.replaceAll("app.lrvdlinden.pairr\t", "x\t"), { title: "Pairr", sku: "app.lrvdlinden.pairr" }).length, 2);
+  assertEquals(parseSalesRevenue(tsv, { title: "Pairr" }).length, 0);
+  // downloads tellen ook met dezelfde match
+  assertEquals(parseSalesReport(tsv, { title: "Pairr", sku: "app.lrvdlinden.pairr" }).find((x) => x.kind === "download")?.units, 4);
+});
+
+Deno.test("Omzet: ECB-koersen en overzicht", () => {
+  const rates = parseEcbRates("<Cube currency='USD' rate='1.0800'/><Cube currency='GBP' rate='0.8500'/>");
+  assertEquals(rates.EUR, 1);
+  assertEquals(toEur(1.08, "USD", rates), 1);
+  assertEquals(toEur(5, "XXX", rates), null);
+  const s = revenueSummary([
+    { day: "2026-11-12", currency: "EUR", units: 2, proceeds: 1.18, proceeds_eur: 1.18 },
+    { day: "2026-11-11", currency: "USD", units: 2, proceeds: 1.4, proceeds_eur: 1.3 },
+    { day: "2026-10-01", currency: "EUR", units: 1, proceeds: 0.59, proceeds_eur: 0.59 },
+    { day: "2026-11-12", currency: "XXX", units: 1, proceeds: 3, proceeds_eur: null },
+  ], "2026-11-12");
+  assertEquals(s.total_eur, 3.07);
+  assertEquals(s.month_eur, 2.48);
+  assertEquals(s.units, 6);
+  assertEquals(s.unconverted, 1);
+  assertEquals(s.days.length, 30);
+  assertEquals(s.days[29], { day: "2026-11-12", eur: 1.18, units: 2 });
+  assertEquals(s.by_currency.EUR, { units: 3, proceeds: 1.77 });
+});

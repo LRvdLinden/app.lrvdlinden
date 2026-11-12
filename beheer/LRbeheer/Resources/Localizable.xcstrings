@@ -130,6 +130,22 @@
         }
       }
     },
+    "%lld dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld day(s) in a currency without an ECB rate; not included in euros."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro."
+          }
+        }
+      }
+    },
     "%lld open": {
       "localizations": {
         "en": {
@@ -174,6 +190,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld teksten vertaald. Controleer ze en publiceer."
+          }
+        }
+      }
+    },
+    "%lld verkocht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sold"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld verkocht"
           }
         }
       }
@@ -270,6 +302,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "30 dagen"
+          }
+        }
+      }
+    },
+    "30 dagen, in euro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 days, in euros"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 dagen, in euro"
           }
         }
       }
@@ -3138,6 +3186,38 @@
         }
       }
     },
+    "Deze maand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This month"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze maand"
+          }
+        }
+      }
+    },
+    "Deze maand %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This month %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze maand %@"
+          }
+        }
+      }
+    },
     "Deze run is mislukt; er is niets gewijzigd.": {
       "localizations": {
         "en": {
@@ -3538,6 +3618,22 @@
         }
       }
     },
+    "Downloads, omzet en meldingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads, revenue and reports"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads, omzet en meldingen"
+          }
+        }
+      }
+    },
     "Downloads: iPhone en iPad uit App Store Connect, Android uit GitHub Releases, met grafiek per dag": {
       "localizations": {
         "en": {
@@ -3902,6 +3998,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eten en drinken"
+          }
+        }
+      }
+    },
+    "Euro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Euro"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Euro"
           }
         }
       }
@@ -8114,6 +8226,22 @@
         }
       }
     },
+    "Nog geen verkopen in de afgelopen 30 dagen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No sales in the last 30 days yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen verkopen in de afgelopen 30 dagen."
+          }
+        }
+      }
+    },
     "Nog geen winkels toegevoegd via het beheer.": {
       "localizations": {
         "en": {
@@ -8318,6 +8446,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Omschrijving en afbeelding bijgewerkt"
+          }
+        }
+      }
+    },
+    "Omzet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revenue"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omzet"
+          }
+        }
+      }
+    },
+    "Omzet per dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revenue per day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omzet per dag"
+          }
+        }
+      }
+    },
+    "Omzet van Pairr: opbrengst na Apple per dag en per valuta, omgerekend naar euro": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pairr revenue: proceeds after Apple's share per day and per currency, converted to euros"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omzet van Pairr: opbrengst na Apple per dag en per valuta, omgerekend naar euro"
           }
         }
       }
@@ -8622,6 +8798,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ook op het web: pairr.lrvdlinden.app/beheer"
+          }
+        }
+      }
+    },
+    "Opbrengst na Apple uit de dagelijkse verkoopoverzichten, terugbetalingen eraf. Andere valuta omgerekend met de ECB-koers; Apple betaalt later definitief uit in euro, dus het bedrag kan iets afwijken.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proceeds after Apple's share from the daily sales reports, minus refunds. Other currencies converted at the ECB rate; Apple pays out later in euros, so the amount may differ slightly."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opbrengst na Apple uit de dagelijkse verkoopoverzichten, terugbetalingen eraf. Andere valuta omgerekend met de ECB-koers; Apple betaalt later definitief uit in euro, dus het bedrag kan iets afwijken."
           }
         }
       }
@@ -10850,6 +11042,22 @@
         }
       }
     },
+    "Totaal (opbrengst)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total (proceeds)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Totaal (opbrengst)"
+          }
+        }
+      }
+    },
     "Totaal: ": {
       "localizations": {
         "en": {
@@ -11374,6 +11582,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verkeerde gemeente"
+          }
+        }
+      }
+    },
+    "Verkochte exemplaren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copies sold"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verkochte exemplaren"
           }
         }
       }

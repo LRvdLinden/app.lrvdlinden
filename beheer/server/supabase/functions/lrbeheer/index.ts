@@ -20,7 +20,7 @@
 //     {action: "noodpakket_message_delete", id} → bericht intrekken (Android haalt het dan niet meer op)
 //   Pairr-beheer (ook vanuit de browser op https://pairr.lrvdlinden.app/beheer/):
 //     {action: "pairr_login", user, password} → token (12 uur), met de gedeelde beheer-inlog
-//     {action: "pairr_stats"} → downloads Apple (per apparaat, per dag) en open meldingen (GitHub Issues)
+//     {action: "pairr_stats"} → downloads Apple (per apparaat, per dag), omzet (opbrengst in euro) en open meldingen
 //   Noodpakket-app (zonder account, zonder Origin):
 //     {action: "noodpakket_register", device_id, platform: ios|ipados, apns_token, sandbox, lang, app_version}
 //     {action: "noodpakket_unregister", device_id}
@@ -33,7 +33,8 @@
 // ASC_VENDOR_NUMBER (App Store Connect-API, verkoopoverzichten), optioneel ASC_BEKENDR_APPLE_ID en BEKENDR_TOKEN_SECRET.
 // Noodpakket: dezelfde inlog, APNs-sleutel en App Store Connect-sleutel; optioneel ASC_NOODPAKKET_APPLE_ID,
 // NOODPAKKET_TOKEN_SECRET en NOODPAKKET_APNS_TOPIC (standaard app.lrvdlinden.noodpakket).
-// Pairr: dezelfde inlog en App Store Connect-sleutel; optioneel ASC_PAIRR_APPLE_ID en PAIRR_TOKEN_SECRET.
+// Pairr: dezelfde inlog en App Store Connect-sleutel; optioneel ASC_PAIRR_APPLE_ID, ASC_PAIRR_SKU en PAIRR_TOKEN_SECRET.
+// Omzet (Pairr is betaald): opbrengst per dag en valuta uit dezelfde verkoopoverzichten, omgerekend met de ECB-koers.
 // Nooit tokens, sleutels of apparaat-id's loggen.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import {
@@ -45,6 +46,7 @@ import {
   androidBuilds, cleanNpMessage, cleanNpRegister, makeScopedToken, NOODPAKKET_ORIGIN, NOODPAKKET_REPO, NOODPAKKET_TOPIC,
   NP_MESSAGE_DAYS, type NpMessage, npPayload, npTargets, readScopedToken,
   openIssues, PAIRR_ORIGIN, PAIRR_REPO,
+  parseEcbRates, parseSalesRevenue, revenueSummary, type RevenueDbRow, type SalesMatch, toEur,
 } from "./logic.ts";
 
 const env = (k: string) => Deno.env.get(k) ?? "";
@@ -155,13 +157,14 @@ async function bekendrSecret(): Promise<string> {
 
 const ascConfigured = () => !!(env("ASC_KEY_ID") && env("ASC_ISSUER_ID") && env("ASC_KEY_P8") && env("ASC_VENDOR_NUMBER"));
 
-type SalesMatch = { appleId?: string; title?: string };
 const bekendrMatch = (): SalesMatch => env("ASC_BEKENDR_APPLE_ID") ? { appleId: env("ASC_BEKENDR_APPLE_ID") } : { title: "Bekendr" };
-const pairrMatch = (): SalesMatch => env("ASC_PAIRR_APPLE_ID") ? { appleId: env("ASC_PAIRR_APPLE_ID") } : { title: "Pairr" };
+/** Pairr heet in de store "Pairr: …": match op SKU (app.lrvdlinden.pairr) of op een titel die met "Pairr:" begint. */
+const pairrMatch = (): SalesMatch => env("ASC_PAIRR_APPLE_ID") ? { appleId: env("ASC_PAIRR_APPLE_ID") }
+  : { title: "Pairr", sku: env("ASC_PAIRR_SKU") || "app.lrvdlinden.pairr" };
 const noodpakketMatch = (): SalesMatch => env("ASC_NOODPAKKET_APPLE_ID") ? { appleId: env("ASC_NOODPAKKET_APPLE_ID") } : { title: "Noodpakket" };
 
-/** Eén dag uit de verkoopoverzichten: rijen, of null als er (nog) geen overzicht is. */
-async function appleSalesDay(day: string, jwt: string, match: SalesMatch): Promise<ReturnType<typeof parseSalesReport> | null> {
+/** Eén dag uit de verkoopoverzichten (tab-gescheiden), of null als er (nog) geen overzicht is. */
+async function appleSalesDay(day: string, jwt: string): Promise<string | null> {
   const q = new URLSearchParams({
     "filter[frequency]": "DAILY", "filter[reportDate]": day, "filter[reportSubType]": "SUMMARY",
     "filter[reportType]": "SALES", "filter[vendorNumber]": env("ASC_VENDOR_NUMBER"), "filter[version]": "1_1",
@@ -171,8 +174,17 @@ async function appleSalesDay(day: string, jwt: string, match: SalesMatch): Promi
   });
   if (r.status === 404) { await r.body?.cancel().catch(() => {}); return null; }
   if (!r.ok || !r.body) { await r.body?.cancel().catch(() => {}); throw new Error(`App Store Connect HTTP ${r.status}`); }
-  const tsv = await new Response(r.body.pipeThrough(new DecompressionStream("gzip"))).text();
-  return parseSalesReport(tsv, match);
+  return await new Response(r.body.pipeThrough(new DecompressionStream("gzip"))).text();
+}
+
+/** ECB-referentiekoersen van vandaag (voor het omrekenen van opbrengst naar euro). */
+let ecb: { at: number; rates: Record<string, number> } | null = null;
+async function ecbRates(): Promise<Record<string, number>> {
+  if (ecb && Date.now() - ecb.at < 6 * 3600_000) return ecb.rates;
+  const r = await fetch("https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml", { signal: AbortSignal.timeout(15000) });
+  if (!r.ok) { await r.body?.cancel().catch(() => {}); throw new Error(`ECB HTTP ${r.status}`); }
+  ecb = { at: Date.now(), rates: parseEcbRates(await r.text()) };
+  return ecb.rates;
 }
 
 async function bekendrReleases() {
@@ -180,13 +192,14 @@ async function bekendrReleases() {
 }
 
 /** Bron van downloads; zonder `releases` (geen Android-versie) alleen Apple. */
-type DownloadSource = { name: string; table: string; androidKey: string; appleKey: string; releases?: () => Promise<Release[]>; match: () => SalesMatch };
+/** Met `revenue` (betaalde app) ook de opbrengst per dag en valuta in lrbeheer_revenue (app = revenue). */
+type DownloadSource = { name: string; table: string; androidKey: string; appleKey: string; releases?: () => Promise<Release[]>; match: () => SalesMatch; revenue?: string };
 const BEKENDR_DL: DownloadSource = {
   name: "bekendr", table: "lrbeheer_bekendr_daily", androidKey: "bekendr_android", appleKey: "bekendr_apple_days",
   releases: () => bekendrReleases(), match: bekendrMatch,
 };
 const PAIRR_DL: DownloadSource = {
-  name: "pairr", table: "lrbeheer_pairr_daily", androidKey: "", appleKey: "pairr_apple_days", match: pairrMatch,
+  name: "pairr", table: "lrbeheer_pairr_daily", androidKey: "", appleKey: "pairr_apple_days", match: pairrMatch, revenue: "pairr",
 };
 const NOODPAKKET_DL: DownloadSource = {
   name: "noodpakket", table: "lrbeheer_noodpakket_daily", androidKey: "noodpakket_android", appleKey: "noodpakket_apple_days",
@@ -211,13 +224,26 @@ async function syncDownloads(src: DownloadSource, today: string) {
   const jwt = await ascJwt(await importApnsKey(env("ASC_KEY_P8")), env("ASC_KEY_ID"), env("ASC_ISSUER_ID"), Math.floor(Date.now() / 1000));
   const done = new Set(have);
   for (const day of todo) {
-    const rows = await appleSalesDay(day, jwt, src.match());
+    const tsv = await appleSalesDay(day, jwt);
     const age = (Date.parse(`${today}T00:00:00Z`) - Date.parse(`${day}T00:00:00Z`)) / 86400_000;
-    if (rows === null) { if (age >= 3) done.add(day); continue; } // geen overzicht = geen verkoop (na 3 dagen definitief)
+    if (tsv === null) { if (age >= 3) done.add(day); continue; } // geen overzicht = geen verkoop (na 3 dagen definitief)
+    const rows = parseSalesReport(tsv, src.match());
     await db.from(src.table).delete().eq("day", day).eq("source", "apple");
     if (rows.length) {
       const { error: e } = await db.from(src.table).insert(rows.map((r) => ({ day, source: "apple", ...r })));
       if (e) throw new Error(`${src.name} apple: ${e.code ?? "db"}`);
+    }
+    if (src.revenue) {
+      const rev = parseSalesRevenue(tsv, src.match());
+      let rates: Record<string, number> = { EUR: 1 };
+      if (rev.some((r) => r.currency !== "EUR")) { try { rates = await ecbRates(); } catch { /* alleen EUR omrekenen */ } }
+      await db.from("lrbeheer_revenue").delete().eq("app", src.revenue).eq("day", day);
+      if (rev.length) {
+        const { error: e } = await db.from("lrbeheer_revenue").insert(rev.map((r) => ({
+          app: src.revenue, day, currency: r.currency, units: r.units, proceeds: r.proceeds, proceeds_eur: toEur(r.proceeds, r.currency, rates),
+        })));
+        if (e) throw new Error(`${src.name} omzet: ${e.code ?? "db"}`);
+      }
     }
     done.add(day);
   }
@@ -270,6 +296,8 @@ async function pairrStats() {
   let githubOk = true;
   try { issues = openIssues(await getJSON(`https://api.github.com/repos/${PAIRR_REPO}/issues?state=open&per_page=50`, true)); } catch { githubOk = false; }
   const sum = bekendrSummary((data ?? []) as DailyRow[], today);
+  const { data: rev, error: re } = await db.from("lrbeheer_revenue").select("day, currency, units, proceeds, proceeds_eur").eq("app", "pairr").limit(20000);
+  if (re) throw new Error(re.message);
   const { data: st } = await db.from("lrbeheer_state").select("updated_at").eq("key", "pairr_synced").maybeSingle();
   return {
     ok: true,
@@ -278,6 +306,7 @@ async function pairrStats() {
     apple: { configured: ascConfigured(), ...sum.apple },
     days: sum.days.map(({ android: _a, ...d }) => d),
     issues: { available: githubOk, open: issues.length, items: issues, url: `https://github.com/${PAIRR_REPO}/issues` },
+    revenue: revenueSummary((rev ?? []) as RevenueDbRow[], today),
   };
 }
 

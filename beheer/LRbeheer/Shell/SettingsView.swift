@@ -96,6 +96,7 @@ struct WhatsNewView: View {
                 Section("Pairr") {
                     Label("Nieuwe omgeving Pairr, met dezelfde beheer-inlog", systemImage: "app.badge")
                     Label("Downloads op iPhone, iPad en Mac uit App Store Connect, met grafiek per dag", systemImage: "arrow.down.circle")
+                    Label("Omzet van Pairr: opbrengst na Apple per dag en per valuta, omgerekend naar euro", systemImage: "eurosign.circle")
                     Label("Open meldingen van gebruikers (GitHub Issues), tik om ze te openen", systemImage: "exclamationmark.bubble")
                     Label("Ook op het web: pairr.lrvdlinden.app/beheer", systemImage: "safari")
                 }

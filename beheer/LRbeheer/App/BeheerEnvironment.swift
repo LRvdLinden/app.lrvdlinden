@@ -35,7 +35,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .p2000: "Meldingen, waarschuwingen, push en statistieken"
         case .bekendr: "Downloads op iPhone, iPad, Mac en Android"
         case .noodpakket: "Downloads, Android-builds en berichten aan gebruikers"
-        case .pairr: "Downloads op iPhone, iPad en Mac, en meldingen"
+        case .pairr: "Downloads, omzet en meldingen"
         }
     }
 

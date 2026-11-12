@@ -806,5 +806,19 @@
  "Nieuwe omgeving Pairr, met dezelfde beheer-inlog": "New environment Pairr, with the same admin sign-in",
  "Downloads op iPhone, iPad en Mac uit App Store Connect, met grafiek per dag": "Downloads on iPhone, iPad and Mac from App Store Connect, with a daily chart",
  "Open meldingen van gebruikers (GitHub Issues), tik om ze te openen": "Open reports from users (GitHub Issues), tap to open them",
- "Ook op het web: pairr.lrvdlinden.app/beheer": "Also on the web: pairr.lrvdlinden.app/beheer"
+ "Ook op het web: pairr.lrvdlinden.app/beheer": "Also on the web: pairr.lrvdlinden.app/beheer",
+ "Omzet": "Revenue",
+ "Omzet per dag": "Revenue per day",
+ "30 dagen, in euro": "30 days, in euros",
+ "Nog geen verkopen in de afgelopen 30 dagen.": "No sales in the last 30 days yet.",
+ "Totaal (opbrengst)": "Total (proceeds)",
+ "Deze maand": "This month",
+ "Verkochte exemplaren": "Copies sold",
+ "%lld verkocht": "%lld sold",
+ "%lld dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro.": "%lld day(s) in a currency without an ECB rate; not included in euros.",
+ "Opbrengst na Apple uit de dagelijkse verkoopoverzichten, terugbetalingen eraf. Andere valuta omgerekend met de ECB-koers; Apple betaalt later definitief uit in euro, dus het bedrag kan iets afwijken.": "Proceeds after Apple's share from the daily sales reports, minus refunds. Other currencies converted at the ECB rate; Apple pays out later in euros, so the amount may differ slightly.",
+ "Omzet van Pairr: opbrengst na Apple per dag en per valuta, omgerekend naar euro": "Pairr revenue: proceeds after Apple's share per day and per currency, converted to euros",
+ "Downloads, omzet en meldingen": "Downloads, revenue and reports",
+ "Euro": "Euro",
+ "Deze maand %@": "This month %@"
 }

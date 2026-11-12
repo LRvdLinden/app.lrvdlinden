@@ -270,6 +270,7 @@ door Léon zelf geüpload naar zijn hosting) praten met de centrale functie `lrb
 | Downloads totaal en per apparaat: iPhone, iPad, Mac (App Store Connect, verkoopoverzichten) | ✓ | ✓ |
 | Apple: eerste downloads, opnieuw gedownload, updates, laatste dag | ✓ | ✓ |
 | Grafiek downloads per dag (30 dagen), per apparaat gestapeld | ✓ (Swift Charts) | ✓ (SVG) |
+| Omzet: opbrengst na Apple (totaal, deze maand, verkochte exemplaren, per valuta) en grafiek per dag, omgerekend naar euro met de ECB-koers | ✓ | ✓ |
 | Open meldingen van gebruikers (GitHub Issues): aantal, titel, datum, reacties, labels, openen op GitHub | ✓ | ✓ |
 | Pushmelding naar LRbeheer | nog niet (voorstel: melding bij een nieuwe melding op GitHub en dagelijks overzicht van nieuwe downloads) | – |
 

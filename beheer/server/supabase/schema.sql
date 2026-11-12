@@ -79,6 +79,19 @@ create table if not exists public.lrbeheer_pairr_daily (
   primary key (day, source, device, kind)
 );
 
+-- Omzet van betaalde apps (nu Pairr): opbrengst per dag en valuta uit de verkoopoverzichten van App Store Connect
+-- (Units × Developer Proceeds, terugbetalingen negatief), met een omrekening naar euro tegen de ECB-koers van de dag
+-- waarop de functie het overzicht ophaalde. Apple betaalt later definitief uit in euro; dit is een schatting.
+create table if not exists public.lrbeheer_revenue (
+  app text not null,
+  day date not null,
+  currency text not null,
+  units int not null default 0,
+  proceeds numeric(12,2) not null default 0,
+  proceeds_eur numeric(12,2),
+  primary key (app, day, currency)
+);
+
 -- Noodpakket: apparaten die berichten willen ontvangen (iPhone/iPad met APNs-token; Android haalt zelf op).
 -- Alleen een willekeurig apparaatnummer, het pushtoken, de taal en de appversie; geen account of persoonsgegevens.
 create table if not exists public.lrbeheer_noodpakket_devices (
@@ -125,9 +138,11 @@ alter table public.lrbeheer_noodpakket_daily enable row level security;
 alter table public.lrbeheer_noodpakket_devices enable row level security;
 alter table public.lrbeheer_noodpakket_messages enable row level security;
 alter table public.lrbeheer_pairr_daily enable row level security;
+alter table public.lrbeheer_revenue enable row level security;
 -- geen policies: alleen de functie (service role) leest en schrijft
 revoke all on table public.lrbeheer_devices, public.lrbeheer_state, public.lrbeheer_events, public.lrbeheer_bekendr_daily, public.lrbeheer_bekendr_feedback,
-  public.lrbeheer_noodpakket_daily, public.lrbeheer_noodpakket_devices, public.lrbeheer_noodpakket_messages, public.lrbeheer_pairr_daily
+  public.lrbeheer_noodpakket_daily, public.lrbeheer_noodpakket_devices, public.lrbeheer_noodpakket_messages, public.lrbeheer_pairr_daily,
+  public.lrbeheer_revenue
   from anon, authenticated;
 
 -- Geschiedenis 90 dagen bewaren
