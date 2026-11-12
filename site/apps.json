@@ -43,7 +43,8 @@
                 "show": true
             },
             "size": "2,2 MB",
-            "languages": "NL"
+            "languages": "NL",
+            "nlOnly": true
         },
         {
             "id": "app-lrvdlinden-pairr",
@@ -164,7 +165,8 @@
                     "en": "img/promo-nl-lrvdlinden-aalerts-en.webp"
                 }
             },
-            "languages": "NL"
+            "languages": "NL",
+            "nlOnly": true
         },
         {
             "id": "nl-lrvdlinden-pasr",
@@ -208,7 +210,8 @@
                 "nl": "Al je pasjes in één app",
                 "en": "All your cards in one app"
             },
-            "size": "13,3 MB"
+            "size": "13,3 MB",
+            "nlOnly": true
         },
         {
             "id": "nl-lrvdlinden-weekdot",
@@ -608,7 +611,8 @@
                         "en": "First release."
                     }
                 }
-            ]
+            ],
+            "nlOnly": true
         },
         {
             "id": "thepark",
@@ -652,7 +656,8 @@
                         "en": "First release."
                     }
                 }
-            ]
+            ],
+            "nlOnly": true
         },
         {
             "id": "cablemaps",
@@ -736,7 +741,8 @@
                     }
                 }
             ],
-            "reviews": 0
+            "reviews": 0,
+            "nlOnly": true
         },
         {
             "id": "vlagdagen",
@@ -802,7 +808,8 @@
                 "image": {
                     "nl": "img/promo-vlagdagen-nl.webp"
                 }
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-weekdot",
@@ -1130,7 +1137,8 @@
                         "en": "First release."
                     }
                 }
-            ]
+            ],
+            "nlOnly": true
         },
         {
             "id": "simple-chess",
@@ -1971,7 +1979,8 @@
                 "support": "https://community.homey.app/t/app-pro-p2000/83738",
                 "category": "internet",
                 "live": "6.2.6"
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-nlalert-widget",
@@ -2160,7 +2169,8 @@
                 "support": "mailto:hallo@pixelforges.nl",
                 "category": "security",
                 "live": "1.0.4"
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-burgernet",
@@ -2372,7 +2382,8 @@
                 "support": "https://community.homey.app/t/app-pro-cloud-vermiste-personen-voor-homey/154918",
                 "category": "internet",
                 "live": "2.0.0"
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-lifeliner",
@@ -2672,7 +2683,8 @@
                 "support": "https://community.homey.app/t/app-pro-lifeline-alerts-for-homey/83742",
                 "category": "internet",
                 "live": "6.1.2"
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-knmi-weerwaarschuwing",
@@ -3684,7 +3696,8 @@
                 "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268",
                 "category": "internet",
                 "live": "4.3.5"
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-kmi",
@@ -4522,7 +4535,8 @@
                 "support": "https://community.homey.app/t/app-pro-kmi-belgium/97198",
                 "category": "internet",
                 "live": "2.2.1"
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-postnl",
@@ -4861,7 +4875,8 @@
                 "support": "https://community.homey.app/t/app-pro-postnl-for-homey/159674",
                 "category": "internet",
                 "live": "1.3.0"
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-birthdays",
@@ -6874,7 +6889,8 @@
                 "color": "#FFA322",
                 "category": "internet",
                 "live": "1.0.5"
-            }
+            },
+            "nlOnly": true
         }
     ]
 }
