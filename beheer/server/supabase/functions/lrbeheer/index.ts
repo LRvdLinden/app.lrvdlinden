@@ -18,6 +18,9 @@
 //     {action: "noodpakket_stats"} → downloads (Apple per apparaat, Android), Android-builds, apparaten en berichten
 //     {action: "noodpakket_send", title, body, lang, platform, url?, test?} → bericht aan gebruikers (test: alleen naar LRbeheer)
 //     {action: "noodpakket_message_delete", id} → bericht intrekken (Android haalt het dan niet meer op)
+//   Pairr-beheer (ook vanuit de browser op https://pairr.lrvdlinden.app/beheer/):
+//     {action: "pairr_login", user, password} → token (12 uur), met de gedeelde beheer-inlog
+//     {action: "pairr_stats"} → downloads Apple (per apparaat, per dag) en open meldingen (GitHub Issues)
 //   Noodpakket-app (zonder account, zonder Origin):
 //     {action: "noodpakket_register", device_id, platform: ios|ipados, apns_token, sandbox, lang, app_version}
 //     {action: "noodpakket_unregister", device_id}
@@ -30,6 +33,7 @@
 // ASC_VENDOR_NUMBER (App Store Connect-API, verkoopoverzichten), optioneel ASC_BEKENDR_APPLE_ID en BEKENDR_TOKEN_SECRET.
 // Noodpakket: dezelfde inlog, APNs-sleutel en App Store Connect-sleutel; optioneel ASC_NOODPAKKET_APPLE_ID,
 // NOODPAKKET_TOKEN_SECRET en NOODPAKKET_APNS_TOPIC (standaard app.lrvdlinden.noodpakket).
+// Pairr: dezelfde inlog en App Store Connect-sleutel; optioneel ASC_PAIRR_APPLE_ID en PAIRR_TOKEN_SECRET.
 // Nooit tokens, sleutels of apparaat-id's loggen.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import {
@@ -40,6 +44,7 @@ import {
   storeNotices, wants,
   androidBuilds, cleanNpMessage, cleanNpRegister, makeScopedToken, NOODPAKKET_ORIGIN, NOODPAKKET_REPO, NOODPAKKET_TOPIC,
   NP_MESSAGE_DAYS, type NpMessage, npPayload, npTargets, readScopedToken,
+  openIssues, PAIRR_ORIGIN, PAIRR_REPO,
 } from "./logic.ts";
 
 const env = (k: string) => Deno.env.get(k) ?? "";
@@ -52,7 +57,7 @@ const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"), {
 const json = (body: unknown, status = 200, extra: Record<string, string> = {}) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store", ...extra } });
 
-/** CORS alleen voor de web-beheren van Bekendr en Noodpakket, elk alleen voor de eigen beheer-acties. */
+/** CORS alleen voor de web-beheren van Bekendr, Noodpakket en Pairr, elk alleen voor de eigen beheer-acties. */
 const corsFor = (origin: string) => ({
   "Access-Control-Allow-Origin": origin,
   "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -64,6 +69,7 @@ const corsFor = (origin: string) => ({
 const WEB_ACTIONS: Record<string, (a: string) => boolean> = {
   [BEKENDR_ORIGIN]: (a) => a.startsWith("bekendr_") && a !== "bekendr_feedback",
   [NOODPAKKET_ORIGIN]: (a) => ["noodpakket_login", "noodpakket_stats", "noodpakket_send", "noodpakket_message_delete"].includes(a),
+  [PAIRR_ORIGIN]: (a) => a === "pairr_login" || a === "pairr_stats",
 };
 
 async function sameSecret(given: string | null, expected: string): Promise<boolean> {
@@ -151,6 +157,7 @@ const ascConfigured = () => !!(env("ASC_KEY_ID") && env("ASC_ISSUER_ID") && env(
 
 type SalesMatch = { appleId?: string; title?: string };
 const bekendrMatch = (): SalesMatch => env("ASC_BEKENDR_APPLE_ID") ? { appleId: env("ASC_BEKENDR_APPLE_ID") } : { title: "Bekendr" };
+const pairrMatch = (): SalesMatch => env("ASC_PAIRR_APPLE_ID") ? { appleId: env("ASC_PAIRR_APPLE_ID") } : { title: "Pairr" };
 const noodpakketMatch = (): SalesMatch => env("ASC_NOODPAKKET_APPLE_ID") ? { appleId: env("ASC_NOODPAKKET_APPLE_ID") } : { title: "Noodpakket" };
 
 /** Eén dag uit de verkoopoverzichten: rijen, of null als er (nog) geen overzicht is. */
@@ -172,24 +179,30 @@ async function bekendrReleases() {
   return apkReleases(await getJSON(`https://api.github.com/repos/${BEKENDR_REPO}/releases?per_page=100`, true));
 }
 
-type DownloadSource = { name: string; table: string; androidKey: string; appleKey: string; releases: () => Promise<Release[]>; match: () => SalesMatch };
+/** Bron van downloads; zonder `releases` (geen Android-versie) alleen Apple. */
+type DownloadSource = { name: string; table: string; androidKey: string; appleKey: string; releases?: () => Promise<Release[]>; match: () => SalesMatch };
 const BEKENDR_DL: DownloadSource = {
   name: "bekendr", table: "lrbeheer_bekendr_daily", androidKey: "bekendr_android", appleKey: "bekendr_apple_days",
   releases: () => bekendrReleases(), match: bekendrMatch,
+};
+const PAIRR_DL: DownloadSource = {
+  name: "pairr", table: "lrbeheer_pairr_daily", androidKey: "", appleKey: "pairr_apple_days", match: pairrMatch,
 };
 const NOODPAKKET_DL: DownloadSource = {
   name: "noodpakket", table: "lrbeheer_noodpakket_daily", androidKey: "noodpakket_android", appleKey: "noodpakket_apple_days",
   releases: () => noodpakketReleases(), match: noodpakketMatch,
 };
 
-/** Elk uur: Android-teller bijwerken en ontbrekende Apple-dagen ophalen (Bekendr en Noodpakket). */
+/** Elk uur: Android-teller bijwerken en ontbrekende Apple-dagen ophalen (Bekendr, Noodpakket en Pairr). */
 async function syncDownloads(src: DownloadSource, today: string) {
-  const releases = await src.releases();
-  const total = releases.reduce((s, r) => s + r.downloads, 0);
-  const a = androidStep(await getState<AndroidState>(src.androidKey), today, total);
-  await setState(src.androidKey, a.state);
-  const { error } = await db.from(src.table).upsert({ day: today, source: "android", device: "Android", kind: "download", units: a.today });
-  if (error) throw new Error(`${src.name} android: ${error.code ?? "db"}`);
+  if (src.releases) {
+    const releases = await src.releases();
+    const total = releases.reduce((s, r) => s + r.downloads, 0);
+    const a = androidStep(await getState<AndroidState>(src.androidKey), today, total);
+    await setState(src.androidKey, a.state);
+    const { error } = await db.from(src.table).upsert({ day: today, source: "android", device: "Android", kind: "download", units: a.today });
+    if (error) throw new Error(`${src.name} android: ${error.code ?? "db"}`);
+  }
 
   if (!ascConfigured()) return;
   const have = (await getState<string[]>(src.appleKey)) ?? [];
@@ -210,6 +223,7 @@ async function syncDownloads(src: DownloadSource, today: string) {
   }
   const keep = [...done].sort().reverse().slice(0, 60);
   await setState(src.appleKey, keep);
+  if (!src.releases) await setState(`${src.name}_synced`, today);
 }
 const bekendrSync = (today: string) => syncDownloads(BEKENDR_DL, today);
 
@@ -236,6 +250,34 @@ async function bekendrStats() {
     android: { total: releases.reduce((s, r) => s + r.downloads, 0), releases: releases.slice(0, 20), available: githubOk },
     days: sum.days,
     feedback_open: await feedbackOpen(),
+  };
+}
+
+// ---- Pairr ----
+async function pairrSecret(): Promise<string> {
+  if (env("PAIRR_TOKEN_SECRET")) return env("PAIRR_TOKEN_SECRET");
+  const base = env("LRBEHEER_CRON_SECRET");
+  if (!base) return "";
+  return [...await hmac(base, "pairr-token")].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function pairrStats() {
+  const { day: today } = amsterdam(new Date());
+  const since = new Date(Date.parse(`${today}T00:00:00Z`) - 400 * 86400_000).toISOString().slice(0, 10);
+  const { data, error } = await db.from("lrbeheer_pairr_daily").select("day, source, device, kind, units").gte("day", since).limit(20000);
+  if (error) throw new Error(error.message);
+  let issues: ReturnType<typeof openIssues> = [];
+  let githubOk = true;
+  try { issues = openIssues(await getJSON(`https://api.github.com/repos/${PAIRR_REPO}/issues?state=open&per_page=50`, true)); } catch { githubOk = false; }
+  const sum = bekendrSummary((data ?? []) as DailyRow[], today);
+  const { data: st } = await db.from("lrbeheer_state").select("updated_at").eq("key", "pairr_synced").maybeSingle();
+  return {
+    ok: true,
+    today,
+    synced_at: st?.updated_at ?? null,
+    apple: { configured: ascConfigured(), ...sum.apple },
+    days: sum.days.map(({ android: _a, ...d }) => d),
+    issues: { available: githubOk, open: issues.length, items: issues, url: `https://github.com/${PAIRR_REPO}/issues` },
   };
 }
 
@@ -437,11 +479,21 @@ async function cron(forceBekendr = false) {
     await syncDownloads(NOODPAKKET_DL, day);
   });
 
+  // Pairr: downloads (elk uur, alleen Apple)
+  await step("pairr", async () => {
+    const { day, hour } = amsterdam(new Date());
+    const stamp = `${day}T${hour}`;
+    if (!forceBekendr && (await getState<string>("pairr_hour")) === stamp) return;
+    await setState("pairr_hour", stamp);
+    await syncDownloads(PAIRR_DL, day);
+  });
+
   const res = await deliver(notices);
   if (errors.length) console.error("lrbeheer", "cron", errors.join("; "));
   const bekendr = errors.find((e) => e.startsWith("bekendr:"))?.slice(9).trim() ?? "ok";
   const noodpakket = errors.find((e) => e.startsWith("noodpakket:"))?.slice(12).trim() ?? "ok";
-  return { notices: notices.length, ...res, errors: errors.length, bekendr, noodpakket };
+  const pairr = errors.find((e) => e.startsWith("pairr:"))?.slice(7).trim() ?? "ok";
+  return { notices: notices.length, ...res, errors: errors.length, bekendr, noodpakket, pairr };
 }
 
 Deno.serve(async (req) => {
@@ -449,7 +501,7 @@ Deno.serve(async (req) => {
   const web = !!origin && origin in WEB_ACTIONS;
   if (req.method === "OPTIONS") return web ? new Response(null, { status: 204, headers: corsFor(origin!) }) : json({ error: "forbidden" }, 403);
   if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
-  // geen browsers, behalve de web-beheren van Bekendr en Noodpakket voor hun eigen acties; de apps en de cron sturen geen Origin
+  // geen browsers, behalve de web-beheren van Bekendr, Noodpakket en Pairr voor hun eigen acties; de apps en de cron sturen geen Origin
   if (origin && !web) return json({ error: "forbidden" }, 403);
   let body: Record<string, unknown>;
   try {
@@ -591,6 +643,24 @@ Deno.serve(async (req) => {
         await db.rpc("lrbeheer_noodpakket_fetched", { ids: mine.map((m) => m.id) });
       }
       return json({ ok: true, messages: mine.slice(-5).map(({ id, at, title, body, url }) => ({ id, at, title, body, url })), latest });
+    }
+
+    // ---- Pairr ----
+    if (action === "pairr_login") {
+      const user = typeof body.user === "string" ? body.user.trim() : "";
+      const pass = typeof body.password === "string" ? body.password : "";
+      const secret = await pairrSecret();
+      const okUser = await sameSecret(user, env("BEHEER_APP_USER"));
+      const okPass = await sameSecret(pass, env("BEHEER_APP_PASSWORD"));
+      if (!secret || !okUser || !okPass) {
+        await new Promise((r) => setTimeout(r, 700));
+        return json({ error: secret ? "unauthorized" : "not_configured" }, secret ? 401 : 503, cors);
+      }
+      return json({ ok: true, ...(await makeScopedToken(secret, "pairr")) }, 200, cors);
+    }
+    if (action === "pairr_stats") {
+      if (!(await readScopedToken(await pairrSecret(), "pairr", bearer(req.headers)))) return json({ error: "unauthorized" }, 401, cors);
+      return json(await pairrStats(), 200, cors);
     }
 
     if (action === "cron") {

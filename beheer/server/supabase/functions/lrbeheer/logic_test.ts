@@ -250,3 +250,27 @@ Deno.test("Noodpakket: APK-releases met v-tags en Android-builds", () => {
   assertEquals(b.map((x) => x.id), [3, 2]);
   assertEquals(b[0].conclusion, null);
 });
+
+// ---- Pairr ----
+import { openIssues } from "./logic.ts";
+
+Deno.test("Pairr-token: eigen scope", async () => {
+  const now = Date.now();
+  const { token } = await makeScopedToken("geheim", "pairr", now);
+  assertEquals(await readScopedToken("geheim", "pairr", token, now), true);
+  assertEquals(await readScopedToken("geheim", "noodpakket", token, now), false);
+});
+
+Deno.test("Pairr-meldingen: alleen open issues, geen pull requests, nieuwste eerst", () => {
+  const raw = [
+    { number: 1, state: "open", title: "Oud", html_url: "https://github.com/x/y/issues/1", created_at: "2026-11-01T10:00:00Z", comments: 2, labels: [{ name: "bug" }] },
+    { number: 2, state: "open", title: "PR", pull_request: {}, created_at: "2026-11-05T10:00:00Z" },
+    { number: 3, state: "closed", title: "Dicht", created_at: "2026-11-06T10:00:00Z" },
+    { number: 4, state: "open", title: "Nieuw", html_url: "javascript:alert(1)", created_at: "2026-11-10T10:00:00Z" },
+  ];
+  const r = openIssues(raw);
+  assertEquals(r.map((i) => i.number), [4, 1]);
+  assertEquals(r[0].url, "");
+  assertEquals(r[1].labels, ["bug"]);
+  assertEquals(openIssues(null), []);
+});

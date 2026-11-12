@@ -82,6 +82,8 @@ final class SharedLogin {
                 Task { await BekendrStore.shared.load() }
             case .noodpakket: try await NoodpakketStore.shared.signIn(user: user, password: password)
                 Task { await NoodpakketStore.shared.load() }
+            case .pairr: try await PairrStore.shared.signIn(user: user, password: password)
+                Task { await PairrStore.shared.load() }
             }
             return .ok
         } catch {

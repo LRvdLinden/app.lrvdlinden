@@ -89,7 +89,7 @@ originele code.
 
 - **Splash** (±1 s, geen netwerk) → **vergrendeling** met Face ID (Instellingen → *Vergrendelen met Face ID*) →
   **overzicht** met de omgevingen in vaste volgorde: LRvdLinden, PixelForges, Bingr, Tunr, Pasr, P2000 Apeldoorn, Bekendr,
-  Noodpakket, elk met eigen logo, of je ingelogd bent en welke het laatst gebruikt is.
+  Noodpakket, Pairr, elk met eigen logo, of je ingelogd bent en welke het laatst gebruikt is.
 - **Wisselen**: bovenin elke omgeving staat de omgevingskiezer (logo + naam + ⌄, en op brede schermen de andere logo's).
   Eén tik wisselt direct, zonder terug naar het overzicht. De actieve omgeving is altijd zichtbaar (naam, logo en een
   lijn in de kleur van de omgeving).
@@ -257,6 +257,21 @@ zelf geüpload naar zijn hosting) praten met de centrale functie `lrbeheer` (act
 | Testbericht naar de eigen LRbeheer-apparaten | ✓ | ✓ |
 | Verstuurde berichten met bereik (afgeleverd, mislukt, opgehaald door Android), intrekken, opnieuw gebruiken | ✓ | ✓ (intrekken) |
 | Pushmelding naar LRbeheer | nog niet (voorstel: melding bij een mislukte Android-build en bij een nieuwe release) | – |
+
+### pairr.lrvdlinden.app/beheer → Pairr (nieuw, native)
+
+Pairr heeft geen eigen server en geen Android-versie. App en web-beheer (`web/beheer/` in LRvdLinden/app.lrvdlinden.pairr,
+door Léon zelf geüpload naar zijn hosting) praten met de centrale functie `lrbeheer` (acties `pairr_login` en
+`pairr_stats`; zie `server/README.md`).
+
+| Onderdeel | In LRbeheer | Web-beheer |
+| --- | --- | --- |
+| Inloggen met de gedeelde beheer-inlog (token 12 uur), doet mee met *Eén inlog* | ✓ (sleutelhanger) | ✓ (alleen dit tabblad) |
+| Downloads totaal en per apparaat: iPhone, iPad, Mac (App Store Connect, verkoopoverzichten) | ✓ | ✓ |
+| Apple: eerste downloads, opnieuw gedownload, updates, laatste dag | ✓ | ✓ |
+| Grafiek downloads per dag (30 dagen), per apparaat gestapeld | ✓ (Swift Charts) | ✓ (SVG) |
+| Open meldingen van gebruikers (GitHub Issues): aantal, titel, datum, reacties, labels, openen op GitHub | ✓ | ✓ |
+| Pushmelding naar LRbeheer | nog niet (voorstel: melding bij een nieuwe melding op GitHub en dagelijks overzicht van nieuwe downloads) | – |
 
 ## Standaarden van LRvdLinden-apps
 

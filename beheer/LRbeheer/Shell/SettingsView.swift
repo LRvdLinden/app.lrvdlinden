@@ -93,6 +93,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pairr") {
+                    Label("Nieuwe omgeving Pairr, met dezelfde beheer-inlog", systemImage: "app.badge")
+                    Label("Downloads op iPhone, iPad en Mac uit App Store Connect, met grafiek per dag", systemImage: "arrow.down.circle")
+                    Label("Open meldingen van gebruikers (GitHub Issues), tik om ze te openen", systemImage: "exclamationmark.bubble")
+                    Label("Ook op het web: pairr.lrvdlinden.app/beheer", systemImage: "safari")
+                }
                 Section("Noodpakket") {
                     Label("Nieuwe omgeving Noodpakket, met dezelfde beheer-inlog", systemImage: "app.badge")
                     Label("Downloads: iPhone en iPad uit App Store Connect, Android uit GitHub Releases, met grafiek per dag", systemImage: "arrow.down.circle")

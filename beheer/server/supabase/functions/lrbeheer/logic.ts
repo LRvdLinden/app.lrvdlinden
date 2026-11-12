@@ -566,3 +566,32 @@ export function androidBuilds(runs: unknown, max = 8): BuildRun[] {
     .sort((a, b) => b.created_at.localeCompare(a.created_at))
     .slice(0, max);
 }
+
+// ---- Pairr: downloads (App Store Connect) en openstaande meldingen (GitHub Issues) ----
+// Pairr heeft geen eigen server en geen Android-versie. Het beheer (LRbeheer en pairr.lrvdlinden.app/beheer/) gebruikt
+// pairr_login / pairr_stats met een token van 12 uur (scope "pairr"). Support loopt via GitHub Issues van de openbare repo.
+export const PAIRR_ORIGIN = "https://pairr.lrvdlinden.app";
+export const PAIRR_REPO = "LRvdLinden/app.lrvdlinden.pairr";
+
+export type Issue = { number: number; title: string; url: string; created_at: string; comments: number; labels: string[] };
+
+/** GitHub Issues → open meldingen (zonder pull requests), nieuwste eerst. */
+export function openIssues(raw: unknown, max = 20): Issue[] {
+  if (!Array.isArray(raw)) return [];
+  const out: Issue[] = [];
+  for (const i of raw) {
+    if (!i || typeof i !== "object" || "pull_request" in i) continue;
+    const o = i as Record<string, unknown>;
+    if (o.state !== "open" || typeof o.number !== "number") continue;
+    const url = typeof o.html_url === "string" && o.html_url.startsWith("https://github.com/") ? o.html_url : "";
+    out.push({
+      number: o.number,
+      title: String(o.title ?? "").slice(0, 200),
+      url,
+      created_at: String(o.created_at ?? ""),
+      comments: Number(o.comments) || 0,
+      labels: Array.isArray(o.labels) ? o.labels.map((l) => String((l as { name?: unknown })?.name ?? "")).filter(Boolean).slice(0, 5) : [],
+    });
+  }
+  return out.sort((a, b) => b.created_at.localeCompare(a.created_at)).slice(0, max);
+}

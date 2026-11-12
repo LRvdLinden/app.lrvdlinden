@@ -21,7 +21,7 @@ struct MacWindowSetup: UIViewRepresentable {
     }
 }
 
-/// Menubalk: menu Omgeving met alle omgevingen (⌘1 … ⌘7) en Overzicht (⌘0), Instellingen (⌘,) in het app-menu,
+/// Menubalk: menu Omgeving met alle omgevingen (⌘1 … ⌘9) en Overzicht (⌘0), Instellingen (⌘,) in het app-menu,
 /// geen Nieuw venster, en in Help de websites.
 struct LRbeheerCommands: Commands {
     let model: AppModel
@@ -51,6 +51,7 @@ struct LRbeheerCommands: Commands {
             Link("beheer.pasr.nl", destination: URL(string: "https://beheer.pasr.nl")!)
             Link("bekendr.lrvdlinden.app/beheer", destination: URL(string: "https://bekendr.lrvdlinden.app/beheer/")!)
             Link("noodpakket.lrvdlinden.app/beheer", destination: URL(string: "https://noodpakket.lrvdlinden.app/beheer/")!)
+            Link("pairr.lrvdlinden.app/beheer", destination: URL(string: "https://pairr.lrvdlinden.app/beheer/")!)
         }
     }
 }

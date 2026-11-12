@@ -69,6 +69,16 @@ create table if not exists public.lrbeheer_noodpakket_daily (
   primary key (day, source, device, kind)
 );
 
+-- Pairr: downloads per dag (alleen Apple, per apparaat uit App Store Connect; zelfde vorm als Bekendr)
+create table if not exists public.lrbeheer_pairr_daily (
+  day date not null,
+  source text not null check (source in ('apple','android')),
+  device text not null,
+  kind text not null default 'download' check (kind in ('download','redownload','update')),
+  units int not null default 0,
+  primary key (day, source, device, kind)
+);
+
 -- Noodpakket: apparaten die berichten willen ontvangen (iPhone/iPad met APNs-token; Android haalt zelf op).
 -- Alleen een willekeurig apparaatnummer, het pushtoken, de taal en de appversie; geen account of persoonsgegevens.
 create table if not exists public.lrbeheer_noodpakket_devices (
@@ -114,9 +124,11 @@ alter table public.lrbeheer_bekendr_feedback enable row level security;
 alter table public.lrbeheer_noodpakket_daily enable row level security;
 alter table public.lrbeheer_noodpakket_devices enable row level security;
 alter table public.lrbeheer_noodpakket_messages enable row level security;
+alter table public.lrbeheer_pairr_daily enable row level security;
 -- geen policies: alleen de functie (service role) leest en schrijft
 revoke all on table public.lrbeheer_devices, public.lrbeheer_state, public.lrbeheer_events, public.lrbeheer_bekendr_daily, public.lrbeheer_bekendr_feedback,
-  public.lrbeheer_noodpakket_daily, public.lrbeheer_noodpakket_devices, public.lrbeheer_noodpakket_messages from anon, authenticated;
+  public.lrbeheer_noodpakket_daily, public.lrbeheer_noodpakket_devices, public.lrbeheer_noodpakket_messages, public.lrbeheer_pairr_daily
+  from anon, authenticated;
 
 -- Geschiedenis 90 dagen bewaren
 create or replace function public.lrbeheer_cleanup() returns void language sql security definer as $$

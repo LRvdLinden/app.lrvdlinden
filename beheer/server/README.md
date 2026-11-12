@@ -171,6 +171,21 @@ deze functie. Alleen voor de beheer-acties (`noodpakket_login`, `_stats`, `_send
 Live zetten: dezelfde workflow *LRbeheer push* (app.lrvdlinden.secrets). Die past `schema.sql` toe (alleen nieuwe
 tabellen en een functie) en deployt de nieuwe versie van `lrbeheer`.
 
+## Pairr: downloads en meldingen (acties `pairr_login`, `pairr_stats`)
+
+Pairr heeft geen eigen server en geen Android-versie; het beheer in LRbeheer en op `https://pairr.lrvdlinden.app/beheer/`
+gebruikt deze functie (CORS alleen voor die Origin en alleen voor deze twee acties).
+
+- **Inloggen**: `pairr_login` met `BEHEER_APP_USER` / `BEHEER_APP_PASSWORD` → token van 12 uur (scope `pairr`),
+  ondertekend met `PAIRR_TOKEN_SECRET` of een sleutel afgeleid van `LRBEHEER_CRON_SECRET`.
+- **Elk uur** (in de cron): verkoopoverzichten van App Store Connect (titel "Pairr", of beter `ASC_PAIRR_APPLE_ID`
+  met het Apple ID van de app). Tabel `lrbeheer_pairr_daily`, zelfde vorm als Bekendr. Zelfde App Store
+  Connect-sleutel; er zijn geen nieuwe secrets nodig.
+- **Meldingen**: `pairr_stats` geeft ook de open GitHub Issues van `LRvdLinden/app.lrvdlinden.pairr` (de support van de
+  app loopt via Issues; openbare repo, `GITHUB_TOKEN` alleen lezen).
+
+Live zetten: dezelfde workflow *LRbeheer push* (past `schema.sql` toe en deployt `lrbeheer`).
+
 ## Eén beheer-inlog voor alle omgevingen
 
 Alle beheeromgevingen gebruiken dezelfde gebruikersnaam en hetzelfde wachtwoord: `BEHEER_APP_USER` en

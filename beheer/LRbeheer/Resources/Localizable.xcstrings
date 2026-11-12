@@ -130,6 +130,38 @@
         }
       }
     },
+    "%lld open": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld open"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld open"
+          }
+        }
+      }
+    },
+    "%lld reacties": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld comments"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld reacties"
+          }
+        }
+      }
+    },
     "%lld teksten vertaald. Controleer ze en publiceer.": {
       "localizations": {
         "en": {
@@ -1090,6 +1122,22 @@
         }
       }
     },
+    "Alle op GitHub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All on GitHub"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle op GitHub"
+          }
+        }
+      }
+    },
     "Alle systemen werken": {
       "localizations": {
         "en": {
@@ -1518,6 +1566,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "App"
+          }
+        }
+      }
+    },
+    "App Store Connect is nog niet gekoppeld. Zet APPSTORE_CONNECT_P8 en VENDOR_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store Connect isn't connected yet. Set APPSTORE_CONNECT_P8 and VENDOR_APPSTORE_CONNECT in app.lrvdlinden.secrets and run LRbeheer push."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store Connect is nog niet gekoppeld. Zet APPSTORE_CONNECT_P8 en VENDOR_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push."
           }
         }
       }
@@ -3346,6 +3410,38 @@
         }
       }
     },
+    "Downloads op iPhone, iPad en Mac uit App Store Connect, met grafiek per dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads on iPhone, iPad and Mac from App Store Connect, with a daily chart"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads op iPhone, iPad en Mac uit App Store Connect, met grafiek per dag"
+          }
+        }
+      }
+    },
+    "Downloads op iPhone, iPad en Mac, en meldingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads on iPhone, iPad and Mac, and reports"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads op iPhone, iPad en Mac, en meldingen"
+          }
+        }
+      }
+    },
     "Downloads op iPhone, iPad, Mac en Android": {
       "localizations": {
         "en": {
@@ -4386,6 +4482,22 @@
         }
       }
     },
+    "Geen open meldingen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No open reports."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen open meldingen."
+          }
+        }
+      }
+    },
     "Geen pushregistratie gekoppeld: pushmeldingen staan uit, of de app is ouder dan build 56.": {
       "localizations": {
         "en": {
@@ -4846,6 +4958,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Het Noodpakket-beheer is nog niet ingesteld op de server."
+          }
+        }
+      }
+    },
+    "Het Pairr-beheer is nog niet ingesteld op de server.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pairr admin hasn't been set up on the server yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het Pairr-beheer is nog niet ingesteld op de server."
           }
         }
       }
@@ -6882,6 +7010,22 @@
         }
       }
     },
+    "Meldingen op GitHub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reports on GitHub"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meldingen op GitHub"
+          }
+        }
+      }
+    },
     "Meldingen staan aan": {
       "localizations": {
         "en": {
@@ -7650,6 +7794,22 @@
         }
       }
     },
+    "Nieuwe omgeving Pairr, met dezelfde beheer-inlog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New environment Pairr, with the same admin sign-in"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe omgeving Pairr, met dezelfde beheer-inlog"
+          }
+        }
+      }
+    },
     "Nieuwe review": {
       "localizations": {
         "en": {
@@ -7838,6 +7998,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog geen downloads in de afgelopen 30 dagen. Android telt per dag vanaf de eerste meting; Apple komt een dag later binnen."
+          }
+        }
+      }
+    },
+    "Nog geen downloads in de afgelopen 30 dagen. Apple komt een dag later binnen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No downloads in the last 30 days yet. Apple arrives a day later."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen downloads in de afgelopen 30 dagen. Apple komt een dag later binnen."
           }
         }
       }
@@ -8434,6 +8610,22 @@
         }
       }
     },
+    "Ook op het web: pairr.lrvdlinden.app/beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: pairr.lrvdlinden.app/beheer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: pairr.lrvdlinden.app/beheer"
+          }
+        }
+      }
+    },
     "Opdracht wordt gestart…": {
       "localizations": {
         "en": {
@@ -8494,6 +8686,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Open Instellingen"
+          }
+        }
+      }
+    },
+    "Open meldingen van gebruikers (GitHub Issues), tik om ze te openen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open reports from users (GitHub Issues), tap to open them"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open meldingen van gebruikers (GitHub Issues), tik om ze te openen"
+          }
+        }
+      }
+    },
+    "Open op GitHub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open on GitHub"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open op GitHub"
           }
         }
       }
@@ -8850,6 +9074,22 @@
         }
       }
     },
+    "Pairr beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pairr admin"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pairr beheer"
+          }
+        }
+      }
+    },
     "Pakketten": {
       "localizations": {
         "en": {
@@ -9086,6 +9326,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Privacyverklaring"
+          }
+        }
+      }
+    },
+    "Problemen en ideeën van gebruikers, via de supportpagina (GitHub Issues).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Problems and ideas from users, via the support page (GitHub Issues)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Problemen en ideeën van gebruikers, via de supportpagina (GitHub Issues)."
           }
         }
       }
@@ -10658,6 +10914,22 @@
         }
       }
     },
+    "Uit de dagelijkse verkoopoverzichten van App Store Connect; die komen een dag later binnen. De Watch-app zit in de iPhone-download.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From the daily App Store Connect sales reports, which arrive a day later. The Watch app is part of the iPhone download."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uit de dagelijkse verkoopoverzichten van App Store Connect; die komen een dag later binnen. De Watch-app zit in de iPhone-download."
+          }
+        }
+      }
+    },
     "Uit logo en website": {
       "localizations": {
         "en": {
@@ -10782,6 +11054,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uitloggen bij Noodpakket?"
+          }
+        }
+      }
+    },
+    "Uitloggen bij Pairr?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign out of Pairr?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitloggen bij Pairr?"
           }
         }
       }
