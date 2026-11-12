@@ -2,23 +2,6 @@
     "_uitleg": "Pas dit bestand aan om apps toe te voegen, platformen te wijzigen of de status te veranderen. status: live | beta | dev. section: ios | homey. featured: true zet een live app bovenaan in 'Nieuw en onderweg'. Makkelijker: open beheer.html.",
     "apps": [
         {
-            "id": "nieuwe-app-1",
-            "name": "Nieuwe app",
-            "section": "ios",
-            "status": "dev",
-            "featured": true,
-            "category": "utilities",
-            "platforms": [
-                "iPhone"
-            ],
-            "description": {
-                "nl": "",
-                "en": ""
-            },
-            "links": [],
-            "history": []
-        },
-        {
             "id": "app-lrvdlinden-bekendr",
             "name": "bekendr",
             "section": "ios",
