@@ -28,11 +28,6 @@ final class AppModel {
     var showSettings = false
     var showSwitcher = false
 
-    /// Instelling: laatstgebruikte omgeving automatisch openen.
-    var reopenLast: Bool {
-        didSet { UserDefaults.standard.set(reopenLast, forKey: Keys.reopen) }
-    }
-
     /// Ontgrendelen met Face ID bij openen (LRbeheer zelf: overzicht, LRvdLinden en PixelForges; de andere omgevingen
     /// hebben hun eigen vergrendeling uit de oorspronkelijke apps).
     var lockEnabled: Bool {
@@ -42,17 +37,18 @@ final class AppModel {
 
     enum Keys {
         static let last = "ui.lastEnvironment"
-        static let reopen = "ui.reopenLast"
         static let lock = "lock.enabled"
     }
 
     private init() {
         let d = UserDefaults.standard
-        d.register(defaults: [Keys.reopen: true, Keys.lock: true])
-        reopenLast = d.bool(forKey: Keys.reopen)
+        d.register(defaults: [Keys.lock: true])
+        d.removeObject(forKey: "ui.reopenLast")  // vervallen instelling
         lockEnabled = d.bool(forKey: Keys.lock)
         lastUsed = d.string(forKey: Keys.last).flatMap(BeheerEnvironment.init(rawValue:))
-        if reopenLast { active = lastUsed }
+        // Altijd starten in het overzicht, zodat je zelf kiest waar je heen gaat. De laatstgebruikte omgeving is daar
+        // gemarkeerd. Een tik op een pushmelding of een deeplink opent daarna wel direct de juiste omgeving.
+        active = nil
         isLocked = lockEnabled && AppLock.canLock
     }
 

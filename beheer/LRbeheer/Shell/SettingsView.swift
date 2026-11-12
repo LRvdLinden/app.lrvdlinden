@@ -12,7 +12,6 @@ struct SettingsView: View {
         @Bindable var model = model
         Form {
             Section {
-                Toggle("Laatstgebruikte omgeving openen", isOn: $model.reopenLast)
                 if AppLock.canLock {
                     Toggle(isOn: $model.lockEnabled) {
                         Label(String(format: String(localized: "Vergrendelen met %@"), AppLock.biometryName), systemImage: AppLock.biometryIcon)
@@ -93,6 +92,9 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Openen") {
+                    Label("LRbeheer start altijd in het overzicht: kies zelf waar je heen gaat (de laatstgebruikte omgeving is gemarkeerd)", systemImage: "square.grid.2x2")
+                }
                 Section("Pairr") {
                     Label("Nieuwe omgeving Pairr, met dezelfde beheer-inlog", systemImage: "app.badge")
                     Label("Downloads op iPhone, iPad en Mac uit App Store Connect, met grafiek per dag", systemImage: "arrow.down.circle")

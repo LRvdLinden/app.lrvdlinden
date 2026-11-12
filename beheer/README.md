@@ -93,7 +93,8 @@ originele code.
 - **Wisselen**: bovenin elke omgeving staat de omgevingskiezer (logo + naam + ⌄, en op brede schermen de andere logo's).
   Eén tik wisselt direct, zonder terug naar het overzicht. De actieve omgeving is altijd zichtbaar (naam, logo en een
   lijn in de kleur van de omgeving).
-- **Laatst gebruikt**: standaard opent LRbeheer de laatstgebruikte omgeving (uit te zetten in Instellingen).
+- **Openen**: LRbeheer start altijd in het overzicht, zodat je zelf kiest waar je heen gaat; de laatstgebruikte omgeving
+  is daar gemarkeerd. Een tik op een pushmelding of een deeplink opent wel direct de juiste omgeving.
 - **Eén inlog**: overzicht → sleutel-icoon, of Instellingen → *Eén inlog voor alle omgevingen*. Eén keer gebruikersnaam
   en wachtwoord (`BEHEER_APP_USER` / `BEHEER_APP_PASSWORD` uit app.lrvdlinden.secrets, op de servers gezet met de workflow
   *Beheer-inlog verdelen*, zie `server/README.md`). LRbeheer logt daarmee in bij alle zes en logt stil opnieuw in als een

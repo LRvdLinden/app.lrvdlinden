@@ -6322,6 +6322,22 @@
         }
       }
     },
+    "LRbeheer start altijd in het overzicht: kies zelf waar je heen gaat (de laatstgebruikte omgeving is gemarkeerd)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LRbeheer always starts in the overview: choose where to go (the last used environment is highlighted)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LRbeheer start altijd in het overzicht: kies zelf waar je heen gaat (de laatstgebruikte omgeving is gemarkeerd)"
+          }
+        }
+      }
+    },
     "LRvdLinden beheer": {
       "localizations": {
         "en": {
@@ -6398,22 +6414,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Laatste dag van App Store Connect: %@"
-          }
-        }
-      }
-    },
-    "Laatstgebruikte omgeving openen": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open last used environment"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Laatstgebruikte omgeving openen"
           }
         }
       }
@@ -8942,6 +8942,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Openbare statuspagina"
+          }
+        }
+      }
+    },
+    "Openen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opening"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Openen"
           }
         }
       }
