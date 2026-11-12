@@ -1362,6 +1362,22 @@
         }
       }
     },
+    "Alleen Nederlands": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dutch only"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen Nederlands"
+          }
+        }
+      }
+    },
     "Alleen aanzetten als Apple de entitlement heeft toegekend.": {
       "localizations": {
         "en": {
@@ -1438,6 +1454,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alleen nog de scriptcode: die past zich vanzelf aan en websites kunnen de widget niet aanpassen"
+          }
+        }
+      }
+    },
+    "Alleen op de Nederlandse versie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only on the Dutch version"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen op de Nederlandse versie"
           }
         }
       }
@@ -7922,6 +7954,22 @@
         }
       }
     },
+    "Niet tonen op de Engelse versie van de site": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Don't show on the English version of the site"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet tonen op de Engelse versie van de site"
+          }
+        }
+      }
+    },
     "Niet-gepubliceerde wijzigingen": {
       "localizations": {
         "en": {
@@ -8094,6 +8142,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuw tabblad Status: alle onderdelen van a-alerts.nl/status met uptime en foutmelding"
+          }
+        }
+      }
+    },
+    "Nieuw vinkje Alleen Nederlands per app: die app staat dan niet op de Engelse versie van lrvdlinden.app (NL-label in de lijst)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Dutch only switch per app: that app is then hidden on the English version of lrvdlinden.app (NL label in the list)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw vinkje Alleen Nederlands per app: die app staat dan niet op de Engelse versie van lrvdlinden.app (NL-label in de lijst)"
           }
         }
       }

@@ -198,8 +198,10 @@ originele code.
 Alles van `site/beheer.html`, met dezelfde endpoints (`apps.json`, `publish.php`, `store-refresh.php`, `store-log.php`,
 `translate.php`) en dezelfde inlog:
 
-- lijst per sectie (iOS & andere platformen / Homey) met icoon, ★ voor *Nieuw en onderweg* en status; zoeken;
-- bewerken: naam, ID, sectie, categorie (24), status, *Tonen in Nieuw en onderweg*, platformen (+ eigen apparaat), icoon
+- lijst per sectie (iOS & andere platformen / Homey) met icoon, ★ voor *Nieuw en onderweg*, NL voor *Alleen Nederlands*
+  en status; zoeken;
+- bewerken: naam, ID, sectie, categorie (24), status, *Tonen in Nieuw en onderweg*, *Alleen Nederlands* (niet op de
+  Engelse versie van de site), platformen (+ eigen apparaat), icoon
   (pad of uploaden), ondertitel/omschrijving/label NL+EN, promo-banner per taal (uploaden/verwijderen, bovenregel, titel,
   tekst), links (App Store, TestFlight, website, Homey), bundle-id, beoordeling, reviews, grootte, talen,
   versiegeschiedenis (toevoegen bovenaan, bewerken, verwijderen), hoger/lager, verwijderen, JSON van de app;

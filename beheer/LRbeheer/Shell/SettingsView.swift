@@ -95,6 +95,9 @@ struct WhatsNewView: View {
                 Section("Openen") {
                     Label("LRbeheer start altijd in het overzicht: kies zelf waar je heen gaat (de laatstgebruikte omgeving is gemarkeerd)", systemImage: "square.grid.2x2")
                 }
+                Section("LRvdLinden") {
+                    Label("Nieuw vinkje Alleen Nederlands per app: die app staat dan niet op de Engelse versie van lrvdlinden.app (NL-label in de lijst)", systemImage: "globe.europe.africa")
+                }
                 Section("Pairr") {
                     Label("Nieuwe omgeving Pairr, met dezelfde beheer-inlog", systemImage: "app.badge")
                     Label("Downloads op iPhone, iPad en Mac uit App Store Connect, met grafiek per dag", systemImage: "arrow.down.circle")

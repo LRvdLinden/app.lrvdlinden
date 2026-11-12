@@ -853,5 +853,9 @@
 "Niet afgeleverd: %@": "Not delivered: %@",
 "Verstuurd. Android-toestellen halen het bericht meestal binnen een kwartier op.": "Sent. Android devices will fetch the message usually within 15 minutes.",
 "Verstuurd naar %lld iPhones en iPads; Android haalt het meestal binnen een kwartier op.": "Sent to %lld iPhones and iPads; Android will fetch it usually within 15 minutes.",
-"iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, meestal binnen een kwartier. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen.": "iPhone and iPad get a push notification right away. Android fetches new messages itself, usually within 15 minutes. Only use messages for what really matters, such as a call to check your kit."
+"iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, meestal binnen een kwartier. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen.": "iPhone and iPad get a push notification right away. Android fetches new messages itself, usually within 15 minutes. Only use messages for what really matters, such as a call to check your kit.",
+"Alleen Nederlands": "Dutch only",
+"Niet tonen op de Engelse versie van de site": "Don't show on the English version of the site",
+"Alleen op de Nederlandse versie": "Only on the Dutch version",
+"Nieuw vinkje Alleen Nederlands per app: die app staat dan niet op de Engelse versie van lrvdlinden.app (NL-label in de lijst)": "New Dutch only switch per app: that app is then hidden on the English version of lrvdlinden.app (NL label in the list)"
 }

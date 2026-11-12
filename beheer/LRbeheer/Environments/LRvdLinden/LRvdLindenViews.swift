@@ -201,6 +201,10 @@ struct LRAppRow: View {
                         Image(systemName: "star.fill").font(.caption2).foregroundStyle(Theme.star)
                             .accessibilityLabel("Staat in Nieuw en onderweg")
                     }
+                    if app["nlOnly"]?.boolValue == true {
+                        Text(verbatim: "NL").font(.caption2.weight(.bold)).foregroundStyle(.secondary)
+                            .accessibilityLabel("Alleen op de Nederlandse versie")
+                    }
                 }
                 Text(app["category"]?.str ?? app["bundleId"]?.str ?? "").font(.caption).foregroundStyle(.secondary).lineLimit(1)
             }
@@ -334,6 +338,13 @@ struct LRAppEditor: View {
             .pickerStyle(.segmented)
             Toggle("Tonen in Nieuw en onderweg", isOn: Binding(get: { app["featured"]?.boolValue == true },
                                                                set: { v in store.update(id) { $0["featured"] = v ? .bool(true) : nil } }))
+            Toggle(isOn: Binding(get: { app["nlOnly"]?.boolValue == true },
+                                 set: { v in store.update(id) { $0["nlOnly"] = v ? .bool(true) : nil } })) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Alleen Nederlands")
+                    Text("Niet tonen op de Engelse versie van de site").font(.caption).foregroundStyle(.secondary)
+                }
+            }
             HStack(spacing: 14) {
                 SiteImage(path: app["icon"]?.str ?? "", base: LRvdLindenStore.site, pending: store.pending)
                     .frame(width: 64, height: 64)
