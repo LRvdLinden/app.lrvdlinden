@@ -12226,6 +12226,22 @@
         }
       }
     },
+    "Verstuurd naar %lld iPhones en iPads; Android haalt het meestal binnen een kwartier op.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent to %lld iPhones and iPads; Android will fetch it usually within 15 minutes."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verstuurd naar %lld iPhones en iPads; Android haalt het meestal binnen een kwartier op."
+          }
+        }
+      }
+    },
     "Verstuurd. Android-toestellen halen het bericht binnen een paar uur op.": {
       "localizations": {
         "en": {
@@ -12238,6 +12254,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verstuurd. Android-toestellen halen het bericht binnen een paar uur op."
+          }
+        }
+      }
+    },
+    "Verstuurd. Android-toestellen halen het bericht meestal binnen een kwartier op.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent. Android devices will fetch the message usually within 15 minutes."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verstuurd. Android-toestellen halen het bericht meestal binnen een kwartier op."
           }
         }
       }
@@ -13470,6 +13502,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, binnen een paar uur. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen."
+          }
+        }
+      }
+    },
+    "iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, meestal binnen een kwartier. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone and iPad get a push notification right away. Android fetches new messages itself, usually within 15 minutes. Only use messages for what really matters, such as a call to check your kit."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, meestal binnen een kwartier. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen."
           }
         }
       }

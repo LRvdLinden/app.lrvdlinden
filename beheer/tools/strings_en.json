@@ -850,5 +850,8 @@
 "Dit apparaat is niet meer aangemeld; de app is verwijderd of Berichten staat uit.": "This device is no longer registered; the app was removed or Messages is off.",
 "APNs was niet bereikbaar. Probeer het zo opnieuw.": "APNs could not be reached. Try again shortly.",
 "APNs weigerde de melding (%@).": "APNs refused the notification (%@).",
-"Niet afgeleverd: %@": "Not delivered: %@"
+"Niet afgeleverd: %@": "Not delivered: %@",
+"Verstuurd. Android-toestellen halen het bericht meestal binnen een kwartier op.": "Sent. Android devices will fetch the message usually within 15 minutes.",
+"Verstuurd naar %lld iPhones en iPads; Android haalt het meestal binnen een kwartier op.": "Sent to %lld iPhones and iPads; Android will fetch it usually within 15 minutes.",
+"iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, meestal binnen een kwartier. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen.": "iPhone and iPad get a push notification right away. Android fetches new messages itself, usually within 15 minutes. Only use messages for what really matters, such as a call to check your kit."
 }

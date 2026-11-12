@@ -165,8 +165,8 @@ final class NoodpakketStore {
             if ((o["failed_apple"] as? Int) ?? 0) > 0, let why { return why }
             let apple = (o["sent_apple"] as? Int) ?? 0
             return draft.platform == .android
-                ? String(localized: "Verstuurd. Android-toestellen halen het bericht binnen een paar uur op.")
-                : String(format: String(localized: "Verstuurd naar %lld iPhones en iPads; Android haalt het binnen een paar uur op."), apple)
+                ? String(localized: "Verstuurd. Android-toestellen halen het bericht meestal binnen een kwartier op.")
+                : String(format: String(localized: "Verstuurd naar %lld iPhones en iPads; Android haalt het meestal binnen een kwartier op."), apple)
         } catch Failure.unauthorized {
             signOut()
             throw Failure.unauthorized

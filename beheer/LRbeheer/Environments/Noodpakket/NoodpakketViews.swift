@@ -346,7 +346,7 @@ struct NoodpakketMessagesView: View {
                 }
                 .disabled(!draft.isValid || store.sending)
             } footer: {
-                Text("iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, binnen een paar uur. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen.")
+                Text("iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, meestal binnen een kwartier. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen.")
             }
             if let result {
                 Label(result, systemImage: "checkmark.circle.fill").foregroundStyle(Theme.good)
