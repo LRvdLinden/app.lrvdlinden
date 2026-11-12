@@ -352,7 +352,7 @@ async function noodpakketStats() {
   const sum = bekendrSummary((data ?? []) as DailyRow[], today);
   const { data: st } = await db.from("lrbeheer_state").select("updated_at").eq("key", "noodpakket_android").maybeSingle();
   const { data: msgs } = await db.from("lrbeheer_noodpakket_messages")
-    .select("id, at, title, body, lang, platform, url, sent_apple, failed_apple, fetched_android, withdrawn")
+    .select("id, at, title, body, lang, platform, url, sent_apple, failed_apple, fetched_android, withdrawn, errors")
     .order("id", { ascending: false }).limit(30);
   return {
     ok: true,
@@ -367,6 +367,19 @@ async function noodpakketStats() {
   };
 }
 
+/**
+ * Eén Noodpakket-melding naar APNs. Weigert APNs het token in de ene omgeving (BadDeviceToken: een Xcode-build heeft
+ * een sandbox-token, TestFlight en de App Store een productie-token), dan probeert hij de andere omgeving en onthoudt
+ * die bij het apparaat. Zo werkt het na een wissel tussen Xcode en TestFlight meteen weer.
+ */
+async function npApns(d: { device_id: string; apns_token: string; sandbox: boolean }, payload: unknown, collapse: string) {
+  const r = await apnsSend(d.apns_token, d.sandbox, payload, collapse, npTopic());
+  if (r.ok || r.error !== "apns_BadDeviceToken") return r;
+  const other = await apnsSend(d.apns_token, !d.sandbox, payload, collapse, npTopic());
+  if (other.ok) await db.from("lrbeheer_noodpakket_devices").update({ sandbox: !d.sandbox }).eq("device_id", d.device_id);
+  return other.ok ? other : r;
+}
+
 /** Bericht versturen: iPhone en iPad via APNs (nu), Android haalt het zelf op (noodpakket_messages). */
 async function noodpakketSend(m: NpMessage) {
   const { data: row, error } = await db.from("lrbeheer_noodpakket_messages")
@@ -374,6 +387,7 @@ async function noodpakketSend(m: NpMessage) {
   if (error || !row) throw new Error(error?.message ?? "insert");
   const id = Number(row.id);
   let sent = 0, failed = 0;
+  const errors: Record<string, number> = {};
   if (m.platform !== "android") {
     const gone: string[] = [];
     for (let from = 0; ; from += 500) {
@@ -385,31 +399,36 @@ async function noodpakketSend(m: NpMessage) {
       const devs = (data ?? []) as { device_id: string; apns_token: string; sandbox: boolean; lang: string; platform: string }[];
       for (let i = 0; i < devs.length; i += 50) {
         const chunk = devs.slice(i, i + 50).filter((d) => npTargets(m, d));
-        const res = await Promise.all(chunk.map(async (d) => ({ d, r: await apnsSend(d.apns_token, d.sandbox, npPayload({ id, ...m }), `np-${id}`, npTopic()) })));
-        for (const { d, r } of res) { if (r.ok) sent++; else { failed++; if (r.invalid) gone.push(d.device_id); } }
+        const res = await Promise.all(chunk.map(async (d) => ({ d, r: await npApns(d, npPayload({ id, ...m }), `np-${id}`) })));
+        for (const { d, r } of res) {
+          if (r.ok) sent++;
+          else { failed++; errors[r.error] = (errors[r.error] ?? 0) + 1; if (r.invalid) gone.push(d.device_id); }
+        }
       }
       if (devs.length < 500) break;
     }
     if (gone.length) await db.from("lrbeheer_noodpakket_devices").delete().in("device_id", gone);
   }
-  await db.from("lrbeheer_noodpakket_messages").update({ sent_apple: sent, failed_apple: failed }).eq("id", id);
+  await db.from("lrbeheer_noodpakket_messages").update({ sent_apple: sent, failed_apple: failed, errors }).eq("id", id);
   await db.from("lrbeheer_events").insert({ env: "noodpakket", kind: "message", title: m.title, body: m.body, url: m.url, sent });
-  return { id, sent_apple: sent, failed_apple: failed };
+  if (failed) console.warn("noodpakket_send APNs:", JSON.stringify(errors));
+  return { id, sent_apple: sent, failed_apple: failed, errors };
 }
 
 /** Testbericht: alleen naar de apparaten met LRbeheer (zelfde tekst, zodat je ziet hoe het eruitziet). */
 async function noodpakketTest(m: NpMessage) {
   const { data, error } = await db.from("lrbeheer_devices").select("device_id, token, sandbox").limit(50);
   if (error) throw new Error(error.message);
-  let sent = 0;
+  let sent = 0, failed = 0;
+  const errors: Record<string, number> = {};
   for (const d of (data ?? []) as Device[]) {
     const r = await apnsSend(d.token, d.sandbox, {
       aps: { alert: { title: `Test: ${m.title}`.slice(0, 120), body: m.body.slice(0, 240) }, sound: "default", "thread-id": "noodpakket" },
       lrenv: "noodpakket", kind: "message", url: "lrbeheer://noodpakket",
     }, "np-test");
-    if (r.ok) sent++;
+    if (r.ok) sent++; else { failed++; errors[r.error] = (errors[r.error] ?? 0) + 1; }
   }
-  return { test: true, sent };
+  return { test: true, sent, failed, errors };
 }
 
 // ---- toestand ----

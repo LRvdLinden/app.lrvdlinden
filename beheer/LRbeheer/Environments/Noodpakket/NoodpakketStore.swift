@@ -156,10 +156,13 @@ final class NoodpakketStore {
         if test { body["test"] = true }
         do {
             let o = try await call(body, token: s.token)
+            let why = Self.explain(o["errors"] as? [String: Int])
             if test {
-                return String(format: String(localized: "Testmelding verstuurd naar %lld apparaten met LRbeheer."), (o["sent"] as? Int) ?? 0)
+                let line = String(format: String(localized: "Testmelding verstuurd naar %lld apparaten met LRbeheer."), (o["sent"] as? Int) ?? 0)
+                return why.map { line + "\n" + $0 } ?? line
             }
             await load()
+            if ((o["failed_apple"] as? Int) ?? 0) > 0, let why { return why }
             let apple = (o["sent_apple"] as? Int) ?? 0
             return draft.platform == .android
                 ? String(localized: "Verstuurd. Android-toestellen halen het bericht binnen een paar uur op.")
@@ -181,6 +184,22 @@ final class NoodpakketStore {
         } catch {
             self.error = error.localizedDescription
         }
+    }
+
+    /// Uitleg bij de reden waarom APNs een melding weigerde (nil als er geen fout was).
+    static func explain(_ errors: [String: Int]?) -> String? {
+        guard let errors, let code = errors.max(by: { $0.value < $1.value })?.key else { return nil }
+        let reason: String = switch code {
+        case "apns_BadDeviceToken": String(localized: "Het pushtoken past niet bij deze omgeving (Xcode-build of TestFlight). Zet Berichten in de app uit en weer aan.")
+        case "apns_BadEnvironmentKeyInToken": String(localized: "De APNs-sleutel mag niet voor deze omgeving. Test met TestFlight, of zet de sleutel in Apple Developer op Sandbox en Production.")
+        case "apns_TopicDisallowed", "apns_BadTopic": String(localized: "De APNs-sleutel mag geen meldingen sturen voor app.lrvdlinden.noodpakket. Zet de sleutel in Apple Developer op het hele team (of voeg deze app toe).")
+        case "apns_DeviceTokenNotForTopic": String(localized: "Het pushtoken hoort bij een andere app dan app.lrvdlinden.noodpakket.")
+        case "apns_InvalidProviderToken", "apns_bad_key": String(localized: "De APNs-sleutel of het Team ID klopt niet. Controleer APN_KEY_ID, APN_P8_CERT en TEAM_ID en start LRbeheer push.")
+        case "apns_Unregistered", "apns_410": String(localized: "Dit apparaat is niet meer aangemeld; de app is verwijderd of Berichten staat uit.")
+        case "apns_unreachable": String(localized: "APNs was niet bereikbaar. Probeer het zo opnieuw.")
+        default: String(format: String(localized: "APNs weigerde de melding (%@)."), code.replacingOccurrences(of: "apns_", with: ""))
+        }
+        return String(format: String(localized: "Niet afgeleverd: %@"), reason)
     }
 
     // MARK: netwerk
@@ -299,6 +318,7 @@ struct NoodpakketStats: Decodable {
         let failedApple: Int
         let fetchedAndroid: Int
         let withdrawn: Bool
+        let errors: [String: Int]?
 
         var date: Date? { NoodpakketStats.date(at) }
         var audience: String {

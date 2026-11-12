@@ -122,6 +122,8 @@ create table if not exists public.lrbeheer_noodpakket_messages (
   withdrawn boolean not null default false
 );
 create index if not exists lrbeheer_noodpakket_messages_at on public.lrbeheer_noodpakket_messages(at);
+-- Waarom APNs een melding weigerde (bv. {"apns_BadDeviceToken": 1}), om het in het beheer te tonen
+alter table public.lrbeheer_noodpakket_messages add column if not exists errors jsonb not null default '{}'::jsonb;
 
 -- Teller "opgehaald door Android" ophogen (aangeroepen door de functie)
 create or replace function public.lrbeheer_noodpakket_fetched(ids bigint[]) returns void language sql security definer as $$

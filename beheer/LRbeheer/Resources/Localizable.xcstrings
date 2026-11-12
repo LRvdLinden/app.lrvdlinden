@@ -594,6 +594,38 @@
         }
       }
     },
+    "APNs was niet bereikbaar. Probeer het zo opnieuw.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APNs could not be reached. Try again shortly."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APNs was niet bereikbaar. Probeer het zo opnieuw."
+          }
+        }
+      }
+    },
+    "APNs weigerde de melding (%@).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APNs refused the notification (%@)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APNs weigerde de melding (%@)."
+          }
+        }
+      }
+    },
     "Aangemaakt": {
       "localizations": {
         "en": {
@@ -3106,6 +3138,54 @@
         }
       }
     },
+    "De APNs-sleutel mag geen meldingen sturen voor app.lrvdlinden.noodpakket. Zet de sleutel in Apple Developer op het hele team (of voeg deze app toe).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The APNs key may not send notifications for app.lrvdlinden.noodpakket. Set the key to the whole team in Apple Developer (or add this app)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De APNs-sleutel mag geen meldingen sturen voor app.lrvdlinden.noodpakket. Zet de sleutel in Apple Developer op het hele team (of voeg deze app toe)."
+          }
+        }
+      }
+    },
+    "De APNs-sleutel mag niet voor deze omgeving. Test met TestFlight, of zet de sleutel in Apple Developer op Sandbox en Production.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The APNs key is not allowed for this environment. Test with TestFlight, or set the key to Sandbox and Production in Apple Developer."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De APNs-sleutel mag niet voor deze omgeving. Test met TestFlight, of zet de sleutel in Apple Developer op Sandbox en Production."
+          }
+        }
+      }
+    },
+    "De APNs-sleutel of het Team ID klopt niet. Controleer APN_KEY_ID, APN_P8_CERT en TEAM_ID en start LRbeheer push.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The APNs key or Team ID is wrong. Check APN_KEY_ID, APN_P8_CERT and TEAM_ID and run LRbeheer push."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De APNs-sleutel of het Team ID klopt niet. Controleer APN_KEY_ID, APN_P8_CERT en TEAM_ID en start LRbeheer push."
+          }
+        }
+      }
+    },
     "De controle op GitHub is mislukt. Bekijk de details in het logboek.": {
       "localizations": {
         "en": {
@@ -3470,6 +3550,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Direct wisselen tussen omgevingen bovenin het scherm"
+          }
+        }
+      }
+    },
+    "Dit apparaat is niet meer aangemeld; de app is verwijderd of Berichten staat uit.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This device is no longer registered; the app was removed or Messages is off."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit apparaat is niet meer aangemeld; de app is verwijderd of Berichten staat uit."
           }
         }
       }
@@ -5342,6 +5438,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Het e-mailadres onder Algemeen klopt niet."
+          }
+        }
+      }
+    },
+    "Het pushtoken hoort bij een andere app dan app.lrvdlinden.noodpakket.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The push token belongs to an app other than app.lrvdlinden.noodpakket."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het pushtoken hoort bij een andere app dan app.lrvdlinden.noodpakket."
+          }
+        }
+      }
+    },
+    "Het pushtoken past niet bij deze omgeving (Xcode-build of TestFlight). Zet Berichten in de app uit en weer aan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The push token does not match this environment (Xcode build or TestFlight). Turn Messages off and on again in the app."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het pushtoken past niet bij deze omgeving (Xcode-build of TestFlight). Zet Berichten in de app uit en weer aan."
           }
         }
       }
@@ -7694,6 +7822,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Niet afgeleverd"
+          }
+        }
+      }
+    },
+    "Niet afgeleverd: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not delivered: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet afgeleverd: %@"
           }
         }
       }

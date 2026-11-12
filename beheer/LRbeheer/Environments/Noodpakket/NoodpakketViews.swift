@@ -452,6 +452,9 @@ struct NoodpakketMessagesView: View {
             }
             .font(.caption.monospacedDigit())
             .foregroundStyle(.secondary)
+            if m.failedApple > 0, let why = NoodpakketStore.explain(m.errors) {
+                Text(why).font(.caption).foregroundStyle(Theme.bad)
+            }
         }
         .padding(.vertical, 2)
     }

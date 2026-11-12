@@ -841,5 +841,14 @@
 "Log uit en opnieuw in om de accounts te zien (de accounts staan op een eigen server met dezelfde beheer-inlog).": "Sign out and in again to see the accounts (they live on a separate server with the same admin login).",
 "Nog geen release. Elke Android-build op main wordt meteen een release met noodpakket.apk.": "No release yet. Every Android build on main immediately becomes a release with noodpakket.apk.",
 "Downloads van de APK per release. De site (noodpakket.lrvdlinden.app/download/android/) geeft altijd de nieuwste door.": "APK downloads per release. The site (noodpakket.lrvdlinden.app/download/android/) always serves the latest one.",
-"Accounts en gezinnen van Noodpakket: aantallen, gedeelde gezinnen en uitnodigingen": "Noodpakket accounts and households: counts, shared households and invitations"
+"Accounts en gezinnen van Noodpakket: aantallen, gedeelde gezinnen en uitnodigingen": "Noodpakket accounts and households: counts, shared households and invitations",
+"Het pushtoken past niet bij deze omgeving (Xcode-build of TestFlight). Zet Berichten in de app uit en weer aan.": "The push token does not match this environment (Xcode build or TestFlight). Turn Messages off and on again in the app.",
+"De APNs-sleutel mag niet voor deze omgeving. Test met TestFlight, of zet de sleutel in Apple Developer op Sandbox en Production.": "The APNs key is not allowed for this environment. Test with TestFlight, or set the key to Sandbox and Production in Apple Developer.",
+"De APNs-sleutel mag geen meldingen sturen voor app.lrvdlinden.noodpakket. Zet de sleutel in Apple Developer op het hele team (of voeg deze app toe).": "The APNs key may not send notifications for app.lrvdlinden.noodpakket. Set the key to the whole team in Apple Developer (or add this app).",
+"Het pushtoken hoort bij een andere app dan app.lrvdlinden.noodpakket.": "The push token belongs to an app other than app.lrvdlinden.noodpakket.",
+"De APNs-sleutel of het Team ID klopt niet. Controleer APN_KEY_ID, APN_P8_CERT en TEAM_ID en start LRbeheer push.": "The APNs key or Team ID is wrong. Check APN_KEY_ID, APN_P8_CERT and TEAM_ID and run LRbeheer push.",
+"Dit apparaat is niet meer aangemeld; de app is verwijderd of Berichten staat uit.": "This device is no longer registered; the app was removed or Messages is off.",
+"APNs was niet bereikbaar. Probeer het zo opnieuw.": "APNs could not be reached. Try again shortly.",
+"APNs weigerde de melding (%@).": "APNs refused the notification (%@).",
+"Niet afgeleverd: %@": "Not delivered: %@"
 }
