@@ -18,6 +18,22 @@
         }
       }
     },
+    "%@\n\nNaar ongeveer %@ apparaten. Dit kan niet worden teruggedraaid op iPhone en iPad.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@\n\nTo about %2$@ devices. This cannot be undone on iPhone and iPad."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@\n\nNaar ongeveer %@ apparaten. Dit kan niet worden teruggedraaid op iPhone en iPad."
+          }
+        }
+      }
+    },
     "%@ %@": {
       "localizations": {
         "en": {
@@ -786,6 +802,22 @@
         }
       }
     },
+    "Afgeleverd op iPhone en iPad": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delivered to iPhone and iPad"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afgeleverd op iPhone en iPad"
+          }
+        }
+      }
+    },
     "Afgelopen 30 dagen": {
       "localizations": {
         "en": {
@@ -962,6 +994,22 @@
         }
       }
     },
+    "Alle apparaten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All devices"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle apparaten"
+          }
+        }
+      }
+    },
     "Alle apps worden bijgewerkt.": {
       "localizations": {
         "en": {
@@ -1058,6 +1106,22 @@
         }
       }
     },
+    "Alle talen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All languages"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle talen"
+          }
+        }
+      }
+    },
     "Alleen aanzetten als Apple de entitlement heeft toegekend.": {
       "localizations": {
         "en": {
@@ -1070,6 +1134,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alleen aanzetten als Apple de entitlement heeft toegekend."
+          }
+        }
+      }
+    },
+    "Alleen apparaten waarop Berichten van Noodpakket aan staat. Geen account of persoonsgegevens.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only devices with Messages from Noodpakket turned on. No account or personal data."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen apparaten waarop Berichten van Noodpakket aan staat. Geen account of persoonsgegevens."
           }
         }
       }
@@ -1298,6 +1378,70 @@
         }
       }
     },
+    "Android (laatste 30 dagen actief)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android (active in the last 30 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android (laatste 30 dagen actief)"
+          }
+        }
+      }
+    },
+    "Android-builds": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android builds"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-builds"
+          }
+        }
+      }
+    },
+    "Android-builds op GitHub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android builds on GitHub"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-builds op GitHub"
+          }
+        }
+      }
+    },
+    "Android-builds: status van de laatste builds en de nieuwste release": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android builds: status of the latest builds and the newest release"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-builds: status van de laatste builds en de nieuwste release"
+          }
+        }
+      }
+    },
     "Android: downloads van de APK, totaal en per versie": {
       "localizations": {
         "en": {
@@ -1406,6 +1550,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "App Store-gegevens"
+          }
+        }
+      }
+    },
+    "Apparaten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devices"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apparaten"
           }
         }
       }
@@ -1810,6 +1970,22 @@
         }
       }
     },
+    "Bereik (ongeveer)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reach (approx.)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bereik (ongeveer)"
+          }
+        }
+      }
+    },
     "Bericht": {
       "localizations": {
         "en": {
@@ -1842,6 +2018,22 @@
         }
       }
     },
+    "Bericht versturen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send message?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bericht versturen?"
+          }
+        }
+      }
+    },
     "Bericht wijzigen": {
       "localizations": {
         "en": {
@@ -1854,6 +2046,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bericht wijzigen"
+          }
+        }
+      }
+    },
+    "Berichten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messages"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berichten"
+          }
+        }
+      }
+    },
+    "Berichten aan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messages on"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berichten aan"
+          }
+        }
+      }
+    },
+    "Berichten aan gebruikers: pushmelding op iPhone en iPad, Android haalt ze zelf op": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messages to users: push notification on iPhone and iPad, Android fetches them itself"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berichten aan gebruikers: pushmelding op iPhone en iPad, Android haalt ze zelf op"
           }
         }
       }
@@ -2674,6 +2914,22 @@
         }
       }
     },
+    "De link moet met https:// beginnen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The link must start with https://."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De link moet met https:// beginnen."
+          }
+        }
+      }
+    },
     "De pushfunctie gaf een fout (%@).": {
       "localizations": {
         "en": {
@@ -2734,6 +2990,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "De site is intussen gewijzigd. Je concept is samengevoegd met de nieuwste versie. Behouden uit je concept: %@. Controleer en publiceer, of gooi de wijzigingen weg."
+          }
+        }
+      }
+    },
+    "De tekst mag hoogstens 400 tekens zijn.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The text can be at most 400 characters."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De tekst mag hoogstens 400 tekens zijn."
+          }
+        }
+      }
+    },
+    "De titel moet 3 tot 80 tekens zijn.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The title must be 3 to 80 characters."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De titel moet 3 tot 80 tekens zijn."
           }
         }
       }
@@ -2894,6 +3182,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Direct wisselen tussen omgevingen bovenin het scherm"
+          }
+        }
+      }
+    },
+    "Dit bericht is net al verstuurd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This message was just sent."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit bericht is net al verstuurd."
           }
         }
       }
@@ -3102,6 +3406,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Downloads van de APK in GitHub Releases (ook via de vaste link naar de nieuwste versie)."
+          }
+        }
+      }
+    },
+    "Downloads van de APK in GitHub Releases (ook via de vaste link op de website).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads of the APK in GitHub Releases (including the fixed link on the website)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads van de APK in GitHub Releases (ook via de vaste link op de website)."
+          }
+        }
+      }
+    },
+    "Downloads, Android-builds en berichten aan gebruikers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads, Android builds and messages to users"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads, Android-builds en berichten aan gebruikers"
+          }
+        }
+      }
+    },
+    "Downloads: iPhone en iPad uit App Store Connect, Android uit GitHub Releases, met grafiek per dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads: iPhone and iPad from App Store Connect, Android from GitHub Releases, with a chart per day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads: iPhone en iPad uit App Store Connect, Android uit GitHub Releases, met grafiek per dag"
           }
         }
       }
@@ -3746,6 +4098,22 @@
         }
       }
     },
+    "Geannuleerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelled"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geannuleerd"
+          }
+        }
+      }
+    },
     "Gebruikers melden dit anoniem via \"Klopt deze melding niet?\" onderaan een melding.": {
       "localizations": {
         "en": {
@@ -4094,6 +4462,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen wijzigingen"
+          }
+        }
+      }
+    },
+    "Gelukt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Succeeded"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelukt"
           }
         }
       }
@@ -4450,6 +4834,22 @@
         }
       }
     },
+    "Het Noodpakket-beheer is nog niet ingesteld op de server.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noodpakket admin is not set up on the server yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het Noodpakket-beheer is nog niet ingesteld op de server."
+          }
+        }
+      }
+    },
     "Het aantal projecten wordt automatisch geteld uit je portfolio.": {
       "localizations": {
         "en": {
@@ -4462,6 +4862,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Het aantal projecten wordt automatisch geteld uit je portfolio."
+          }
+        }
+      }
+    },
+    "Het bericht klopt niet.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The message is not valid."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het bericht klopt niet."
           }
         }
       }
@@ -4642,6 +5058,22 @@
         }
       }
     },
+    "In de wachtrij": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Queued"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In de wachtrij"
+          }
+        }
+      }
+    },
     "In de wachtrij (%lld s)…": {
       "localizations": {
         "en": {
@@ -4686,6 +5118,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ingelogd"
+          }
+        }
+      }
+    },
+    "Ingetrokken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Withdrawn"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingetrokken"
           }
         }
       }
@@ -4878,6 +5326,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Instellingen…"
+          }
+        }
+      }
+    },
+    "Intrekken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Withdraw"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intrekken"
           }
         }
       }
@@ -5086,6 +5550,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kerncijfers Gedeelde Pasrs (met personen en kaarten) en Tijdelijk gedeeld (nu geldig)"
+          }
+        }
+      }
+    },
+    "Kies apparaten en taal, bekijk het voorbeeld en stuur eerst een test naar LRbeheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose devices and language, check the preview and send a test to LRbeheer first"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies apparaten en taal, bekijk het voorbeeld en stuur eerst een test naar LRbeheer"
           }
         }
       }
@@ -5906,6 +6386,22 @@
         }
       }
     },
+    "Link (optioneel, https://)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link (optional, https://)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link (optioneel, https://)"
+          }
+        }
+      }
+    },
     "Link werkt niet": {
       "localizations": {
         "en": {
@@ -6690,6 +7186,22 @@
         }
       }
     },
+    "Niet afgeleverd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not delivered"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet afgeleverd"
+          }
+        }
+      }
+    },
     "Niet geclaimd": {
       "localizations": {
         "en": {
@@ -6830,6 +7342,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuw"
+          }
+        }
+      }
+    },
+    "Nieuw bericht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw bericht"
           }
         }
       }
@@ -7106,6 +7634,22 @@
         }
       }
     },
+    "Nieuwe omgeving Noodpakket, met dezelfde beheer-inlog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New environment Noodpakket, with the same admin login"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe omgeving Noodpakket, met dezelfde beheer-inlog"
+          }
+        }
+      }
+    },
     "Nieuwe review": {
       "localizations": {
         "en": {
@@ -7218,6 +7762,38 @@
         }
       }
     },
+    "Nieuwste": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latest"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwste"
+          }
+        }
+      }
+    },
+    "Nog geen berichten verstuurd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No messages sent yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen berichten verstuurd."
+          }
+        }
+      }
+    },
     "Nog geen berichten.": {
       "localizations": {
         "en": {
@@ -7230,6 +7806,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog geen berichten."
+          }
+        }
+      }
+    },
+    "Nog geen builds, of GitHub was niet bereikbaar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No builds yet, or GitHub could not be reached."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen builds, of GitHub was niet bereikbaar."
           }
         }
       }
@@ -7294,6 +7886,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog geen nieuws."
+          }
+        }
+      }
+    },
+    "Nog geen release. Een tag vX.Y.Z maakt een release met noodpakket.apk.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No release yet. A vX.Y.Z tag creates a release with noodpakket.apk."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen release. Een tag vX.Y.Z maakt een release met noodpakket.apk."
           }
         }
       }
@@ -7374,6 +7982,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog niets toegevoegd"
+          }
+        }
+      }
+    },
+    "Noodpakket beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noodpakket admin"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noodpakket beheer"
           }
         }
       }
@@ -7682,6 +8306,38 @@
         }
       }
     },
+    "Ontvangers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recipients"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ontvangers"
+          }
+        }
+      }
+    },
+    "Ontvangers van berichten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Message recipients"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ontvangers van berichten"
+          }
+        }
+      }
+    },
     "Ontwikkelaarstools": {
       "localizations": {
         "en": {
@@ -7758,6 +8414,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ook op het web: bekendr.lrvdlinden.app/beheer"
+          }
+        }
+      }
+    },
+    "Ook op het web: noodpakket.lrvdlinden.app/beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: noodpakket.lrvdlinden.app/beheer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: noodpakket.lrvdlinden.app/beheer"
           }
         }
       }
@@ -7874,6 +8546,22 @@
         }
       }
     },
+    "Opgehaald door Android": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetched by Android"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgehaald door Android"
+          }
+        }
+      }
+    },
     "Opgelost": {
       "localizations": {
         "en": {
@@ -7934,6 +8622,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ophalen…"
+          }
+        }
+      }
+    },
+    "Opnieuw gebruiken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use again"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opnieuw gebruiken"
           }
         }
       }
@@ -8078,6 +8782,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Overgang naar alleen Lifetime: aankondiging, overgangsdatum, kortingscodes, de mail “Bingr wordt Lifetime” en de Apple-koopknop."
+          }
+        }
+      }
+    },
+    "Overgeslagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skipped"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overgeslagen"
           }
         }
       }
@@ -8594,6 +9314,22 @@
         }
       }
     },
+    "Releases op GitHub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Releases on GitHub"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Releases op GitHub"
+          }
+        }
+      }
+    },
     "Responstijd": {
       "localizations": {
         "en": {
@@ -8926,6 +9662,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sport"
+          }
+        }
+      }
+    },
+    "Staat een build lang in de wachtrij, kijk dan in GitHub Actions naar de limieten van je account.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If a build stays queued for a long time, check your account limits in GitHub Actions."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Staat een build lang in de wachtrij, kijk dan in GitHub Actions naar de limieten van je account."
           }
         }
       }
@@ -9266,6 +10018,22 @@
         }
       }
     },
+    "Taal van de app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App language"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taal van de app"
+          }
+        }
+      }
+    },
     "Tabblad Winkels: aanvragen uit de app, gebundeld per winkel, ook cadeaukaarten en vouchers": {
       "localizations": {
         "en": {
@@ -9394,6 +10162,22 @@
         }
       }
     },
+    "Test naar mijn LRbeheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test to my LRbeheer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test naar mijn LRbeheer"
+          }
+        }
+      }
+    },
     "Testmail naar (leeg = beheeradres)": {
       "localizations": {
         "en": {
@@ -9438,6 +10222,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Testmelding verstuurd"
+          }
+        }
+      }
+    },
+    "Testmelding verstuurd naar %lld apparaten met LRbeheer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test notification sent to %lld devices with LRbeheer."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testmelding verstuurd naar %lld apparaten met LRbeheer."
           }
         }
       }
@@ -9506,6 +10306,22 @@
         }
       }
     },
+    "Titel %lld/80 · tekst %lld/400": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Title %1$lld/80 · text %2$lld/400"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Titel %lld/80 · tekst %lld/400"
+          }
+        }
+      }
+    },
     "Titel NL": {
       "localizations": {
         "en": {
@@ -9518,6 +10334,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Titel NL"
+          }
+        }
+      }
+    },
+    "Titel van je bericht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Title of your message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Titel van je bericht"
           }
         }
       }
@@ -9794,6 +10626,22 @@
         }
       }
     },
+    "Trek omlaag om de gegevens op te halen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pull down to load the data."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trek omlaag om de gegevens op te halen."
+          }
+        }
+      }
+    },
     "Uit de dagelijkse verkoopoverzichten van App Store Connect; die komen een dag later binnen.": {
       "localizations": {
         "en": {
@@ -9918,6 +10766,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uitloggen bij Bekendr?"
+          }
+        }
+      }
+    },
+    "Uitloggen bij Noodpakket?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign out of Noodpakket?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitloggen bij Noodpakket?"
           }
         }
       }
@@ -10322,6 +11186,86 @@
         }
       }
     },
+    "Versturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versturen"
+          }
+        }
+      }
+    },
+    "Verstuurd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verstuurd"
+          }
+        }
+      }
+    },
+    "Verstuurd naar %lld iPhones en iPads; Android haalt het binnen een paar uur op.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent to %lld iPhones and iPads; Android will fetch it within a few hours."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verstuurd naar %lld iPhones en iPads; Android haalt het binnen een paar uur op."
+          }
+        }
+      }
+    },
+    "Verstuurd. Android-toestellen halen het bericht binnen een paar uur op.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent. Android devices will fetch the message within a few hours."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verstuurd. Android-toestellen halen het bericht binnen een paar uur op."
+          }
+        }
+      }
+    },
+    "Verstuurde berichten met bereik; intrekken of opnieuw gebruiken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent messages with reach; withdraw or use again"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verstuurde berichten met bereik; intrekken of opnieuw gebruiken"
+          }
+        }
+      }
+    },
     "Vertaal NL → EN": {
       "localizations": {
         "en": {
@@ -10446,6 +11390,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Voor de prijs"
+          }
+        }
+      }
+    },
+    "Voor wie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audience"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voor wie"
+          }
+        }
+      }
+    },
+    "Voorbeeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voorbeeld"
           }
         }
       }
@@ -11458,6 +12434,54 @@
         }
       }
     },
+    "iPhone en iPad": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone and iPad"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone en iPad"
+          }
+        }
+      }
+    },
+    "iPhone en iPad (pushmelding)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone and iPad (push notification)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone en iPad (pushmelding)"
+          }
+        }
+      }
+    },
+    "iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, binnen een paar uur. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone and iPad get a push notification right away. Android fetches new messages itself, within a few hours. Only use messages for what really matters, such as a call to check your kit."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone en iPad krijgen direct een pushmelding. Android haalt nieuwe berichten zelf op, binnen een paar uur. Gebruik berichten alleen voor wat er echt toe doet, zoals een oproep om je pakket na te lopen."
+          }
+        }
+      }
+    },
     "incl. btw": {
       "localizations": {
         "en": {
@@ -11522,6 +12546,22 @@
         }
       }
     },
+    "nu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "now"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nu"
+          }
+        }
+      }
+    },
     "toegangscode": {
       "localizations": {
         "en": {
@@ -11582,6 +12622,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "wijzigingen"
+          }
+        }
+      }
+    },
+    "· link moet met https:// beginnen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· link must start with https://"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· link moet met https:// beginnen"
           }
         }
       }

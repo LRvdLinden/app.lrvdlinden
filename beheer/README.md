@@ -89,7 +89,7 @@ originele code.
 
 - **Splash** (±1 s, geen netwerk) → **vergrendeling** met Face ID (Instellingen → *Vergrendelen met Face ID*) →
   **overzicht** met de omgevingen in vaste volgorde: LRvdLinden, PixelForges, Bingr, Tunr, Pasr, P2000 Apeldoorn, Bekendr,
-  elk met eigen logo, of je ingelogd bent en welke het laatst gebruikt is.
+  Noodpakket, elk met eigen logo, of je ingelogd bent en welke het laatst gebruikt is.
 - **Wisselen**: bovenin elke omgeving staat de omgevingskiezer (logo + naam + ⌄, en op brede schermen de andere logo's).
   Eén tik wisselt direct, zonder terug naar het overzicht. De actieve omgeving is altijd zichtbaar (naam, logo en een
   lijn in de kleur van de omgeving).
@@ -239,6 +239,25 @@ de centrale functie `lrbeheer` (acties `bekendr_login` en `bekendr_stats`; zie `
 | Feedback uit de app (reden: locatie, categorie, gemeente, link of anders, met toelichting): lijst, alleen nieuwe, afhandelen, heropenen, verwijderen, publicatie openen | ✓ (Downloads / Feedback) | ✓ |
 | Pushmelding | nog niet (voorstel: melding bij nieuwe feedback en dagelijks overzicht van nieuwe downloads) | – |
 
+### noodpakket.lrvdlinden.app/beheer → Noodpakket (nieuw, native)
+
+Noodpakket heeft geen eigen server. App en web-beheer (`web/beheer/` in LRvdLinden/app.lrvdlinden.noodkoffer, door Léon
+zelf geüpload naar zijn hosting) praten met de centrale functie `lrbeheer` (acties `noodpakket_*`; zie
+`server/README.md`). De Noodpakket-apps zelf melden zich alleen aan voor berichten.
+
+| Onderdeel | In LRbeheer | Web-beheer |
+| --- | --- | --- |
+| Inloggen met de gedeelde beheer-inlog (token 12 uur), doet mee met *Eén inlog* | ✓ (sleutelhanger) | ✓ (alleen dit tabblad) |
+| Downloads totaal en per apparaat: iPhone, iPad (App Store Connect) en Android (APK in GitHub Releases, tags `vX.Y.Z`) | ✓ | ✓ |
+| Grafiek downloads per dag (30 dagen), per platform gestapeld | ✓ (Swift Charts) | ✓ (SVG) |
+| Android: releases met downloads, nieuwste release gemarkeerd | ✓ | ✓ |
+| Android-builds: status van de laatste runs van `android.yml` (wachtrij, bezig, gelukt, mislukt), met link | ✓ | ✓ |
+| Ontvangers van berichten: iPhone/iPad, Android (actief 30 dagen), per taal | ✓ | ✓ |
+| Bericht aan gebruikers: titel, tekst, link, apparaten (alle, iPhone/iPad, Android) en taal, met voorbeeld | ✓ | ✓ |
+| Testbericht naar de eigen LRbeheer-apparaten | ✓ | ✓ |
+| Verstuurde berichten met bereik (afgeleverd, mislukt, opgehaald door Android), intrekken, opnieuw gebruiken | ✓ | ✓ (intrekken) |
+| Pushmelding naar LRbeheer | nog niet (voorstel: melding bij een mislukte Android-build en bij een nieuwe release) | – |
+
 ## Standaarden van LRvdLinden-apps
 
 - Huisstijl van lrvdlinden.app: accent #2747E8 / #8A9DFF, ink #121726, LR-logo, kaarten met radius 22.
@@ -254,7 +273,7 @@ de centrale functie `lrbeheer` (acties `bekendr_login` en `bekendr_stats`; zie `
 
 | Punt | Hoe gecontroleerd |
 | --- | --- |
-| Alle zes omgevingen toegankelijk | overzicht + kiezer; elke omgeving heeft een root-view (`BeheerEnvironment.rootView`) |
+| Alle omgevingen toegankelijk | overzicht + kiezer; elke omgeving heeft een root-view (`BeheerEnvironment.rootView`) |
 | Wisselen | `AppModel.switchTo`; sessies leven zo lang als de app, wisselen logt niet uit |
 | Alle bestaande functies overgenomen | 102 Swift-bestanden van de vier apps letterlijk overgenomen (`Modules/IMPORT.json`); vergelijking hierboven |
 | API-koppelingen en inlog | ongewijzigde code; LRvdLinden/PixelForges via dezelfde PHP-endpoints als beheer.html |

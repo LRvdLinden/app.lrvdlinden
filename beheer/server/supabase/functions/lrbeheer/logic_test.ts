@@ -187,3 +187,66 @@ Deno.test("Feedback: controle", () => {
   const plat = cleanFeedback({ ...base, platform: "windows" });
   assert(typeof plat !== "string" && plat.platform === "onbekend");
 });
+
+// ---- Noodpakket ----
+import {
+  androidBuilds, apkReleases as apk, cleanNpMessage, cleanNpRegister, makeScopedToken, npPayload, npTargets, readScopedToken,
+} from "./logic.ts";
+
+Deno.test("Noodpakket-token: eigen scope, niet uitwisselbaar met Bekendr", async () => {
+  const now = Date.now();
+  const { token, expires } = await makeScopedToken("geheim", "noodpakket", now);
+  assertEquals(await readScopedToken("geheim", "noodpakket", token, now), true);
+  assertEquals(await readScopedToken("geheim", "bekendr", token, now), false);
+  assertEquals(await readScopedToken("geheim", "noodpakket", token, (expires + 1) * 1000), false);
+  assertEquals(await readScopedToken("", "noodpakket", token, now), false);
+});
+
+Deno.test("Noodpakket-aanmelding: iPhone met token, Android zonder", () => {
+  const tok = "ab".repeat(32);
+  const ios = cleanNpRegister({ device_id: "ABCDEF12-3456", platform: "ios", apns_token: tok.toUpperCase(), lang: "en", app_version: "1.0.0" });
+  assert(typeof ios !== "string");
+  assertEquals(ios.apns_token, tok);
+  assertEquals(ios.lang, "en");
+  const and = cleanNpRegister({ device_id: "ABCDEF12-3456", platform: "android", apns_token: "x" });
+  assert(typeof and !== "string" && and.apns_token === null && and.lang === "nl");
+  assertEquals(cleanNpRegister({ device_id: "kort", platform: "ios", apns_token: tok }), "bad_device_id");
+  assertEquals(cleanNpRegister({ device_id: "ABCDEF12-3456", platform: "ios", apns_token: "123" }), "bad_apns_token");
+  assertEquals(cleanNpRegister({ device_id: "ABCDEF12-3456", platform: "macos" }), "bad_platform");
+});
+
+Deno.test("Noodpakket-bericht: lengtes, doelgroep en link", () => {
+  assertEquals(cleanNpMessage({ title: "Hi" }), "bad_title");
+  assertEquals(cleanNpMessage({ title: "Storm op komst", body: "x".repeat(401) }), "bad_body");
+  assertEquals(cleanNpMessage({ title: "Storm op komst", url: "http://x.nl" }), "bad_url");
+  const m = cleanNpMessage({ title: " Storm op komst ", body: "Loop je pakket na.", lang: "nl", platform: "apple", url: "https://www.knmi.nl" });
+  assert(typeof m !== "string");
+  assertEquals(m.title, "Storm op komst");
+  assertEquals(cleanNpMessage({ title: "Storm op komst", lang: "de", platform: "pc" }), { title: "Storm op komst", body: "", lang: "all", platform: "all", url: "" });
+  assert(npTargets({ lang: "nl", platform: "apple" }, { lang: "nl", platform: "ipados" }));
+  assert(!npTargets({ lang: "nl", platform: "apple" }, { lang: "nl", platform: "android" }));
+  assert(!npTargets({ lang: "en", platform: "all" }, { lang: "nl", platform: "android" }));
+  assert(npTargets({ lang: "all", platform: "android" }, { lang: "en", platform: "android" }));
+  const p = npPayload({ id: 7, title: "T", body: "B", url: "" });
+  assertEquals(p.np_message, 7);
+  assert(!("url" in p));
+});
+
+Deno.test("Noodpakket: APK-releases met v-tags en Android-builds", () => {
+  const rel = [
+    { tag_name: "v1.0.1", published_at: "2026-11-12T08:00:00Z", assets: [{ name: "noodpakket.apk", download_count: 5 }] },
+    { tag_name: "v1.0.0", published_at: "2026-11-11T08:00:00Z", assets: [{ name: "noodpakket.apk", download_count: 3 }, { name: "x.txt", download_count: 9 }] },
+    { tag_name: "android-1", published_at: "2026-11-10T08:00:00Z", assets: [] },
+  ];
+  const r = apk(rel, "v");
+  assertEquals(r.map((x) => x.tag), ["v1.0.1", "v1.0.0"]);
+  assertEquals(r[1].downloads, 3);
+  assertEquals(apk(rel).map((x) => x.tag), ["android-1"]);
+  const b = androidBuilds([
+    { id: 2, name: "Android", display_title: "Build", status: "completed", conclusion: "success", created_at: "2026-11-12T08:00:00Z", html_url: "u", head_branch: "main" },
+    { id: 1, name: "Website", status: "completed", conclusion: "success", created_at: "2026-11-12T09:00:00Z" },
+    { id: 3, name: "Android", status: "queued", conclusion: null, created_at: "2026-11-12T10:00:00Z" },
+  ]);
+  assertEquals(b.map((x) => x.id), [3, 2]);
+  assertEquals(b[0].conclusion, null);
+});

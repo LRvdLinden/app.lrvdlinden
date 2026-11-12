@@ -144,6 +144,33 @@ titel, link), reden (`locatie`, `categorie`, `gemeente`, `link`, `anders`), toel
 willekeurig apparaatnummer, dat alleen als hash wordt bewaard (max. 10 per uur per apparaat). Tabel
 `lrbeheer_bekendr_feedback`. LRbeheer en het web-beheer lezen en behandelen de feedback met het Bekendr-token.
 
+## Noodpakket: downloads, Android-builds en berichten (acties `noodpakket_*`)
+
+Noodpakket heeft geen eigen server; het beheer in LRbeheer en op `https://noodpakket.lrvdlinden.app/beheer/` gebruikt
+deze functie. Alleen voor de beheer-acties (`noodpakket_login`, `_stats`, `_send`, `_message_delete`) mag de browser
+(Origin `https://noodpakket.lrvdlinden.app`, met CORS); de app-acties zijn alleen zonder Origin te gebruiken.
+
+- **Inloggen**: `noodpakket_login` met `BEHEER_APP_USER` / `BEHEER_APP_PASSWORD` → token van 12 uur (scope
+  `noodpakket`), ondertekend met `NOODPAKKET_TOKEN_SECRET` of een sleutel afgeleid van `LRBEHEER_CRON_SECRET`.
+- **Elk uur** (in de cron): APK-downloads uit GitHub Releases van `LRvdLinden/app.lrvdlinden.noodkoffer` (tags `v…`)
+  en de verkoopoverzichten van App Store Connect (titel "Noodpakket", of `ASC_NOODPAKKET_APPLE_ID`). Tabel
+  `lrbeheer_noodpakket_daily`. Zelfde App Store Connect-sleutel als Bekendr; er komen geen secrets bij.
+- **Android-builds**: `noodpakket_stats` leest de laatste runs van `android.yml` (openbare repo, `GITHUB_TOKEN` alleen
+  lezen).
+- **Berichten aan gebruikers**: `noodpakket_send` (titel 3–80, tekst max. 400, optionele https-link, doelgroep
+  apparaten en taal). iPhone en iPad krijgen een pushmelding met topic `app.lrvdlinden.noodpakket` (zelfde APNs-sleutel
+  van team EU3UY476T6; de App ID moet *Push Notifications* aan hebben). Android haalt nieuwe berichten zelf op
+  (`noodpakket_messages`, hoogstens 7 dagen oud). `test: true` stuurt het bericht alleen naar de LRbeheer-apparaten.
+  Hetzelfde bericht binnen 10 minuten wordt geweigerd (409). Tabellen `lrbeheer_noodpakket_devices` en
+  `lrbeheer_noodpakket_messages`; apparaten die 180 dagen niets lieten horen en berichten ouder dan een jaar ruimt
+  `lrbeheer_cleanup` op.
+- **De apps**: `noodpakket_register` / `noodpakket_unregister` (iPhone/iPad, alleen als de gebruiker *Berichten van
+  Noodpakket* aanzet) met een willekeurig apparaatnummer, het APNs-token, taal en appversie. Geen account of
+  persoonsgegevens.
+
+Live zetten: dezelfde workflow *LRbeheer push* (app.lrvdlinden.secrets). Die past `schema.sql` toe (alleen nieuwe
+tabellen en een functie) en deployt de nieuwe versie van `lrbeheer`.
+
 ## Eén beheer-inlog voor alle omgevingen
 
 Alle beheeromgevingen gebruiken dezelfde gebruikersnaam en hetzelfde wachtwoord: `BEHEER_APP_USER` en

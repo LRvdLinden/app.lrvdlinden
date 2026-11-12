@@ -6,7 +6,7 @@ import TunrKit
 
 /// De beheeromgevingen, in de vaste volgorde van het overzicht (nieuwe omgevingen achteraan).
 enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
-    case lrvdlinden, pixelforges, bingr, tunr, pasr, p2000, bekendr
+    case lrvdlinden, pixelforges, bingr, tunr, pasr, p2000, bekendr, noodpakket
 
     var id: String { rawValue }
 
@@ -19,6 +19,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .pasr: "Pasr"
         case .p2000: "A-Alerts"
         case .bekendr: "Bekendr"
+        case .noodpakket: "Noodpakket"
         }
     }
 
@@ -32,6 +33,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .pasr: "Accounts, insights en pushmeldingen"
         case .p2000: "Meldingen, waarschuwingen, push en statistieken"
         case .bekendr: "Downloads op iPhone, iPad, Mac en Android"
+        case .noodpakket: "Downloads, Android-builds en berichten aan gebruikers"
         }
     }
 
@@ -44,6 +46,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .pasr: "beheer.pasr.nl"
         case .p2000: "a-alerts.nl"
         case .bekendr: "bekendr.lrvdlinden.app"
+        case .noodpakket: "noodpakket.lrvdlinden.app"
         }
     }
 
@@ -57,6 +60,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .pasr: Color(rgb: 0x6A5CFF)
         case .p2000: Color(rgb: 0xDC2626)
         case .bekendr: Color(rgb: 0x2747E8)
+        case .noodpakket: Color(light: 0x5A2E85, dark: 0xC9A6F0)
         }
     }
 
@@ -74,6 +78,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .pasr: return PasrEnvironment.owns(url)
         case .p2000: return P2000Environment.owns(url)
         case .bekendr: return url.host?.lowercased() == "bekendr.lrvdlinden.app"
+        case .noodpakket: return url.host?.lowercased() == "noodpakket.lrvdlinden.app"
         }
     }
 
@@ -86,13 +91,14 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .pasr: PasrEnvironment.isSignedIn
         case .p2000: P2000Environment.isSignedIn
         case .bekendr: BekendrStore.shared.isSignedIn
+        case .noodpakket: NoodpakketStore.shared.isSignedIn
         }
     }
 
     /// Weergave die de oorspronkelijke app afdwong (Bingr, Tunr en Pasr waren altijd donker).
     @MainActor var forcedScheme: ColorScheme? {
         switch self {
-        case .lrvdlinden, .pixelforges, .bekendr: nil
+        case .lrvdlinden, .pixelforges, .bekendr, .noodpakket: nil
         case .bingr: BingrEnvironment.colorScheme
         case .tunr: TunrEnvironment.colorScheme
         case .pasr: PasrEnvironment.colorScheme
@@ -110,13 +116,14 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .pasr: PasrEnvironment.rootView()
         case .p2000: P2000Environment.rootView()
         case .bekendr: BekendrRoot()
+        case .noodpakket: NoodpakketRoot()
         }
     }
 
     /// Deeplink openen binnen de omgeving (nadat LRbeheer naar de omgeving is gewisseld).
     @MainActor func open(_ url: URL) {
         switch self {
-        case .lrvdlinden, .pixelforges, .bekendr: break
+        case .lrvdlinden, .pixelforges, .bekendr, .noodpakket: break
         case .bingr: BingrEnvironment.open(url)
         case .tunr: TunrEnvironment.open(url)
         case .pasr: PasrEnvironment.open(url)

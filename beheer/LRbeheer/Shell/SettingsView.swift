@@ -93,6 +93,15 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Noodpakket") {
+                    Label("Nieuwe omgeving Noodpakket, met dezelfde beheer-inlog", systemImage: "app.badge")
+                    Label("Downloads: iPhone en iPad uit App Store Connect, Android uit GitHub Releases, met grafiek per dag", systemImage: "arrow.down.circle")
+                    Label("Android-builds: status van de laatste builds en de nieuwste release", systemImage: "hammer")
+                    Label("Berichten aan gebruikers: pushmelding op iPhone en iPad, Android haalt ze zelf op", systemImage: "paperplane")
+                    Label("Kies apparaten en taal, bekijk het voorbeeld en stuur eerst een test naar LRbeheer", systemImage: "iphone.radiowaves.left.and.right")
+                    Label("Verstuurde berichten met bereik; intrekken of opnieuw gebruiken", systemImage: "arrow.uturn.backward")
+                    Label("Ook op het web: noodpakket.lrvdlinden.app/beheer", systemImage: "safari")
+                }
                 Section("A-Alerts: Widgets") {
                     Label("Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site", systemImage: "puzzlepiece.extension")
                     Label("Alleen nog de scriptcode: die past zich vanzelf aan en websites kunnen de widget niet aanpassen", systemImage: "chevron.left.forwardslash.chevron.right")

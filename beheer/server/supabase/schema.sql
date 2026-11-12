@@ -59,17 +59,71 @@ create table if not exists public.lrbeheer_bekendr_daily (
   primary key (day, source, device, kind)
 );
 
+-- Noodpakket: downloads per dag (zelfde vorm als Bekendr)
+create table if not exists public.lrbeheer_noodpakket_daily (
+  day date not null,
+  source text not null check (source in ('apple','android')),
+  device text not null,
+  kind text not null default 'download' check (kind in ('download','redownload','update')),
+  units int not null default 0,
+  primary key (day, source, device, kind)
+);
+
+-- Noodpakket: apparaten die berichten willen ontvangen (iPhone/iPad met APNs-token; Android haalt zelf op).
+-- Alleen een willekeurig apparaatnummer, het pushtoken, de taal en de appversie; geen account of persoonsgegevens.
+create table if not exists public.lrbeheer_noodpakket_devices (
+  device_id text primary key,
+  platform text not null check (platform in ('ios','ipados','android')),
+  apns_token text,
+  sandbox boolean not null default false,
+  lang text not null default 'nl' check (lang in ('nl','en')),
+  app_version text not null default '',
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  last_seen timestamptz not null default now()
+);
+create index if not exists lrbeheer_noodpakket_devices_token on public.lrbeheer_noodpakket_devices(apns_token);
+
+-- Noodpakket: berichten aan gebruikers vanuit het beheer
+create table if not exists public.lrbeheer_noodpakket_messages (
+  id bigserial primary key,
+  at timestamptz not null default now(),
+  title text not null,
+  body text not null default '',
+  url text not null default '',
+  lang text not null default 'all' check (lang in ('all','nl','en')),
+  platform text not null default 'all' check (platform in ('all','apple','android')),
+  sent_apple int not null default 0,
+  failed_apple int not null default 0,
+  fetched_android int not null default 0,
+  withdrawn boolean not null default false
+);
+create index if not exists lrbeheer_noodpakket_messages_at on public.lrbeheer_noodpakket_messages(at);
+
+-- Teller "opgehaald door Android" ophogen (aangeroepen door de functie)
+create or replace function public.lrbeheer_noodpakket_fetched(ids bigint[]) returns void language sql security definer as $$
+  update public.lrbeheer_noodpakket_messages set fetched_android = fetched_android + 1 where id = any(ids);
+$$;
+revoke all on function public.lrbeheer_noodpakket_fetched(bigint[]) from public, anon, authenticated;
+
 alter table public.lrbeheer_devices enable row level security;
 alter table public.lrbeheer_state enable row level security;
 alter table public.lrbeheer_events enable row level security;
 alter table public.lrbeheer_bekendr_daily enable row level security;
 alter table public.lrbeheer_bekendr_feedback enable row level security;
+alter table public.lrbeheer_noodpakket_daily enable row level security;
+alter table public.lrbeheer_noodpakket_devices enable row level security;
+alter table public.lrbeheer_noodpakket_messages enable row level security;
 -- geen policies: alleen de functie (service role) leest en schrijft
-revoke all on table public.lrbeheer_devices, public.lrbeheer_state, public.lrbeheer_events, public.lrbeheer_bekendr_daily, public.lrbeheer_bekendr_feedback from anon, authenticated;
+revoke all on table public.lrbeheer_devices, public.lrbeheer_state, public.lrbeheer_events, public.lrbeheer_bekendr_daily, public.lrbeheer_bekendr_feedback,
+  public.lrbeheer_noodpakket_daily, public.lrbeheer_noodpakket_devices, public.lrbeheer_noodpakket_messages from anon, authenticated;
 
 -- Geschiedenis 90 dagen bewaren
 create or replace function public.lrbeheer_cleanup() returns void language sql security definer as $$
   delete from public.lrbeheer_events where at < now() - interval '90 days';
+  -- Noodpakket: apparaten die een half jaar niets van zich lieten horen, en berichten ouder dan een jaar
+  delete from public.lrbeheer_noodpakket_devices where last_seen < now() - interval '180 days';
+  delete from public.lrbeheer_noodpakket_messages where at < now() - interval '365 days';
 $$;
 
 -- Cron: elke 5 minuten de functie aanroepen (pg_cron + pg_net). Vervang <PROJECT_REF> en <LRBEHEER_CRON_SECRET>

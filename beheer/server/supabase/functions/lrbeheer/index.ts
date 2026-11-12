@@ -13,18 +13,33 @@
 //     {action: "bekendr_feedback_list" | "bekendr_feedback_update"} met het Bekendr-token → feedback bekijken en afhandelen
 //   Bekendr-app (zonder account): {action: "bekendr_feedback", notice_id, notice_title, notice_url, reason, message, platform, app_version, device}
 //
+//   Noodpakket-beheer (ook vanuit de browser op https://noodpakket.lrvdlinden.app/beheer/):
+//     {action: "noodpakket_login", user, password} → token (12 uur), met de gedeelde beheer-inlog
+//     {action: "noodpakket_stats"} → downloads (Apple per apparaat, Android), Android-builds, apparaten en berichten
+//     {action: "noodpakket_send", title, body, lang, platform, url?, test?} → bericht aan gebruikers (test: alleen naar LRbeheer)
+//     {action: "noodpakket_message_delete", id} → bericht intrekken (Android haalt het dan niet meer op)
+//   Noodpakket-app (zonder account, zonder Origin):
+//     {action: "noodpakket_register", device_id, platform: ios|ipados, apns_token, sandbox, lang, app_version}
+//     {action: "noodpakket_unregister", device_id}
+//     {action: "noodpakket_messages", device_id, platform: "android", lang, app_version, after} → nieuwe berichten
+//
 // Function-secrets: TUNR_TOKEN_SECRET (bestaat al, van `admin`), APNS_KEY_P8 / APNS_KEY_ID / APNS_TEAM_ID (dezelfde
 // APNs-sleutel als Bingr/Pasr), LRBEHEER_APNS_TOPIC (optioneel, standaard app.lrvdlinden.lrbeheer),
 // LRBEHEER_CRON_SECRET, LRBEHEER_NOTIFY_SECRET (optioneel), GITHUB_TOKEN (optioneel, alleen lezen van openbare repo's).
 // Bekendr: BEHEER_APP_USER / BEHEER_APP_PASSWORD (gedeelde beheer-inlog), ASC_KEY_ID / ASC_ISSUER_ID / ASC_KEY_P8 /
 // ASC_VENDOR_NUMBER (App Store Connect-API, verkoopoverzichten), optioneel ASC_BEKENDR_APPLE_ID en BEKENDR_TOKEN_SECRET.
+// Noodpakket: dezelfde inlog, APNs-sleutel en App Store Connect-sleutel; optioneel ASC_NOODPAKKET_APPLE_ID,
+// NOODPAKKET_TOKEN_SECRET en NOODPAKKET_APNS_TOPIC (standaard app.lrvdlinden.noodpakket).
 // Nooit tokens, sleutels of apparaat-id's loggen.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import {
+  type Release,
   amsterdam, androidStep, type AndroidState, apkReleases, apnsHost, apnsJwt, apnsResult, appleDaysToFetch, ascJwt,
   BEKENDR_ORIGIN, BEKENDR_REPO, bekendrSummary, bearer, cleanFeedback, FEEDBACK_STATUS, type DailyRow, makeBekendrToken, parseSalesReport, readBekendrToken, cleanNotify, cleanPrefs, cleanRegister, contentNotice, deployNotices,
   hmac, importApnsKey, installsNotice, newAppNotices, type Notice, payload, presskitNotice, readTunrToken, sameBytes,
   storeNotices, wants,
+  androidBuilds, cleanNpMessage, cleanNpRegister, makeScopedToken, NOODPAKKET_ORIGIN, NOODPAKKET_REPO, NOODPAKKET_TOPIC,
+  NP_MESSAGE_DAYS, type NpMessage, npPayload, npTargets, readScopedToken,
 } from "./logic.ts";
 
 const env = (k: string) => Deno.env.get(k) ?? "";
@@ -37,13 +52,18 @@ const db = createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"), {
 const json = (body: unknown, status = 200, extra: Record<string, string> = {}) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store", ...extra } });
 
-/** CORS alleen voor het web-beheer van Bekendr, en alleen voor de bekendr_*-acties. */
-const bekendrCors = {
-  "Access-Control-Allow-Origin": BEKENDR_ORIGIN,
+/** CORS alleen voor de web-beheren van Bekendr en Noodpakket, elk alleen voor de eigen beheer-acties. */
+const corsFor = (origin: string) => ({
+  "Access-Control-Allow-Origin": origin,
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "authorization, content-type, apikey, x-client-info",
   "Access-Control-Max-Age": "86400",
   Vary: "Origin",
+});
+/** Welke acties een web-beheer mag aanroepen. */
+const WEB_ACTIONS: Record<string, (a: string) => boolean> = {
+  [BEKENDR_ORIGIN]: (a) => a.startsWith("bekendr_") && a !== "bekendr_feedback",
+  [NOODPAKKET_ORIGIN]: (a) => ["noodpakket_login", "noodpakket_stats", "noodpakket_send", "noodpakket_message_delete"].includes(a),
 };
 
 async function sameSecret(given: string | null, expected: string): Promise<boolean> {
@@ -71,7 +91,7 @@ async function apnsBearer(): Promise<string> {
   return jwt;
 }
 
-async function apnsSend(token: string, sandbox: boolean, body: unknown, collapse?: string) {
+async function apnsSend(token: string, sandbox: boolean, body: unknown, collapse?: string, topic?: string) {
   let auth: string;
   try { auth = await apnsBearer(); } catch { return { ok: false as const, invalid: false, error: "apns_bad_key" }; }
   try {
@@ -79,7 +99,7 @@ async function apnsSend(token: string, sandbox: boolean, body: unknown, collapse
       method: "POST",
       headers: {
         authorization: `bearer ${auth}`,
-        "apns-topic": env("LRBEHEER_APNS_TOPIC") || "app.lrvdlinden.lrbeheer",
+        "apns-topic": topic || env("LRBEHEER_APNS_TOPIC") || "app.lrvdlinden.lrbeheer",
         "apns-push-type": "alert",
         "apns-priority": "10",
         "apns-expiration": String(Math.floor(Date.now() / 1000) + 86400),
@@ -129,8 +149,12 @@ async function bekendrSecret(): Promise<string> {
 
 const ascConfigured = () => !!(env("ASC_KEY_ID") && env("ASC_ISSUER_ID") && env("ASC_KEY_P8") && env("ASC_VENDOR_NUMBER"));
 
+type SalesMatch = { appleId?: string; title?: string };
+const bekendrMatch = (): SalesMatch => env("ASC_BEKENDR_APPLE_ID") ? { appleId: env("ASC_BEKENDR_APPLE_ID") } : { title: "Bekendr" };
+const noodpakketMatch = (): SalesMatch => env("ASC_NOODPAKKET_APPLE_ID") ? { appleId: env("ASC_NOODPAKKET_APPLE_ID") } : { title: "Noodpakket" };
+
 /** Eén dag uit de verkoopoverzichten: rijen, of null als er (nog) geen overzicht is. */
-async function appleSalesDay(day: string, jwt: string): Promise<ReturnType<typeof parseSalesReport> | null> {
+async function appleSalesDay(day: string, jwt: string, match: SalesMatch): Promise<ReturnType<typeof parseSalesReport> | null> {
   const q = new URLSearchParams({
     "filter[frequency]": "DAILY", "filter[reportDate]": day, "filter[reportSubType]": "SUMMARY",
     "filter[reportType]": "SALES", "filter[vendorNumber]": env("ASC_VENDOR_NUMBER"), "filter[version]": "1_1",
@@ -141,42 +165,53 @@ async function appleSalesDay(day: string, jwt: string): Promise<ReturnType<typeo
   if (r.status === 404) { await r.body?.cancel().catch(() => {}); return null; }
   if (!r.ok || !r.body) { await r.body?.cancel().catch(() => {}); throw new Error(`App Store Connect HTTP ${r.status}`); }
   const tsv = await new Response(r.body.pipeThrough(new DecompressionStream("gzip"))).text();
-  return parseSalesReport(tsv, env("ASC_BEKENDR_APPLE_ID") ? { appleId: env("ASC_BEKENDR_APPLE_ID") } : { title: "Bekendr" });
+  return parseSalesReport(tsv, match);
 }
 
 async function bekendrReleases() {
   return apkReleases(await getJSON(`https://api.github.com/repos/${BEKENDR_REPO}/releases?per_page=100`, true));
 }
 
-/** Elk uur: Android-teller bijwerken en ontbrekende Apple-dagen ophalen. */
-async function bekendrSync(today: string) {
-  const releases = await bekendrReleases();
+type DownloadSource = { name: string; table: string; androidKey: string; appleKey: string; releases: () => Promise<Release[]>; match: () => SalesMatch };
+const BEKENDR_DL: DownloadSource = {
+  name: "bekendr", table: "lrbeheer_bekendr_daily", androidKey: "bekendr_android", appleKey: "bekendr_apple_days",
+  releases: () => bekendrReleases(), match: bekendrMatch,
+};
+const NOODPAKKET_DL: DownloadSource = {
+  name: "noodpakket", table: "lrbeheer_noodpakket_daily", androidKey: "noodpakket_android", appleKey: "noodpakket_apple_days",
+  releases: () => noodpakketReleases(), match: noodpakketMatch,
+};
+
+/** Elk uur: Android-teller bijwerken en ontbrekende Apple-dagen ophalen (Bekendr en Noodpakket). */
+async function syncDownloads(src: DownloadSource, today: string) {
+  const releases = await src.releases();
   const total = releases.reduce((s, r) => s + r.downloads, 0);
-  const a = androidStep(await getState<AndroidState>("bekendr_android"), today, total);
-  await setState("bekendr_android", a.state);
-  const { error } = await db.from("lrbeheer_bekendr_daily").upsert({ day: today, source: "android", device: "Android", kind: "download", units: a.today });
-  if (error) throw new Error(`bekendr android: ${error.code ?? "db"}`);
+  const a = androidStep(await getState<AndroidState>(src.androidKey), today, total);
+  await setState(src.androidKey, a.state);
+  const { error } = await db.from(src.table).upsert({ day: today, source: "android", device: "Android", kind: "download", units: a.today });
+  if (error) throw new Error(`${src.name} android: ${error.code ?? "db"}`);
 
   if (!ascConfigured()) return;
-  const have = (await getState<string[]>("bekendr_apple_days")) ?? [];
+  const have = (await getState<string[]>(src.appleKey)) ?? [];
   const todo = appleDaysToFetch(today, have);
   if (!todo.length) return;
   const jwt = await ascJwt(await importApnsKey(env("ASC_KEY_P8")), env("ASC_KEY_ID"), env("ASC_ISSUER_ID"), Math.floor(Date.now() / 1000));
   const done = new Set(have);
   for (const day of todo) {
-    const rows = await appleSalesDay(day, jwt);
+    const rows = await appleSalesDay(day, jwt, src.match());
     const age = (Date.parse(`${today}T00:00:00Z`) - Date.parse(`${day}T00:00:00Z`)) / 86400_000;
     if (rows === null) { if (age >= 3) done.add(day); continue; } // geen overzicht = geen verkoop (na 3 dagen definitief)
-    await db.from("lrbeheer_bekendr_daily").delete().eq("day", day).eq("source", "apple");
+    await db.from(src.table).delete().eq("day", day).eq("source", "apple");
     if (rows.length) {
-      const { error: e } = await db.from("lrbeheer_bekendr_daily").insert(rows.map((r) => ({ day, source: "apple", ...r })));
-      if (e) throw new Error(`bekendr apple: ${e.code ?? "db"}`);
+      const { error: e } = await db.from(src.table).insert(rows.map((r) => ({ day, source: "apple", ...r })));
+      if (e) throw new Error(`${src.name} apple: ${e.code ?? "db"}`);
     }
     done.add(day);
   }
   const keep = [...done].sort().reverse().slice(0, 60);
-  await setState("bekendr_apple_days", keep);
+  await setState(src.appleKey, keep);
 }
+const bekendrSync = (today: string) => syncDownloads(BEKENDR_DL, today);
 
 async function feedbackOpen(): Promise<number> {
   const { count } = await db.from("lrbeheer_bekendr_feedback").select("id", { count: "exact", head: true }).eq("status", "nieuw");
@@ -202,6 +237,108 @@ async function bekendrStats() {
     days: sum.days,
     feedback_open: await feedbackOpen(),
   };
+}
+
+// ---- Noodpakket ----
+async function noodpakketSecret(): Promise<string> {
+  if (env("NOODPAKKET_TOKEN_SECRET")) return env("NOODPAKKET_TOKEN_SECRET");
+  const base = env("LRBEHEER_CRON_SECRET");
+  if (!base) return "";
+  return [...await hmac(base, "noodpakket-token")].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+const npTopic = () => env("NOODPAKKET_APNS_TOPIC") || NOODPAKKET_TOPIC;
+
+async function noodpakketReleases() {
+  return apkReleases(await getJSON(`https://api.github.com/repos/${NOODPAKKET_REPO}/releases?per_page=100`, true), "v");
+}
+
+async function npDeviceCounts() {
+  const since = new Date(Date.now() - 30 * 86400_000).toISOString();
+  const t = "lrbeheer_noodpakket_devices";
+  const n = (r: { count: number | null }) => r.count ?? 0;
+  const head = { count: "exact" as const, head: true };
+  return {
+    apple: n(await db.from(t).select("device_id", head).neq("platform", "android")),
+    android: n(await db.from(t).select("device_id", head).eq("platform", "android").gte("last_seen", since)),
+    nl: n(await db.from(t).select("device_id", head).eq("lang", "nl").gte("last_seen", since)),
+    en: n(await db.from(t).select("device_id", head).eq("lang", "en").gte("last_seen", since)),
+  };
+}
+
+async function noodpakketStats() {
+  const { day: today } = amsterdam(new Date());
+  const since = new Date(Date.parse(`${today}T00:00:00Z`) - 400 * 86400_000).toISOString().slice(0, 10);
+  const { data, error } = await db.from("lrbeheer_noodpakket_daily").select("day, source, device, kind, units").gte("day", since).limit(20000);
+  if (error) throw new Error(error.message);
+  let releases: Release[] = [];
+  let githubOk = true;
+  try { releases = await noodpakketReleases(); } catch { githubOk = false; }
+  let builds: ReturnType<typeof androidBuilds> = [];
+  try {
+    const d = await getJSON(`https://api.github.com/repos/${NOODPAKKET_REPO}/actions/workflows/android.yml/runs?per_page=10`, true) as { workflow_runs?: unknown };
+    builds = androidBuilds(d.workflow_runs);
+  } catch { /* geen builds tonen */ }
+  const sum = bekendrSummary((data ?? []) as DailyRow[], today);
+  const { data: st } = await db.from("lrbeheer_state").select("updated_at").eq("key", "noodpakket_android").maybeSingle();
+  const { data: msgs } = await db.from("lrbeheer_noodpakket_messages")
+    .select("id, at, title, body, lang, platform, url, sent_apple, failed_apple, fetched_android, withdrawn")
+    .order("id", { ascending: false }).limit(30);
+  return {
+    ok: true,
+    today,
+    synced_at: st?.updated_at ?? null,
+    apple: { configured: ascConfigured(), ...sum.apple },
+    android: { total: releases.reduce((s, r) => s + r.downloads, 0), releases: releases.slice(0, 20), available: githubOk, latest: releases[0]?.tag ?? null },
+    builds,
+    days: sum.days,
+    devices: await npDeviceCounts(),
+    messages: msgs ?? [],
+  };
+}
+
+/** Bericht versturen: iPhone en iPad via APNs (nu), Android haalt het zelf op (noodpakket_messages). */
+async function noodpakketSend(m: NpMessage) {
+  const { data: row, error } = await db.from("lrbeheer_noodpakket_messages")
+    .insert({ title: m.title, body: m.body, lang: m.lang, platform: m.platform, url: m.url }).select("id").single();
+  if (error || !row) throw new Error(error?.message ?? "insert");
+  const id = Number(row.id);
+  let sent = 0, failed = 0;
+  if (m.platform !== "android") {
+    const gone: string[] = [];
+    for (let from = 0; ; from += 500) {
+      let q = db.from("lrbeheer_noodpakket_devices").select("device_id, apns_token, sandbox, lang, platform")
+        .neq("platform", "android").not("apns_token", "is", null).order("device_id").range(from, from + 499);
+      if (m.lang !== "all") q = q.eq("lang", m.lang);
+      const { data, error: e } = await q;
+      if (e) throw new Error(e.message);
+      const devs = (data ?? []) as { device_id: string; apns_token: string; sandbox: boolean; lang: string; platform: string }[];
+      for (let i = 0; i < devs.length; i += 50) {
+        const chunk = devs.slice(i, i + 50).filter((d) => npTargets(m, d));
+        const res = await Promise.all(chunk.map(async (d) => ({ d, r: await apnsSend(d.apns_token, d.sandbox, npPayload({ id, ...m }), `np-${id}`, npTopic()) })));
+        for (const { d, r } of res) { if (r.ok) sent++; else { failed++; if (r.invalid) gone.push(d.device_id); } }
+      }
+      if (devs.length < 500) break;
+    }
+    if (gone.length) await db.from("lrbeheer_noodpakket_devices").delete().in("device_id", gone);
+  }
+  await db.from("lrbeheer_noodpakket_messages").update({ sent_apple: sent, failed_apple: failed }).eq("id", id);
+  await db.from("lrbeheer_events").insert({ env: "noodpakket", kind: "message", title: m.title, body: m.body, url: m.url, sent });
+  return { id, sent_apple: sent, failed_apple: failed };
+}
+
+/** Testbericht: alleen naar de apparaten met LRbeheer (zelfde tekst, zodat je ziet hoe het eruitziet). */
+async function noodpakketTest(m: NpMessage) {
+  const { data, error } = await db.from("lrbeheer_devices").select("device_id, token, sandbox").limit(50);
+  if (error) throw new Error(error.message);
+  let sent = 0;
+  for (const d of (data ?? []) as Device[]) {
+    const r = await apnsSend(d.token, d.sandbox, {
+      aps: { alert: { title: `Test: ${m.title}`.slice(0, 120), body: m.body.slice(0, 240) }, sound: "default", "thread-id": "noodpakket" },
+      lrenv: "noodpakket", kind: "message", url: "lrbeheer://noodpakket",
+    }, "np-test");
+    if (r.ok) sent++;
+  }
+  return { test: true, sent };
 }
 
 // ---- toestand ----
@@ -291,18 +428,28 @@ async function cron(forceBekendr = false) {
     await bekendrSync(day);
   });
 
+  // Noodpakket: downloads (elk uur)
+  await step("noodpakket", async () => {
+    const { day, hour } = amsterdam(new Date());
+    const stamp = `${day}T${hour}`;
+    if (!forceBekendr && (await getState<string>("noodpakket_hour")) === stamp) return;
+    await setState("noodpakket_hour", stamp);
+    await syncDownloads(NOODPAKKET_DL, day);
+  });
+
   const res = await deliver(notices);
   if (errors.length) console.error("lrbeheer", "cron", errors.join("; "));
   const bekendr = errors.find((e) => e.startsWith("bekendr:"))?.slice(9).trim() ?? "ok";
-  return { notices: notices.length, ...res, errors: errors.length, bekendr };
+  const noodpakket = errors.find((e) => e.startsWith("noodpakket:"))?.slice(12).trim() ?? "ok";
+  return { notices: notices.length, ...res, errors: errors.length, bekendr, noodpakket };
 }
 
 Deno.serve(async (req) => {
   const origin = req.headers.get("Origin");
-  const web = origin === BEKENDR_ORIGIN;
-  if (req.method === "OPTIONS") return web ? new Response(null, { status: 204, headers: bekendrCors }) : json({ error: "forbidden" }, 403);
+  const web = !!origin && origin in WEB_ACTIONS;
+  if (req.method === "OPTIONS") return web ? new Response(null, { status: 204, headers: corsFor(origin!) }) : json({ error: "forbidden" }, 403);
   if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
-  // geen browsers, behalve het web-beheer van Bekendr voor de bekendr_*-acties; de app en de cron sturen geen Origin
+  // geen browsers, behalve de web-beheren van Bekendr en Noodpakket voor hun eigen acties; de apps en de cron sturen geen Origin
   if (origin && !web) return json({ error: "forbidden" }, 403);
   let body: Record<string, unknown>;
   try {
@@ -313,8 +460,8 @@ Deno.serve(async (req) => {
     body = b;
   } catch { return json({ error: "bad_json" }, 400); }
   const action = typeof body.action === "string" ? body.action : "";
-  if (web && !action.startsWith("bekendr_")) return json({ error: "forbidden" }, 403);
-  const cors = web ? bekendrCors : {};
+  if (web && !WEB_ACTIONS[origin!](action)) return json({ error: "forbidden" }, 403);
+  const cors: Record<string, string> = web ? corsFor(origin!) : {};
 
   try {
     if (action === "bekendr_login") {
@@ -371,6 +518,79 @@ Deno.serve(async (req) => {
     if (action === "bekendr_stats") {
       if (!(await readBekendrToken(await bekendrSecret(), bearer(req.headers)))) return json({ error: "unauthorized" }, 401, cors);
       return json(await bekendrStats(), 200, cors);
+    }
+
+    // ---- Noodpakket ----
+    if (action === "noodpakket_login") {
+      const user = typeof body.user === "string" ? body.user.trim() : "";
+      const pass = typeof body.password === "string" ? body.password : "";
+      const secret = await noodpakketSecret();
+      const okUser = await sameSecret(user, env("BEHEER_APP_USER"));
+      const okPass = await sameSecret(pass, env("BEHEER_APP_PASSWORD"));
+      if (!secret || !okUser || !okPass) {
+        await new Promise((r) => setTimeout(r, 700));
+        return json({ error: secret ? "unauthorized" : "not_configured" }, secret ? 401 : 503, cors);
+      }
+      return json({ ok: true, ...(await makeScopedToken(secret, "noodpakket")) }, 200, cors);
+    }
+    if (action === "noodpakket_stats" || action === "noodpakket_send" || action === "noodpakket_message_delete") {
+      if (!(await readScopedToken(await noodpakketSecret(), "noodpakket", bearer(req.headers)))) return json({ error: "unauthorized" }, 401, cors);
+      if (action === "noodpakket_stats") return json(await noodpakketStats(), 200, cors);
+      if (action === "noodpakket_send") {
+        const m = cleanNpMessage(body);
+        if (typeof m === "string") return json({ error: m }, 400, cors);
+        if (body.test === true) return json({ ok: true, ...(await noodpakketTest(m)) }, 200, cors);
+        // niet per ongeluk twee keer hetzelfde bericht binnen 10 minuten
+        const since = new Date(Date.now() - 10 * 60_000).toISOString();
+        const { count } = await db.from("lrbeheer_noodpakket_messages").select("id", { count: "exact", head: true })
+          .eq("title", m.title).eq("body", m.body).gte("at", since);
+        if ((count ?? 0) > 0) return json({ error: "duplicate" }, 409, cors);
+        return json({ ok: true, ...(await noodpakketSend(m)) }, 200, cors);
+      }
+      const id = Number(body.id);
+      if (!Number.isInteger(id) || id <= 0) return json({ error: "bad_id" }, 400, cors);
+      const { error } = await db.from("lrbeheer_noodpakket_messages").update({ withdrawn: true }).eq("id", id);
+      if (error) throw new Error(error.message);
+      return json({ ok: true }, 200, cors);
+    }
+    if (action === "noodpakket_register") {
+      const d = cleanNpRegister(body);
+      if (typeof d === "string") return json({ error: d }, 400);
+      const now = new Date().toISOString();
+      const { error } = await db.from("lrbeheer_noodpakket_devices").upsert({ ...d, updated_at: now, last_seen: now });
+      if (error) throw new Error(error.message);
+      if (d.apns_token) await db.from("lrbeheer_noodpakket_devices").delete().eq("apns_token", d.apns_token).neq("device_id", d.device_id);
+      return json({ ok: true });
+    }
+    if (action === "noodpakket_unregister") {
+      const id = typeof body.device_id === "string" ? body.device_id : "";
+      if (!/^[A-Za-z0-9-]{8,64}$/.test(id)) return json({ error: "bad_device_id" }, 400);
+      await db.from("lrbeheer_noodpakket_devices").delete().eq("device_id", id);
+      return json({ ok: true });
+    }
+    if (action === "noodpakket_messages") {
+      const d = cleanNpRegister({ ...body, platform: "android" });
+      if (typeof d === "string") return json({ error: d }, 400);
+      const now = new Date().toISOString();
+      await db.from("lrbeheer_noodpakket_devices").upsert({ ...d, updated_at: now, last_seen: now });
+      const after = Number.isInteger(body.after) && (body.after as number) >= 0 ? body.after as number : 0;
+      const since = new Date(Date.now() - NP_MESSAGE_DAYS * 86400_000).toISOString();
+      const { data, error } = await db.from("lrbeheer_noodpakket_messages")
+        .select("id, at, title, body, url, lang, platform").eq("withdrawn", false).gte("at", since).gt("id", after)
+        .order("id", { ascending: true }).limit(20);
+      if (error) throw new Error(error.message);
+      const rows = (data ?? []) as { id: number; at: string; title: string; body: string; url: string; lang: string; platform: string }[];
+      // eerste keer ophalen: geen oude berichten tonen, alleen onthouden waar we zijn
+      if (after === 0) {
+        const { data: top } = await db.from("lrbeheer_noodpakket_messages").select("id").order("id", { ascending: false }).limit(1);
+        return json({ ok: true, messages: [], latest: Number(top?.[0]?.id ?? 0) });
+      }
+      const mine = rows.filter((m) => npTargets(m, d));
+      const latest = rows.length ? rows[rows.length - 1].id : after;
+      if (mine.length) {
+        await db.rpc("lrbeheer_noodpakket_fetched", { ids: mine.map((m) => m.id) });
+      }
+      return json({ ok: true, messages: mine.slice(-5).map(({ id, at, title, body, url }) => ({ id, at, title, body, url })), latest });
     }
 
     if (action === "cron") {

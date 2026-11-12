@@ -80,6 +80,8 @@ final class SharedLogin {
             case .p2000: try await P2000Environment.login(user: user, password: password)
             case .bekendr: try await BekendrStore.shared.signIn(user: user, password: password)
                 Task { await BekendrStore.shared.load() }
+            case .noodpakket: try await NoodpakketStore.shared.signIn(user: user, password: password)
+                Task { await NoodpakketStore.shared.load() }
             }
             return .ok
         } catch {

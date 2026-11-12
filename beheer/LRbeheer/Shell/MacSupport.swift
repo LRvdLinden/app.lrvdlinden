@@ -50,6 +50,7 @@ struct LRbeheerCommands: Commands {
             Link("beheer.tunr.online", destination: URL(string: "https://beheer.tunr.online")!)
             Link("beheer.pasr.nl", destination: URL(string: "https://beheer.pasr.nl")!)
             Link("bekendr.lrvdlinden.app/beheer", destination: URL(string: "https://bekendr.lrvdlinden.app/beheer/")!)
+            Link("noodpakket.lrvdlinden.app/beheer", destination: URL(string: "https://noodpakket.lrvdlinden.app/beheer/")!)
         }
     }
 }

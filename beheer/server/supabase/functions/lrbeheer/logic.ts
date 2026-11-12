@@ -349,11 +349,11 @@ export function parseSalesReport(tsv: string, match: { appleId?: string; title?:
 
 export type Release = { tag: string; name: string; published_at: string; downloads: number };
 
-/** GitHub Releases van Bekendr → downloads per Android-release (alle .apk-bestanden opgeteld). */
-export function apkReleases(releases: unknown): Release[] {
+/** GitHub Releases → downloads per Android-release (alle .apk-bestanden opgeteld). Bekendr: tags `android-…`, Noodpakket: `v…`. */
+export function apkReleases(releases: unknown, prefix = "android-"): Release[] {
   if (!Array.isArray(releases)) return [];
   return releases
-    .filter((r) => r && typeof r === "object" && String((r as { tag_name?: unknown }).tag_name ?? "").startsWith("android-"))
+    .filter((r) => r && typeof r === "object" && String((r as { tag_name?: unknown }).tag_name ?? "").startsWith(prefix))
     .map((r) => {
       const o = r as { tag_name: string; name?: unknown; published_at?: unknown; assets?: unknown };
       const assets = Array.isArray(o.assets) ? o.assets as { name?: unknown; download_count?: unknown }[] : [];
@@ -452,3 +452,117 @@ export function cleanFeedback(b: Record<string, unknown>): Feedback | string {
 }
 
 export const FEEDBACK_STATUS = ["nieuw", "afgehandeld"] as const;
+
+
+// ---- Noodpakket: downloads, Android-builds en berichten aan gebruikers ----
+// Noodpakket heeft geen eigen server. Het beheer (LRbeheer en noodpakket.lrvdlinden.app/beheer/) praat met deze functie,
+// net als Bekendr. De apps zelf gebruiken alleen: noodpakket_register / noodpakket_unregister (iPhone en iPad, APNs) en
+// noodpakket_messages (Android haalt nieuwe berichten op). Er gaat niets anders mee dan een willekeurig apparaatnummer,
+// het pushtoken, de taal en de appversie.
+
+export const NOODPAKKET_ORIGIN = "https://noodpakket.lrvdlinden.app";
+export const NOODPAKKET_REPO = "LRvdLinden/app.lrvdlinden.noodkoffer";
+export const NOODPAKKET_TOPIC = "app.lrvdlinden.noodpakket";
+export const NP_PLATFORMS = ["ios", "ipados", "android"] as const;
+export const NP_LANGS = ["nl", "en"] as const;
+export const NP_TARGET_LANG = ["all", "nl", "en"] as const;
+export const NP_TARGET_PLATFORM = ["all", "apple", "android"] as const;
+/** Zo lang haalt Android een bericht nog op (dagen). */
+export const NP_MESSAGE_DAYS = 7;
+const SCOPED_TTL = 12 * 3600;
+
+/** Token voor een beheeromgeving zonder eigen server: {s:<scope>, e} met HMAC-handtekening (12 uur). */
+export async function makeScopedToken(secret: string, scope: string, nowMs = Date.now()): Promise<{ token: string; expires: number }> {
+  const e = Math.floor(nowMs / 1000) + SCOPED_TTL;
+  const p = b64u(enc.encode(JSON.stringify({ s: scope, e })));
+  return { token: `${p}.${b64u(await hmac(secret, p))}`, expires: e };
+}
+
+export async function readScopedToken(secret: string, scope: string, token: unknown, nowMs = Date.now()): Promise<boolean> {
+  if (!secret || typeof token !== "string" || token.length > MAX_TOKEN) return false;
+  const [p, sig] = token.split(".");
+  if (!p || !sig) return false;
+  let given: Uint8Array;
+  try { given = unb64u(sig); } catch { return false; }
+  if (!sameBytes(given, await hmac(secret, p))) return false;
+  try {
+    const o = JSON.parse(new TextDecoder().decode(unb64u(p)));
+    return o?.s === scope && typeof o.e === "number" && o.e * 1000 > nowMs;
+  } catch { return false; }
+}
+
+export type NpDevice = { device_id: string; platform: string; apns_token: string | null; sandbox: boolean; lang: string; app_version: string };
+
+/** Aanmelding van een iPhone of iPad (met APNs-token) of een Android-toestel (zonder token). */
+export function cleanNpRegister(b: Record<string, unknown>): NpDevice | string {
+  const id = typeof b.device_id === "string" && /^[A-Za-z0-9-]{8,64}$/.test(b.device_id) ? b.device_id : null;
+  if (!id) return "bad_device_id";
+  if (!(NP_PLATFORMS as readonly unknown[]).includes(b.platform)) return "bad_platform";
+  const platform = b.platform as string;
+  let apns: string | null = null;
+  if (platform !== "android") {
+    const t = typeof b.apns_token === "string" ? b.apns_token.trim() : "";
+    if (!/^[0-9a-fA-F]{64,200}$/.test(t) || t.length % 2) return "bad_apns_token";
+    apns = t.toLowerCase();
+  }
+  if (b.sandbox !== undefined && typeof b.sandbox !== "boolean") return "bad_sandbox";
+  const lang = (NP_LANGS as readonly unknown[]).includes(b.lang) ? b.lang as string : "nl";
+  return { device_id: id, platform, apns_token: apns, sandbox: b.sandbox === true, lang, app_version: clipText(b.app_version, 40) };
+}
+
+export type NpMessage = { title: string; body: string; lang: string; platform: string; url: string };
+
+/** Bericht uit het beheer controleren: titel 3–80 tekens, tekst max. 400, doelgroep taal en platform. */
+export function cleanNpMessage(b: Record<string, unknown>): NpMessage | string {
+  const title = clipText(b.title, 200);
+  const body = clipText(b.body, 2000);
+  if (title.length < 3 || title.length > 80) return "bad_title";
+  if (body.length > 400) return "bad_body";
+  const lang = (NP_TARGET_LANG as readonly unknown[]).includes(b.lang) ? b.lang as string : "all";
+  const platform = (NP_TARGET_PLATFORM as readonly unknown[]).includes(b.platform) ? b.platform as string : "all";
+  let url = clipText(b.url, 300);
+  if (url) {
+    try {
+      const u = new URL(url);
+      if (u.protocol !== "https:") return "bad_url";
+      url = u.toString();
+    } catch { return "bad_url"; }
+  }
+  return { title, body, lang, platform, url };
+}
+
+/** Hoort een apparaat bij de doelgroep van een bericht? */
+export function npTargets(msg: { lang: string; platform: string }, dev: { lang: string; platform: string }): boolean {
+  const langOk = msg.lang === "all" || msg.lang === dev.lang;
+  const platOk = msg.platform === "all" || (msg.platform === "android" ? dev.platform === "android" : dev.platform !== "android");
+  return langOk && platOk;
+}
+
+/** APNs-payload voor de Noodpakket-app (opent bij een tik de app, of de link als die er is). */
+export function npPayload(m: { id: number; title: string; body: string; url: string }) {
+  return {
+    aps: { alert: { title: clip(m.title, 120), body: clip(m.body, 240) }, sound: "default", "thread-id": "noodpakket" },
+    np_message: m.id,
+    ...(m.url ? { url: m.url } : {}),
+  };
+}
+
+export type BuildRun = { id: number; title: string; status: string; conclusion: string | null; created_at: string; url: string; branch: string };
+
+/** Runs van de Android-workflow (android.yml) → korte lijst voor het beheer. */
+export function androidBuilds(runs: unknown, max = 8): BuildRun[] {
+  const list = Array.isArray(runs) ? runs as Record<string, unknown>[] : [];
+  return list
+    .filter((r) => typeof r?.id === "number" && /android/i.test(String(r.name ?? r.path ?? "")))
+    .map((r) => ({
+      id: r.id as number,
+      title: clip(String(r.display_title ?? r.name ?? ""), 120),
+      status: String(r.status ?? ""),
+      conclusion: r.conclusion == null ? null : String(r.conclusion),
+      created_at: String(r.created_at ?? ""),
+      url: String(r.html_url ?? ""),
+      branch: String(r.head_branch ?? ""),
+    }))
+    .sort((a, b) => b.created_at.localeCompare(a.created_at))
+    .slice(0, max);
+}
