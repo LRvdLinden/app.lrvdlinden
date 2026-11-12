@@ -242,14 +242,16 @@ de centrale functie `lrbeheer` (acties `bekendr_login` en `bekendr_stats`; zie `
 
 ### noodpakket.lrvdlinden.app/beheer → Noodpakket (nieuw, native)
 
-Noodpakket heeft geen eigen server. App en web-beheer (`web/beheer/` in LRvdLinden/app.lrvdlinden.noodkoffer, door Léon
-zelf geüpload naar zijn hosting) praten met de centrale functie `lrbeheer` (acties `noodpakket_*`; zie
-`server/README.md`). De Noodpakket-apps zelf melden zich alleen aan voor berichten.
+App en web-beheer (`web/beheer/` in LRvdLinden/app.lrvdlinden.noodkoffer, door Léon zelf geüpload naar zijn hosting)
+praten met de centrale functie `lrbeheer` (acties `noodpakket_*`; zie `server/README.md`) voor downloads en berichten.
+De optionele accounts en gezinnen staan op de eigen Noodpakket-API (Cloudflare Worker in `server/` van die repo,
+`https://noodpakket-api.noodpakket.workers.dev`); het beheer logt daar met dezelfde beheer-inlog in via `/admin/login`
+en leest `/admin/stats`.
 
 | Onderdeel | In LRbeheer | Web-beheer |
 | --- | --- | --- |
 | Inloggen met de gedeelde beheer-inlog (token 12 uur), doet mee met *Eén inlog* | ✓ (sleutelhanger) | ✓ (alleen dit tabblad) |
-| Downloads totaal en per apparaat: iPhone, iPad (App Store Connect) en Android (APK in GitHub Releases, tags `vX.Y.Z`) | ✓ | ✓ |
+| Downloads totaal en per apparaat: iPhone, iPad (App Store Connect) en Android (APK in GitHub Releases, elke build op main) | ✓ | ✓ |
 | Grafiek downloads per dag (30 dagen), per platform gestapeld | ✓ (Swift Charts) | ✓ (SVG) |
 | Android: releases met downloads, nieuwste release gemarkeerd | ✓ | ✓ |
 | Android-builds: status van de laatste runs van `android.yml` (wachtrij, bezig, gelukt, mislukt), met link | ✓ | ✓ |
@@ -257,6 +259,7 @@ zelf geüpload naar zijn hosting) praten met de centrale functie `lrbeheer` (act
 | Bericht aan gebruikers: titel, tekst, link, apparaten (alle, iPhone/iPad, Android) en taal, met voorbeeld | ✓ | ✓ |
 | Testbericht naar de eigen LRbeheer-apparaten | ✓ | ✓ |
 | Verstuurde berichten met bereik (afgeleverd, mislukt, opgehaald door Android), intrekken, opnieuw gebruiken | ✓ | ✓ (intrekken) |
+| Accounts en gezinnen: bevestigd/niet bevestigd, actief (30 dagen), gedeelde gezinnen en leden, open uitnodigingen, aanmeldingen, bots en APK-downloads via de site (30 dagen) | ✓ | ✓ |
 | Pushmelding naar LRbeheer | nog niet (voorstel: melding bij een mislukte Android-build en bij een nieuwe release) | – |
 
 ### pairr.lrvdlinden.app/beheer → Pairr (nieuw, native)

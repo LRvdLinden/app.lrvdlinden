@@ -146,6 +146,22 @@
         }
       }
     },
+    "%lld leden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld members"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld leden"
+          }
+        }
+      }
+    },
     "%lld open": {
       "localizations": {
         "en": {
@@ -254,6 +270,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "(zonder naam)"
+          }
+        }
+      }
+    },
+    "+%lld niet bevestigd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+%lld unconfirmed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+%lld niet bevestigd"
           }
         }
       }
@@ -530,6 +562,22 @@
         }
       }
     },
+    "APK via de site (30 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APK via the site (30 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APK via de site (30 dagen)"
+          }
+        }
+      }
+    },
     "APK-downloads": {
       "localizations": {
         "en": {
@@ -770,6 +818,54 @@
         }
       }
     },
+    "Accounts": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts"
+          }
+        }
+      }
+    },
+    "Accounts en gezinnen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts and households"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts en gezinnen"
+          }
+        }
+      }
+    },
+    "Accounts en gezinnen van Noodpakket: aantallen, gedeelde gezinnen en uitnodigingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noodpakket accounts and households: counts, shared households and invitations"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts en gezinnen van Noodpakket: aantallen, gedeelde gezinnen en uitnodigingen"
+          }
+        }
+      }
+    },
     "Accounts › Review-account maken: bevestigd account voor Apple App Review met voorbeeldkaarten en een gedeelde Pasr": {
       "localizations": {
         "en": {
@@ -798,6 +894,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Accounts, insights en pushmeldingen"
+          }
+        }
+      }
+    },
+    "Actief": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Active"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actief"
           }
         }
       }
@@ -2290,6 +2402,38 @@
         }
       }
     },
+    "Bevestigd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirmed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bevestigd"
+          }
+        }
+      }
+    },
+    "Bevestigd (30 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirmed (30 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bevestigd (30 dagen)"
+          }
+        }
+      }
+    },
     "Bewaard": {
       "localizations": {
         "en": {
@@ -3602,6 +3746,22 @@
         }
       }
     },
+    "Downloads van de APK per release. De site (noodpakket.lrvdlinden.app/download/android/) geeft altijd de nieuwste door.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APK downloads per release. The site (noodpakket.lrvdlinden.app/download/android/) always serves the latest one."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads van de APK per release. De site (noodpakket.lrvdlinden.app/download/android/) geeft altijd de nieuwste door."
+          }
+        }
+      }
+    },
     "Downloads, Android-builds en berichten aan gebruikers": {
       "localizations": {
         "en": {
@@ -3726,6 +3886,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Echte Mac-app met menubalk (⌘1…⌘7 wisselt van omgeving)"
+          }
+        }
+      }
+    },
+    "Een account is niet verplicht; alleen wie het pakket met het gezin deelt, maakt er een. Niet-bevestigde accounts verdwijnen na 7 dagen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An account is optional; only people who share their kit with their household create one. Unconfirmed accounts are removed after 7 days."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een account is niet verplicht; alleen wie het pakket met het gezin deelt, maakt er een. Niet-bevestigde accounts verdwijnen na 7 dagen."
           }
         }
       }
@@ -4414,6 +4590,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gecontroleerd (%lld)"
+          }
+        }
+      }
+    },
+    "Gedeeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gedeeld"
           }
         }
       }
@@ -6402,6 +6594,22 @@
         }
       }
     },
+    "Laatste 30 dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last 30 days"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatste 30 dagen"
+          }
+        }
+      }
+    },
     "Laatste dag van App Store Connect: %@": {
       "localizations": {
         "en": {
@@ -6542,6 +6750,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Licht"
+          }
+        }
+      }
+    },
+    "Lid geworden van een gezin (30 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Joined a household (30 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lid geworden van een gezin (30 dagen)"
           }
         }
       }
@@ -6846,6 +7070,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Log in bij deze omgeving om meldingen te krijgen."
+          }
+        }
+      }
+    },
+    "Log uit en opnieuw in om de accounts te zien (de accounts staan op een eigen server met dezelfde beheer-inlog).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign out and in again to see the accounts (they live on a separate server with the same admin login)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log uit en opnieuw in om de accounts te zien (de accounts staan op een eigen server met dezelfde beheer-inlog)."
           }
         }
       }
@@ -7730,6 +7970,22 @@
         }
       }
     },
+    "Nieuwe accounts (30 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New accounts (30 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe accounts (30 dagen)"
+          }
+        }
+      }
+    },
     "Nieuwe accounts eerst kopen — Apple-apps": {
       "localizations": {
         "en": {
@@ -8190,6 +8446,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog geen release. Een tag vX.Y.Z maakt een release met noodpakket.apk."
+          }
+        }
+      }
+    },
+    "Nog geen release. Elke Android-build op main wordt meteen een release met noodpakket.apk.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No release yet. Every Android build on main immediately becomes a release with noodpakket.apk."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen release. Elke Android-build op main wordt meteen een release met noodpakket.apk."
           }
         }
       }
@@ -8958,6 +9230,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Openen"
+          }
+        }
+      }
+    },
+    "Openstaand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Openstaand"
           }
         }
       }
@@ -10530,6 +10818,22 @@
         }
       }
     },
+    "Tegengehouden bots (30 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocked bots (30 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tegengehouden bots (30 dagen)"
+          }
+        }
+      }
+    },
     "Tekst": {
       "localizations": {
         "en": {
@@ -11326,6 +11630,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uitloggen bij pixelforges.nl?"
+          }
+        }
+      }
+    },
+    "Uitnodigingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitations"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitnodigingen"
           }
         }
       }

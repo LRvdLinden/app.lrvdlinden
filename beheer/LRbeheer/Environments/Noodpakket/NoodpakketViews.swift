@@ -126,6 +126,8 @@ struct NoodpakketMain: View {
 
         BekendrDaysChart(days: s.days)
 
+        accountsCard
+
         builds(s)
 
         VStack(alignment: .leading, spacing: 10) {
@@ -138,7 +140,7 @@ struct NoodpakketMain: View {
                 Text("GitHub was niet bereikbaar; probeer het zo opnieuw.").font(.caption).foregroundStyle(Theme.build)
             }
             if s.android.releases.isEmpty && s.android.available {
-                Text("Nog geen release. Een tag vX.Y.Z maakt een release met noodpakket.apk.")
+                Text("Nog geen release. Elke Android-build op main wordt meteen een release met noodpakket.apk.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             ForEach(s.android.releases) { r in
@@ -161,7 +163,7 @@ struct NoodpakketMain: View {
                 }
                 if r.id != s.android.releases.last?.id { Divider() }
             }
-            Text("Downloads van de APK in GitHub Releases (ook via de vaste link op de website).")
+            Text("Downloads van de APK per release. De site (noodpakket.lrvdlinden.app/download/android/) geeft altijd de nieuwste door.")
                 .font(.caption).foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -199,6 +201,38 @@ struct NoodpakketMain: View {
                 .font(.caption).foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity)
         }
+    }
+
+    @ViewBuilder private var accountsCard: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Accounts en gezinnen").font(Theme.display(.headline))
+            if let a = store.accounts {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 140), spacing: 12)], spacing: 12) {
+                    BekendrTile(title: "Accounts", value: a.confirmed, symbol: "person.crop.circle.fill", color: NoodpakketPalette.brand,
+                                note: a.unconfirmed > 0 ? "+\(a.unconfirmed) niet bevestigd" : "Bevestigd")
+                    BekendrTile(title: "Actief", value: a.active30d, symbol: "person.wave.2.fill", color: NoodpakketPalette.iPhone,
+                                note: "Laatste 30 dagen")
+                    BekendrTile(title: "Gedeeld", value: a.sharedHouseholds, symbol: "person.2.fill", color: NoodpakketPalette.yellow,
+                                note: "\(a.sharedMembers) leden")
+                    BekendrTile(title: "Uitnodigingen", value: a.openInvites, symbol: "envelope.fill", color: NoodpakketPalette.android,
+                                note: "Openstaand")
+                }
+                LabeledContent("Nieuwe accounts (30 dagen)", value: a.sum(\.signup).formatted())
+                LabeledContent("Bevestigd (30 dagen)", value: a.sum(\.confirm).formatted())
+                LabeledContent("Lid geworden van een gezin (30 dagen)", value: a.sum(\.joined).formatted())
+                LabeledContent("Tegengehouden bots (30 dagen)", value: a.sum(\.bot).formatted())
+                LabeledContent("APK via de site (30 dagen)", value: a.sum(\.apk).formatted())
+                Text("Een account is niet verplicht; alleen wie het pakket met het gezin deelt, maakt er een. Niet-bevestigde accounts verdwijnen na 7 dagen.")
+                    .font(.caption).foregroundStyle(.secondary)
+            } else if store.accountsNeedLogin {
+                Text("Log uit en opnieuw in om de accounts te zien (de accounts staan op een eigen server met dezelfde beheer-inlog).")
+                    .font(.footnote).foregroundStyle(.secondary)
+            } else {
+                ProgressView().frame(maxWidth: .infinity)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .lrCard()
     }
 
     @ViewBuilder private func builds(_ s: NoodpakketStats) -> some View {

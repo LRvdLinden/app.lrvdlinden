@@ -110,6 +110,7 @@ struct WhatsNewView: View {
                     Label("Kies apparaten en taal, bekijk het voorbeeld en stuur eerst een test naar LRbeheer", systemImage: "iphone.radiowaves.left.and.right")
                     Label("Verstuurde berichten met bereik; intrekken of opnieuw gebruiken", systemImage: "arrow.uturn.backward")
                     Label("Ook op het web: noodpakket.lrvdlinden.app/beheer", systemImage: "safari")
+                    Label("Accounts en gezinnen van Noodpakket: aantallen, gedeelde gezinnen en uitnodigingen", systemImage: "person.2")
                 }
                 Section("A-Alerts: Widgets") {
                     Label("Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site", systemImage: "puzzlepiece.extension")

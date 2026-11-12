@@ -16,6 +16,8 @@ final class NoodpakketStore {
     static let site = URL(string: "https://noodpakket.lrvdlinden.app")!
     static let releases = URL(string: "https://github.com/LRvdLinden/app.lrvdlinden.noodkoffer/releases")!
     static let actions = URL(string: "https://github.com/LRvdLinden/app.lrvdlinden.noodkoffer/actions/workflows/android.yml")!
+    /// Noodpakket-API (Cloudflare Worker) met de optionele accounts; eigen beheer-inlog via /admin/login.
+    static let api = URL(string: "https://noodpakket-api.noodpakket.workers.dev")!
 
     struct Session: Codable { let token: String; let expires: TimeInterval }
 
@@ -45,6 +47,10 @@ final class NoodpakketStore {
 
     private(set) var session: Session?
     private(set) var stats: NoodpakketStats?
+    /// Accounts en gezinnen uit de Noodpakket-API (nil = nog niet geladen of geen token).
+    private(set) var accounts: NoodpakketAccounts?
+    private(set) var accountsNeedLogin = false
+    private var workerSession: Session?
     private(set) var loading = false
     private(set) var sending = false
     var error: String?
@@ -52,9 +58,11 @@ final class NoodpakketStore {
     var isSignedIn: Bool { (session?.expires ?? 0) > Date().timeIntervalSince1970 + 60 }
 
     private static let account = "noodpakket.session"
+    private static let workerAccount = "noodpakket.worker"
 
     private init() {
         session = Keychain.readCodable(Self.account, as: Session.self)
+        workerSession = Keychain.readCodable(Self.workerAccount, as: Session.self)
     }
 
     func signIn(user: String, password: String) async throws {
@@ -63,12 +71,52 @@ final class NoodpakketStore {
         let s = Session(token: token, expires: exp)
         Keychain.writeCodable(Self.account, s)
         session = s
+        await workerSignIn(user: user, password: password)
     }
 
     func signOut() {
         Keychain.delete(Self.account)
+        Keychain.delete(Self.workerAccount)
         session = nil
+        workerSession = nil
         stats = nil
+        accounts = nil
+    }
+
+    /// Zelfde beheer-inlog bij de Noodpakket-API (voor de accounts). Mislukt dit, dan werkt de rest gewoon.
+    private func workerSignIn(user: String, password: String) async {
+        var req = URLRequest(url: Self.api.appending(path: "admin/login"), timeoutInterval: 30)
+        req.httpMethod = "POST"
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.httpBody = try? JSONSerialization.data(withJSONObject: ["user": user, "password": password])
+        guard let (data, resp) = try? await URLSession.shared.data(for: req), (resp as? HTTPURLResponse)?.statusCode == 200,
+              let o = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let token = o["token"] as? String, let exp = o["expires"] as? Double else { return }
+        let s = Session(token: token, expires: exp)
+        Keychain.writeCodable(Self.workerAccount, s)
+        workerSession = s
+    }
+
+    private func loadAccounts() async {
+        guard let w = workerSession, w.expires > Date().timeIntervalSince1970 + 60 else {
+            accountsNeedLogin = true
+            return
+        }
+        var req = URLRequest(url: Self.api.appending(path: "admin/stats"), timeoutInterval: 30)
+        req.setValue("Bearer \(w.token)", forHTTPHeaderField: "Authorization")
+        guard let (data, resp) = try? await URLSession.shared.data(for: req) else { return }
+        if (resp as? HTTPURLResponse)?.statusCode == 401 {
+            Keychain.delete(Self.workerAccount)
+            workerSession = nil
+            accountsNeedLogin = true
+            return
+        }
+        let d = JSONDecoder()
+        d.keyDecodingStrategy = .convertFromSnakeCase
+        if let a = try? d.decode(NoodpakketAccounts.self, from: data) {
+            accounts = a
+            accountsNeedLogin = false
+        }
     }
 
     func load() async {
@@ -83,6 +131,7 @@ final class NoodpakketStore {
             d.keyDecodingStrategy = .convertFromSnakeCase
             stats = try d.decode(NoodpakketStats.self, from: try await raw(["action": "noodpakket_stats"], token: s.token))
             error = nil
+            await loadAccounts()
         } catch Failure.unauthorized {
             signOut()
         } catch is DecodingError {
@@ -275,4 +324,33 @@ struct NoodpakketStats: Decodable {
         f.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         return f.date(from: s) ?? ISO8601DateFormatter().date(from: s)
     }
+}
+
+/// Antwoord van /admin/stats van de Noodpakket-API: de optionele accounts en gezinnen.
+struct NoodpakketAccounts: Decodable {
+    let accounts: Int
+    let confirmed: Int
+    let unconfirmed: Int
+    let active30d: Int
+    let households: Int
+    let sharedHouseholds: Int
+    let sharedMembers: Int
+    let openInvites: Int
+    let records: Int
+    let days: [Day]
+
+    struct Day: Decodable {
+        let day: String
+        let signup: Int?
+        let confirm: Int?
+        let login: Int?
+        let invite: Int?
+        let joined: Int?
+        let bot: Int?
+        let apk: Int?
+        let deleted: Int?
+    }
+
+    /// Optelling over de laatste 30 dagen.
+    func sum(_ key: KeyPath<Day, Int?>) -> Int { days.reduce(0) { $0 + ($1[keyPath: key] ?? 0) } }
 }
