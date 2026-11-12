@@ -210,7 +210,7 @@ function renderList(){
     return `<h3>${label} · ${items.length}</h3>` + items.map(a => `
       <button type="button" class="item" data-id="${esc(a.id)}" aria-current="${a.id===sel}">
         ${a.icon?`<img src="${esc(iconSrc(a))}" alt="" onerror="this.outerHTML='<span class=ph></span>'">`:`<span class="ph"></span>`}
-        <b>${esc(a.name||"(naamloos)")}${a.featured && (a.section||"ios")==="ios" ? ` <span class="ft" title="Staat in Nieuw en onderweg">★</span>` : ""}</b>
+        <b>${esc(a.name||"(naamloos)")}${a.featured && (a.section||"ios")==="ios" ? ` <span class="ft" title="Staat in Nieuw en onderweg">★</span>` : ""}${a.nlOnly ? ` <span class="ft" title="Alleen op de Nederlandse versie">NL</span>` : ""}</b>
         <span class="dot ${esc(a.status)}">${esc(a.status)}</span>
       </button>`).join("");
   }).join("");
@@ -237,7 +237,8 @@ function renderEditor(){
       <div class="full" style="grid-column:1/-1">
         <div class="muted" style="font-weight:600;margin-bottom:6px">Status</div>
         <div class="seg">${Object.entries(STATUS).map(([k,v])=>`<label><input type="radio" name="status" value="${k}" ${a.status===k?"checked":""}> ${v}</label>`).join("")}
-          <label><input type="checkbox" id="f_featured" ${a.featured?"checked":""}> Tonen in Nieuw en onderweg</label></div>
+          <label><input type="checkbox" id="f_featured" ${a.featured?"checked":""}> Tonen in Nieuw en onderweg</label>
+          <label title="De app staat dan alleen op de Nederlandse versie van de site"><input type="checkbox" id="f_nlonly" ${a.nlOnly?"checked":""}> Alleen Nederlands (niet tonen op de Engelse versie)</label></div>
       </div>
       <div class="full" style="grid-column:1/-1">
         <div class="muted" style="font-weight:600;margin-bottom:6px">Platformen / apparaten</div>
@@ -358,6 +359,7 @@ document.addEventListener("input", e => {
   if (el.name === "status"){ a.status = el.value; save(); renderList(); return; }
   if (el.id === "f_promo"){ a.promo = a.promo || {}; if (el.checked) a.promo.show = true; else delete a.promo.show; if (!Object.keys(a.promo).length) delete a.promo; save(); return; }
   if (el.id === "f_featured"){ if (el.checked) a.featured = true; else delete a.featured; save(); return; }
+  if (el.id === "f_nlonly"){ if (el.checked) a.nlOnly = true; else delete a.nlOnly; save(); renderList(); return; }
   if (el.closest("#plats")){ a.platforms = [...document.querySelectorAll("#plats input:checked")].map(i=>i.value); save(); return; }
   const h = el.closest(".h");
   if (h){ const i = +h.dataset.i, item = a.history[i];

@@ -394,7 +394,8 @@ const T = {
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let APPS = [], lang = "nl", cat = "all", open = null;
+let ALL_APPS = [], lang = "nl", cat = "all", open = null;
+Object.defineProperty(window, "APPS", { get: () => ALL_APPS.filter(a => !(lang === "en" && a.nlOnly)) });
 
 try { lang = localStorage.getItem("lr-lang") || (navigator.language||"nl").slice(0,2); } catch(e){}
 if (location.hash === "#en") lang = "en";
@@ -732,6 +733,6 @@ document.addEventListener("click", e => {
 renderStatic();
 fetch("apps.json", {cache:"no-cache"})
   .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => { APPS = d.apps || []; open = (APPS.find(a=>a.section==="ios"&&a.status==="live"&&!a.featured)||{}).id || null; render(); })
+  .then(d => { ALL_APPS = d.apps || []; open = (APPS.find(a=>a.section==="ios"&&a.status==="live"&&!a.featured)||{}).id || null; render(); })
   .catch(() => { $("#grid").innerHTML = `<div class="notice">${esc(t("loadError"))}</div>`; });
 </script>
