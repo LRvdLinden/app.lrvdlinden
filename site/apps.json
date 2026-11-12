@@ -23,7 +23,13 @@
                 "testflight": "https://testflight.apple.com/join/drXYcfSb",
                 "appstore": "https://apps.apple.com/nl/app/bekendr/id6832613749"
             },
-            "history": [],
+            "history": [
+                {
+                    "version": "1.0.0",
+                    "date": "2026-11-11",
+                    "notes": {}
+                }
+            ],
             "icon": "img/app-lrvdlinden-bekendr.webp",
             "subtitle": {
                 "nl": "Bekendmakingen in je buurt",
@@ -35,7 +41,9 @@
                     "en": "img/promo-app-lrvdlinden-bekendr-en.webp"
                 },
                 "show": true
-            }
+            },
+            "size": "2,2 MB",
+            "languages": "NL"
         },
         {
             "id": "app-lrvdlinden-pairr",
@@ -227,6 +235,17 @@
             },
             "history": [
                 {
+                    "version": "1.0.4",
+                    "date": "2026-11-11",
+                    "notes": {
+                        "en": "New: video calls\n• Join Google Meet, Microsoft Teams, FaceTime, Zoom and more in one tap. The button appears 10 minutes before the start, in the service's colour, also in alerts and widgets.\n• Add a Meet or Teams meeting or a FaceTime link to an event yourself.\n• Dial in with the PIN in one tap.\n• Homey (version 1.0.6+: calls, busy/free and time to leave in your Flows.",
+                        "nl": "Nieuw: videogesprekken\n• Doe met één tik mee aan Google Meet, Microsoft Teams, FaceTime, Zoom en meer. De knop verschijnt 10 minuten voor de start, in de kleur van de dienst, ook in meldingen en widgets.\n• Voeg zelf een Meet- of Teams-vergadering of een FaceTime-link toe aan een afspraak.\n• Bel in met de pincode in één tik.\n• Homey (versie 1.0.6+: gesprekken, bezet/vrij en vertrektijd in je Flows."
+                    },
+                    "_src": {
+                        "en": "New: video calls\n• Join Google Meet, Microsoft Teams, FaceTime, Zoom and more in one tap. The button appears 10 minutes before the start, in the service's colour, also in alerts and widgets.\n• Add a Meet or Teams meeting or a FaceTime link to an event yourself.\n• Dial in with the PIN in one tap.\n• Homey (version 1.0.6+: calls, busy/free and time to leave in your Flows."
+                    }
+                },
+                {
                     "version": "1.0.3",
                     "date": "2026-11-05",
                     "notes": {
@@ -282,7 +301,7 @@
                 "en": "New"
             },
             "languages": "NL + 32",
-            "size": "32,7 MB",
+            "size": "33,7 MB",
             "reviews": 8,
             "rating": 4.8
         },
@@ -312,7 +331,7 @@
                 "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
                 "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 2,
             "size": "116,6 MB",
             "languages": "NL + 10",
@@ -432,7 +451,7 @@
                     }
                 }
             ],
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "promo": {
                 "image": {
@@ -605,7 +624,7 @@
                 "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
                 "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "size": "23,1 MB",
             "languages": "EN",
@@ -649,7 +668,7 @@
                 "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 15,
             "size": "15,3 MB",
             "languages": "EN",
@@ -1127,7 +1146,7 @@
                 "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
                 "en": "Learn chess the easy way. With dark mode and several board themes."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 3,
             "size": "1,7 MB",
             "languages": "NL + 3",
@@ -1638,11 +1657,22 @@
                 "en": "Live 112 alerts from fire, ambulance and police across the Netherlands."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/P2000/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.p2000/"
             },
             "rating": 4.5,
             "history": [
+                {
+                    "version": "6.2.6",
+                    "date": "2026-11-07",
+                    "notes": {
+                        "nl": "P2000-meldingen komen nu ook binnen als het filter van je internetprovider de P2000-server blokkeert, zoals KPN Veilig Browsen. De app schakelt dan automatisch over op beveiligde DNS-over-HTTPS.",
+                        "en": "P2000 alerts now also arrive when your internet provider's filter blocks the P2000 server, such as KPN Veilig Browsen. The app then automatically switches to secure DNS-over-HTTPS."
+                    },
+                    "_src": {
+                        "nl": "P2000-meldingen komen nu ook binnen als het filter van je internetprovider de P2000-server blokkeert, zoals KPN Veilig Browsen. De app schakelt dan automatisch over op beveiligde DNS-over-HTTPS.",
+                        "en": "P2000 alerts now also arrive when your internet provider's filter blocks the P2000 server, such as KPN Veilig Browsen. The app then automatically switches to secure DNS-over-HTTPS."
+                    }
+                },
                 {
                     "version": "6.2.5",
                     "date": "2026-11-07",
@@ -1742,17 +1772,6 @@
                     "_src": {
                         "en": "app improvement"
                     }
-                },
-                {
-                    "version": "6.1.9",
-                    "date": "2026-05-16",
-                    "notes": {
-                        "en": "app improvement",
-                        "nl": "App-verbetering"
-                    },
-                    "_src": {
-                        "en": "app improvement"
-                    }
                 }
             ],
             "homey": {
@@ -1760,12 +1779,12 @@
                     {
                         "id": "p2000",
                         "name": {
-                            "en": "P2000",
-                            "nl": "P2000"
+                            "nl": "P2000",
+                            "en": "P2000"
                         },
                         "class": "other",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/drivers/p2000/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/drivers/p2000/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/drivers/p2000/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/drivers/p2000/assets/icon.svg"
                     }
                 ],
                 "widgets": [
@@ -1775,8 +1794,8 @@
                             "nl": "P2000 Pager",
                             "en": "P2000 Pager"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/latest-p2000/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/latest-p2000/preview-dark.png"
                     },
                     {
                         "id": "latest-p2000-custom",
@@ -1784,8 +1803,8 @@
                             "nl": "P2000 Pager Custom",
                             "en": "P2000 Pager Custom"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000-custom/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000-custom/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/latest-p2000-custom/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/latest-p2000-custom/preview-dark.png"
                     },
                     {
                         "id": "latest-p2000-large",
@@ -1793,8 +1812,8 @@
                             "nl": "P2000 Pager groot",
                             "en": "P2000 Pager Large"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000-large/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/latest-p2000-large/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/latest-p2000-large/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/latest-p2000-large/preview-dark.png"
                     },
                     {
                         "id": "p2000-map",
@@ -1802,8 +1821,8 @@
                             "nl": "P2000 Kaart",
                             "en": "P2000 Map"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/p2000-map/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/p2000-map/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/p2000-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/p2000-map/preview-dark.png"
                     },
                     {
                         "id": "p2000-stats",
@@ -1811,8 +1830,8 @@
                             "nl": "P2000 Statistieken Vandaag",
                             "en": "P2000 Stats Today"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/p2000-stats/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/205/016ad2e4-488e-4210-8694-852af63e8aa1/widgets/p2000-stats/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/p2000-stats/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.p2000/207/6232d7b8-3aab-4926-8532-0352762bc134/widgets/p2000-stats/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -1820,22 +1839,22 @@
                         {
                             "id": "new_message",
                             "title": {
-                                "nl": "Een nieuwe melding is ontvangen",
-                                "en": "A new message has been received"
+                                "nl": "Een nieuwe P2000-melding is ontvangen",
+                                "en": "A new P2000 alert has been received"
                             }
                         },
                         {
                             "id": "websocket_message_offline",
                             "title": {
-                                "en": "P2000 is offline",
-                                "nl": "P2000 is offline"
+                                "nl": "P2000 is offline",
+                                "en": "P2000 is offline"
                             }
                         },
                         {
                             "id": "websocket_message_online",
                             "title": {
-                                "en": "P2000 is online",
-                                "nl": "P2000 is online"
+                                "nl": "P2000 is online",
+                                "en": "P2000 is online"
                             }
                         }
                     ],
@@ -1843,8 +1862,8 @@
                         {
                             "id": "capcode_condition",
                             "title": {
-                                "nl": "Capcode Conditie",
-                                "en": "Capcode Condition"
+                                "nl": "Capcode",
+                                "en": "Capcode"
                             }
                         },
                         {
@@ -1857,29 +1876,29 @@
                         {
                             "id": "grip_condition",
                             "title": {
-                                "nl": "GRIP Conditie",
-                                "en": "GRIP Condition"
+                                "nl": "GRIP",
+                                "en": "GRIP"
                             }
                         },
                         {
                             "id": "groep_condition",
                             "title": {
-                                "nl": "Groep Conditie",
-                                "en": "Groep Condition"
+                                "nl": "Groep",
+                                "en": "Group"
                             }
                         },
                         {
                             "id": "opschaling_condition",
                             "title": {
-                                "nl": "Opschaling Conditie",
-                                "en": "Opschaling Condition"
+                                "nl": "Opschaling",
+                                "en": "Upscaling"
                             }
                         },
                         {
                             "id": "prio_condition",
                             "title": {
-                                "nl": "Prio Conditie",
-                                "en": "Prio Condition"
+                                "nl": "Prio",
+                                "en": "Priority"
                             }
                         },
                         {
@@ -1920,8 +1939,8 @@
                         {
                             "id": "soortopschaling_condition",
                             "title": {
-                                "nl": "soortopschaling Conditie",
-                                "en": "Soortopschaling Condition"
+                                "nl": "Soort opschaling",
+                                "en": "Type of upscaling"
                             }
                         },
                         {
@@ -1946,13 +1965,12 @@
                     "local",
                     "cloud"
                 ],
-                "compatibility": ">=12.1.0",
+                "compatibility": ">=12.3.0",
                 "color": "#ce011c",
                 "homepage": "https://p2000.xyz",
                 "support": "https://community.homey.app/t/app-pro-p2000/83738",
                 "category": "internet",
-                "live": "6.2.4",
-                "test": "6.2.6"
+                "live": "6.2.6"
             }
         },
         {
@@ -2368,11 +2386,22 @@
                 "en": "Live 112 alerts from the Lifeliner across the Netherlands."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/Lifeliner/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
+                {
+                    "version": "6.1.2",
+                    "date": "2026-11-07",
+                    "notes": {
+                        "nl": "De knoppen Reset Pager-widget en Reset Kaart-widget werken weer. Appnaam, beschrijving, widgets en de resetknoppen zijn nu beschikbaar in alle 13 Homey-talen, plus een nieuwe kaart \"Meer apps van de ontwikkelaar\" in de app-instellingen.",
+                        "en": "Fixed the Reset Pager widget and Reset Map widget buttons. App name, description, widgets and the reset buttons are now available in all 13 Homey languages, plus a new \"More apps from the developer\" card in the app settings."
+                    },
+                    "_src": {
+                        "nl": "De knoppen Reset Pager-widget en Reset Kaart-widget werken weer. Appnaam, beschrijving, widgets en de resetknoppen zijn nu beschikbaar in alle 13 Homey-talen, plus een nieuwe kaart \"Meer apps van de ontwikkelaar\" in de app-instellingen.",
+                        "en": "Fixed the Reset Pager widget and Reset Map widget buttons. App name, description, widgets and the reset buttons are now available in all 13 Homey languages, plus a new \"More apps from the developer\" card in the app settings."
+                    }
+                },
                 {
                     "version": "6.1.1",
                     "date": "2026-05-17",
@@ -2471,17 +2500,6 @@
                     "_src": {
                         "en": "Reset button for widgets"
                     }
-                },
-                {
-                    "version": "6.0.16",
-                    "date": "2026-05-13",
-                    "notes": {
-                        "en": "Widget reset buttons capabilities",
-                        "nl": "Mogelijkheden van resetknoppen voor widgets"
-                    },
-                    "_src": {
-                        "en": "Widget reset buttons capabilities"
-                    }
                 }
             ],
             "homey": {
@@ -2489,12 +2507,12 @@
                     {
                         "id": "lifeliner",
                         "name": {
-                            "en": "Lifeliner",
-                            "nl": "Lifeliner"
+                            "nl": "Lifeliner",
+                            "en": "Lifeliner"
                         },
                         "class": "other",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/drivers/lifeliner/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/drivers/lifeliner/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/drivers/lifeliner/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/drivers/lifeliner/assets/icon.svg"
                     }
                 ],
                 "widgets": [
@@ -2504,8 +2522,8 @@
                             "nl": "Lifeliner Pager",
                             "en": "Lifeliner Pager"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/widgets/latest-p2000/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/widgets/latest-p2000/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/widgets/latest-p2000/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/widgets/latest-p2000/preview-dark.png"
                     },
                     {
                         "id": "p2000-map",
@@ -2513,8 +2531,8 @@
                             "nl": "Lifeliner Kaart",
                             "en": "Lifeliner Map"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/widgets/p2000-map/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/102/063cd92f-9d4c-4adf-b544-818e2d3c2a6c/widgets/p2000-map/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/widgets/p2000-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/widgets/p2000-map/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -2653,8 +2671,7 @@
                 "homepage": "https://p2000.xyz",
                 "support": "https://community.homey.app/t/app-pro-lifeline-alerts-for-homey/83742",
                 "category": "internet",
-                "live": "6.1.1",
-                "test": "6.1.2"
+                "live": "6.1.2"
             }
         },
         {
@@ -2669,11 +2686,21 @@
                 "en": "Dutch KNMI weather conditions and forecasts."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/KNMI/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
+                {
+                    "version": "4.3.5",
+                    "date": "2026-11-08",
+                    "notes": {
+                        "en": "Improvements weather alerts",
+                        "nl": "Verbeteringen weerwaarschuwingen"
+                    },
+                    "_src": {
+                        "en": "Improvements weather alerts"
+                    }
+                },
                 {
                     "version": "4.3.3",
                     "date": "2026-11-08",
@@ -2779,17 +2806,6 @@
                     "_src": {
                         "en": "App improvement"
                     }
-                },
-                {
-                    "version": "4.1.8",
-                    "date": "2026-05-18",
-                    "notes": {
-                        "en": "App Improvement",
-                        "nl": "App-verbetering"
-                    },
-                    "_src": {
-                        "en": "App Improvement"
-                    }
                 }
             ],
             "homey": {
@@ -2801,8 +2817,55 @@
                             "en": "KNMI"
                         },
                         "class": "other",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/111/920c90d4-5b7a-43f3-8705-05b3cc32796d/drivers/knmi/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/111/920c90d4-5b7a-43f3-8705-05b3cc32796d/drivers/knmi/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/drivers/knmi/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/drivers/knmi/assets/icon.svg"
+                    }
+                ],
+                "widgets": [
+                    {
+                        "id": "knmi-alerts",
+                        "name": {
+                            "nl": "Weeralarm",
+                            "en": "Weather alerts"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-alerts/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-alerts/preview-dark.png"
+                    },
+                    {
+                        "id": "knmi-current",
+                        "name": {
+                            "nl": "Weer nu",
+                            "en": "Weather now"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-current/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-current/preview-dark.png"
+                    },
+                    {
+                        "id": "knmi-forecast",
+                        "name": {
+                            "nl": "5-daagse verwachting",
+                            "en": "5-day forecast"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-forecast/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-forecast/preview-dark.png"
+                    },
+                    {
+                        "id": "knmi-map",
+                        "name": {
+                            "nl": "Waarschuwingskaart",
+                            "en": "Weather alert map"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-map/preview-dark.png"
+                    },
+                    {
+                        "id": "knmi-wind-sun",
+                        "name": {
+                            "nl": "Wind & zon",
+                            "en": "Wind & sun"
+                        },
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-wind-sun/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.knmi-weerwaarschuwing/116/274f24d8-302e-48fc-ba86-ae1d9bb82fa5/widgets/knmi-wind-sun/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -3457,6 +3520,90 @@
                                 "nl": "Verwacht weerbeeld morgen is veranderd",
                                 "en": "Expected weather recap tomorrow changed"
                             }
+                        },
+                        {
+                            "id": "warning_count_changed",
+                            "title": {
+                                "nl": "Actieve weerwaarschuwingen is veranderd",
+                                "en": "Active weather warnings changed"
+                            }
+                        },
+                        {
+                            "id": "warning_phenomena_changed",
+                            "title": {
+                                "nl": "Verschijnselen weerwaarschuwing is veranderd",
+                                "en": "Weather warning phenomena changed"
+                            }
+                        },
+                        {
+                            "id": "warning_areas_changed",
+                            "title": {
+                                "nl": "Gebieden weerwaarschuwing is veranderd",
+                                "en": "Weather warning areas changed"
+                            }
+                        },
+                        {
+                            "id": "warning_start_changed",
+                            "title": {
+                                "nl": "Begin weerwaarschuwing is veranderd",
+                                "en": "Weather warning start changed"
+                            }
+                        },
+                        {
+                            "id": "warning_end_changed",
+                            "title": {
+                                "nl": "Einde weerwaarschuwing is veranderd",
+                                "en": "Weather warning end changed"
+                            }
+                        },
+                        {
+                            "id": "warning_local_changed",
+                            "title": {
+                                "nl": "Weeralarm op Homey-locatie is veranderd",
+                                "en": "Weather alert at Homey location changed"
+                            }
+                        },
+                        {
+                            "id": "warning_today_changed",
+                            "title": {
+                                "nl": "Weeralarm vandaag is veranderd",
+                                "en": "Weather alert today changed"
+                            }
+                        },
+                        {
+                            "id": "warning_tomorrow_changed",
+                            "title": {
+                                "nl": "Weeralarm morgen is veranderd",
+                                "en": "Weather alert tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "warning_day_after_tomorrow_changed",
+                            "title": {
+                                "nl": "Weeralarm overmorgen is veranderd",
+                                "en": "Weather alert day after tomorrow changed"
+                            }
+                        },
+                        {
+                            "id": "warning_issued",
+                            "title": {
+                                "nl": "Er is een nieuwe weerwaarschuwing uitgegeven",
+                                "en": "A new weather warning was issued"
+                            }
+                        },
+                        {
+                            "id": "warning_ended",
+                            "title": {
+                                "nl": "Een weerwaarschuwing is afgelopen",
+                                "en": "A weather warning has ended"
+                            }
+                        },
+                        {
+                            "id": "warning_period_started",
+                            "title": {
+                                "nl": "Er is een nieuw waarschuwingstijdvak begonnen",
+                                "en": "A new weather warning time block has started"
+                            }
                         }
                     ],
                     "conditions": [
@@ -3501,6 +3648,20 @@
                                 "nl": "Het is licht bewolkt of onbewolkt",
                                 "en": "It is slightly cloudy or clear"
                             }
+                        },
+                        {
+                            "id": "con_warning_phenomenon",
+                            "title": {
+                                "nl": "Er is een waarschuwing voor een verschijnsel",
+                                "en": "There is a warning for a phenomenon"
+                            }
+                        },
+                        {
+                            "id": "con_warning_level",
+                            "title": {
+                                "nl": "Een weeralarmniveau is van kracht",
+                                "en": "A weather alert level is in effect"
+                            }
                         }
                     ],
                     "actions": [
@@ -3517,13 +3678,12 @@
                     "local",
                     "cloud"
                 ],
-                "compatibility": ">=12.1.0",
+                "compatibility": ">=12.3.0",
                 "color": "#144182",
                 "homepage": "https://lrvdlinden.app",
                 "support": "https://community.homey.app/t/app-pro-cloud-knmi/86268",
                 "category": "internet",
-                "live": "4.2.4",
-                "test": "4.3.5"
+                "live": "4.3.5"
             }
         },
         {
