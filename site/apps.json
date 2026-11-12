@@ -2268,7 +2268,8 @@
                 "support": "https://community.homey.app/t/app-pro-burgernet-for-homey/154795",
                 "category": "internet",
                 "live": "2.0.0"
-            }
+            },
+            "nlOnly": true
         },
         {
             "id": "homey-vermist",
