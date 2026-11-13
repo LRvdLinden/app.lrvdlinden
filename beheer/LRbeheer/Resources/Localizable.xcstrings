@@ -98,6 +98,22 @@
         }
       }
     },
+    "%@ is toegevoegd. Controleer de gegevens, zet eventueel Tonen in Nieuw en onderweg, Alleen Nederlands of een banner aan, en publiceer als je iets aanpast. De app staat al live met een eigen pagina.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ has been added. Check the details, optionally turn on Show in New and upcoming, Dutch only or a banner, and publish if you change anything. The app is already live with its own page."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is toegevoegd. Controleer de gegevens, zet eventueel Tonen in Nieuw en onderweg, Alleen Nederlands of een banner aan, en publiceer als je iets aanpast. De app staat al live met een eigen pagina."
+          }
+        }
+      }
+    },
     "%@ staat al in je portfolio": {
       "localizations": {
         "en": {
@@ -286,6 +302,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "+%lld niet bevestigd"
+          }
+        }
+      }
+    },
+    "1 tot 2 minuten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 to 2 minutes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 tot 2 minuten"
           }
         }
       }
@@ -1794,6 +1826,22 @@
         }
       }
     },
+    "App Store": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store"
+          }
+        }
+      }
+    },
     "App Store Connect is nog niet gekoppeld. Zet APPSTORE_CONNECT_P8 en VENDOR_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push.": {
       "localizations": {
         "en": {
@@ -1838,6 +1886,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "App Store-gegevens"
+          }
+        }
+      }
+    },
+    "App toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App toevoegen"
           }
         }
       }
@@ -2030,6 +2094,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Automatisch"
+          }
+        }
+      }
+    },
+    "Automatische check": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatic check"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatische check"
           }
         }
       }
@@ -2382,6 +2462,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Berichten aan gebruikers: pushmelding op iPhone en iPad, Android haalt ze zelf op"
+          }
+        }
+      }
+    },
+    "Bestaande app aangevuld met de gegevens van de link.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Existing app completed with the details from the link."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bestaande app aangevuld met de gegevens van de link."
           }
         }
       }
@@ -3218,6 +3314,22 @@
         }
       }
     },
+    "De app wordt opgehaald en toegevoegd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The app is being fetched and added."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De app wordt opgehaald en toegevoegd."
+          }
+        }
+      }
+    },
     "De controle op GitHub is mislukt. Bekijk de details in het logboek.": {
       "localizations": {
         "en": {
@@ -3422,6 +3534,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "De volgende check (08:00 of via Nieuwe apps ophalen / Apps bijwerken) verschijnt hier."
+          }
+        }
+      }
+    },
+    "De volgende check (automatisch rond 07:00 en 17:00, of via Nieuwe apps ophalen / Apps bijwerken) verschijnt hier.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The next check (automatically around 07:00 and 17:00, or via Fetch new apps / Update apps) appears here."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De volgende check (automatisch rond 07:00 en 17:00, of via Nieuwe apps ophalen / Apps bijwerken) verschijnt hier."
           }
         }
       }
@@ -3662,6 +3790,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dit duurt meestal %@; je kunt intussen gewoon verder werken."
+          }
+        }
+      }
+    },
+    "Dit lijkt geen App Store-link.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This doesn't look like an App Store link."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit lijkt geen App Store-link."
+          }
+        }
+      }
+    },
+    "Dit lijkt geen Homey App Store-link.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This doesn't look like a Homey App Store link."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit lijkt geen Homey App Store-link."
           }
         }
       }
@@ -5506,6 +5666,22 @@
         }
       }
     },
+    "Hoe wil je de app toevoegen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you want to add the app?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoe wil je de app toevoegen?"
+          }
+        }
+      }
+    },
     "Hoger": {
       "localizations": {
         "en": {
@@ -5534,6 +5710,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Homey"
+          }
+        }
+      }
+    },
+    "Homey App Store": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Homey App Store"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Homey App Store"
           }
         }
       }
@@ -5982,6 +6174,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Je concept is teruggezet"
+          }
+        }
+      }
+    },
+    "Je krijgt een leeg formulier en vult alles zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You get an empty form and fill in everything yourself."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je krijgt een leeg formulier en vult alles zelf in."
           }
         }
       }
@@ -6898,6 +7106,22 @@
         }
       }
     },
+    "Leeg formulier": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empty form"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leeg formulier"
+          }
+        }
+      }
+    },
     "Licht": {
       "localizations": {
         "en": {
@@ -7006,6 +7230,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Liggend beeld, ideaal 1600 × 900 pixels. Upload per taal een eigen banner, of één voor beide. Laat de titel leeg om de appnaam te tonen."
+          }
+        }
+      }
+    },
+    "Link": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link"
           }
         }
       }
@@ -7730,6 +7970,54 @@
         }
       }
     },
+    "Naam, icoon en omschrijving komen van de pagina. Staat er een App Store- of Homey-link op, dan wordt die app volledig opgehaald. Een TestFlight-link wordt een beta-app. Dit duurt 1 tot 2 minuten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name, icon and description come from the page. If it links to the App Store or the Homey App Store, that app is fetched in full. A TestFlight link becomes a beta app. This takes 1 to 2 minutes."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naam, icoon en omschrijving komen van de pagina. Staat er een App Store- of Homey-link op, dan wordt die app volledig opgehaald. Een TestFlight-link wordt een beta-app. Dit duurt 1 tot 2 minuten."
+          }
+        }
+      }
+    },
+    "Naam, icoon, apparaten, widgets, Flow-kaarten, versies en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name, icon, devices, widgets, Flow cards, versions and texts in Dutch and English are fetched automatically. This takes 1 to 2 minutes."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naam, icoon, apparaten, widgets, Flow-kaarten, versies en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten."
+          }
+        }
+      }
+    },
+    "Naam, icoon, categorie, platformen, versies, beoordelingen en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name, icon, category, platforms, versions, ratings and texts in Dutch and English are fetched automatically. This takes 1 to 2 minutes."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naam, icoon, categorie, platformen, versies, beoordelingen en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten."
+          }
+        }
+      }
+    },
     "Naslag": {
       "localizations": {
         "en": {
@@ -8018,6 +8306,22 @@
         }
       }
     },
+    "Niets toegevoegd. De app staat al op de site of de link gaf geen gegevens. Bekijk het logboek voor details.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing added. The app is already on the site or the link returned no details. See the log for details."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niets toegevoegd. De app staat al op de site of de link gaf geen gegevens. Bekijk het logboek voor details."
+          }
+        }
+      }
+    },
     "Nieuw": {
       "localizations": {
         "en": {
@@ -8258,6 +8562,38 @@
         }
       }
     },
+    "Nieuwe app toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add new app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe app toevoegen"
+          }
+        }
+      }
+    },
+    "Nieuwe app toevoegen vanaf een link: App Store, Homey App Store, TestFlight of een website. Naam, icoon, teksten in NL en EN en (bij een store-app) versies en beoordelingen worden automatisch ingevuld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a new app from a link: App Store, Homey App Store, TestFlight or a website. Name, icon, texts in Dutch and English and (for a store app) versions and ratings are filled in automatically"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe app toevoegen vanaf een link: App Store, Homey App Store, TestFlight of een website. Naam, icoon, teksten in NL en EN en (bij een store-app) versies en beoordelingen worden automatisch ingevuld"
+          }
+        }
+      }
+    },
     "Nieuwe apps": {
       "localizations": {
         "en": {
@@ -8270,6 +8606,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe apps"
+          }
+        }
+      }
+    },
+    "Nieuwe apps krijgen meteen een eigen pagina op lrvdlinden.app (/app/… en /homey/…, ook in het Engels onder /en/)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New apps immediately get their own page on lrvdlinden.app (/app/… and /homey/…, also in English under /en/)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe apps krijgen meteen een eigen pagina op lrvdlinden.app (/app/… en /homey/…, ook in het Engels onder /en/)"
           }
         }
       }
@@ -9518,6 +9870,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ophalen"
+          }
+        }
+      }
+    },
+    "Ophalen en toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetch and add"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ophalen en toevoegen"
           }
         }
       }
@@ -12578,6 +12946,22 @@
         }
       }
     },
+    "Vul een geldige link in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter a valid link."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vul een geldige link in."
+          }
+        }
+      }
+    },
     "Vul een liveblog aan met tekst, foto en link, met een pushmelding naar wie die bron volgt; wijzig of verwijder eigen berichten": {
       "localizations": {
         "en": {
@@ -12830,6 +13214,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Website"
+          }
+        }
+      }
+    },
+    "Website of TestFlight": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Website or TestFlight"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Website of TestFlight"
           }
         }
       }

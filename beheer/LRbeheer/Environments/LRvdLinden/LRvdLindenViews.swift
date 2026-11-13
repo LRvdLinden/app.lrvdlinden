@@ -48,6 +48,7 @@ struct LRvdLindenMain: View {
     @Bindable var store: LRvdLindenStore
     @State private var search = ""
     @State private var showLog = false
+    @State private var showNew = false
     @State private var importing = false
     @State private var confirmDiscard = false
     @State private var confirmSignOut = false
@@ -69,6 +70,7 @@ struct LRvdLindenMain: View {
         .task { if !store.loaded { await store.load() } }
         .toast($store.toast)
         .sheet(isPresented: $showLog) { NavigationStack { LRLogView(store: store) } }
+        .sheet(isPresented: $showNew) { NavigationStack { LRNewAppSheet(store: store) } }
         .fileImporter(isPresented: $importing, allowedContentTypes: [.json]) { r in
             guard case let .success(url) = r else { return }
             let ok = url.startAccessingSecurityScopedResource()
@@ -125,7 +127,8 @@ struct LRvdLindenMain: View {
 
     @ToolbarContentBuilder private var toolbar: some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
-            Button { store.newApp() } label: { Label("Nieuwe app", systemImage: "plus") }
+            Button { showNew = true } label: { Label("Nieuwe app", systemImage: "plus") }
+                .disabled(store.fetchingMode != nil)
         }
         ToolbarItem(placement: .secondaryAction) {
             Menu {
@@ -629,7 +632,7 @@ struct LRLogView: View {
             }
             if store.log != nil && rows.isEmpty {
                 ContentUnavailableView("Nog geen runs", systemImage: "tray",
-                                       description: Text("De volgende check (08:00 of via Nieuwe apps ophalen / Apps bijwerken) verschijnt hier."))
+                                       description: Text("De volgende check (automatisch rond 07:00 en 17:00, of via Nieuwe apps ophalen / Apps bijwerken) verschijnt hier."))
             }
         }
         .navigationTitle("Logboek")
@@ -659,9 +662,10 @@ struct LRLogView: View {
         guard let log = store.log else { return [] }
         let iso = ISO8601DateFormatter()
         func date(_ s: String?) -> Date? { s.flatMap { iso.date(from: $0) } }
-        let modeLabel: [String: LocalizedStringKey] = ["bijwerken": "Apps bijwerken", "nieuw": "Nieuwe apps ophalen", "alles": "Dagelijkse check"]
+        let modeLabel: [String: LocalizedStringKey] = ["bijwerken": "Apps bijwerken", "nieuw": "Nieuwe apps ophalen", "alles": "Automatische check",
+                                                       "toevoegen": "App toevoegen"]
         var all: [Row] = log.active.map { a in
-            Row(id: a.id, date: date(a.time), title: a.trigger == "schedule" ? "Dagelijkse check" : "Store-check",
+            Row(id: a.id, date: date(a.time), title: a.trigger == "schedule" ? "Automatische check" : "Store-check",
                 who: a.trigger == "schedule" ? "automatisch" : "handmatig", pending: true, running: a.state == "running",
                 changed: false, lines: [], checked: [], url: a.url.flatMap(URL.init(string:)))
         }
@@ -739,5 +743,91 @@ struct LRLogView: View {
                 }
             }
         }
+    }
+}
+
+/// Nieuwe app: handmatig (leeg formulier) of automatisch vanaf een App Store-, Homey-, TestFlight- of website-link.
+/// Zelfde werking als de knop "+ Nieuwe app" in site/beheer.html (store-refresh.php?mode=toevoegen&url=…).
+struct LRNewAppSheet: View {
+    @Bindable var store: LRvdLindenStore
+    @Environment(\.dismiss) private var dismiss
+    @State private var how = "appstore"
+    @State private var url = ""
+    @State private var problem: LocalizedStringKey?
+
+    private var placeholder: String {
+        switch how {
+        case "appstore": "https://apps.apple.com/nl/app/…/id123456789"
+        case "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.…/"
+        default: "https://… of https://testflight.apple.com/join/…"
+        }
+    }
+    private var hint: LocalizedStringKey {
+        switch how {
+        case "appstore": "Naam, icoon, categorie, platformen, versies, beoordelingen en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten."
+        case "homey": "Naam, icoon, apparaten, widgets, Flow-kaarten, versies en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten."
+        case "web": "Naam, icoon en omschrijving komen van de pagina. Staat er een App Store- of Homey-link op, dan wordt die app volledig opgehaald. Een TestFlight-link wordt een beta-app. Dit duurt 1 tot 2 minuten."
+        default: "Je krijgt een leeg formulier en vult alles zelf in."
+        }
+    }
+
+    var body: some View {
+        Form {
+            Section {
+                Picker("Hoe wil je de app toevoegen?", selection: $how) {
+                    Label("App Store", systemImage: "app.badge").tag("appstore")
+                    Label("Homey App Store", systemImage: "house").tag("homey")
+                    Label("Website of TestFlight", systemImage: "safari").tag("web")
+                    Label("Handmatig", systemImage: "square.and.pencil").tag("manual")
+                }
+                .pickerStyle(.inline)
+                .labelsHidden()
+            } header: { Text("Hoe wil je de app toevoegen?") }
+            if how != "manual" {
+                Section {
+                    TextField("Link", text: $url, prompt: Text(verbatim: placeholder))
+                        .keyboardType(.URL)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                        .onSubmit(go)
+                    if let problem { Text(problem).font(.footnote).foregroundStyle(Theme.bad) }
+                } header: { Text("Link") } footer: { Text(hint) }
+            } else {
+                Section { } footer: { Text(hint) }
+            }
+        }
+        .navigationTitle("Nieuwe app toevoegen")
+        .navigationBarTitleDisplayMode(.inline)
+        .onChange(of: how) { problem = nil }
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) { Button("Annuleren") { dismiss() } }
+            ToolbarItem(placement: .confirmationAction) {
+                Button(how == "manual" ? "Leeg formulier" : "Ophalen en toevoegen", action: go)
+                    .disabled(how != "manual" && url.trimmingCharacters(in: .whitespaces).isEmpty)
+            }
+        }
+    }
+
+    private func go() {
+        let u = url.trimmingCharacters(in: .whitespacesAndNewlines)
+        switch how {
+        case "manual":
+            store.newApp()
+            dismiss()
+            return
+        case "appstore" where u.range(of: #"apps\.apple\.com/.*id\d+|^(id)?\d{6,12}$"#, options: .regularExpression) == nil:
+            problem = "Dit lijkt geen App Store-link."
+            return
+        case "homey" where u.range(of: #"homey\.app/[a-z-]+/app/|^[a-z0-9]+(\.[a-z0-9_-]+){2,}$"#, options: .regularExpression) == nil:
+            problem = "Dit lijkt geen Homey App Store-link."
+            return
+        default:
+            guard !u.isEmpty, u.count <= 500, u.rangeOfCharacter(from: CharacterSet(charactersIn: " <>\"'")) == nil else {
+                problem = "Vul een geldige link in."
+                return
+            }
+        }
+        dismiss()
+        Task { await store.fetchStores(mode: "toevoegen", url: u) }
     }
 }

@@ -298,19 +298,22 @@ final class LRvdLindenStore {
 
     // MARK: store-check (store-refresh.php) en logboek (store-log.php)
 
-    func fetchStores(mode: String) async {
+    func fetchStores(mode: String, url addURL: String = "") async {
         guard let client = account.client, fetchingMode == nil else { return }
         fetchingMode = mode
         defer { fetchingMode = nil }
         let started = Date()
-        let what = mode == "bijwerken" ? String(localized: "Alle apps worden bijgewerkt.") : String(localized: "Er wordt naar nieuwe apps gezocht.")
-        let dur = mode == "bijwerken" ? String(localized: "3 tot 5 minuten") : String(localized: "1 tot 3 minuten")
+        let what = mode == "bijwerken" ? String(localized: "Alle apps worden bijgewerkt.")
+            : mode == "toevoegen" ? String(localized: "De app wordt opgehaald en toegevoegd.") : String(localized: "Er wordt naar nieuwe apps gezocht.")
+        let dur = mode == "bijwerken" ? String(localized: "3 tot 5 minuten") : mode == "toevoegen" ? String(localized: "1 tot 2 minuten") : String(localized: "1 tot 3 minuten")
         func status(_ t: String) {
             result = Banner(kind: .warn, text: "\(what) \(t) " + String(format: String(localized: "Dit duurt meestal %@; je kunt intussen gewoon verder werken."), dur))
         }
         do {
             status(String(localized: "Opdracht wordt gestart…"))
-            let st = try await client.call("POST", "store-refresh.php", query: ["mode": mode])
+            var query = ["mode": mode]
+            if mode == "toevoegen" { query["url"] = addURL }
+            let st = try await client.call("POST", "store-refresh.php", query: query)
             let since = st["since"] as? String ?? ""
             var res: [String: Any] = [:]
             while true {
@@ -331,10 +334,28 @@ final class LRvdLindenStore {
             original = server
             save()
             if selection.flatMap({ app($0) }) == nil { selection = apps.first?["id"]?.str }
+            if mode == "toevoegen" {
+                // de nieuwe (of aangevulde) app meteen openen
+                let core = addURL.replacingOccurrences(of: "https://", with: "").replacingOccurrences(of: "http://", with: "")
+                let hit = (server["apps"]?.items ?? []).first { !beforeIDs.contains($0["id"]?.str ?? "") }
+                    ?? (server["apps"]?.items ?? []).first { a in
+                        let links = a["links"]
+                        return (links?.keys ?? []).contains { k in
+                            let s = (links?[k]?.str ?? "").replacingOccurrences(of: "https://", with: "").replacingOccurrences(of: "http://", with: "")
+                            return !s.isEmpty && core.contains(s.trimmingCharacters(in: CharacterSet(charactersIn: "/")))
+                        }
+                    }
+                if let id = hit?["id"]?.str { selection = id }
+            }
             let runNumber = (res["url"] as? String)?.components(separatedBy: "runs/").last
             let changed = (res["changed"] as? Bool) == true
             let text: String
-            if !added.isEmpty {
+            if mode == "toevoegen" {
+                text = !added.isEmpty
+                    ? String(format: String(localized: "%@ is toegevoegd. Controleer de gegevens, zet eventueel Tonen in Nieuw en onderweg, Alleen Nederlands of een banner aan, en publiceer als je iets aanpast. De app staat al live met een eigen pagina."), added.joined(separator: ", "))
+                    : changed ? String(localized: "Bestaande app aangevuld met de gegevens van de link.")
+                    : String(localized: "Niets toegevoegd. De app staat al op de site of de link gaf geen gegevens. Bekijk het logboek voor details.")
+            } else if !added.isEmpty {
                 text = String(format: String(localized: "Nieuwe apps toegevoegd: %@. Controleer ze en zet eventueel Tonen in Nieuw en onderweg of een banner aan."), added.joined(separator: ", "))
             } else if changed {
                 text = mode == "bijwerken" ? String(localized: "Bijgewerkt. Versies, teksten, beoordelingen of Homey-details zijn vernieuwd.")
