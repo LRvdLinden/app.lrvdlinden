@@ -59,6 +59,19 @@ enum DraftStore {
 
     /// mergeDraft() uit beheer.html: alleen items die in het concept gewijzigd, toegevoegd of verwijderd zijn gaan mee,
     /// de rest komt van de server. `list` is de lijst met items met een `id` (apps, of packages/projects/reviews).
+    /// Per veld samenvoegen: alleen de velden die je in dit item hebt aangepast gaan voor; de rest
+    /// (bijv. versies, beoordelingen of de datum "added" van de store-check) blijft van de server.
+    static func mergeFields(base: JSON, mine: JSON, server: JSON) -> JSON {
+        guard case let .object(bk) = base, case let .object(mk) = mine, case .object = server else { return mine }
+        var out = server
+        var keys: [String] = []
+        for k in bk.map(\.0) + mk.map(\.0) where !keys.contains(k) { keys.append(k) }
+        for k in keys where base[k] != mine[k] {
+            out[k] = mine[k]  // nil verwijdert het veld
+        }
+        return out
+    }
+
     static func merge(base: JSON, draft: JSON, server: JSON, list: String) -> (data: JSON, kept: [String]) {
         let b = Dictionary(base[list]?.items.compactMap { a in a["id"]?.str.map { ($0, a) } } ?? [], uniquingKeysWith: { x, _ in x })
         let d = Dictionary(draft[list]?.items.compactMap { a in a["id"]?.str.map { ($0, a) } } ?? [], uniquingKeysWith: { x, _ in x })
@@ -68,7 +81,7 @@ enum DraftStore {
             guard let id = a["id"]?.str else { out.append(a); continue }
             if b[id] != nil && d[id] == nil { kept.append((a["name"]?.str ?? id) + " (verwijderd)"); continue }
             if let mine = d[id], let was = b[id], was != mine {
-                out.append(mine); kept.append(mine["name"]?.str ?? id)
+                out.append(mergeFields(base: was, mine: mine, server: a)); kept.append(mine["name"]?.str ?? id)
             } else {
                 out.append(a)
             }

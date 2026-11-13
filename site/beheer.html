@@ -764,6 +764,17 @@ $("#fileIn").addEventListener("change", e => {
 // Concept samenvoegen met de nieuwste versie op de server:
 // alleen apps die jij in je concept hebt gewijzigd, toegevoegd of verwijderd worden overgenomen,
 // al het andere komt van de server. Zo gaat werk van een andere sessie nooit verloren.
+// Per veld samenvoegen: alleen de velden die jij in deze app hebt aangepast gaan voor,
+// de rest (bijv. versies, beoordelingen, added van de store-check) blijft van de server.
+function mergeApp(base, mine, srv){
+  const out = { ...srv };
+  for (const k of new Set([...Object.keys(base), ...Object.keys(mine)])) {
+    if (JSON.stringify(base[k]) === JSON.stringify(mine[k])) continue;
+    if (k in mine) out[k] = mine[k]; else delete out[k];
+  }
+  return out;
+}
+
 function mergeDraft(base, draft, server){
   const B = new Map((base.apps||[]).map(a => [a.id, JSON.stringify(a)]));
   const D = new Map((draft.apps||[]).map(a => [a.id, a]));
@@ -771,7 +782,7 @@ function mergeDraft(base, draft, server){
   for (const a of server.apps || []) {
     if (B.has(a.id) && !D.has(a.id)) { kept.push(a.name + " (verwijderd)"); continue; }
     const mine = D.get(a.id);
-    if (mine && B.has(a.id) && B.get(a.id) !== JSON.stringify(mine)) { out.push(mine); kept.push(mine.name); }
+    if (mine && B.has(a.id) && B.get(a.id) !== JSON.stringify(mine)) { out.push(mergeApp(JSON.parse(B.get(a.id)), mine, a)); kept.push(mine.name); }
     else out.push(a);
   }
   (draft.apps||[]).forEach((a, i) => {

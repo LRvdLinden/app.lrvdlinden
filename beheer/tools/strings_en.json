@@ -886,5 +886,6 @@
 "Geen Engelse teksten en geen Engelse pagina; scheelt vertalen": "No English texts and no English page; saves translating",
 "Bij een nieuwe app kies je meteen of hij alleen Nederlands is: dan worden er geen Engelse teksten gemaakt": "When adding an app you choose right away whether it's Dutch only: then no English texts are made",
 "Promo-banners voor Nieuw en onderweg komen automatisch uit de content-repo (marketingbeeld), tenzij je zelf een banner uploadt": "Promo banners for New and upcoming come automatically from the content repo (marketing image), unless you upload your own banner",
-"LRvdLinden opent altijd in het overzicht van lrvdlinden.app, niet meteen in een app": "LRvdLinden always opens on the lrvdlinden.app overview, not straight into an app"
+"LRvdLinden opent altijd in het overzicht van lrvdlinden.app, niet meteen in een app": "LRvdLinden always opens on the lrvdlinden.app overview, not straight into an app",
+"Publiceren voegt nu per veld samen: wat de automatische check intussen bijwerkte (versies, beoordelingen, datum toegevoegd) blijft behouden": "Publishing now merges per field: whatever the automatic check updated in the meantime (versions, ratings, date added) is kept"
 }

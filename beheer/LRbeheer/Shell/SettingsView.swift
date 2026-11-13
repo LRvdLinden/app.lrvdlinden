@@ -96,6 +96,7 @@ struct WhatsNewView: View {
                     Label("LRbeheer start altijd in het overzicht: kies zelf waar je heen gaat (de laatstgebruikte omgeving is gemarkeerd)", systemImage: "square.grid.2x2")
                 }
                 Section("LRvdLinden") {
+                    Label("Publiceren voegt nu per veld samen: wat de automatische check intussen bijwerkte (versies, beoordelingen, datum toegevoegd) blijft behouden", systemImage: "arrow.triangle.merge")
                     Label("LRvdLinden opent altijd in het overzicht van lrvdlinden.app, niet meteen in een app", systemImage: "rectangle.grid.1x2")
                     Label("Bij een nieuwe app kies je meteen of hij alleen Nederlands is: dan worden er geen Engelse teksten gemaakt", systemImage: "character.bubble")
                     Label("Promo-banners voor Nieuw en onderweg komen automatisch uit de content-repo (marketingbeeld), tenzij je zelf een banner uploadt", systemImage: "photo.on.rectangle")

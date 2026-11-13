@@ -10562,6 +10562,22 @@
         }
       }
     },
+    "Publiceren voegt nu per veld samen: wat de automatische check intussen bijwerkte (versies, beoordelingen, datum toegevoegd) blijft behouden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publishing now merges per field: whatever the automatic check updated in the meantime (versions, ratings, date added) is kept"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publiceren voegt nu per veld samen: wat de automatische check intussen bijwerkte (versies, beoordelingen, datum toegevoegd) blijft behouden"
+          }
+        }
+      }
+    },
     "Publiceren zonder app-update; aanvragen worden gesloten en de aanvragers krijgen een pushmelding": {
       "localizations": {
         "en": {
