@@ -766,6 +766,14 @@ def add_from_url(apps, log, url):
     # Website met een link naar de App Store of de Homey App Store: die app toevoegen, met de website erbij
     if not tf:
         m = re.search(r"https://apps\.apple\.com/[^\"'\s<>]*?/id(\d+)", html)
+        if m and m.group(1) in {appstore_id(a) for a in apps}:
+            app = next(a for a in apps if appstore_id(a) == m.group(1))
+            if not app.setdefault("links", {}).get("website"):
+                app["links"]["website"] = url
+                log.append(f"- Aangevuld: {app['name']} (website)")
+            else:
+                log.append(f"- Staat al op de site: {app['name']} (App Store-link op {url})")
+            return {app["id"]}
         if m:
             found = lookup_appstore(m.group(1))
             if found:
