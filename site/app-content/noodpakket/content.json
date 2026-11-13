@@ -1,0 +1,98 @@
+{
+ "slug": "noodpakket",
+ "id": "app-lrvdlinden-noodpakket",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {
+  "nl": {
+   "description": "Ben jij klaar voor 72 uur zonder stroom, water of internet? De overheid adviseert elk huishouden om een noodpakket in huis te hebben. Noodpakket helpt je het samen te stellen, compleet te houden en op tijd te vernieuwen.\n\nSCAN HET, KLAAR\n• Scan de barcode van een product en de app vult naam, merk, hoeveelheid en categorie zelf in\n• Scan de houdbaarheidsdatum van de verpakking met je camera\n• Producten die je eerder scande worden ook zonder internet herkend\n\nALTIJD COMPLEET\n• Checklist volgens het 72-uursadvies van de overheid\n• Hoeveelheden worden berekend voor jouw huishouden: volwassenen, kinderen en huisdieren\n• Kies zelf voor hoeveel dagen je wilt voorbereiden\n• Zet onderdelen die je niet nodig hebt op \"Niet nodig\"\n• Eigen spullen toevoegen kan altijd\n\nNOOIT MEER OVER DATUM\n• Overzicht van alles wat binnenkort verloopt\n• Herinneringen voordat water, eten, medicijnen of batterijen verlopen\n• Periodieke controle van je hele pakket\n\nBOODSCHAPPENLIJST\n• Alles wat ontbreekt staat automatisch op je lijst, met de juiste hoeveelheid\n• Vink af wat je hebt gekocht en het staat meteen in je pakket\n\nNOODPLAN\n• Verzamelpunt, contactpersonen, belangrijke nummers, medische informatie en de radiozender voor noodinformatie\n• Print je noodplan of bewaar het als PDF\n• Korte uitleg wat je doet bij NL-Alert, stroomuitval, uitval van drinkwater, noodweer en als telefoon en internet niet werken\n\nWIDGET\n• Zie op je beginscherm hoe compleet je pakket is en wat als eerste verloopt\n\nPRIVACY\nGeen account, geen reclame en geen tracking. Je gegevens staan op je toestel en synchroniseren via je eigen iCloud. Bij het scannen wordt alleen het barcodenummer opgezocht in de open databases van Open Food Facts en Open Products Facts.\n\nNoodpakket is een onafhankelijke app en is niet verbonden aan de overheid of aan Denk Vooruit. Productgegevens: Open Food Facts en Open Products Facts, beschikbaar onder de Open Database License (ODbL).\n\nGemaakt door Léon van der Linden. Bekijk in de app ook mijn andere apps.",
+   "promotional_text": "Scan de barcode van je water, batterijen of blikken en Noodpakket vult de rest in. Zo weet je precies wat er nog ontbreekt voor 72 uur zelfredzaam.",
+   "subtitle": "Scan, vul aan, altijd compleet"
+  },
+  "en": {
+   "description": "Are you ready for 72 hours without power, water or internet? The Dutch government advises every household to keep an emergency kit at home. Noodpakket helps you build it, keep it complete and replace things in time.\n\nSCAN IT, DONE\n• Scan a product barcode and the app fills in name, brand, quantity and category\n• Scan the expiry date on the packaging with your camera\n• Products you scanned before are recognised even without internet\n\nALWAYS COMPLETE\n• Checklist based on the Dutch government's 72-hour advice\n• Quantities calculated for your household: adults, children and pets\n• Choose how many days you want to prepare for\n• Mark items you don't need as \"Not needed\"\n• Add your own items at any time\n\nNEVER EXPIRED\n• Overview of everything that expires soon\n• Reminders before water, food, medicines or batteries expire\n• Periodic check of your whole kit\n\nSHOPPING LIST\n• Everything that is missing is added automatically, in the right amount\n• Tick off what you bought and it goes straight into your kit\n\nEMERGENCY PLAN\n• Meeting point, contacts, important numbers, medical information and the emergency radio station\n• Print your plan or save it as a PDF\n• Short guidance for NL-Alert, power cuts, drinking water outages, severe weather and when phone and internet are down\n\nWIDGET\n• See on your Home Screen how complete your kit is and what expires first\n\nPRIVACY\nNo account, no ads and no tracking. Your data stays on your device and syncs through your own iCloud. When you scan, only the barcode number is looked up in the open databases of Open Food Facts and Open Products Facts.\n\nThe app is available in Dutch and English. Noodpakket is an independent app and is not affiliated with the Dutch government or Denk Vooruit. Product data: Open Food Facts and Open Products Facts, available under the Open Database License (ODbL).\n\nMade by Léon van der Linden. Find my other apps inside the app.",
+   "promotional_text": "Scan the barcode of your water, batteries or tins and Noodpakket fills in the rest. Always know what is still missing to get through 72 hours on your own.",
+   "subtitle": "Scan, restock, never expire"
+  }
+ },
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "c4d2346fe69fe78285f1d83da73e5efd29b232e4",
+  "shot-nl-02.webp": "0ea8a812d8fe65ebc2af58ce929cc13065a2bf26",
+  "shot-nl-03.webp": "b4616c2a540d0d919764f07fd4d665c18294837f",
+  "shot-nl-04.webp": "7eb14bdfaf1684e86554d72dbf7a89f899e135d4",
+  "shot-nl-05.webp": "34b0b3c70b7b94b0fb100a381eb306717d0c1740",
+  "shot-en-01.webp": "62a03b88b8c1eb334c92da40876821c5b4b430a3",
+  "shot-en-02.webp": "fe25d2e2c38479daa84fe4d1d7b724913df6bd27",
+  "shot-en-03.webp": "517138ffb3b831024ee607368ebf6c8454c71d4d",
+  "shot-en-04.webp": "10cc16e87c33995c38039d11a2866f52a474db4e",
+  "shot-en-05.webp": "163b3c7ee7988bfa5c25ec4a068b73ef731a3c6c",
+  "text-nl-description": "d7040b2aad20ee938b3c84394822d1b006a246cd",
+  "text-nl-promotional_text": "0fdd58e3ab5220309ca9ba6c33170e73e81952a7",
+  "text-nl-subtitle": "7519539bc086bd205813d270b65778f770273625",
+  "text-en-description": "55b16468cf38b72d6b6ec0f4ddf07adbab088145",
+  "text-en-promotional_text": "386a05f10bb36f612dc09ebd2b5a41006512c4ba",
+  "text-en-subtitle": "2f3d20013ef85e9c787de5cac1af95f21bb99842",
+  "og-nl.jpg": "a23c8c3e7b78eb6b902ecd86886f99c6a0c7a7f7",
+  "og-en.jpg": "gen:08662839ec70b621bf3ffcfe2b8117c148e53074"
+ },
+ "folder": "Noodpakket",
+ "source": "Noodpakket/AppStore/2026-11-12"
+}
