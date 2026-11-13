@@ -65,7 +65,7 @@ CAT = {"utilities": "UtilitiesApplication", "entertainment": "EntertainmentAppli
        "finance": "FinanceApplication", "reference": "ReferenceApplication", "social": "SocialNetworkingApplication",
        "developer": "DeveloperApplication", "design": "DesignApplication", "shopping": "ShoppingApplication"}
 person = {"@type": "Person", "@id": BASE + "#leon", "name": "Léon van der Linden", "url": BASE,
-          "sameAs": ["https://github.com/LRvdLinden",
+          "sameAs": [
                      "https://apps.apple.com/nl/developer/leon-van-der-linden/id607860328",
                      "https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/"]}
 items = []
