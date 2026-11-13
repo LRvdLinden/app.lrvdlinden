@@ -348,7 +348,7 @@
                 "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
                 "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 2,
             "size": "116,6 MB",
             "languages": "NL + 10",
@@ -469,7 +469,7 @@
                     }
                 }
             ],
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "promo": {
                 "image": {
@@ -653,7 +653,7 @@
                 "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
                 "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "size": "23,1 MB",
             "languages": "EN",
@@ -699,7 +699,7 @@
                 "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 15,
             "size": "15,3 MB",
             "languages": "EN",
@@ -1185,7 +1185,7 @@
                 "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
                 "en": "Learn chess the easy way. With dark mode and several board themes."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 3,
             "size": "1,7 MB",
             "languages": "NL + 3",
@@ -2476,7 +2476,7 @@
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
                 {
                     "version": "6.1.2",
@@ -2778,7 +2778,7 @@
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
                 {
                     "version": "4.3.5",
