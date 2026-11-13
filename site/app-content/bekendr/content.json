@@ -1,0 +1,72 @@
+{
+ "slug": "bekendr",
+ "id": "app-lrvdlinden-bekendr",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {
+  "nl": {
+   "description": "Wil je weten wat er in je buurt gaat veranderen? Bekendr laat je de officiële bekendmakingen van gemeente, provincie en waterschap zien die over jouw omgeving gaan. Een dakkapel bij de buren, een straat die dicht gaat, bomen die gekapt worden of een nieuw bestemmingsplan: je ziet het meteen, op één plek.\n\nKies een adres met een straal, of een buurt, wijk of hele gemeente. Bekendr haalt de bekendmakingen rechtstreeks op bij officielebekendmakingen.nl en houdt ze voor je bij.\n\nWAT JE KUNT\n• Bekendmakingen rond je adres (straal van 100 m tot 2 km), of in een buurt, wijk of gemeente\n• Meerdere buurten of wijken samenvoegen tot één locatie\n• Meerdere locaties volgen, zoals thuis, je werk of je ouders\n• Duidelijke categorieën: vergunningen, verkeer, bomen en kap, evenementen, ruimtelijke plannen en overige regels\n• Per locatie kiezen welke categorieën je wilt zien\n• Alle meldingen als lijst of op de kaart, met een eigen kleur per categorie\n• Per melding de afstand, de instantie, een samenvatting en de link naar de officiële publicatie\n• Bewaren, als gelezen markeren of naar de prullenbak vegen\n• Een melding bij iets nieuws, met stille uren voor de nacht\n• Widget voor je beginscherm\n• Een adres delen vanuit een andere app om het als locatie toe te voegen\n• Vergrendelen met Face ID of Touch ID\n• Je locaties en keuzes via iCloud gelijk op iPhone, iPad en Mac\n\nPRIVACY\nGeen account, geen advertenties, geen tracking. Bekendr heeft geen eigen server: de app haalt de gegevens zelf op bij de openbare bronnen van de overheid (KOOP en PDOK). Je locaties staan alleen op je apparaten en in je eigen iCloud.\n\nGOED OM TE WETEN\nBekendr is geen app van de overheid. Een zienswijze of bezwaar dien je in bij de instantie zelf; hoe dat gaat, staat in de officiële publicatie.\n\nBekendr is gemaakt door Léon van der Linden. In de app vind je ook zijn andere apps.",
+   "promotional_text": "Zie meteen welke vergunningen, verkeersbesluiten, kap en evenementen er rond je adres worden bekendgemaakt. Zonder account, rechtstreeks van de overheid.",
+   "subtitle": "Bekendmakingen in je buurt"
+  },
+  "en": {
+   "description": "Want to know what is about to change in your neighbourhood? Bekendr shows the official public notices (bekendmakingen) from Dutch municipalities, provinces and water boards that concern your area. A dormer at the neighbours, a street that will be closed, trees being felled or a new zoning plan: you see it right away, in one place.\n\nChoose an address with a radius, or a neighbourhood, district or entire municipality. Bekendr fetches the notices directly from officielebekendmakingen.nl and keeps track of them for you.\n\nWHAT YOU CAN DO\n• Notices around your address (radius from 100 m to 2 km), or in a neighbourhood, district or municipality\n• Combine several neighbourhoods or districts into one location\n• Follow several locations, such as home, work or your parents\n• Clear categories: permits, traffic, trees and felling, events, zoning plans and other rules\n• Choose per location which categories you want to see\n• All notices as a list or on the map, with a colour per category\n• For each notice the distance, the authority, a summary and a link to the official publication\n• Save, mark as read or swipe to the trash\n• A notification when something new appears, with quiet hours at night\n• Home Screen widget\n• Share an address from another app to add it as a location\n• Lock with Face ID or Touch ID\n• Your locations and choices in sync via iCloud on iPhone, iPad and Mac\n\nPRIVACY\nNo account, no ads, no tracking. Bekendr has no server of its own: the app fetches the data itself from the public government sources (KOOP and PDOK). Your locations stay on your devices and in your own iCloud.\n\nGOOD TO KNOW\nBekendr covers the Netherlands only and the app is available in Dutch. Bekendr is not a government app.\n\nMade by Léon van der Linden. The app also shows his other apps.",
+   "promotional_text": "See which permits, traffic decisions, tree felling and events are officially announced around your address in the Netherlands. No account, straight from the government.",
+   "subtitle": "Dutch public notices nearby"
+  }
+ },
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "40813a94c036cf6fb1711df1209e097019a6f3d5",
+  "shot-nl-02.webp": "7b167be45f3f50f3560cf35243c2deef236a059f",
+  "shot-nl-03.webp": "dfefe3e78235c07e52434b833cf96d3f47fadd5a",
+  "shot-nl-04.webp": "3b340e4c0ae86b5429055ff64de151d9e291f980",
+  "shot-nl-05.webp": "2420d64a4aae58f2f0fb3d4d4f813b2e3d160198",
+  "shot-nl-06.webp": "3a0dd70f02daee4193b9820887803c4e4c69fc0c",
+  "text-nl-description": "9073615996af9785ef265f8353b254e266269e58",
+  "text-nl-promotional_text": "014c99f2984b441e648c1657061bf0680bf186c7",
+  "text-nl-subtitle": "5361d82db0d8319269b4b4c1c82e1eee5141a8c9",
+  "text-en-description": "d2ae0a861bd5806cb7fff9a302ef41953641d21e",
+  "text-en-promotional_text": "4b1a201379ca6efb08e2873e6135f27f36d1a052",
+  "text-en-subtitle": "be2e5e3b802fc227949f29a6fe7a88ddb76a42b6",
+  "og-nl.jpg": "eb8a985749d9352ed08b0478dbe0752d24fc69a8",
+  "og-en.jpg": "gen:dc2f1e2eab08e5e311013fe3c8558dc998181f60"
+ },
+ "folder": "Bekendr",
+ "source": "Bekendr/AppStore/2026-11-09"
+}

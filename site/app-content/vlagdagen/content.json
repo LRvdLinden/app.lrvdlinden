@@ -1,0 +1,117 @@
+{
+ "slug": "vlagdagen",
+ "id": "vlagdagen",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-07.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-08.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-07.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-08.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "18dfe2803d707e635b47e3ae5645cd6080fa2dce",
+  "shot-nl-02.webp": "ed9ba2720706f70b60870527a15b469877a3b4b3",
+  "shot-nl-03.webp": "1ff415a79f82eec97b310cceb2563fa2790b9560",
+  "shot-nl-04.webp": "0531f40728bc016a5a657039bf92b26a101d0ebe",
+  "shot-nl-05.webp": "78c144b334937dac59745496969d3c584ebed029",
+  "shot-nl-06.webp": "e2e5b5e7c67990f7f5051451d63e7feb67f240d9",
+  "shot-nl-07.webp": "9bb4a752597e51e5e4a2409bced3ed7339393836",
+  "shot-nl-08.webp": "bc3ebea3c98ad8ddbe9528da53ed5e1431a00106",
+  "shot-en-01.webp": "18dfe2803d707e635b47e3ae5645cd6080fa2dce",
+  "shot-en-02.webp": "ed9ba2720706f70b60870527a15b469877a3b4b3",
+  "shot-en-03.webp": "1ff415a79f82eec97b310cceb2563fa2790b9560",
+  "shot-en-04.webp": "0531f40728bc016a5a657039bf92b26a101d0ebe",
+  "shot-en-05.webp": "78c144b334937dac59745496969d3c584ebed029",
+  "shot-en-06.webp": "e2e5b5e7c67990f7f5051451d63e7feb67f240d9",
+  "shot-en-07.webp": "9bb4a752597e51e5e4a2409bced3ed7339393836",
+  "shot-en-08.webp": "bc3ebea3c98ad8ddbe9528da53ed5e1431a00106",
+  "og-nl.jpg": "gen:54974503ce72ceb2e95844a5e6436e45222bde51",
+  "og-en.jpg": "gen:18cba6b2bfade19bb36eef6a8bc0ad4037ae9cd0"
+ },
+ "folder": "VlagDagen",
+ "source": "VlagDagen/AppStore/2026-11-09"
+}

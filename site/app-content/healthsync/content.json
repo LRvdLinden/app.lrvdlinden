@@ -1,0 +1,93 @@
+{
+ "slug": "healthsync",
+ "id": "healthsync",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "c5e1a2331917e2607d61e72bb9dfa1b16bc427fc",
+  "shot-nl-02.webp": "b941ee8c2ff209fd59e522c1d55e64f9e88daf93",
+  "shot-nl-03.webp": "ce2520a0bd2c0f54e2e71de2d836c0ba42e81a87",
+  "shot-nl-04.webp": "884a1a08707fb639e4eb7511d0de54c42e4ffd3e",
+  "shot-nl-05.webp": "a2125b7b89193138fe9b48bba653af9a10878ea8",
+  "shot-nl-06.webp": "fdd40990a7d7523fced0f7b267e725fa6b36b3de",
+  "shot-en-01.webp": "ee621fbce0bf49536ae8d46b1d72b48aefd0e8ac",
+  "shot-en-02.webp": "ea0c530ce4713d932d6138e3502caa8cab3aabc4",
+  "shot-en-03.webp": "9bd1b69e61753a5a9aab38709ca2f79f0b3037a8",
+  "shot-en-04.webp": "2509df53f7ac58f08b216e267e0d359bee853a3d",
+  "shot-en-05.webp": "857528d268b73a937277742ad9206170e590a08c",
+  "shot-en-06.webp": "8eadd83baf91155dbf118f96d1e0492f6f9955fb",
+  "og-nl.jpg": "gen:f699fc8f90736951ed2794731a807d030d863b9d",
+  "og-en.jpg": "gen:a4b049e8ba7f2f9325f8729274349a937e7e1156"
+ },
+ "folder": "HealthSync",
+ "source": "HealthSync/AppStore/2026-11-09"
+}

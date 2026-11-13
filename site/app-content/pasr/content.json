@@ -1,0 +1,117 @@
+{
+ "slug": "pasr",
+ "id": "nl-lrvdlinden-pasr",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-07.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-08.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-07.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-08.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "621aa465eda063b02867a2e1fc7176f16530af83",
+  "shot-nl-02.webp": "78c77afedd779e2c070d2ffccb371c1dd8bfba7a",
+  "shot-nl-03.webp": "581335d12d046b58b916c737028de2f3583538af",
+  "shot-nl-04.webp": "c42dd5841322853acba1016d3be9091f9382b83a",
+  "shot-nl-05.webp": "0b596ddb714787f2847de9bf97ed9a29494d69b1",
+  "shot-nl-06.webp": "cff1af723def871cd0bf7e42d5a00e69ebe0106e",
+  "shot-nl-07.webp": "1181d44f26badf68f2317dbe1f84d0b4e70e4863",
+  "shot-nl-08.webp": "b5a3e6a0f3def7892a21451ef966a250e2d063f2",
+  "shot-en-01.webp": "621aa465eda063b02867a2e1fc7176f16530af83",
+  "shot-en-02.webp": "78c77afedd779e2c070d2ffccb371c1dd8bfba7a",
+  "shot-en-03.webp": "581335d12d046b58b916c737028de2f3583538af",
+  "shot-en-04.webp": "c42dd5841322853acba1016d3be9091f9382b83a",
+  "shot-en-05.webp": "0b596ddb714787f2847de9bf97ed9a29494d69b1",
+  "shot-en-06.webp": "cff1af723def871cd0bf7e42d5a00e69ebe0106e",
+  "shot-en-07.webp": "1181d44f26badf68f2317dbe1f84d0b4e70e4863",
+  "shot-en-08.webp": "b5a3e6a0f3def7892a21451ef966a250e2d063f2",
+  "og-nl.jpg": "gen:892eb263c7368df99a3f80342bac7634c7b70d70",
+  "og-en.jpg": "gen:80ac7c6987e2fb8efa332e9c43f3b38a99ab2c0b"
+ },
+ "folder": "Pasr",
+ "source": "Pasr/AppStore/2026-11-09"
+}

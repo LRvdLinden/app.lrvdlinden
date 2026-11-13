@@ -1,0 +1,59 @@
+name: Content-sync
+
+# Haalt voor de app-pagina's (/app/<naam>/) de nieuwste content op uit LRvdLinden/app.lrvdlinden.app-content:
+# screenshots (NL en EN), App Store-teksten en de deelafbeelding. Heeft een app daar (nog) niets, dan wordt er
+# een deelafbeelding gemaakt met icoon, naam en ondertitel. Alleen gewijzigde bestanden worden opgehaald.
+# Bij wijzigingen worden ze in site/app-content opgeslagen en wordt de site opnieuw live gezet.
+# Draait elk uur, na een release met een nieuwe app, en handmatig via Run workflow.
+
+on:
+  schedule:
+    - cron: "41 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: content-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Pillow installeren
+        run: python3 -m pip install --quiet --break-system-packages pillow
+
+      - name: Content ophalen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/sync_app_content.py site/apps.json
+          cat content-sync-summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Opslaan en live zetten
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "Content-sync"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          pushed=0
+          for i in 1 2 3 4; do
+            git add -A site/app-content
+            if git diff --cached --quiet; then echo "Geen wijzigingen."; exit 0; fi
+            git commit -q -F content-sync-summary.md
+            if git push -q origin HEAD:main; then pushed=1; break; fi
+            # Intussen iets anders op GitHub gezet: opnieuw op de nieuwste versie
+            sleep $((i * 5))
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 scripts/sync_app_content.py site/apps.json
+          done
+          [ "$pushed" = "1" ] || { echo "::error::Opslaan op GitHub mislukte na 4 pogingen."; exit 1; }
+          # Een push met de standaard-token start geen andere workflows; daarom expliciet de release starten.
+          gh workflow run release.yml --ref main
+          echo "Site wordt opnieuw live gezet."

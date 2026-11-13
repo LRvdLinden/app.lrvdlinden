@@ -1,0 +1,114 @@
+{
+ "slug": "devtools",
+ "id": "devtools",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-07.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-07.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {
+  "en": {
+   "description": "DevTools puts App Store Connect in your pocket. Check the status of every app, follow your downloads and proceeds in beautiful charts, prepare new versions and manage TestFlight – wherever you are, on iPhone, iPad and Apple Watch.\n\nBuilt by an indie developer for indie developers and small teams who want a fast, native and private companion for their apps.\n\nALL YOUR APPS AT A GLANCE\n• Real app icons, version numbers and status for every platform (iOS, macOS, tvOS, visionOS)\n• Clear status badges: Live, Ready for Distribution, Waiting for Review, In Review, Pending Release, Rejected\n• \"Needs attention\" card for rejected versions, versions ready to release and builds missing export compliance\n• Search, filter and sort your whole portfolio\n\nDOWNLOADS & PROCEEDS\n• New downloads, re-downloads, updates, in-app purchases and proceeds\n• Interactive trend charts for 7 days, 30 days, 90 days or a full year – scrub to see any day\n• Downloads per app, top countries and devices\n• Data comes straight from Apple's Sales and Trends reports\n\nRELEASE FROM YOUR PHONE\n• Create a new App Store version\n• Edit What's New, description, keywords, promotional text and URLs for every language – or copy What's New to all languages at once\n• Change app name, subtitle and privacy policy URL\n• Choose the build, set the release type and submit for App Review\n• Cancel a review or release an approved version with one tap\n\nTESTFLIGHT\n• All builds grouped by version, with processing and beta status\n• Edit What to Test, answer export compliance and submit for beta review\n• Add builds to test groups, create internal and external groups, enable public links\n• Invite and remove testers\n• Expire old builds\n\nREVIEWS\n• Rating distribution and filters (stars, unanswered)\n• Reply to customer reviews, edit or delete your reply\n\nWIDGETS & APPLE WATCH\n• Home Screen widgets: Downloads (choose an app), Top Apps and Review & Status\n• Apple Watch app with overview, apps and attention pages\n• Watch face complications with your downloads and apps in review\n\nPRIVATE BY DESIGN\n• Connects directly to Apple's official App Store Connect API with your own API key\n• Your private key (.p8) is stored only in the Keychain of your device\n• No accounts, no servers in between, no tracking and no data collection\n• Multiple teams/accounts supported\n\nEASY SETUP\nA built-in step-by-step guide shows where to find your Issuer ID, Key ID, .p8 key and vendor number. Want to look around first? Tap \"Try the demo\" to explore DevTools with sample data.\n\nDevTools is an independent app and is not affiliated with or endorsed by Apple Inc. App Store Connect and TestFlight are trademarks of Apple Inc.",
+   "promotional_text": "Your App Store Connect in your pocket: live status of every app, downloads and proceeds in beautiful charts, TestFlight builds and reviews – on iPhone, iPad and Watch.",
+   "subtitle": "Releases, TestFlight & Sales"
+  }
+ },
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "de72bed96bc43e778bc4e0837cbfd215b8e8451d",
+  "shot-nl-02.webp": "ef79220082a03e34e0f97156034037cf95409534",
+  "shot-nl-03.webp": "ed6a481fe400b8e080c180e04f9d3946d895deee",
+  "shot-nl-04.webp": "54324ee4538c1462e148bafe6e6ac64f4b5c3b5c",
+  "shot-nl-05.webp": "1d90340bdb72a7ea850fbe55c8863753e744d217",
+  "shot-nl-06.webp": "23fa4b08948a6093ce152814cb4e89c985603e50",
+  "shot-nl-07.webp": "2dbec298bdf746f0679a003af9dba3c219e223b2",
+  "shot-en-01.webp": "de72bed96bc43e778bc4e0837cbfd215b8e8451d",
+  "shot-en-02.webp": "ef79220082a03e34e0f97156034037cf95409534",
+  "shot-en-03.webp": "ed6a481fe400b8e080c180e04f9d3946d895deee",
+  "shot-en-04.webp": "54324ee4538c1462e148bafe6e6ac64f4b5c3b5c",
+  "shot-en-05.webp": "1d90340bdb72a7ea850fbe55c8863753e744d217",
+  "shot-en-06.webp": "23fa4b08948a6093ce152814cb4e89c985603e50",
+  "shot-en-07.webp": "2dbec298bdf746f0679a003af9dba3c219e223b2",
+  "text-en-description": "053c2c7c619b4b59d286d184ffa619339f2dc928",
+  "text-en-promotional_text": "80c10b816655857635df45fe7821f31700c27e20",
+  "text-en-subtitle": "e6ff5cfdec3f83c15d6c139d27a7ac8b0e684449",
+  "og-nl.jpg": "gen:ce24030bd5d5d0398a235a3bc924d71fc3121cff",
+  "og-en.jpg": "gen:ad98c4596f7f1bd0d3b508d34d3fb81541d043a3"
+ },
+ "folder": "DevTools",
+ "source": "DevTools/AppStore/2026-11-09"
+}

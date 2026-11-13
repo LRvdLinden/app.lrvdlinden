@@ -11,11 +11,14 @@ on:
     paths:
       - "site/**"
       - "scripts/build_seo.py"
+      - "scripts/build_app_pages.py"
+      - "scripts/appslug.py"
       - ".github/workflows/release.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: release
@@ -77,6 +80,8 @@ jobs:
           rm -rf build && mkdir build
           cp -r site/. build/
           # sitemap.xml en gestructureerde gegevens (JSON-LD) voor zoekmachines
+          # eigen pagina per app: /app/<naam>/ (teksten en screenshots uit site/app-content)
+          python3 scripts/build_app_pages.py build
           python3 scripts/build_seo.py build
 
           # Wachtwoord via stdin, zodat het niet in de proceslijst verschijnt. bcrypt-hash.
@@ -127,6 +132,8 @@ jobs:
             RewriteCond %{REQUEST_FILENAME} !-d
             RewriteCond %{REQUEST_FILENAME}.html -f
             RewriteRule ^([a-z0-9-]+)/?$ \$1.html [L]
+            # /app zonder naam: naar de lijst met apps
+            RewriteRule ^app/?$ / [R=302,L]
           </IfModule>
 
           # apps.json altijd vers ophalen na een update
@@ -179,6 +186,10 @@ jobs:
           code=$(curl -s -o /tmp/live.html -w '%{http_code}' "https://lrvdlinden.app/?v=${GITHUB_RUN_NUMBER}")
           echo "homepagina: HTTP $code"
           [ "$code" = "200" ] || { echo "::error::lrvdlinden.app geeft HTTP $code na upload. Klopt de doelmap? Zet eventueel secret FTP_DIR."; exit 1; }
+          first=$(python3 -c "import json; print(json.load(open('build/app/pages.json'))[0]['slug'])")
+          c=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/app/$first/")
+          echo "/app/$first/: HTTP $c"
+          [ "$c" = "200" ] || echo "::warning::De app-pagina /app/$first/ geeft HTTP $c."
           for pg in donate privacy; do
             c=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$pg")
             echo "/$pg: HTTP $c"
@@ -223,3 +234,17 @@ jobs:
             --target "${GITHUB_SHA}" \
             --title "Site ${{ steps.zip.outputs.tag }}" \
             --notes-file notes.md
+
+      - name: Content ophalen voor nieuwe apps
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Heeft een app nog geen content (screenshots, OG), dan meteen de content-sync starten.
+          missing=$(python3 -c "
+          import json, os
+          pages = json.load(open('build/app/pages.json'))
+          print(' '.join(p['slug'] for p in pages if not os.path.isfile(f\"site/app-content/{p['slug']}/content.json\")))")
+          if [ -n "$missing" ]; then
+            echo "Nog geen content voor: $missing"
+            gh workflow run content-sync.yml --ref main
+          fi

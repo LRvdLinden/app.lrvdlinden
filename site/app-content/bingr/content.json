@@ -1,0 +1,110 @@
+{
+ "slug": "bingr",
+ "id": "bingr",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {
+  "nl": {
+   "description": "Bingr is een overzichtelijke speler voor je eigen IPTV-abonnement. Voeg je M3U-afspeellijst, Xtream Codes-login of eigen mediaserver toe en kijk live tv, films en series op je iPhone, iPad, Mac en Apple TV, met één account en profielen voor het hele huis.\n\nBelangrijk: Bingr levert zelf geen zenders, films, series of abonnementen. Je hebt een eigen IPTV-abonnement of mediaserver nodig die je legaal mag gebruiken. Bingr speelt alleen af wat jij zelf toevoegt.\n\nWAT BINGR DOET\n• Live tv met tv-gids (EPG): zenders links, programma's rechts, met NU, terugkijken en herinneringen\n• Nieuw: live beeld in de tv-gids, zonder geluid tot je het aanzet; met één tik naar volledig scherm\n• Films en series overzichtelijk op een thuisscherm, met seizoenen, afleveringen, trailers en info\n• Profielen voor iedereen in huis, elk met een eigen Mijn lijst en eigen voortgang\n• Categorieën van je server, samengevoegd en zonder rommelige landcodes in de namen\n• Zoeken door zenders, films en series\n• Multiview: tot vier live zenders naast elkaar\n• AirPlay en Chromecast binnen je eigen netwerk\n• Werkt met M3U/M3U8, Xtream Codes, MAC-portals en mediaservers zoals Plex, Jellyfin en Emby\n\nOP AL JE APPARATEN\n• iPhone, iPad, Mac en Apple TV met hetzelfde Bingr-account\n• Op de Apple TV log je in door een code te scannen met je telefoon\n• Je servers, profielen, lijsten en voortgang synchroniseren via je Bingr-account\n\nGRATIS EN LIFETIME\nBingr is gratis te gebruiken met je eigen IPTV. Extra functies met Lifetime via je Bingr-account: Verder kijken, kinderprofielen met leeftijdsgrens, kijkstatistieken, Trakt-koppeling, ondertitels via OpenSubtitles, meerdere servers, thema's en tot 3 schermen tegelijk (hoeveel je tegelijk kunt kijken, hangt ook af van je IPTV-aanbieder).\n\nPRIVACY\nVoor Bingr heb je een account nodig (naam en e-mailadres). Bingr toont geen advertenties en gebruikt geen tracking of analytics. Meer op bingr.online/privacy.html.\n\nHulp nodig? Kijk op support.bingr.online.\n\nBingr is een app van PixelForges. Meer apps van de ontwikkelaar vind je op lrvdlinden.app.",
+   "promotional_text": "Nieuw in 1.0.5: een vernieuwde tv-gids met live beeld van de zender die je kiest. Bingr speelt je eigen IPTV-abonnement af en levert zelf geen content.",
+   "subtitle": "Live tv, films en series"
+  },
+  "en": {
+   "description": "Bingr is a clean, easy player for your own IPTV subscription. Add your M3U playlist, Xtream Codes login or your own media server and watch live TV, movies and series on iPhone, iPad, Mac and Apple TV, with one account and profiles for the whole household.\n\nImportant: Bingr does not provide any channels, movies, series or subscriptions. You need your own IPTV subscription or media server that you are legally allowed to use. Bingr only plays what you add yourself.\n\nWHAT BINGR DOES\n• Live TV with a TV guide (EPG): channels on the left, programs on the right, with NOW, catch-up and reminders\n• New: a live preview in the TV guide, muted until you turn the sound on; one tap for full screen\n• Movies and series on a clear home screen, with seasons, episodes, trailers and details\n• Profiles for everyone at home, each with its own My List and progress\n• Your server's categories, merged and without messy country tags in the names\n• Search across channels, movies and series\n• Multiview: up to four live channels side by side\n• AirPlay and Chromecast on your own network\n• Works with M3U/M3U8, Xtream Codes, MAC portals and media servers such as Plex, Jellyfin and Emby\n\nON ALL YOUR DEVICES\n• iPhone, iPad, Mac and Apple TV with the same Bingr account\n• On Apple TV you sign in by scanning a code with your phone\n• Your servers, profiles, lists and progress sync through your Bingr account\n\nFREE AND LIFETIME\nBingr is free to use with your own IPTV. Extra features with Lifetime via your Bingr account: Continue Watching, kids profiles with age limits, viewing statistics, Trakt, subtitles via OpenSubtitles, multiple servers, themes and up to 3 screens at once (how many you can watch at once also depends on your IPTV provider).\n\nPRIVACY\nBingr requires an account (name and email address). Bingr shows no ads and uses no tracking or analytics. More at bingr.online/privacy.html.\n\nNeed help? Visit support.bingr.online.\n\nBingr is an app by PixelForges. More apps by the developer at lrvdlinden.app.",
+   "promotional_text": "New in 1.0.5: a redesigned TV guide with a live preview of the channel you pick. Bingr plays your own IPTV subscription and does not provide any content.",
+   "subtitle": "Live TV, movies and series"
+  }
+ },
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "d2c80b52bd642051e9d2dcc616cfdc3be9300144",
+  "shot-nl-02.webp": "e57df133a5fe6558b025bfa982a4d55a73e99adb",
+  "shot-nl-03.webp": "b002f58427f0feb4d1c55078409bb10f257d7b59",
+  "shot-nl-04.webp": "76e109d7595fad53d389cc928bc13c3c8f10c38a",
+  "shot-nl-05.webp": "371cad1f7f5f963a2cff8ad6f1347a3df6344d3f",
+  "shot-nl-06.webp": "7921a2f08493c95f6b0d04dc3a5d4134fa130e46",
+  "shot-en-01.webp": "cf15bc5f35144e8b253b67f1fae10f24b4fb6b99",
+  "shot-en-02.webp": "3dad7c395df8ca505a57b3f5597ac9ce70253300",
+  "shot-en-03.webp": "9ae824c7143c179abd1f791d01cb0edb4fd3d625",
+  "shot-en-04.webp": "b336f6a046d122befa13319b3bdfe1f764551d96",
+  "shot-en-05.webp": "703cffa7492ef2e9fc2f5b504f9baa2efecca023",
+  "shot-en-06.webp": "68637f6010e090821107463791c79ffe87c8f11e",
+  "text-nl-description": "3975ae29a8dce861e1971844ab27e0c24792315b",
+  "text-nl-promotional_text": "dfd013cb57927f12bcadccdb5fee4b5cba5f4510",
+  "text-nl-subtitle": "4e5e58f5b91ac8bcf7b4c46338a6b6314c274415",
+  "text-en-description": "8c6fdb4755b0b0197ad35e2b179c0cd0be75b3a4",
+  "text-en-promotional_text": "3830b4e33463f1eeac882715334ebc2ab8850a90",
+  "text-en-subtitle": "d8f29aa1664289311c04fcc101d0474352c38aae",
+  "og-nl.jpg": "gen:a3747401dd0202f8d9ed8cb69ad82aa85dac56a9",
+  "og-en.jpg": "gen:fe668b8a34ae5e5e55cbebef7c49164692f4addb"
+ },
+ "folder": "Bingr",
+ "source": "Bingr/AppStore/2026-11-09"
+}

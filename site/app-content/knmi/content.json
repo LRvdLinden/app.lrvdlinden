@@ -1,0 +1,14 @@
+{
+ "slug": "knmi",
+ "id": "homey-knmi-weerwaarschuwing",
+ "shots": {},
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "og-nl.jpg": "gen:0695e4f72fd4dc931131cfdcea87112283e2ef21",
+  "og-en.jpg": "gen:24e55729725127d155255c7da45df2511f9d7b78"
+ }
+}

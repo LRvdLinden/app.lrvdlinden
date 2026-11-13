@@ -1,0 +1,81 @@
+{
+ "slug": "simple-chess",
+ "id": "simple-chess",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "b9c01e9651ea443a47c0c37b7152f9ac9bc17873",
+  "shot-nl-02.webp": "2151c206f282733dd06095b9fcbdb90e9297b782",
+  "shot-nl-03.webp": "9c955506b7efcc76086109c044564b55f2c713b5",
+  "shot-nl-04.webp": "f8948de650ae0e60b0455d161b3a2db3cb0e7eb0",
+  "shot-nl-05.webp": "d435ccec1dd4efdb4a1370b888ce933d71cbb902",
+  "shot-en-01.webp": "065f034fbe7f52022690bc8377a06f5f5ca76a22",
+  "shot-en-02.webp": "3e485a68875b796d13d636e3983678d106458e4e",
+  "shot-en-03.webp": "2d3bf8209189c72502089dfd8ee1bda23db8115b",
+  "shot-en-04.webp": "bd5e350332a5959b3a8219ae5791ceafebaef282",
+  "shot-en-05.webp": "0305df8e85f03b40b6ed61b08138eaf276a89582",
+  "og-nl.jpg": "gen:4ee34a432b1622094116d47b1d76ad28e1ab9da1",
+  "og-en.jpg": "gen:172104e5f0840a26b6597630d0fe604b40466db6"
+ },
+ "folder": "Simple Chess",
+ "source": "Simple Chess/AppStore/2026-11-09"
+}

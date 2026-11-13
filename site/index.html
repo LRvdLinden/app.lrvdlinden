@@ -149,6 +149,35 @@ header.top{padding-block:24px 8px}
 .history li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;font-size:14px}
 .history .d{color:var(--muted);font-size:12px}
 .history li p{margin:0;color:var(--muted)}
+.history li.more{display:none}
+.history.open li.more{display:grid}
+.history .showall{margin-top:10px;font:600 13px var(--f-body);background:none;border:0;color:var(--accent);cursor:pointer;padding:4px 0}
+.lablink{color:inherit;text-decoration:none}
+.lablink:hover{text-decoration:underline;text-underline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* Zoeken */
+.search{padding-bottom:8px}
+.search label{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0 8px 0 16px;transition:border-color .15s,box-shadow .15s}
+.search label:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.search svg{width:20px;height:20px;color:var(--muted);flex:none}
+.search input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:500 16px var(--f-body);padding:15px 0;outline:none}
+.search input::placeholder{color:var(--muted)}
+.search input::-webkit-search-cancel-button{display:none}
+.search .clear{border:0;background:var(--bg);color:var(--muted);font:600 13px var(--f-body);padding:7px 12px;border-radius:99px;cursor:pointer}
+.search-empty{padding:28px 0 8px;color:var(--muted)}
+/* Over mij */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:40px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:32px}
+.about h2{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.02em}
+.about p{margin:0 0 18px;color:var(--muted);font-size:16px;max-width:62ch}
+.about .links{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:760px){.about{grid-template-columns:minmax(0,1fr);gap:12px;padding:22px}}
+/* Footer */
+.fcols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-bottom:28px}
+.fcols h3{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.fcols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.fcols a{color:var(--ink);text-decoration:none;font-size:14.5px}
+.fcols a:hover{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:640px){.fcols{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 
 
 /* Homey: zelfde kaarten als de App Store-grid, details klappen open onder de rij */
@@ -301,6 +330,16 @@ footer nav{display:flex;gap:18px}
     </div>
   </section>
 
+  <div class="search wrap" role="search">
+    <label>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="sr-only" data-t="search"></span>
+      <input type="search" id="q" autocomplete="off" enterkeyhint="search">
+      <button type="button" class="clear" id="qClear" hidden data-t="searchClear"></button>
+    </label>
+    <div class="search-empty" id="searchEmpty" hidden></div>
+  </div>
+
   <section class="section wrap" id="nieuw">
     <div class="sec-head"><h2 data-t="newTitle"></h2><p data-t="newSub"></p></div>
     <div class="promo-wrap" id="promoWrap" hidden>
@@ -334,15 +373,42 @@ footer nav{display:flex;gap:18px}
       <a href="https://community.homey.app/t/apps-made-by-lrvdlinden/85452" target="_blank" rel="noopener">Community Forum</a>
     </div>
   </section>
+
+  <section class="section wrap" id="over">
+    <div class="about">
+      <h2 data-t="aboutTitle"></h2>
+      <div>
+        <p data-t="aboutText"></p>
+        <div class="links">
+          <a class="btn primary" href="/donate" data-t="aboutDonate"></a>
+          <a class="btn" href="https://apps.apple.com/nl/developer/leon-van-der-linden/id607860328" target="_blank" rel="noopener">App Store</a>
+          <a class="btn" href="https://github.com/LRvdLinden" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="wrap">
+  <div class="fcols">
+    <div><h3 data-t="fApps"></h3><ul>
+      <li><a href="https://apps.apple.com/nl/developer/leon-van-der-linden/id607860328" target="_blank" rel="noopener" data-t="fAppStore"></a></li>
+      <li><a href="https://homey.app/nl-nl/apps/author/5d4da77a2c836a50f6936070/page/0/" target="_blank" rel="noopener" data-t="fHomeyMe"></a></li>
+      <li><a href="https://homey.app/nl-nl/apps/author/6ac4bc064c7de6266bbdb73e/page/0/" target="_blank" rel="noopener" data-t="fHomeyPf"></a></li>
+    </ul></div>
+    <div><h3 data-t="fCommunity"></h3><ul>
+      <li><a href="https://community.homey.app/t/apps-made-by-lrvdlinden/85452" target="_blank" rel="noopener" data-t="fForum"></a></li>
+      <li><a href="https://github.com/LRvdLinden" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://pixelforges.nl" target="_blank" rel="noopener">PixelForges</a></li>
+    </ul></div>
+    <div><h3 data-t="fSite"></h3><ul>
+      <li><a href="/donate" data-t="donate"></a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="#over" data-t="aboutTitle"></a></li>
+    </ul></div>
+  </div>
   <div class="bar">
     <span>© lrvdlinden.app · Powered by <a href="https://pixelforges.nl" target="_blank" rel="noopener">PixelForges</a></span>
-    <nav>
-      <a href="/privacy">Privacy</a>
-      <a href="/donate" data-t="donate"></a>
-    </nav>
   </div>
 </footer>
 
@@ -366,7 +432,10 @@ const T = {
     hWorks:"Werkt op", hStore:"Bekijk in de Homey App Store", hLive:"Live", hTest:"Test", hTestBtn:"Testversie installeren", hInstall:"Installeren", hSupport:"Ondersteuning", hSite:"Website",
     hAll:"Toon alle {n}", hLess:"Toon minder", hClose:"Sluiten", hNews:"Wat is nieuw", hOpen:"Details van {n}",
     rating:"Beoordeling", reviews:"Reviews", age:"Leeftijd", category:"Categorie", language:"Taal", size:"Grootte",
-    history:"Versiegeschiedenis", noRating:"Nog geen beoordeling", dev_by:"Léon van der Linden",
+    history:"Versiegeschiedenis", noRating:"Nog geen beoordeling", dev_by:"Léon van der Linden", more:"Meer over {n}",
+    search:"Zoek een app", searchPh:"Zoek op naam of onderwerp, bijv. P2000 of weer", searchNone:"Geen apps gevonden voor “{q}”.", searchClear:"Wissen",
+    aboutTitle:"Over mij", aboutText:"Ik ben Léon van der Linden uit Apeldoorn. Ik maak apps die het dagelijks leven in je buurt en in je huis wat makkelijker maken: van meldingen uit je omgeving tot handige tools en koppelingen voor Homey. Alles is gratis en zonder advertenties. Met een kleine donatie help je ze online en up-to-date te houden.",
+    aboutDonate:"Steun mijn apps", fApps:"Apps", fCommunity:"Community", fSite:"Website", fAppStore:"App Store-ontwikkelaarspagina", fHomeyMe:"Homey: Léon van der Linden", fHomeyPf:"Homey: PixelForges", fForum:"Homey Community Forum",
     loadError:"De apps konden niet worden geladen. Controleer of apps.json naast index.html staat.",
     cats:{utilities:"Hulpmiddelen",entertainment:"Amusement",news:"Nieuws",business:"Zakelijk",lifestyle:"Lifestyle",games:"Games",music:"Muziek",productivity:"Productiviteit",health:"Gezondheid",education:"Onderwijs",travel:"Reizen",weather:"Weer",sports:"Sport",photo:"Foto en video",navigation:"Navigatie",finance:"Financiën",reference:"Naslag",social:"Sociaal",food:"Eten en drinken",books:"Boeken",developer:"Ontwikkelaarstools",design:"Grafisch en ontwerp",shopping:"Winkelen",kids:"Kinderen"}},
   en:{ navNew:"New", navApps:"iOS apps",
@@ -387,14 +456,24 @@ const T = {
     hWorks:"Works on", hStore:"View in the Homey App Store", hLive:"Live", hTest:"Test", hTestBtn:"Install test version", hInstall:"Install", hSupport:"Support", hSite:"Website",
     hAll:"Show all {n}", hLess:"Show less", hClose:"Close", hNews:"What's new", hOpen:"Details of {n}",
     rating:"Rating", reviews:"Reviews", age:"Age", category:"Category", language:"Language", size:"Size",
-    history:"Version history", noRating:"No ratings yet", dev_by:"Léon van der Linden",
+    history:"Version history", noRating:"No ratings yet", dev_by:"Léon van der Linden", more:"More about {n}",
+    search:"Search apps", searchPh:"Search by name or topic, e.g. P2000 or weather", searchNone:"No apps found for “{q}”.", searchClear:"Clear",
+    aboutTitle:"About me", aboutText:"I'm Léon van der Linden from Apeldoorn in the Netherlands. I make apps that make everyday life in your neighbourhood and your home a little easier: from local alerts to handy tools and integrations for Homey. Everything is free and ad-free. A small donation helps keep them online and up to date.",
+    aboutDonate:"Support my apps", fApps:"Apps", fCommunity:"Community", fSite:"Website", fAppStore:"App Store developer page", fHomeyMe:"Homey: Léon van der Linden", fHomeyPf:"Homey: PixelForges", fForum:"Homey Community Forum",
     loadError:"The apps could not be loaded. Check that apps.json sits next to index.html.",
     cats:{utilities:"Utilities",entertainment:"Entertainment",news:"News",business:"Business",lifestyle:"Lifestyle",games:"Games",music:"Music",productivity:"Productivity",health:"Health",education:"Education",travel:"Travel",weather:"Weather",sports:"Sports",photo:"Photo & Video",navigation:"Navigation",finance:"Finance",reference:"Reference",social:"Social",food:"Food & Drink",books:"Books",developer:"Developer Tools",design:"Graphics & Design",shopping:"Shopping",kids:"Kids"}}
 };
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let ALL_APPS = [], lang = "nl", cat = "all", open = null;
+let ALL_APPS = [], lang = "nl", cat = "all", open = null, q = "";
+const norm = x => String(x || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+function matches(a){
+  if (!q) return true;
+  const hay = norm([a.name, L(a.subtitle), L(a.description), a.category, catName(a.category), a.homey && a.homey.category,
+                    (a.platforms || []).join(" ")].join(" "));
+  return norm(q).split(/\s+/).filter(Boolean).every(w => hay.includes(w));
+}
 Object.defineProperty(window, "APPS", { get: () => ALL_APPS.filter(a => !(lang === "en" && a.nlOnly)) });
 
 try { lang = localStorage.getItem("lr-lang") || (navigator.language||"nl").slice(0,2); } catch(e){}
@@ -410,9 +489,20 @@ function date(d){
   const x = new Date(d + "T12:00:00");
   return isNaN(x) ? d : new Intl.DateTimeFormat(lang==="nl"?"nl-NL":"en-GB",{day:"numeric",month:"short",year:"numeric"}).format(x);
 }
+// Adres van de eigen app-pagina; zelfde regels als scripts/app_slug.py
+function slugify(n){ return String(n||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"") || "app"; }
+function pageSlug(a){
+  const base = slugify(a.name);
+  const clash = ALL_APPS.some(o => o !== a && slugify(o.name) === base && o.section !== a.section);
+  let s = clash && a.section === "homey" ? base + "-homey" : base;
+  const same = ALL_APPS.filter(o => (slugify(o.name) === base) && o.section === a.section);
+  if (same.length > 1) { const i = same.indexOf(a); if (i > 0) s += "-" + (i + 1); }
+  return s;
+}
+const pageUrl = a => "/app/" + pageSlug(a) + "/";
 function icon(a, cls=""){
   const init = esc(a.name.replace(/[^A-Za-z0-9]/g,"").slice(0,2));
-  return `<span class="icon ${cls}" aria-hidden="true">${init}${a.icon?`<img src="${esc(a.icon)}" alt="" onerror="this.remove()">`:""}</span>`;
+  return `<span class="icon ${cls}">${init}${a.icon?`<img src="${esc(a.icon)}" alt="${esc(a.name)}" width="256" height="256" loading="lazy" decoding="async" onerror="this.remove()">`:""}</span>`;
 }
 function ctas(a, max=9){
   const l = a.links || {}, out = [];
@@ -430,6 +520,8 @@ function renderStatic(){
   });
   document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
   $("#filters").setAttribute("aria-label", lang==="nl" ? "Filter op categorie" : "Filter by category");
+  $("#q").placeholder = t("searchPh");
+  $("#q").setAttribute("aria-label", t("search"));
 }
 
 function render(){
@@ -446,11 +538,11 @@ function render(){
   const promos = ios.filter(a => a.promo && a.promo.show);
   $("#promoWrap").hidden = !promos.length;
   $("#promo").classList.toggle("multi", promos.length > 1);
-  $("#promo").innerHTML = promos.map(a => {
+  $("#promo").innerHTML = promos.map((a, i) => {
     const p = a.promo, l = a.links || {};
     const [url, label] = l.appstore ? [l.appstore, t("getStore")] : l.testflight ? [l.testflight, t("getBeta")] : l.website ? [l.website, t("getSite")] : [null, null];
     const img = typeof p.image === "string" ? p.image : L(p.image);
-    const bg = img ? `<div class="bg"><img src="${esc(img)}" alt="" width="1600" height="900"></div>`
+    const bg = img ? `<div class="bg"><img src="${esc(img)}" alt="" width="1600" height="900" decoding="async"${i ? ` loading="lazy"` : ""}></div>`
                        : (a.icon ? `<div class="bg fromicon"><img src="${esc(a.icon)}" alt=""></div>` : `<div class="bg"></div>`);
     const title = L(p.title) || a.name;
     return `<article class="promo${img ? " has-img" : ""}" aria-label="${esc(img ? (title + (L(p.text) ? ". " + L(p.text) : "")) : a.name)}">
@@ -473,11 +565,11 @@ function render(){
   // Uitgelicht: featured, of alles wat nog niet live is
   // Alleen apps die in beheer zijn aangevinkt bij "Tonen in Nieuw en onderweg"
   const feat = ios.filter(a => a.featured === true);
-  $("#nieuw").hidden = !feat.length;
+  $("#nieuw").hidden = !feat.length || !!q;
   $("#lab").innerHTML = feat.map(a => `
     <article class="lab-card">
       <span class="pill ${a.status}">${esc(t(a.status))}</span>
-      <div class="lab-top">${icon(a,"lg")}<div><h3>${esc(a.name)}</h3>${a.subtitle?`<div class="eyebrow" style="margin-top:2px">${esc(L(a.subtitle))}</div>`:""}</div></div>
+      <div class="lab-top">${icon(a,"lg")}<div><h3><a class="lablink" href="${esc(pageUrl(a))}">${esc(a.name)}</a></h3>${a.subtitle?`<div class="eyebrow" style="margin-top:2px">${esc(L(a.subtitle))}</div>`:""}</div></div>
       <p>${esc(L(a.description))}</p>
       <div class="plat">${(a.platforms||[]).map(p=>`<span class="tag">${esc(p)}</span>`).join("")}</div>
       ${ctas(a,1)}
@@ -490,15 +582,22 @@ function render(){
     return `<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c===cat}">${esc(c==="all"?t("all"):catName(c))}<span class="n">${n}</span></button>`;
   }).join("");
 
-  renderGrid($("#grid"), "detailSlot", live.filter(a => cat==="all" || a.category===cat));
+  const liveShown = live.filter(a => (q || cat==="all" || a.category===cat) && matches(a));
+  $("#filters").hidden = !!q;
+  $("#apps").hidden = !liveShown.length;
+  renderGrid($("#grid"), "detailSlot", liveShown);
 
   // TestFlight: wel een TestFlight-link, nog geen App Store-link
-  const tf = ios.filter(a => a.links && a.links.testflight && !a.links.appstore);
+  const tf = ios.filter(a => a.links && a.links.testflight && !a.links.appstore && matches(a));
   $("#testflight").hidden = !tf.length;
   $("#navTf").hidden = !tf.length;
   renderGrid($("#tfGrid"), "tfSlot", tf);
 
   renderHomey();
+  const found = liveShown.length + tf.length + (q ? APPS.filter(a => a.section === "homey" && matches(a)).length : 1);
+  $("#searchEmpty").hidden = !q || found > 0;
+  $("#searchEmpty").textContent = t("searchNone").replace("{q}", q);
+  $("#qClear").hidden = !q;
 }
 
 function renderGrid(gridEl, slotId, list){
@@ -527,9 +626,9 @@ function renderGrid(gridEl, slotId, list){
           <div><dt>${esc(t("language"))}</dt><dd>${esc(a.languages||"–")}</dd></div>
           <div><dt>${esc(t("size"))}</dt><dd>${esc(a.size||"–")}</dd></div>
         </dl>
-        <div class="btns">${ctas(a)}</div>
+        <div class="btns">${ctas(a)}<a class="btn" href="${esc(pageUrl(a))}">${esc(t("more").replace("{n}", a.name))}</a></div>
       </div>
-      ${a.history&&a.history.length?`<div class="history"><h4>${esc(t("history"))}</h4><ol>${a.history.map(h=>`<li><div><div class="mono">${esc(h.version)}</div><div class="d">${esc(date(h.date))}</div></div><p>${esc(L(h.notes))}</p></li>`).join("")}</ol></div>`:""}
+      ${a.history&&a.history.length?`<div class="history"><h4>${esc(t("history"))}</h4><ol>${a.history.map((h,i)=>`<li class="${i>=2?"more":""}"><div><div class="mono">${esc(h.version)}</div><div class="d">${esc(date(h.date))}</div></div><p>${esc(L(h.notes))}</p></li>`).join("")}</ol>${a.history.length>2?`<button type="button" class="showall hist" data-n="${a.history.length}">${esc(t("hAll").replace("{n}", a.history.length))}</button>`:""}</div>`:""}
     </div>`;
 
 }
@@ -598,7 +697,7 @@ function homeyDetail(h){
         <div class="sub">${verTags(v)}${h.rating ? `<span><span class="stars" aria-hidden="true">★</span> ${num(h.rating)}</span>` : ""}</div>
       </div>
       <button type="button" class="hd-close" data-hclose aria-label="${esc(t("hClose"))}">×</button>
-      <div class="btns" style="grid-column:1/-1">${btns}</div>
+      <div class="btns" style="grid-column:1/-1">${btns}<a class="btn" href="${esc(pageUrl(h))}">${esc(t("more").replace("{n}", h.name))}</a></div>
     </div>
     ${L(h.description) ? `<p class="hd-desc">${esc(L(h.description))}</p>` : ""}
     ${facts ? `<div class="hd-facts">${facts}</div>` : ""}
@@ -621,12 +720,14 @@ function renderHomey(){
   }).join("") : "";
   $("#hfilters").hidden = cats.length <= 2;
   $("#hfilters").setAttribute("aria-label", lang==="nl" ? "Filter Homey-apps" : "Filter Homey apps");
-  const list = homey.filter(h => hcat === "all" || catOf(h) === hcat);
+  const list = homey.filter(h => (q || hcat === "all" || catOf(h) === hcat) && matches(h));
+  $("#homey").hidden = !list.length;
+  if (q) $("#hfilters").hidden = true;
   if (openHomey && !list.some(h => h.id === openHomey)) openHomey = null;
   $("#homeyList").innerHTML = list.map(h => {
     const last = (h.history || [])[0];
     const v = homeyVersions(h);
-    const meta = [`<span>${h.rating ? `<span class="stars" aria-hidden="true">★★★★★</span> ${num(h.rating)}` : esc(t("noRating"))}</span>`,
+    const meta = [h.rating ? `<span><span class="stars" aria-hidden="true">★★★★★</span> ${num(h.rating)}</span>` : "",
                   verTags(v)].join("");
     return `<button type="button" class="app hitem" data-hid="${esc(h.id)}" aria-expanded="${openHomey===h.id}" aria-label="${esc(t("hOpen").replace("{n}", h.name))}">
       ${icon(h)}
@@ -721,7 +822,7 @@ document.addEventListener("click", e => {
   }
   const sa = e.target.closest(".showall");
   if (sa){
-    const c = sa.closest(".hd-col"); c.classList.toggle("open");
+    const c = sa.closest(".hd-col, .history"); c.classList.toggle("open");
     sa.textContent = c.classList.contains("open") ? t("hLess") : t("hAll").replace("{n}", sa.dataset.n);
     return;
   }
@@ -730,9 +831,11 @@ document.addEventListener("click", e => {
     if (open) document.getElementById(ap.getAttribute("aria-controls"))?.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"nearest"}); }
 });
 
+$("#q").addEventListener("input", e => { q = e.target.value.trim(); open = null; render(); });
+$("#qClear").addEventListener("click", () => { $("#q").value = ""; q = ""; render(); $("#q").focus(); });
 renderStatic();
 fetch("apps.json", {cache:"no-cache"})
   .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => { ALL_APPS = d.apps || []; open = (APPS.find(a=>a.section==="ios"&&a.status==="live"&&!a.featured)||{}).id || null; render(); })
+  .then(d => { ALL_APPS = d.apps || []; render(); })
   .catch(() => { $("#grid").innerHTML = `<div class="notice">${esc(t("loadError"))}</div>`; });
 </script>

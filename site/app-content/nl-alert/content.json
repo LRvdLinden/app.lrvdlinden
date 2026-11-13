@@ -1,0 +1,14 @@
+{
+ "slug": "nl-alert",
+ "id": "homey-nlalert-widget",
+ "shots": {},
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "og-nl.jpg": "gen:db13c5e0273090930c443fcf39316f69a697fe21",
+  "og-en.jpg": "gen:915522b2b565342a80a2a77b322a932f89797333"
+ }
+}

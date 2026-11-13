@@ -1,0 +1,14 @@
+{
+ "slug": "cable-maps",
+ "id": "cablemaps",
+ "shots": {},
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "og-nl.jpg": "gen:efffb40b1a0264f580947aec6c0e4058b77a9cc2",
+  "og-en.jpg": "gen:8f41514e5a537e095a0d244902f59cee0dd3c8ba"
+ }
+}

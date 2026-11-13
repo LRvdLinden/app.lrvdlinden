@@ -1,0 +1,98 @@
+{
+ "slug": "pairr",
+ "id": "app-lrvdlinden-pairr",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {
+  "nl": {
+   "description": "Nooit meer een koppelcode kwijt. Pairr bewaart de codes van al je slimme apparaten veilig op één plek: van HomeKit en Matter tot Zigbee, Philips Hue, Z-Wave, wifi en pincodes. Scan de sticker, Pairr herkent de code, vult merk en model in en toont hem later weer als QR, op je iPhone, iPad, Mac of Apple Watch.\n\nDe code zit altijd net op de plek waar je niet bij kunt: onder een plafondlamp, achter een stopcontact, op een doos die al bij het oud papier ligt. En juist na een reset, een nieuwe hub of een verhuizing heb je hem weer nodig.\n\nSCANNEN EN AUTOMATISCH INVULLEN\n• Scan QR-codes en gedrukte cijfers met de camera, lees een code uit een foto of afbeelding, of van een NFC-tag\n• Herkent HomeKit (8 cijfers en X-HM://), Matter (QR en handmatige code), Zigbee-installatiecodes met IEEE-adres, het serienummer op Philips Hue-lampen, Z-Wave DSK en SmartStart, wifi en pincodes\n• Controleert codes op typfouten (Matter-controlegetal, Zigbee-CRC)\n• Vult fabrikant, model, icoon en logo in: bij Matter uit de openbare Matter-database\n• Importeer je accessoires met kamer, merk en model uit de Woning-app\n\nPER APPARAAT GEORDEND\n• Apparaten met soort, kamer, merk, model, serienummer, firmware en waar de originele sticker zit\n• Meerdere codes per apparaat, eigen velden, notities en bijlagen (foto van de sticker, handleiding, bon)\n• Zoeken en filteren op kamer, soort code, favorieten of apparaten zonder code\n\nLATER WEER SCANNEN\n• Pairr tekent de code opnieuw als scanbare QR, op volle helderheid\n• Op je Apple Watch: toon de QR en scan hem met je andere telefoon\n• Op de Mac met sneltoetsen en een menubalk\n\nVEILIG EN ALTIJD BEWAARD\n• Codes, QR-codes en bijlagen versleuteld met AES-GCM, met een eigen sleutel in de iCloud-sleutelhanger\n• Synchroniseert via je eigen iCloud tussen iPhone, iPad, Mac en Apple Watch\n• App per ongeluk verwijderd? Opnieuw installeren en alles is terug\n• Wekelijkse versleutelde back-up in iCloud Drive, en een back-up met wachtwoord die ook zonder iCloud werkt\n• Exporteer naar een printklare PDF met QR-codes, CSV of Markdown\n• Vergrendel de app met Face ID, Touch ID of je toegangscode\n• Een gekopieerde code verdwijnt na 60 seconden van het klembord\n\nDe app is beschikbaar in het Nederlands, Engels, Duits, Frans, Spaans, Italiaans, Zweeds, Noors, Deens en Pools.\n\nVolledig gratis: geen abonnement, geen in-app-aankopen, geen reclame, geen account en geen tracking.\n\nPairr is gemaakt door Léon van der Linden. Meer apps: lrvdlinden.app",
+   "promotional_text": "Nooit meer een koppelcode kwijt. Scan de sticker, Pairr vult merk en model in en toont de code later weer als QR. Gratis, zonder account, versleuteld in iCloud.",
+   "subtitle": "HomeKit, Matter en Zigbee"
+  },
+  "en": {
+   "description": "Never lose a setup code again. Pairr keeps the codes of all your smart devices safe in one place: from HomeKit and Matter to Zigbee, Philips Hue, Z-Wave, Wi-Fi and PINs. Scan the sticker, Pairr recognises the code, fills in brand and model and shows it again as a QR later, on your iPhone, iPad, Mac or Apple Watch.\n\nThe code is always right where you can't reach it: under a ceiling lamp, behind a wall plate, on a box that's already in the recycling. And it's exactly after a reset, a new hub or a move that you need it again.\n\nSCAN AND AUTO-FILL\n• Scan QR codes and printed digits with the camera, read a code from a photo or image, or from an NFC tag\n• Recognises HomeKit (8 digits and X-HM://), Matter (QR and manual code), Zigbee install codes with IEEE address, the serial number on Philips Hue bulbs, Z-Wave DSK and SmartStart, Wi-Fi and PIN codes\n• Checks codes for typos (Matter check digit, Zigbee CRC)\n• Fills in manufacturer, model, icon and logo: for Matter from the public Matter database\n• Import your accessories with room, brand and model from the Home app\n\nORGANISED PER DEVICE\n• Devices with type, room, brand, model, serial number, firmware and where the original sticker is\n• Several codes per device, custom fields, notes and attachments (sticker photo, manual, receipt)\n• Search and filter by room, code type, favourites or devices without a code\n\nSCAN IT AGAIN LATER\n• Pairr redraws the code as a scannable QR, at full brightness\n• On your Apple Watch: show the QR and scan it with your other phone\n• On the Mac with keyboard shortcuts and a menu bar\n\nSECURE AND ALWAYS KEPT\n• Codes, QR codes and attachments encrypted with AES-GCM, with your own key in iCloud Keychain\n• Syncs through your own iCloud between iPhone, iPad, Mac and Apple Watch\n• Deleted the app by accident? Reinstall and everything is back\n• Weekly encrypted backup in iCloud Drive, plus a password-protected backup that also works without iCloud\n• Export to a print-ready PDF with QR codes, CSV or Markdown\n• Lock the app with Face ID, Touch ID or your passcode\n• A copied code is removed from the clipboard after 60 seconds\n\nCompletely free: no subscription, no in-app purchases, no ads, no account and no tracking.\n\nThe app is available in English, Dutch, German, French, Spanish, Italian, Swedish, Norwegian, Danish and Polish.\n\nPairr is made by Léon van der Linden. More apps: lrvdlinden.app",
+   "promotional_text": "Never lose a setup code again. Scan the sticker, Pairr fills in brand and model and shows the code again as a QR later. Free, no account, encrypted in iCloud.",
+   "subtitle": "HomeKit, Matter & Zigbee vault"
+  }
+ },
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "ca98440b63f87f10c4a0e4854965f0c4ac2f9ed2",
+  "shot-nl-02.webp": "877b489895f2237311c08cab86438035b9422aab",
+  "shot-nl-03.webp": "94eadcb51f572e3e1141b59eaa79029c1ec8f27c",
+  "shot-nl-04.webp": "336fb7a5f616b303f1c0d512157741edf81850a2",
+  "shot-nl-05.webp": "e64b8571de92c73f4f4431e35258d3bf0b62c147",
+  "shot-en-01.webp": "d074851072217031a0493c478fe9abf921fc2387",
+  "shot-en-02.webp": "298a0c1b4cc5d2a64b0cb12f9f6ce0c489ee71c6",
+  "shot-en-03.webp": "e632926ab988be4b90a485dc18a2ddf6750673b9",
+  "shot-en-04.webp": "bddc4aa6cba5cebeff77de36ae7abf694c1650fa",
+  "shot-en-05.webp": "6310d85c6cd7be088bf1701ce6d40c8fa01b2e1f",
+  "text-nl-description": "a5e1e3dc716c4b57ea54b3080025bf542eb1bd81",
+  "text-nl-promotional_text": "bd50d99a75e0f9e7709c468a46d86e53a25a4f56",
+  "text-nl-subtitle": "a6e4388eca54c4eef7d28c97abb2e5db0281e735",
+  "text-en-description": "50b56405ef8f951fea656abed4773e76dfa0a494",
+  "text-en-promotional_text": "4996b45939c873620e75537be1dccf98085aee0b",
+  "text-en-subtitle": "1e634487fd6633c6f7ec3685d0c8ac086ded6353",
+  "og-nl.jpg": "gen:d1b800427b37a5a599a7a99f41ae82ece69cc9d4",
+  "og-en.jpg": "ee464dc610409dc73c93e8a68d1fa8093f3f3793"
+ },
+ "folder": "Pairr",
+ "source": "Pairr/AppStore/2026-11-12"
+}

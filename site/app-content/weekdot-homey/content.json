@@ -1,0 +1,14 @@
+{
+ "slug": "weekdot-homey",
+ "id": "homey-weekdot",
+ "shots": {},
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "og-nl.jpg": "gen:3b65a39b83699370816884d56ac7077e27067bf4",
+  "og-en.jpg": "gen:1a80aac464c2712218a95ad77f58ae05e8d81c20"
+ }
+}

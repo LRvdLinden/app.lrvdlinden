@@ -1,0 +1,117 @@
+{
+ "slug": "weekdot",
+ "id": "nl-lrvdlinden-weekdot",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-07.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-08.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-07.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-08.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "823e9a4e0dc1963ef49e7d9627bfeb0f8aa228ed",
+  "shot-nl-02.webp": "6cce95ba229d15abef2f49f5843f54e6be5d27c6",
+  "shot-nl-03.webp": "1185b70b822776e767e77fb40d1e1ac84fe340a5",
+  "shot-nl-04.webp": "3ccd706eadc7c156963c4706ec3e6a8e1baacb16",
+  "shot-nl-05.webp": "2129242cc9e96bace6647309462a00783e7d51d8",
+  "shot-nl-06.webp": "be4b0f8e1fe9bf9b7adc079084c8c940c3c6c09f",
+  "shot-nl-07.webp": "36a6485f2525eabaefb8fa05a97f67d1c4a1086e",
+  "shot-nl-08.webp": "4faf0c04aac9841861c74addc8ec441480625056",
+  "shot-en-01.webp": "34569f105e1d2decf88135fb7566588ac123b849",
+  "shot-en-02.webp": "f5c601bee5a58b4741c6c92b8942b3062050b42f",
+  "shot-en-03.webp": "04e96dff7340546a2ba405d7d8c0770eda726383",
+  "shot-en-04.webp": "d1e16295292b5deb05d6cad0ca3cd5f1b844d18d",
+  "shot-en-05.webp": "90c6e34194860c2bf1d8734b0badfb01bbdcdb28",
+  "shot-en-06.webp": "8bf86fbcadd4a5745ee25ef939bcbf1657b2c953",
+  "shot-en-07.webp": "8242abe220ff2b8f4ab61b0be80a316ae82a019e",
+  "shot-en-08.webp": "60b0511b214d1e9afe03c9a3b0add2b3785a0e71",
+  "og-nl.jpg": "gen:449af048ba1091515573a0dc958171e072251fe5",
+  "og-en.jpg": "gen:5e4cca8dcf5e6476dabc4a4594ebb91492a692b1"
+ },
+ "folder": "Weekdot",
+ "source": "Weekdot/AppStore/2026-11-09"
+}

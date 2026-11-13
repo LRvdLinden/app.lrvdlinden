@@ -1,0 +1,55 @@
+{
+ "slug": "tunr",
+ "id": "tunr",
+ "shots": {
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {},
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-en-01.webp": "5ae869f4ba84b662d57497d6ad7213c73adcd3a0",
+  "shot-en-02.webp": "39cf7510c285d91133d66463829eed994a3d0109",
+  "shot-en-03.webp": "8b4074bc0aef566ce234eb92ba0d14f48f5ef9a2",
+  "shot-en-04.webp": "65e8634bea49c40da87ba69e6f1190f0e36ab879",
+  "shot-en-05.webp": "253c4b3733213f507a1c50d47a08a1a76787ca93",
+  "shot-en-06.webp": "af03de6ab036198da6596102dee28d7857ffc59b",
+  "og-nl.jpg": "gen:0b8b1dac76a4324d79f42699e0c6b2622d0b0c0e",
+  "og-en.jpg": "gen:ea72f53adf88162a5ebeec7dc92d187e7a04dd18"
+ },
+ "folder": "Tunr",
+ "source": "Tunr/AppStore/2026-11-09"
+}

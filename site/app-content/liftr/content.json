@@ -1,0 +1,122 @@
+{
+ "slug": "liftr",
+ "id": "nl-lrvdlinden-liftr",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-07.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-07.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {
+  "nl": {
+   "description": "Weg met de notities-app. Liftr is het logboek voor de sportschool: per training zie je precies wat je deed – oefening, sets, herhalingen en gewicht – en hoe je sterker wordt.\n\nLOGGEN IN SECONDEN\n• Start een training en voeg oefeningen toe uit een bibliotheek met 127 apparaten, vrije gewichten, kabels en cardio\n• Wat je vorige keer deed staat al ingevuld – pas aan met −/+ en vink de set af\n• Werksets, warming-up, dropsets en sets tot falen\n• Eigen schema's voor je vaste trainingen\n\nRUSTTIMER\n• Na elke set start de rusttimer automatisch\n• Live Activity op je toegangsscherm en in het Dynamic Island: oefening, sets en resterende rust, ook met je telefoon in je zak\n\nZIE JE GROEI\n• Grafieken van je zwaarste set, geschat maximum (1RM) en volume\n• Schuif over de lijn voor elke training; kies 1 maand tot alles, met min, gemiddelde en max\n• Persoonlijke records, weekreeks en een kalender met al je trainingsdagen\n\nAPPLE WATCH\n• Start en log je training vanaf je pols, met hartslag en calorieën\n• Je sportschoolpas en je schema's ook op je Watch\n• Complicaties en widgets voor je week\n\nSPORTSCHOOLPAS\n• Rechtsboven op Vandaag: al je passen onder één knop\n• Kies je sportschool met logo en huiskleur, of voeg een andere toe\n• De kaart draait om naar je QR- of barcode, schermvullend en met maximale helderheid\n• Scan je pas met de camera of lees de code uit een screenshot\n\nAPPLE GEZONDHEID\n• Je trainingen worden opgeslagen als krachttraining, met calorieën en hartslag\n• Gewicht en vetpercentage uit Gezondheid voor je voortgang\n\nIMPORTEREN\n• Plak je oude notities: “Leg press 3x12 40 kg” wordt netjes een oefening met sets\n• Of kies je Excel- of CSV-overzicht – download de importsheet op liftr.nu\n• Geïmporteerde trainingen komen in je geschiedenis, niet in Apple Gezondheid\n\nPRIVÉ\n• Geen account, geen advertenties, geen tracking\n• Je gegevens staan op je apparaat en synchroniseren via je eigen iCloud tussen iPhone, iPad en Apple Watch\n• De code van je sportschoolpas wordt end-to-end versleuteld\n\nLiftr is beschikbaar in 33 Europese talen, waaronder Nederlands en Engels.\n\nMeer apps van de ontwikkelaar vind je op lrvdlinden.app.",
+   "promotional_text": "Houd elke training bij: sets, herhalingen en gewicht per oefening. Met rusttimer in je Dynamic Island, grafieken van je groei en je sportschoolpas bij de hand.",
+   "subtitle": "Sets, gewicht en voortgang"
+  },
+  "en": {
+   "description": "Ditch the notes app. Liftr is your gym logbook: for every workout you see exactly what you did – exercise, sets, reps and weight – and how you're getting stronger.\n\nLOG IN SECONDS\n• Start a workout and add exercises from a library of 127 machines, free weights, cables and cardio\n• What you did last time is already filled in – adjust with −/+ and tick off the set\n• Working sets, warm-ups, drop sets and sets to failure\n• Your own routines for the workouts you repeat\n\nREST TIMER\n• The rest timer starts automatically after every set\n• Live Activity on your Lock Screen and in the Dynamic Island: exercise, sets and rest left, even with your phone in your pocket\n\nWATCH YOURSELF GROW\n• Charts of your heaviest set, estimated max (1RM) and volume\n• Scrub the line for every workout; pick 1 month to all time, with min, average and max\n• Personal records, week streak and a calendar of all your training days\n\nAPPLE WATCH\n• Start and log your workout from your wrist, with heart rate and calories\n• Your gym pass and routines on your Watch too\n• Complications and widgets for your week\n\nGYM PASS\n• Top right on Today: all your passes behind one button\n• Pick your gym with its logo and colours, or add any other\n• The card flips over to your QR code or barcode, full screen at maximum brightness\n• Scan your pass with the camera or read the code from a screenshot\n\nAPPLE HEALTH\n• Workouts are saved as strength training, with calories and heart rate\n• Weight and body fat from Health for your progress\n\nIMPORT\n• Paste your old notes: “Leg press 3x12 40 kg” becomes a proper exercise with sets\n• Or pick your Excel or CSV log – download the import sheet at liftr.nu\n• Imported workouts go into your history, not into Apple Health\n\nPRIVATE\n• No account, no ads, no tracking\n• Your data stays on your device and syncs through your own iCloud between iPhone, iPad and Apple Watch\n• Your gym pass code is end-to-end encrypted\n\nLiftr is available in 33 European languages, including English and Dutch.\n\nMore apps from the developer at lrvdlinden.app.",
+   "promotional_text": "Track every workout: sets, reps and weight per exercise. With a rest timer in your Dynamic Island, charts of your progress and your gym pass at hand.",
+   "subtitle": "Sets, reps, weight & progress"
+  }
+ },
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "92e17e80fe53a895a9411f483947ebe09535318f",
+  "shot-nl-02.webp": "707ddfe681997e7694aa3519be22f76c3a86014c",
+  "shot-nl-03.webp": "5e6c8e784fa68aee8a1eb8db58eee8b28f0eb0f6",
+  "shot-nl-04.webp": "744fb4580dcd2b9c25f7d0854a4b9b51cb25710f",
+  "shot-nl-05.webp": "9b4c4d4f57f4f9f4a8999bf7919c20afc9f5d077",
+  "shot-nl-06.webp": "853c1b5e5e2d05253d39f6c576e5a7638e2b94e3",
+  "shot-nl-07.webp": "1871517f5628a57ce9866a9f41b072070fc57996",
+  "shot-en-01.webp": "92ec9b01e116db4e33185970d3efd0c470ad5789",
+  "shot-en-02.webp": "497f521aca64cf7e2ad072c0f0c5c1e17b114a18",
+  "shot-en-03.webp": "9ff853665f4402d620b7cd5b84a2a8e5d193862b",
+  "shot-en-04.webp": "948078df92dd32905323d15fa4737c091f940d48",
+  "shot-en-05.webp": "19c48eb17c2665fa6caca023861592eed854fed6",
+  "shot-en-06.webp": "d3338becdd1db4d15a508c92171c62762274713b",
+  "shot-en-07.webp": "1482f7ba310df6db6a6c7718afabbf9dcb30c150",
+  "text-nl-description": "9c0c0c18b7f0c78dfb76b3ff6402e1dd46d32879",
+  "text-nl-promotional_text": "e0eba72ca7663b721559a367e44e55a0ed2f2581",
+  "text-nl-subtitle": "3f7625e0d70319f37cd308724330bb121cebc6b1",
+  "text-en-description": "6944aa52a0ad174a2cacc329eba56f41b79b5fc8",
+  "text-en-promotional_text": "d5de8b4a3f466912385d7c275ee6fde9a7f01d07",
+  "text-en-subtitle": "ef1b8d6eb07e9b27a9dc61f33eeb5d21b1125637",
+  "og-nl.jpg": "gen:62943f62c20ca83e92cd01b166e8e6a1d1c7088c",
+  "og-en.jpg": "gen:727c53023a5e07b50381e4ae441e86e6de59fd32"
+ },
+ "folder": "Liftr",
+ "source": "Liftr/AppStore/2026-11-09"
+}
