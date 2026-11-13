@@ -1221,7 +1221,13 @@
             "subtitle": {
                 "nl": "Scan, vul aan, altijd compleet"
             },
-            "nlOnly": true
+            "nlOnly": true,
+            "promo": {
+                "image": {
+                    "nl": "img/promo-app-lrvdlinden-noodpakket-nl.webp"
+                },
+                "show": true
+            }
         },
         {
             "id": "homey-appstoreconnect",
