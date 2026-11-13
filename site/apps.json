@@ -1204,6 +1204,27 @@
             ]
         },
         {
+            "id": "noodpakket",
+            "name": "Noodpakket",
+            "section": "ios",
+            "status": "dev",
+            "featured": true,
+            "category": "utilities",
+            "description": {
+                "nl": "Scan je spullen om te zien wat er in huis is, wat ontbreekt en wanneer iets over de houdbaarheidsdatum gaat.",
+                "en": "Scan your items to see what you have, what is missing, and when something passes its best-before date."
+            },
+            "links": {
+                "website": "https://noodpakket.lrvdlinden.app/"
+            },
+            "history": [],
+            "icon": "img/noodpakket.webp",
+            "subtitle": {
+                "nl": "Voorraadbeheer-app",
+                "en": "Pantry tracking app"
+            }
+        },
+        {
             "id": "homey-appstoreconnect",
             "name": "App Store Connect",
             "section": "homey",
