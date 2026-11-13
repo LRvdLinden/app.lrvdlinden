@@ -394,7 +394,7 @@ document.addEventListener("click", e => {
   if (id === "newCancel"){ $("#newDlg").close(); return; }
   if (id === "btnNewManual"){
     let n = 1, nid; do { nid = "nieuwe-app-"+n++; } while (DATA.apps.some(x=>x.id===nid));
-    DATA.apps.unshift({ id:nid, name:"Nieuwe app", section:"ios", status:"dev", featured:true, category:"utilities", platforms:["iPhone"], description:{nl:"",en:""}, links:{}, history:[] });
+    DATA.apps.unshift({ id:nid, name:"Nieuwe app", section:"ios", status:"dev", featured:true, added:new Date().toISOString().slice(0,10), category:"utilities", platforms:["iPhone"], description:{nl:"",en:""}, links:{}, history:[] });
     sel = nid; confirmDel = false; save(); render(); setTimeout(()=>$("#f_name")?.select(),0); return;
   }
   if (id === "btnPublish") return publish();

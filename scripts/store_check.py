@@ -595,6 +595,7 @@ def add_appstore(found, apps, log, extra_links=None):
         if new:
             app = {"id": unique_id(apps, slug(name)), "name": name, "section": "ios", "status": "live",
                    "description": {}, "links": {}, "history": []}
+            app["added"] = datetime.now().strftime("%Y-%m-%d")
             if ADD_NL_ONLY:
                 app["nlOnly"] = True
             last_ios = max([i for i, a in enumerate(apps) if a.get("section", "ios") == "ios"] or [len(apps) - 1])
@@ -659,6 +660,7 @@ def add_homey(listed, apps, log, extra_links=None):
         if new:
             app = {"id": unique_id(apps, "homey-" + slug(hid.split(".")[-1])), "name": name, "section": "homey",
                    "status": "live", "bundleId": hid, "description": {}, "links": {}, "history": []}
+            app["added"] = datetime.now().strftime("%Y-%m-%d")
             if ADD_NL_ONLY:
                 app["nlOnly"] = True
             apps.append(app)
@@ -804,6 +806,7 @@ def add_from_url(apps, log, url):
         return {existing["id"]}
     app = {"id": unique_id(apps, slug(title)), "name": title, "section": "ios", "status": "beta" if tf else "dev",
            "featured": True, "category": "utilities", "description": {}, "links": {("testflight" if tf else "website"): url}, "history": []}
+    app["added"] = datetime.now().strftime("%Y-%m-%d")
     if ADD_NL_ONLY:
         app["nlOnly"] = True
     last_ios = max([i for i, a in enumerate(apps) if a.get("section", "ios") == "ios"] or [len(apps) - 1])

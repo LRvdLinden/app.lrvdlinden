@@ -524,6 +524,9 @@ function renderStatic(){
   $("#q").setAttribute("aria-label", t("search"));
 }
 
+// Nieuwste eerst: datum toegevoegd, daarna de laatste versie
+const lastRelease = a => (a.history || []).reduce((m, h) => (h.date || "") > m ? h.date : m, "");
+const newestFirst = (a, b) => (b.added || "").localeCompare(a.added || "") || lastRelease(b).localeCompare(lastRelease(a));
 function render(){
   renderStatic();
   if (!APPS.length) return;
@@ -535,7 +538,7 @@ function render(){
   $("#stHomey").textContent = homey.length;
 
   // Promo-banners
-  const promos = ios.filter(a => a.promo && a.promo.show);
+  const promos = ios.filter(a => a.promo && a.promo.show).sort(newestFirst);
   $("#promoWrap").hidden = !promos.length;
   $("#promo").classList.toggle("multi", promos.length > 1);
   $("#promo").innerHTML = promos.map((a, i) => {
@@ -564,7 +567,7 @@ function render(){
 
   // Uitgelicht: featured, of alles wat nog niet live is
   // Alleen apps die in beheer zijn aangevinkt bij "Tonen in Nieuw en onderweg"
-  const feat = ios.filter(a => a.featured === true);
+  const feat = ios.filter(a => a.featured === true).sort(newestFirst);
   $("#nieuw").hidden = !feat.length || !!q;
   $("#lab").innerHTML = feat.map(a => `
     <article class="lab-card">

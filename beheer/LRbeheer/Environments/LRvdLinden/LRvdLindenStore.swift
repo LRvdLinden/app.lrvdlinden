@@ -105,7 +105,9 @@ final class LRvdLindenStore {
         while app(nid) != nil { n += 1; nid = "nieuwe-app-\(n)" }
         let a: JSON = .object([
             ("id", .string(nid)), ("name", .string(String(localized: "Nieuwe app"))), ("section", .string("ios")),
-            ("status", .string("dev")), ("featured", .bool(true)), ("category", .string("utilities")),
+            ("status", .string("dev")), ("featured", .bool(true)),
+            ("added", .string(ISO8601DateFormatter.string(from: Date(), timeZone: .current, formatOptions: [.withFullDate]))),
+            ("category", .string("utilities")),
             ("platforms", .array([.string("iPhone")])),
             ("description", .object([("nl", .string("")), ("en", .string(""))])),
             ("links", .object([])), ("history", .array([])),
