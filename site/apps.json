@@ -1211,8 +1211,7 @@
             "featured": true,
             "category": "utilities",
             "description": {
-                "nl": "Scan je spullen om te zien wat er in huis is, wat ontbreekt en wanneer iets over de houdbaarheidsdatum gaat.",
-                "en": "Scan your items to see what you have, what is missing, and when something passes its best-before date."
+                "nl": "Scan de barcode van je water, batterijen of blikken en Noodpakket vult de rest in. Zo weet je precies wat er nog ontbreekt voor 72 uur zelfredzaam."
             },
             "links": {
                 "website": "https://noodpakket.lrvdlinden.app/"
@@ -1220,8 +1219,7 @@
             "history": [],
             "icon": "img/noodpakket.webp",
             "subtitle": {
-                "nl": "Voorraadbeheer-app",
-                "en": "Pantry tracking app"
+                "nl": "Scan, vul aan, altijd compleet"
             },
             "nlOnly": true
         },
