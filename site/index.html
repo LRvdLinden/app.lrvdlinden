@@ -487,17 +487,16 @@ function date(d){
   const x = new Date(d + "T12:00:00");
   return isNaN(x) ? d : new Intl.DateTimeFormat(lang==="nl"?"nl-NL":"en-GB",{day:"numeric",month:"short",year:"numeric"}).format(x);
 }
-// Adres van de eigen app-pagina; zelfde regels als scripts/app_slug.py
+// Adres van de eigen app-pagina: /app/<naam>/ (iOS) of /homey/<naam>/; zelfde regels als scripts/appslug.py
 function slugify(n){ return String(n||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"") || "app"; }
+const pageKind = a => a.section === "homey" ? "homey" : "app";
 function pageSlug(a){
   const base = slugify(a.name);
-  const clash = ALL_APPS.some(o => o !== a && slugify(o.name) === base && o.section !== a.section);
-  let s = clash && a.section === "homey" ? base + "-homey" : base;
-  const same = ALL_APPS.filter(o => (slugify(o.name) === base) && o.section === a.section);
-  if (same.length > 1) { const i = same.indexOf(a); if (i > 0) s += "-" + (i + 1); }
-  return s;
+  const same = ALL_APPS.filter(o => slugify(o.name) === base && pageKind(o) === pageKind(a));
+  const i = same.indexOf(a);
+  return same.length > 1 && i > 0 ? base + "-" + (i + 1) : base;
 }
-const pageUrl = a => "/app/" + pageSlug(a) + "/";
+const pageUrl = a => "/" + pageKind(a) + "/" + pageSlug(a) + "/";
 function icon(a, cls=""){
   const init = esc(a.name.replace(/[^A-Za-z0-9]/g,"").slice(0,2));
   return `<span class="icon ${cls}">${init}${a.icon?`<img src="${esc(a.icon)}" alt="${esc(a.name)}" width="256" height="256" loading="lazy" decoding="async" onerror="this.remove()">`:""}</span>`;

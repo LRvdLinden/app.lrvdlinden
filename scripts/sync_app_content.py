@@ -23,7 +23,7 @@ import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from appslug import norm, page_slug  # noqa: E402
+from appslug import content_key, norm  # noqa: E402
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont  # noqa: E402
 
@@ -305,7 +305,7 @@ def main():
     changed, log = False, []
     keep = set()
     for app in apps:
-        slug = page_slug(app, apps)
+        slug = content_key(app, apps)
         keep.add(slug)
         sdir = os.path.join(OUT, slug)
         cpath = os.path.join(sdir, "content.json")

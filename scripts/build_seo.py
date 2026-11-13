@@ -42,8 +42,8 @@ for name in ("donate", "privacy"):  # nette URL's zonder .html
         pages.append((name, git_date(f"site/{name}.html") or today))
 # eigen app-pagina's (gemaakt door scripts/build_app_pages.py)
 try:
-    for pg in json.load(open(os.path.join(out, "app", "pages.json"), encoding="utf-8")):
-        pages.append((f"app/{pg['slug']}/", pg.get("lastmod") or today))
+    for pg in json.load(open(os.path.join(out, "app-pages.json"), encoding="utf-8")):
+        pages.append((pg["path"].lstrip("/"), pg.get("lastmod") or today))
 except (OSError, ValueError):
     pass
 xml = ['<?xml version="1.0" encoding="UTF-8"?>',

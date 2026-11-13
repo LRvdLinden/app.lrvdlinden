@@ -1,4 +1,4 @@
-"""Maakt bij elke release een eigen pagina per app: /app/<slug>/ (NL en EN).
+"""Maakt bij elke release een eigen pagina per app: /app/<naam>/ voor iOS, /homey/<naam>/ voor Homey (NL en EN).
 
 Bronnen: build/apps.json (wat in beheer en de store-check staat) en build/app-content/<slug>/content.json
 (screenshots, App Store-teksten en deelafbeelding uit de content-repo, bijgehouden door scripts/sync_app_content.py).
@@ -13,7 +13,7 @@ import sys
 from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from appslug import page_slug  # noqa: E402
+from appslug import content_key, legacy_homey_path, page_path  # noqa: E402
 
 BASE = "https://lrvdlinden.app"
 OUT = sys.argv[1] if len(sys.argv) > 1 else "build"
@@ -214,7 +214,7 @@ def homey_blocks(a, lang):
 def page_content(a, c, lang, others):
     t = T[lang]
     name = a["name"]
-    slug = c["slug"]
+    slug = c["ckey"]
     sub = L(a.get("subtitle"), lang)
     text = (c.get("text") or {}).get(lang) or {}
     long_desc = text.get("description") or ""
@@ -260,19 +260,19 @@ def page_content(a, c, lang, others):
         more = f'<button type="button" class="showall" data-a="{e(t["allv"])}" data-b="{e(t["lessv"])}">{e(t["allv"])}</button>' if len(hist) > 3 else ""
         news = f'<section class="block wrap"><h2>{e(t["news"])}</h2><ol class="news">{"".join(items)}</ol>{more}</section>'
     minis = []
-    for o, s in others:
+    for o, path in others:
         init = e(re.sub(r"[^A-Za-z0-9]", "", o["name"])[:2])
         pic = f'<img src="/{e(o["icon"])}" alt="" loading="lazy">' if o.get("icon") else ""
         sub_o = L(o.get("subtitle"), lang) or CATS[lang].get(o.get("category") or "", "Homey")
-        minis.append(f'<a class="mini" href="/app/{e(s)}/"><span class="icon sm">{init}{pic}</span><span><b>{e(o["name"])}</b><small>{e(sub_o)}</small></span></a>')
+        minis.append(f'<a class="mini" href="{e(path)}"><span class="icon sm">{init}{pic}</span><span><b>{e(o["name"])}</b><small>{e(sub_o)}</small></span></a>')
     more_apps = "".join(minis)
     more = f'<section class="block wrap"><h2>{e(t["more"])}</h2><div class="minis">{more_apps}</div></section>' if more_apps else ""
     return hero + shots_html + about + homey + news + more
 
 
 def page(a, c, others, all_slugs):
-    slug = c["slug"]
-    url = f"{BASE}/app/{slug}/"
+    slug = c["ckey"]
+    url = BASE + c["path"]
     nl, en = page_content(a, c, "nl", others), page_content(a, c, "en", others)
     name = a["name"]
     sub_nl = L(a.get("subtitle"), "nl")
@@ -486,29 +486,38 @@ render();
 
 def main():
     content_root = os.path.join(OUT, "app-content")
-    pages_dir = os.path.join(OUT, "app")
-    os.makedirs(pages_dir, exist_ok=True)
     built = []
-    slugs = {id(a): page_slug(a, apps) for a in apps}
+    paths = {id(a): page_path(a, apps) for a in apps}
     for a in apps:
-        slug = slugs[id(a)]
+        path = paths[id(a)]
+        ckey = content_key(a, apps)
         try:
-            c = json.load(open(os.path.join(content_root, slug, "content.json"), encoding="utf-8"))
+            c = json.load(open(os.path.join(content_root, ckey, "content.json"), encoding="utf-8"))
         except (OSError, ValueError):
             c = {}
-        c["slug"] = slug
+        c["ckey"], c["path"] = ckey, path
         # Meer apps: eerst dezelfde soort (iOS of Homey), live en met icoon
         same = [o for o in apps if o is not a and o.get("section") == a.get("section") and o.get("icon")]
-        others = [(o, slugs[id(o)]) for o in sorted(same, key=lambda o: (o.get("status") != "live", 0))][:6]
-        d = os.path.join(pages_dir, slug)
+        others = [(o, paths[id(o)]) for o in sorted(same, key=lambda o: (o.get("status") != "live", 0))][:6]
+        d = os.path.join(OUT, path.strip("/"))
         os.makedirs(d, exist_ok=True)
         with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
-            f.write(page(a, c, others, slugs))
-        built.append(slug)
-    # overzicht voor de sitemap
-    with open(os.path.join(pages_dir, "pages.json"), "w", encoding="utf-8") as f:
-        json.dump([{"slug": slugs[id(a)], "lastmod": max([h.get("date") or "" for h in a.get("history") or []] + [""]) or None,
+            f.write(page(a, c, others, paths))
+        built.append(path)
+    # overzicht voor de sitemap en de release-controle
+    with open(os.path.join(OUT, "app-pages.json"), "w", encoding="utf-8") as f:
+        json.dump([{"path": paths[id(a)], "ckey": content_key(a, apps), "lastmod": max([h.get("date") or "" for h in a.get("history") or []] + [""]) or None,
                     "nlOnly": bool(a.get("nlOnly"))} for a in apps], f)
+    # oude adressen van Homey-apps (/app/<naam>/) doorsturen naar /homey/<naam>/
+    ios_paths = {paths[id(a)].strip("/") for a in apps if a.get("section") != "homey"}
+    rules = []
+    for a in apps:
+        if a.get("section") == "homey":
+            old = legacy_homey_path(a, apps)
+            if old not in ios_paths:
+                rules.append(f"  RewriteRule ^{re.escape(old)}/?$ {paths[id(a)]} [R=301,L]")
+    with open(os.path.join(OUT, "app-redirects.conf"), "w", encoding="utf-8") as f:
+        f.write("<IfModule mod_rewrite.c>\n  RewriteEngine On\n" + "\n".join(rules) + "\n</IfModule>\n")
     print(f"App-pagina's: {len(built)} ({datetime.now(timezone.utc):%Y-%m-%d})")
 
 
