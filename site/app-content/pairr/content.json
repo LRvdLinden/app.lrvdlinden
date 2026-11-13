@@ -90,9 +90,15 @@
   "text-en-description": "50b56405ef8f951fea656abed4773e76dfa0a494",
   "text-en-promotional_text": "4996b45939c873620e75537be1dccf98085aee0b",
   "text-en-subtitle": "1e634487fd6633c6f7ec3685d0c8ac086ded6353",
+  "promo-nl.webp": "287879f291607c2a59e39dd8fd304334df0b687d",
+  "promo-en.webp": "009d33f5ebabe5b06fdec0b534c9b6dd0a1ac07e",
   "og-nl.jpg": "gen:768768c18aa8382d4c74a27d8f4439a007e84074",
   "og-en.jpg": "ee464dc610409dc73c93e8a68d1fa8093f3f3793"
  },
  "folder": "Pairr",
- "source": "Pairr/AppStore/2026-11-12"
+ "source": "Pairr/AppStore/2026-11-12",
+ "promo": {
+  "nl": "promo-nl.webp",
+  "en": "promo-en.webp"
+ }
 }

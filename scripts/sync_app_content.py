@@ -115,7 +115,7 @@ def latest_date_dir(paths, prefix):
 
 def pick(files, folder):
     """Screenshots, teksten en OG voor één map in de content-repo."""
-    res = {"shots": {}, "text": {}, "og": {}}
+    res = {"shots": {}, "text": {}, "og": {}, "promo": {}}
     base = folder + "/AppStore/"
     d = latest_date_dir(files, base)
     if d:
@@ -157,6 +157,28 @@ def pick(files, folder):
                               and p.lower().split("/")[-2] in codes and "/metadata/" in p.lower())
                 if hits:
                     res["text"].setdefault(lg, {})[kind] = hits[-1]
+        # promo-banner (16:9) uit de marketing-/promo-afbeeldingen, per taal
+        cands = []
+        for p in in_root:
+            if not p.lower().endswith(IMG):
+                continue
+            rel = p[len(root):].lower()
+            if not re.search(r"marketing|promo|header|banner|artwork", rel):
+                continue
+            if re.search(r"notext|event|social|icon|icoon|screenshot|watch|ipad|iphone", rel):
+                continue
+            m = re.search(r"(\d{3,5})x(\d{3,5})", rel.rsplit("/", 1)[-1])
+            if not m or not 1.70 <= int(m.group(1)) / int(m.group(2)) <= 1.82:
+                continue
+            name = rel.rsplit("/", 1)[-1]
+            score = (0 if re.search(r"header|promo|banner|artwork", name) else 1, -int(m.group(1)))
+            cands.append((score, p))
+        for lg in ("nl", "en"):
+            own = sorted(c for c in cands if lang_of(c[1][len(root):]) == lg)
+            neutral = sorted(c for c in cands if lang_of(c[1][len(root):]) is None)
+            pick_ = (own or neutral)
+            if pick_:
+                res["promo"][lg] = pick_[0][1]
     # OG
     ob = folder + "/OG/"
     od = latest_date_dir(files, ob)
@@ -180,6 +202,23 @@ def to_webp(data, width):
     out = io.BytesIO()
     im.save(out, "WEBP", quality=80, method=6)
     return out.getvalue(), im.size
+
+
+def to_promo(data):
+    """Promo-banner voor Nieuw en onderweg: 1600x900 webp, zoals een upload in beheer."""
+    im = Image.open(io.BytesIO(data)).convert("RGB")
+    r = 16 / 9
+    if abs(im.width / im.height - r) > 0.01:
+        if im.width / im.height > r:
+            w = round(im.height * r)
+            im = im.crop(((im.width - w) // 2, 0, (im.width - w) // 2 + w, im.height))
+        else:
+            h = round(im.width / r)
+            im = im.crop((0, (im.height - h) // 2, im.width, (im.height - h) // 2 + h))
+    im = im.resize((1600, 900), Image.LANCZOS)
+    out = io.BytesIO()
+    im.save(out, "WEBP", quality=82, method=6)
+    return out.getvalue()
 
 
 def to_og(data):
@@ -303,6 +342,7 @@ def main():
             folders.setdefault(norm(top), top)
     os.makedirs(OUT, exist_ok=True)
     changed, log = False, []
+    apps_changed = False
     keep = set()
     for app in apps:
         slug = content_key(app, apps)
@@ -316,7 +356,7 @@ def main():
         old_src = old.get("sources", {})
         new = {"slug": slug, "id": app.get("id"), "shots": {}, "text": {}, "og": {}, "sources": {}}
         folder = folders.get(norm(app.get("name"))) if app.get("section") == "ios" else None
-        picked = pick(files, folder) if folder else {"shots": {}, "text": {}, "og": {}}
+        picked = pick(files, folder) if folder else {"shots": {}, "text": {}, "og": {}, "promo": {}}
         if folder:
             new["folder"] = folder
             if picked.get("source"):
@@ -367,6 +407,38 @@ def main():
                 if txt:
                     new["text"].setdefault(lg, {})[kind] = txt
                     new["sources"][f"text-{lg}-{kind}"] = files[src]
+        # promo-banner: alleen ophalen; in apps.json zetten gebeurt hieronder (eigen uploads gaan voor)
+        for lg, src in picked.get("promo", {}).items():
+            if lg == "en" and app.get("nlOnly"):
+                continue
+            target = f"promo-{lg}.webp"
+            try:
+                fetch(src, target, to_promo)
+                new.setdefault("promo", {})[lg] = target
+            except Exception as e:
+                print(f"::warning::{app['name']}: promo {src} overgeslagen ({e})")
+        # in apps.json: banner-afbeelding invullen waar je zelf (nog) niets hebt geüpload
+        promo = app.get("promo") or {}
+        img = promo.get("image") if isinstance(promo.get("image"), dict) else ({"nl": promo["image"]} if promo.get("image") else {})
+        before = json.dumps(promo, sort_keys=True)
+        for lg in ("nl", "en"):
+            auto = f"app-content/{slug}/promo-{lg}.webp"
+            if (new.get("promo") or {}).get(lg):
+                if not img.get(lg) or str(img.get(lg)).startswith("app-content/"):
+                    img[lg] = auto
+            elif str(img.get(lg) or "").startswith("app-content/"):
+                img.pop(lg)
+        if img:
+            promo["image"] = img
+        elif "image" in promo and str(promo.get("image")).startswith("app-content/"):
+            promo.pop("image")
+        if json.dumps(promo, sort_keys=True) != before:
+            if promo:
+                app["promo"] = promo
+            else:
+                app.pop("promo", None)
+            apps_changed = True
+            log.append(f"- {app['name']}: promo-banner uit de content-repo")
         # OG: uit de content-repo, anders zelf maken
         for lg in ("nl", "en"):
             target = f"og-{lg}.jpg"
@@ -415,6 +487,11 @@ def main():
             shutil.rmtree(os.path.join(OUT, d))
             log.append(f"- {d}: verwijderd")
             changed = True
+    if apps_changed:  # promo-banners in apps.json, zelfde opmaak als de rest
+        raw = open(APPS_JSON, encoding="utf-8").read()
+        indent = 4 if '\n    "apps"' in raw else 2
+        open(APPS_JSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=indent) + "\n")
+        changed = True
     summary = "Content-sync: app-pagina's bijgewerkt\n\n" + ("\n".join(log) if log else "Geen inhoudelijke wijzigingen.") + "\n"
     open("content-sync-summary.md", "w", encoding="utf-8").write(summary)
     print(summary)

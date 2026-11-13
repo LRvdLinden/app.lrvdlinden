@@ -85,9 +85,15 @@
   "shot-en-04.webp": "2509df53f7ac58f08b216e267e0d359bee853a3d",
   "shot-en-05.webp": "857528d268b73a937277742ad9206170e590a08c",
   "shot-en-06.webp": "8eadd83baf91155dbf118f96d1e0492f6f9955fb",
+  "promo-nl.webp": "c9163cea7df911666bd9aee6a3211cdaa3b9a67b",
+  "promo-en.webp": "e0131cdb63e23dd7731b66c5e8ed809ba4e4b57f",
   "og-nl.jpg": "gen:0da553525217d569b6696e246eb7967f5fe90642",
   "og-en.jpg": "gen:c931d9d1cb4f906f18d1c50ef863e79af231f907"
  },
  "folder": "HealthSync",
- "source": "HealthSync/AppStore/2026-11-09"
+ "source": "HealthSync/AppStore/2026-11-09",
+ "promo": {
+  "nl": "promo-nl.webp",
+  "en": "promo-en.webp"
+ }
 }

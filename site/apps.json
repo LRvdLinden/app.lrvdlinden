@@ -70,7 +70,13 @@
             "links": [],
             "history": [],
             "icon": "img/app-lrvdlinden-pairr.webp",
-            "languages": "NL + 9"
+            "languages": "NL + 9",
+            "promo": {
+                "image": {
+                    "nl": "app-content/pairr/promo-nl.webp",
+                    "en": "app-content/pairr/promo-en.webp"
+                }
+            }
         },
         {
             "id": "nl-lrvdlinden-homio",
@@ -495,7 +501,13 @@
                 "testflight": "https://testflight.apple.com/join/Fvr4DAP6",
                 "website": "https://tunr.online"
             },
-            "history": []
+            "history": [],
+            "promo": {
+                "image": {
+                    "nl": "app-content/tunr/promo-nl.webp",
+                    "en": "app-content/tunr/promo-en.webp"
+                }
+            }
         },
         {
             "id": "devtools",
@@ -1201,7 +1213,13 @@
                         "en": "Bug fixes."
                     }
                 }
-            ]
+            ],
+            "promo": {
+                "image": {
+                    "nl": "app-content/simple-chess/promo-nl.webp",
+                    "en": "app-content/simple-chess/promo-en.webp"
+                }
+            }
         },
         {
             "id": "app-lrvdlinden-noodpakket",

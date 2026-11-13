@@ -4,6 +4,7 @@ name: Content-sync
 # screenshots (NL en EN), App Store-teksten en de deelafbeelding. Heeft een app daar (nog) niets, dan wordt er
 # een deelafbeelding gemaakt met icoon, naam en ondertitel. Alleen gewijzigde bestanden worden opgehaald.
 # Bij wijzigingen worden ze in site/app-content opgeslagen en wordt de site opnieuw live gezet.
+# Vult ook de promo-banner (16:9 marketingbeeld) in apps.json in, behalve als je zelf een banner hebt geüpload.
 # Draait elk uur, na een release met een nieuwe app, en handmatig via Run workflow.
 
 on:
@@ -43,7 +44,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           pushed=0
           for i in 1 2 3 4; do
-            git add -A site/app-content
+            git add -A site/app-content site/apps.json
             if git diff --cached --quiet; then echo "Geen wijzigingen."; exit 0; fi
             git commit -q -F content-sync-summary.md
             if git push -q origin HEAD:main; then pushed=1; break; fi

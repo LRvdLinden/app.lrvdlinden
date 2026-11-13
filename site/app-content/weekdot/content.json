@@ -109,9 +109,15 @@
   "shot-en-06.webp": "8bf86fbcadd4a5745ee25ef939bcbf1657b2c953",
   "shot-en-07.webp": "8242abe220ff2b8f4ab61b0be80a316ae82a019e",
   "shot-en-08.webp": "60b0511b214d1e9afe03c9a3b0add2b3785a0e71",
+  "promo-nl.webp": "5b07c7ed09763bd3db80436e1a26ea0a7f0bd884",
+  "promo-en.webp": "f40fd4e6ee50351546c098f29089eeb2fe37344e",
   "og-nl.jpg": "gen:15c520699d9614219ebad8c1ecab5f5264c583a8",
   "og-en.jpg": "gen:84e29318cb2eb82483749cb127969cb94077e71d"
  },
  "folder": "Weekdot",
- "source": "Weekdot/AppStore/2026-11-09"
+ "source": "Weekdot/AppStore/2026-11-09",
+ "promo": {
+  "nl": "promo-nl.webp",
+  "en": "promo-en.webp"
+ }
 }

@@ -88,6 +88,8 @@ textarea{min-height:84px;resize:vertical}
 #newDlg .opts b{font-size:14.5px}#newDlg .opts small{color:var(--muted);font-size:12.5px}
 #newDlg .hint{color:var(--muted);font-size:13px;margin:0}
 #newDlg [hidden]{display:none!important}
+#newDlg .chk{flex-direction:row;align-items:center;gap:8px;font-weight:600;color:var(--ink)}
+#newDlg .chk input{width:auto;margin:0}#newDlg .chk small{font-weight:400;color:var(--muted)}
 #newDlg .acts{display:flex;justify-content:flex-end;gap:8px}
 @media (max-width:520px){#newDlg .opts{grid-template-columns:minmax(0,1fr)}}
 .result{border-radius:14px;padding:12px 14px;margin-bottom:16px;font-size:14px;border:1px solid var(--line);background:var(--surface)}
@@ -550,13 +552,14 @@ const NEW_HINT = {
   manual: ["", "Je krijgt een leeg formulier en vult alles zelf in."],
 };
 function openNewDialog(){
-  const d = $("#newDlg"); $("#newUrl").value = ""; syncNewDialog();
+  const d = $("#newDlg"); $("#newUrl").value = ""; $("#newNl").checked = false; syncNewDialog();
   if (d.showModal) d.showModal(); else d.setAttribute("open", "");
   setTimeout(() => $("#newUrl").focus(), 0);
 }
 function syncNewDialog(){
   const how = (document.querySelector('input[name="newHow"]:checked') || {}).value || "appstore";
   $("#newUrlWrap").hidden = how === "manual";
+  $("#newNlWrap").hidden = how === "manual";
   $("#newUrl").placeholder = NEW_HINT[how][0];
   $("#newHint").textContent = NEW_HINT[how][1];
   $("#newGo").textContent = how === "manual" ? "Leeg formulier" : "Ophalen en toevoegen";
@@ -572,10 +575,10 @@ document.addEventListener("submit", e => {
   if (how === "appstore" && !/apps\.apple\.com\/.*id\d+|^(id)?\d{6,12}$/.test(url)){ toast("Dit lijkt geen App Store-link"); return; }
   if (how === "homey" && !/homey\.app\/[a-z-]+\/app\/|^[a-z0-9]+(\.[a-z0-9_-]+){2,}$/.test(url)){ toast("Dit lijkt geen Homey App Store-link"); return; }
   $("#newDlg").close();
-  fetchStores("toevoegen", url);
+  fetchStores("toevoegen", url, $("#newNl").checked);
 });
 
-async function fetchStores(mode = "nieuw", addUrl = ""){
+async function fetchStores(mode = "nieuw", addUrl = "", nlOnly = false){
   if (fetching) return;
   fetching = true;
   const buttons = [$("#btnFetch"), $("#btnUpdate"), $("#btnNew")], btn = mode === "bijwerken" ? $("#btnUpdate") : mode === "toevoegen" ? $("#btnNew") : $("#btnFetch");
@@ -587,7 +590,7 @@ async function fetchStores(mode = "nieuw", addUrl = ""){
   const status = (txt) => showResult("warn", `<b>${what}</b> ${txt} Dit duurt meestal ${dur}; je kunt intussen gewoon verder werken.`);
   try {
     status("Opdracht wordt gestart…");
-    const r = await fetch("store-refresh.php?mode=" + encodeURIComponent(mode) + (addUrl ? "&url=" + encodeURIComponent(addUrl) : ""), { method:"POST", credentials:"same-origin", headers:{ "X-LR-Beheer":"1" } });
+    const r = await fetch("store-refresh.php?mode=" + encodeURIComponent(mode) + (addUrl ? "&url=" + encodeURIComponent(addUrl) + (nlOnly ? "&nlonly=1" : "") : ""), { method:"POST", credentials:"same-origin", headers:{ "X-LR-Beheer":"1" } });
     const st = await r.json().catch(() => ({}));
     if (!r.ok || !st.ok) throw new Error(st.error || ("De server gaf HTTP " + r.status + "."));
     let res = {};
@@ -772,6 +775,7 @@ fetch("apps.json", {cache:"no-store"}).then(r => r.json()).then(d => {
     <label id="newUrlWrap">Link
       <input type="text" id="newUrl" autocomplete="off" inputmode="url" placeholder="https://apps.apple.com/nl/app/…/id123456789">
     </label>
+    <label class="chk" id="newNlWrap"><input type="checkbox" id="newNl"> Alleen Nederlands <small>(geen Engelse teksten en geen Engelse pagina; scheelt vertalen)</small></label>
     <p class="hint" id="newHint">Naam, icoon, categorie, platformen, versies, beoordelingen en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten.</p>
     <div class="acts">
       <button class="btn" type="button" id="newCancel">Annuleren</button>

@@ -24,6 +24,10 @@ on:
         description: "Alleen bij toevoegen: App Store-, Homey-, TestFlight- of website-link"
         type: string
         default: ""
+      nlonly:
+        description: "Alleen bij toevoegen: app is alleen Nederlands (geen Engelse teksten)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -41,6 +45,7 @@ jobs:
       ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
       STORE_MODE: ${{ github.event.inputs.mode || 'alles' }}
       STORE_ADD: ${{ github.event.inputs.url || '' }}
+      STORE_ADD_NLONLY: ${{ github.event.inputs.nlonly || 'false' }}
     steps:
       - uses: actions/checkout@v5
 

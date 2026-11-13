@@ -29,6 +29,8 @@ UA = {"User-Agent": "lrvdlinden.app store-check (+https://lrvdlinden.app)"}
 
 
 DEVELOPER_ID = os.environ.get("APPSTORE_DEVELOPER_ID", "607860328")
+# Bij "Nieuwe app" in beheer: alleen Nederlands? Dan geen Engelse teksten maken (scheelt vertalen).
+ADD_NL_ONLY = os.environ.get("STORE_ADD_NLONLY", "") in ("1", "true", "ja")
 HOMEY_AUTHORS = os.environ.get("HOMEY_AUTHORS", "5d4da77a2c836a50f6936070,6ac4bc064c7de6266bbdb73e").split(",")
 IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(APPS_JSON)), "img")
 
@@ -514,6 +516,10 @@ def save_homey_icon(app_id, svg_url, color):
 
 def write_texts(jobs):
     """jobs: lijst van dicts {app, name, nl, en, need:[velden]}. Vult omschrijving en ondertitel in NL en EN."""
+    for j in jobs:
+        if j["app"].get("nlOnly"):
+            j["need"] = [f for f in j["need"] if not f.endswith("_en")]
+    jobs = [j for j in jobs if j["need"]]
     if not jobs:
         return 0
     payload = [{"i": i, "app": j["name"], "store_text_dutch": (j.get("nl") or "")[:3000],
@@ -589,6 +595,8 @@ def add_appstore(found, apps, log, extra_links=None):
         if new:
             app = {"id": unique_id(apps, slug(name)), "name": name, "section": "ios", "status": "live",
                    "description": {}, "links": {}, "history": []}
+            if ADD_NL_ONLY:
+                app["nlOnly"] = True
             last_ios = max([i for i, a in enumerate(apps) if a.get("section", "ios") == "ios"] or [len(apps) - 1])
             apps.insert(last_ios + 1, app)
         app.setdefault("links", {})["appstore"] = (en.get("trackViewUrl") or "").split("?")[0]
@@ -651,12 +659,14 @@ def add_homey(listed, apps, log, extra_links=None):
         if new:
             app = {"id": unique_id(apps, "homey-" + slug(hid.split(".")[-1])), "name": name, "section": "homey",
                    "status": "live", "bundleId": hid, "description": {}, "links": {}, "history": []}
+            if ADD_NL_ONLY:
+                app["nlOnly"] = True
             apps.append(app)
         touched.append((app, new, None if new else snap(app)))
         for k, v in (extra_links or {}).items():
             app.setdefault("links", {}).setdefault(k, v)
         desc = build.get("description") or {}
-        for lang in ("nl", "en"):
+        for lang in (("nl",) if app.get("nlOnly") else ("nl", "en")):
             if desc.get(lang) and not (app.get("description") or {}).get(lang):
                 app.setdefault("description", {})[lang] = clean(desc[lang])
         if not app.get("icon"):
@@ -794,6 +804,8 @@ def add_from_url(apps, log, url):
         return {existing["id"]}
     app = {"id": unique_id(apps, slug(title)), "name": title, "section": "ios", "status": "beta" if tf else "dev",
            "featured": True, "category": "utilities", "description": {}, "links": {("testflight" if tf else "website"): url}, "history": []}
+    if ADD_NL_ONLY:
+        app["nlOnly"] = True
     last_ios = max([i for i, a in enumerate(apps) if a.get("section", "ios") == "ios"] or [len(apps) - 1])
     apps.insert(last_ios + 1, app)
     for src in icons + ([og_img] if og_img else []):
@@ -824,7 +836,10 @@ def fill_homey_translations(apps, log):
                 walk(v)
     for app in apps:
         if app.get("section") == "homey":
+            n = len(todo)
             walk(app.get("homey"))
+            if app.get("nlOnly"):  # alleen Nederlands: niet naar het Engels vertalen
+                todo[n:] = [t for t in todo[n:] if t[2] != "en"]
     if not todo:
         return
     results = []
@@ -845,7 +860,7 @@ def fill_translations(apps, log):
     for app in apps:
         for h in app.get("history") or []:
             notes = h.get("notes") or {}
-            for have, need in (("en", "nl"), ("nl", "en")):
+            for have, need in ((("en", "nl"),) if app.get("nlOnly") else (("en", "nl"), ("nl", "en"))):
                 if notes.get(have) and not notes.get(need):
                     todo.append((h, have, need))
                     break

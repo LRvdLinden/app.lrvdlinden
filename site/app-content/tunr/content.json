@@ -47,9 +47,15 @@
   "shot-en-04.webp": "65e8634bea49c40da87ba69e6f1190f0e36ab879",
   "shot-en-05.webp": "253c4b3733213f507a1c50d47a08a1a76787ca93",
   "shot-en-06.webp": "af03de6ab036198da6596102dee28d7857ffc59b",
+  "promo-nl.webp": "fa54a5d04e45deefc9d6d3c1ad850764cd073bbb",
+  "promo-en.webp": "fa54a5d04e45deefc9d6d3c1ad850764cd073bbb",
   "og-nl.jpg": "gen:321e1b692fc3e166da645212ef79da780deb3c9b",
   "og-en.jpg": "gen:21572cda9e5c50954a9830b98c09e1f9883b6603"
  },
  "folder": "Tunr",
- "source": "Tunr/AppStore/2026-11-09"
+ "source": "Tunr/AppStore/2026-11-09",
+ "promo": {
+  "nl": "promo-nl.webp",
+  "en": "promo-en.webp"
+ }
 }

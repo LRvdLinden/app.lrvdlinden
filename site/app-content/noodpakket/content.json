@@ -90,9 +90,13 @@
   "text-en-description": "55b16468cf38b72d6b6ec0f4ddf07adbab088145",
   "text-en-promotional_text": "386a05f10bb36f612dc09ebd2b5a41006512c4ba",
   "text-en-subtitle": "2f3d20013ef85e9c787de5cac1af95f21bb99842",
+  "promo-nl.webp": "03d877990e43422729b71bfa8c76d3ac65ee0808",
   "og-nl.jpg": "a23c8c3e7b78eb6b902ecd86886f99c6a0c7a7f7",
-  "og-en.jpg": "gen:08662839ec70b621bf3ffcfe2b8117c148e53074"
+  "og-en.jpg": "gen:ac83442f6edbc6a68480600f552241e196d6e8a5"
  },
  "folder": "Noodpakket",
- "source": "Noodpakket/AppStore/2026-11-12"
+ "source": "Noodpakket/AppStore/2026-11-12",
+ "promo": {
+  "nl": "promo-nl.webp"
+ }
 }

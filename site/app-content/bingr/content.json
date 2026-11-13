@@ -102,9 +102,15 @@
   "text-en-description": "8c6fdb4755b0b0197ad35e2b179c0cd0be75b3a4",
   "text-en-promotional_text": "3830b4e33463f1eeac882715334ebc2ab8850a90",
   "text-en-subtitle": "d8f29aa1664289311c04fcc101d0474352c38aae",
+  "promo-nl.webp": "f535f661a93ef187553aeee8fb82bee35645f2af",
+  "promo-en.webp": "20647a64322d508d3e65556ec8213d989b08c55d",
   "og-nl.jpg": "gen:c58e9d71540011727769e18533ecf7a12a4d56d9",
   "og-en.jpg": "gen:e977c08b95bc2eb5414b879e7537a21eecde3e9a"
  },
  "folder": "Bingr",
- "source": "Bingr/AppStore/2026-11-09"
+ "source": "Bingr/AppStore/2026-11-09",
+ "promo": {
+  "nl": "promo-nl.webp",
+  "en": "promo-en.webp"
+ }
 }

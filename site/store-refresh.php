@@ -70,6 +70,7 @@ try {
                 reply(400, ['ok' => false, 'error' => 'Geef een geldige link of App Store-id.']);
             }
             $inputs['url'] = $url;
+            $inputs['nlonly'] = (($_GET['nlonly'] ?? '') === '1') ? 'true' : 'false';
         }
         gh('POST', '/actions/workflows/' . $workflow . '/dispatches', $cfg,
            ['ref' => $cfg['branch'] ?? 'main', 'inputs' => $inputs]);

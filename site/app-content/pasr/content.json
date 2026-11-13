@@ -109,9 +109,13 @@
   "shot-en-06.webp": "cff1af723def871cd0bf7e42d5a00e69ebe0106e",
   "shot-en-07.webp": "1181d44f26badf68f2317dbe1f84d0b4e70e4863",
   "shot-en-08.webp": "b5a3e6a0f3def7892a21451ef966a250e2d063f2",
+  "promo-nl.webp": "d879ee86dc23b40a258af08cb3bc4f39034ff179",
   "og-nl.jpg": "gen:a720ead1a7026a6c3a7491ecec8bd04a4a77d43c",
   "og-en.jpg": "gen:97beefa58c7a50b8775cd9482d2d7293e3d4d41a"
  },
  "folder": "Pasr",
- "source": "Pasr/AppStore/2026-11-09"
+ "source": "Pasr/AppStore/2026-11-09",
+ "promo": {
+  "nl": "promo-nl.webp"
+ }
 }

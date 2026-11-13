@@ -109,9 +109,13 @@
   "shot-en-06.webp": "e2e5b5e7c67990f7f5051451d63e7feb67f240d9",
   "shot-en-07.webp": "9bb4a752597e51e5e4a2409bced3ed7339393836",
   "shot-en-08.webp": "bc3ebea3c98ad8ddbe9528da53ed5e1431a00106",
+  "promo-nl.webp": "f82709ededc28985b4cdd7c78e4534b36c8c1413",
   "og-nl.jpg": "gen:e18fe8691947c8a95d5673476fbf0470a2de4712",
   "og-en.jpg": "gen:31e95e48b2792fe73d680167c9bf96ab8a8aa5d2"
  },
  "folder": "VlagDagen",
- "source": "VlagDagen/AppStore/2026-11-09"
+ "source": "VlagDagen/AppStore/2026-11-09",
+ "promo": {
+  "nl": "promo-nl.webp"
+ }
 }

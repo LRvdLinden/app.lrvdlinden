@@ -73,9 +73,15 @@
   "shot-en-03.webp": "2d3bf8209189c72502089dfd8ee1bda23db8115b",
   "shot-en-04.webp": "bd5e350332a5959b3a8219ae5791ceafebaef282",
   "shot-en-05.webp": "0305df8e85f03b40b6ed61b08138eaf276a89582",
+  "promo-nl.webp": "f280fdb032bd45289b41256ec5ae6bc62efff997",
+  "promo-en.webp": "6d9ef8eeda455397ad08f6fbaef3368e9fe498ec",
   "og-nl.jpg": "gen:0db2827990759111d95e74a8a5442d9b794a91ab",
   "og-en.jpg": "gen:987a303db6671d551b74222ff40a8cc63e715f7c"
  },
  "folder": "Simple Chess",
- "source": "Simple Chess/AppStore/2026-11-09"
+ "source": "Simple Chess/AppStore/2026-11-09",
+ "promo": {
+  "nl": "promo-nl.webp",
+  "en": "promo-en.webp"
+ }
 }

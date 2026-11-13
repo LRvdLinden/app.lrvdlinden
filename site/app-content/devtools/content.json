@@ -106,9 +106,15 @@
   "text-en-description": "053c2c7c619b4b59d286d184ffa619339f2dc928",
   "text-en-promotional_text": "80c10b816655857635df45fe7821f31700c27e20",
   "text-en-subtitle": "e6ff5cfdec3f83c15d6c139d27a7ac8b0e684449",
+  "promo-nl.webp": "628783dd8c8b1cc54d1613a5cfd34c8b92dae23f",
+  "promo-en.webp": "628783dd8c8b1cc54d1613a5cfd34c8b92dae23f",
   "og-nl.jpg": "gen:b721a36c71ee67a30d8ad18bd3a0385a00fa89bf",
   "og-en.jpg": "gen:fddeffb9ad89e22ec166733d47a6333217782fc7"
  },
  "folder": "DevTools",
- "source": "DevTools/AppStore/2026-11-09"
+ "source": "DevTools/AppStore/2026-11-09",
+ "promo": {
+  "nl": "promo-nl.webp",
+  "en": "promo-en.webp"
+ }
 }
