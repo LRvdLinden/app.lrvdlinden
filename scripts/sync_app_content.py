@@ -165,7 +165,8 @@ def pick(files, folder):
             rel = p[len(root):].lower()
             if not re.search(r"marketing|promo|header|banner|artwork", rel):
                 continue
-            if re.search(r"notext|event|social|icon|icoon|screenshot|watch|ipad|iphone", rel):
+            tail = "/".join(rel.split("/")[-2:])  # alleen map en bestandsnaam (bovenliggende mappen heten soms -iPhone)
+            if re.search(r"notext|event|social|icon|icoon|screenshot|watch|ipad|iphone", tail):
                 continue
             m = re.search(r"(\d{3,5})x(\d{3,5})", rel.rsplit("/", 1)[-1])
             if not m or not 1.70 <= int(m.group(1)) / int(m.group(2)) <= 1.82:
@@ -424,14 +425,18 @@ def main():
         for lg in ("nl", "en"):
             auto = f"app-content/{slug}/promo-{lg}.webp"
             if (new.get("promo") or {}).get(lg):
-                if not img.get(lg) or str(img.get(lg)).startswith("app-content/"):
-                    img[lg] = auto
+                img[lg] = auto  # de content-repo gaat voor; een eigen upload alleen als daar niets staat
             elif str(img.get(lg) or "").startswith("app-content/"):
                 img.pop(lg)
         if img:
             promo["image"] = img
         elif "image" in promo and str(promo.get("image")).startswith("app-content/"):
             promo.pop("image")
+        # Apps in Nieuw en onderweg met een banner: banner automatisch tonen. Zet je hem daarna zelf uit,
+        # dan blijft hij uit (promo.auto onthoudt dat de content-sync hem al eens aanzette).
+        if app.get("featured") and promo.get("image") and not promo.get("show") and not promo.get("auto"):
+            promo["show"] = True
+            promo["auto"] = True
         if json.dumps(promo, sort_keys=True) != before:
             if promo:
                 app["promo"] = promo

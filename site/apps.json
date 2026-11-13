@@ -37,7 +37,7 @@
             },
             "promo": {
                 "image": {
-                    "nl": "img/promo-app-lrvdlinden-bekendr-nl.webp",
+                    "nl": "app-content/bekendr/promo-nl.webp",
                     "en": "img/promo-app-lrvdlinden-bekendr-en.webp"
                 },
                 "show": true
@@ -75,7 +75,9 @@
                 "image": {
                     "nl": "app-content/pairr/promo-nl.webp",
                     "en": "app-content/pairr/promo-en.webp"
-                }
+                },
+                "show": true,
+                "auto": true
             }
         },
         {
@@ -131,8 +133,8 @@
             "languages": "NL + 31",
             "promo": {
                 "image": {
-                    "nl": "img/promo-nl-lrvdlinden-liftr-nl.webp",
-                    "en": "img/promo-nl-lrvdlinden-liftr-en.webp"
+                    "nl": "app-content/liftr/promo-nl.webp",
+                    "en": "app-content/liftr/promo-en.webp"
                 }
             }
         },
@@ -167,7 +169,7 @@
             "promo": {
                 "show": true,
                 "image": {
-                    "nl": "img/promo-nl-lrvdlinden-aalerts-nl.webp",
+                    "nl": "app-content/a-alerts/promo-nl.webp",
                     "en": "img/promo-nl-lrvdlinden-aalerts-en.webp"
                 }
             },
@@ -206,7 +208,7 @@
             "icon": "img/nl-lrvdlinden-pasr.webp",
             "promo": {
                 "image": {
-                    "nl": "img/promo-nl-lrvdlinden-pasr-nl.webp",
+                    "nl": "app-content/pasr/promo-nl.webp",
                     "en": "img/promo-nl-lrvdlinden-pasr-en.webp"
                 },
                 "show": true
@@ -300,8 +302,8 @@
             },
             "promo": {
                 "image": {
-                    "nl": "img/promo-nl-lrvdlinden-weekdot-nl.webp",
-                    "en": "img/promo-nl-lrvdlinden-weekdot-en.webp"
+                    "nl": "app-content/weekdot/promo-nl.webp",
+                    "en": "app-content/weekdot/promo-en.webp"
                 },
                 "show": true
             },
@@ -398,8 +400,8 @@
                     "en": "New app"
                 },
                 "image": {
-                    "nl": "img/promo-bingr-nl.webp",
-                    "en": "img/promo-bingr-en.webp"
+                    "nl": "app-content/bingr/promo-nl.webp",
+                    "en": "app-content/bingr/promo-en.webp"
                 },
                 "show": true
             }
@@ -464,8 +466,8 @@
             "reviews": 1,
             "promo": {
                 "image": {
-                    "nl": "img/promo-healthsync-nl.webp",
-                    "en": "img/promo-healthsync-en.webp"
+                    "nl": "app-content/healthsync/promo-nl.webp",
+                    "en": "app-content/healthsync/promo-en.webp"
                 },
                 "show": true
             }
@@ -561,8 +563,8 @@
             "reviews": 0,
             "promo": {
                 "image": {
-                    "nl": "img/promo-devtools-nl.webp",
-                    "en": "img/promo-devtools-en.webp"
+                    "nl": "app-content/devtools/promo-nl.webp",
+                    "en": "app-content/devtools/promo-en.webp"
                 },
                 "show": true
             },
@@ -818,7 +820,7 @@
             ],
             "promo": {
                 "image": {
-                    "nl": "img/promo-vlagdagen-nl.webp"
+                    "nl": "app-content/vlagdagen/promo-nl.webp"
                 }
             },
             "nlOnly": true
@@ -1243,7 +1245,7 @@
             "nlOnly": true,
             "promo": {
                 "image": {
-                    "nl": "img/promo-app-lrvdlinden-noodpakket-nl.webp"
+                    "nl": "app-content/noodpakket/promo-nl.webp"
                 },
                 "show": true
             },
