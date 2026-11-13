@@ -1,88 +1,16 @@
 {
  "slug": "a-alerts",
  "id": "nl-lrvdlinden-aalerts",
- "shots": {
-  "nl": [
-   {
-    "src": "shot-nl-01.webp",
-    "w": 540,
-    "h": 1174
-   },
-   {
-    "src": "shot-nl-02.webp",
-    "w": 540,
-    "h": 1174
-   },
-   {
-    "src": "shot-nl-03.webp",
-    "w": 540,
-    "h": 1174
-   },
-   {
-    "src": "shot-nl-04.webp",
-    "w": 540,
-    "h": 1174
-   },
-   {
-    "src": "shot-nl-05.webp",
-    "w": 540,
-    "h": 1174
-   },
-   {
-    "src": "shot-nl-06.webp",
-    "w": 540,
-    "h": 1174
-   },
-   {
-    "src": "shot-nl-07.webp",
-    "w": 540,
-    "h": 1174
-   },
-   {
-    "src": "shot-nl-08.webp",
-    "w": 540,
-    "h": 1174
-   }
-  ]
- },
- "text": {
-  "nl": {
-   "description": "A-Alerts (voorheen P2000 Apeldoorn) laat live zien wat er gebeurt in de gemeente Apeldoorn en Teuge: meldingen van brandweer, ambulance, politie en traumahelikopter, samen met NL-Alert, Burgernet, AMBER Alert, Vermist Kind Alert, KNMI-weerwaarschuwingen en het laatste nieuws.\n\nLIVE PAGER\n• Alle P2000-meldingen van 26 plaatsen en buurtschappen, per dag gegroepeerd\n• NL-Alert en Burgernet tussen de meldingen, met de tijd van de melding\n• KNMI-waarschuwing (code geel, oranje of rood) als balk bovenaan zolang hij geldt\n• Alle waarschuwingen van de laatste twee weken terug te lezen\n• Verberg meldingen die je al hebt gezien: ben je overal bij, dan zie je ‘Je bent helemaal bij’\n\nNIEUWS\n• Politieberichten over Apeldoorn, de dorpen en buurtschappen (bron politie.nl)\n• 112 Nieuws per plaats, met een link naar het volledige artikel\n• Een artikel bij elke KNMI-weerwaarschuwing\n• Liveblogs bij Burgernet, AMBER Alert en Vermist Kind Alert: een tijdlijn met het nieuwste bericht bovenaan\n\nAMBER ALERT EN VERMIST KIND ALERT\n• De oproepen van de politie bij een vermist kind, met foto en signalement zolang de oproep loopt\n• Eigen pushmelding, een balk bovenaan en een knop om direct 112 of 0800-6070 te bellen\n• Na afloop verdwijnen foto en beschrijving automatisch\n\nKAART MET LAGEN EN FILTERS\n• Filter met één tik op brandweer, ambulance, politie, traumaheli, Burgernet en NL-Alert\n• Zet zelf aan of uit: KNMI-gebieden, grens werkgebied, kazernes, ziekenhuizen en vliegbases\n• Lifeliner 1 tot en met 4 en de politiehelikopters live, vloeiend bewegend, met koers, hoogte en snelheid\n\nLIFELINER EN POLITIEHELIKOPTER\n• Routespoor van deze vlucht, de laatste 30 minuten of 2 uur\n• Waarschijnlijke bestemming: het ziekenhuis of de basis waar hij naartoe vliegt, met aankomsttijd\n• Vluchten terugspelen op 30× tot 300× snelheid\n• Pushmelding wanneer een Lifeliner opstijgt voor een melding in Apeldoorn\n\nALLES OVER DE MELDING\n• Grote kaart met Look Around en 3D\n• Gealarmeerde kazernes met hun route en een geschatte aankomsttijd\n• De Lifeliner van de melding live op de kaart, met zijn route\n• Verloop: meldingen die mogelijk bij dezelfde inzet horen, als tijdlijn\n• Capcodes, voertuigen en het weer op het moment van de melding\n• Route via Apple Kaarten of Google Maps, en delen met één tik\n\nWAARSCHUWINGEN\n• Dezelfde detailpagina voor NL-Alert, Burgernet en KNMI: kaart met gebied of plek, het bericht en het weer\n• KNMI zoals op knmi.nl: kop, omschrijving, risico's en advies, en het verloop per code\n• Het weer live bij een weercode; opgeheven waarschuwingen tonen code groen, met de code die gold\n\nPUSHMELDINGEN\n• Stel bij de eerste start in een paar stappen je eigen meldingsprofiel in\n• Tot vijf meldingsprofielen met eigen plaatsen, disciplines, prioriteiten, waarschuwingen en tijden\n• Volg een capcode met een ster, bijvoorbeeld je eigen kazerne, ook buiten je plaatsen en straal\n• KNMI: ook een melding een uur voordat de code ingaat en als hij wordt opgeheven\n• Kreeg je geen pushmelding? Bij de melding staat waarom\n• Pushmelding met een kaartje van de plek en knoppen voor Bewaar en Apple Kaarten\n• Mijn buurt: alleen meldingen binnen een straal rond jou\n\nOVERAL\n• iPhone, iPad, Mac, Apple Watch en Apple TV (meldkamerweergave)\n• Widgets, iCloud-synchronisatie van je instellingen en Face ID-vergrendeling\n• Status van alle onderdelen in Instellingen en op a-alerts.nl/status\n• Hulp en veelgestelde vragen in de app en op a-alerts.nl/hulp\n\nGeen account nodig, geen advertenties en geen tracking.\n\nA-Alerts is onafhankelijk en geen officiële dienst van hulpdiensten of overheid. Niet alle meldingen gaan via P2000. Bel bij nood altijd 112.\n\nGemaakt door PixelForges. Meer apps van de ontwikkelaar vind je in de app onder Instellingen.",
-   "promotional_text": "Nieuw: tabblad Nieuws met politieberichten, 112 Nieuws en liveblogs, plus AMBER Alert en Vermist Kind Alert. Alle P2000-meldingen van Apeldoorn, live op je apparaten.",
-   "subtitle": "P2000 en alerts in Apeldoorn"
-  },
-  "en": {
-   "description": "A-Alerts (formerly P2000 Apeldoorn) shows live what happens in the municipality of Apeldoorn and Teuge in the Netherlands: alerts from the fire brigade, ambulance, police and trauma helicopter, together with NL-Alert, Burgernet, AMBER Alert, Missing Child Alert, KNMI weather warnings and the latest news.\n\nLIVE PAGER\n• Every P2000 alert for 26 towns and hamlets, grouped by day\n• NL-Alert and Burgernet between the alerts, with the time of the warning\n• A KNMI warning (code yellow, orange or red) as a bar at the top while it applies\n• All warnings of the last two weeks\n• Hide alerts you have already seen: when you are up to date you see \"You're all caught up\"\n\nNEWS\n• Police news about Apeldoorn and its villages (source politie.nl)\n• 112 Nieuws per place, with a link to the full article\n• An article for every KNMI weather warning\n• Live blogs for Burgernet, AMBER Alert and Missing Child Alert: a timeline with the newest message on top\n\nAMBER ALERT AND MISSING CHILD ALERT\n• Police calls for a missing child, with photo and description while the call runs\n• Their own notification, a bar at the top and a button to call 112 or 0800-6070 right away\n• When the call ends, the photo and description disappear automatically\n\nMAP WITH LAYERS AND FILTERS\n• Filter with one tap on fire, ambulance, police, trauma helicopter, Burgernet and NL-Alert\n• Switch on or off: KNMI areas, the border of the area, stations, hospitals and air bases\n• Lifeliner 1 to 4 and the police helicopters live, moving smoothly, with heading, altitude and speed\n\nLIFELINER AND POLICE HELICOPTER\n• Route of this flight, the last 30 minutes or 2 hours\n• Likely destination: the hospital or base it is heading for, with arrival time\n• Play back flights at 30× to 300× speed\n• A notification when a Lifeliner takes off for an alert in Apeldoorn\n\nEVERY DETAIL\n• Large map with Look Around and 3D\n• Alerted stations with their route and an estimated arrival time\n• The alert's Lifeliner live on the map, with its route\n• Timeline of alerts that may belong to the same incident\n• Capcodes, vehicles and the weather at the time of the alert\n• Route via Apple Maps or Google Maps, and share with one tap\n\nWARNINGS\n• The same detail page for NL-Alert, Burgernet and KNMI: map with the area or place, the message and the weather\n• KNMI as on knmi.nl: headline, description, risks and advice, and the course per code\n• Live weather for a weather code; lifted warnings show code green, with the code that applied\n\nNOTIFICATIONS\n• Set up your own notification profile in a few steps on first launch\n• Up to five notification profiles with their own places, services, priorities, warnings and times\n• Follow a capcode with a star, for example your own fire station, also outside your places and radius\n• KNMI: also a notification one hour before a code starts and when it is lifted\n• No notification? The alert tells you why\n• Notifications with a small map and buttons to save or open in Apple Maps\n• My area: only alerts within a radius around you\n\nEVERYWHERE\n• iPhone, iPad, Mac, Apple Watch and Apple TV (control-room view)\n• Widgets, iCloud sync of your settings and Face ID lock\n• Status of every component in Settings and at a-alerts.nl/status\n• Help and FAQ in the app and at a-alerts.nl/hulp\n\nNo account, no ads and no tracking. The app is available in Dutch and English.\n\nA-Alerts is independent and not an official service of the emergency services or the government. Not every alert goes through P2000. In an emergency, always call 112.\n\nMade by PixelForges. More apps by the developer are listed in the app's Settings.",
-   "promotional_text": "New: the News tab with police news, 112 Nieuws and live blogs, plus AMBER Alert and Missing Child Alert. Every P2000 alert in Apeldoorn, live on all your devices.",
-   "subtitle": "P2000 and alerts in Apeldoorn"
-  }
- },
+ "shots": {},
+ "text": {},
  "og": {
   "nl": "og-nl.jpg",
   "en": "og-en.jpg"
  },
  "sources": {
-  "shot-nl-01.webp": "8eccbd9f11d399d4a751aefd746b58bca4b403cd",
-  "shot-nl-02.webp": "c5c96f8607cc8493a3a60cf1a67082c35691c160",
-  "shot-nl-03.webp": "60e5db11e3295696d3c6da37edd69134352ca952",
-  "shot-nl-04.webp": "8e7a2c5d0145d52fa5c887e51f472e0fe8a3d7d8",
-  "shot-nl-05.webp": "3f78f43a7f759098d747158307daca0d59bd4409",
-  "shot-nl-06.webp": "42fce81de7f48c5d60400ef098ef9f0a319d28c3",
-  "shot-nl-07.webp": "378a4074dd9c17588ffb35380d340d84b336d792",
-  "shot-nl-08.webp": "45c833d25a1489dc21c810a05065a3fb03b10d88",
-  "text-nl-description": "1075ced0f8e369d330367f0204f289d68e97b28e",
-  "text-nl-promotional_text": "98dd39f4b31af667a3ac9aecb33235368b11d91c",
-  "text-nl-subtitle": "0bff54c4b989ad45ffcb7bdd77a043abcbb08eab",
-  "text-en-description": "a9443ab58a78d117d512476409b267082e3d2d0f",
-  "text-en-promotional_text": "e6362ec311a38991478aebd37302b60cf8cdb0dd",
-  "text-en-subtitle": "8b65592f9037769f158939c7c3874d38fa4ae9fc",
-  "promo-nl.webp": "3e8ba069ef8f2d2c45eb78c82f74a29249574ac8",
-  "og-nl.jpg": "gen:f7bcd67220cd8046bf589db8c29d71878eaee162",
-  "og-en.jpg": "gen:bd54e198ae4c141b35101ecda841f78fc6e4c0dc"
+  "og-nl.jpg": "gen:6709ac72f784251f17bbb093352c8a14b96b185d",
+  "og-en.jpg": "gen:f71f161f3eb135a4cc3110a2fdf8777d02e75d5e"
  },
  "folder": "A-Alerts",
- "source": "A-Alerts/AppStore/2026-11-09",
- "promo": {
-  "nl": "promo-nl.webp"
- }
+ "source": "A-Alerts/AppStore/2026-11-13"
 }
