@@ -199,7 +199,9 @@ Alles van `site/beheer.html`, met dezelfde endpoints (`apps.json`, `publish.php`
 `translate.php`) en dezelfde inlog:
 
 - **Nieuwe app**: handmatig, of automatisch vanaf een App Store-, Homey App Store-, TestFlight- of website-link
-  (store-refresh.php met modus *toevoegen*; de store-check vult naam, icoon, teksten NL+EN, versies en beoordelingen in);
+  (store-refresh.php met modus *toevoegen*; de store-check vult naam, icoon, teksten NL+EN, versies en beoordelingen in),
+  met de keuze *Alleen Nederlands* (dan geen Engelse teksten);
+- promo-banners komen automatisch uit de content-repo (Content-sync), behalve als je zelf een banner uploadt;
 - lijst per sectie (iOS & andere platformen / Homey) met icoon, ★ voor *Nieuw en onderweg*, NL voor *Alleen Nederlands*
   en status; zoeken;
 - bewerken: naam, ID, sectie, categorie (24), status, *Tonen in Nieuw en onderweg*, *Alleen Nederlands* (niet op de

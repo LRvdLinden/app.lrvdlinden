@@ -96,6 +96,8 @@ struct WhatsNewView: View {
                     Label("LRbeheer start altijd in het overzicht: kies zelf waar je heen gaat (de laatstgebruikte omgeving is gemarkeerd)", systemImage: "square.grid.2x2")
                 }
                 Section("LRvdLinden") {
+                    Label("Bij een nieuwe app kies je meteen of hij alleen Nederlands is: dan worden er geen Engelse teksten gemaakt", systemImage: "character.bubble")
+                    Label("Promo-banners voor Nieuw en onderweg komen automatisch uit de content-repo (marketingbeeld), tenzij je zelf een banner uploadt", systemImage: "photo.on.rectangle")
                     Label("Nieuwe app toevoegen vanaf een link: App Store, Homey App Store, TestFlight of een website. Naam, icoon, teksten in NL en EN en (bij een store-app) versies en beoordelingen worden automatisch ingevuld", systemImage: "link.badge.plus")
                     Label("Nieuwe apps krijgen meteen een eigen pagina op lrvdlinden.app (/app/… en /homey/…, ook in het Engels onder /en/)", systemImage: "doc.richtext")
                     Label("Nieuw vinkje Alleen Nederlands per app: die app staat dan niet op de Engelse versie van lrvdlinden.app (NL-label in de lijst)", systemImage: "globe.europe.africa")

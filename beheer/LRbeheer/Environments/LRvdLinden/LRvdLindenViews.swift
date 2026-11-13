@@ -753,6 +753,7 @@ struct LRNewAppSheet: View {
     @Environment(\.dismiss) private var dismiss
     @State private var how = "appstore"
     @State private var url = ""
+    @State private var nlOnly = false
     @State private var problem: LocalizedStringKey?
 
     private var placeholder: String {
@@ -792,6 +793,14 @@ struct LRNewAppSheet: View {
                         .onSubmit(go)
                     if let problem { Text(problem).font(.footnote).foregroundStyle(Theme.bad) }
                 } header: { Text("Link") } footer: { Text(hint) }
+                Section {
+                    Toggle(isOn: $nlOnly) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Alleen Nederlands")
+                            Text("Geen Engelse teksten en geen Engelse pagina; scheelt vertalen").font(.caption).foregroundStyle(.secondary)
+                        }
+                    }
+                }
             } else {
                 Section { } footer: { Text(hint) }
             }
@@ -828,6 +837,7 @@ struct LRNewAppSheet: View {
             }
         }
         dismiss()
-        Task { await store.fetchStores(mode: "toevoegen", url: u) }
+        let nl = nlOnly
+        Task { await store.fetchStores(mode: "toevoegen", url: u, nlOnly: nl) }
     }
 }

@@ -882,5 +882,8 @@
 "App toevoegen": "Add app",
 "De volgende check (automatisch rond 07:00 en 17:00, of via Nieuwe apps ophalen / Apps bijwerken) verschijnt hier.": "The next check (automatically around 07:00 and 17:00, or via Fetch new apps / Update apps) appears here.",
 "Nieuwe app toevoegen vanaf een link: App Store, Homey App Store, TestFlight of een website. Naam, icoon, teksten in NL en EN en (bij een store-app) versies en beoordelingen worden automatisch ingevuld": "Add a new app from a link: App Store, Homey App Store, TestFlight or a website. Name, icon, texts in Dutch and English and (for a store app) versions and ratings are filled in automatically",
-"Nieuwe apps krijgen meteen een eigen pagina op lrvdlinden.app (/app/… en /homey/…, ook in het Engels onder /en/)": "New apps immediately get their own page on lrvdlinden.app (/app/… and /homey/…, also in English under /en/)"
+"Nieuwe apps krijgen meteen een eigen pagina op lrvdlinden.app (/app/… en /homey/…, ook in het Engels onder /en/)": "New apps immediately get their own page on lrvdlinden.app (/app/… and /homey/…, also in English under /en/)",
+"Geen Engelse teksten en geen Engelse pagina; scheelt vertalen": "No English texts and no English page; saves translating",
+"Bij een nieuwe app kies je meteen of hij alleen Nederlands is: dan worden er geen Engelse teksten gemaakt": "When adding an app you choose right away whether it's Dutch only: then no English texts are made",
+"Promo-banners voor Nieuw en onderweg komen automatisch uit de content-repo (marketingbeeld), tenzij je zelf een banner uploadt": "Promo banners for New and upcoming come automatically from the content repo (marketing image), unless you upload your own banner"
 }

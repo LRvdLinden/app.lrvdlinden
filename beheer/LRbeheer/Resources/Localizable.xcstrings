@@ -2722,6 +2722,22 @@
         }
       }
     },
+    "Bij een nieuwe app kies je meteen of hij alleen Nederlands is: dan worden er geen Engelse teksten gemaakt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When adding an app you choose right away whether it's Dutch only: then no English texts are made"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bij een nieuwe app kies je meteen of hij alleen Nederlands is: dan worden er geen Engelse teksten gemaakt"
+          }
+        }
+      }
+    },
     "Bijgewerkt %@": {
       "localizations": {
         "en": {
@@ -4926,6 +4942,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen Engelse banner: de Nederlandse wordt gebruikt"
+          }
+        }
+      }
+    },
+    "Geen Engelse teksten en geen Engelse pagina; scheelt vertalen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No English texts and no English page; saves translating"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen Engelse teksten en geen Engelse pagina; scheelt vertalen"
           }
         }
       }
@@ -10462,6 +10494,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Promo-banner (Nieuw en onderweg)"
+          }
+        }
+      }
+    },
+    "Promo-banners voor Nieuw en onderweg komen automatisch uit de content-repo (marketingbeeld), tenzij je zelf een banner uploadt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Promo banners for New and upcoming come automatically from the content repo (marketing image), unless you upload your own banner"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Promo-banners voor Nieuw en onderweg komen automatisch uit de content-repo (marketingbeeld), tenzij je zelf een banner uploadt"
           }
         }
       }

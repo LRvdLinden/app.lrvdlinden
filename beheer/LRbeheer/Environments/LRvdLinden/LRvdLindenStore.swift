@@ -298,7 +298,7 @@ final class LRvdLindenStore {
 
     // MARK: store-check (store-refresh.php) en logboek (store-log.php)
 
-    func fetchStores(mode: String, url addURL: String = "") async {
+    func fetchStores(mode: String, url addURL: String = "", nlOnly: Bool = false) async {
         guard let client = account.client, fetchingMode == nil else { return }
         fetchingMode = mode
         defer { fetchingMode = nil }
@@ -312,7 +312,10 @@ final class LRvdLindenStore {
         do {
             status(String(localized: "Opdracht wordt gestart…"))
             var query = ["mode": mode]
-            if mode == "toevoegen" { query["url"] = addURL }
+            if mode == "toevoegen" {
+                query["url"] = addURL
+                if nlOnly { query["nlonly"] = "1" }
+            }
             let st = try await client.call("POST", "store-refresh.php", query: query)
             let since = st["since"] as? String ?? ""
             var res: [String: Any] = [:]
