@@ -396,10 +396,18 @@ def main():
             with open(cpath, "w", encoding="utf-8") as f:
                 json.dump(new, f, ensure_ascii=False, indent=1)
                 f.write("\n")
-            if old.get("sources") != new["sources"] or old.get("shots") != new["shots"]:
+            os_, ns = old.get("sources", {}), new["sources"]
+            diff = lambda pre: {k: v for k, v in os_.items() if k.startswith(pre)} != {k: v for k, v in ns.items() if k.startswith(pre)}
+            parts = []
+            if diff("shot-"):
                 n = sum(len(v) for v in new["shots"].values())
-                log.append(f"- {app['name']}: {n} screenshots" + (f" uit {new.get('source', '').split('/AppStore/')[-1]}" if n else "")
-                           + (", teksten" if new["text"] else "") + ", OG")
+                parts.append(f"{n} screenshots" + (f" uit {new.get('source', '').split('/AppStore/')[-1]}" if n else ""))
+            if diff("text-"):
+                parts.append("teksten")
+            if diff("og-"):
+                parts.append("deelafbeelding")
+            if parts:
+                log.append(f"- {app['name']}: " + ", ".join(parts))
             changed = True
     # apps die niet meer bestaan
     for d in os.listdir(OUT):
