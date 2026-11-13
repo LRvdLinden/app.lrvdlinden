@@ -75,6 +75,16 @@ textarea{min-height:84px;resize:vertical}
 .state{font-size:13px;font-weight:600;color:var(--muted)}
 .state.dirty{color:var(--dev)}
 .btn[disabled]{opacity:.55;cursor:default}
+/* Overzicht */
+.ov h2{margin:0 0 4px;font:700 22px var(--f-display)}
+.ov h3{margin:22px 0 10px;font:600 13px var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:16px}
+.ov-t{display:flex;flex-direction:column;gap:2px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.ov-t b{font:700 26px var(--f-display)}.ov-t span{font-weight:600;font-size:14px}.ov-t small{color:var(--muted);font-size:12.5px}
+.ov-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.ov-app{display:flex;align-items:center;gap:10px;text-align:left;font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 10px;cursor:pointer}
+.ov-app img{width:36px;height:36px;border-radius:9px}.ov-app b{display:block;font-size:14px}.ov-app small{color:var(--muted);font-size:12px}
+.ov-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 /* Nieuwe app toevoegen */
 #newDlg{border:1px solid var(--line);border-radius:20px;padding:0;width:min(560px,calc(100vw - 32px));background:var(--surface);color:var(--ink)}
 #newDlg::backdrop{background:rgba(13,16,24,.45)}
@@ -240,9 +250,30 @@ function field(label, path, val, opts={}){
   return `<label class="${opts.full?"full":""}" for="${id}">${label}<input id="${id}" data-p="${path}" type="${opts.type||"text"}" ${opts.step?`step="${opts.step}"`:""} value="${esc(val)}" placeholder="${esc(opts.ph||"")}"></label>`;
 }
 
+// Overzicht als er geen app gekozen is (zo opent beheer altijd)
+function overviewHtml(){
+  const A = DATA.apps || [], ios = A.filter(a => (a.section||"ios") === "ios"), hy = A.filter(a => a.section === "homey");
+  const tile = (n, label, sub) => `<div class="ov-t"><b>${n}</b><span>${esc(label)}</span>${sub ? `<small>${esc(sub)}</small>` : ""}</div>`;
+  const newest = ios.filter(a => a.featured).sort((x, y) => (y.added||"").localeCompare(x.added||"")).slice(0, 6);
+  return `<div class="ov">
+    <h2>Overzicht lrvdlinden.app</h2>
+    <p class="muted">Kies links een app om te bewerken, of klik <b>+ Nieuwe app</b>.</p>
+    <div class="ov-grid">
+      ${tile(ios.filter(a => a.status === "live").length, "iOS-apps live")}
+      ${tile(ios.filter(a => a.status !== "live").length, "In beta of ontwikkeling")}
+      ${tile(hy.length, "Homey-apps", hy.filter(a => a.homey && a.homey.test).length + " met testversie")}
+      ${tile(ios.filter(a => a.featured).length, "In Nieuw en onderweg", A.filter(a => a.promo && a.promo.show).length + " promo-banners aan")}
+      ${tile(A.filter(a => a.nlOnly).length, "Alleen Nederlands")}
+      ${tile(dirty ? "Ja" : "Nee", "Niet gepubliceerd", dirty ? "klik Publiceren" : "alles staat live")}
+    </div>
+    ${newest.length ? `<h3>Nieuw en onderweg (nieuwste eerst)</h3><div class="ov-list">${newest.map(a => `<button type="button" class="ov-app" data-id="${esc(a.id)}">${a.icon ? `<img src="${esc(a.icon)}" alt="">` : ""}<span><b>${esc(a.name)}</b><small>${esc(a.added || "")}</small></span></button>`).join("")}</div>` : ""}
+    <div class="ov-links"><a class="btn" href="/" target="_blank" rel="noopener">Bekijk de site</a><a class="btn" href="/en/" target="_blank" rel="noopener">Engelse site</a></div>
+  </div>`;
+}
+
 function renderEditor(){
   const a = cur();
-  if (!a){ $("#editor").innerHTML = `<p class="muted">Kies links een app om te bewerken, of klik <b>+ Nieuwe app</b>.</p>`; return; }
+  if (!a){ $("#editor").innerHTML = overviewHtml(); return; }
   const L = a.links || {}, isIos = (a.section||"ios") === "ios";
   $("#editor").innerHTML = `
   <form id="form" autocomplete="off">
@@ -387,7 +418,7 @@ document.addEventListener("input", e => {
 });
 
 document.addEventListener("click", e => {
-  const it = e.target.closest(".item");
+  const it = e.target.closest(".item, .ov-app");
   if (it){ sel = it.dataset.id; confirmDel = false; render(); return; }
   const a = cur(), id = e.target.id;
   if (id === "btnNew"){ openNewDialog(); return; }
@@ -404,7 +435,7 @@ document.addEventListener("click", e => {
   if (id === "btnLogRefresh") return loadLog();
   if (e.target.matches?.("[data-openlog]")) { e.preventDefault(); return toggleLog(true, e.target.dataset.openlog); }
   if (id === "btnDiscard"){ if (!dirty) return toast("Er zijn geen wijzigingen");
-    DATA = JSON.parse(ORIGINAL); PENDING = {}; sel = DATA.apps[0] && DATA.apps[0].id; try{ localStorage.removeItem(KEY); localStorage.removeItem(PKEY); }catch(e){}
+    DATA = JSON.parse(ORIGINAL); PENDING = {}; sel = null; try{ localStorage.removeItem(KEY); localStorage.removeItem(PKEY); }catch(e){}
     e.target.closest("details").open = false; updateState(); render(); toast("Wijzigingen weggegooid"); return; }
   if (id === "btnCopy") return copyJson();
   if (id === "btnDownload") return download();
@@ -611,7 +642,7 @@ async function fetchStores(mode = "nieuw", addUrl = "", nlOnly = false){
     const added = d.apps.filter(a => !beforeIds.has(a.id)).map(a => a.name);
     if (dirty) { const m = mergeDraft(JSON.parse(ORIGINAL || '{"apps":[]}'), DATA, d); DATA = m.data; } else { DATA = d; }
     ORIGINAL = JSON.stringify(d);
-    if (!DATA.apps.some(a => a.id === sel)) sel = DATA.apps[0] && DATA.apps[0].id;
+    if (!DATA.apps.some(a => a.id === sel)) sel = null;
     if (mode === "toevoegen"){
       // de nieuwe (of aangevulde) app meteen openen
       const nw = d.apps.find(a => !beforeIds.has(a.id)) || d.apps.find(a => Object.values(a.links || {}).some(v => v && addUrl.includes(String(v).replace(/^https?:\/\//, "").replace(/\/$/, ""))));
@@ -769,7 +800,7 @@ fetch("apps.json", {cache:"no-store"}).then(r => r.json()).then(d => {
       if (m.kept.length) showResult("warn", `<b>De site is intussen gewijzigd.</b> Je concept is samengevoegd met de nieuwste versie. Behouden uit je concept: ${esc(m.kept.join(", "))}. Controleer en klik Publiceren, of kies Meer → Wijzigingen weggooien.`);
     }
   }
-  sel = DATA.apps[0] && DATA.apps[0].id; save(); render();
+  sel = null; save(); render();  // altijd openen in het overzicht
 }).catch(() => { DATA = (draft && draft.data) || {apps:[]}; ORIGINAL = JSON.stringify({apps:[]}); updateState(); render(); toast("apps.json niet gevonden. Open het bestand via Meer."); });
 </script>
 <dialog id="newDlg" aria-labelledby="newTitle">

@@ -68,7 +68,8 @@ final class LRvdLindenStore {
             } else {
                 data = server
             }
-            if selection == nil || app(selection!) == nil { selection = apps.first?["id"]?.str }
+            // Bij openen altijd in het overzicht, niet in een app; bij verversen blijft de gekozen app open.
+            if !loaded || selection.flatMap({ app($0) }) == nil { selection = nil }
             loaded = true
         } catch SiteClient.Failure.unauthorized {
             account.signOut()
@@ -119,7 +120,7 @@ final class LRvdLindenStore {
     func delete(_ id: String) {
         let name = app(id)?["name"]?.str ?? id
         data["apps"] = .array(apps.filter { $0["id"]?.str != id })
-        if selection == id { selection = apps.first?["id"]?.str }
+        if selection == id { selection = nil }
         toast = String(format: String(localized: "%@ verwijderd"), name)
     }
 
@@ -137,7 +138,7 @@ final class LRvdLindenStore {
         data = original
         pending = [:]
         DraftStore.clear("lrvdlinden")
-        selection = apps.first?["id"]?.str
+        selection = nil
         toast = String(localized: "Wijzigingen weggegooid")
     }
 
@@ -346,7 +347,7 @@ final class LRvdLindenStore {
             if dirty { data = DraftStore.merge(base: original, draft: data, server: server, list: "apps").data } else { data = server }
             original = server
             save()
-            if selection.flatMap({ app($0) }) == nil { selection = apps.first?["id"]?.str }
+            if selection.flatMap({ app($0) }) == nil { selection = nil }
             if mode == "toevoegen" {
                 // de nieuwe (of aangevulde) app meteen openen
                 let core = addURL.replacingOccurrences(of: "https://", with: "").replacingOccurrences(of: "http://", with: "")

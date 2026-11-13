@@ -6946,6 +6946,22 @@
         }
       }
     },
+    "LRvdLinden opent altijd in het overzicht van lrvdlinden.app, niet meteen in een app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LRvdLinden always opens on the lrvdlinden.app overview, not straight into an app"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LRvdLinden opent altijd in het overzicht van lrvdlinden.app, niet meteen in een app"
+          }
+        }
+      }
+    },
     "LRvdLinden, PixelForges en Tunr via de centrale pushfunctie van LRbeheer. De schakelaars gelden voor dit apparaat.": {
       "localizations": {
         "en": {
