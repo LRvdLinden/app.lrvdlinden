@@ -379,7 +379,7 @@ def page(a, c, others, lang):
 <section class="wrap support"><p>{e(tx["supportText"])}</p><a class="btn primary" href="/donate">{e(tx["support"])}</a></section>
 </main>
 <footer class="wrap"><div class="bar">
-  <span>© lrvdlinden.app · Powered by <a href="https://pixelforges.nl" target="_blank" rel="noopener">PixelForges</a></span>
+  <span>© lrvdlinden.app, Léon van der Linden. Powered by <a href="https://pixelforges.nl" target="_blank" rel="noopener">PixelForges</a></span>
   <nav><a href="{pre}/">{e(tx["all"])}</a><a href="/privacy">Privacy</a><a href="/donate">{e(tx["donate"])}</a></nav>
 </div></footer>
 <script>try{{localStorage.setItem("lr-lang","{lang}")}}catch(e){{}}{JS}</script>
@@ -488,6 +488,8 @@ box.classList.toggle("open");sa.textContent=box.classList.contains("open")?sa.da
 
 
 EN_HOME = [
+    ('<span>© lrvdlinden.app, Léon van der Linden uit Apeldoorn. Powered by',
+     '<span>© lrvdlinden.app, Léon van der Linden from Apeldoorn. Powered by'),
     ('<html lang="nl">', '<html lang="en">'),
     ('<title>Gratis iOS- en Homey-apps van Léon van der Linden | LRvdLinden Apps</title>',
      '<title>Free iOS and Homey apps by Léon van der Linden | LRvdLinden Apps</title>'),
