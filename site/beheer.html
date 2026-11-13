@@ -75,6 +75,21 @@ textarea{min-height:84px;resize:vertical}
 .state{font-size:13px;font-weight:600;color:var(--muted)}
 .state.dirty{color:var(--dev)}
 .btn[disabled]{opacity:.55;cursor:default}
+/* Nieuwe app toevoegen */
+#newDlg{border:1px solid var(--line);border-radius:20px;padding:0;width:min(560px,calc(100vw - 32px));background:var(--surface);color:var(--ink)}
+#newDlg::backdrop{background:rgba(13,16,24,.45)}
+#newDlg form{padding:22px;display:flex;flex-direction:column;gap:14px}
+#newDlg h2{margin:0;font:700 20px var(--f-display)}
+#newDlg .opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#newDlg .opts label{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:14px;padding:10px 12px;cursor:pointer;background:var(--bg)}
+#newDlg .opts label:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+#newDlg .opts input{position:absolute;opacity:0;pointer-events:none}
+#newDlg .opts label{color:var(--ink);font-weight:500}
+#newDlg .opts b{font-size:14.5px}#newDlg .opts small{color:var(--muted);font-size:12.5px}
+#newDlg .hint{color:var(--muted);font-size:13px;margin:0}
+#newDlg [hidden]{display:none!important}
+#newDlg .acts{display:flex;justify-content:flex-end;gap:8px}
+@media (max-width:520px){#newDlg .opts{grid-template-columns:minmax(0,1fr)}}
 .result{border-radius:14px;padding:12px 14px;margin-bottom:16px;font-size:14px;border:1px solid var(--line);background:var(--surface)}
 .result.good{border-color:var(--beta)}
 .result.warn{border-color:var(--dev)}
@@ -129,6 +144,7 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding
     <div class="brand"><img src="logo.svg" alt=""><h1>Apps beheren</h1></div>
     <div class="tools">
       <button class="btn" type="button" id="btnNew">+ Nieuwe app</button>
+      <button type="button" id="btnNewManual" hidden></button>
       <button class="btn" type="button" id="btnFetch" data-mode="nieuw" title="Zoekt nieuwe apps in de App Store en de Homey App Store en vult beta-apps aan">Nieuwe apps ophalen</button>
       <button class="btn" type="button" id="btnUpdate" data-mode="bijwerken" title="Werkt versies, wat-is-nieuw, sterren, beoordelingen en Homey-details van alle apps bij">Apps bijwerken</button>
       <button class="btn" type="button" id="btnLog" aria-expanded="false" aria-controls="logbook">Logboek</button>
@@ -372,7 +388,9 @@ document.addEventListener("click", e => {
   const it = e.target.closest(".item");
   if (it){ sel = it.dataset.id; confirmDel = false; render(); return; }
   const a = cur(), id = e.target.id;
-  if (id === "btnNew"){
+  if (id === "btnNew"){ openNewDialog(); return; }
+  if (id === "newCancel"){ $("#newDlg").close(); return; }
+  if (id === "btnNewManual"){
     let n = 1, nid; do { nid = "nieuwe-app-"+n++; } while (DATA.apps.some(x=>x.id===nid));
     DATA.apps.unshift({ id:nid, name:"Nieuwe app", section:"ios", status:"dev", featured:true, category:"utilities", platforms:["iPhone"], description:{nl:"",en:""}, links:{}, history:[] });
     sel = nid; confirmDel = false; save(); render(); setTimeout(()=>$("#f_name")?.select(),0); return;
@@ -466,7 +484,7 @@ function changedNames(){
 function showResult(kind, html){ $("#result").innerHTML = `<div class="result ${kind}">${html}</div>`; $("#result").scrollIntoView?.({block:"nearest"}); }
 // ---------- Logboek: uitkomst van elke store-check ----------
 let LOG = null, logFilter = "all", logOpenId = null;
-const MODE_LABEL = { bijwerken:"Apps bijwerken", nieuw:"Nieuwe apps ophalen", alles:"Automatische check" };
+const MODE_LABEL = { bijwerken:"Apps bijwerken", nieuw:"Nieuwe apps ophalen", alles:"Automatische check", toevoegen:"App toevoegen" };
 function toggleLog(show, openId){
   const box = $("#logbook");
   show = show ?? box.hidden;
@@ -524,19 +542,52 @@ document.addEventListener("change", e => { if (e.target.name === "logf") { logFi
 
 // "Nieuwe apps ophalen": laat GitHub de stores doorzoeken en laadt daarna de nieuwe gegevens in.
 let fetching = false;
-async function fetchStores(mode = "nieuw"){
+// ---------- Nieuwe app: handmatig of automatisch vanaf een link ----------
+const NEW_HINT = {
+  appstore: ["https://apps.apple.com/nl/app/…/id123456789", "Naam, icoon, categorie, platformen, versies, beoordelingen en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten."],
+  homey: ["https://homey.app/nl-nl/app/nl.lrvdlinden.…/", "Naam, icoon, apparaten, widgets, Flow-kaarten, versies en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten."],
+  web: ["https://… of https://testflight.apple.com/join/…", "Naam, icoon en omschrijving komen van de pagina. Staat er een App Store- of Homey-link op, dan wordt die app volledig opgehaald. Een TestFlight-link wordt een beta-app. Dit duurt 1 tot 2 minuten."],
+  manual: ["", "Je krijgt een leeg formulier en vult alles zelf in."],
+};
+function openNewDialog(){
+  const d = $("#newDlg"); $("#newUrl").value = ""; syncNewDialog();
+  if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+  setTimeout(() => $("#newUrl").focus(), 0);
+}
+function syncNewDialog(){
+  const how = (document.querySelector('input[name="newHow"]:checked') || {}).value || "appstore";
+  $("#newUrlWrap").hidden = how === "manual";
+  $("#newUrl").placeholder = NEW_HINT[how][0];
+  $("#newHint").textContent = NEW_HINT[how][1];
+  $("#newGo").textContent = how === "manual" ? "Leeg formulier" : "Ophalen en toevoegen";
+}
+document.addEventListener("change", e => { if (e.target.name === "newHow") syncNewDialog(); });
+document.addEventListener("submit", e => {
+  if (e.target.id !== "newForm") return;
+  e.preventDefault();
+  const how = (document.querySelector('input[name="newHow"]:checked') || {}).value;
+  const url = $("#newUrl").value.trim();
+  if (how === "manual"){ $("#newDlg").close(); $("#btnNewManual").click(); return; }
+  if (!url){ $("#newUrl").focus(); toast("Vul een link in"); return; }
+  if (how === "appstore" && !/apps\.apple\.com\/.*id\d+|^(id)?\d{6,12}$/.test(url)){ toast("Dit lijkt geen App Store-link"); return; }
+  if (how === "homey" && !/homey\.app\/[a-z-]+\/app\/|^[a-z0-9]+(\.[a-z0-9_-]+){2,}$/.test(url)){ toast("Dit lijkt geen Homey App Store-link"); return; }
+  $("#newDlg").close();
+  fetchStores("toevoegen", url);
+});
+
+async function fetchStores(mode = "nieuw", addUrl = ""){
   if (fetching) return;
   fetching = true;
-  const buttons = [$("#btnFetch"), $("#btnUpdate")], btn = mode === "bijwerken" ? $("#btnUpdate") : $("#btnFetch");
+  const buttons = [$("#btnFetch"), $("#btnUpdate"), $("#btnNew")], btn = mode === "bijwerken" ? $("#btnUpdate") : mode === "toevoegen" ? $("#btnNew") : $("#btnFetch");
   const labels = buttons.map(b => b.textContent);
   buttons.forEach(b => b.disabled = true); btn.textContent = "Bezig…";
   const started = Date.now();
-  const what = mode === "bijwerken" ? "Alle apps worden bijgewerkt." : "Er wordt naar nieuwe apps gezocht.";
-  const dur = mode === "bijwerken" ? "3 tot 5 minuten" : "1 tot 3 minuten";
+  const what = mode === "bijwerken" ? "Alle apps worden bijgewerkt." : mode === "toevoegen" ? "De app wordt opgehaald en toegevoegd." : "Er wordt naar nieuwe apps gezocht.";
+  const dur = mode === "bijwerken" ? "3 tot 5 minuten" : mode === "toevoegen" ? "1 tot 2 minuten" : "1 tot 3 minuten";
   const status = (txt) => showResult("warn", `<b>${what}</b> ${txt} Dit duurt meestal ${dur}; je kunt intussen gewoon verder werken.`);
   try {
     status("Opdracht wordt gestart…");
-    const r = await fetch("store-refresh.php?mode=" + encodeURIComponent(mode), { method:"POST", credentials:"same-origin", headers:{ "X-LR-Beheer":"1" } });
+    const r = await fetch("store-refresh.php?mode=" + encodeURIComponent(mode) + (addUrl ? "&url=" + encodeURIComponent(addUrl) : ""), { method:"POST", credentials:"same-origin", headers:{ "X-LR-Beheer":"1" } });
     const st = await r.json().catch(() => ({}));
     if (!r.ok || !st.ok) throw new Error(st.error || ("De server gaf HTTP " + r.status + "."));
     let res = {};
@@ -558,11 +609,20 @@ async function fetchStores(mode = "nieuw"){
     if (dirty) { const m = mergeDraft(JSON.parse(ORIGINAL || '{"apps":[]}'), DATA, d); DATA = m.data; } else { DATA = d; }
     ORIGINAL = JSON.stringify(d);
     if (!DATA.apps.some(a => a.id === sel)) sel = DATA.apps[0] && DATA.apps[0].id;
+    if (mode === "toevoegen"){
+      // de nieuwe (of aangevulde) app meteen openen
+      const nw = d.apps.find(a => !beforeIds.has(a.id)) || d.apps.find(a => Object.values(a.links || {}).some(v => v && addUrl.includes(String(v).replace(/^https?:\/\//, "").replace(/\/$/, ""))));
+      if (nw) sel = nw.id;
+    }
     save(); render();
     const runId = (String(res.url || "").match(/runs\/(\d+)/) || [])[1] || "";
     const link = ` <a href="#logbook" data-openlog="${esc(runId)}">Bekijk in logboek</a>`;
     if (!$("#logbook").hidden) { logOpenId = runId; loadLog(); }
-    if (added.length) showResult("good", `<b>Nieuwe apps toegevoegd:</b> ${esc(added.join(", "))}. Controleer ze en zet eventueel <i>Tonen in Nieuw en onderweg</i> of een banner aan.${link}`);
+    if (mode === "toevoegen") showResult(added.length ? "good" : "warn", added.length
+      ? `<b>${esc(added.join(", "))} is toegevoegd.</b> Controleer de gegevens, zet eventueel <i>Tonen in Nieuw en onderweg</i>, <i>Alleen Nederlands</i> of een banner aan, en klik <b>Publiceren</b> als je iets aanpast. De app staat al live met een eigen pagina.${link}`
+      : res.changed ? `<b>Bestaande app aangevuld.</b> De gegevens van de link zijn toegevoegd aan een app die al op de site stond.${link}`
+      : `<b>Niets toegevoegd.</b> De app staat al op de site of de link gaf geen gegevens. Bekijk het logboek voor details.${link}`);
+    else if (added.length) showResult("good", `<b>Nieuwe apps toegevoegd:</b> ${esc(added.join(", "))}. Controleer ze en zet eventueel <i>Tonen in Nieuw en onderweg</i> of een banner aan.${link}`);
     else if (res.changed) showResult("good", mode === "bijwerken"
       ? `<b>Bijgewerkt.</b> Versies, teksten, beoordelingen of Homey-details zijn vernieuwd.${link}`
       : `<b>Aangevuld.</b> Geen nieuwe apps, wel beta-apps aangevuld met gegevens uit de store.${link}`);
@@ -700,5 +760,24 @@ fetch("apps.json", {cache:"no-store"}).then(r => r.json()).then(d => {
   sel = DATA.apps[0] && DATA.apps[0].id; save(); render();
 }).catch(() => { DATA = (draft && draft.data) || {apps:[]}; ORIGINAL = JSON.stringify({apps:[]}); updateState(); render(); toast("apps.json niet gevonden. Open het bestand via Meer."); });
 </script>
+<dialog id="newDlg" aria-labelledby="newTitle">
+  <form method="dialog" id="newForm">
+    <h2 id="newTitle">Nieuwe app toevoegen</h2>
+    <div class="opts" role="radiogroup" aria-label="Hoe wil je de app toevoegen?">
+      <label><input type="radio" name="newHow" value="appstore" checked><b>App Store</b><small>Link of id: alles wordt ingevuld</small></label>
+      <label><input type="radio" name="newHow" value="homey"><b>Homey App Store</b><small>Link naar de Homey-app</small></label>
+      <label><input type="radio" name="newHow" value="web"><b>Website of TestFlight</b><small>Naam, icoon en tekst van de pagina</small></label>
+      <label><input type="radio" name="newHow" value="manual"><b>Handmatig</b><small>Leeg formulier, zelf invullen</small></label>
+    </div>
+    <label id="newUrlWrap">Link
+      <input type="text" id="newUrl" autocomplete="off" inputmode="url" placeholder="https://apps.apple.com/nl/app/…/id123456789">
+    </label>
+    <p class="hint" id="newHint">Naam, icoon, categorie, platformen, versies, beoordelingen en teksten in NL en EN worden automatisch opgehaald. Dit duurt 1 tot 2 minuten.</p>
+    <div class="acts">
+      <button class="btn" type="button" id="newCancel">Annuleren</button>
+      <button class="btn primary" type="submit" id="newGo">Toevoegen</button>
+    </div>
+  </form>
+</dialog>
 </body>
 </html>

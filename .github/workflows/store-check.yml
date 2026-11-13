@@ -18,8 +18,12 @@ on:
       mode:
         description: "Wat ophalen"
         type: choice
-        options: [alles, nieuw, bijwerken]
+        options: [alles, nieuw, bijwerken, toevoegen]
         default: alles
+      url:
+        description: "Alleen bij toevoegen: App Store-, Homey-, TestFlight- of website-link"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -36,8 +40,13 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
       STORE_MODE: ${{ github.event.inputs.mode || 'alles' }}
+      STORE_ADD: ${{ github.event.inputs.url || '' }}
     steps:
       - uses: actions/checkout@v5
+
+      - name: Pillow installeren (iconen van websites)
+        if: github.event.inputs.mode == 'toevoegen'
+        run: python3 -m pip install --quiet --break-system-packages pillow
 
       - name: Stores nalopen
         run: |

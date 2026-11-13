@@ -1,7 +1,7 @@
 <?php
 /**
  * Knop "Nieuwe apps ophalen" in beheer.html.
- *   POST ?mode=...  start de GitHub-workflow "Store-check":
+ *   POST ?mode=...  start de GitHub-workflow "Store-check" (toevoegen: met &url=<link>):
  *                   nieuw = alleen nieuwe apps zoeken en beta-apps aanvullen, bijwerken = alleen bestaande apps bijwerken
  *   GET ?since=...  geeft de voortgang. Is de run klaar, dan worden apps.json en nieuwe iconen meteen
  *                   van GitHub op deze server gezet, zodat ze direct zichtbaar zijn.
@@ -61,9 +61,18 @@ try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $since = gmdate('Y-m-d\TH:i:s\Z', time() - 5);
         $mode = $_GET['mode'] ?? 'alles';
-        if (!in_array($mode, ['alles', 'nieuw', 'bijwerken'], true)) $mode = 'alles';
+        if (!in_array($mode, ['alles', 'nieuw', 'bijwerken', 'toevoegen'], true)) $mode = 'alles';
+        $inputs = ['mode' => $mode];
+        if ($mode === 'toevoegen') {
+            // App toevoegen vanaf een link: App Store, Homey App Store, TestFlight of een website
+            $url = trim((string)($_GET['url'] ?? ''));
+            if ($url === '' || strlen($url) > 500 || preg_match('/[\s<>"\']/', $url)) {
+                reply(400, ['ok' => false, 'error' => 'Geef een geldige link of App Store-id.']);
+            }
+            $inputs['url'] = $url;
+        }
         gh('POST', '/actions/workflows/' . $workflow . '/dispatches', $cfg,
-           ['ref' => $cfg['branch'] ?? 'main', 'inputs' => ['mode' => $mode]]);
+           ['ref' => $cfg['branch'] ?? 'main', 'inputs' => $inputs]);
         reply(200, ['ok' => true, 'since' => $since]);
     }
 

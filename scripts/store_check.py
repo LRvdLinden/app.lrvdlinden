@@ -554,7 +554,6 @@ def write_texts(jobs):
 
 
 def discover_appstore(apps, log):
-    touched_ids = set()
     found = {}
     for cc in ("nl", "us", "nz", "gb"):
         for entity in ("software", "macSoftware"):
@@ -569,6 +568,13 @@ def discover_appstore(apps, log):
     names = sorted({(next(iter(r.values())).get("trackName") or "?") for r in found.values()})
     print(f"::notice::App Store: {len(found)} apps bij ontwikkelaar {DEVELOPER_ID}, "
           f"{len([t for t in found if t not in known])} nog niet op de site. ({', '.join(names)})")
+    return add_appstore(found, apps, log)
+
+
+def add_appstore(found, apps, log, extra_links=None):
+    """found: {trackId: {land: lookup-resultaat}}. Voegt nieuwe apps toe of vult beta-apps aan."""
+    touched_ids = set()
+    known = {appstore_id(a) for a in apps if appstore_id(a)}
     jobs = []
     for tid, res in found.items():
         if tid in known:
@@ -586,6 +592,8 @@ def discover_appstore(apps, log):
             last_ios = max([i for i, a in enumerate(apps) if a.get("section", "ios") == "ios"] or [len(apps) - 1])
             apps.insert(last_ios + 1, app)
         app.setdefault("links", {})["appstore"] = (en.get("trackViewUrl") or "").split("?")[0]
+        for k, v in (extra_links or {}).items():
+            app["links"].setdefault(k, v)
         if app.get("status") in ("beta", "dev"):
             app["status"] = "live"
         if not app.get("category"):
@@ -621,6 +629,12 @@ def discover_homey(apps, log):
     known = {homey_id(a) for a in apps if a.get("section") == "homey"}
     print(f"::notice::Homey: {len(listed)} apps op de auteurspagina's, "
           f"{len([h for h in listed if h not in known])} nog niet op de site. ({', '.join(listed)})")
+    return add_homey(listed, apps, log)
+
+
+def add_homey(listed, apps, log, extra_links=None):
+    """listed: Homey-app-id's (bijv. nl.lrvdlinden.p2000). Voegt nieuwe apps toe of vult ze aan."""
+    known = {homey_id(a) for a in apps if a.get("section") == "homey"}
     jobs = []
     touched = []
     for hid in listed:
@@ -639,6 +653,8 @@ def discover_homey(apps, log):
                    "status": "live", "bundleId": hid, "description": {}, "links": {}, "history": []}
             apps.append(app)
         touched.append((app, new, None if new else snap(app)))
+        for k, v in (extra_links or {}).items():
+            app.setdefault("links", {}).setdefault(k, v)
         desc = build.get("description") or {}
         for lang in ("nl", "en"):
             if desc.get(lang) and not (app.get("description") or {}).get(lang):
@@ -661,6 +677,127 @@ def discover_homey(apps, log):
         if new or snap(app) != before:
             log.append(f"- {'Nieuwe app' if new else 'Aangevuld'}: {app['name']} (Homey)")
     return {app["id"] for app, _, _ in touched}
+
+# ---------- app toevoegen via een link (knop "Nieuwe app" in beheer) ----------
+def lookup_appstore(tid):
+    res = {}
+    for cc in ("nl", "us", "gb"):
+        for entity in ("", "&entity=macSoftware"):
+            data = get_json(f"https://itunes.apple.com/lookup?id={tid}&country={cc}{entity}")
+            hit = next((r for r in (data or {}).get("results", []) if r.get("wrapperType") == "software"), None)
+            if hit:
+                res[cc] = hit
+                break
+    return {str(tid): res} if res else {}
+
+
+def html_meta(html):
+    """Titel, omschrijving en icoon uit de HTML van een website."""
+    def meta(*names):
+        for n in names:
+            m = re.search(r'<meta[^>]+(?:property|name)=["\']' + re.escape(n) + r'["\'][^>]*content=["\']([^"\']+)', html, re.I) or \
+                re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\']' + re.escape(n) + r'["\']', html, re.I)
+            if m:
+                return clean(re.sub(r"&amp;", "&", m.group(1)))
+        return ""
+    title = meta("og:site_name", "application-name", "apple-mobile-web-app-title")
+    if not title:
+        m = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
+        title = clean(m.group(1)) if m else ""
+    title = re.split(r"\s+[-–:|·]\s+", title)[0].strip()
+    desc = meta("og:description", "description", "twitter:description")
+    icons = []
+    for m in re.finditer(r"<link[^>]+>", html, re.I):
+        tag = m.group(0)
+        rel = (re.search(r'rel=["\']([^"\']+)', tag, re.I) or [None, ""])[1].lower()
+        href = (re.search(r'href=["\']([^"\']+)', tag, re.I) or [None, ""])[1]
+        if href and "apple-touch-icon" in rel:
+            icons.insert(0, href)
+        elif href and "icon" in rel and not href.endswith(".ico"):
+            icons.append(href)
+    og_img = meta("og:image")
+    return title, desc, icons, og_img
+
+
+def save_icon_any(app_id, url):
+    """Icoon van een website opslaan als vierkant 256x256 webp (of het origineel als Pillow ontbreekt)."""
+    data = get_raw(url) if url else None
+    if not data:
+        return None
+    os.makedirs(IMG_DIR, exist_ok=True)
+    try:
+        from PIL import Image
+        import io
+        im = Image.open(io.BytesIO(data)).convert("RGBA")
+        side = min(im.size)
+        im = im.crop(((im.width - side) // 2, (im.height - side) // 2, (im.width - side) // 2 + side, (im.height - side) // 2 + side))
+        im = im.resize((256, 256), Image.LANCZOS)
+        im.save(os.path.join(IMG_DIR, f"{app_id}.webp"), "WEBP", quality=88)
+        return f"img/{app_id}.webp"
+    except Exception:
+        if data[:4] == b"\x89PNG":
+            open(os.path.join(IMG_DIR, f"{app_id}.png"), "wb").write(data)
+            return f"img/{app_id}.png"
+    return None
+
+
+def add_from_url(apps, log, url):
+    """Voegt één app toe vanaf een App Store-, Homey-, TestFlight- of website-link. Geeft de id's terug."""
+    from urllib.parse import urljoin, urlparse
+    url = (url or "").strip()
+    print(f"Toevoegen vanaf: {url}")
+    m = re.search(r"apps\.apple\.com/.*?/id(\d+)", url) or re.fullmatch(r"(?:id)?(\d{6,12})", url)
+    if m:
+        if m.group(1) in {appstore_id(a) for a in apps}:
+            log.append(f"- Staat al op de site: App Store-app {m.group(1)}")
+            return {a["id"] for a in apps if appstore_id(a) == m.group(1)}
+        found = lookup_appstore(m.group(1))
+        if not found:
+            log.append(f"- Niet gevonden in de App Store: {url}")
+            return set()
+        return add_appstore(found, apps, log)
+    m = re.search(r"homey\.app/[a-z-]+/app/([^/?#]+)", url) or re.fullmatch(r"([a-z0-9]+(?:\.[a-z0-9_-]+){2,})", url)
+    if m:
+        return add_homey([m.group(1)], apps, log)
+    if not re.match(r"^https?://", url):
+        url = "https://" + url
+    html = (get_raw(url) or b"").decode("utf-8", "replace")
+    tf = "testflight.apple.com/join/" in url
+    # Website met een link naar de App Store of de Homey App Store: die app toevoegen, met de website erbij
+    if not tf:
+        m = re.search(r"https://apps\.apple\.com/[^\"'\s<>]*?/id(\d+)", html)
+        if m:
+            found = lookup_appstore(m.group(1))
+            if found:
+                return add_appstore(found, apps, log, extra_links={"website": url})
+        m = re.search(r"https://homey\.app/[a-z-]+/app/([^/\"'\s<>]+)", html)
+        if m:
+            return add_homey([m.group(1)], apps, log, extra_links={"website": url})
+    title, desc, icons, og_img = html_meta(html)
+    if tf:  # TestFlight-pagina: "Join the X beta - TestFlight - Apple"
+        tt = re.search(r"Join the (.+?) beta", html) or re.search(r"Doe mee aan de bèta van (.+?)[ -]", html)
+        title = (tt.group(1) if tt else title).strip()
+    if not title:
+        title = urlparse(url).netloc.replace("www.", "").split(".")[0].capitalize()
+    existing = next((a for a in apps if norm(a.get("name")) == norm(title)), None)
+    if existing:
+        existing.setdefault("links", {}).setdefault("testflight" if tf else "website", url)
+        log.append(f"- Aangevuld: {existing['name']} ({'TestFlight' if tf else 'website'})")
+        return {existing["id"]}
+    app = {"id": unique_id(apps, slug(title)), "name": title, "section": "ios", "status": "beta" if tf else "dev",
+           "featured": True, "category": "utilities", "description": {}, "links": {("testflight" if tf else "website"): url}, "history": []}
+    last_ios = max([i for i, a in enumerate(apps) if a.get("section", "ios") == "ios"] or [len(apps) - 1])
+    apps.insert(last_ios + 1, app)
+    for src in icons + ([og_img] if og_img else []):
+        icon = save_icon_any(app["id"], urljoin(url, src))
+        if icon:
+            app["icon"] = icon
+            break
+    write_texts([{"app": app, "name": title, "nl": desc if detect_lang(desc) == "nl" else "", "en": desc if detect_lang(desc) != "nl" else "",
+                  "need": ["description_nl", "description_en", "subtitle_nl", "subtitle_en"]}] if desc else [])
+    log.append(f"- Nieuwe app: {title} ({'TestFlight' if tf else 'website'}, {'beta' if tf else 'in ontwikkeling'})")
+    return {app["id"]}
+
 
 # ---------- ontbrekende talen vertalen ----------
 def fill_homey_translations(apps, log):
@@ -776,7 +913,9 @@ def main():
         mode = "bijwerken"
     print(f"Modus: {mode}")
     only = None
-    if mode in ("alles", "nieuw"):
+    if mode == "toevoegen":
+        only = add_from_url(apps, log, os.environ.get("STORE_ADD", ""))
+    elif mode in ("alles", "nieuw"):
         touched = discover_appstore(apps, log) | discover_homey(apps, log)
         if mode == "nieuw":
             only = touched  # nieuw gevonden of aangevulde apps meteen volledig ophalen
