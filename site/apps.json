@@ -70,13 +70,7 @@
             "links": [],
             "history": [],
             "icon": "img/app-lrvdlinden-pairr.webp",
-            "languages": "NL + 9",
-            "promo": {
-                "image": {
-                    "nl": "app-content/pairr/promo-nl.webp",
-                    "en": "app-content/pairr/promo-en.webp"
-                }
-            }
+            "languages": "NL + 9"
         },
         {
             "id": "nl-lrvdlinden-homio",
@@ -501,13 +495,7 @@
                 "testflight": "https://testflight.apple.com/join/Fvr4DAP6",
                 "website": "https://tunr.online"
             },
-            "history": [],
-            "promo": {
-                "image": {
-                    "nl": "app-content/tunr/promo-nl.webp",
-                    "en": "app-content/tunr/promo-en.webp"
-                }
-            }
+            "history": []
         },
         {
             "id": "devtools",
@@ -1213,26 +1201,21 @@
                         "en": "Bug fixes."
                     }
                 }
-            ],
-            "promo": {
-                "image": {
-                    "nl": "app-content/simple-chess/promo-nl.webp",
-                    "en": "app-content/simple-chess/promo-en.webp"
-                }
-            }
+            ]
         },
         {
             "id": "app-lrvdlinden-noodpakket",
             "name": "Noodpakket",
             "section": "ios",
-            "status": "dev",
+            "status": "beta",
             "featured": true,
             "category": "utilities",
             "description": {
                 "nl": "Scan de barcode van je water, batterijen of blikken en Noodpakket vult de rest in. Zo weet je precies wat er nog ontbreekt voor 72 uur zelfredzaam."
             },
             "links": {
-                "website": "https://noodpakket.lrvdlinden.app/"
+                "website": "https://noodpakket.lrvdlinden.app/",
+                "testflight": "https://testflight.apple.com/join/Uy8yGMFY"
             },
             "history": [],
             "icon": "img/noodpakket.webp",
@@ -1245,7 +1228,12 @@
                     "nl": "img/promo-app-lrvdlinden-noodpakket-nl.webp"
                 },
                 "show": true
-            }
+            },
+            "platforms": [
+                "iPhone",
+                "iPad",
+                "Android"
+            ]
         },
         {
             "id": "homey-appstoreconnect",
