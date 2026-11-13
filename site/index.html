@@ -10,6 +10,9 @@
 <meta name="author" content="Léon van der Linden">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://lrvdlinden.app/">
+<link rel="alternate" hreflang="nl" href="https://lrvdlinden.app/">
+<link rel="alternate" hreflang="en" href="https://lrvdlinden.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://lrvdlinden.app/">
 <meta name="theme-color" content="#F3F5F9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0D1018" media="(prefers-color-scheme: dark)">
 
@@ -474,9 +477,9 @@ function matches(a){
 }
 Object.defineProperty(window, "APPS", { get: () => ALL_APPS.filter(a => !(lang === "en" && a.nlOnly)) });
 
-try { lang = localStorage.getItem("lr-lang") || (navigator.language||"nl").slice(0,2); } catch(e){}
-if (location.hash === "#en") lang = "en";
-if (!T[lang]) lang = "nl";
+// De taal volgt het adres: / is Nederlands, /en/ is Engels (zodat een gedeelde link de juiste taal en OG-afbeelding heeft)
+lang = window.LR_LANG === "en" ? "en" : "nl";
+try { localStorage.setItem("lr-lang", lang); } catch(e){}
 
 const t = k => T[lang][k];
 const L = v => v == null ? "" : (typeof v === "string" ? v : (v[lang] ?? v.nl ?? v.en ?? ""));
@@ -496,7 +499,7 @@ function pageSlug(a){
   const i = same.indexOf(a);
   return same.length > 1 && i > 0 ? base + "-" + (i + 1) : base;
 }
-const pageUrl = a => "/" + pageKind(a) + "/" + pageSlug(a) + "/";
+const pageUrl = a => (lang === "en" && !a.nlOnly ? "/en" : "") + "/" + pageKind(a) + "/" + pageSlug(a) + "/";
 function icon(a, cls=""){
   const init = esc(a.name.replace(/[^A-Za-z0-9]/g,"").slice(0,2));
   return `<span class="icon ${cls}">${init}${a.icon?`<img src="${esc(a.icon)}" alt="${esc(a.name)}" width="256" height="256" loading="lazy" decoding="async" onerror="this.remove()">`:""}</span>`;
@@ -798,7 +801,7 @@ document.addEventListener("click", e => {
   const pd = e.target.closest("[data-promo]");
   if (pd){ goPromo(+pd.dataset.promo); startPromoTimer(); return; }
   const lb = e.target.closest(".lang button");
-  if (lb){ lang = lb.dataset.lang; try{localStorage.setItem("lr-lang",lang)}catch(_){} render(); return; }
+  if (lb){ if (lb.dataset.lang !== lang){ try{localStorage.setItem("lr-lang",lb.dataset.lang)}catch(_){} location.href = (lb.dataset.lang === "en" ? "/en/" : "/") + location.hash; } return; }
   const hc = e.target.closest("[data-hcat]");
   if (hc){ hcat = hc.dataset.hcat; renderHomey(); return; }
   const ch = e.target.closest(".chip");
@@ -832,7 +835,7 @@ document.addEventListener("click", e => {
 $("#q").addEventListener("input", e => { q = e.target.value.trim(); open = null; render(); });
 $("#qClear").addEventListener("click", () => { $("#q").value = ""; q = ""; render(); $("#q").focus(); });
 renderStatic();
-fetch("apps.json", {cache:"no-cache"})
+fetch("/apps.json", {cache:"no-cache"})
   .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
   .then(d => { ALL_APPS = d.apps || []; render(); })
   .catch(() => { $("#grid").innerHTML = `<div class="notice">${esc(t("loadError"))}</div>`; });

@@ -36,23 +36,33 @@ def git_date(path):
 
 
 home_mod = max([last_date(a) for a in apps] + [git_date("site/index.html") or ""]) or today
-pages = [("", home_mod)]
+# (pad NL, pad EN of None, lastmod); NL en EN verwijzen naar elkaar met hreflang
+pages = [("", "en/" if os.path.isfile(os.path.join(out, "en", "index.html")) else None, home_mod)]
 for name in ("donate", "privacy"):  # nette URL's zonder .html
     if os.path.isfile(os.path.join(out, name + ".html")):
-        pages.append((name, git_date(f"site/{name}.html") or today))
+        pages.append((name, None, git_date(f"site/{name}.html") or today))
 # eigen app-pagina's (gemaakt door scripts/build_app_pages.py)
 try:
     for pg in json.load(open(os.path.join(out, "app-pages.json"), encoding="utf-8")):
-        pages.append((pg["path"].lstrip("/"), pg.get("lastmod") or today))
+        p = pg["path"].lstrip("/")
+        pages.append((p, None if pg.get("nlOnly") else "en/" + p, pg.get("lastmod") or today))
 except (OSError, ValueError):
     pass
 xml = ['<?xml version="1.0" encoding="UTF-8"?>',
-       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
-for path, mod in pages:
-    xml.append(f"  <url>\n    <loc>{BASE}{path}</loc>\n    <lastmod>{mod[:10]}</lastmod>")
-    if path == "":
-        xml.append(f"    <image:image><image:loc>{BASE}og-image.jpg</image:loc></image:image>")
-    xml.append("  </url>")
+       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" '
+       'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
+for nl, en, mod in pages:
+    for loc, img in ((nl, "og-image.jpg"), (en, "og-image-en.jpg")):
+        if loc is None:
+            continue
+        xml.append(f"  <url>\n    <loc>{BASE}{loc}</loc>\n    <lastmod>{mod[:10]}</lastmod>")
+        if en is not None:
+            xml.append(f'    <xhtml:link rel="alternate" hreflang="nl" href="{BASE}{nl}"/>')
+            xml.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{BASE}{en}"/>')
+            xml.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE}{nl}"/>')
+        if loc in ("", "en/"):
+            xml.append(f"    <image:image><image:loc>{BASE}{img}</image:loc></image:image>")
+        xml.append("  </url>")
 xml.append("</urlset>")
 open(os.path.join(out, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(xml) + "\n")
 

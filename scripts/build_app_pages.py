@@ -270,35 +270,42 @@ def page_content(a, c, lang, others):
     return hero + shots_html + about + homey + news + more
 
 
-def page(a, c, others, all_slugs):
+def page(a, c, others, lang):
+    """Eén pagina in één taal. NL op /app/<naam>/, EN op /en/app/<naam>/, met eigen titel, tekst en OG."""
+    t = T[lang]
     slug = c["ckey"]
-    url = BASE + c["path"]
-    nl, en = page_content(a, c, "nl", others), page_content(a, c, "en", others)
+    pre = "/en" if lang == "en" else ""
+    url = BASE + pre + c["path"]
+    url_nl, url_en = BASE + c["path"], BASE + "/en" + c["path"]
+    has_en = not a.get("nlOnly")
+    body = page_content(a, c, lang, [(o, ("/en" if lang == "en" and not o.get("nlOnly") else "") + p) for o, p in others])
+    body = body.replace('href="/#', f'href="{pre}/#')
     name = a["name"]
-    sub_nl = L(a.get("subtitle"), "nl")
-    desc_src = ((c.get("text") or {}).get("nl") or {}).get("promotional_text") or L(a.get("description"), "nl") or sub_nl
+    sub = L(a.get("subtitle"), lang)
+    desc_src = ((c.get("text") or {}).get(lang) or {}).get("promotional_text") or L(a.get("description"), lang) or sub
     desc = re.sub(r"\s+", " ", desc_src).strip()
     if len(desc) > 158:
         desc = desc[:155].rsplit(" ", 1)[0] + "…"
-    kind = "Homey-app" if a.get("section") == "homey" else "app"
-    title = f"{name}" + (f": {sub_nl}" if sub_nl else "") + " | LRvdLinden Apps"
+    title = f"{name}" + (f": {sub}" if sub else "") + " | LRvdLinden Apps"
     if len(title) > 65:
         title = f"{name} | LRvdLinden Apps"
     og = c.get("og") or {}
     og_nl = f"{BASE}/app-content/{slug}/{og['nl']}" if og.get("nl") else f"{BASE}/og-image.jpg"
-    og_en = f"{BASE}/app-content/{slug}/{og['en']}" if og.get("en") else og_nl
+    og_en = f"{BASE}/app-content/{slug}/{og['en']}" if og.get("en") else f"{BASE}/og-image-en.jpg"
+    og_img = og_en if lang == "en" else og_nl
     homey = a.get("section") == "homey"
     links = a.get("links") or {}
-    ld_app = {"@type": "SoftwareApplication", "name": name, "url": url,
-              "description": L(a.get("description"), "nl") or sub_nl,
+    ld_app = {"@type": "SoftwareApplication", "name": name, "url": url, "inLanguage": lang,
+              "description": L(a.get("description"), lang) or sub,
               "applicationCategory": "HomeApplication" if homey else CAT_LD.get(a.get("category"), "UtilitiesApplication"),
               "operatingSystem": "Homey" if homey else ", ".join(p for p in (a.get("platforms") or ["iOS"]) if p) or "iOS",
               "author": {"@type": "Person", "name": "Léon van der Linden", "url": BASE + "/"},
               "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}
     if a.get("icon"):
         ld_app["image"] = f"{BASE}/{a['icon']}"
-    if (c.get("shots") or {}).get("nl"):
-        ld_app["screenshot"] = [f"{BASE}/app-content/{slug}/{s['src']}" for s in c["shots"]["nl"][:4]]
+    shots = (c.get("shots") or {}).get(lang) or (c.get("shots") or {}).get("nl") or []
+    if shots:
+        ld_app["screenshot"] = [f"{BASE}/app-content/{slug}/{s['src']}" for s in shots[:4]]
     if a.get("history"):
         ld_app["softwareVersion"] = str(a["history"][0].get("version"))
     if a.get("rating") and int(a.get("reviews") or 0) > 0:
@@ -306,11 +313,21 @@ def page(a, c, others, all_slugs):
     if links.get("appstore") or links.get("homey"):
         ld_app["installUrl"] = links.get("appstore") or links.get("homey")
     ld = {"@context": "https://schema.org", "@graph": [ld_app, {"@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "LRvdLinden Apps", "item": BASE + "/"},
+        {"@type": "ListItem", "position": 1, "name": "LRvdLinden Apps", "item": BASE + pre + "/"},
         {"@type": "ListItem", "position": 2, "name": name, "item": url}]}]}
     ld_s = json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")
+    alt = (f'<link rel="alternate" hreflang="nl" href="{url_nl}">\n<link rel="alternate" hreflang="en" href="{url_en}">\n'
+           f'<link rel="alternate" hreflang="x-default" href="{url_nl}">') if has_en else ""
+    tx = {"nl": dict(apps="iOS-apps", donate="Doneren", all="Alle apps", support="Steun mijn apps",
+                     supportText="Al mijn apps zijn gratis en zonder advertenties. Met een kleine donatie help je ze online en up-to-date te houden."),
+          "en": dict(apps="iOS apps", donate="Donate", all="All apps", support="Support my apps",
+                     supportText="All my apps are free and ad-free. A small donation helps keep them online and up to date.")}[lang]
+    switch = "" if not has_en else (
+        f'<div class="lang" role="group" aria-label="Taal / Language">'
+        f'<a href="{e(c["path"])}" lang="nl" aria-current="{"true" if lang == "nl" else "false"}">NL</a>'
+        f'<a href="{e("/en" + c["path"])}" lang="en" aria-current="{"true" if lang == "en" else "false"}">EN</a></div>')
     return f'''<!doctype html>
-<html lang="nl">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -320,24 +337,25 @@ def page(a, c, others, all_slugs):
 <meta name="author" content="Léon van der Linden">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="{url}">
+{alt}
 <meta name="theme-color" content="#F3F5F9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0D1018" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LRvdLinden Apps">
 <meta property="og:url" content="{url}">
-<meta property="og:title" content="{e(name + (": " + sub_nl if sub_nl else ""))}">
+<meta property="og:title" content="{e(name + (": " + sub if sub else ""))}">
 <meta property="og:description" content="{e(desc)}">
-<meta property="og:image" content="{e(og_nl)}">
+<meta property="og:image" content="{e(og_img)}">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{e(name)}{e(" – " + sub_nl if sub_nl else "")}">
-<meta property="og:locale" content="nl_NL">
-<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:image:alt" content="{e(name)}{e(" – " + sub if sub else "")}">
+<meta property="og:locale" content="{"en_GB" if lang == "en" else "nl_NL"}">
+<meta property="og:locale:alternate" content="{"nl_NL" if lang == "en" else "en_GB"}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{e(name + (": " + sub_nl if sub_nl else ""))}">
+<meta name="twitter:title" content="{e(name + (": " + sub if sub else ""))}">
 <meta name="twitter:description" content="{e(desc)}">
-<meta name="twitter:image" content="{e(og_nl)}">
+<meta name="twitter:image" content="{e(og_img)}">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -346,28 +364,25 @@ def page(a, c, others, all_slugs):
 <script type="application/ld+json">{ld_s}</script>
 <style>{CSS}</style>
 </head>
-<body data-og-en="{e(og_en)}">
+<body>
 <header class="top wrap">
   <div class="bar">
-    <a class="brand" href="/">{LOGO} lrvdlinden.app</a>
+    <a class="brand" href="{pre}/">{LOGO} lrvdlinden.app</a>
     <div class="right">
-      <nav aria-label="Menu"><a href="/#apps" data-l="apps"></a><a href="/#homey">Homey</a><a href="/donate" data-l="donate"></a></nav>
-      <div class="lang" role="group" aria-label="Taal / Language"{' hidden' if a.get("nlOnly") else ""}>
-        <button type="button" data-lang="nl">NL</button><button type="button" data-lang="en">EN</button>
-      </div>
+      <nav aria-label="Menu"><a href="{pre}/#apps">{tx["apps"]}</a><a href="{pre}/#homey">Homey</a><a href="/donate">{tx["donate"]}</a></nav>
+      {switch}
     </div>
   </div>
 </header>
 <main>
-<div data-lang-block="nl">{nl}</div>
-<div data-lang-block="en" hidden>{en}</div>
-<section class="wrap support"><p data-l="supportText"></p><a class="btn primary" href="/donate" data-l="support"></a></section>
+{body}
+<section class="wrap support"><p>{e(tx["supportText"])}</p><a class="btn primary" href="/donate">{e(tx["support"])}</a></section>
 </main>
 <footer class="wrap"><div class="bar">
   <span>© lrvdlinden.app · Powered by <a href="https://pixelforges.nl" target="_blank" rel="noopener">PixelForges</a></span>
-  <nav><a href="/" data-l="all"></a><a href="/privacy">Privacy</a><a href="/donate" data-l="donate"></a></nav>
+  <nav><a href="{pre}/">{e(tx["all"])}</a><a href="/privacy">Privacy</a><a href="/donate">{e(tx["donate"])}</a></nav>
 </div></footer>
-<script>{JS}</script>
+<script>try{{localStorage.setItem("lr-lang","{lang}")}}catch(e){{}}{JS}</script>
 </body>
 </html>
 '''
@@ -399,8 +414,8 @@ header.top{padding-block:24px 8px}
 .right{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .right nav{display:flex;gap:18px;font-size:14.5px;color:var(--muted)}.right nav a{text-decoration:none}.right nav a:hover{color:var(--ink)}
 .lang{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--surface)}
-.lang button{font:600 12.5px var(--f-body);letter-spacing:.04em;border:0;background:none;color:var(--muted);padding:5px 11px;border-radius:99px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang a{font:600 12.5px var(--f-body);letter-spacing:.04em;text-decoration:none;color:var(--muted);padding:5px 11px;border-radius:99px}
+.lang a[aria-current="true"]{background:var(--ink);color:var(--bg)}
 .hero{padding-block:28px 12px}
 .crumb{display:inline-block;color:var(--muted);text-decoration:none;font-size:14px;margin-bottom:22px}.crumb:hover{color:var(--ink)}
 .head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center}
@@ -467,21 +482,52 @@ footer{padding-block:40px;color:var(--muted);font-size:14px}footer .bar{border-t
 """
 
 JS = """
-const TX={nl:{apps:"iOS-apps",donate:"Doneren",all:"Alle apps",support:"Steun mijn apps",supportText:"Al mijn apps zijn gratis en zonder advertenties. Met een kleine donatie help je ze online en up-to-date te houden."},
-en:{apps:"iOS apps",donate:"Donate",all:"All apps",support:"Support my apps",supportText:"All my apps are free and ad-free. A small donation helps keep them online and up to date."}};
-let lang="nl";try{lang=localStorage.getItem("lr-lang")||(navigator.language||"nl").slice(0,2)}catch(e){}
-if(location.hash==="#en")lang="en";if(!TX[lang]||document.querySelector(".lang[hidden]"))lang="nl";
-const NLTITLE=document.title;
-function render(){document.documentElement.lang=lang;
-document.querySelectorAll("[data-lang-block]").forEach(b=>b.hidden=b.dataset.langBlock!==lang);
-document.querySelectorAll("[data-l]").forEach(el=>el.textContent=TX[lang][el.dataset.l]);
-document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===lang));}
-document.addEventListener("click",ev=>{const lb=ev.target.closest("[data-lang]");
-if(lb){lang=lb.dataset.lang;try{localStorage.setItem("lr-lang",lang)}catch(e){}render();return}
-const sa=ev.target.closest(".showall");if(sa){const box=sa.closest(".fcol")||sa.closest("section");box.classList.toggle("open");
-sa.textContent=box.classList.contains("open")?sa.dataset.b:sa.dataset.a}});
-render();
+document.addEventListener("click",ev=>{const sa=ev.target.closest(".showall");if(sa){const box=sa.closest(".fcol")||sa.closest("section");
+box.classList.toggle("open");sa.textContent=box.classList.contains("open")?sa.dataset.b:sa.dataset.a}});
 """
+
+
+EN_HOME = [
+    ('<html lang="nl">', '<html lang="en">'),
+    ('<title>Gratis iOS- en Homey-apps van Léon van der Linden | LRvdLinden Apps</title>',
+     '<title>Free iOS and Homey apps by Léon van der Linden | LRvdLinden Apps</title>'),
+    ('content="Gratis apps zonder advertenties van Léon van der Linden voor iPhone, iPad, Mac en Homey: Bingr, Tunr, HealthSync, DevTools, VlagDagen, P2000 en meer."',
+     'content="Free, ad-free apps by Léon van der Linden for iPhone, iPad, Mac and Homey: Bingr, Tunr, HealthSync, DevTools, VlagDagen, P2000 and more."'),
+    ('<link rel="canonical" href="https://lrvdlinden.app/">', '<link rel="canonical" href="https://lrvdlinden.app/en/">'),
+    ('<meta property="og:url" content="https://lrvdlinden.app/">', '<meta property="og:url" content="https://lrvdlinden.app/en/">'),
+    ('content="Apps voor je buurt, je huis en je dag | LRvdLinden Apps"', 'content="Apps for your neighbourhood, your home and your day | LRvdLinden Apps"'),
+    ('content="Gratis iOS- en Homey-apps van Léon van der Linden, zonder advertenties. Voor iPhone, iPad, Mac en Homey."',
+     'content="Free iOS and Homey apps by Léon van der Linden, without ads. For iPhone, iPad, Mac and Homey."'),
+    ('content="Gratis iOS- en Homey-apps van Léon van der Linden, zonder advertenties."', 'content="Free iOS and Homey apps by Léon van der Linden, without ads."'),
+    ('https://lrvdlinden.app/og-image.jpg', 'https://lrvdlinden.app/og-image-en.jpg'),
+    ('content="lrvdlinden.app: apps voor je buurt, je huis en je dag, met iconen van de apps"',
+     'content="lrvdlinden.app: apps for your neighbourhood, your home and your day, with the app icons"'),
+    ('content="lrvdlinden.app: apps voor je buurt, je huis en je dag"', 'content="lrvdlinden.app: apps for your neighbourhood, your home and your day"'),
+    ('<meta property="og:locale" content="nl_NL">\n<meta property="og:locale:alternate" content="en_GB">',
+     '<meta property="og:locale" content="en_GB">\n<meta property="og:locale:alternate" content="nl_NL">'),
+    ('<h1 data-t="h1" data-html>Apps voor je buurt, je huis en <em>je dag</em>.</h1>',
+     '<h1 data-t="h1" data-html>Apps for your neighbourhood, your home and <em>your day</em>.</h1>'),
+]
+
+
+def build_en_home():
+    """Engelse homepagina op /en/: zelfde pagina, met Engelse titel, omschrijving en OG-afbeelding."""
+    src = os.path.join(OUT, "index.html")
+    if not os.path.isfile(src):
+        return
+    h = open(src, encoding="utf-8").read()
+    for a, b in EN_HOME:
+        if a not in h:
+            print(f"::warning::Engelse homepagina: tekst niet gevonden: {a[:60]}")
+        h = h.replace(a, b)
+    # alle relatieve paden (img/, apps.json) vanaf de root laden; ankers naar de Engelse pagina
+    h = h.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/">', 1)
+    h = re.sub(r'href="#([a-z]+)"', r'href="/en/#\1"', h)
+    h = h.replace("<script>\nconst T = {", '<script>window.LR_LANG = "en";</script>\n<script>\nconst T = {', 1)
+    if 'window.LR_LANG = "en"' not in h:
+        print("::warning::Engelse homepagina: taalinstelling niet gezet.")
+    os.makedirs(os.path.join(OUT, "en"), exist_ok=True)
+    open(os.path.join(OUT, "en", "index.html"), "w", encoding="utf-8").write(h)
 
 
 def main():
@@ -499,10 +545,13 @@ def main():
         # Meer apps: eerst dezelfde soort (iOS of Homey), live en met icoon
         same = [o for o in apps if o is not a and o.get("section") == a.get("section") and o.get("icon")]
         others = [(o, paths[id(o)]) for o in sorted(same, key=lambda o: (o.get("status") != "live", 0))][:6]
-        d = os.path.join(OUT, path.strip("/"))
-        os.makedirs(d, exist_ok=True)
-        with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
-            f.write(page(a, c, others, paths))
+        for lang in ("nl", "en"):
+            if lang == "en" and a.get("nlOnly"):
+                continue
+            d = os.path.join(OUT, ("en/" if lang == "en" else "") + path.strip("/"))
+            os.makedirs(d, exist_ok=True)
+            with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
+                f.write(page(a, c, others, lang))
         built.append(path)
     # overzicht voor de sitemap en de release-controle
     with open(os.path.join(OUT, "app-pages.json"), "w", encoding="utf-8") as f:
@@ -518,6 +567,7 @@ def main():
                 rules.append(f"  RewriteRule ^{re.escape(old)}/?$ {paths[id(a)]} [R=301,L]")
     with open(os.path.join(OUT, "app-redirects.conf"), "w", encoding="utf-8") as f:
         f.write("<IfModule mod_rewrite.c>\n  RewriteEngine On\n" + "\n".join(rules) + "\n</IfModule>\n")
+    build_en_home()
     print(f"App-pagina's: {len(built)} ({datetime.now(timezone.utc):%Y-%m-%d})")
 
 

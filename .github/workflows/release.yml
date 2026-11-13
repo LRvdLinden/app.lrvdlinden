@@ -189,7 +189,7 @@ jobs:
           code=$(curl -s -o /tmp/live.html -w '%{http_code}' "https://lrvdlinden.app/?v=${GITHUB_RUN_NUMBER}")
           echo "homepagina: HTTP $code"
           [ "$code" = "200" ] || { echo "::error::lrvdlinden.app geeft HTTP $code na upload. Klopt de doelmap? Zet eventueel secret FTP_DIR."; exit 1; }
-          for pth in $(python3 -c "import json; p=json.load(open('build/app-pages.json')); ios=[x['path'] for x in p if x['path'].startswith('/app/')]; hy=[x['path'] for x in p if x['path'].startswith('/homey/')]; print(' '.join((ios[:1]+hy[:1])))"); do
+          for pth in $(python3 -c "import json; p=json.load(open('build/app-pages.json')); ios=[x['path'] for x in p if x['path'].startswith('/app/')]; hy=[x['path'] for x in p if x['path'].startswith('/homey/')]; print(' '.join((ios[:1]+hy[:1]+['/en/']+['/en'+x['path'] for x in p if not x.get('nlOnly')][:1])))"); do
             c=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app$pth")
             echo "$pth: HTTP $c"
             [ "$c" = "200" ] || echo "::warning::De app-pagina $pth geeft HTTP $c."
