@@ -212,6 +212,14 @@ final class LRvdLindenStore {
         result = nil
         defer { publishing = false }
         do {
+            // Intussen iets veranderd op de site (store-check, content-sync, web-beheer)? Eerst samenvoegen,
+            // zodat alleen de apps die je hier wijzigde worden overschreven.
+            if let raw = try? await client.request("GET", "apps.json", beheerHeader: false),
+               let server = try? JSON.parse(raw), server != original {
+                data = DraftStore.merge(base: original, draft: data, server: server, list: "apps").data
+                original = server
+                save()
+            }
             let res = try await client.publish(data: data, files: pending.map { ($0.key, $0.value.base64EncodedString()) },
                                                message: message)
             original = data

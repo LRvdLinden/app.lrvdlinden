@@ -646,6 +646,15 @@ async function publish(){
   const files = Object.entries(PENDING).map(([path,f]) => ({ path, data: f.url.split(",")[1] }));
   publishing = true; updateState(); $("#result").innerHTML = "";
   try {
+    // Intussen iets veranderd op de site (store-check, content-sync, ander apparaat)? Eerst samenvoegen,
+    // zodat alleen jouw gewijzigde apps worden overschreven en de rest van de nieuwste versie blijft.
+    try {
+      const srv = await (await fetch("apps.json", { cache:"no-store" })).json();
+      if (srv && srv.apps && JSON.stringify(srv) !== ORIGINAL) {
+        DATA = mergeDraft(JSON.parse(ORIGINAL || '{"apps":[]}'), DATA, srv).data;
+        ORIGINAL = JSON.stringify(srv); save();
+      }
+    } catch(e) {}
     const r = await fetch("publish.php", { method:"POST", credentials:"same-origin",
       headers:{ "Content-Type":"application/json", "X-LR-Beheer":"1" },
       body: JSON.stringify({ data: DATA, files, message }) });
