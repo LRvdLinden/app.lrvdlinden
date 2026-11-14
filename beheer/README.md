@@ -89,7 +89,7 @@ originele code.
 
 - **Splash** (±1 s, geen netwerk) → **vergrendeling** met Face ID (Instellingen → *Vergrendelen met Face ID*) →
   **overzicht** met de omgevingen in vaste volgorde: LRvdLinden, PixelForges, Bingr, Tunr, Pasr, P2000 Apeldoorn, Bekendr,
-  Noodpakket, Pairr, elk met eigen logo, of je ingelogd bent en welke het laatst gebruikt is.
+  Noodpakket, Pairr, 112Heli, elk met eigen logo, of je ingelogd bent en welke het laatst gebruikt is.
 - **Wisselen**: bovenin elke omgeving staat de omgevingskiezer (logo + naam + ⌄, en op brede schermen de andere logo's).
   Eén tik wisselt direct, zonder terug naar het overzicht. De actieve omgeving is altijd zichtbaar (naam, logo en een
   lijn in de kleur van de omgeving).
@@ -283,6 +283,24 @@ door Léon zelf geüpload naar zijn hosting) praten met de centrale functie `lrb
 | Omzet: opbrengst na Apple (totaal, deze maand, verkochte exemplaren, per valuta) en grafiek per dag, omgerekend naar euro met de ECB-koers | ✓ | ✓ |
 | Open meldingen van gebruikers (GitHub Issues): aantal, titel, datum, reacties, labels, openen op GitHub | ✓ | ✓ |
 | Pushmelding naar LRbeheer | nog niet (voorstel: melding bij een nieuwe melding op GitHub en dagelijks overzicht van nieuwe downloads) | – |
+
+### 112heli.lrvdlinden.app/beheer → 112Heli (nieuw, native)
+
+112Heli heeft een eigen Cloudflare-worker (`112heli-api.112heli.workers.dev`, map `worker/` in LRvdLinden/app.lrvdlinden.112heli).
+App en web-beheer (`website/web/beheer/`, door Léon zelf geüpload) gebruiken dezelfde endpoints `/v1/beheer/*` met de
+gedeelde beheer-inlog (`BEHEER_APP_USER` / `BEHEER_APP_PASSWORD`, door de worker-workflow op de worker gezet).
+
+| Onderdeel | In LRbeheer | Web-beheer |
+| --- | --- | --- |
+| Inloggen met de gedeelde beheer-inlog (token 30 dagen), doet mee met *Eén inlog* | ✓ (sleutelhanger) | ✓ (alleen deze browser) |
+| Overzicht: nu in de lucht, gezien in 24 uur, vluchten vandaag en 7 dagen, grote inzetten (en nu actief), apparaten met meldingen, eigen zones, Live Activities, bekende toestellen, open meldingen | ✓ | ✓ |
+| Grafiek vluchten per dag (14 dagen) en nieuwe apparaten | ✓ (Swift Charts) | ✓ |
+| Server: ophalen posities (goed/storing, laatste keer), APNs, Apple Kaarten, weerbeperking | ✓ | ✓ |
+| Vluchten per soort (7 dagen), apparaten per platform en per versie | ✓ | ✓ |
+| Toestellen: alle bekende toestellen met soort, type, registratie, roepnaam, laatst gezien, in de lucht en vluchten (30 dagen), zoeken, openen op de site | ✓ | ✓ |
+| Meldingen uit de app (toestel klopt niet / ontbreekt): opgelost, bekeken, heropenen, verwijderen | ✓ | ✓ |
+| Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik vooraf en geschiedenis (verstuurd / bereik) | ✓ | ✓ |
+| Pushmelding naar LRbeheer | nog niet (voorstel: melding bij een nieuwe melding uit de app en bij een storing van het ophalen van posities > 10 min) | – |
 
 ## Standaarden van LRvdLinden-apps
 

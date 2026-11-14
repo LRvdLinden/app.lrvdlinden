@@ -6,7 +6,7 @@ import TunrKit
 
 /// De beheeromgevingen, in de vaste volgorde van het overzicht (nieuwe omgevingen achteraan).
 enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
-    case lrvdlinden, pixelforges, bingr, tunr, pasr, p2000, bekendr, noodpakket, pairr
+    case lrvdlinden, pixelforges, bingr, tunr, pasr, p2000, bekendr, noodpakket, pairr, heli112
 
     var id: String { rawValue }
 
@@ -21,6 +21,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bekendr: "Bekendr"
         case .noodpakket: "Noodpakket"
         case .pairr: "Pairr"
+        case .heli112: "112Heli"
         }
     }
 
@@ -36,6 +37,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bekendr: "Downloads op iPhone, iPad, Mac en Android"
         case .noodpakket: "Downloads, Android-builds en berichten aan gebruikers"
         case .pairr: "Downloads, omzet en meldingen"
+        case .heli112: "Status, toestellen, meldingen en push"
         }
     }
 
@@ -50,6 +52,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bekendr: "bekendr.lrvdlinden.app"
         case .noodpakket: "noodpakket.lrvdlinden.app"
         case .pairr: "pairr.lrvdlinden.app"
+        case .heli112: "112heli.lrvdlinden.app"
         }
     }
 
@@ -65,6 +68,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bekendr: Color(rgb: 0x2747E8)
         case .noodpakket: Color(light: 0x5A2E85, dark: 0xC9A6F0)
         case .pairr: Color(light: 0x0A8FD6, dark: 0x38C8FF)
+        case .heli112: Color(light: 0x2747E8, dark: 0x4C6BFF)
         }
     }
 
@@ -84,6 +88,7 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bekendr: return url.host?.lowercased() == "bekendr.lrvdlinden.app"
         case .noodpakket: return url.host?.lowercased() == "noodpakket.lrvdlinden.app"
         case .pairr: return url.host?.lowercased() == "pairr.lrvdlinden.app"
+        case .heli112: return url.host?.lowercased() == "112heli.lrvdlinden.app"
         }
     }
 
@@ -98,13 +103,14 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bekendr: BekendrStore.shared.isSignedIn
         case .noodpakket: NoodpakketStore.shared.isSignedIn
         case .pairr: PairrStore.shared.isSignedIn
+        case .heli112: Heli112Store.shared.isSignedIn
         }
     }
 
     /// Weergave die de oorspronkelijke app afdwong (Bingr, Tunr en Pasr waren altijd donker).
     @MainActor var forcedScheme: ColorScheme? {
         switch self {
-        case .lrvdlinden, .pixelforges, .bekendr, .noodpakket, .pairr: nil
+        case .lrvdlinden, .pixelforges, .bekendr, .noodpakket, .pairr, .heli112: nil
         case .bingr: BingrEnvironment.colorScheme
         case .tunr: TunrEnvironment.colorScheme
         case .pasr: PasrEnvironment.colorScheme
@@ -124,13 +130,14 @@ enum BeheerEnvironment: String, CaseIterable, Identifiable, Codable {
         case .bekendr: BekendrRoot()
         case .noodpakket: NoodpakketRoot()
         case .pairr: PairrRoot()
+        case .heli112: Heli112Root()
         }
     }
 
     /// Deeplink openen binnen de omgeving (nadat LRbeheer naar de omgeving is gewisseld).
     @MainActor func open(_ url: URL) {
         switch self {
-        case .lrvdlinden, .pixelforges, .bekendr, .noodpakket, .pairr: break
+        case .lrvdlinden, .pixelforges, .bekendr, .noodpakket, .pairr, .heli112: break
         case .bingr: BingrEnvironment.open(url)
         case .tunr: TunrEnvironment.open(url)
         case .pasr: PasrEnvironment.open(url)

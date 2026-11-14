@@ -37,8 +37,9 @@ struct LRbeheerCommands: Commands {
                 .keyboardShortcut("0", modifiers: .command)
             Divider()
             ForEach(Array(BeheerEnvironment.allCases.enumerated()), id: \.element) { i, env in
+                // ⌘1 … ⌘9; vanaf de tiende omgeving ⌥⌘1, ⌥⌘2 … (een sneltoets is één teken).
                 Button(env.name) { model.switchTo(env) }
-                    .keyboardShortcut(KeyEquivalent(Character("\(i + 1)")), modifiers: .command)
+                    .keyboardShortcut(KeyEquivalent(Character("\(i % 9 + 1)")), modifiers: i < 9 ? .command : [.command, .option])
             }
             Divider()
             Button("Eén inlog voor alle omgevingen…") { SharedLogin.shared.showSheet = true; model.switchTo(nil) }
@@ -52,6 +53,7 @@ struct LRbeheerCommands: Commands {
             Link("bekendr.lrvdlinden.app/beheer", destination: URL(string: "https://bekendr.lrvdlinden.app/beheer/")!)
             Link("noodpakket.lrvdlinden.app/beheer", destination: URL(string: "https://noodpakket.lrvdlinden.app/beheer/")!)
             Link("pairr.lrvdlinden.app/beheer", destination: URL(string: "https://pairr.lrvdlinden.app/beheer/")!)
+            Link("112heli.lrvdlinden.app/beheer", destination: URL(string: "https://112heli.lrvdlinden.app/beheer/")!)
         }
     }
 }

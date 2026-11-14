@@ -104,6 +104,15 @@ struct WhatsNewView: View {
                     Label("Nieuwe apps krijgen meteen een eigen pagina op lrvdlinden.app (/app/… en /homey/…, ook in het Engels onder /en/)", systemImage: "doc.richtext")
                     Label("Nieuw vinkje Alleen Nederlands per app: die app staat dan niet op de Engelse versie van lrvdlinden.app (NL-label in de lijst)", systemImage: "globe.europe.africa")
                 }
+                Section("112Heli") {
+                    Label("Nieuwe omgeving 112Heli, met dezelfde beheer-inlog", systemImage: "app.badge")
+                    Label("Overzicht: toestellen in de lucht, vluchten per dag, grote inzetten, apparaten, zones en de status van de server", systemImage: "gauge.with.dots.needle.67percent")
+                    Label("Alle toestellen met laatst gezien en vluchten van 30 dagen, met zoeken", systemImage: "airplane")
+                    Label("Meldingen uit de app (toestel klopt niet of ontbreekt): opgelost, bekeken of verwijderen", systemImage: "exclamationmark.bubble")
+                    Label("Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik en geschiedenis", systemImage: "paperplane")
+                    Label("Ook op het web: 112heli.lrvdlinden.app/beheer", systemImage: "safari")
+                    Label("Mac: vanaf de tiende omgeving wissel je met ⌥⌘1, ⌥⌘2 …", systemImage: "command")
+                }
                 Section("Pairr") {
                     Label("Nieuwe omgeving Pairr, met dezelfde beheer-inlog", systemImage: "app.badge")
                     Label("Downloads op iPhone, iPad en Mac uit App Store Connect, met grafiek per dag", systemImage: "arrow.down.circle")

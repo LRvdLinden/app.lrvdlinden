@@ -162,6 +162,38 @@
         }
       }
     },
+    "%lld gezien in 24 uur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld seen in 24 hours"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld gezien in 24 uur"
+          }
+        }
+      }
+    },
+    "%lld in 7 dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld in 7 days"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld in 7 dagen"
+          }
+        }
+      }
+    },
     "%lld leden": {
       "localizations": {
         "en": {
@@ -174,6 +206,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld leden"
+          }
+        }
+      }
+    },
+    "%lld met meldingen aan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld with notifications on"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld met meldingen aan"
+          }
+        }
+      }
+    },
+    "%lld nu actief": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld active now"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld nu actief"
           }
         }
       }
@@ -226,6 +290,38 @@
         }
       }
     },
+    "%lld toestellen. Gegevens komen automatisch uit de herkenning van A-Alerts; corrigeren doe je daar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld aircraft. Data comes automatically from the A-Alerts recognition; make corrections there."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld toestellen. Gegevens komen automatisch uit de herkenning van A-Alerts; corrigeren doe je daar."
+          }
+        }
+      }
+    },
+    "%lld van %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld of %lld"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld van %lld"
+          }
+        }
+      }
+    },
     "%lld verkocht": {
       "localizations": {
         "en": {
@@ -238,6 +334,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld verkocht"
+          }
+        }
+      }
+    },
+    "%lld vluchten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld flights"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld vluchten"
           }
         }
       }
@@ -338,6 +450,38 @@
         }
       }
     },
+    "112Heli beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "112Heli admin"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "112Heli beheer"
+          }
+        }
+      }
+    },
+    "14 dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "14 days"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "14 dagen"
+          }
+        }
+      }
+    },
     "3 tot 5 minuten": {
       "localizations": {
         "en": {
@@ -382,6 +526,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "30 dagen, in euro"
+          }
+        }
+      }
+    },
+    "7 dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 days"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 dagen"
           }
         }
       }
@@ -1394,6 +1554,22 @@
         }
       }
     },
+    "Alle toestellen met laatst gezien en vluchten van 30 dagen, met zoeken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All aircraft with last seen and 30 days of flights, with search"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle toestellen met laatst gezien en vluchten van 30 dagen, met zoeken"
+          }
+        }
+      }
+    },
     "Alleen Nederlands": {
       "localizations": {
         "en": {
@@ -1454,6 +1630,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alleen het ID uit je CookieYes-script (…/client_data/ID/script.js). Leeg = de eigen cookiemelding van de site."
+          }
+        }
+      }
+    },
+    "Alleen naar apparaten die deze soorten volgen (niets gekozen = iedereen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only to devices that follow these kinds (nothing chosen = everyone)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen naar apparaten die deze soorten volgen (niets gekozen = iedereen)"
           }
         }
       }
@@ -1922,6 +2114,22 @@
         }
       }
     },
+    "Apparaten met een zone": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devices with a zone"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apparaten met een zone"
+          }
+        }
+      }
+    },
     "Apple": {
       "localizations": {
         "en": {
@@ -1950,6 +2158,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apple + Android"
+          }
+        }
+      }
+    },
+    "Apple Kaarten (website)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Maps (website)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Kaarten (website)"
           }
         }
       }
@@ -2226,6 +2450,38 @@
         }
       }
     },
+    "Bekeken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekeken"
+          }
+        }
+      }
+    },
+    "Bekend bij 112Heli": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Known to 112Heli"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekend bij 112Heli"
+          }
+        }
+      }
+    },
     "Bekendr beheer": {
       "localizations": {
         "en": {
@@ -2350,6 +2606,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bereik (ongeveer)"
+          }
+        }
+      }
+    },
+    "Bereik: %lld apparaten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reach: %lld devices"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bereik: %lld apparaten"
+          }
+        }
+      }
+    },
+    "Bereik: …": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reach: …"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bereik: …"
           }
         }
       }
@@ -2866,6 +3154,22 @@
         }
       }
     },
+    "Bijzonder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Special"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bijzonder"
+          }
+        }
+      }
+    },
     "Bingr wordt Lifetime": {
       "localizations": {
         "en": {
@@ -3218,6 +3522,22 @@
         }
       }
     },
+    "Dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dag"
+          }
+        }
+      }
+    },
     "Dagelijkse check": {
       "localizations": {
         "en": {
@@ -3390,6 +3710,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "De gedeelde beheer-inlog. Je sessie (12 uur) wordt alleen op dit apparaat bewaard, in de sleutelhanger."
+          }
+        }
+      }
+    },
+    "De gedeelde beheer-inlog. Je sessie (30 dagen) wordt alleen op dit apparaat bewaard, in de sleutelhanger.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The shared admin sign-in. Your session (30 days) is only stored on this device, in the keychain."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De gedeelde beheer-inlog. Je sessie (30 dagen) wordt alleen op dit apparaat bewaard, in de sleutelhanger."
           }
         }
       }
@@ -3570,6 +3906,22 @@
         }
       }
     },
+    "Defensie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defence"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defensie"
+          }
+        }
+      }
+    },
     "Description EN": {
       "localizations": {
         "en": {
@@ -3614,6 +3966,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Deze maand %@"
+          }
+        }
+      }
+    },
+    "Deze melding verwijderen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this report?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze melding verwijderen?"
           }
         }
       }
@@ -3838,6 +4206,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dit lijkt geen Homey App Store-link."
+          }
+        }
+      }
+    },
+    "Dit pushbericht nu versturen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send this push message now?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit pushbericht nu versturen?"
           }
         }
       }
@@ -4290,6 +4674,22 @@
         }
       }
     },
+    "Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik en geschiedenis": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Own push message to all users or per kind of aircraft, with reach and history"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik en geschiedenis"
+          }
+        }
+      }
+    },
     "Eigen pushsysteem van BingrBeheer: tickets, antwoorden, builds en status. Per soort in Bingr → Instellingen.": {
       "localizations": {
         "en": {
@@ -4334,6 +4734,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eigen pushsysteem van PasrBeheer. Per soort in Pasr → Instellingen."
+          }
+        }
+      }
+    },
+    "Eigen zones": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Own zones"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigen zones"
           }
         }
       }
@@ -4766,6 +5182,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Foto en video"
+          }
+        }
+      }
+    },
+    "Gaat naar iPhone, iPad en Mac met meldingen aan, met het eigen 112Heli-geluid.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Goes to iPhone, iPad and Mac with notifications on, with the 112Heli sound."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gaat naar iPhone, iPad en Mac met meldingen aan, met het eigen 112Heli-geluid."
           }
         }
       }
@@ -5426,6 +5858,22 @@
         }
       }
     },
+    "Grote inzetten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Major incidents"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grote inzetten"
+          }
+        }
+      }
+    },
     "Haalt de dagrapporten opnieuw op bij App Store Connect (max. 365 dagen) en overschrijft die dagen. Elke dag gebeurt dit vanzelf voor de laatste 7 dagen.": {
       "localizations": {
         "en": {
@@ -5550,6 +5998,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Heropen"
+          }
+        }
+      }
+    },
+    "Heropenen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reopen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heropenen"
+          }
+        }
+      }
+    },
+    "Het 112Heli-beheer is nog niet ingesteld op de server.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "112Heli admin hasn't been set up on the server yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het 112Heli-beheer is nog niet ingesteld op de server."
           }
         }
       }
@@ -5858,6 +6338,22 @@
         }
       }
     },
+    "Iedereen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everyone"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iedereen"
+          }
+        }
+      }
+    },
     "In de app ziet de aanvrager 'Niet toegevoegd'.": {
       "localizations": {
         "en": {
@@ -5870,6 +6366,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "In de app ziet de aanvrager 'Niet toegevoegd'."
+          }
+        }
+      }
+    },
+    "In de lucht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In the air"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In de lucht"
           }
         }
       }
@@ -5934,6 +6446,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ingelogd"
+          }
+        }
+      }
+    },
+    "Ingesteld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set up"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingesteld"
           }
         }
       }
@@ -6882,6 +7410,22 @@
         }
       }
     },
+    "Kustwacht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coastguard"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kustwacht"
+          }
+        }
+      }
+    },
     "KvK-nummer": {
       "localizations": {
         "en": {
@@ -7202,6 +7746,22 @@
         }
       }
     },
+    "Lifeliner": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifeliner"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifeliner"
+          }
+        }
+      }
+    },
     "Lifestyle": {
       "localizations": {
         "en": {
@@ -7358,6 +7918,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Live"
+          }
+        }
+      }
+    },
+    "Live Activities": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live Activities"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live Activities"
           }
         }
       }
@@ -7650,6 +8226,22 @@
         }
       }
     },
+    "Mac: vanaf de tiende omgeving wissel je met ⌥⌘1, ⌥⌘2 …": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac: from the tenth environment on, switch with ⌥⌘1, ⌥⌘2 …"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac: vanaf de tiende omgeving wissel je met ⌥⌘1, ⌥⌘2 …"
+          }
+        }
+      }
+    },
     "Mail Bingr wordt Lifetime testen en versturen, en de herinnering": {
       "localizations": {
         "en": {
@@ -7730,6 +8322,22 @@
         }
       }
     },
+    "Marechaussee": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Royal Marechaussee"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marechaussee"
+          }
+        }
+      }
+    },
     "Meer": {
       "localizations": {
         "en": {
@@ -7774,6 +8382,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meldingen"
+          }
+        }
+      }
+    },
+    "Meldingen (%lld)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reports (%lld)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meldingen (%lld)"
           }
         }
       }
@@ -7854,6 +8478,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meldingen staan uit in de systeeminstellingen"
+          }
+        }
+      }
+    },
+    "Meldingen uit de app (toestel klopt niet of ontbreekt): opgelost, bekeken of verwijderen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reports from the app (aircraft wrong or missing): resolve, mark as seen or delete"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meldingen uit de app (toestel klopt niet of ontbreekt): opgelost, bekeken of verwijderen"
+          }
+        }
+      }
+    },
+    "Meldingen uit de app: \"Dit toestel klopt niet\" en \"Toestel ontbreekt\".": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reports from the app: \"This aircraft is wrong\" and \"Aircraft missing\"."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meldingen uit de app: \"Dit toestel klopt niet\" en \"Toestel ontbreekt\"."
           }
         }
       }
@@ -8290,6 +8946,22 @@
         }
       }
     },
+    "Niet ingesteld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not set up"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet ingesteld"
+          }
+        }
+      }
+    },
     "Niet tonen op de Engelse versie van de site": {
       "localizations": {
         "en": {
@@ -8350,6 +9022,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Niets gevonden om te controleren."
+          }
+        }
+      }
+    },
+    "Niets gevonden.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing found."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niets gevonden."
           }
         }
       }
@@ -8462,6 +9150,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuw project van een website"
+          }
+        }
+      }
+    },
+    "Nieuw pushbericht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New push message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw pushbericht"
           }
         }
       }
@@ -8642,6 +9346,22 @@
         }
       }
     },
+    "Nieuwe apparaten in deze periode: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New devices in this period: %lld"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe apparaten in deze periode: %lld"
+          }
+        }
+      }
+    },
     "Nieuwe apps": {
       "localizations": {
         "en": {
@@ -8734,6 +9454,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe meldingen (centraal)"
+          }
+        }
+      }
+    },
+    "Nieuwe omgeving 112Heli, met dezelfde beheer-inlog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New environment 112Heli, with the same admin sign-in"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe omgeving 112Heli, met dezelfde beheer-inlog"
           }
         }
       }
@@ -8914,6 +9650,22 @@
         }
       }
     },
+    "Nog geen apparaten met meldingen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No devices with notifications yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen apparaten met meldingen."
+          }
+        }
+      }
+    },
     "Nog geen berichten verstuurd.": {
       "localizations": {
         "en": {
@@ -9026,6 +9778,22 @@
         }
       }
     },
+    "Nog geen meldingen van gebruikers.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No reports from users yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen meldingen van gebruikers."
+          }
+        }
+      }
+    },
     "Nog geen nieuws.": {
       "localizations": {
         "en": {
@@ -9122,6 +9890,22 @@
         }
       }
     },
+    "Nog geen vluchten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No flights yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen vluchten."
+          }
+        }
+      }
+    },
     "Nog geen winkels toegevoegd via het beheer.": {
       "localizations": {
         "en": {
@@ -9182,6 +9966,70 @@
           "stringUnit": {
             "state": "translated",
             "value": "Noodpakket beheer"
+          }
+        }
+      }
+    },
+    "Nooit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Never"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nooit"
+          }
+        }
+      }
+    },
+    "Nooit gezien": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Never seen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nooit gezien"
+          }
+        }
+      }
+    },
+    "Nu gevolgd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Followed now"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu gevolgd"
+          }
+        }
+      }
+    },
+    "Nu in de lucht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In the air now"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu in de lucht"
           }
         }
       }
@@ -9634,6 +10482,22 @@
         }
       }
     },
+    "Ook op het web: 112heli.lrvdlinden.app/beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: 112heli.lrvdlinden.app/beheer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: 112heli.lrvdlinden.app/beheer"
+          }
+        }
+      }
+    },
     "Ook op het web: bekendr.lrvdlinden.app/beheer": {
       "localizations": {
         "en": {
@@ -9758,6 +10622,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Open Instellingen"
+          }
+        }
+      }
+    },
+    "Open meldingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open reports"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open meldingen"
           }
         }
       }
@@ -9950,6 +10830,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ophalen mislukt."
+          }
+        }
+      }
+    },
+    "Ophalen posities": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetching positions"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ophalen posities"
           }
         }
       }
@@ -10178,6 +11074,22 @@
         }
       }
     },
+    "Overzicht: toestellen in de lucht, vluchten per dag, grote inzetten, apparaten, zones en de status van de server": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overview: aircraft in the air, flights per day, major incidents, devices, zones and the server status"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overzicht: toestellen in de lucht, vluchten per dag, grote inzetten, apparaten, zones en de status van de server"
+          }
+        }
+      }
+    },
     "P2000 Apeldoorn heet nu A-Alerts, met het nieuwe icoon": {
       "localizations": {
         "en": {
@@ -10382,6 +11294,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Platformen / apparaten"
+          }
+        }
+      }
+    },
+    "Politie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Police"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Politie"
           }
         }
       }
@@ -10594,6 +11522,22 @@
         }
       }
     },
+    "Pushbericht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushbericht"
+          }
+        }
+      }
+    },
     "Pushmelding bij een nieuwe winkelaanvraag (schakelaar Winkel aangevraagd)": {
       "localizations": {
         "en": {
@@ -10658,6 +11602,22 @@
         }
       }
     },
+    "Pushmeldingen (APNs)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push notifications (APNs)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushmeldingen (APNs)"
+          }
+        }
+      }
+    },
     "Pushmeldingen in de app": {
       "localizations": {
         "en": {
@@ -10702,6 +11662,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reeksen Website en Apple in de grafiek en de knop Apple-omzet bijwerken"
+          }
+        }
+      }
+    },
+    "Regering": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Government"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regering"
           }
         }
       }
@@ -11202,6 +12178,22 @@
         }
       }
     },
+    "Status, toestellen, meldingen en push": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status, aircraft, reports and push"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status, toestellen, meldingen en push"
+          }
+        }
+      }
+    },
     "Store-check": {
       "localizations": {
         "en": {
@@ -11470,6 +12462,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Talen"
+          }
+        }
+      }
+    },
+    "Te veel pogingen. Probeer het over een kwartier opnieuw.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Too many attempts. Try again in fifteen minutes."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Te veel pogingen. Probeer het over een kwartier opnieuw."
           }
         }
       }
@@ -11746,6 +12754,22 @@
         }
       }
     },
+    "Titel (optioneel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Title (optional)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Titel (optioneel)"
+          }
+        }
+      }
+    },
     "Titel NL": {
       "localizations": {
         "en": {
@@ -11842,6 +12866,22 @@
         }
       }
     },
+    "Toestel ontbreekt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aircraft missing"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toestel ontbreekt"
+          }
+        }
+      }
+    },
     "Toestel zoeken": {
       "localizations": {
         "en": {
@@ -11870,6 +12910,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toestel-ID, bijv. 3F9A-12BC"
+          }
+        }
+      }
+    },
+    "Toestellen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aircraft"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toestellen"
           }
         }
       }
@@ -12210,6 +13266,22 @@
         }
       }
     },
+    "Uitloggen bij 112Heli?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign out of 112Heli?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitloggen bij 112Heli?"
+          }
+        }
+      }
+    },
     "Uitloggen bij Bekendr?": {
       "localizations": {
         "en": {
@@ -12382,6 +13454,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Van"
+          }
+        }
+      }
+    },
+    "Van gebruikers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From users"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Van gebruikers"
           }
         }
       }
@@ -12690,6 +13778,22 @@
         }
       }
     },
+    "Versies": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versions"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versies"
+          }
+        }
+      }
+    },
     "Versturen": {
       "localizations": {
         "en": {
@@ -12750,6 +13854,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verstuurd naar %lld iPhones en iPads; Android haalt het meestal binnen een kwartier op."
+          }
+        }
+      }
+    },
+    "Verstuurd naar %lld van %lld apparaten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent to %lld of %lld devices."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verstuurd naar %lld van %lld apparaten."
           }
         }
       }
@@ -12894,6 +14014,70 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verwijderen"
+          }
+        }
+      }
+    },
+    "Vluchten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flights"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vluchten"
+          }
+        }
+      }
+    },
+    "Vluchten per dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flights per day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vluchten per dag"
+          }
+        }
+      }
+    },
+    "Vluchten per soort (7 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flights per kind (7 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vluchten per soort (7 dagen)"
+          }
+        }
+      }
+    },
+    "Vluchten vandaag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flights today"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vluchten vandaag"
           }
         }
       }
@@ -13362,6 +14546,22 @@
         }
       }
     },
+    "Weerbeperking": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weather limit"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weerbeperking"
+          }
+        }
+      }
+    },
     "Weergave": {
       "localizations": {
         "en": {
@@ -13790,6 +14990,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zoek een gebruiker op met het toestel-ID uit de app (Instellingen, onder Disclaimer): toestel, appversie en pushinstellingen"
+          }
+        }
+      }
+    },
+    "Zoek op naam, registratie, roepnaam of hex": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search by name, registration, callsign or hex"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek op naam, registratie, roepnaam of hex"
           }
         }
       }
