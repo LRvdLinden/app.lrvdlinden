@@ -173,7 +173,8 @@
             "promo": {
                 "show": true,
                 "image": {
-                    "en": "img/promo-nl-lrvdlinden-aalerts-en.webp"
+                    "en": "img/promo-nl-lrvdlinden-aalerts-en.webp",
+                    "nl": "app-content/a-alerts/promo-nl.webp"
                 }
             },
             "languages": "NL",

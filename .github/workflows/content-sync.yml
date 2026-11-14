@@ -44,7 +44,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           pushed=0
           for i in 1 2 3 4; do
-            git add -A site/app-content site/apps.json
+            git add -A site/app-content site/apps.json logs/content-zip-index.json
             if git diff --cached --quiet; then echo "Geen wijzigingen."; exit 0; fi
             git commit -q -F content-sync-summary.md
             if git push -q origin HEAD:main; then pushed=1; break; fi

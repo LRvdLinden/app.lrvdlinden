@@ -1,7 +1,10 @@
 """Haalt per app de nieuwste content uit LRvdLinden/app.lrvdlinden.app-content voor de app-pagina's.
 
 Per app (map in de content-repo met dezelfde naam als de app):
-- screenshots (iPhone, NL en EN) uit de nieuwste map onder <App>/AppStore/<datum>/
+- screenshots (iPhone, NL en EN) uit de nieuwste map onder <App>/AppStore/<datum>/; staat er in de nieuwste map
+  iets niet (bijv. alleen teksten), dan uit de eerstvolgende oudere datum-map die het wel heeft
+- staan er in een datum-map alleen ZIP's, dan wordt in die ZIP's gekeken (de inhoudslijst wordt bewaard in
+  logs/content-zip-index.json, zodat een ZIP maar één keer hoeft te worden doorzocht)
 - de App Store-teksten (description.txt, promotional_text.txt) per taal
 - een deelafbeelding (OG) uit <App>/OG/<datum>/, anders wordt er een gemaakt met icoon, naam en ondertitel
 
@@ -21,6 +24,7 @@ import subprocess
 import sys
 import urllib.parse
 import urllib.request
+import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from appslug import content_key, norm  # noqa: E402
@@ -34,6 +38,9 @@ SITE = os.path.dirname(os.path.abspath(APPS_JSON))
 OUT = os.path.join(SITE, "app-content")
 FONTS = os.path.join(ROOT, "tools", "fonts")
 CONTENT_DIR = os.environ.get("CONTENT_DIR")
+ZIP_INDEX = os.path.join(ROOT, "logs", "content-zip-index.json")
+ZIPMAP = {}      # virtueel pad -> (zip-pad, pad in de zip)
+_ZIP_CACHE = {}  # zip-pad -> bytes (alleen tijdens deze run)
 MAX_SHOTS = 8
 SHOT_W = 540
 
@@ -75,7 +82,59 @@ def load_tree():
     return commit, {t["path"]: t["sha"] for t in tree.get("tree", []) if t.get("type") == "blob"}
 
 
+def expand_zips(commit, files):
+    """Datum-mappen met alleen ZIP's: de bestanden in die ZIP's toevoegen als virtuele paden <zip zonder .zip>/<pad>."""
+    try:
+        index = json.load(open(ZIP_INDEX, encoding="utf-8"))
+    except (OSError, ValueError):
+        index = {}
+    used = {}
+    by_dir = {}
+    for p in files:
+        m = re.match(r"^(.+/(?:AppStore|OG)/\d{4}-\d\d-\d\d[^/]*)/", p)
+        if m:
+            by_dir.setdefault(m.group(1), []).append(p)
+    for d, ps in by_dir.items():
+        if any(not p.lower().endswith(".zip") for p in ps):
+            continue  # er staat al uitgepakte content
+        for z in sorted(ps):
+            sha = files[z]
+            names = index.get(sha)
+            if names is None:
+                try:
+                    names = [n for n in zipfile.ZipFile(io.BytesIO(_zip_bytes(commit, z))).namelist()
+                             if not n.endswith("/") and "__MACOSX" not in n and not n.rsplit("/", 1)[-1].startswith(".")]
+                    print(f"ZIP doorzocht: {z} ({len(names)} bestanden)")
+                except Exception as e:  # noqa: BLE001
+                    print(f"::warning::ZIP niet te lezen: {z}: {e}")
+                    continue
+            used[sha] = names
+            stem = z[:-4]
+            for n in names:
+                vp = f"{stem}/{n}"
+                ZIPMAP[vp] = (z, n)
+                files[vp] = hashlib.sha1(f"{sha}:{n}".encode()).hexdigest()
+    if used != index:
+        os.makedirs(os.path.dirname(ZIP_INDEX), exist_ok=True)
+        with open(ZIP_INDEX, "w", encoding="utf-8") as f:
+            json.dump(used, f, ensure_ascii=False, indent=1, sort_keys=True)
+            f.write("\n")
+
+
+def _zip_bytes(commit, z):
+    if z not in _ZIP_CACHE:
+        _ZIP_CACHE[z] = _raw(commit, z)
+    return _ZIP_CACHE[z]
+
+
 def read_file(commit, path):
+    if path in ZIPMAP:
+        z, n = ZIPMAP[path]
+        return zipfile.ZipFile(io.BytesIO(_zip_bytes(commit, z))).read(n)
+    return _raw(commit, path)
+
+
+def _raw(commit, path):
     if CONTENT_DIR:
         with open(os.path.join(CONTENT_DIR, path), "rb") as f:
             return f.read()
@@ -106,6 +165,12 @@ def size_rank(d):
     return len(SIZE_PREF)
 
 
+def date_dirs(paths, prefix):
+    """Alle datum-submappen direct onder prefix, nieuwste eerst."""
+    subs = {p[len(prefix):].split("/", 1)[0] for p in paths if p.startswith(prefix) and "/" in p[len(prefix):]}
+    return sorted((s for s in subs if re.match(r"^\d{4}-\d\d-\d\d", s)), reverse=True)
+
+
 def latest_date_dir(paths, prefix):
     """Nieuwste submap (op naam, bijv. 2026-11-12 of 2026-11-11-2) direct onder prefix."""
     subs = {p[len(prefix):].split("/", 1)[0] for p in paths if p.startswith(prefix) and "/" in p[len(prefix):]}
@@ -117,11 +182,24 @@ def pick(files, folder):
     """Screenshots, teksten en OG voor één map in de content-repo."""
     res = {"shots": {}, "text": {}, "og": {}, "promo": {}}
     base = folder + "/AppStore/"
-    d = latest_date_dir(files, base)
-    if d:
-        root = base + d + "/"
+    for d in date_dirs(files, base):
+        part = pick_root(files, base + d + "/")
+        for k in ("shots", "text", "promo"):
+            for lg, v in part[k].items():
+                res[k].setdefault(lg, v)
+        if part["shots"] and "source" not in res:
+            res["source"] = (base + d)
+        if all(len(res[k]) == 2 for k in ("shots", "text", "promo")):
+            break
+    pick_og(files, folder, res)
+    return res
+
+
+def pick_root(files, root):
+    """Wat er in één datum-map staat."""
+    res = {"shots": {}, "text": {}, "promo": {}}
+    if True:
         in_root = [p for p in files if p.startswith(root)]
-        res["source"] = root.rstrip("/")
         # screenshots: per map groeperen
         dirs = {}
         for p in in_root:
@@ -180,7 +258,10 @@ def pick(files, folder):
             pick_ = (own or neutral)
             if pick_:
                 res["promo"][lg] = pick_[0][1]
-    # OG
+    return res
+
+
+def pick_og(files, folder, res):
     ob = folder + "/OG/"
     od = latest_date_dir(files, ob)
     if od:
@@ -191,7 +272,6 @@ def pick(files, folder):
                 res["og"][lg] = p
         if ogs and not res["og"]:
             res["og"]["nl"] = ogs[0]
-    return res
 
 
 # ---------- verwerken ----------
@@ -336,6 +416,7 @@ def main():
     data = json.load(open(APPS_JSON, encoding="utf-8"))
     apps = data.get("apps", [])
     commit, files = load_tree()
+    expand_zips(commit, files)
     folders = {}
     for p in files:
         top = p.split("/", 1)[0]
