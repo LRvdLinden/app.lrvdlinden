@@ -198,8 +198,31 @@ struct Heli112Overview: Decodable {
         var date: Date { BekendrStats.dayFormatter.date(from: dag) ?? .distantPast }
     }
 
+    /// Downloads from App Store Connect (30 days).
+    struct Downloads: Decodable {
+        let configured: Bool
+        let downloads: Int
+        let opnieuw: Int
+        let updates: Int
+        let perApparaat: [String: Int]
+        let laatsteDag: String?
+        let dagen: [Dag]
+
+        struct Dag: Decodable, Identifiable {
+            let dag: String
+            let iPhone: Int
+            let iPad: Int
+            let Mac: Int
+            let appleTV: Int
+            let overig: Int
+            var id: String { dag }
+            var date: Date { BekendrStats.dayFormatter.date(from: dag) ?? .distantPast }
+        }
+    }
+
     let status: Status
     let tellers: Tellers
+    let downloads: Downloads?
     let platforms: [Count]
     let versies: [Count]
     let perSoort: [Count]

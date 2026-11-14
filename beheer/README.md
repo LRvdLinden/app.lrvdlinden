@@ -300,6 +300,7 @@ gedeelde beheer-inlog (`BEHEER_APP_USER` / `BEHEER_APP_PASSWORD`, door de worker
 | Toestellen: alle bekende toestellen met soort, type, registratie, roepnaam, laatst gezien, in de lucht en vluchten (30 dagen), zoeken, openen op de site | ✓ | ✓ |
 | Meldingen uit de app (toestel klopt niet / ontbreekt): opgelost, bekeken, heropenen, verwijderen | ✓ | ✓ |
 | Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik vooraf en geschiedenis (verstuurd / bereik) | ✓ | ✓ |
+| Downloads uit App Store Connect (verkoopoverzichten, door de worker elk uur opgehaald met `KEY_ID_`/`ISSUER_ID_APPSTORE_CONNECT`, `APPSTORE_CONNECT_P8`, `VENDOR_APPSTORE_CONNECT`): totaal, per apparaat (iPhone, iPad, Mac, Apple TV), opnieuw gedownload, updates en grafiek per dag (30 dagen) | ✓ (Swift Charts) | ✓ |
 | Pushmelding naar LRbeheer | nog niet (voorstel: melding bij een nieuwe melding uit de app en bij een storing van het ophalen van posities > 10 min) | – |
 
 ## Standaarden van LRvdLinden-apps

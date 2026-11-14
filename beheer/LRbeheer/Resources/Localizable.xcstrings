@@ -2034,6 +2034,22 @@
         }
       }
     },
+    "App Store Connect is nog niet gekoppeld. Start 112Heli push in app.lrvdlinden.secrets.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store Connect isn't connected yet. Run 112Heli push in app.lrvdlinden.secrets."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store Connect is nog niet gekoppeld. Start 112Heli push in app.lrvdlinden.secrets."
+          }
+        }
+      }
+    },
     "App Store Connect is nog niet gekoppeld. Zet APPSTORE_CONNECT_P8 en VENDOR_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push.": {
       "localizations": {
         "en": {
@@ -2062,6 +2078,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "App Store Connect is nog niet gekoppeld; alleen Android wordt geteld. Zet APPSTORE_CONNECT_P8 en VENDOR_APPSTORE_CONNECT in app.lrvdlinden.secrets en start LRbeheer push."
+          }
+        }
+      }
+    },
+    "App Store Connect niet gekoppeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store Connect not connected"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App Store Connect niet gekoppeld"
           }
         }
       }
@@ -4398,6 +4430,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Downloads per dag"
+          }
+        }
+      }
+    },
+    "Downloads van 112Heli uit App Store Connect: per apparaat (ook Mac en Apple TV) en per dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "112Heli downloads from App Store Connect: per device (Mac and Apple TV too) and per day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads van 112Heli uit App Store Connect: per apparaat (ook Mac en Apple TV) en per dag"
           }
         }
       }

@@ -963,5 +963,8 @@
 "Meldingen uit de app (toestel klopt niet of ontbreekt): opgelost, bekeken of verwijderen": "Reports from the app (aircraft wrong or missing): resolve, mark as seen or delete",
 "Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik en geschiedenis": "Own push message to all users or per kind of aircraft, with reach and history",
 "Ook op het web: 112heli.lrvdlinden.app/beheer": "Also on the web: 112heli.lrvdlinden.app/beheer",
-"Mac: vanaf de tiende omgeving wissel je met ⌥⌘1, ⌥⌘2 …": "Mac: from the tenth environment on, switch with ⌥⌘1, ⌥⌘2 …"
+"Mac: vanaf de tiende omgeving wissel je met ⌥⌘1, ⌥⌘2 …": "Mac: from the tenth environment on, switch with ⌥⌘1, ⌥⌘2 …",
+"App Store Connect niet gekoppeld": "App Store Connect not connected",
+"App Store Connect is nog niet gekoppeld. Start 112Heli push in app.lrvdlinden.secrets.": "App Store Connect isn't connected yet. Run 112Heli push in app.lrvdlinden.secrets.",
+"Downloads van 112Heli uit App Store Connect: per apparaat (ook Mac en Apple TV) en per dag": "112Heli downloads from App Store Connect: per device (Mac and Apple TV too) and per day"
 }

@@ -112,6 +112,7 @@ struct WhatsNewView: View {
                     Label("Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik en geschiedenis", systemImage: "paperplane")
                     Label("Ook op het web: 112heli.lrvdlinden.app/beheer", systemImage: "safari")
                     Label("Mac: vanaf de tiende omgeving wissel je met ⌥⌘1, ⌥⌘2 …", systemImage: "command")
+                    Label("Downloads van 112Heli uit App Store Connect: per apparaat (ook Mac en Apple TV) en per dag", systemImage: "arrow.down.circle")
                 }
                 Section("Pairr") {
                     Label("Nieuwe omgeving Pairr, met dezelfde beheer-inlog", systemImage: "app.badge")

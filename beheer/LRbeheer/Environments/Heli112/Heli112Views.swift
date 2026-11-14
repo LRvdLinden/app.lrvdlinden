@@ -137,7 +137,13 @@ struct Heli112OverviewView: View {
                         note: "Bekend bij 112Heli")
             BekendrTile(title: "Open meldingen", value: t.openMeldingen, symbol: "exclamationmark.bubble.fill", color: Theme.build,
                         note: "Van gebruikers")
+            if let d = overview.downloads {
+                BekendrTile(title: "Downloads", value: d.downloads, symbol: "arrow.down.circle.fill", color: Heli112Palette.brand,
+                            note: d.configured ? "Eerste downloads" : "App Store Connect niet gekoppeld")
+            }
         }
+
+        if let d = overview.downloads { Heli112DownloadsCard(downloads: d) }
 
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -198,6 +204,68 @@ struct Heli112OverviewView: View {
             if !overview.versies.isEmpty {
                 Text("Versies").font(.subheadline.weight(.semibold)).padding(.top, 6)
                 ForEach(overview.versies) { r in LabeledContent(r.label, value: r.n.formatted()) }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .lrCard()
+    }
+}
+
+/// Downloads per day (30 days) per device, from App Store Connect.
+struct Heli112DownloadsCard: View {
+    let downloads: Heli112Overview.Downloads
+
+    private struct Point: Identifiable {
+        let id = UUID()
+        let date: Date
+        let device: String
+        let value: Int
+    }
+
+    private var points: [Point] {
+        downloads.dagen.flatMap { d in
+            [Point(date: d.date, device: "iPhone", value: d.iPhone), Point(date: d.date, device: "iPad", value: d.iPad),
+             Point(date: d.date, device: "Mac", value: d.Mac), Point(date: d.date, device: "Apple TV", value: d.appleTV),
+             Point(date: d.date, device: String(localized: "Overig"), value: d.overig)]
+        }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text("Downloads per dag").font(Theme.display(.headline))
+                Spacer()
+                Text("30 dagen").font(.caption).foregroundStyle(.secondary)
+            }
+            if !downloads.configured {
+                Label("App Store Connect is nog niet gekoppeld. Start 112Heli push in app.lrvdlinden.secrets.", systemImage: "info.circle")
+                    .font(.footnote)
+            }
+            if downloads.dagen.allSatisfy({ $0.iPhone + $0.iPad + $0.Mac + $0.appleTV + $0.overig == 0 }) {
+                Text("Nog geen downloads in de afgelopen 30 dagen. Apple komt een dag later binnen.")
+                    .font(.footnote).foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, minHeight: 100)
+            } else {
+                Chart(points) { p in
+                    BarMark(x: .value("Dag", p.date, unit: .day), y: .value("Downloads", p.value))
+                        .foregroundStyle(by: .value("Apparaat", p.device))
+                }
+                .chartForegroundStyleScale([
+                    "iPhone": PairrPalette.iPhone, "iPad": PairrPalette.iPad, "Mac": PairrPalette.mac,
+                    "Apple TV": Theme.build, String(localized: "Overig"): PairrPalette.other,
+                ])
+                .chartXAxis { AxisMarks(values: .stride(by: .day, count: 7)) { _ in AxisGridLine(); AxisValueLabel(format: .dateTime.day().month(.abbreviated)) } }
+                .chartLegend(position: .bottom)
+                .frame(height: 220)
+            }
+            ForEach(downloads.perApparaat.sorted { $0.value > $1.value }, id: \.key) { k, v in
+                LabeledContent(k, value: v.formatted())
+            }
+            LabeledContent("Opnieuw gedownload", value: downloads.opnieuw.formatted())
+            LabeledContent("Updates", value: downloads.updates.formatted())
+            if let d = downloads.laatsteDag.flatMap({ BekendrStats.dayFormatter.date(from: $0) }) {
+                Text("Laatste dag van App Store Connect: \(d.formatted(date: .abbreviated, time: .omitted))")
+                    .font(.caption).foregroundStyle(.secondary)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
