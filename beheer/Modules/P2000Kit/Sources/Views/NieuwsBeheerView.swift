@@ -78,6 +78,7 @@ enum NieuwsStijl {
         case "burgernet": "Burgernet"
         case "amber": "AMBER Alert"
         case "vermistkind": "Vermist Kind"
+        case "vnog": "VNOG"
         case "nlalert": "NL-Alert"
         case "knmi": "KNMI"
         case "112nieuws": "112 Nieuws"

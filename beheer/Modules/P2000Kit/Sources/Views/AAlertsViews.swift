@@ -10,6 +10,9 @@ struct AAlertsOverview: Decodable {
         let laatstOk: String?
         let laatsteFout: String?
         let storing: Bool
+        /// VNOG: de bron kan in het beheer aan en uit.
+        var schakelbaar: Bool? = nil
+        var aan: Bool? = nil
     }
     struct Heli: Decodable, Identifiable {
         let naam: String
@@ -22,7 +25,7 @@ struct AAlertsOverview: Decodable {
     struct Telling: Decodable { let actief: Int; let week: Int }
     struct Waarschuwingen: Decodable { let perBron: [String: Telling]; let verborgen: Int }
     struct Knmi: Decodable { let yellow: Int; let orange: Int; let red: Int }
-    struct Wil: Decodable { let nlalert: Int; let burgernet: Int; let knmi: Knmi }
+    struct Wil: Decodable { let nlalert: Int; let burgernet: Int; let knmi: Knmi; var vnog: Int? = nil }
     struct Plaats: Decodable, Identifiable { let plaats: String; let n: Int; var id: String { plaats } }
     struct Profielen: Decodable {
         let pushToestellen: Int
@@ -55,6 +58,13 @@ struct AdminWaarschuwing: Codable, Identifiable, Hashable {
     let link: String?
     var verborgen: Bool
     var handmatig_beeindigd: Bool
+    /// VNOG: officiële GRIP, de plek en waar die vandaan komt ("p2000", "straat" of "beheer"), en het gekoppelde P2000-incident.
+    var grip: Int? = nil
+    var lat: Double? = nil
+    var lon: Double? = nil
+    var straat: String? = nil
+    var incident: String? = nil
+    var plek: String? = nil
 
     var bronNaam: String { WaarschuwingStijl.naam(bron) }
     var kop: String {
@@ -62,14 +72,15 @@ struct AdminWaarschuwing: Codable, Identifiable, Hashable {
         if bron == "burgernet" { return "Burgernet · \(plaats ?? "Apeldoorn")" }
         if bron == "amber" { return "AMBER Alert" }
         if bron == "vermistkind" { return "Vermist Kind Alert · \(plaats ?? "Apeldoorn")" }
+        if bron == "vnog" { return ["VNOG", grip.map { "GRIP \($0)" }, plaats].compactMap { $0 }.joined(separator: " · ") }
         return "NL-Alert"
     }
 }
 
 enum WaarschuwingStijl {
-    static let bronnen = ["nlalert", "burgernet", "knmi", "amber", "vermistkind"]
+    static let bronnen = ["nlalert", "burgernet", "knmi", "amber", "vermistkind", "vnog"]
     static func naam(_ b: String) -> String {
-        switch b { case "nlalert": "NL-Alert"; case "burgernet": "Burgernet"; case "knmi": "KNMI"; case "amber": "AMBER Alert"; case "vermistkind": "Vermist Kind Alert"; case "kind": "AMBER Alert / Vermist Kind (Burgernet)"; case "helikopters": "Helikopters (adsb.lol)"; case "verkeer": "Verkeer (NDW, Koyeb)"; default: b }
+        switch b { case "nlalert": "NL-Alert"; case "burgernet": "Burgernet"; case "knmi": "KNMI"; case "amber": "AMBER Alert"; case "vermistkind": "Vermist Kind Alert"; case "vnog": "VNOG-incidenten"; case "kind": "AMBER Alert / Vermist Kind (Burgernet)"; case "helikopters": "Helikopters (adsb.lol)"; case "verkeer": "Verkeer (NDW, Koyeb)"; default: b }
     }
     static func code(_ n: String?) -> String {
         switch n { case "yellow": "Code geel"; case "orange": "Code oranje"; case "red": "Code rood"; default: "Code" }
@@ -80,12 +91,13 @@ enum WaarschuwingStijl {
         case "burgernet": return Color(red: 0, green: 0.4, blue: 0.69)
         case "amber", "kind": return Color(red: 0.93, green: 0.43, blue: 0.14)
         case "vermistkind": return Color(red: 0.11, green: 0.15, blue: 0.37)
+        case "vnog": return Color(red: 0.28, green: 0.15, blue: 0.50)
         default:
             switch niveau { case "red": return .red; case "orange": return .orange; default: return Color(red: 1, green: 0.84, blue: 0) }
         }
     }
     static func symbol(_ b: String) -> String {
-        switch b { case "nlalert": "exclamationmark.triangle.fill"; case "burgernet": "megaphone.fill"; case "amber", "vermistkind", "kind": "figure.child"; case "helikopters": "airplane"; default: "cloud.sun.rain.fill" }
+        switch b { case "nlalert": "exclamationmark.triangle.fill"; case "burgernet": "megaphone.fill"; case "amber", "vermistkind", "kind": "figure.child"; case "vnog": "exclamationmark.shield.fill"; case "helikopters": "airplane"; default: "cloud.sun.rain.fill" }
     }
     static func status(_ s: String) -> String {
         switch s { case "actief": "Actief"; case "verwacht": "Verwacht"; case "beeindigd": "Beëindigd"; default: s }
@@ -126,7 +138,14 @@ extension BeheerAPI {
         return try await getJSON("v1/beheer/waarschuwingen", query: q, token: token)
     }
 
-    struct WaarschuwingUpdate: Encodable { var verborgen: Bool?; var beeindigd: Bool? }
+    /// VNOG: melding (guid van een P2000-melding), lat + lon (zelf een punt) of plek ("auto" of "geen") corrigeert de plek.
+    struct WaarschuwingUpdate: Encodable { var verborgen: Bool?; var beeindigd: Bool?; var melding: String? = nil; var lat: Double? = nil; var lon: Double? = nil; var plek: String? = nil }
+    struct BronSchakelaar: Codable { var aan: Bool }
+
+    /// Een bron aan of uit (nu alleen VNOG).
+    func setBron(_ bron: String, aan: Bool, token: String) async throws -> BronSchakelaar {
+        try await sendJSON("POST", "v1/beheer/bronnen/\(bron)", body: BronSchakelaar(aan: aan), token: token)
+    }
 
     func updateWaarschuwing(_ id: String, _ change: WaarschuwingUpdate, token: String) async throws -> AdminWaarschuwing {
         try await sendJSON("PATCH", "v1/beheer/waarschuwingen/\(id)", body: change, token: token)
@@ -137,6 +156,8 @@ extension BeheerAPI {
 
 struct AAlertsDashboardCards: View {
     let a: AAlertsOverview
+    @Environment(Session.self) private var session
+    @State private var vnogAan: Bool?
 
     var body: some View {
         bronnenCard
@@ -147,11 +168,23 @@ struct AAlertsDashboardCards: View {
 
     private var bronnenCard: some View {
         Card(title: "A-Alerts-bronnen", icon: "antenna.radiowaves.left.and.right") {
-            ForEach(["nlalert", "burgernet", "knmi", "kind", "verkeer", "helikopters"], id: \.self) { key in
+            ForEach(["nlalert", "burgernet", "knmi", "kind", "vnog", "verkeer", "helikopters"], id: \.self) { key in
                 if let b = a.bronnen[key] {
                     StatusRow(ok: !b.storing, title: WaarschuwingStijl.naam(key),
                               detail: b.storing ? (b.laatsteFout ?? "geen gegevens") : "\(Fmt.relative(b.laatstOk)) · \(b.laatsteStatus ?? "")")
                 }
+            }
+            if let v = a.bronnen["vnog"], v.schakelbaar == true {
+                Toggle("VNOG-incidenten ophalen", isOn: Binding(get: { vnogAan ?? v.aan ?? true }, set: { nieuw in
+                    let oud = vnogAan ?? v.aan ?? true
+                    vnogAan = nieuw
+                    Task {
+                        do { _ = try await session.call { try await BeheerAPI.shared.setBron("vnog", aan: nieuw, token: $0) } }
+                        catch { vnogAan = oud }
+                    }
+                }))
+                Text("Uit: er wordt niets meer opgehaald bij VNOG. Wat er al staat blijft staan.")
+                    .font(.caption).foregroundStyle(.secondary)
             }
             Text("Storing = langer dan 30 minuten geen gegevens. Je krijgt dan een pushmelding als 'Storing bronnen' aan staat.")
                 .font(.caption).foregroundStyle(.secondary)
@@ -216,6 +249,7 @@ struct AAlertsDashboardCards: View {
                 Divider()
                 LegendRow(color: WaarschuwingStijl.color("nlalert"), title: "Wil NL-Alert", value: p.waarschuwingen.nlalert)
                 LegendRow(color: WaarschuwingStijl.color("burgernet"), title: "Wil Burgernet", value: p.waarschuwingen.burgernet)
+                LegendRow(color: WaarschuwingStijl.color("vnog"), title: "Wil VNOG-incidenten", value: p.waarschuwingen.vnog ?? 0)
                 LegendRow(color: .orange, title: "Wil KNMI geel / oranje / rood",
                           value: p.waarschuwingen.knmi.yellow + p.waarschuwingen.knmi.orange + p.waarschuwingen.knmi.red)
                     .help("\(p.waarschuwingen.knmi.yellow) / \(p.waarschuwingen.knmi.orange) / \(p.waarschuwingen.knmi.red)")
@@ -338,6 +372,14 @@ struct WaarschuwingBeheerView: View {
     var onChange: (AdminWaarschuwing) -> Void
     @State private var error: String?
     @State private var busy = false
+    @State private var meldingGuid = ""
+    @State private var punt = ""
+
+    private var plekTekst: String {
+        guard let lat = item.lat, let lon = item.lon else { return "Geen marker" }
+        let bron = item.plek == "p2000" ? "van het gekoppelde P2000-incident" : item.plek == "beheer" ? "door het beheer gezet" : "midden van de straat"
+        return String(format: "%.5f, %.5f · %@", lat, lon, bron)
+    }
 
     var body: some View {
         Form {
@@ -355,6 +397,33 @@ struct WaarschuwingBeheerView: View {
             Section("Bericht") {
                 Text(item.titel ?? "–").font(.headline)
                 if let t = item.tekst, t != item.titel { Text(t).font(.callout).textSelection(.enabled) }
+            }
+            if item.bron == "vnog" {
+                Section {
+                    LabeledContent("Nu", value: plekTekst)
+                    LabeledContent("Straat volgens VNOG", value: item.straat ?? "niet genoemd")
+                    if let i = item.incident { LabeledContent("P2000-incident", value: i) }
+                    if let g = item.grip { LabeledContent("GRIP", value: "\(g)") }
+                    HStack {
+                        TextField("Guid van een P2000-melding", text: $meldingGuid).autocorrectionDisabled()
+                        Button("Koppel") { let g = meldingGuid.trimmingCharacters(in: .whitespaces); Task { await change(.init(melding: g)) } }
+                            .disabled(meldingGuid.trimmingCharacters(in: .whitespaces).count < 8)
+                    }
+                    HStack {
+                        TextField("52.2112, 5.9699", text: $punt).autocorrectionDisabled()
+                        Button("Zet punt") {
+                            let d = punt.split(whereSeparator: { ",; ".contains($0) }).compactMap { Double($0) }
+                            if d.count == 2 { Task { await change(.init(lat: d[0], lon: d[1])) } } else { error = "Vul een punt in als 52.2112, 5.9699" }
+                        }
+                    }
+                    Button("Geen marker tonen") { Task { await change(.init(plek: "geen")) } }
+                    Button("Terug naar automatisch") { Task { await change(.init(plek: "auto")) } }
+                } header: {
+                    Text("Plek op de kaart")
+                } footer: {
+                    Text("VNOG geeft geen adres. De server zoekt het P2000-incident in de genoemde straat en neemt die plek; anders het midden van de straat. Hier zet je het recht als dat niet klopt.")
+                }
+                .disabled(busy)
             }
             Section {
                 Toggle("Verbergen in apps en website", isOn: Binding(get: { item.verborgen }, set: { v in Task { await change(.init(verborgen: v)) } }))
