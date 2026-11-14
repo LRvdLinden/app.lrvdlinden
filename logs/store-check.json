@@ -1,6 +1,220 @@
 {
  "runs": [
   {
+   "id": "43599720090",
+   "time": "2026-11-14T13:29:19+00:00",
+   "mode": "alles",
+   "trigger": "schedule",
+   "changed": false,
+   "lines": [],
+   "checked": [
+    {
+     "app": "bekendr",
+     "store": "App Store",
+     "version": "1.0.0",
+     "date": "2026-11-11",
+     "changed": false
+    },
+    {
+     "app": "Pasr",
+     "store": "App Store",
+     "version": "1.0.0",
+     "date": "2026-11-08",
+     "changed": false
+    },
+    {
+     "app": "Weekdot",
+     "store": "App Store",
+     "version": "1.0.4",
+     "date": "2026-11-11",
+     "changed": false
+    },
+    {
+     "app": "Bingr",
+     "store": "App Store",
+     "version": "1.0.6",
+     "date": "2026-11-14",
+     "changed": false
+    },
+    {
+     "app": "HealthSync",
+     "store": "App Store",
+     "version": "1.0.2",
+     "date": "2026-11-02",
+     "changed": false
+    },
+    {
+     "app": "DevTools",
+     "store": "App Store",
+     "version": "1.0.2",
+     "date": "2026-11-02",
+     "changed": false
+    },
+    {
+     "app": "Samen Zuidbroek",
+     "store": "App Store",
+     "version": "1.1.1",
+     "date": "2025-10-01",
+     "changed": false
+    },
+    {
+     "app": "@ThePark",
+     "store": "App Store",
+     "version": "1.0.1",
+     "date": "2025-10-20",
+     "changed": false
+    },
+    {
+     "app": "Cable Maps",
+     "store": "App Store",
+     "version": "2.0.0",
+     "date": "2025-01-05",
+     "changed": false
+    },
+    {
+     "app": "TechInside",
+     "store": "App Store",
+     "version": "1.0.0",
+     "date": "2025-01-22",
+     "changed": false
+    },
+    {
+     "app": "VlagDagen",
+     "store": "App Store",
+     "version": "2.0.1",
+     "date": "2026-11-02",
+     "changed": false
+    },
+    {
+     "app": "VlagDagen BE",
+     "store": "App Store",
+     "version": "1.0.0",
+     "date": "2025-01-07",
+     "changed": false
+    },
+    {
+     "app": "Simple Chess",
+     "store": "App Store",
+     "version": "3.0.1",
+     "date": "2026-11-02",
+     "changed": false
+    },
+    {
+     "app": "Weekdot",
+     "store": "Homey",
+     "version": "1.0.4",
+     "test": "1.0.6",
+     "changed": false
+    },
+    {
+     "app": "App Store Connect",
+     "store": "Homey",
+     "version": "1.1.1",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "P2000",
+     "store": "Homey",
+     "version": "6.2.6",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "NL-Alert",
+     "store": "Homey",
+     "version": "1.0.4",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "Burgernet",
+     "store": "Homey",
+     "version": "2.0.0",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "Vermiste personen",
+     "store": "Homey",
+     "version": "2.0.0",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "Lifeliner",
+     "store": "Homey",
+     "version": "6.1.2",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "KNMI",
+     "store": "Homey",
+     "version": "4.3.5",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "KMI",
+     "store": "Homey",
+     "version": "2.2.1",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "PostNL",
+     "store": "Homey",
+     "version": "1.3.0",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "Verjaardagen",
+     "store": "Homey",
+     "version": "2.1.6",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "Custom Logic",
+     "store": "Homey",
+     "version": "2.0.3",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "RSS Feed Reader",
+     "store": "Homey",
+     "version": "1.1.3",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "Apple Health",
+     "store": "Homey",
+     "version": "1.0.4",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "HYXI Cloud",
+     "store": "Homey",
+     "version": "1.1.5",
+     "test": "",
+     "changed": false
+    },
+    {
+     "app": "Hyves",
+     "store": "Homey",
+     "version": "1.0.5",
+     "test": "",
+     "changed": false
+    }
+   ],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/43599720090"
+  },
+  {
    "id": "43595709886",
    "time": "2026-11-14T12:39:46+00:00",
    "mode": "bijwerken",
