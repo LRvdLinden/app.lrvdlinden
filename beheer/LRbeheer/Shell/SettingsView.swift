@@ -110,6 +110,7 @@ struct WhatsNewView: View {
                     Label("Alle toestellen met laatst gezien en vluchten van 30 dagen, met zoeken", systemImage: "airplane")
                     Label("Meldingen uit de app (toestel klopt niet of ontbreekt): opgelost, bekeken of verwijderen", systemImage: "exclamationmark.bubble")
                     Label("Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik en geschiedenis", systemImage: "paperplane")
+                    Label("Pushlog: elke pushmelding van de laatste 7 dagen met het antwoord van Apple (aangenomen of geweigerd)", systemImage: "list.bullet.rectangle")
                     Label("Ook op het web: 112heli.lrvdlinden.app/beheer", systemImage: "safari")
                     Label("Mac: vanaf de tiende omgeving wissel je met ⌥⌘1, ⌥⌘2 …", systemImage: "command")
                     Label("Downloads van 112Heli uit App Store Connect: per apparaat (ook Mac en Apple TV) en per dag", systemImage: "arrow.down.circle")

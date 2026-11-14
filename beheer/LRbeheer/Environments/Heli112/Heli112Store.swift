@@ -37,6 +37,7 @@ final class Heli112Store {
     private(set) var aircraft: [Heli112Aircraft] = []
     private(set) var reports: [Heli112Report] = []
     private(set) var messages: [Heli112Message] = []
+    private(set) var pushLog: Heli112PushLog?
     private(set) var loading = false
     var error: String?
 
@@ -69,6 +70,7 @@ final class Heli112Store {
         aircraft = []
         reports = []
         messages = []
+        pushLog = nil
     }
 
     // MARK: laden
@@ -90,6 +92,7 @@ final class Heli112Store {
             aircraft = al.toestellen
             reports = rl.reports
             messages = ml.berichten
+            pushLog = try? await get("/v1/beheer/pushlog") as Heli112PushLog
             error = nil
         } catch Failure.unauthorized {
             signOut()
@@ -295,6 +298,45 @@ struct Heli112Message: Decodable, Identifiable {
 }
 
 struct Heli112MessageList: Decodable { let berichten: [Heli112Message] }
+
+/// Elke pushmelding van de laatste 7 dagen met het antwoord van Apple.
+struct Heli112PushLog: Decodable {
+    let ok24u: Int
+    let fout24u: Int
+    let meldingen: [Entry]
+
+    struct Entry: Decodable, Identifiable {
+        let id: Int
+        let at: Int
+        let kind: String?
+        let titel: String?
+        let naam: String?
+        let tokenEnd: String?
+        let environment: String?
+        let status: Int?
+        let reason: String?
+        let ok: Bool
+        var date: Date { Date(timeIntervalSince1970: TimeInterval(at)) }
+
+        private enum CodingKeys: String, CodingKey {
+            case id, at, kind, titel, naam, environment, status, reason, ok
+            case tokenEnd = "token_end"
+        }
+    }
+
+    static func kindName(_ k: String?) -> String {
+        switch k {
+        case "takeoff": String(localized: "Opstijgen")
+        case "landing": String(localized: "Landing")
+        case "callsign": String(localized: "Roepnaam")
+        case "incident": String(localized: "Grote inzet")
+        case "zone": String(localized: "Zone")
+        case "bericht": String(localized: "Pushbericht")
+        case "test": String(localized: "Testmelding")
+        default: k ?? "–"
+        }
+    }
+}
 
 /// Soorten toestellen, zoals in de app (voor pushberichten per soort).
 enum Heli112Soort {

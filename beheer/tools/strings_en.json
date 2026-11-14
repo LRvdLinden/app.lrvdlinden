@@ -966,5 +966,20 @@
 "Mac: vanaf de tiende omgeving wissel je met ⌥⌘1, ⌥⌘2 …": "Mac: from the tenth environment on, switch with ⌥⌘1, ⌥⌘2 …",
 "App Store Connect niet gekoppeld": "App Store Connect not connected",
 "App Store Connect is nog niet gekoppeld. Start 112Heli push in app.lrvdlinden.secrets.": "App Store Connect isn't connected yet. Run 112Heli push in app.lrvdlinden.secrets.",
-"Downloads van 112Heli uit App Store Connect: per apparaat (ook Mac en Apple TV) en per dag": "112Heli downloads from App Store Connect: per device (Mac and Apple TV too) and per day"
+"Downloads van 112Heli uit App Store Connect: per apparaat (ook Mac en Apple TV) en per dag": "112Heli downloads from App Store Connect: per device (Mac and Apple TV too) and per day",
+"%lld aangenomen": "%lld accepted",
+"%lld geweigerd": "%lld refused",
+"Aangenomen": "Accepted",
+"Elke melding die naar Apple ging, met het antwoord van Apple. We bewaren 7 dagen.": "Every notification sent to Apple, with Apple's answer. Kept for 7 days.",
+"Grote inzet": "Major incident",
+"Landing": "Landing",
+"Nog geen pushmeldingen verstuurd sinds de pushlog bestaat.": "No push notifications sent since the push log started.",
+"Opstijgen": "Takeoff",
+"Pushlog": "Push log",
+"Pushlog niet beschikbaar": "Push log not available",
+"Pushlog: elke pushmelding van de laatste 7 dagen met het antwoord van Apple (aangenomen of geweigerd)": "Push log: every push notification of the last 7 days with Apple's answer (accepted or refused)",
+"Roepnaam": "Callsign",
+"Testmelding": "Test notification",
+"Trek omlaag om opnieuw te laden.": "Pull down to reload.",
+"Zone": "Zone"
 }

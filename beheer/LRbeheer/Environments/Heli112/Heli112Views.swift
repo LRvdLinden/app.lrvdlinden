@@ -33,13 +33,14 @@ struct Heli112Main: View {
     @Environment(\.openURL) private var openURL
 
     enum Section: String, CaseIterable, Identifiable {
-        case overview, aircraft, reports, push
+        case overview, aircraft, reports, pushlog, push
         var id: String { rawValue }
         var title: LocalizedStringKey {
             switch self {
             case .overview: "Overzicht"
             case .aircraft: "Toestellen"
             case .reports: "Meldingen"
+            case .pushlog: "Pushlog"
             case .push: "Pushbericht"
             }
         }
@@ -72,6 +73,7 @@ struct Heli112Main: View {
                         case .overview: Heli112OverviewView(overview: o)
                         case .aircraft: Heli112AircraftView(aircraft: store.aircraft)
                         case .reports: Heli112ReportsView(store: store)
+                        case .pushlog: Heli112PushLogView(log: store.pushLog)
                         case .push: Heli112PushView(store: store)
                         }
                     } else if store.loading {
@@ -421,6 +423,57 @@ struct Heli112StatusTag: View {
         Text(verbatim: status).font(.caption2.weight(.bold)).foregroundStyle(.white)
             .padding(.horizontal, 7).padding(.vertical, 2)
             .background(color, in: Capsule())
+    }
+}
+
+// MARK: pushlog
+
+struct Heli112PushLogView: View {
+    let log: Heli112PushLog?
+
+    var body: some View {
+        if let log {
+            HStack(spacing: 12) {
+                Label("\(log.ok24u) aangenomen", systemImage: "checkmark.circle.fill").foregroundStyle(Theme.good)
+                Label("\(log.fout24u) geweigerd", systemImage: "xmark.circle.fill").foregroundStyle(log.fout24u > 0 ? Theme.bad : .secondary)
+            }
+            .font(.subheadline.weight(.semibold))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .lrCard()
+
+            VStack(alignment: .leading, spacing: 0) {
+                if log.meldingen.isEmpty {
+                    Text("Nog geen pushmeldingen verstuurd sinds de pushlog bestaat.").font(.subheadline).foregroundStyle(.secondary).padding(.vertical, 8)
+                }
+                ForEach(log.meldingen) { m in
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack(alignment: .firstTextBaseline) {
+                            Text(verbatim: m.titel ?? "–").font(.subheadline)
+                            Spacer()
+                            if m.ok {
+                                Text("Aangenomen").font(.caption.weight(.semibold)).foregroundStyle(Theme.good)
+                            } else {
+                                Text(verbatim: m.reason ?? (m.status.map { "HTTP \($0)" } ?? "–")).font(.caption.weight(.semibold)).foregroundStyle(Theme.bad)
+                            }
+                        }
+                        Text(verbatim: [m.date.formatted(date: .abbreviated, time: .shortened), Heli112PushLog.kindName(m.kind),
+                                        m.tokenEnd.map { "…" + $0 }, m.environment == "sandbox" ? "sandbox" : nil]
+                            .compactMap { $0 }.joined(separator: " · "))
+                            .font(.caption).foregroundStyle(.secondary)
+                    }
+                    .padding(.vertical, 8)
+                    if m.id != log.meldingen.last?.id { Divider() }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .lrCard()
+
+            Text("Elke melding die naar Apple ging, met het antwoord van Apple. We bewaren 7 dagen.")
+                .font(.caption).foregroundStyle(.secondary)
+        } else {
+            ContentUnavailableView("Pushlog niet beschikbaar", systemImage: "bell.slash",
+                                   description: Text("Trek omlaag om opnieuw te laden."))
+        }
     }
 }
 

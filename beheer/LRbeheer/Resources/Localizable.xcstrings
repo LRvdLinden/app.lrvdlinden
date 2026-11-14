@@ -146,6 +146,22 @@
         }
       }
     },
+    "%lld aangenomen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld accepted"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld aangenomen"
+          }
+        }
+      }
+    },
     "%lld dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro.": {
       "localizations": {
         "en": {
@@ -158,6 +174,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro."
+          }
+        }
+      }
+    },
+    "%lld geweigerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld refused"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld geweigerd"
           }
         }
       }
@@ -846,6 +878,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aangemeld"
+          }
+        }
+      }
+    },
+    "Aangenomen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accepted"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aangenomen"
           }
         }
       }
@@ -4818,6 +4866,22 @@
         }
       }
     },
+    "Elke melding die naar Apple ging, met het antwoord van Apple. We bewaren 7 dagen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every notification sent to Apple, with Apple's answer. Kept for 7 days."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elke melding die naar Apple ging, met het antwoord van Apple. We bewaren 7 dagen."
+          }
+        }
+      }
+    },
     "Elke widget heeft een eigen script: de widget verschijnt op de plek van het script, komt van a-alerts.nl, past zijn hoogte vanzelf aan en kan door de website niet worden aangepast. In de widget staat altijd \"A-Alerts\" in de kop en elke link gaat naar a-alerts.nl.": {
       "localizations": {
         "en": {
@@ -5902,6 +5966,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Grootte"
+          }
+        }
+      }
+    },
+    "Grote inzet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Major incident"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grote inzet"
           }
         }
       }
@@ -7726,6 +7806,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lager"
+          }
+        }
+      }
+    },
+    "Landing": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Landing"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Landing"
           }
         }
       }
@@ -9858,6 +9954,22 @@
         }
       }
     },
+    "Nog geen pushmeldingen verstuurd sinds de pushlog bestaat.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No push notifications sent since the push log started."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen pushmeldingen verstuurd sinds de pushlog bestaat."
+          }
+        }
+      }
+    },
     "Nog geen release. Een tag vX.Y.Z maakt een release met noodpakket.apk.": {
       "localizations": {
         "en": {
@@ -11010,6 +11122,22 @@
         }
       }
     },
+    "Opstijgen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takeoff"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opstijgen"
+          }
+        }
+      }
+    },
     "Opzoeken": {
       "localizations": {
         "en": {
@@ -11586,6 +11714,54 @@
         }
       }
     },
+    "Pushlog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push log"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushlog"
+          }
+        }
+      }
+    },
+    "Pushlog niet beschikbaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push log not available"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushlog niet beschikbaar"
+          }
+        }
+      }
+    },
+    "Pushlog: elke pushmelding van de laatste 7 dagen met het antwoord van Apple (aangenomen of geweigerd)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push log: every push notification of the last 7 days with Apple's answer (accepted or refused)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushlog: elke pushmelding van de laatste 7 dagen met het antwoord van Apple (aangenomen of geweigerd)"
+          }
+        }
+      }
+    },
     "Pushmelding bij een nieuwe winkelaanvraag (schakelaar Winkel aangevraagd)": {
       "localizations": {
         "en": {
@@ -11854,6 +12030,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reviews"
+          }
+        }
+      }
+    },
+    "Roepnaam": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Callsign"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Roepnaam"
           }
         }
       }
@@ -12690,6 +12882,22 @@
         }
       }
     },
+    "Testmelding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test notification"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testmelding"
+          }
+        }
+      }
+    },
     "Testmelding verstuurd": {
       "localizations": {
         "en": {
@@ -13182,6 +13390,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trek omlaag om de gegevens op te halen."
+          }
+        }
+      }
+    },
+    "Trek omlaag om opnieuw te laden.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pull down to reload."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trek omlaag om opnieuw te laden."
           }
         }
       }
@@ -15086,6 +15310,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zolang Lifetime-only uit staat, werkt alles zoals nu. Na de overgangsdatum zien gratis accounts alleen nog Activeer Lifetime. Tijden in Nederlandse tijd."
+          }
+        }
+      }
+    },
+    "Zone": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zone"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zone"
           }
         }
       }
