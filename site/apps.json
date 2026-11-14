@@ -1314,7 +1314,10 @@
                 "Web"
             ],
             "promo": {
-                "show": true
+                "show": true,
+                "image": {
+                    "nl": "app-content/112heli/promo-nl.webp"
+                }
             }
         },
         {

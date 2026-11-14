@@ -94,10 +94,21 @@ def expand_zips(commit, files):
         m = re.match(r"^(.+/(?:AppStore|OG)/\d{4}-\d\d-\d\d[^/]*)/", p)
         if m:
             by_dir.setdefault(m.group(1), []).append(p)
+    jobs = []
     for d, ps in by_dir.items():
         if any(not p.lower().endswith(".zip") for p in ps):
             continue  # er staat al uitgepakte content
-        for z in sorted(ps):
+        jobs += [(z, z[:-4]) for z in sorted(ps)]
+    # Losse ZIP's direct onder <App>/AppStore/ of <App>/OG/ (datum in de bestandsnaam, bijv. 112Heli-OG-2026-11-14-2.zip):
+    # die komen in een virtuele datum-map, zodat de nieuwste datum gewoon wint.
+    for p in list(files):
+        m = re.match(r"^([^/]+/(?:AppStore|OG))/([^/]+)\.zip$", p, re.I)
+        if m:
+            dm = re.search(r"\d{4}-\d\d-\d\d(?:-\d+)?", m.group(2))
+            if dm:
+                jobs.append((p, f"{m.group(1)}/{dm.group(0)}/{m.group(2)}"))
+    for z, stem in jobs:
+        if True:
             sha = files[z]
             names = index.get(sha)
             if names is None:
@@ -109,7 +120,6 @@ def expand_zips(commit, files):
                     print(f"::warning::ZIP niet te lezen: {z}: {e}")
                     continue
             used[sha] = names
-            stem = z[:-4]
             for n in names:
                 vp = f"{stem}/{n}"
                 ZIPMAP[vp] = (z, n)

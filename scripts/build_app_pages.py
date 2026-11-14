@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from appslug import content_key, legacy_homey_path, page_path  # noqa: E402
+from platform_icons import name as plat_name, svg as plat_svg  # noqa: E402
 
 BASE = "https://lrvdlinden.app"
 OUT = sys.argv[1] if len(sys.argv) > 1 else "build"
@@ -222,7 +223,7 @@ def page_content(a, c, lang, others):
     short = L(a.get("description"), lang)
     shots = (c.get("shots") or {}).get(lang) or (c.get("shots") or {}).get("nl" if lang == "en" else "en") or []
     hist = [h for h in (a.get("history") or []) if L(h.get("notes"), lang)]
-    plats = a.get("platforms") or (["Homey"] if a.get("section") == "homey" else [])
+    plats = a.get("platforms") or ((a.get("homey") or {}).get("platforms") or ["Homey"] if a.get("section") == "homey" else [])
 
     hero = f'''
   <section class="hero wrap">
@@ -237,7 +238,7 @@ def page_content(a, c, lang, others):
     </div>
     <div class="btns">{buttons(a, lang)}</div>
     <dl class="facts">{facts(a, lang)}</dl>
-    {f'<div class="plat"><span class="lbl">{e(t["platforms"])}</span>' + "".join(f'<span class="tag">{e(p)}</span>' for p in plats) + "</div>" if plats else ""}
+    {f'<div class="plat"><span class="lbl">{e(t["platforms"])}</span>' + "".join(f'<span class="tag ostag">{plat_svg(p)}{e(plat_name(p))}</span>' for p in plats) + "</div>" if plats else ""}
     {f'<p class="note">{e(t["nlonly"])}</p>' if a.get("nlOnly") and lang == "en" else ""}
   </section>'''
     shots_html = ""
@@ -441,6 +442,8 @@ header.top{padding-block:24px 8px}
 .plat{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:18px}
 .plat .lbl{font-size:13px;color:var(--muted);margin-right:4px}
 .tag{font-size:12.5px;padding:3px 9px;border-radius:7px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.ostag{display:inline-flex;align-items:center;gap:7px;padding:6px 12px 6px 9px;border-radius:10px;color:var(--ink);font-size:13.5px;font-weight:600}
+.ostag svg{width:20px;height:20px;flex:none}
 .note{margin:16px 0 0;color:var(--muted);font-size:14px}
 .block{padding-block:34px 4px}
 .block h2{font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-.02em;margin-bottom:16px}

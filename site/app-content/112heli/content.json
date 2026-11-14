@@ -1,15 +1,82 @@
 {
  "slug": "112heli",
  "id": "112heli",
- "shots": {},
- "text": {},
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-07.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {
+  "nl": {
+   "description": "Hoor je een helikopter en vraag je je af waar hij heen gaat? Met 112Heli zie je live alles wat voor de hulpdiensten vliegt boven Nederland: de Lifeliners (traumahelikopters), de politiehelikopters (Zulu), de Kustwacht, Defensie, de Marechaussee en het regeringsvliegtuig. En voor de lol ook de jet van Max Verstappen.\n\nLIVE KAART\n• Alle toestellen op Apple Kaarten, met hun eigen tekening en naam\n• Tik op een toestel voor koers, hoogte en snelheid, en waar het nu boven vliegt\n• Bekijk de route van deze vlucht, de laatste 30 minuten of 2 uur, en speel de vlucht terug\n• Waar geweest: een lijst van plaatsen met tijden, en de laatste vluchten met duur en afstand\n• Ziekenhuizen en helikopterbases op de kaart\n• Verberg toestellen die niet vliegen met één tik\n\nMELDINGEN\n• Een melding als een Lifeliner of Zulu opstijgt in jouw gebied\n• Eigen zones: een melding als er iets boven je wijk of plaats vliegt\n• Een melding bij meerdere helikopters op één plek, vaak bij een groot incident\n• Favorieten: een melding als ze opstijgen of landen, en als ze van roepnaam wisselen\n• Een eigen helikoptergeluid\n\nMEER\n• Lijst van alle toestellen: in de lucht, op de basis, op de grond of uit beeld\n• Historie van 30 dagen, met de landingsplek: ziekenhuis, basis of op locatie\n• Volg een toestel op je toegangsscherm met een Live Activity\n• Widgets voor wat er in de lucht is en voor je favorieten\n• Weer dat vliegen beperkt (KNMI)\n• Ook op iPad, Mac en Apple TV\n\nPRIVACY\nGeen account, geen advertenties en geen tracking. Je locatie wordt alleen gebruikt als je dat toestaat, afgerond op ongeveer een kilometer.\n\nGOED OM TE WETEN\n112Heli toont signalen die toestellen zelf openbaar uitzenden (ADS-B, via adsb.lol). Een toestel dat zijn positie niet uitzendt, staat niet op de kaart. 112Heli is een onafhankelijke app en hoort niet bij de politie, de ANWB, de Kustwacht of Defensie.\n\nGemaakt door LRvdLinden. In de app vind je ook de andere apps van de ontwikkelaar.",
+   "promotional_text": "Zie live waar de Lifeliner, de politiehelikopter, de Kustwacht en Defensie vliegen. Met een melding als ze opstijgen of boven jouw wijk vliegen.",
+   "subtitle": "Hulpdiensten live in de lucht"
+  },
+  "en": {
+   "description": "Hear a helicopter and wonder where it is going? 112Heli shows you live everything that flies for the emergency services above the Netherlands: the Lifeliners (air ambulances), the police helicopters (Zulu), the Coastguard, Defence, the Royal Marechaussee and the government aircraft. And just for fun, Max Verstappen's jet.\n\nLIVE MAP\n• Every aircraft on Apple Maps, with its own drawing and name\n• Tap an aircraft for heading, altitude and speed, and the place it is flying over\n• See the route of this flight, the last 30 minutes or 2 hours, and play the flight back\n• Where it has been: a list of places with times, plus the latest flights with duration and distance\n• Hospitals and helicopter bases on the map\n• Hide aircraft that are not flying with one tap\n\nALERTS\n• An alert when a Lifeliner or Zulu takes off in your area\n• Your own zones: an alert when something flies over your neighbourhood or town\n• An alert when several helicopters are at one spot, often a major incident\n• Favourites: an alert when they take off or land, and when they change callsign\n• A dedicated helicopter sound\n\nMORE\n• List of all aircraft: in the air, at the base, on the ground or out of view\n• 30 days of history, with where it landed: hospital, base or on scene\n• Follow an aircraft on your Lock Screen with a Live Activity\n• Widgets for what is in the air and for your favourites\n• Weather that limits flying (KNMI)\n• Also on iPad, Mac and Apple TV\n\nPRIVACY\nNo account, no ads and no tracking. Your location is only used if you allow it, rounded to about a kilometre.\n\nGOOD TO KNOW\n112Heli shows signals that aircraft broadcast publicly themselves (ADS-B, via adsb.lol). An aircraft that does not broadcast its position is not on the map. 112Heli is an independent app and is not affiliated with the police, ANWB, the Coastguard or Defence. The app is available in Dutch and covers the Netherlands.\n\nMade by LRvdLinden. In the app you will also find the developer's other apps.",
+   "promotional_text": "See live where the Dutch air ambulances, police helicopters, Coastguard and Defence are flying. With an alert when they take off or fly over your area.",
+   "subtitle": "Emergency aircraft live"
+  }
+ },
  "og": {
   "nl": "og-nl.jpg",
   "en": "og-en.jpg"
  },
  "sources": {
-  "og-nl.jpg": "gen:746ed056db7c89b28ef23f72017ec0c9f97ecf9b",
+  "shot-nl-01.webp": "60324af458600327fa101962f3946073cebbd167",
+  "shot-nl-02.webp": "2bd296f8ee05d3d08ff3fc8408c1f1dbb150fdf1",
+  "shot-nl-03.webp": "33cb83bf40e7b2dd6ef98b7ce98c0f909e17e739",
+  "shot-nl-04.webp": "426b701c08b34e9e26f45fce39fd9cab0ffc2e17",
+  "shot-nl-05.webp": "c6d7ae70c876dd9b6ae16aeb2e7d5492368089a1",
+  "shot-nl-06.webp": "77cd9a47188b20b94eceebe57c6f7663968e1258",
+  "shot-nl-07.webp": "ca94f70e3637bdb4733dcb1132d18dedb673f6a6",
+  "text-nl-description": "8a4e2c7c3b489f7410cde4af9ed553dc24faeab9",
+  "text-nl-promotional_text": "e0a8a36186867af1e14a6917330ce64031134762",
+  "text-nl-subtitle": "0d1e981c2affbecaaa49d59e70feab03c5a452de",
+  "text-en-description": "1d84fa35f67e164e9934d209007ea269f80df8b0",
+  "text-en-promotional_text": "0e9dae83393885837f0ae89b7608b3d47abe8a4d",
+  "text-en-subtitle": "48fc001f5e46e678be4b2827510ffd2be9599638",
+  "promo-nl.webp": "1354234dd56608e6fb7cb1c6de346acce6d99c74",
+  "og-nl.jpg": "692a3653ab3275570ffacae89b8b212d6675f0b4",
   "og-en.jpg": "gen:879479ce0ab90ea302e03f486a16c6a7c41ba9d8"
  },
- "folder": "112Heli"
+ "folder": "112Heli",
+ "source": "112Heli/AppStore/2026-11-14",
+ "promo": {
+  "nl": "promo-nl.webp"
+ }
 }
