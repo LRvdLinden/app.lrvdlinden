@@ -21,7 +21,7 @@ OUT = sys.argv[1] if len(sys.argv) > 1 else "build"
 apps = json.load(open(os.path.join(OUT, "apps.json"), encoding="utf-8")).get("apps", [])
 
 T = {
-    "nl": dict(by="Léon van der Linden", back="Alle apps", appstore="Gratis in de App Store", testflight="Doe mee via TestFlight",
+    "nl": dict(by="Léon van der Linden", back="Alle apps", appstore="Gratis in de App Store", review="Geef sterren", testflight="Doe mee via TestFlight",
                website="Website", homey="Bekijk in de Homey App Store", homeyTest="Testversie installeren", shots="Screenshots",
                about="Over {n}", news="Wat is nieuw", more="Meer apps", devices="Apparaten", widgets="Widgets",
                flow="Flow-kaarten", when="Als…", andd="En…", then="Dan…", rating="Beoordeling", reviews="beoordelingen",
@@ -30,7 +30,7 @@ T = {
                hlive="Live", htest="Test", donate="Doneren", privacy="Privacy", support="Steun mijn apps",
                nlonly="Deze app is alleen in het Nederlands beschikbaar.", allv="Toon alle versies", lessv="Toon minder",
                allc="Toon alle {n}", support_link="Ondersteuning"),
-    "en": dict(by="Léon van der Linden", back="All apps", appstore="Free on the App Store", testflight="Join on TestFlight",
+    "en": dict(by="Léon van der Linden", back="All apps", appstore="Free on the App Store", review="Give stars", testflight="Join on TestFlight",
                website="Website", homey="View in the Homey App Store", homeyTest="Install test version", shots="Screenshots",
                about="About {n}", news="What's new", more="More apps", devices="Devices", widgets="Widgets",
                flow="Flow cards", when="When…", andd="And…", then="Then…", rating="Rating", reviews="ratings",
@@ -137,6 +137,10 @@ def buttons(a, lang):
     else:
         if l.get("appstore"):
             out.append((l["appstore"], t["appstore"], "primary"))
+            m = re.search(r"/id(\d+)", l["appstore"])
+            if m:  # direct naar beoordelen in de App Store
+                out.append((f'https://apps.apple.com/{"nl" if lang == "nl" else "us"}/app/id{m.group(1)}?action=write-review',
+                            t["review"], "review"))
         if l.get("testflight"):
             out.append((l["testflight"], t["testflight"], "" if out else "primary"))
     if l.get("website"):
@@ -147,7 +151,10 @@ def buttons(a, lang):
         sup = sup if str(sup).startswith("http") else ("mailto:" + sup if "@" in str(sup) else "")
         if sup:
             out.append((sup, t["support_link"], ""))
-    return "".join(f'<a class="btn {c}" href="{e(u)}" target="_blank" rel="noopener">{e(x)}</a>' for u, x, c in out)
+    star = ('<svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
+            '<path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/></svg>')
+    return "".join(f'<a class="btn {c}" href="{e(u)}" target="_blank" rel="noopener">{star if c == "review" else ""}{e(x)}</a>'
+                   for u, x, c in out)
 
 
 def status_pill(a, lang):
@@ -430,6 +437,7 @@ header.top{padding-block:24px 8px}
 .pill.live{background:var(--accent-soft);color:var(--accent)}.pill.beta{background:var(--beta-soft);color:var(--beta)}
 .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn .star{width:18px;height:18px;flex:none;color:var(--star)}
 .btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--f-body);padding:11px 20px;border-radius:99px;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
 .btn:hover{border-color:var(--muted)}.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .facts{display:flex;flex-wrap:wrap;gap:0;margin:28px 0 0;border-block:1px solid var(--line)}
