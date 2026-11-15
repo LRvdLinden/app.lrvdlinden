@@ -201,7 +201,13 @@ jobs:
             r=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "https://lrvdlinden.app/$pg.html")
             echo "/$pg.html: $r"
           done
-          curl -s "https://lrvdlinden.app/apps.json?v=${GITHUB_RUN_NUMBER}" | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d['apps']), 'apps live')"
+          # Soms geeft de host vlak na de upload even een lege reactie; dan een paar keer opnieuw proberen.
+          ok=0
+          for i in 1 2 3 4 5; do
+            if curl -s "https://lrvdlinden.app/apps.json?v=${GITHUB_RUN_NUMBER}-$i" | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d['apps']), 'apps live')" 2>/dev/null; then ok=1; break; fi
+            echo "apps.json nog niet leesbaar, opnieuw over $((i * 5)) s"; sleep $((i * 5))
+          done
+          [ "$ok" = "1" ] || { echo "::error::apps.json is niet leesbaar op de live site"; exit 1; }
           # /beheer.html mag doorsturen naar /beheer; daarna moet altijd een login volgen
           for u in beheer beheer.html; do
             b=$(curl -sL -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$u")
