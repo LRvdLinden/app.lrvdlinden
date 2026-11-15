@@ -143,6 +143,7 @@ originele code.
 | **Lifetime-only** (build 167 van de server, ook in BingrBeheer build 47 en het web-beheer): instellingen met bevestiging, kortingscodes (genereren, totalen), mail en herinnering, niet geclaimde aankopen en Aankoop koppelen, code per account, omzet per aanbieder (Stripe en Apple) | ✓ (Instellingen → Lifetime-only) |
 | **Omzet: Apple (App Store Connect)** (ook in BingrBeheer build 49 en het web-beheer): Website (Stripe) en Apple (App Store) apart met bruto, inhouding, netto opbrengst, aantal en terugbetaald, en het totaal; Apple bijgewerkt t/m, gekoppelde Apple-aankopen, reeksen Website en Apple, Apple-omzet bijwerken (bereik) en commissie en vaste koersen | ✓ (Omzet) |
 | **Nieuwe accounts eerst kopen** (build 168 van de server, ook in BingrBeheer build 48 en het web-beheer): twee datums in Lifetime-only, web en Android (`new_paid_from`) en Apple-apps (`new_paid_from_apple`), met bevestiging en een waarschuwing als de Apple-koopknop uit staat | ✓ (Instellingen → Lifetime-only) |
+| **Crashes** (build 171 van de server, ook in BingrBeheer build 50 en het web-beheer): eigen crashrapporten van de apps en de webspeler, gegroepeerd op handtekening met aantal, platforms, builds en eerst/laatst gezien; filter op status, platform en build; details met stacks; markeren als opgelost in build N (teruggekomen bij een nieuwere build); pushmelding bij een nieuwe of teruggekomen crash (schakelaar in Instellingen) | ✓ (Crashes, `bingrbeheer://crashes`) |
 
 ### BeheerTunr → Tunr
 

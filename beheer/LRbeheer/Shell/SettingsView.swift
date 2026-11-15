@@ -92,6 +92,13 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Bingr: Crashes") {
+                    Label("Nieuw onderdeel Crashes: eigen crashrapporten van de Bingr-apps en de webspeler, gegroepeerd met aantal, platforms, builds en eerst en laatst gezien", systemImage: "exclamationmark.triangle")
+                    Label("Filter op status, platform en build; details met de stacks", systemImage: "line.3.horizontal.decrease.circle")
+                    Label("Markeer een crash als opgelost in build N; komt hij daarna terug, dan staat hij op Teruggekomen", systemImage: "checkmark.seal")
+                    Label("Pushmelding bij een nieuwe of teruggekomen crash, aan of uit in de Instellingen van Bingr", systemImage: "bell.badge")
+                    Label("Ook op het web: beheer.bingr.online, tab Crashes", systemImage: "safari")
+                }
                 Section("Openen") {
                     Label("LRbeheer start altijd in het overzicht: kies zelf waar je heen gaat (de laatstgebruikte omgeving is gemarkeerd)", systemImage: "square.grid.2x2")
                 }

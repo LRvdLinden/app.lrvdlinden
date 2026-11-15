@@ -1506,6 +1506,22 @@
         }
       }
     },
+    "Alle builds": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All builds"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle builds"
+          }
+        }
+      }
+    },
     "Alle cadeaukaarten uit de app staan klaar: alleen het adres invullen, met een zoekknop": {
       "localizations": {
         "en": {
@@ -1566,6 +1582,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alle op GitHub"
+          }
+        }
+      }
+    },
+    "Alle platforms": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All platforms"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle platforms"
           }
         }
       }
@@ -3282,6 +3314,22 @@
         }
       }
     },
+    "Bingr: Crashes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Crashes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Crashes"
+          }
+        }
+      }
+    },
     "Bingr: Lifetime-only": {
       "localizations": {
         "en": {
@@ -3390,6 +3438,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bruto"
+          }
+        }
+      }
+    },
+    "Build": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build"
+          }
+        }
+      }
+    },
+    "Build %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build %lld"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build %lld"
+          }
+        }
+      }
+    },
+    "Buildnummer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Build number"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buildnummer"
           }
         }
       }
@@ -3598,6 +3694,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cookies"
+          }
+        }
+      }
+    },
+    "Crashes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crashes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crashes"
           }
         }
       }
@@ -4770,6 +4882,22 @@
         }
       }
     },
+    "Eigen crashrapporten (geen derde partij), opgeschoond in de app en op de server; na 90 dagen weg.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Own crash reports (no third party), cleaned up in the app and on the server; deleted after 90 days."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigen crashrapporten (geen derde partij), opgeschoond in de app en op de server; na 90 dagen weg."
+          }
+        }
+      }
+    },
     "Eigen pushbericht naar alle gebruikers of per soort toestel, met bereik en geschiedenis": {
       "localizations": {
         "en": {
@@ -5250,6 +5378,22 @@
         }
       }
     },
+    "Filter op status, platform en build; details met de stacks": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter by status, platform and build; details with the stacks"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter op status, platform en build; details met de stacks"
+          }
+        }
+      }
+    },
     "Financiën": {
       "localizations": {
         "en": {
@@ -5554,6 +5698,22 @@
         }
       }
     },
+    "Geen crashrapporten. Mooi zo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No crash reports. Nice."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen crashrapporten. Mooi zo."
+          }
+        }
+      }
+    },
     "Geen gemelde fouten": {
       "localizations": {
         "en": {
@@ -5678,6 +5838,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen pushregistratie gekoppeld: pushmeldingen staan uit, of de app is ouder dan build 56."
+          }
+        }
+      }
+    },
+    "Geen rapporten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No reports."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen rapporten."
           }
         }
       }
@@ -7314,6 +7490,22 @@
         }
       }
     },
+    "Komt er daarna een rapport van die build of nieuwer, dan staat hij op Teruggekomen (met een pushmelding).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If a report from that build or newer comes in after that, it shows as Regressed (with a push notification)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komt er daarna een rapport van die build of nieuwer, dan staat hij op Teruggekomen (met een pushmelding)."
+          }
+        }
+      }
+    },
     "Kon afbeelding niet lezen": {
       "localizations": {
         "en": {
@@ -7710,6 +7902,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Laatste dag van App Store Connect: %@"
+          }
+        }
+      }
+    },
+    "Laatste rapporten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latest reports"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatste rapporten"
           }
         }
       }
@@ -8482,6 +8690,38 @@
         }
       }
     },
+    "Markeer als opgelost": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark as fixed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markeer als opgelost"
+          }
+        }
+      }
+    },
+    "Markeer een crash als opgelost in build N; komt hij daarna terug, dan staat hij op Teruggekomen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark a crash as fixed in build N; if it comes back after that, it shows as Regressed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markeer een crash als opgelost in build N; komt hij daarna terug, dan staat hij op Teruggekomen"
+          }
+        }
+      }
+    },
     "Meer": {
       "localizations": {
         "en": {
@@ -9186,6 +9426,22 @@
         }
       }
     },
+    "Niets in dit filter.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing in this filter."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niets in dit filter."
+          }
+        }
+      }
+    },
     "Niets toegevoegd. De app staat al op de site of de link gaf geen gegevens. Bekijk het logboek voor details.": {
       "localizations": {
         "en": {
@@ -9230,6 +9486,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuw bericht"
+          }
+        }
+      }
+    },
+    "Nieuw onderdeel Crashes: eigen crashrapporten van de Bingr-apps en de webspeler, gegroepeerd met aantal, platforms, builds en eerst en laatst gezien": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New section Crashes: Bingr's own crash reports from the apps and the web player, grouped with count, platforms, builds and first and last seen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw onderdeel Crashes: eigen crashrapporten van de Bingr-apps en de webspeler, gegroepeerd met aantal, platforms, builds en eerst en laatst gezien"
           }
         }
       }
@@ -9598,6 +9870,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe meldingen (centraal)"
+          }
+        }
+      }
+    },
+    "Nieuwe of teruggekomen crashes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New or regressed crashes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe of teruggekomen crashes"
           }
         }
       }
@@ -10658,6 +10946,22 @@
         }
       }
     },
+    "Ook op het web: beheer.bingr.online, tab Crashes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.bingr.online, tab Crashes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.bingr.online, tab Crashes"
+          }
+        }
+      }
+    },
     "Ook op het web: bekendr.lrvdlinden.app/beheer": {
       "localizations": {
         "en": {
@@ -10942,6 +11246,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opgelost"
+          }
+        }
+      }
+    },
+    "Opgelost in build": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed in build"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgelost in build"
           }
         }
       }
@@ -11458,6 +11778,22 @@
         }
       }
     },
+    "Platform": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Platform"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Platform"
+          }
+        }
+      }
+    },
     "Platformen / apparaten": {
       "localizations": {
         "en": {
@@ -11758,6 +12094,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pushlog: elke pushmelding van de laatste 7 dagen met het antwoord van Apple (aangenomen of geweigerd)"
+          }
+        }
+      }
+    },
+    "Pushmelding bij een nieuwe of teruggekomen crash, aan of uit in de Instellingen van Bingr": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push notification for a new or regressed crash, on or off in Bingr's Settings"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushmelding bij een nieuwe of teruggekomen crash, aan of uit in de Instellingen van Bingr"
           }
         }
       }
@@ -12322,6 +12674,22 @@
         }
       }
     },
+    "Stack": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stack"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stack"
+          }
+        }
+      }
+    },
     "Stand": {
       "localizations": {
         "en": {
@@ -12830,6 +13198,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Terugbetaald"
+          }
+        }
+      }
+    },
+    "Teruggekomen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regressed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teruggekomen"
           }
         }
       }
@@ -14814,6 +15198,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Weer"
+          }
+        }
+      }
+    },
+    "Weer open": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reopen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weer open"
           }
         }
       }
