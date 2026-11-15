@@ -23,7 +23,7 @@ struct CrashesView: View {
                 .pickerStyle(.segmented)
                 Picker("Platform", selection: $platform) {
                     Text("Alle platforms").tag("")
-                    ForEach(data?.platforms ?? [], id: \.self) { p in Text(Fmt.platform(p)).tag(p) }
+                    ForEach(data?.platforms ?? [], id: \.self) { p in Text(Labels.platform(p)).tag(p) }
                 }
                 Picker("Build", selection: $build) {
                     Text("Alle builds").tag(0)
@@ -55,7 +55,7 @@ struct CrashesView: View {
     }
 
     private static func meta(_ g: CrashGroup) -> String {
-        let plats: [String] = g.platforms.map { Fmt.platform($0) }
+        let plats: [String] = g.platforms.map { Labels.platform($0) }
         let builds: [String] = g.builds.map { String($0) }
         return plats.joined(separator: ", ") + " · builds " + builds.joined(separator: ", ") + " · laatst " + Fmt.ago(g.lastSeen)
     }
@@ -167,7 +167,7 @@ struct CrashDetailView: View {
 
     private static func reportTitle(_ r: CrashReport) -> String {
         let version: String = r.appVersion ?? r.build.map { "build \($0)" } ?? ""
-        return Fmt.platform(r.platform) + " · " + version
+        return Labels.platform(r.platform) + " · " + version
     }
 
     private static func reportMeta(_ r: CrashReport) -> String {
