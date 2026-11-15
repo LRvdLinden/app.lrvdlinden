@@ -57,25 +57,25 @@
   "en": "og-en.jpg"
  },
  "sources": {
-  "shot-nl-01.webp": "60324af458600327fa101962f3946073cebbd167",
-  "shot-nl-02.webp": "2bd296f8ee05d3d08ff3fc8408c1f1dbb150fdf1",
-  "shot-nl-03.webp": "33cb83bf40e7b2dd6ef98b7ce98c0f909e17e739",
-  "shot-nl-04.webp": "426b701c08b34e9e26f45fce39fd9cab0ffc2e17",
-  "shot-nl-05.webp": "c6d7ae70c876dd9b6ae16aeb2e7d5492368089a1",
-  "shot-nl-06.webp": "77cd9a47188b20b94eceebe57c6f7663968e1258",
-  "shot-nl-07.webp": "ca94f70e3637bdb4733dcb1132d18dedb673f6a6",
-  "text-nl-description": "8a4e2c7c3b489f7410cde4af9ed553dc24faeab9",
-  "text-nl-promotional_text": "e0a8a36186867af1e14a6917330ce64031134762",
-  "text-nl-subtitle": "0d1e981c2affbecaaa49d59e70feab03c5a452de",
-  "text-en-description": "1d84fa35f67e164e9934d209007ea269f80df8b0",
-  "text-en-promotional_text": "0e9dae83393885837f0ae89b7608b3d47abe8a4d",
-  "text-en-subtitle": "48fc001f5e46e678be4b2827510ffd2be9599638",
-  "promo-nl.webp": "1354234dd56608e6fb7cb1c6de346acce6d99c74",
-  "og-nl.jpg": "692a3653ab3275570ffacae89b8b212d6675f0b4",
-  "og-en.jpg": "gen:879479ce0ab90ea302e03f486a16c6a7c41ba9d8"
+  "shot-nl-01.webp": "2cb8604ff8493fea5ca24373c2fdda9890c67d52",
+  "shot-nl-02.webp": "9a051b30ceaaa3d5bf8bfff7374e3c16e63177ec",
+  "shot-nl-03.webp": "13493a12b703a2fba13315a44567db497c7f38cb",
+  "shot-nl-04.webp": "0aa9bc1cd5f8251bfec65a67f20a60df2d6ef643",
+  "shot-nl-05.webp": "4aeda0c84e9e11486a8e95ab730d4f6854ef669a",
+  "shot-nl-06.webp": "9528376ba45511a325f892106bd46274e722d3ea",
+  "shot-nl-07.webp": "ca6f9899d99fb753715274f042cedfdc8690209d",
+  "text-nl-description": "4fe8b43c5b81cd2fa002a81e6a23ae22d2cb4bce",
+  "text-nl-promotional_text": "264580f95b7f1966df7b1606790c675d2aa527f7",
+  "text-nl-subtitle": "ff9aed0ea38eb4e4f6376ebb5b1e9efc9946c62a",
+  "text-en-description": "68e899c7947a3e6807ae2028c16784e2fa02d28d",
+  "text-en-promotional_text": "6ffc3ad1cba7cdfa994dfb92f3180305ba194351",
+  "text-en-subtitle": "731bfbd51424372900d9089db9774f56d7f7c879",
+  "promo-nl.webp": "ec8eb91158b55abdf3fd798e8a72bea646596f9f",
+  "og-nl.jpg": "fdcf5d17409a55cc925ecc81c738edc59dc5dedf",
+  "og-en.jpg": "gen:c4d2456bd4bccc1a23d2e41fa5f2247f4382357c"
  },
  "folder": "112Heli",
- "source": "112Heli/AppStore/2026-11-14",
+ "source": "112Heli/AppStore/2026-11-15",
  "promo": {
   "nl": "promo-nl.webp"
  }
