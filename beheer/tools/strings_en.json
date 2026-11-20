@@ -1006,5 +1006,11 @@
 "Laatste rapporten": "Latest reports",
 "Geen rapporten.": "No reports.",
 "Stack": "Stack",
-"Build %lld": "Build %lld"
+"Build %lld": "Build %lld",
+"Bingr: Premium": "Bingr: Premium",
+"Nieuw onderdeel Premium (Instellingen van Bingr): stand en overzicht met MRR, proeven, opzeggingen, Apple en Stripe apart": "New section Premium (Bingr settings): status and overview with MRR, trials, cancellations, Apple and Stripe separately",
+"Schakelaars met uitleg en bevestiging, prijzen, Stripe-producten aanmaken (droog en echt) en testaccounts": "Switches with explanations and confirmation, prices, creating Stripe products (dry run and for real) and test accounts",
+"Premium testen in de details van een account, en het blok Abonnementen op de omzetpagina": "Test Premium in an account's details, and the Subscriptions block on the revenue page",
+"Concept-mailing voor bestaande gratis accounts: in Eigen mailing zetten, niets wordt verstuurd": "Draft mailing for existing free accounts: put it in Own mailing, nothing is sent",
+"Ook op het web: beheer.bingr.online, tab Premium": "Also on the web: beheer.bingr.online, tab Premium"
 }

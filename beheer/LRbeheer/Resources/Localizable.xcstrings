@@ -3346,6 +3346,22 @@
         }
       }
     },
+    "Bingr: Premium": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Premium"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Premium"
+          }
+        }
+      }
+    },
     "Bingr: nieuwe accounts eerst kopen": {
       "localizations": {
         "en": {
@@ -3630,6 +3646,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Concept weggooien"
+          }
+        }
+      }
+    },
+    "Concept-mailing voor bestaande gratis accounts: in Eigen mailing zetten, niets wordt verstuurd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft mailing for existing free accounts: put it in Own mailing, nothing is sent"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concept-mailing voor bestaande gratis accounts: in Eigen mailing zetten, niets wordt verstuurd"
           }
         }
       }
@@ -9506,6 +9538,22 @@
         }
       }
     },
+    "Nieuw onderdeel Premium (Instellingen van Bingr): stand en overzicht met MRR, proeven, opzeggingen, Apple en Stripe apart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New section Premium (Bingr settings): status and overview with MRR, trials, cancellations, Apple and Stripe separately"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw onderdeel Premium (Instellingen van Bingr): stand en overzicht met MRR, proeven, opzeggingen, Apple en Stripe apart"
+          }
+        }
+      }
+    },
     "Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site": {
       "localizations": {
         "en": {
@@ -10962,6 +11010,22 @@
         }
       }
     },
+    "Ook op het web: beheer.bingr.online, tab Premium": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.bingr.online, tab Premium"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.bingr.online, tab Premium"
+          }
+        }
+      }
+    },
     "Ook op het web: bekendr.lrvdlinden.app/beheer": {
       "localizations": {
         "en": {
@@ -11858,6 +11922,22 @@
         }
       }
     },
+    "Premium testen in de details van een account, en het blok Abonnementen op de omzetpagina": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test Premium in an account's details, and the Subscriptions block on the revenue page"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium testen in de details van een account, en het blok Abonnementen op de omzetpagina"
+          }
+        }
+      }
+    },
     "Prijs": {
       "localizations": {
         "en": {
@@ -12446,6 +12526,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Saldo-pagina toevoegen"
+          }
+        }
+      }
+    },
+    "Schakelaars met uitleg en bevestiging, prijzen, Stripe-producten aanmaken (droog en echt) en testaccounts": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switches with explanations and confirmation, prices, creating Stripe products (dry run and for real) and test accounts"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schakelaars met uitleg en bevestiging, prijzen, Stripe-producten aanmaken (droog en echt) en testaccounts"
           }
         }
       }

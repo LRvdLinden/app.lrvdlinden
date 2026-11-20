@@ -92,6 +92,13 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Bingr: Premium") {
+                    Label("Nieuw onderdeel Premium (Instellingen van Bingr): stand en overzicht met MRR, proeven, opzeggingen, Apple en Stripe apart", systemImage: "crown")
+                    Label("Schakelaars met uitleg en bevestiging, prijzen, Stripe-producten aanmaken (droog en echt) en testaccounts", systemImage: "switch.2")
+                    Label("Premium testen in de details van een account, en het blok Abonnementen op de omzetpagina", systemImage: "person.crop.circle.badge.checkmark")
+                    Label("Concept-mailing voor bestaande gratis accounts: in Eigen mailing zetten, niets wordt verstuurd", systemImage: "envelope")
+                    Label("Ook op het web: beheer.bingr.online, tab Premium", systemImage: "safari")
+                }
                 Section("Bingr: Crashes") {
                     Label("Nieuw onderdeel Crashes: eigen crashrapporten van de Bingr-apps en de webspeler, gegroepeerd met aantal, platforms, builds en eerst en laatst gezien", systemImage: "exclamationmark.triangle")
                     Label("Filter op status, platform en build; details met de stacks", systemImage: "line.3.horizontal.decrease.circle")
