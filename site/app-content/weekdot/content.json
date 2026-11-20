@@ -6,84 +6,84 @@
    {
     "src": "shot-nl-01.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-nl-02.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-nl-03.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-nl-04.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-nl-05.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-nl-06.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-nl-07.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-nl-08.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    }
   ],
   "en": [
    {
     "src": "shot-en-01.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-en-02.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-en-03.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-en-04.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-en-05.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-en-06.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-en-07.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    },
    {
     "src": "shot-en-08.webp",
     "w": 540,
-    "h": 1174
+    "h": 768
    }
   ]
  },
@@ -93,29 +93,29 @@
   "en": "og-en.jpg"
  },
  "sources": {
-  "shot-nl-01.webp": "823e9a4e0dc1963ef49e7d9627bfeb0f8aa228ed",
-  "shot-nl-02.webp": "6cce95ba229d15abef2f49f5843f54e6be5d27c6",
-  "shot-nl-03.webp": "1185b70b822776e767e77fb40d1e1ac84fe340a5",
-  "shot-nl-04.webp": "3ccd706eadc7c156963c4706ec3e6a8e1baacb16",
-  "shot-nl-05.webp": "2129242cc9e96bace6647309462a00783e7d51d8",
-  "shot-nl-06.webp": "be4b0f8e1fe9bf9b7adc079084c8c940c3c6c09f",
-  "shot-nl-07.webp": "36a6485f2525eabaefb8fa05a97f67d1c4a1086e",
-  "shot-nl-08.webp": "4faf0c04aac9841861c74addc8ec441480625056",
-  "shot-en-01.webp": "34569f105e1d2decf88135fb7566588ac123b849",
-  "shot-en-02.webp": "f5c601bee5a58b4741c6c92b8942b3062050b42f",
-  "shot-en-03.webp": "04e96dff7340546a2ba405d7d8c0770eda726383",
-  "shot-en-04.webp": "d1e16295292b5deb05d6cad0ca3cd5f1b844d18d",
-  "shot-en-05.webp": "90c6e34194860c2bf1d8734b0badfb01bbdcdb28",
-  "shot-en-06.webp": "8bf86fbcadd4a5745ee25ef939bcbf1657b2c953",
-  "shot-en-07.webp": "8242abe220ff2b8f4ab61b0be80a316ae82a019e",
-  "shot-en-08.webp": "60b0511b214d1e9afe03c9a3b0add2b3785a0e71",
+  "shot-nl-01.webp": "e061281b26d4a36f74e75a94870c39c7d66668c6",
+  "shot-nl-02.webp": "d5dc21a95914851def2cfdfdcf988962ef652aa3",
+  "shot-nl-03.webp": "206211a7c1e68ca8eaea8b1bc21d0d35b9f7befb",
+  "shot-nl-04.webp": "cc819411a1305e36e1bb88a148a9edbbf1bd8218",
+  "shot-nl-05.webp": "bcf287626b4436b89b5d181bd40033017ba36ca3",
+  "shot-nl-06.webp": "bb222d0c1be38ca548e02d29c5140346c185015c",
+  "shot-nl-07.webp": "0167e2ae5f46f990b1de3e21918241054b450e58",
+  "shot-nl-08.webp": "a9f059313c332bfcc88b5e9308c31d3f3e3e11c1",
+  "shot-en-01.webp": "862a77327ec30d83c5915dd3af6c28d29c7b25f0",
+  "shot-en-02.webp": "a5cc05d081feb53e21d81fed7869ee4f00faca98",
+  "shot-en-03.webp": "fc4ba81dad42e63912adc18fe7e1d330ebc19116",
+  "shot-en-04.webp": "fe61143ad28537556aed6b25e82aad688fcec359",
+  "shot-en-05.webp": "404acb3e4d136a62da383cb32f2db6609e750fc4",
+  "shot-en-06.webp": "ea9d5f8bd9ea664717ba011515f971177353c8a8",
+  "shot-en-07.webp": "0433118303cce10bb46d371c697e0694588a54eb",
+  "shot-en-08.webp": "e5a9b293e20042d24d4852710ecb6e54e85457ab",
   "promo-nl.webp": "5b07c7ed09763bd3db80436e1a26ea0a7f0bd884",
   "promo-en.webp": "f40fd4e6ee50351546c098f29089eeb2fe37344e",
   "og-nl.jpg": "gen:15c520699d9614219ebad8c1ecab5f5264c583a8",
   "og-en.jpg": "gen:84e29318cb2eb82483749cb127969cb94077e71d"
  },
  "folder": "Weekdot",
- "source": "Weekdot/AppStore/2026-11-09",
+ "source": "Weekdot/AppStore/2026-11-20",
  "promo": {
   "nl": "promo-nl.webp",
   "en": "promo-en.webp"
