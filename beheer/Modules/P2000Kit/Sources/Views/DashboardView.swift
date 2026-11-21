@@ -86,8 +86,8 @@ struct DashboardView: View {
     private func statusCard(_ s: Overview.Status) -> some View {
         Card(title: "Status", icon: "waveform.path.ecg") {
             let feedOK = (Fmt.parse(s.feed.lastOk).map { Date.now.timeIntervalSince($0) < 5 * 60 }) ?? false
-            StatusRow(ok: feedOK, title: "P2000-feed", detail: s.feed.lastError ?? "laatst gelezen \(Fmt.relative(s.feed.lastOk))")
-            StatusRow(ok: (Fmt.parse(s.cron).map { Date.now.timeIntervalSince($0) < 5 * 60 }) ?? false, title: "Cron (elke minuut)", detail: Fmt.relative(s.cron))
+            StatusRow(ok: feedOK, title: "P2000 (Koyeb-stream)", detail: s.feed.lastError ?? "laatste bericht \(Fmt.relative(s.feed.lastOk))")
+            StatusRow(ok: (Fmt.parse(s.cron).map { Date.now.timeIntervalSince($0) < 5 * 60 }) ?? false, title: "Achtergrondtaken (api.a-alerts.nl)", detail: Fmt.relative(s.cron))
             StatusRow(ok: s.apns, title: "Pushmeldingen (APNs)", detail: s.apns ? "sleutel actief" : "sleutel ontbreekt")
             if let fcm = s.fcm {
                 StatusRow(ok: fcm, title: "Android-push (Firebase)", detail: fcm ? "serviceaccount actief" : "FCM_SERVICE_ACCOUNT ontbreekt")

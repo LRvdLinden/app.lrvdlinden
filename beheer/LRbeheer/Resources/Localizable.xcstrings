@@ -690,6 +690,22 @@
         }
       }
     },
+    "A-Alerts: eigen server": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: own server"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A-Alerts: eigen server"
+          }
+        }
+      }
+    },
     "A-Alerts: gemelde fouten": {
       "localizations": {
         "en": {
@@ -846,6 +862,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "APNs weigerde de melding (%@)."
+          }
+        }
+      }
+    },
+    "Aandeel van de meldingen van de laatste 24 uur waarin het veld is ingevuld. Opschaling staat alleen bij meldingen met GRIP of opschaling, dus een laag percentage is normaal.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share of the alerts of the last 24 hours with the field filled in. Escalation is only present on alerts with GRIP or escalation, so a low percentage is normal."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aandeel van de meldingen van de laatste 24 uur waarin het veld is ingevuld. Opschaling staat alleen bij meldingen met GRIP of opschaling, dus een laag percentage is normaal."
           }
         }
       }
@@ -1166,6 +1198,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Accounts, insights en pushmeldingen"
+          }
+        }
+      }
+    },
+    "Achtergrondtaken (api.a-alerts.nl)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Background tasks (api.a-alerts.nl)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Achtergrondtaken (api.a-alerts.nl)"
           }
         }
       }
@@ -3442,6 +3490,22 @@
         }
       }
     },
+    "Bronnen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sources"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bronnen"
+          }
+        }
+      }
+    },
     "Bruto": {
       "localizations": {
         "en": {
@@ -3550,6 +3614,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cadeaukaarten in de app"
+          }
+        }
+      }
+    },
+    "Capcodes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capcodes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capcodes"
           }
         }
       }
@@ -3778,6 +3858,22 @@
         }
       }
     },
+    "Dashboard: P2000 komt van de Koyeb-stream; de oude melding HTTP 403 van p2000.page is weg": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashboard: P2000 comes from the Koyeb stream; the old HTTP 403 message of p2000.page is gone"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashboard: P2000 komt van de Koyeb-stream; de oude melding HTTP 403 van p2000.page is weg"
+          }
+        }
+      }
+    },
     "Dashboard: gebruik van de notificatieprofielen": {
       "localizations": {
         "en": {
@@ -3806,6 +3902,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dashboard: status van de bronnen en helikopters in de lucht"
+          }
+        }
+      }
+    },
+    "Database (MySQL)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Database (MySQL)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Database (MySQL)"
           }
         }
       }
@@ -4146,6 +4258,22 @@
         }
       }
     },
+    "Dekking van de velden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Field coverage"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dekking van de velden"
+          }
+        }
+      }
+    },
     "Description EN": {
       "localizations": {
         "en": {
@@ -4270,6 +4398,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dezelfde inlog als de beheerpagina op de website. Wordt alleen op dit apparaat bewaard, in de sleutelhanger."
+          }
+        }
+      }
+    },
+    "Dienst": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Service"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dienst"
           }
         }
       }
@@ -6366,6 +6510,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Het 112Heli-beheer is nog niet ingesteld op de server."
+          }
+        }
+      }
+    },
+    "Het A-Alerts-beheer praat nu met api.a-alerts.nl; wijzigingen gaan tot de overstap ook naar de oude Worker": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The A-Alerts admin now talks to api.a-alerts.nl; until the switch, changes also go to the old Worker"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het A-Alerts-beheer praat nu met api.a-alerts.nl; wijzigingen gaan tot de overstap ook naar de oude Worker"
           }
         }
       }
@@ -9634,6 +9794,22 @@
         }
       }
     },
+    "Nieuw tabblad Bronnen: elke bron van de server met staat en laatste ophaalronde, de database en hoe compleet de P2000-meldingen zijn (capcodes, prioriteit, dienst, plaats, regio, straat, opschaling)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New tab Sources: every source of the server with its state and last read, the database and how complete the P2000 alerts are (capcodes, priority, service, place, region, street, escalation)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw tabblad Bronnen: elke bron van de server met staat en laatste ophaalronde, de database en hoe compleet de P2000-meldingen zijn (capcodes, prioriteit, dienst, plaats, regio, straat, opschaling)"
+          }
+        }
+      }
+    },
     "Nieuw tabblad Nieuws: politieberichten over Apeldoorn en omgeving, weerartikelen en liveblogs bij Burgernet, AMBER Alert en Vermist Kind Alert": {
       "localizations": {
         "en": {
@@ -11458,6 +11634,22 @@
         }
       }
     },
+    "Opschaling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escalation"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opschaling"
+          }
+        }
+      }
+    },
     "Opslaan": {
       "localizations": {
         "en": {
@@ -11650,6 +11842,22 @@
         }
       }
     },
+    "P2000 (Koyeb-stream)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "P2000 (Koyeb stream)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "P2000 (Koyeb-stream)"
+          }
+        }
+      }
+    },
     "P2000 Apeldoorn heet nu A-Alerts, met het nieuwe icoon": {
       "localizations": {
         "en": {
@@ -11831,7 +12039,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Post"
+            "value": "Place"
           }
         },
         "nl": {
@@ -11870,6 +12078,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Platformen / apparaten"
+          }
+        }
+      }
+    },
+    "Plek op kaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spot on map"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plek op kaart"
           }
         }
       }
@@ -11950,6 +12174,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prijs"
+          }
+        }
+      }
+    },
+    "Prioriteit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Priority"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prioriteit"
           }
         }
       }
@@ -12334,6 +12574,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Regering"
+          }
+        }
+      }
+    },
+    "Regio": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Region"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regio"
           }
         }
       }
@@ -13006,6 +13262,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Storingen en afwijkingen"
+          }
+        }
+      }
+    },
+    "Straat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Street"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Straat"
           }
         }
       }
@@ -14334,6 +14606,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verbergen in de apps en op de website"
+          }
+        }
+      }
+    },
+    "Verbinding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connection"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbinding"
           }
         }
       }
@@ -15858,6 +16146,22 @@
         }
       }
     },
+    "bereikbaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "reachable"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bereikbaar"
+          }
+        }
+      }
+    },
     "beta": {
       "localizations": {
         "en": {
@@ -16114,6 +16418,22 @@
         }
       }
     },
+    "meldingen in de laatste 24 uur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "alerts in the last 24 hours"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "meldingen in de laatste 24 uur"
+          }
+        }
+      }
+    },
     "na btw, inhouding en terugbetalingen": {
       "localizations": {
         "en": {
@@ -16126,6 +16446,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "na btw, inhouding en terugbetalingen"
+          }
+        }
+      }
+    },
+    "niet bereikbaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "unreachable"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "niet bereikbaar"
           }
         }
       }

@@ -92,6 +92,11 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("A-Alerts: eigen server") {
+                    Label("Het A-Alerts-beheer praat nu met api.a-alerts.nl; wijzigingen gaan tot de overstap ook naar de oude Worker", systemImage: "server.rack")
+                    Label("Nieuw tabblad Bronnen: elke bron van de server met staat en laatste ophaalronde, de database en hoe compleet de P2000-meldingen zijn (capcodes, prioriteit, dienst, plaats, regio, straat, opschaling)", systemImage: "antenna.radiowaves.left.and.right")
+                    Label("Dashboard: P2000 komt van de Koyeb-stream; de oude melding HTTP 403 van p2000.page is weg", systemImage: "checkmark.seal")
+                }
                 Section("Bingr: Premium") {
                     Label("Nieuw onderdeel Premium (Instellingen van Bingr): stand en overzicht met MRR, proeven, opzeggingen, Apple en Stripe apart", systemImage: "crown")
                     Label("Schakelaars met uitleg en bevestiging, prijzen, Stripe-producten aanmaken (droog en echt) en testaccounts", systemImage: "switch.2")

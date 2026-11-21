@@ -36,6 +36,7 @@ struct MainTabs: View {
         TabView(selection: $tab) {
             Tab("Dashboard", systemImage: "chart.xyaxis.line", value: "dashboard") { DashboardView() }
             Tab("Status", systemImage: "waveform.path.ecg", value: "status") { StatusBeheerView() }
+            Tab("Bronnen", systemImage: "antenna.radiowaves.left.and.right", value: "bronnen") { BronnenView() }
             Tab("Meldingen", systemImage: "list.bullet.rectangle", value: "meldingen") { MeldingenView() }
             Tab("Waarschuwingen", systemImage: "exclamationmark.triangle", value: "waarschuwingen") { WaarschuwingenView() }
             Tab("Nieuws", systemImage: "newspaper", value: "nieuws") { NieuwsBeheerView() }
