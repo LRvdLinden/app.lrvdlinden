@@ -92,6 +92,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: gids en kaartontwerp") {
+                    Label("Winkels › winkel: gids bewerken, cadeaubon-gids bij cadeaukaarten en programmagids bij klantenkaarten", systemImage: "book.pages")
+                    Label("Kaartontwerp van een cadeaukaart: foto of bestand kiezen, automatisch bijgesneden tot kaartverhouding", systemImage: "photo.on.rectangle")
+                    Label("Winkellijst: zoeken op naam, website, categorie of alias, met telling klantenkaarten en cadeaukaarten", systemImage: "magnifyingglass")
+                    Label("Vlot met honderden winkels: logo's en kaartontwerpen laden pas als ze in beeld komen", systemImage: "bolt.fill")
+                }
                 Section("A-Alerts: eigen server") {
                     Label("Het A-Alerts-beheer praat nu met api.a-alerts.nl; wijzigingen gaan tot de overstap ook naar de oude Worker", systemImage: "server.rack")
                     Label("Nieuw tabblad Bronnen: elke bron van de server met staat en laatste ophaalronde, de database en hoe compleet de P2000-meldingen zijn (capcodes, prioriteit, dienst, plaats, regio, straat, opschaling)", systemImage: "antenna.radiowaves.left.and.right")

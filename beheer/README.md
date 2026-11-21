@@ -167,6 +167,9 @@ originele code.
 | Winkels: aanvragen, website opzoeken, kaart maken, publiceren zonder update met push, afwijzen, offline halen | ✓ (ook in web-beheer en PasrBeheer build 5) |
 | Review-account voor Apple App Review maken (voorbeeldkaarten en gedeelde Pasr, wachtwoord niet bewaard) | ✓ (ook in web-beheer en PasrBeheer build 6) |
 | Saldo-pagina's per winkel voor de knop Saldo checken (ook winkels in de app) | ✓ (ook in web-beheer en PasrBeheer build 7) |
+| Gids per winkel bewerken (cadeaubon-gids bij cadeaukaarten, programmagids bij klantenkaarten) | ✓ (ook in web-beheer en PasrBeheer build 10) |
+| Kaartontwerp van cadeaukaarten (foto of bestand, bijsnijden tot 640 x 404, Geen ontwerp) | ✓ (ook in web-beheer en PasrBeheer build 10) |
+| Winkellijst met 400+ winkels: zoeken, telling klantenkaarten/cadeaukaarten, cover-miniatuur, logo's pas laden in beeld | ✓ (ook in web-beheer en PasrBeheer build 10) |
 | Beheer-pushmeldingen (soorten, testmelding, uitleg na inloggen) | ✓ originele registratie; ontvangen na `server/patches` |
 | Instellingen met MoreAppsCard | ✓ |
 | Deeplinks `pasrbeheer://…` | ✓ |

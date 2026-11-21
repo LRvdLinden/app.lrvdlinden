@@ -354,6 +354,22 @@
         }
       }
     },
+    "%lld van %lld winkels.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld of %2$lld stores."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld van %lld winkels."
+          }
+        }
+      }
+    },
     "%lld verkocht": {
       "localizations": {
         "en": {
@@ -2738,6 +2754,22 @@
         }
       }
     },
+    "Belangrijkste voordelen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Main benefits"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belangrijkste voordelen"
+          }
+        }
+      }
+    },
     "Beoordeling": {
       "localizations": {
         "en": {
@@ -4238,6 +4270,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "De volgende check (automatisch rond 07:00 en 17:00, of via Nieuwe apps ophalen / Apps bijwerken) verschijnt hier."
+          }
+        }
+      }
+    },
+    "De voorkant van de cadeaukaart in Pasr en op pasr.nl/kaarten. Alleen een gewijzigd ontwerp wordt opgeslagen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The front of the gift card in Pasr and on pasr.nl/kaarten. Only a changed design is saved."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De voorkant van de cadeaukaart in Pasr en op pasr.nl/kaarten. Alleen een gewijzigd ontwerp wordt opgeslagen."
           }
         }
       }
@@ -5746,6 +5794,22 @@
         }
       }
     },
+    "Gecontroleerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checked"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gecontroleerd"
+          }
+        }
+      }
+    },
     "Gecontroleerd (%lld)": {
       "localizations": {
         "en": {
@@ -5758,6 +5822,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gecontroleerd (%lld)"
+          }
+        }
+      }
+    },
+    "Gecontroleerd op": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checked on"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gecontroleerd op"
           }
         }
       }
@@ -5970,6 +6050,22 @@
         }
       }
     },
+    "Geen ontwerp": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No design"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen ontwerp"
+          }
+        }
+      }
+    },
     "Geen open aanvragen. Mooi zo.": {
       "localizations": {
         "en": {
@@ -6094,6 +6190,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen wijzigingen"
+          }
+        }
+      }
+    },
+    "Geen winkel gevonden voor “%@”.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No store found for “%@”."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen winkel gevonden voor “%@”."
+          }
+        }
+      }
+    },
+    "Geldigheid, bijv. 3 jaar na aankoop": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Validity, e.g. 3 years after purchase"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geldigheid, bijv. 3 jaar na aankoop"
           }
         }
       }
@@ -6238,6 +6366,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gezondheid"
+          }
+        }
+      }
+    },
+    "Gids: cadeaubon-gids": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guide: gift card guide"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gids: cadeaubon-gids"
+          }
+        }
+      }
+    },
+    "Gids: programmagids": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guide: program guide"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gids: programmagids"
           }
         }
       }
@@ -6738,6 +6898,22 @@
         }
       }
     },
+    "Huidig ontwerp": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current design"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huidig ontwerp"
+          }
+        }
+      }
+    },
     "Hulp en veelgestelde vragen": {
       "localizations": {
         "en": {
@@ -6850,6 +7026,22 @@
         }
       }
     },
+    "In de app en op pasr.nl. Alleen officiële bronnen; onbekend leeg laten. Alleen een gewijzigde gids wordt opgeslagen; leeg laten houdt de bestaande gids.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In the app and on pasr.nl. Official sources only; leave unknown fields empty. Only a changed guide is saved; leaving it empty keeps the existing guide."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In de app en op pasr.nl. Alleen officiële bronnen; onbekend leeg laten. Alleen een gewijzigde gids wordt opgeslagen; leeg laten houdt de bestaande gids."
+          }
+        }
+      }
+    },
     "In de app ziet de aanvrager 'Niet toegevoegd'.": {
       "localizations": {
         "en": {
@@ -6910,6 +7102,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "In de wachtrij (%lld s)…"
+          }
+        }
+      }
+    },
+    "In de winkel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In store"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In de winkel"
           }
         }
       }
@@ -7218,6 +7426,22 @@
         }
       }
     },
+    "Ja": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yes"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ja"
+          }
+        }
+      }
+    },
     "Je concept is teruggezet": {
       "localizations": {
         "en": {
@@ -7394,6 +7618,38 @@
         }
       }
     },
+    "Kaartontwerp": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card design"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaartontwerp"
+          }
+        }
+      }
+    },
+    "Kaartontwerp van een cadeaukaart: foto of bestand kiezen, automatisch bijgesneden tot kaartverhouding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gift card design: pick a photo or file, automatically cropped to card proportions"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaartontwerp van een cadeaukaart: foto of bestand kiezen, automatisch bijgesneden tot kaartverhouding"
+          }
+        }
+      }
+    },
     "Kerncijfers Gedeelde Pasrs (met personen en kaarten) en Tijdelijk gedeeld (nu geldig)": {
       "localizations": {
         "en": {
@@ -7410,6 +7666,22 @@
         }
       }
     },
+    "Kies afbeelding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose image"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies afbeelding"
+          }
+        }
+      }
+    },
     "Kies apparaten en taal, bekijk het voorbeeld en stuur eerst een test naar LRbeheer": {
       "localizations": {
         "en": {
@@ -7422,6 +7694,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kies apparaten en taal, bekijk het voorbeeld en stuur eerst een test naar LRbeheer"
+          }
+        }
+      }
+    },
+    "Kies bestand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose file"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies bestand"
           }
         }
       }
@@ -9378,6 +9666,22 @@
         }
       }
     },
+    "Nee": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nee"
+          }
+        }
+      }
+    },
     "Netto opbrengst": {
       "localizations": {
         "en": {
@@ -9726,6 +10030,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site"
+          }
+        }
+      }
+    },
+    "Nieuw ontwerp, nog niet opgeslagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New design, not saved yet"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw ontwerp, nog niet opgeslagen"
           }
         }
       }
@@ -10930,6 +11250,22 @@
         }
       }
     },
+    "Onbekend": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onbekend"
+          }
+        }
+      }
+    },
     "Onbekende fout.": {
       "localizations": {
         "en": {
@@ -11022,6 +11358,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Onjuiste gebruikersnaam of wachtwoord."
+          }
+        }
+      }
+    },
+    "Online inwisselen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redeem online"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online inwisselen"
           }
         }
       }
@@ -11938,6 +12290,22 @@
         }
       }
     },
+    "Pasr: gids en kaartontwerp": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: guide and card design"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: gids en kaartontwerp"
+          }
+        }
+      }
+    },
     "Pasr: pushmeldingen": {
       "localizations": {
         "en": {
@@ -12254,6 +12622,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Proefperiode: %lld dagen"
+          }
+        }
+      }
+    },
+    "Programmapagina (https)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Program page (https)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Programmapagina (https)"
           }
         }
       }
@@ -15058,6 +15442,38 @@
         }
       }
     },
+    "Verzendkosten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shipping costs"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verzendkosten"
+          }
+        }
+      }
+    },
+    "Vlot met honderden winkels: logo's en kaartontwerpen laden pas als ze in beeld komen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Smooth with hundreds of stores: logos and card designs load only when they come into view"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vlot met honderden winkels: logo's en kaartontwerpen laden pas als ze in beeld komen"
+          }
+        }
+      }
+    },
     "Vluchten": {
       "localizations": {
         "en": {
@@ -15214,6 +15630,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Voornaam"
+          }
+        }
+      }
+    },
+    "Voorwaarden of FAQ (https)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terms or FAQ (https)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voorwaarden of FAQ (https)"
           }
         }
       }
@@ -15842,6 +16274,22 @@
         }
       }
     },
+    "Winkellijst: zoeken op naam, website, categorie of alias, met telling klantenkaarten en cadeaukaarten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Store list: search by name, website, category or alias, with a count of loyalty cards and gift cards"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkellijst: zoeken op naam, website, categorie of alias, met telling klantenkaarten en cadeaukaarten"
+          }
+        }
+      }
+    },
     "Winkels": {
       "localizations": {
         "en": {
@@ -15870,6 +16318,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Winkels › Saldo: per winkel de pagina waar je het tegoed van een cadeaukaart nakijkt"
+          }
+        }
+      }
+    },
+    "Winkels › winkel: gids bewerken, cadeaubon-gids bij cadeaukaarten en programmagids bij klantenkaarten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stores › store: edit the guide, gift card guide for gift cards and program guide for loyalty cards"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkels › winkel: gids bewerken, cadeaubon-gids bij cadeaukaarten en programmagids bij klantenkaarten"
           }
         }
       }
@@ -15954,6 +16418,22 @@
         }
       }
     },
+    "Wordt bijgesneden tot kaartverhouding 1,586:1 en verkleind tot 640 x 404.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cropped to the card ratio 1.586:1 and resized to 640 x 404."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wordt bijgesneden tot kaartverhouding 1,586:1 en verkleind tot 640 x 404."
+          }
+        }
+      }
+    },
     "Zakelijk": {
       "localizations": {
         "en": {
@@ -16002,6 +16482,54 @@
         }
       }
     },
+    "Zo kom je aan de kaart (1 zin)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to get the card (1 sentence)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zo kom je aan de kaart (1 zin)"
+          }
+        }
+      }
+    },
+    "Zo spaar je (1 tot 2 zinnen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to earn (1 to 2 sentences)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zo spaar je (1 tot 2 zinnen)"
+          }
+        }
+      }
+    },
+    "Zo wissel je hem in (1 tot 3 zinnen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to redeem it (1 to 3 sentences)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zo wissel je hem in (1 tot 3 zinnen)"
+          }
+        }
+      }
+    },
     "Zoek": {
       "localizations": {
         "en": {
@@ -16014,6 +16542,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zoek"
+          }
+        }
+      }
+    },
+    "Zoek cadeaukaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search gift card"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek cadeaukaart"
           }
         }
       }
@@ -16062,6 +16606,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zoek op naam, registratie, roepnaam of hex"
+          }
+        }
+      }
+    },
+    "Zoek op naam, website of categorie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search by name, website or category"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek op naam, website of categorie"
           }
         }
       }
