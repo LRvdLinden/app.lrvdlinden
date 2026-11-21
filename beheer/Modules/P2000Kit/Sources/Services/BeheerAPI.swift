@@ -8,7 +8,7 @@ struct BeheerAPI: Sendable {
         if let s = Bundle.main.object(forInfoDictionaryKey: "P2000APIURL") as? String, let url = URL(string: s), url.host != nil {
             return url
         }
-        return URL(string: "https://p2000-apeldoorn-api.lrvdlinden.workers.dev")!
+        return URL(string: "https://api.a-alerts.nl")!
     }
 
     enum APIError: LocalizedError {
