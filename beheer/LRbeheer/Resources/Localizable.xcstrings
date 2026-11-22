@@ -2,6 +2,22 @@
   "sourceLanguage": "nl",
   "version": "1.0",
   "strings": {
+    " (medewerker)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " (staff)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " (medewerker)"
+          }
+        }
+      }
+    },
     "\"%@\" verwijderen?": {
       "localizations": {
         "en": {
@@ -114,6 +130,22 @@
         }
       }
     },
+    "%@ kan dan niet meer scannen bij %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ can then no longer scan at %2$@."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kan dan niet meer scannen bij %@."
+          }
+        }
+      }
+    },
     "%@ staat al in je portfolio": {
       "localizations": {
         "en": {
@@ -142,6 +174,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ verwijderd"
+          }
+        }
+      }
+    },
+    "%@ · %@ · %@ · %@ totaal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$@ · %3$@ · %4$@ in total"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ · %@ · %@ totaal"
           }
         }
       }
@@ -254,6 +302,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld met meldingen aan"
+          }
+        }
+      }
+    },
+    "%lld min": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld min"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld min"
           }
         }
       }
@@ -1266,6 +1330,22 @@
         }
       }
     },
+    "Adres (optioneel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address (optional)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adres (optioneel)"
+          }
+        }
+      }
+    },
     "Afbeelding": {
       "localizations": {
         "en": {
@@ -1406,6 +1486,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Afhandelen, heropenen of de melding meteen bewerken; een pushmelding bij elke nieuwe melding"
+          }
+        }
+      }
+    },
+    "Afkoeltijd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cooldown"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afkoeltijd"
           }
         }
       }
@@ -4386,6 +4482,22 @@
         }
       }
     },
+    "Details": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Details"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Details"
+          }
+        }
+      }
+    },
     "Deze maand": {
       "localizations": {
         "en": {
@@ -5118,6 +5230,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Een betaalde aankoop zonder account aan dit account koppelen. Het account krijgt Lifetime. Doe dit alleen als je zeker weet dat deze klant de koper is."
+          }
+        }
+      }
+    },
+    "Een zaak uit de lijst in Pasr halen: Vindbaar in Pasr uit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove a business from the list in Pasr: turn off Findable in Pasr"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een zaak uit de lijst in Pasr halen: Vindbaar in Pasr uit"
           }
         }
       }
@@ -7570,6 +7698,22 @@
         }
       }
     },
+    "Instellingen opslaan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save settings"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instellingen opslaan"
+          }
+        }
+      }
+    },
     "Instellingen van LRbeheer": {
       "localizations": {
         "en": {
@@ -9122,6 +9266,22 @@
         }
       }
     },
+    "Locatie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locatie"
+          }
+        }
+      }
+    },
     "Locatie klopt niet": {
       "localizations": {
         "en": {
@@ -9134,6 +9294,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Locatie klopt niet"
+          }
+        }
+      }
+    },
+    "Log": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log"
           }
         }
       }
@@ -9454,6 +9630,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Markeer een crash als opgelost in build N; komt hij daarna terug, dan staat hij op Teruggekomen"
+          }
+        }
+      }
+    },
+    "Max per scan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Max per scan"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Max per scan"
+          }
+        }
+      }
+    },
+    "Medewerker intrekken?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revoke staff member?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medewerker intrekken?"
+          }
+        }
+      }
+    },
+    "Medewerkers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Staff"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medewerkers"
           }
         }
       }
@@ -11250,6 +11474,22 @@
         }
       }
     },
+    "Nog niets gebeurd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing happened yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog niets gebeurd."
+          }
+        }
+      }
+    },
     "Nog niets gedeeld.": {
       "localizations": {
         "en": {
@@ -11666,6 +11906,22 @@
         }
       }
     },
+    "Ondernemers › zaak: instellingen (afkoeltijd, max stempels per scan, vindbaar in Pasr, adres)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Businesses › business: settings (cooldown, max stamps per scan, findable in Pasr, address)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondernemers › zaak: instellingen (afkoeltijd, max stempels per scan, vindbaar in Pasr, adres)"
+          }
+        }
+      }
+    },
     "Ondertitel NL": {
       "localizations": {
         "en": {
@@ -11902,6 +12158,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ook op het web: beheer.bingr.online, tab Premium"
+          }
+        }
+      }
+    },
+    "Ook op het web: beheer.pasr.nl, Ondernemers › Details": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.pasr.nl, Businesses › Details"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.pasr.nl, Ondernemers › Details"
           }
         }
       }
@@ -12222,6 +12494,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opgelost in build"
+          }
+        }
+      }
+    },
+    "Opgeslagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgeslagen"
           }
         }
       }
@@ -12686,6 +12974,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: gids en kaartontwerp"
+          }
+        }
+      }
+    },
+    "Pasr: ondernemers in detail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: businesses in detail"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: ondernemers in detail"
           }
         }
       }
@@ -13934,6 +14238,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Status, toestellen, meldingen en push"
+          }
+        }
+      }
+    },
+    "Stempels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stamps"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stempels"
+          }
+        }
+      }
+    },
+    "Stempels per dag (30 dagen), medewerkers van de zaak met intrekken, en de log met wie wanneer welke stempel gaf": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stamps per day (30 days), staff of the business with revoke, and the log of who gave which stamp when"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stempels per dag (30 dagen), medewerkers van de zaak met intrekken, en de log met wie wanneer welke stempel gaf"
           }
         }
       }
@@ -15890,6 +16226,38 @@
         }
       }
     },
+    "Vindbaar in Pasr": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Findable in Pasr"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vindbaar in Pasr"
+          }
+        }
+      }
+    },
+    "Vindbaar in Pasr uit = de zaak staat niet meer in Kaart toevoegen › Stempelkaart. De locatie zet de ondernemer met Pasr Zakelijk.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Findable in Pasr off = the business no longer appears in Add card › Stamp card. The business sets the location with Pasr Zakelijk."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vindbaar in Pasr uit = de zaak staat niet meer in Kaart toevoegen › Stempelkaart. De locatie zet de ondernemer met Pasr Zakelijk."
+          }
+        }
+      }
+    },
     "Vlot met honderden winkels: logo's en kaartontwerpen laden pas als ze in beeld komen": {
       "localizations": {
         "en": {
@@ -17454,6 +17822,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "incl. btw"
+          }
+        }
+      }
+    },
+    "klant": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "customer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "klant"
           }
         }
       }

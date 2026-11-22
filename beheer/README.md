@@ -172,6 +172,7 @@ originele code.
 | Winkellijst met 400+ winkels: zoeken, telling klantenkaarten/cadeaukaarten, cover-miniatuur, logo's pas laden in beeld | ✓ (ook in web-beheer en PasrBeheer build 10) |
 | Berichten: gericht pushbericht aan gebruikers met de opt-in Nieuws over mijn kaarten (doelgroep, voorbeeld, ontvangers, geschiedenis) | ✓ (ook in web-beheer en PasrBeheer build 11) |
 | Ondernemers (pasr.nl/zakelijk): goedkeuren, blokkeren, stempelkaarten met leden en stempels; push bij nieuwe ondernemer | ✓ (ook in web-beheer en PasrBeheer build 11) |
+| Ondernemers › details: instellingen (afkoeltijd, max per scan, vindbaar in Pasr, adres), stats per dag, medewerkers intrekken, log | ✓ (ook in web-beheer en PasrBeheer build 12) |
 | Gids: verjaardagsvoordeel per winkel | ✓ (ook in web-beheer en PasrBeheer build 11) |
 | Beheer-pushmeldingen (soorten, testmelding, uitleg na inloggen) | ✓ originele registratie; ontvangen na `server/patches` |
 | Instellingen met MoreAppsCard | ✓ |

@@ -92,6 +92,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: ondernemers in detail") {
+                    Label("Ondernemers › zaak: instellingen (afkoeltijd, max stempels per scan, vindbaar in Pasr, adres)", systemImage: "slider.horizontal.3")
+                    Label("Stempels per dag (30 dagen), medewerkers van de zaak met intrekken, en de log met wie wanneer welke stempel gaf", systemImage: "list.bullet.rectangle")
+                    Label("Een zaak uit de lijst in Pasr halen: Vindbaar in Pasr uit", systemImage: "eye.slash")
+                    Label("Ook op het web: beheer.pasr.nl, Ondernemers › Details", systemImage: "safari")
+                }
                 Section("Pasr: berichten en ondernemers") {
                     Label("Nieuw onderdeel Berichten: pushbericht aan iedereen met Nieuws over mijn kaarten, met doelgroep (iedereen, heeft kaart van een winkel, nieuwe gebruikers, inactief 30 dagen), voorbeeld, aantal ontvangers en geschiedenis", systemImage: "megaphone")
                     Label("Nieuw onderdeel Ondernemers: zaken van pasr.nl/zakelijk goedkeuren of blokkeren, met hun stempelkaarten, leden en stempels", systemImage: "rectangle.stack.badge.person.crop")
