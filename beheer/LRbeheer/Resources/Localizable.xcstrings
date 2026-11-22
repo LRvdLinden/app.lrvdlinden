@@ -178,6 +178,22 @@
         }
       }
     },
+    "%@ wordt als bevestigd gemarkeerd, zonder bevestigingsmail. Doe dit alleen als je zeker weet dat dit adres klopt (bijvoorbeeld een review-account). Het wachtwoord blijft van de gebruiker.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ will be marked as confirmed, without a confirmation email. Only do this if you're sure the address is right (for example a review account). The password stays with the user."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ wordt als bevestigd gemarkeerd, zonder bevestigingsmail. Doe dit alleen als je zeker weet dat dit adres klopt (bijvoorbeeld een review-account). Het wachtwoord blijft van de gebruiker."
+          }
+        }
+      }
+    },
     "%@ · %@ · %@ · %@ totaal": {
       "localizations": {
         "en": {
@@ -190,6 +206,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ · %@ · %@ · %@ totaal"
+          }
+        }
+      }
+    },
+    "%@: %lld stempels, %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@: %2$lld stamps, %3$@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %lld stempels, %@"
           }
         }
       }
@@ -370,6 +402,22 @@
         }
       }
     },
+    "%lld te gaan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld to go"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld te gaan"
+          }
+        }
+      }
+    },
     "%lld teksten vertaald. Controleer ze en publiceer.": {
       "localizations": {
         "en": {
@@ -414,6 +462,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld van %lld"
+          }
+        }
+      }
+    },
+    "%lld van %lld stempels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld of %2$lld stamps"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld van %lld stempels"
           }
         }
       }
@@ -1122,6 +1186,22 @@
         }
       }
     },
+    "Aanmaken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aanmaken"
+          }
+        }
+      }
+    },
     "Aantal": {
       "localizations": {
         "en": {
@@ -1150,6 +1230,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aantal reviews"
+          }
+        }
+      }
+    },
+    "Aantal stempels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number of stamps"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aantal stempels"
           }
         }
       }
@@ -1198,6 +1294,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aanvragen komen uit de app (alleen met een account). Publiceer je een winkel, dan staat hij meteen in Pasr en krijgen de aanvragers een pushmelding."
+          }
+        }
+      }
+    },
+    "Account bevestigen en eigenaar maken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirm account and make owner"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Account bevestigen en eigenaar maken"
+          }
+        }
+      }
+    },
+    "Account bevestigen en eigenaar maken?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirm account and make owner?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Account bevestigen en eigenaar maken?"
           }
         }
       }
@@ -1278,6 +1406,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Accounts, insights en pushmeldingen"
+          }
+        }
+      }
+    },
+    "Accounts: E-mail bevestigen voor accounts zonder bevestigd e-mailadres (bijvoorbeeld review@pasr.nl); bij Nieuwe ondernemer een onbevestigd account bevestigen en eigenaar maken. Wachtwoorden blijven van de gebruiker": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts: Confirm email for accounts without a confirmed address (for example review@pasr.nl); in New business, confirm an unconfirmed account and make it the owner. Passwords stay with the user"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts: E-mail bevestigen voor accounts zonder bevestigd e-mailadres (bijvoorbeeld review@pasr.nl); bij Nieuwe ondernemer een onbevestigd account bevestigen en eigenaar maken. Wachtwoorden blijven van de gebruiker"
           }
         }
       }
@@ -1390,6 +1534,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Afbeeldingsformaat (%@) wordt niet ondersteund; upload er zelf een."
+          }
+        }
+      }
+    },
+    "Afdrukken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afdrukken"
           }
         }
       }
@@ -1998,6 +2158,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alles is al vertaald. Zet 'overschrijven' aan om opnieuw te vertalen."
+          }
+        }
+      }
+    },
+    "Alles wat het beheer doet staat in de log van de zaak (actor beheer); ook op beheer.pasr.nl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everything the admin does is in the business log (actor admin); also on beheer.pasr.nl"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alles wat het beheer doet staat in de log van de zaak (actor beheer); ook op beheer.pasr.nl"
           }
         }
       }
@@ -2866,6 +3042,38 @@
         }
       }
     },
+    "Beloning": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reward"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beloning"
+          }
+        }
+      }
+    },
+    "Beloning klaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reward ready"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beloning klaar"
+          }
+        }
+      }
+    },
     "Beoordeling": {
       "localizations": {
         "en": {
@@ -3154,6 +3362,38 @@
         }
       }
     },
+    "Bevestig het e-mailadres alleen als je zeker weet dat het klopt. Het account wordt dan eigenaar van %@; het wachtwoord blijft van de gebruiker.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only confirm the email address if you're sure it's right. The account then becomes the owner of %@; the password stays with the user."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bevestig het e-mailadres alleen als je zeker weet dat het klopt. Het account wordt dan eigenaar van %@; het wachtwoord blijft van de gebruiker."
+          }
+        }
+      }
+    },
+    "Bevestig het e-mailadres alleen als je zeker weet dat het klopt. Het account wordt dan eigenaar van de zaak; het wachtwoord blijft van de gebruiker.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only confirm the email address if you're sure it's right. The account then becomes the owner of the business; the password stays with the user."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bevestig het e-mailadres alleen als je zeker weet dat het klopt. Het account wordt dan eigenaar van de zaak; het wachtwoord blijft van de gebruiker."
+          }
+        }
+      }
+    },
     "Bevestigd": {
       "localizations": {
         "en": {
@@ -3186,6 +3426,22 @@
         }
       }
     },
+    "Bevestigen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirm"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bevestigen"
+          }
+        }
+      }
+    },
     "Bewaard": {
       "localizations": {
         "en": {
@@ -3214,6 +3470,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bewerk melding"
+          }
+        }
+      }
+    },
+    "Bewerken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewerken"
           }
         }
       }
@@ -3582,6 +3854,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bingr: omzet van Apple"
+          }
+        }
+      }
+    },
+    "Blokkeer %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Block %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blokkeer %@"
           }
         }
       }
@@ -4226,6 +4514,54 @@
         }
       }
     },
+    "De kaart en alle leden met hun stempels gaan weg. Dit kan niet ongedaan worden gemaakt. De log blijft.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The card and all members with their stamps will be removed. This can't be undone. The log stays."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De kaart en alle leden met hun stempels gaan weg. Dit kan niet ongedaan worden gemaakt. De log blijft."
+          }
+        }
+      }
+    },
+    "De kaart is nog een concept: link, QR-code en flyer werken zodra hij online staat.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The card is still a draft: link, QR code and flyer work once it's online."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De kaart is nog een concept: link, QR-code en flyer werken zodra hij online staat."
+          }
+        }
+      }
+    },
+    "De klantcode werkt daarna niet meer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The customer code will stop working."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De klantcode werkt daarna niet meer."
+          }
+        }
+      }
+    },
     "De knop Saldo checken bij een cadeaukaart in de app opent deze pagina, met het kaartnummer klaar om te plakken. Werkt ook voor winkels die al in de app zitten.": {
       "localizations": {
         "en": {
@@ -4466,6 +4802,22 @@
         }
       }
     },
+    "Delen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delen"
+          }
+        }
+      }
+    },
     "Description EN": {
       "localizations": {
         "en": {
@@ -4574,6 +4926,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Deze run is nog bezig. Vernieuw straks."
+          }
+        }
+      }
+    },
+    "Deze zaak heeft een eigenaar met een Pasr-account; dit is alleen het contactadres.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This business has an owner with a Pasr account; this is only the contact address."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze zaak heeft een eigenaar met een Pasr-account; dit is alleen het contactadres."
           }
         }
       }
@@ -4798,6 +5166,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dit lijkt geen Homey App Store-link."
+          }
+        }
+      }
+    },
+    "Dit logo is te groot of onbruikbaar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This logo is too large or unusable."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit logo is te groot of onbruikbaar."
           }
         }
       }
@@ -5138,6 +5522,54 @@
         }
       }
     },
+    "E-mail (contact)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email (contact)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-mail (contact)"
+          }
+        }
+      }
+    },
+    "E-mail bevestigen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirm email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-mail bevestigen"
+          }
+        }
+      }
+    },
+    "E-mail van de eigenaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Owner's email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-mail van de eigenaar"
+          }
+        }
+      }
+    },
     "E-mailadres": {
       "localizations": {
         "en": {
@@ -5150,6 +5582,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "E-mailadres"
+          }
+        }
+      }
+    },
+    "E-mailadres bevestigd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email address confirmed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-mailadres bevestigd"
+          }
+        }
+      }
+    },
+    "E-mailadres bevestigen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirm email address?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-mailadres bevestigen?"
           }
         }
       }
@@ -5230,6 +5694,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Een betaalde aankoop zonder account aan dit account koppelen. Het account krijgt Lifetime. Doe dit alleen als je zeker weet dat deze klant de koper is."
+          }
+        }
+      }
+    },
+    "Een lid voor de review van Pasr Zakelijk door Apple: de reviewer scant de QR-code of typt de klantcode in de app.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A member for Apple's review of Pasr Zakelijk: the reviewer scans the QR code or types the customer code in the app."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een lid voor de review van Pasr Zakelijk door Apple: de reviewer scant de QR-code of typt de klantcode in de app."
+          }
+        }
+      }
+    },
+    "Een zaak die je hier aanmaakt is meteen goedgekeurd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A business you create here is approved right away."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een zaak die je hier aanmaakt is meteen goedgekeurd."
           }
         }
       }
@@ -5410,6 +5906,118 @@
         }
       }
     },
+    "Eigenaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Owner"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigenaar"
+          }
+        }
+      }
+    },
+    "Eigenaar gekoppeld: het Pasr-account met dit e-mailadres is nu eigenaar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Owner linked: the Pasr account with this email address is now the owner."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigenaar gekoppeld: het Pasr-account met dit e-mailadres is nu eigenaar."
+          }
+        }
+      }
+    },
+    "Eigenaar: Pasr-account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Owner: Pasr account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigenaar: Pasr-account"
+          }
+        }
+      }
+    },
+    "Eigenaarslink gemaild naar %@. Je kunt hem ook kopiëren of delen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Owner link emailed to %@. You can also copy or share it."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigenaarslink gemaild naar %@. Je kunt hem ook kopiëren of delen."
+          }
+        }
+      }
+    },
+    "Eigenaarslink mailen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email owner link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigenaarslink mailen"
+          }
+        }
+      }
+    },
+    "Eigenaarslink maken en mailen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create and email owner link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigenaarslink maken en mailen"
+          }
+        }
+      }
+    },
+    "Eigenaarslink versturen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send owner link?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigenaarslink versturen?"
+          }
+        }
+      }
+    },
     "Einde": {
       "localizations": {
         "en": {
@@ -5486,6 +6094,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Engels (optioneel)"
+          }
+        }
+      }
+    },
+    "Er bestaat al een Pasr-account met dit adres, maar het e-mailadres is niet bevestigd (bijvoorbeeld een review-adres zonder mailbox).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A Pasr account with this address already exists, but its email address isn't confirmed (for example a review address without a mailbox)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er bestaat al een Pasr-account met dit adres, maar het e-mailadres is niet bevestigd (bijvoorbeeld een review-adres zonder mailbox)."
+          }
+        }
+      }
+    },
+    "Er bestaat al een Pasr-account met dit adres, maar het e-mailadres is niet bevestigd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A Pasr account with this address already exists, but its email address isn't confirmed."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er bestaat al een Pasr-account met dit adres, maar het e-mailadres is niet bevestigd."
           }
         }
       }
@@ -5838,6 +6478,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Financiën"
+          }
+        }
+      }
+    },
+    "Flyer (A4)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flyer (A4)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flyer (A4)"
           }
         }
       }
@@ -6210,6 +6866,22 @@
         }
       }
     },
+    "Geen eigenaar: jij beheert deze zaak. Vul bij Bewerken een e-mailadres in om een eigenaar uit te nodigen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No owner: you manage this business. Enter an email address under Edit to invite an owner."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen eigenaar: jij beheert deze zaak. Vul bij Bewerken een e-mailadres in om een eigenaar uit te nodigen."
+          }
+        }
+      }
+    },
     "Geen gemelde fouten": {
       "localizations": {
         "en": {
@@ -6222,6 +6894,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen gemelde fouten"
+          }
+        }
+      }
+    },
+    "Geen huisstijl gevonden; kies zelf een kleur en logo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No branding found; choose a colour and logo yourself."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen huisstijl gevonden; kies zelf een kleur en logo."
           }
         }
       }
@@ -6462,6 +7150,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen zaken"
+          }
+        }
+      }
+    },
+    "Geldig tot %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valid until %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geldig tot %@"
           }
         }
       }
@@ -6850,6 +7554,22 @@
         }
       }
     },
+    "Half vol": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Half full"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Half vol"
+          }
+        }
+      }
+    },
     "Handmatig": {
       "localizations": {
         "en": {
@@ -6878,6 +7598,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Handmatig beëindigd"
+          }
+        }
+      }
+    },
+    "Hang de QR-code bij de kassa of deel de link. De flyer is een A4 om te printen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put the QR code at the till or share the link. The flyer is an A4 to print."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hang de QR-code bij de kassa of deel de link. De flyer is een A4 om te printen."
+          }
+        }
+      }
+    },
+    "Heeft dit adres al een Pasr-account, dan wordt dat account eigenaar. Anders maken we een eigenaarslink (30 dagen geldig). Leeg = geen eigenaar: dan beheer jij de zaak.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If this address already has a Pasr account, that account becomes the owner. Otherwise we create an owner link (valid for 30 days). Empty = no owner: you manage the business."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heeft dit adres al een Pasr-account, dan wordt dat account eigenaar. Anders maken we een eigenaarslink (30 dagen geldig). Leeg = geen eigenaar: dan beheer jij de zaak."
           }
         }
       }
@@ -7246,6 +7998,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Huidig ontwerp"
+          }
+        }
+      }
+    },
+    "Huisstijl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Branding"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huisstijl"
+          }
+        }
+      }
+    },
+    "Huisstijl ophalen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetch branding"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huisstijl ophalen"
           }
         }
       }
@@ -8002,6 +8786,22 @@
         }
       }
     },
+    "Kaart aanmaken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create card"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaart aanmaken"
+          }
+        }
+      }
+    },
     "Kaartkleur": {
       "localizations": {
         "en": {
@@ -8306,6 +9106,22 @@
         }
       }
     },
+    "Kleur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colour"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleur"
+          }
+        }
+      }
+    },
     "Knop 1": {
       "localizations": {
         "en": {
@@ -8478,6 +9294,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kopieer JSON"
+          }
+        }
+      }
+    },
+    "Kopieer code": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy code"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer code"
+          }
+        }
+      }
+    },
+    "Kopieer link": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer link"
           }
         }
       }
@@ -8910,6 +9758,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Landing"
+          }
+        }
+      }
+    },
+    "Leeg": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empty"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leeg"
           }
         }
       }
@@ -10034,6 +10898,38 @@
         }
       }
     },
+    "Naam van de kaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card name"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naam van de kaart"
+          }
+        }
+      }
+    },
+    "Naam van de zaak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Business name"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naam van de zaak"
+          }
+        }
+      }
+    },
     "Naam, icoon en omschrijving komen van de pagina. Staat er een App Store- of Homey-link op, dan wordt die app volledig opgehaald. Een TestFlight-link wordt een beta-app. Dit duurt 1 tot 2 minuten.": {
       "localizations": {
         "en": {
@@ -10962,6 +11858,38 @@
         }
       }
     },
+    "Nieuwe link gemaakt, maar niet gemaild (geen SMTP). Kopieer hem.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New link created but not emailed (no SMTP). Copy it."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe link gemaakt, maar niet gemaild (geen SMTP). Kopieer hem."
+          }
+        }
+      }
+    },
+    "Nieuwe link maken en mailen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create and email new link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe link maken en mailen"
+          }
+        }
+      }
+    },
     "Nieuwe meldingen (centraal)": {
       "localizations": {
         "en": {
@@ -11058,6 +11986,22 @@
         }
       }
     },
+    "Nieuwe ondernemer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New business"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe ondernemer"
+          }
+        }
+      }
+    },
     "Nieuwe review": {
       "localizations": {
         "en": {
@@ -11086,6 +12030,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe stap"
+          }
+        }
+      }
+    },
+    "Nieuwe stempelkaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New stamp card"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe stempelkaart"
           }
         }
       }
@@ -11278,6 +12238,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nog geen downloads in de afgelopen 30 dagen. Apple komt een dag later binnen."
+          }
+        }
+      }
+    },
+    "Nog geen eigenaar; de eigenaarslink staat open.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No owner yet; the owner link is open."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen eigenaar; de eigenaarslink staat open."
           }
         }
       }
@@ -11906,6 +12882,22 @@
         }
       }
     },
+    "Ondernemers › Nieuwe ondernemer: zaak meteen goedgekeurd; met een Pasr-account wordt dat eigenaar, anders een eigenaarslink (mailen, kopiëren of opnieuw versturen); zonder e-mail beheer jij de zaak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Businesses › New business: approved right away; a Pasr account becomes the owner, otherwise an owner link (email, copy or resend); without an email you manage the business"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondernemers › Nieuwe ondernemer: zaak meteen goedgekeurd; met een Pasr-account wordt dat eigenaar, anders een eigenaarslink (mailen, kopiëren of opnieuw versturen); zonder e-mail beheer jij de zaak"
+          }
+        }
+      }
+    },
     "Ondernemers › zaak: instellingen (afkoeltijd, max stempels per scan, vindbaar in Pasr, adres)": {
       "localizations": {
         "en": {
@@ -11970,6 +12962,22 @@
         }
       }
     },
+    "Online (kan na goedkeuring van de zaak)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online (possible once the business is approved)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online (kan na goedkeuring van de zaak)"
+          }
+        }
+      }
+    },
     "Online inwisselen": {
       "localizations": {
         "en": {
@@ -11982,6 +12990,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Online inwisselen"
+          }
+        }
+      }
+    },
+    "Online: klanten kunnen aansluiten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online: customers can join"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online: klanten kunnen aansluiten"
           }
         }
       }
@@ -12514,6 +13538,22 @@
         }
       }
     },
+    "Opgeslagen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgeslagen."
+          }
+        }
+      }
+    },
     "Ophalen": {
       "localizations": {
         "en": {
@@ -12786,6 +13826,22 @@
         }
       }
     },
+    "Overgenomen van %@. Pas gerust aan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taken from %@. Feel free to adjust."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overgenomen van %@. Pas gerust aan."
+          }
+        }
+      }
+    },
     "Overgeslagen": {
       "localizations": {
         "en": {
@@ -12882,6 +13938,22 @@
         }
       }
     },
+    "PNG": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PNG"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PNG"
+          }
+        }
+      }
+    },
     "Pairr beheer": {
       "localizations": {
         "en": {
@@ -12930,6 +14002,22 @@
         }
       }
     },
+    "Pasr-account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr-account"
+          }
+        }
+      }
+    },
     "Pasr: berichten en ondernemers": {
       "localizations": {
         "en": {
@@ -12974,6 +14062,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: gids en kaartontwerp"
+          }
+        }
+      }
+    },
+    "Pasr: ondernemers en stempelkaarten aanmaken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: create businesses and stamp cards"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: ondernemers en stempelkaarten aanmaken"
           }
         }
       }
@@ -13054,6 +14158,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: winkels zonder update"
+          }
+        }
+      }
+    },
+    "Per zaak Bewerken en Nieuwe stempelkaart: live voorbeeld zoals op pasr.nl/zakelijk, Huisstijl ophalen van de website, QR-code, link en flyer, publiceren of offline halen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per business Edit and New stamp card: live preview as on pasr.nl/zakelijk, fetch branding from the website, QR code, link and flyer, publish or take offline"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per zaak Bewerken en Nieuwe stempelkaart: live voorbeeld zoals op pasr.nl/zakelijk, Huisstijl ophalen van de website, QR-code, link en flyer, publiceren of offline halen"
           }
         }
       }
@@ -13634,6 +14754,54 @@
         }
       }
     },
+    "QR": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QR"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QR"
+          }
+        }
+      }
+    },
+    "QR-code": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QR code"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QR-code"
+          }
+        }
+      }
+    },
+    "QR-code en link": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QR code and link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QR-code en link"
+          }
+        }
+      }
+    },
     "Reeksen Website en Apple in de grafiek en de knop Apple-omzet bijwerken": {
       "localizations": {
         "en": {
@@ -13710,6 +14878,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Releases op GitHub"
+          }
+        }
+      }
+    },
+    "Resetten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resetten"
           }
         }
       }
@@ -14242,6 +15426,70 @@
         }
       }
     },
+    "Status: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status: %@"
+          }
+        }
+      }
+    },
+    "Stempelkaart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stamp card"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stempelkaart"
+          }
+        }
+      }
+    },
+    "Stempelkaart verwijderen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete stamp card?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stempelkaart verwijderen?"
+          }
+        }
+      }
+    },
+    "Stempelkaarten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stamp cards"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stempelkaarten"
+          }
+        }
+      }
+    },
     "Stempels": {
       "localizations": {
         "en": {
@@ -14254,6 +15502,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stempels"
+          }
+        }
+      }
+    },
+    "Stempels en beloningen van deze testklant gaan terug naar 0.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This test customer's stamps and rewards go back to 0."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stempels en beloningen van deze testklant gaan terug naar 0."
           }
         }
       }
@@ -14658,6 +15922,22 @@
         }
       }
     },
+    "Tekstkleur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text colour"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekstkleur"
+          }
+        }
+      }
+    },
     "Telefoon": {
       "localizations": {
         "en": {
@@ -14734,6 +16014,102 @@
           "stringUnit": {
             "state": "translated",
             "value": "Test naar mijn LRbeheer"
+          }
+        }
+      }
+    },
+    "Testklant (App Review)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test customer (App Review)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testklant (App Review)"
+          }
+        }
+      }
+    },
+    "Testklant gemaakt. Zet de kaart online, anders kan de reviewer niet scannen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test customer created. Put the card online, otherwise the reviewer can't scan."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testklant gemaakt. Zet de kaart online, anders kan de reviewer niet scannen."
+          }
+        }
+      }
+    },
+    "Testklant maken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create test customer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testklant maken"
+          }
+        }
+      }
+    },
+    "Testklant maken per stempelkaart voor de App Review van Pasr Zakelijk: klantcode als tekst en grote QR-code (PNG of afdrukken), resetten of verwijderen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a test customer per stamp card for the App Review of Pasr Zakelijk: customer code as text and a large QR code (PNG or print), reset or delete"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testklant maken per stempelkaart voor de App Review van Pasr Zakelijk: klantcode als tekst en grote QR-code (PNG of afdrukken), resetten of verwijderen"
+          }
+        }
+      }
+    },
+    "Testklant resetten?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset test customer?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testklant resetten?"
+          }
+        }
+      }
+    },
+    "Testklant verwijderen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete test customer?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testklant verwijderen?"
           }
         }
       }
@@ -14862,6 +16238,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tijdlijn (nieuwste boven)"
+          }
+        }
+      }
+    },
+    "Tik op een kaart om hem te bewerken, de QR-code en flyer te zien of een testklant voor de App Review te maken.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap a card to edit it, see the QR code and flyer, or create a test customer for App Review."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tik op een kaart om hem te bewerken, de QR-code en flyer te zien of een testklant voor de App Review te maken."
           }
         }
       }
@@ -16338,6 +17730,22 @@
         }
       }
     },
+    "Vol": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vol"
+          }
+        }
+      }
+    },
     "Volgorde: instellingen invullen (nog uit laten), codes genereren (eerst droog), mail testen; op dag D Lifetime-only aan, mail versturen en de melding in de apps klaarzetten; 7 dagen voor de overgang de herinnering.": {
       "localizations": {
         "en": {
@@ -17250,6 +18658,22 @@
         }
       }
     },
+    "Wit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "White"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wit"
+          }
+        }
+      }
+    },
     "Witregel = nieuwe alinea": {
       "localizations": {
         "en": {
@@ -17294,6 +18718,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wordt bijgesneden tot kaartverhouding 1,586:1 en verkleind tot 640 x 404."
+          }
+        }
+      }
+    },
+    "Zaak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Business"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaak"
           }
         }
       }
@@ -17406,6 +18846,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zo wissel je hem in (1 tot 3 zinnen)"
+          }
+        }
+      }
+    },
+    "Zo ziet de klant de kaart in Pasr en in de browser.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This is how customers see the card in Pasr and in the browser."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zo ziet de klant de kaart in Pasr en in de browser."
           }
         }
       }
@@ -17538,6 +18994,22 @@
         }
       }
     },
+    "Zonder eigenaar: jij beheert deze zaak. Maak nu de stempelkaart.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No owner: you manage this business. Now create the stamp card."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zonder eigenaar: jij beheert deze zaak. Maak nu de stempelkaart."
+          }
+        }
+      }
+    },
     "Zone": {
       "localizations": {
         "en": {
@@ -17550,6 +19022,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zone"
+          }
+        }
+      }
+    },
+    "Zwart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Black"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zwart"
           }
         }
       }
@@ -17582,6 +19070,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "automatisch"
+          }
+        }
+      }
+    },
+    "beheer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "admin"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "beheer"
           }
         }
       }

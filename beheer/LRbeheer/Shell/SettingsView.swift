@@ -92,6 +92,13 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: ondernemers en stempelkaarten aanmaken") {
+                    Label("Ondernemers › Nieuwe ondernemer: zaak meteen goedgekeurd; met een Pasr-account wordt dat eigenaar, anders een eigenaarslink (mailen, kopiëren of opnieuw versturen); zonder e-mail beheer jij de zaak", systemImage: "storefront")
+                    Label("Per zaak Bewerken en Nieuwe stempelkaart: live voorbeeld zoals op pasr.nl/zakelijk, Huisstijl ophalen van de website, QR-code, link en flyer, publiceren of offline halen", systemImage: "rectangle.stack.badge.plus")
+                    Label("Testklant maken per stempelkaart voor de App Review van Pasr Zakelijk: klantcode als tekst en grote QR-code (PNG of afdrukken), resetten of verwijderen", systemImage: "person.crop.circle.badge.checkmark")
+                    Label("Alles wat het beheer doet staat in de log van de zaak (actor beheer); ook op beheer.pasr.nl", systemImage: "list.bullet.rectangle")
+                    Label("Accounts: E-mail bevestigen voor accounts zonder bevestigd e-mailadres (bijvoorbeeld review@pasr.nl); bij Nieuwe ondernemer een onbevestigd account bevestigen en eigenaar maken. Wachtwoorden blijven van de gebruiker", systemImage: "checkmark.seal")
+                }
                 Section("Pasr: ondernemers in detail") {
                     Label("Ondernemers › zaak: instellingen (afkoeltijd, max stempels per scan, vindbaar in Pasr, adres)", systemImage: "slider.horizontal.3")
                     Label("Stempels per dag (30 dagen), medewerkers van de zaak met intrekken, en de log met wie wanneer welke stempel gaf", systemImage: "list.bullet.rectangle")
