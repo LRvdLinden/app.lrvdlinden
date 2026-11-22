@@ -170,6 +170,9 @@ originele code.
 | Gids per winkel bewerken (cadeaubon-gids bij cadeaukaarten, programmagids bij klantenkaarten) | ✓ (ook in web-beheer en PasrBeheer build 10) |
 | Kaartontwerp van cadeaukaarten (foto of bestand, bijsnijden tot 640 x 404, Geen ontwerp) | ✓ (ook in web-beheer en PasrBeheer build 10) |
 | Winkellijst met 400+ winkels: zoeken, telling klantenkaarten/cadeaukaarten, cover-miniatuur, logo's pas laden in beeld | ✓ (ook in web-beheer en PasrBeheer build 10) |
+| Berichten: gericht pushbericht aan gebruikers met de opt-in Nieuws over mijn kaarten (doelgroep, voorbeeld, ontvangers, geschiedenis) | ✓ (ook in web-beheer en PasrBeheer build 11) |
+| Ondernemers (pasr.nl/zakelijk): goedkeuren, blokkeren, stempelkaarten met leden en stempels; push bij nieuwe ondernemer | ✓ (ook in web-beheer en PasrBeheer build 11) |
+| Gids: verjaardagsvoordeel per winkel | ✓ (ook in web-beheer en PasrBeheer build 11) |
 | Beheer-pushmeldingen (soorten, testmelding, uitleg na inloggen) | ✓ originele registratie; ontvangen na `server/patches` |
 | Instellingen met MoreAppsCard | ✓ |
 | Deeplinks `pasrbeheer://…` | ✓ |

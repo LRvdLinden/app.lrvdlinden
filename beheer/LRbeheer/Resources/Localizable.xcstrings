@@ -2850,6 +2850,22 @@
         }
       }
     },
+    "Bericht sturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bericht sturen"
+          }
+        }
+      }
+    },
     "Bericht toevoegen": {
       "localizations": {
         "en": {
@@ -3470,6 +3486,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bingr: omzet van Apple"
+          }
+        }
+      }
+    },
+    "Blokkeren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Block"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blokkeren"
           }
         }
       }
@@ -4290,6 +4322,22 @@
         }
       }
     },
+    "De zaak kan niet meer scannen en de kaarten gaan offline. Leden zien dat de kaart niet meer actief is.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The business can no longer scan and its cards go offline. Members see that the card is no longer active."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De zaak kan niet meer scannen en de kaarten gaan offline. Leden zien dat de kaart niet meer actief is."
+          }
+        }
+      }
+    },
     "Defensie": {
       "localizations": {
         "en": {
@@ -4594,6 +4642,22 @@
         }
       }
     },
+    "Dit kan niet worden teruggedraaid.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This cannot be undone."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit kan niet worden teruggedraaid."
+          }
+        }
+      }
+    },
     "Dit lijkt geen App Store-link.": {
       "localizations": {
         "en": {
@@ -4638,6 +4702,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dit pushbericht nu versturen?"
+          }
+        }
+      }
+    },
+    "Doelgroep": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audience"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doelgroep"
           }
         }
       }
@@ -5714,6 +5794,22 @@
         }
       }
     },
+    "Geblokkeerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocked"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geblokkeerd"
+          }
+        }
+      }
+    },
     "Gebruikers melden dit anoniem via \"Klopt deze melding niet?\" onderaan een melding.": {
       "localizations": {
         "en": {
@@ -5918,6 +6014,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen Nederlandse banner: de Engelse wordt gebruikt"
+          }
+        }
+      }
+    },
+    "Geen aanmeldingen die wachten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No pending sign-ups"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen aanmeldingen die wachten"
           }
         }
       }
@@ -6210,6 +6322,22 @@
         }
       }
     },
+    "Geen zaken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No businesses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen zaken"
+          }
+        }
+      }
+    },
     "Geldigheid, bijv. 3 jaar na aankoop": {
       "localizations": {
         "en": {
@@ -6354,6 +6482,22 @@
         }
       }
     },
+    "Geschiedenis": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "History"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geschiedenis"
+          }
+        }
+      }
+    },
     "Gezondheid": {
       "localizations": {
         "en": {
@@ -6402,6 +6546,22 @@
         }
       }
     },
+    "Gids: verjaardagsvoordeel per winkel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guide: birthday perk per store"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gids: verjaardagsvoordeel per winkel"
+          }
+        }
+      }
+    },
     "GitHub Actions": {
       "localizations": {
         "en": {
@@ -6430,6 +6590,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "GitHub was niet bereikbaar; probeer het zo opnieuw."
+          }
+        }
+      }
+    },
+    "Goedgekeurd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Approved"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Goedgekeurd"
+          }
+        }
+      }
+    },
+    "Goedkeuren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Approve"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Goedkeuren"
           }
         }
       }
@@ -6558,6 +6750,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Handmatig beëindigd"
+          }
+        }
+      }
+    },
+    "Heeft een kaart van": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Has a card from"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heeft een kaart van"
           }
         }
       }
@@ -7026,6 +7234,22 @@
         }
       }
     },
+    "Iedereen met opt-in": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everyone opted in"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iedereen met opt-in"
+          }
+        }
+      }
+    },
     "In de app en op pasr.nl. Alleen officiële bronnen; onbekend leeg laten. Alleen een gewijzigde gids wordt opgeslagen; leeg laten houdt de bestaande gids.": {
       "localizations": {
         "en": {
@@ -7134,6 +7358,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "In ontwikkeling"
+          }
+        }
+      }
+    },
+    "Inactief (30 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inactive (30 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inactief (30 dagen)"
           }
         }
       }
@@ -7438,6 +7678,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ja"
+          }
+        }
+      }
+    },
+    "Je bericht verschijnt hier.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your message appears here."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je bericht verschijnt hier."
           }
         }
       }
@@ -9442,6 +9698,22 @@
         }
       }
     },
+    "Met opt-in": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opted in"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Met opt-in"
+          }
+        }
+      }
+    },
     "Met wijzigingen": {
       "localizations": {
         "en": {
@@ -9986,6 +10258,38 @@
         }
       }
     },
+    "Nieuw deze week": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New this week"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw deze week"
+          }
+        }
+      }
+    },
+    "Nieuw onderdeel Berichten: pushbericht aan iedereen met Nieuws over mijn kaarten, met doelgroep (iedereen, heeft kaart van een winkel, nieuwe gebruikers, inactief 30 dagen), voorbeeld, aantal ontvangers en geschiedenis": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New section Messages: push message to everyone with News about my cards, with audience (everyone, has a card from a store, new users, inactive 30 days), preview, number of recipients and history"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw onderdeel Berichten: pushbericht aan iedereen met Nieuws over mijn kaarten, met doelgroep (iedereen, heeft kaart van een winkel, nieuwe gebruikers, inactief 30 dagen), voorbeeld, aantal ontvangers en geschiedenis"
+          }
+        }
+      }
+    },
     "Nieuw onderdeel Crashes: eigen crashrapporten van de Bingr-apps en de webspeler, gegroepeerd met aantal, platforms, builds en eerst en laatst gezien": {
       "localizations": {
         "en": {
@@ -9998,6 +10302,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuw onderdeel Crashes: eigen crashrapporten van de Bingr-apps en de webspeler, gegroepeerd met aantal, platforms, builds en eerst en laatst gezien"
+          }
+        }
+      }
+    },
+    "Nieuw onderdeel Ondernemers: zaken van pasr.nl/zakelijk goedkeuren of blokkeren, met hun stempelkaarten, leden en stempels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New section Businesses: approve or block businesses from pasr.nl/zakelijk, with their stamp cards, members and stamps"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw onderdeel Ondernemers: zaken van pasr.nl/zakelijk goedkeuren of blokkeren, met hun stempelkaarten, leden en stempels"
           }
         }
       }
@@ -10382,6 +10702,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe apps toegevoegd: %@. Controleer ze en zet eventueel Tonen in Nieuw en onderweg of een banner aan."
+          }
+        }
+      }
+    },
+    "Nieuwe gebruikers (7 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New users (7 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe gebruikers (7 dagen)"
           }
         }
       }
@@ -11314,6 +11650,22 @@
         }
       }
     },
+    "Ondernemers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Businesses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondernemers"
+          }
+        }
+      }
+    },
     "Ondertitel NL": {
       "localizations": {
         "en": {
@@ -11550,6 +11902,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ook op het web: beheer.bingr.online, tab Premium"
+          }
+        }
+      }
+    },
+    "Ook op het web: beheer.pasr.nl, tabs Berichten en Ondernemers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.pasr.nl, tabs Messages and Businesses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.pasr.nl, tabs Berichten en Ondernemers"
           }
         }
       }
@@ -12274,6 +12642,22 @@
         }
       }
     },
+    "Pasr: berichten en ondernemers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: messages and businesses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: berichten en ondernemers"
+          }
+        }
+      }
+    },
     "Pasr: delen": {
       "localizations": {
         "en": {
@@ -12814,6 +13198,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pushmelding bij een nieuwe of teruggekomen crash, aan of uit in de Instellingen van Bingr"
+          }
+        }
+      }
+    },
+    "Pushmelding bij een nieuwe ondernemer (schakelaar Winkel aangevraagd of nieuwe ondernemer)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push notification for a new business (toggle Store requested or new business)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pushmelding bij een nieuwe ondernemer (schakelaar Winkel aangevraagd of nieuwe ondernemer)"
           }
         }
       }
@@ -13938,6 +14338,22 @@
         }
       }
     },
+    "Terug naar wachten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to pending"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terug naar wachten"
+          }
+        }
+      }
+    },
     "Terugbetaald": {
       "localizations": {
         "en": {
@@ -15042,6 +15458,22 @@
         }
       }
     },
+    "Verjaardagsvoordeel (alleen als de officiële site het noemt)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birthday perk (only if the official site mentions it)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verjaardagsvoordeel (alleen als de officiële site het noemt)"
+          }
+        }
+      }
+    },
     "Verkeer nu": {
       "localizations": {
         "en": {
@@ -15826,6 +16258,38 @@
         }
       }
     },
+    "Wacht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pending"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wacht"
+          }
+        }
+      }
+    },
+    "Wacht op goedkeuring": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Awaiting approval"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wacht op goedkeuring"
+          }
+        }
+      }
+    },
     "Wachtwoord": {
       "localizations": {
         "en": {
@@ -16226,6 +16690,22 @@
         }
       }
     },
+    "Winkel aangevraagd of nieuwe ondernemer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Store requested or new business"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkel aangevraagd of nieuwe ondernemer"
+          }
+        }
+      }
+    },
     "Winkel publiceren?": {
       "localizations": {
         "en": {
@@ -16238,6 +16718,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Winkel publiceren?"
+          }
+        }
+      }
+    },
+    "Winkel-id, bijv. ah": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Store ID, e.g. ah"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winkel-id, bijv. ah"
           }
         }
       }
@@ -16430,6 +16926,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wordt bijgesneden tot kaartverhouding 1,586:1 en verkleind tot 640 x 404."
+          }
+        }
+      }
+    },
+    "Zaak blokkeren?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Block business?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaak blokkeren?"
           }
         }
       }

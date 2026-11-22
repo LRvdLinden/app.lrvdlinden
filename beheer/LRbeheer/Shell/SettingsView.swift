@@ -92,6 +92,13 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: berichten en ondernemers") {
+                    Label("Nieuw onderdeel Berichten: pushbericht aan iedereen met Nieuws over mijn kaarten, met doelgroep (iedereen, heeft kaart van een winkel, nieuwe gebruikers, inactief 30 dagen), voorbeeld, aantal ontvangers en geschiedenis", systemImage: "megaphone")
+                    Label("Nieuw onderdeel Ondernemers: zaken van pasr.nl/zakelijk goedkeuren of blokkeren, met hun stempelkaarten, leden en stempels", systemImage: "rectangle.stack.badge.person.crop")
+                    Label("Pushmelding bij een nieuwe ondernemer (schakelaar Winkel aangevraagd of nieuwe ondernemer)", systemImage: "bell.badge")
+                    Label("Gids: verjaardagsvoordeel per winkel", systemImage: "gift")
+                    Label("Ook op het web: beheer.pasr.nl, tabs Berichten en Ondernemers", systemImage: "safari")
+                }
                 Section("Pasr: gids en kaartontwerp") {
                     Label("Winkels › winkel: gids bewerken, cadeaubon-gids bij cadeaukaarten en programmagids bij klantenkaarten", systemImage: "book.pages")
                     Label("Kaartontwerp van een cadeaukaart: foto of bestand kiezen, automatisch bijgesneden tot kaartverhouding", systemImage: "photo.on.rectangle")
