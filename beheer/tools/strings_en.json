@@ -1223,5 +1223,9 @@
   "Overzicht van Pasr: kaart iOS en Android met actieve toestellen per dag per platform (Pasr of Pasr Zakelijk), nieuwe installaties en de versies die in gebruik zijn": "Pasr overview: iOS and Android card with active devices per day per platform (Pasr or Pasr Zakelijk), new installs and the versions in use",
   "Google Wallet-passen naast Apple Wallet-passen, per dag en totaal": "Google Wallet passes next to Apple Wallet passes, per day and in total",
   "Accounts per platform: aangemaakt op iOS, Android of het web": "Accounts per platform: created on iOS, Android or the web",
-  "Ook op het web: beheer.pasr.nl, Overzicht en Insights": "Also on the web: beheer.pasr.nl, Overview and Insights"
+  "Ook op het web: beheer.pasr.nl, Overzicht en Insights": "Also on the web: beheer.pasr.nl, Overview and Insights",
+  "Pasr: pushmeldingen op Android": "Pasr: push notifications on Android",
+  "Bericht sturen telt de ontvangers per platform: iOS en Android apart, ook na het versturen": "Send message counts recipients per platform: iOS and Android separately, also after sending",
+  "Inzichten: Push aan per platform (iOS, Android en Pasr Zakelijk) en of Android-push is ingericht": "Insights: push on per platform (iOS, Android and Pasr Zakelijk) and whether Android push is set up",
+  "Per platform": "Per platform"
 }

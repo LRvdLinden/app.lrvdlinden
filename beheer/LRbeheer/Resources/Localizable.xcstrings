@@ -3186,6 +3186,22 @@
         }
       }
     },
+    "Bericht sturen telt de ontvangers per platform: iOS en Android apart, ook na het versturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send message counts recipients per platform: iOS and Android separately, also after sending"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bericht sturen telt de ontvangers per platform: iOS en Android apart, ook na het versturen"
+          }
+        }
+      }
+    },
     "Bericht toevoegen": {
       "localizations": {
         "en": {
@@ -8606,6 +8622,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Introtekst"
+          }
+        }
+      }
+    },
+    "Inzichten: Push aan per platform (iOS, Android en Pasr Zakelijk) en of Android-push is ingericht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insights: push on per platform (iOS, Android and Pasr Zakelijk) and whether Android push is set up"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inzichten: Push aan per platform (iOS, Android en Pasr Zakelijk) en of Android-push is ingericht"
           }
         }
       }
@@ -14194,6 +14226,22 @@
         }
       }
     },
+    "Pasr: pushmeldingen op Android": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: push notifications on Android"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: pushmeldingen op Android"
+          }
+        }
+      }
+    },
     "Pasr: review-account": {
       "localizations": {
         "en": {
@@ -14238,6 +14286,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: winkels zonder update"
+          }
+        }
+      }
+    },
+    "Per platform": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per platform"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per platform"
           }
         }
       }

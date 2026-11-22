@@ -92,6 +92,10 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: pushmeldingen op Android") {
+                    Label("Bericht sturen telt de ontvangers per platform: iOS en Android apart, ook na het versturen", systemImage: "megaphone")
+                    Label("Inzichten: Push aan per platform (iOS, Android en Pasr Zakelijk) en of Android-push is ingericht", systemImage: "bell.badge")
+                }
                 Section("Pasr: iOS en Android") {
                     Label("Overzicht van Pasr: kaart iOS en Android met actieve toestellen per dag per platform (Pasr of Pasr Zakelijk), nieuwe installaties en de versies die in gebruik zijn", systemImage: "iphone.and.arrow.forward")
                     Label("Google Wallet-passen naast Apple Wallet-passen, per dag en totaal", systemImage: "wallet.pass")
