@@ -1378,6 +1378,22 @@
         }
       }
     },
+    "Accounts per platform: aangemaakt op iOS, Android of het web": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts per platform: created on iOS, Android or the web"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accounts per platform: aangemaakt op iOS, Android of het web"
+          }
+        }
+      }
+    },
     "Accounts › Review-account maken: bevestigd account voor Apple App Review met voorbeeldkaarten en een gedeelde Pasr": {
       "localizations": {
         "en": {
@@ -7458,6 +7474,22 @@
         }
       }
     },
+    "Google Wallet-passen naast Apple Wallet-passen, per dag en totaal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google Wallet passes next to Apple Wallet passes, per day and in total"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google Wallet-passen naast Apple Wallet-passen, per dag en totaal"
+          }
+        }
+      }
+    },
     "Grafiek met downloads per dag over 30 dagen": {
       "localizations": {
         "en": {
@@ -13202,6 +13234,22 @@
         }
       }
     },
+    "Ook op het web: beheer.pasr.nl, Overzicht en Insights": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.pasr.nl, Overview and Insights"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.pasr.nl, Overzicht en Insights"
+          }
+        }
+      }
+    },
     "Ook op het web: beheer.pasr.nl, tabs Berichten en Ondernemers": {
       "localizations": {
         "en": {
@@ -13890,6 +13938,22 @@
         }
       }
     },
+    "Overzicht van Pasr: kaart iOS en Android met actieve toestellen per dag per platform (Pasr of Pasr Zakelijk), nieuwe installaties en de versies die in gebruik zijn": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr overview: iOS and Android card with active devices per day per platform (Pasr or Pasr Zakelijk), new installs and the versions in use"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overzicht van Pasr: kaart iOS en Android met actieve toestellen per dag per platform (Pasr of Pasr Zakelijk), nieuwe installaties en de versies die in gebruik zijn"
+          }
+        }
+      }
+    },
     "Overzicht: toestellen in de lucht, vluchten per dag, grote inzetten, apparaten, zones en de status van de server": {
       "localizations": {
         "en": {
@@ -14062,6 +14126,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: gids en kaartontwerp"
+          }
+        }
+      }
+    },
+    "Pasr: iOS en Android": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: iOS and Android"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: iOS en Android"
           }
         }
       }

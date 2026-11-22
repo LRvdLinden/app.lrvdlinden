@@ -92,6 +92,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: iOS en Android") {
+                    Label("Overzicht van Pasr: kaart iOS en Android met actieve toestellen per dag per platform (Pasr of Pasr Zakelijk), nieuwe installaties en de versies die in gebruik zijn", systemImage: "iphone.and.arrow.forward")
+                    Label("Google Wallet-passen naast Apple Wallet-passen, per dag en totaal", systemImage: "wallet.pass")
+                    Label("Accounts per platform: aangemaakt op iOS, Android of het web", systemImage: "person.2")
+                    Label("Ook op het web: beheer.pasr.nl, Overzicht en Insights", systemImage: "safari")
+                }
                 Section("Pasr: ondernemers en stempelkaarten aanmaken") {
                     Label("Ondernemers › Nieuwe ondernemer: zaak meteen goedgekeurd; met een Pasr-account wordt dat eigenaar, anders een eigenaarslink (mailen, kopiëren of opnieuw versturen); zonder e-mail beheer jij de zaak", systemImage: "storefront")
                     Label("Per zaak Bewerken en Nieuwe stempelkaart: live voorbeeld zoals op pasr.nl/zakelijk, Huisstijl ophalen van de website, QR-code, link en flyer, publiceren of offline halen", systemImage: "rectangle.stack.badge.plus")
