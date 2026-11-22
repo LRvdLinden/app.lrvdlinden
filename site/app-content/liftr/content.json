@@ -6,74 +6,74 @@
    {
     "src": "shot-nl-01.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-nl-02.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-nl-03.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-nl-04.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-nl-05.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-nl-06.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-nl-07.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    }
   ],
   "en": [
    {
     "src": "shot-en-01.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-en-02.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-en-03.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-en-04.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-en-05.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-en-06.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    },
    {
     "src": "shot-en-07.webp",
     "w": 540,
-    "h": 1174
+    "h": 786
    }
   ]
  },
@@ -94,20 +94,20 @@
   "en": "og-en.jpg"
  },
  "sources": {
-  "shot-nl-01.webp": "92e17e80fe53a895a9411f483947ebe09535318f",
-  "shot-nl-02.webp": "707ddfe681997e7694aa3519be22f76c3a86014c",
-  "shot-nl-03.webp": "5e6c8e784fa68aee8a1eb8db58eee8b28f0eb0f6",
-  "shot-nl-04.webp": "744fb4580dcd2b9c25f7d0854a4b9b51cb25710f",
-  "shot-nl-05.webp": "9b4c4d4f57f4f9f4a8999bf7919c20afc9f5d077",
-  "shot-nl-06.webp": "853c1b5e5e2d05253d39f6c576e5a7638e2b94e3",
-  "shot-nl-07.webp": "1871517f5628a57ce9866a9f41b072070fc57996",
-  "shot-en-01.webp": "92ec9b01e116db4e33185970d3efd0c470ad5789",
-  "shot-en-02.webp": "497f521aca64cf7e2ad072c0f0c5c1e17b114a18",
-  "shot-en-03.webp": "9ff853665f4402d620b7cd5b84a2a8e5d193862b",
-  "shot-en-04.webp": "948078df92dd32905323d15fa4737c091f940d48",
-  "shot-en-05.webp": "19c48eb17c2665fa6caca023861592eed854fed6",
-  "shot-en-06.webp": "d3338becdd1db4d15a508c92171c62762274713b",
-  "shot-en-07.webp": "1482f7ba310df6db6a6c7718afabbf9dcb30c150",
+  "shot-nl-01.webp": "7f0a63f5f4a9288a2c0748b0d5902c4ade62b448",
+  "shot-nl-02.webp": "21a346111f8e76621583b3a744445dcfc8f3f7ce",
+  "shot-nl-03.webp": "19bdd8cba3a4b280228cba5aec59b3b9c0a0d81b",
+  "shot-nl-04.webp": "402928f947a349f4473b2c16ce30cf6a3c7d3415",
+  "shot-nl-05.webp": "cebc70911276ced5d21adb3ef7dc945f9ca93a9d",
+  "shot-nl-06.webp": "da6b41851898ac25bb183e908201a820547bae0d",
+  "shot-nl-07.webp": "500efb1f554572778b3a15dbdcf5bb71c97e59c2",
+  "shot-en-01.webp": "9b1478024e55f1a9dad13ca313dcc223dc95d42b",
+  "shot-en-02.webp": "ccfface5cffae81f3eb2394ce499145fe2117db1",
+  "shot-en-03.webp": "6a2dc47fb1f29341481d0ce638c47603d89c2640",
+  "shot-en-04.webp": "3028f8b801e3165d1302c55b1b8c2bba888202b4",
+  "shot-en-05.webp": "ee0f96d6dab72763f09d1afe4a11ba3f1acffa6c",
+  "shot-en-06.webp": "8211df79997145b047414818af6db559769ad7e9",
+  "shot-en-07.webp": "f192739977b17e29bc7b124c30f0d73928d910c7",
   "text-nl-description": "9c0c0c18b7f0c78dfb76b3ff6402e1dd46d32879",
   "text-nl-promotional_text": "e0eba72ca7663b721559a367e44e55a0ed2f2581",
   "text-nl-subtitle": "3f7625e0d70319f37cd308724330bb121cebc6b1",
@@ -120,7 +120,7 @@
   "og-en.jpg": "gen:8ef373b7ca2a6e52c5cb001f352884e69ce441d0"
  },
  "folder": "Liftr",
- "source": "Liftr/AppStore/2026-11-09",
+ "source": "Liftr/AppStore/2026-11-22",
  "promo": {
   "nl": "promo-nl.webp",
   "en": "promo-en.webp"
