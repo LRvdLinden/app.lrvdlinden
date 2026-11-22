@@ -2050,6 +2050,22 @@
         }
       }
     },
+    "Alleen https. Een tik op de melding opent deze link.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "https only. Tapping the notification opens this link."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen https. Een tik op de melding opent deze link."
+          }
+        }
+      }
+    },
     "Alleen naar apparaten die deze soorten volgen (niets gekozen = iedereen)": {
       "localizations": {
         "en": {
@@ -2110,6 +2126,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alleen op de Nederlandse versie"
+          }
+        }
+      }
+    },
+    "Alleen voor belangrijke berichten, geen reclame. Deze melding gaat ook naar mensen zonder opt-in voor nieuws (Apple-richtlijn 4.5.4).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only for important messages, no advertising. This notification also goes to people without the news opt-in (Apple guideline 4.5.4)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen voor belangrijke berichten, geen reclame. Deze melding gaat ook naar mensen zonder opt-in voor nieuws (Apple-richtlijn 4.5.4)."
+          }
+        }
+      }
+    },
+    "Alleen voor belangrijke berichten, geen reclame. Dit kan niet worden teruggedraaid.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only for important messages, no advertising. This cannot be undone."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen voor belangrijke berichten, geen reclame. Dit kan niet worden teruggedraaid."
           }
         }
       }
@@ -2302,6 +2350,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Anders"
+          }
+        }
+      }
+    },
+    "Android": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android"
           }
         }
       }
@@ -2914,6 +2978,22 @@
         }
       }
     },
+    "Beide": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Both"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beide"
+          }
+        }
+      }
+    },
     "Bekeken": {
       "localizations": {
         "en": {
@@ -3198,6 +3278,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bericht sturen telt de ontvangers per platform: iOS en Android apart, ook na het versturen"
+          }
+        }
+      }
+    },
+    "Bericht sturen: nieuwe doelgroep Iedereen met meldingen aan (Pasr, Pasr Zakelijk of beide), ook zonder opt-in voor nieuws; alleen voor belangrijke berichten, geen reclame": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send message: new audience Everyone with notifications on (Pasr, Pasr Zakelijk or both), also without the news opt-in; only for important messages, no advertising"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bericht sturen: nieuwe doelgroep Iedereen met meldingen aan (Pasr, Pasr Zakelijk of beide), ook zonder opt-in voor nieuws; alleen voor belangrijke berichten, geen reclame"
           }
         }
       }
@@ -5746,6 +5842,38 @@
         }
       }
     },
+    "Een tik op de melding opent deze link (in de app; links van pasr.nl openen de juiste plek in Pasr).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tapping the notification opens this link (in the app; pasr.nl links open the right place in Pasr)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een tik op de melding opent deze link (in de app; links van pasr.nl openen de juiste plek in Pasr)."
+          }
+        }
+      }
+    },
+    "Een tik opent de app; bij de doelgroep “heeft een kaart van” opent de kaart van die winkel.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A tap opens the app; with the audience “has a card from” it opens that store's card."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een tik opent de app; bij de doelgroep “heeft een kaart van” opent de kaart van die winkel."
+          }
+        }
+      }
+    },
     "Een zaak die je hier aanmaakt is meteen goedgekeurd.": {
       "localizations": {
         "en": {
@@ -6910,6 +7038,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen eigenaar: jij beheert deze zaak. Vul bij Bewerken een e-mailadres in om een eigenaar uit te nodigen."
+          }
+        }
+      }
+    },
+    "Geen geldige https-link.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not a valid https link."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen geldige https-link."
           }
         }
       }
@@ -8194,6 +8338,22 @@
         }
       }
     },
+    "Iedereen met meldingen aan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everyone with notifications on"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iedereen met meldingen aan"
+          }
+        }
+      }
+    },
     "Iedereen met opt-in": {
       "localizations": {
         "en": {
@@ -8926,6 +9086,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kerncijfers Gedeelde Pasrs (met personen en kaarten) en Tijdelijk gedeeld (nu geldig)"
+          }
+        }
+      }
+    },
+    "Kies Alles, Apple of Android, voor elke doelgroep": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose All, Apple or Android, for every audience"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies Alles, Apple of Android, voor elke doelgroep"
           }
         }
       }
@@ -10018,6 +10194,38 @@
         }
       }
     },
+    "Link (optioneel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link (optional)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link (optioneel)"
+          }
+        }
+      }
+    },
+    "Link (optioneel, alleen https): een tik op de melding opent de link; voorbeeld met de link eronder en de link in de geschiedenis": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link (optional, https only): tapping the notification opens the link; preview with the link below and the link in the history"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link (optioneel, alleen https): een tik op de melding opent de link; voorbeeld met de link eronder en de link in de geschiedenis"
+          }
+        }
+      }
+    },
     "Link (optioneel, https://)": {
       "localizations": {
         "en": {
@@ -10670,6 +10878,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meldingen (%lld)"
+          }
+        }
+      }
+    },
+    "Meldingen aan in Pasr": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications on in Pasr"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meldingen aan in Pasr"
+          }
+        }
+      }
+    },
+    "Meldingen aan in Pasr Zakelijk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications on in Pasr Zakelijk"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meldingen aan in Pasr Zakelijk"
           }
         }
       }
@@ -13250,6 +13490,22 @@
         }
       }
     },
+    "Ook op het web: beheer.pasr.nl, Berichten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.pasr.nl, Messages"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.pasr.nl, Berichten"
+          }
+        }
+      }
+    },
     "Ook op het web: beheer.pasr.nl, Ondernemers › Details": {
       "localizations": {
         "en": {
@@ -14098,6 +14354,22 @@
         }
       }
     },
+    "Pasr Zakelijk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr Zakelijk"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr Zakelijk"
+          }
+        }
+      }
+    },
     "Pasr-account": {
       "localizations": {
         "en": {
@@ -14110,6 +14382,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr-account"
+          }
+        }
+      }
+    },
+    "Pasr: bericht aan iedereen, met link": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: message to everyone, with link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: bericht aan iedereen, met link"
           }
         }
       }

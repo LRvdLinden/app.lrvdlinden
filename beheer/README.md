@@ -166,6 +166,7 @@ originele code.
 | Delen: Gedeelde Pasrs en Tijdelijk gedeeld (kerncijfers, kaart Delen, Insights-reeksen, per account) | ✓ (ook in web-beheer en PasrBeheer build 4) |
 | iOS en Android: actieve toestellen per platform, installaties, versies, accounts per platform, Google en Apple Wallet-passen (actie `platforms`) | ✓ (build 60; ook in web-beheer en PasrBeheer build 14) |
 | Android-push: Bericht sturen met ontvangers per platform (iOS/Android), Push aan per platform in de inzichten | ✓ (build 61; ook in web-beheer en PasrBeheer build 15) |
+| Bericht sturen aan iedereen met meldingen aan (Pasr, Pasr Zakelijk of beide), Alles/Apple/Android en optionele https-link | ✓ (build 62; ook in web-beheer en PasrBeheer build 16) |
 | Winkels: aanvragen, website opzoeken, kaart maken, publiceren zonder update met push, afwijzen, offline halen | ✓ (ook in web-beheer en PasrBeheer build 5) |
 | Review-account voor Apple App Review maken (voorbeeldkaarten en gedeelde Pasr, wachtwoord niet bewaard) | ✓ (ook in web-beheer en PasrBeheer build 6) |
 | Saldo-pagina's per winkel voor de knop Saldo checken (ook winkels in de app) | ✓ (ook in web-beheer en PasrBeheer build 7) |

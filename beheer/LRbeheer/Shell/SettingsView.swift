@@ -92,6 +92,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: bericht aan iedereen, met link") {
+                    Label("Bericht sturen: nieuwe doelgroep Iedereen met meldingen aan (Pasr, Pasr Zakelijk of beide), ook zonder opt-in voor nieuws; alleen voor belangrijke berichten, geen reclame", systemImage: "megaphone")
+                    Label("Kies Alles, Apple of Android, voor elke doelgroep", systemImage: "iphone.gen3")
+                    Label("Link (optioneel, alleen https): een tik op de melding opent de link; voorbeeld met de link eronder en de link in de geschiedenis", systemImage: "link")
+                    Label("Ook op het web: beheer.pasr.nl, Berichten", systemImage: "safari")
+                }
                 Section("Pasr: pushmeldingen op Android") {
                     Label("Bericht sturen telt de ontvangers per platform: iOS en Android apart, ook na het versturen", systemImage: "megaphone")
                     Label("Inzichten: Push aan per platform (iOS, Android en Pasr Zakelijk) en of Android-push is ingericht", systemImage: "bell.badge")
