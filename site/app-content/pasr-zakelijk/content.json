@@ -1,0 +1,128 @@
+{
+ "slug": "pasr-zakelijk",
+ "id": "pasr-zakelijk",
+ "shots": {
+  "nl": [
+   {
+    "src": "shot-nl-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-nl-07.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ],
+  "en": [
+   {
+    "src": "shot-en-01.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-02.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-03.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-04.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-05.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-06.webp",
+    "w": 540,
+    "h": 1174
+   },
+   {
+    "src": "shot-en-07.webp",
+    "w": 540,
+    "h": 1174
+   }
+  ]
+ },
+ "text": {
+  "nl": {
+   "description": "Pasr Zakelijk is de app voor ondernemers die met Pasr werken: digitale stempelkaarten voor je café, bakker, kapper of winkel. Je klanten sparen in de gratis app Pasr of gewoon in de browser. Alleen jij en je medewerkers kunnen stempels zetten.\n\nSCANNEN AAN DE KASSA\n• Scan de QR-code van de stempelkaart van je klant met de camera, of typ de code over.\n• Kies zelf hoeveel stempels erbij komen, tot het maximum dat je instelt.\n• Is de kaart vol, dan wissel je de beloning in met één tik.\n• Vergist? Maak de laatste stempel of inwisseling binnen 2 minuten ongedaan.\n\nJE EIGEN STEMPELKAART\n• Kies een naam, kleur, logo, het aantal stempels (2 tot 30) en de beloning.\n• Logo en kleuren kunnen automatisch van de website van je zaak komen.\n• Deel de link en QR-code, of maak een A4-flyer voor op de toonbank.\n• Klanten vinden je stempelkaart ook in de lijst in Pasr, met je adres zelfs bij \"In de buurt\".\n\nOVERZICHT EN LOGBOEK\n• Stempels, beloningen en nieuwe leden per dag in een duidelijke grafiek, met de vorige periode ernaast.\n• Zie per kaart je leden en hun stand.\n• Het logboek laat zien wie wat deed en wanneer. Het kan niet worden gewist.\n\nMEDEWERKERS\n• Nodig je team uit met een link. Medewerkers loggen in met een eigen Pasr-account en zien alleen de scanner.\n• Iemand intrekken kan direct.\n\nVEILIG STEMPELEN\n• Klanten kunnen zelf geen stempels zetten.\n• Met een afkoeltijd krijgt een klant niet twee keer kort na elkaar een stempel.\n• Vergrendel de app met Face ID, Touch ID of je toegangscode.\n• Meerdere zaken? Wissel bovenin van zaak.\n\nGOED OM TE WETEN\n• Je logt in met je Pasr-account (hetzelfde als op pasr.nl/zakelijk). Een account maken kan in de app.\n• Een nieuwe zaak wordt eerst gecontroleerd en goedgekeurd; daarna kun je stempels zetten.\n• Voor iPhone en iPad, in het Nederlands en Engels. Geen reclame en geen tracking.\n\nPrivacy: Pasr Zakelijk bewaart alleen wat nodig is voor je zaak, je kaarten en het logboek. Klanten zie je alleen als de laatste tekens van hun code. Meer op pasr.nl/privacy.\n\nPasr Zakelijk is gemaakt door Léon van der Linden. Meer apps vind je op lrvdlinden.app.",
+   "promotional_text": "Digitale stempelkaarten voor je zaak. Scan de QR-code van je klant, kies het aantal stempels en wissel beloningen in. Met medewerkers, afkoeltijd en logboek.",
+   "subtitle": "Stempelkaarten voor je zaak"
+  },
+  "en": {
+   "description": "Pasr Zakelijk is the app for businesses that work with Pasr: digital stamp cards for your café, bakery, hairdresser or shop. Your customers collect stamps in the free Pasr app or simply in their browser. Only you and your staff can add stamps.\n\nSCAN AT THE COUNTER\n• Scan the QR code on your customer's stamp card with the camera, or type the code.\n• Choose how many stamps to add, up to the maximum you set.\n• When the card is full, redeem the reward with one tap.\n• Made a mistake? Undo the last stamp or redemption within 2 minutes.\n\nYOUR OWN STAMP CARD\n• Choose a name, colour, logo, the number of stamps (2 to 30) and the reward.\n• Logo and colours can come straight from your business website.\n• Share the link and QR code, or create an A4 flyer for your counter.\n• Customers also find your stamp card in the list in Pasr, and with your address even under \"Nearby\".\n\nOVERVIEW AND LOG\n• Stamps, rewards and new members per day in a clear chart, next to the previous period.\n• See the members of each card and how far they are.\n• The log shows who did what and when. It can't be erased.\n\nSTAFF\n• Invite your team with a link. Staff sign in with their own Pasr account and only see the scanner.\n• Revoke someone instantly.\n\nSAFE STAMPING\n• Customers can't add stamps themselves.\n• With a cooldown, a customer can't get two stamps in quick succession.\n• Lock the app with Face ID, Touch ID or your passcode.\n• More than one business? Switch at the top.\n\nGOOD TO KNOW\n• You sign in with your Pasr account (the same as on pasr.nl/zakelijk). You can create an account in the app.\n• A new business is checked and approved first; after that you can add stamps.\n• For iPhone and iPad, in Dutch and English. No ads and no tracking.\n\nPrivacy: Pasr Zakelijk only keeps what is needed for your business, your cards and the log. You only see customers as the last characters of their code. More at pasr.nl/privacy.\n\nPasr Zakelijk is made by Léon van der Linden. Find more apps at lrvdlinden.app.",
+   "promotional_text": "Digital stamp cards for your business. Scan your customer's QR code, choose how many stamps to add and redeem rewards. With staff, cooldown and a log.",
+   "subtitle": "Stamp cards for your business"
+  }
+ },
+ "og": {
+  "nl": "og-nl.jpg",
+  "en": "og-en.jpg"
+ },
+ "sources": {
+  "shot-nl-01.webp": "d370a01e1117e45cf39c2eab350f475f03850ff3",
+  "shot-nl-02.webp": "0a7adb2d6d9ecbcd147e2f2f8691eda52adfbc73",
+  "shot-nl-03.webp": "a39ff60fc3e8819fa8c711dd5fce09a539249dd5",
+  "shot-nl-04.webp": "ae14ce3435f09a1621adbd584fbffd0389771d15",
+  "shot-nl-05.webp": "f885c5de56f91ad2aa06cabd2a2e74ee7cfdf376",
+  "shot-nl-06.webp": "f886356364d5805b18be7d7c0a8eb44d0dd12cd2",
+  "shot-nl-07.webp": "ff18875f72c5e0ed3226ba03f3f202012467094f",
+  "shot-en-01.webp": "aabb9d101eb2dcbfb158d69fb9495062bc22155e",
+  "shot-en-02.webp": "3fa3e46308f2448353385d0014c525b49914be7b",
+  "shot-en-03.webp": "16109ed24976d25a811c9571e34f3ac178e914a2",
+  "shot-en-04.webp": "d579f8ab8150e17a66454f6c0e07c2c8f13258d8",
+  "shot-en-05.webp": "cd3cdcdbc02d42c1849bc4e91b43f74bbb18fd36",
+  "shot-en-06.webp": "27192a84d64b2b90f485c8448fc877b0103bff1d",
+  "shot-en-07.webp": "77e0d82deac8aef881ee5e00139edcbb17943fbe",
+  "text-nl-description": "1db021ec32d68c3d1d070e35aca0535e68c7b8d6",
+  "text-nl-promotional_text": "0ff38687743f4df97dfcf1f84ddb37816891cd20",
+  "text-nl-subtitle": "c04dc0d4d494597a252c43b9480d993480622b3d",
+  "text-en-description": "dba72e076437726e0b8154154a03d065fa82395f",
+  "text-en-promotional_text": "f82bd99797cd06b8988af8e984cddfe4acd0dc61",
+  "text-en-subtitle": "81a42928a340a8b3a68bf1f7644fca5b90f0ea5e",
+  "promo-nl.webp": "4530661d193aef564f175346813eb2e891ae4762",
+  "promo-en.webp": "c758d72b6ae4a08122f6e6d10f80341736f8d75c",
+  "og-nl.jpg": "gen:a407cb5992fa0724b73a1b57caff299e693f5c75",
+  "og-en.jpg": "gen:fb9f1fc76e0741dc952cb1cbfe6ed104eb81f2ee"
+ },
+ "folder": "Pasr Zakelijk",
+ "source": "Pasr Zakelijk/AppStore/2026-11-22",
+ "promo": {
+  "nl": "promo-nl.webp",
+  "en": "promo-en.webp"
+ }
+}

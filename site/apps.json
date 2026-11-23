@@ -1507,7 +1507,13 @@
                 "en": "Business stamp card app"
             },
             "size": "2,6 MB",
-            "languages": "NL + 1"
+            "languages": "NL + 1",
+            "promo": {
+                "image": {
+                    "nl": "app-content/pasr-zakelijk/promo-nl.webp",
+                    "en": "app-content/pasr-zakelijk/promo-en.webp"
+                }
+            }
         },
         {
             "id": "homey-appstoreconnect",
