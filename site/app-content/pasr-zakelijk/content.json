@@ -1,6 +1,6 @@
 {
  "slug": "pasr-zakelijk",
- "id": "pasr-zakelijk",
+ "id": "app-lrvdlinden-pasr-zakelijk",
  "shots": {
   "nl": [
    {
@@ -115,14 +115,12 @@
   "text-en-promotional_text": "f82bd99797cd06b8988af8e984cddfe4acd0dc61",
   "text-en-subtitle": "81a42928a340a8b3a68bf1f7644fca5b90f0ea5e",
   "promo-nl.webp": "4530661d193aef564f175346813eb2e891ae4762",
-  "promo-en.webp": "c758d72b6ae4a08122f6e6d10f80341736f8d75c",
-  "og-nl.jpg": "gen:a407cb5992fa0724b73a1b57caff299e693f5c75",
-  "og-en.jpg": "gen:fb9f1fc76e0741dc952cb1cbfe6ed104eb81f2ee"
+  "og-nl.jpg": "gen:a452e425151837f3f701b9cbb302df25c5bd4099",
+  "og-en.jpg": "gen:f2d3f8f6ae24864da9180446e2ccf62d795a5dee"
  },
  "folder": "Pasr Zakelijk",
  "source": "Pasr Zakelijk/AppStore/2026-11-22",
  "promo": {
-  "nl": "promo-nl.webp",
-  "en": "promo-en.webp"
+  "nl": "promo-nl.webp"
  }
 }

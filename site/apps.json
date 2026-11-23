@@ -1536,7 +1536,7 @@
             "nlOnly": true,
             "promo": {
                 "image": {
-                    "nl": "img/promo-app-lrvdlinden-pasr-zakelijk-nl.webp"
+                    "nl": "app-content/pasr-zakelijk/promo-nl.webp"
                 },
                 "show": true
             }
