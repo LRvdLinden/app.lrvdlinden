@@ -209,7 +209,13 @@
             "languages": "NL + 1",
             "nlOnly": true,
             "added": "2026-11-08",
-            "size": "23,3 MB"
+            "size": "23,3 MB",
+            "chart": {
+                "nl": {
+                    "rank": 145,
+                    "genre": "Nieuws"
+                }
+            }
         },
         {
             "id": "nl-lrvdlinden-pasr",
