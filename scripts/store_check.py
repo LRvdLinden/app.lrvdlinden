@@ -252,9 +252,9 @@ def chart_from_page(cc, track_id):
         return None
     txt = html.decode("utf-8", "replace")
     m = re.search(r'(?:Nr\.|No\.|Nº|#)\s*(\d{1,3})\s+(?:in|en|dans|im)\s+([^<>"\\]{2,40}?)(?:\s*<|"|\\)', txt)
-    if not m and "/charts/" in txt:
-        i = txt.find("/charts/")
-        print("  (hitlijst-link gevonden maar niet herkend):", re.sub(r"\s+", " ", txt[i:i + 300]))
+    if not m and os.environ.get("CHART_DEBUG") and str(track_id) == os.environ["CHART_DEBUG"]:
+        for mm in list(re.finditer(r"(?i)chart|rank|positie|position", txt))[:40]:
+            print("  DBG:", re.sub(r"\s+", " ", txt[max(0, mm.start() - 80):mm.start() + 160]))
     return (int(m.group(1)), unescape(m.group(2)).strip()) if m else ()
 
 
