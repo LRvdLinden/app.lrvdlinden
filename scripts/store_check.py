@@ -284,6 +284,9 @@ def update_chart(app, res):
         if not r:
             continue
         rank = chart_rank(cc, genre, float(r.get("price") or 0) > 0, r.get("trackId"))
+        lst = _CHARTS.get((cc, genre, float(r.get("price") or 0) > 0))
+        print(f"Hitlijst {app['name']} ({cc}, genre {genre}): "
+              + ("lijst niet bereikbaar" if lst is None else f"{'nr. ' + str(rank) if rank else 'niet'} in top {len(lst)}"))
         if rank is None:  # lijst niet bereikbaar: oude waarde houden
             if (app.get("chart") or {}).get(lg):
                 chart[lg] = app["chart"][lg]
