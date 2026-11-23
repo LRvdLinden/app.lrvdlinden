@@ -484,6 +484,8 @@ const PLAT_ICONS = {"iPhone": ["0 0 48 48", "fill=\"none\" stroke=\"currentColor
 const PLAT_ALIAS = { local:"Homey Pro", cloud:"Homey Cloud", browser:"Web" };
 const platName = p => PLAT_ALIAS[String(p).toLowerCase()] || p;
 const platSvg = p => { const v = PLAT_ICONS[platName(p)]; return v ? `<svg viewBox="${v[0]}" ${v[1]} aria-hidden="true">${v[2]}</svg>` : ""; };
+// Handmatig label uit beheer gaat voor; anders de plek in de hitlijst (bijgewerkt door de store-check)
+const chartBadge = a => { if (a.badge) return L(a.badge); const c = (a.chart||{})[lang]; return c ? `${lang === "en" ? "No." : "Nr."} ${c.rank} in ${c.genre}` : ""; };
 const platTag = p => `<span class="tag ostag">${platSvg(p)}${esc(platName(p))}</span>`;
 let ALL_APPS = [], lang = "nl", cat = "all", open = null, q = "";
 const norm = x => String(x || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -627,7 +629,7 @@ function renderGrid(gridEl, slotId, list){
       ${icon(a)}
       <div style="min-width:0">
         <h3>${esc(a.name)}</h3>
-        <div class="cat">${esc(catName(a.category))}${a.badge?`, ${esc(L(a.badge))}`:""}</div>
+        <div class="cat">${esc(catName(a.category))}${chartBadge(a)?`, ${esc(chartBadge(a))}`:""}</div>
         <div class="meta"><span>${!(a.links&&a.links.appstore)?esc(t(a.status)):a.rating?`<span class="stars" aria-hidden="true">★★★★★</span> ${num(a.rating)}`:esc(t("noRating"))}</span>${a.history&&a.history.length?`<span class="mono">v${esc(a.history[0].version)}</span>`:""}</div>
       </div>
     </a>`).join("");

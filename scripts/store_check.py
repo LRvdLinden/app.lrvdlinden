@@ -237,6 +237,63 @@ def ver_key(v):
 # ---------- App Store ----------
 CHECKED = []  # wat de stores teruggaven, voor het overzicht in de run
 
+# Hitlijsten: plek in de top 200 (iPhone) van de eigen categorie, NL-store voor de Nederlandse site, US-store voor de Engelse
+GENRES = {6000: ("Zakelijk", "Business"), 6001: ("Weer", "Weather"), 6002: ("Hulpmiddelen", "Utilities"),
+          6003: ("Reizen", "Travel"), 6004: ("Sport", "Sports"), 6005: ("Sociale netwerken", "Social Networking"),
+          6006: ("Naslagwerken", "Reference"), 6007: ("Productiviteit", "Productivity"),
+          6008: ("Foto en video", "Photo & Video"), 6009: ("Nieuws", "News"), 6010: ("Navigatie", "Navigation"),
+          6011: ("Muziek", "Music"), 6012: ("Lifestyle", "Lifestyle"), 6013: ("Gezondheid en fitness", "Health & Fitness"),
+          6014: ("Games", "Games"), 6015: ("Financiën", "Finance"), 6016: ("Amusement", "Entertainment"),
+          6017: ("Onderwijs", "Education"), 6018: ("Boeken", "Books"), 6020: ("Medisch", "Medical"),
+          6021: ("Tijdschriften en kranten", "Magazines & Newspapers"), 6023: ("Eten en drinken", "Food & Drink"),
+          6024: ("Winkelen", "Shopping"), 6026: ("Ontwikkelaarstools", "Developer Tools"),
+          6027: ("Grafisch en ontwerp", "Graphics & Design")}
+_CHARTS = {}
+
+
+def chart_rank(cc, genre, paid, track_id):
+    key = (cc, genre, paid)
+    if key not in _CHARTS:
+        kind = "toppaidapplications" if paid else "topfreeapplications"
+        data = get_json(f"https://itunes.apple.com/{cc}/rss/{kind}/limit=200/genre={genre}/json?cb={int(time.time())}")
+        if not FIXTURES:
+            time.sleep(PAUSE)
+        if data is None:
+            _CHARTS[key] = None  # niet opgehaald: niets aanpassen
+        else:
+            ents = ((data.get("feed") or {}).get("entry")) or []
+            if isinstance(ents, dict):
+                ents = [ents]
+            _CHARTS[key] = [str(((e.get("id") or {}).get("attributes") or {}).get("im:id")) for e in ents]
+    ids = _CHARTS[key]
+    if ids is None:
+        return None
+    return ids.index(str(track_id)) + 1 if str(track_id) in ids else 0
+
+
+def update_chart(app, res):
+    """app["chart"] = {"nl": {"rank": 117, "genre": "Hulpmiddelen"}, "en": {...}}; weg als de app niet in de top 200 staat."""
+    nl, us = res.get("nl"), res.get("us")
+    base = nl or us
+    if not base or not base.get("primaryGenreId"):
+        return
+    genre = int(base["primaryGenreId"])
+    names = GENRES.get(genre, (base.get("primaryGenreName"), base.get("primaryGenreName")))
+    chart = {}
+    for lg, cc, r in (("nl", "nl", nl), ("en", "us", us)):
+        if not r:
+            continue
+        rank = chart_rank(cc, genre, float(r.get("price") or 0) > 0, r.get("trackId"))
+        if rank is None:  # lijst niet bereikbaar: oude waarde houden
+            if (app.get("chart") or {}).get(lg):
+                chart[lg] = app["chart"][lg]
+        elif rank:
+            chart[lg] = {"rank": rank, "genre": names[0 if lg == "nl" else 1]}
+    if chart:
+        app["chart"] = chart
+    else:
+        app.pop("chart", None)
+
 
 def check_appstore(apps, log, only=None):
     # Alleen iOS-apps. Een App Store-link bij een Homey-app is de bijbehorende iPhone-app, geen eigen versie.
@@ -284,6 +341,7 @@ def check_appstore(apps, log, only=None):
         langs = fmt_langs(main.get("languageCodesISO2A"))
         if langs:
             app["languages"] = langs
+        update_chart(app, res)
 
         # Wat is nieuw
         version = main.get("version")
@@ -303,7 +361,9 @@ def check_appstore(apps, log, only=None):
 
         if snap(app) != before:
             chk["changed"] = True
-            log.append(f"- {app['name']}: versie {version}, {app.get('rating', '–')} ★ ({app.get('reviews', 0)} beoordelingen)")
+            hl = (app.get("chart") or {}).get("nl")
+            log.append(f"- {app['name']}: versie {version}, {app.get('rating', '–')} ★ ({app.get('reviews', 0)} beoordelingen)"
+                       + (f", nr. {hl['rank']} in {hl['genre']}" if hl else ""))
 
 
 # ---------- Homey ----------

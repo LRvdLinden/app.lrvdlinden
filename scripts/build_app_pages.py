@@ -21,7 +21,7 @@ OUT = sys.argv[1] if len(sys.argv) > 1 else "build"
 apps = json.load(open(os.path.join(OUT, "apps.json"), encoding="utf-8")).get("apps", [])
 
 T = {
-    "nl": dict(by="Léon van der Linden", back="Alle apps", appstore="Gratis in de App Store", review="Geef sterren", testflight="Doe mee via TestFlight",
+    "nl": dict(by="Léon van der Linden", back="Alle apps", chart="Hitlijst", appstore="Gratis in de App Store", review="Geef sterren", testflight="Doe mee via TestFlight",
                website="Website", homey="Bekijk in de Homey App Store", homeyTest="Testversie installeren", shots="Screenshots",
                about="Over {n}", news="Wat is nieuw", more="Meer apps", devices="Apparaten", widgets="Widgets",
                flow="Flow-kaarten", when="Als…", andd="En…", then="Dan…", rating="Beoordeling", reviews="beoordelingen",
@@ -30,7 +30,7 @@ T = {
                hlive="Live", htest="Test", donate="Doneren", privacy="Privacy", support="Steun mijn apps",
                nlonly="Deze app is alleen in het Nederlands beschikbaar.", allv="Toon alle versies", lessv="Toon minder",
                allc="Toon alle {n}", support_link="Ondersteuning"),
-    "en": dict(by="Léon van der Linden", back="All apps", appstore="Free on the App Store", review="Give stars", testflight="Join on TestFlight",
+    "en": dict(by="Léon van der Linden", back="All apps", chart="Top charts", appstore="Free on the App Store", review="Give stars", testflight="Join on TestFlight",
                website="Website", homey="View in the Homey App Store", homeyTest="Install test version", shots="Screenshots",
                about="About {n}", news="What's new", more="More apps", devices="Devices", widgets="Widgets",
                flow="Flow cards", when="When…", andd="And…", then="Then…", rating="Rating", reviews="ratings",
@@ -179,6 +179,9 @@ def facts(a, lang):
     cat = (a.get("homey") or {}).get("category") if a.get("section") == "homey" else a.get("category")
     if cat:
         rows.append((t["category"], e(CATS[lang].get(cat, cat))))
+    ch = (a.get("chart") or {}).get(lang)
+    if ch and a.get("section") != "homey":
+        rows.append((t["chart"], f'<b>{"Nr." if lang == "nl" else "No."} {int(ch["rank"])}</b> in {e(ch["genre"])}'))
     if a.get("size"):
         rows.append((t["size"], e(a["size"])))
     if a.get("languages"):
