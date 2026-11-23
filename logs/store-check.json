@@ -1,6 +1,27 @@
 {
  "runs": [
   {
+   "id": "45151104645",
+   "time": "2026-11-23T09:56:19+00:00",
+   "mode": "toevoegen",
+   "trigger": "manual",
+   "changed": true,
+   "lines": [
+    "Nieuwe app: Pasr Zakelijk (App Store)",
+    "Pasr Zakelijk: versie 1.0.0, – ★ (0 beoordelingen)"
+   ],
+   "checked": [
+    {
+     "app": "Pasr Zakelijk",
+     "store": "App Store",
+     "version": "1.0.0",
+     "date": "2026-11-23",
+     "changed": true
+    }
+   ],
+   "url": "https://github.com/LRvdLinden/app.lrvdlinden/actions/runs/45151104645"
+  },
+  {
    "id": "45142215203",
    "time": "2026-11-23T08:56:02+00:00",
    "mode": "bijwerken",

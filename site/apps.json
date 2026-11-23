@@ -1477,6 +1477,39 @@
             }
         },
         {
+            "id": "pasr-zakelijk",
+            "name": "Pasr Zakelijk",
+            "section": "ios",
+            "status": "live",
+            "description": {
+                "nl": "Met Pasr Zakelijk zet je stempels op de kaarten van je klanten: scan hun QR-code aan de kassa en wissel beloningen in. Je maakt ook je eigen stempelkaart en ziet per dag hoeveel stempels en nieuwe leden er zijn.",
+                "en": "With Pasr Zakelijk you add stamps to your customers' stamp cards: scan their QR code at the till and redeem rewards. You also create your own stamp card and see daily stamps and new members."
+            },
+            "links": {
+                "appstore": "https://apps.apple.com/nl/app/pasr-zakelijk/id6837907454"
+            },
+            "history": [
+                {
+                    "version": "1.0.0",
+                    "date": "2026-11-23",
+                    "notes": {}
+                }
+            ],
+            "added": "2026-11-23",
+            "category": "business",
+            "platforms": [
+                "iPhone",
+                "iPad"
+            ],
+            "icon": "img/pasr-zakelijk.png",
+            "subtitle": {
+                "nl": "Zakelijke stempelkaart-app",
+                "en": "Business stamp card app"
+            },
+            "size": "2,6 MB",
+            "languages": "NL + 1"
+        },
+        {
             "id": "homey-appstoreconnect",
             "name": "App Store Connect",
             "section": "homey",
