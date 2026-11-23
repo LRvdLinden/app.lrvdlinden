@@ -251,10 +251,8 @@ def chart_from_page(cc, track_id):
     if html is None:
         return None
     txt = html.decode("utf-8", "replace")
-    m = re.search(r'(?:Nr\.|No\.|Nº|#)\s*(\d{1,3})\s+(?:in|en|dans|im)\s+([^<>"\\]{2,40}?)(?:\s*<|"|\\)', txt)
-    if not m and os.environ.get("CHART_DEBUG") and str(track_id) == os.environ["CHART_DEBUG"]:
-        for mm in list(re.finditer(r"(?i)chart|rank|positie|position", txt))[:40]:
-            print("  DBG:", re.sub(r"\s+", " ", txt[max(0, mm.start() - 80):mm.start() + 160]))
+    # In de paginadata: {"$kind":"Badge","type":"chartPosition",...,"content":{"position":"145"},...,"caption":"Nieuws"}
+    m = re.search(r'"type"\s*:\s*"chartPosition".{0,200}?"position"\s*:\s*"?(\d{1,4})"?.{0,200}?"caption"\s*:\s*"([^"]{1,60})"', txt)
     return (int(m.group(1)), unescape(m.group(2)).strip()) if m else ()
 
 

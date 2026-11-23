@@ -46,7 +46,6 @@ jobs:
       STORE_MODE: ${{ github.event.inputs.mode || 'alles' }}
       STORE_ADD: ${{ github.event.inputs.url || '' }}
       STORE_ADD_NLONLY: ${{ github.event.inputs.nlonly || 'false' }}
-      CHART_DEBUG: "6829732272"
     steps:
       - uses: actions/checkout@v5
 
