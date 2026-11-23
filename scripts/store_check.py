@@ -15,6 +15,7 @@ Schrijft het bestand alleen als er iets veranderd is en zet een samenvatting in 
 """
 import json, os, re, sys, time, urllib.request, urllib.error
 from datetime import datetime
+from html import unescape
 
 APPS_JSON = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else "site/apps.json"
 FIXTURES = os.environ.get("STORE_FIXTURES")  # alleen voor lokaal testen
@@ -237,61 +238,41 @@ def ver_key(v):
 # ---------- App Store ----------
 CHECKED = []  # wat de stores teruggaven, voor het overzicht in de run
 
-# Hitlijsten: plek in de top 200 (iPhone) van de eigen categorie, NL-store voor de Nederlandse site, US-store voor de Engelse
-GENRES = {6000: ("Zakelijk", "Business"), 6001: ("Weer", "Weather"), 6002: ("Hulpmiddelen", "Utilities"),
-          6003: ("Reizen", "Travel"), 6004: ("Sport", "Sports"), 6005: ("Sociale netwerken", "Social Networking"),
-          6006: ("Naslagwerken", "Reference"), 6007: ("Productiviteit", "Productivity"),
-          6008: ("Foto en video", "Photo & Video"), 6009: ("Nieuws", "News"), 6010: ("Navigatie", "Navigation"),
-          6011: ("Muziek", "Music"), 6012: ("Lifestyle", "Lifestyle"), 6013: ("Gezondheid en fitness", "Health & Fitness"),
-          6014: ("Games", "Games"), 6015: ("Financiën", "Finance"), 6016: ("Amusement", "Entertainment"),
-          6017: ("Onderwijs", "Education"), 6018: ("Boeken", "Books"), 6020: ("Medisch", "Medical"),
-          6021: ("Tijdschriften en kranten", "Magazines & Newspapers"), 6023: ("Eten en drinken", "Food & Drink"),
-          6024: ("Winkelen", "Shopping"), 6026: ("Ontwikkelaarstools", "Developer Tools"),
-          6027: ("Grafisch en ontwerp", "Graphics & Design")}
-_CHARTS = {}
+# Hitlijsten: plek in de hitlijst van de eigen categorie zoals Apple die op de app-pagina toont (NL-store voor de
+# Nederlandse site, US-store voor de Engelse). De RSS-lijsten van Apple gaan maar tot 100, de app-pagina verder.
 
 
-def chart_rank(cc, genre, paid, track_id):
-    key = (cc, genre, paid)
-    if key not in _CHARTS:
-        kind = "toppaidapplications" if paid else "topfreeapplications"
-        data = get_json(f"https://itunes.apple.com/{cc}/rss/{kind}/limit=200/genre={genre}/json?cb={int(time.time())}")
-        if not FIXTURES:
-            time.sleep(PAUSE)
-        if data is None:
-            _CHARTS[key] = None  # niet opgehaald: niets aanpassen
-        else:
-            ents = ((data.get("feed") or {}).get("entry")) or []
-            if isinstance(ents, dict):
-                ents = [ents]
-            _CHARTS[key] = [str(((e.get("id") or {}).get("attributes") or {}).get("im:id")) for e in ents]
-    ids = _CHARTS[key]
-    if ids is None:
+def chart_from_page(cc, track_id):
+    """Plek in de hitlijst zoals Apple hem op de app-pagina toont ("Nr. 117 in Nieuws" / "#117 in News").
+    None = pagina niet bereikbaar, () = niet in een hitlijst."""
+    html = get_raw(f"https://apps.apple.com/{cc}/app/id{track_id}?cb={int(time.time())}")
+    if not FIXTURES:
+        time.sleep(PAUSE)
+    if html is None:
         return None
-    return ids.index(str(track_id)) + 1 if str(track_id) in ids else 0
+    txt = html.decode("utf-8", "replace")
+    m = re.search(r'(?:Nr\.|No\.|Nº|#)\s*(\d{1,3})\s+(?:in|en|dans|im)\s+([^<>"\\]{2,40}?)(?:\s*<|"|\\)', txt)
+    if not m and "/charts/" in txt:
+        i = txt.find("/charts/")
+        print("  (hitlijst-link gevonden maar niet herkend):", re.sub(r"\s+", " ", txt[i:i + 300]))
+    return (int(m.group(1)), unescape(m.group(2)).strip()) if m else ()
 
 
 def update_chart(app, res):
-    """app["chart"] = {"nl": {"rank": 117, "genre": "Hulpmiddelen"}, "en": {...}}; weg als de app niet in de top 200 staat."""
-    nl, us = res.get("nl"), res.get("us")
-    base = nl or us
-    if not base or not base.get("primaryGenreId"):
-        return
-    genre = int(base["primaryGenreId"])
-    names = GENRES.get(genre, (base.get("primaryGenreName"), base.get("primaryGenreName")))
+    """app["chart"] = {"nl": {"rank": 117, "genre": "Nieuws"}, "en": {...}}; weg als de app niet in een hitlijst staat."""
     chart = {}
-    for lg, cc, r in (("nl", "nl", nl), ("en", "us", us)):
+    for lg, cc in (("nl", "nl"), ("en", "us")):
+        r = res.get(cc)
         if not r:
             continue
-        rank = chart_rank(cc, genre, float(r.get("price") or 0) > 0, r.get("trackId"))
-        lst = _CHARTS.get((cc, genre, float(r.get("price") or 0) > 0))
-        print(f"Hitlijst {app['name']} ({cc}, genre {genre}): "
-              + ("lijst niet bereikbaar" if lst is None else f"{'nr. ' + str(rank) if rank else 'niet'} in top {len(lst)}"))
-        if rank is None:  # lijst niet bereikbaar: oude waarde houden
+        found = chart_from_page(cc, r.get("trackId"))
+        print(f"Hitlijst {app['name']} ({cc}): " + ("pagina niet bereikbaar" if found is None
+              else (f"nr. {found[0]} in {found[1]}" if found else "niet in een hitlijst")))
+        if found is None:  # niet bereikbaar: oude waarde houden
             if (app.get("chart") or {}).get(lg):
                 chart[lg] = app["chart"][lg]
-        elif rank:
-            chart[lg] = {"rank": rank, "genre": names[0 if lg == "nl" else 1]}
+        elif found:
+            chart[lg] = {"rank": found[0], "genre": found[1]}
     if chart:
         app["chart"] = chart
     else:
