@@ -45,7 +45,7 @@
             "size": "2,2 MB",
             "languages": "NL",
             "nlOnly": true,
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1
         },
         {
@@ -129,20 +129,28 @@
                 "testflight": "https://testflight.apple.com/join/bjhRGGG8",
                 "appstore": "https://apps.apple.com/nl/app/liftr-gym-workout-log/id6830198247"
             },
-            "history": [],
+            "history": [
+                {
+                    "version": "1.0.0",
+                    "date": "2026-11-23",
+                    "notes": {}
+                }
+            ],
             "icon": "img/nl-lrvdlinden-liftr.webp",
             "subtitle": {
                 "nl": "Sets, gewicht en voortgang",
                 "en": "Sets, weight and progress"
             },
-            "languages": "NL + 31",
+            "languages": "NL + 32",
             "promo": {
                 "image": {
                     "nl": "app-content/liftr/promo-nl.webp",
                     "en": "app-content/liftr/promo-en.webp"
                 }
             },
-            "added": "2026-11-04"
+            "added": "2026-11-04",
+            "reviews": 0,
+            "size": "12,9 MB"
         },
         {
             "id": "nl-lrvdlinden-aalerts",
@@ -213,7 +221,7 @@
             "size": "23,3 MB",
             "chart": {
                 "nl": {
-                    "rank": 145,
+                    "rank": 140,
                     "genre": "Nieuws"
                 }
             }
@@ -283,7 +291,7 @@
             "size": "14,2 MB",
             "nlOnly": true,
             "added": "2026-11-02",
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 2
         },
         {
@@ -419,7 +427,7 @@
                 "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
                 "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 4,
             "size": "118,4 MB",
             "languages": "NL + 10",
@@ -562,7 +570,7 @@
                     }
                 }
             ],
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 2,
             "promo": {
                 "image": {
@@ -742,7 +750,7 @@
                 "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
                 "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1,
             "size": "23,1 MB",
             "languages": "EN",
@@ -788,7 +796,7 @@
                 "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 15,
             "size": "15,3 MB",
             "languages": "EN",
@@ -1344,7 +1352,7 @@
                 "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
                 "en": "Learn chess the easy way. With dark mode and several board themes."
             },
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 3,
             "size": "1,7 MB",
             "languages": "NL + 3",
@@ -1441,7 +1449,7 @@
             "added": "2026-11-13",
             "size": "2,9 MB",
             "languages": "NL + 1",
-            "rating": 5,
+            "rating": 5.0,
             "reviews": 1
         },
         {
@@ -2722,11 +2730,22 @@
                 "en": "Live 112 alerts from the Lifeliner across the Netherlands."
             },
             "links": {
-                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/",
-                "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/Lifeliner/test/"
+                "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
+                {
+                    "version": "6.1.3",
+                    "date": "2026-11-16",
+                    "notes": {
+                        "nl": "Lifeliner-meldingen komen nu ook binnen als het filter van je internetprovider de server blokkeert, zoals KPN Veilig Browsen. De app schakelt dan automatisch over op beveiligde DNS-over-HTTPS. Bevat ook de stabiliteitsfixes uit de P2000-app die voorkomen dat de app crasht. Flowkaarten, widgets en instellingen zijn nu beschikbaar in alle 13 talen.",
+                        "en": "Lifeliner alerts now also arrive when your internet provider's filter blocks the server, such as KPN Veilig Browsen. The app then automatically switches to secure DNS-over-HTTPS. Also includes the stability fixes from the P2000 app that prevent the app from crashing. Flow cards, widgets and settings are now available in all 13 languages."
+                    },
+                    "_src": {
+                        "nl": "Lifeliner-meldingen komen nu ook binnen als het filter van je internetprovider de server blokkeert, zoals KPN Veilig Browsen. De app schakelt dan automatisch over op beveiligde DNS-over-HTTPS. Bevat ook de stabiliteitsfixes uit de P2000-app die voorkomen dat de app crasht. Flowkaarten, widgets en instellingen zijn nu beschikbaar in alle 13 talen.",
+                        "en": "Lifeliner alerts now also arrive when your internet provider's filter blocks the server, such as KPN Veilig Browsen. The app then automatically switches to secure DNS-over-HTTPS. Also includes the stability fixes from the P2000 app that prevent the app from crashing. Flow cards, widgets and settings are now available in all 13 languages."
+                    }
+                },
                 {
                     "version": "6.1.2",
                     "date": "2026-11-07",
@@ -2826,17 +2845,6 @@
                     "_src": {
                         "en": "bugfix"
                     }
-                },
-                {
-                    "version": "6.0.17",
-                    "date": "2026-05-13",
-                    "notes": {
-                        "en": "Reset button for widgets",
-                        "nl": "Resetknop voor widgets"
-                    },
-                    "_src": {
-                        "en": "Reset button for widgets"
-                    }
                 }
             ],
             "homey": {
@@ -2848,8 +2856,8 @@
                             "en": "Lifeliner"
                         },
                         "class": "other",
-                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/drivers/lifeliner/assets/images/small.png",
-                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/drivers/lifeliner/assets/icon.svg"
+                        "image": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/104/5f6f3d59-69c0-4df4-9b06-54f241a67705/drivers/lifeliner/assets/images/small.png",
+                        "icon": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/104/5f6f3d59-69c0-4df4-9b06-54f241a67705/drivers/lifeliner/assets/icon.svg"
                     }
                 ],
                 "widgets": [
@@ -2859,8 +2867,8 @@
                             "nl": "Lifeliner Pager",
                             "en": "Lifeliner Pager"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/widgets/latest-p2000/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/widgets/latest-p2000/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/104/5f6f3d59-69c0-4df4-9b06-54f241a67705/widgets/latest-p2000/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/104/5f6f3d59-69c0-4df4-9b06-54f241a67705/widgets/latest-p2000/preview-dark.png"
                     },
                     {
                         "id": "p2000-map",
@@ -2868,8 +2876,8 @@
                             "nl": "Lifeliner Kaart",
                             "en": "Lifeliner Map"
                         },
-                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/widgets/p2000-map/preview-light.png",
-                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/103/ab1167e4-7422-4224-9e7a-1c4afef1ef8c/widgets/p2000-map/preview-dark.png"
+                        "light": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/104/5f6f3d59-69c0-4df4-9b06-54f241a67705/widgets/p2000-map/preview-light.png",
+                        "dark": "https://apps.homeycdn.net/app/nl.lrvdlinden.lifeliner/104/5f6f3d59-69c0-4df4-9b06-54f241a67705/widgets/p2000-map/preview-dark.png"
                     }
                 ],
                 "flow": {
@@ -2877,22 +2885,22 @@
                         {
                             "id": "new_message",
                             "title": {
-                                "nl": "Een nieuwe melding is ontvangen",
-                                "en": "A new message has been received"
+                                "nl": "Een nieuwe P2000-melding is ontvangen",
+                                "en": "A new P2000 alert has been received"
                             }
                         },
                         {
                             "id": "websocket_message_offline",
                             "title": {
-                                "en": "P2000 is offline",
-                                "nl": "P2000 is offline"
+                                "nl": "P2000 is offline",
+                                "en": "P2000 is offline"
                             }
                         },
                         {
                             "id": "websocket_message_online",
                             "title": {
-                                "en": "P2000 is online",
-                                "nl": "P2000 is online"
+                                "nl": "P2000 is online",
+                                "en": "P2000 is online"
                             }
                         }
                     ],
@@ -2900,8 +2908,8 @@
                         {
                             "id": "capcode_condition",
                             "title": {
-                                "nl": "Capcode Conditie",
-                                "en": "Capcode Condition"
+                                "nl": "Capcode",
+                                "en": "Capcode"
                             }
                         },
                         {
@@ -2914,29 +2922,29 @@
                         {
                             "id": "grip_condition",
                             "title": {
-                                "nl": "GRIP Conditie",
-                                "en": "GRIP Condition"
+                                "nl": "GRIP",
+                                "en": "GRIP"
                             }
                         },
                         {
                             "id": "groep_condition",
                             "title": {
-                                "nl": "Groep Conditie",
-                                "en": "Groep Condition"
+                                "nl": "Groep",
+                                "en": "Group"
                             }
                         },
                         {
                             "id": "opschaling_condition",
                             "title": {
-                                "nl": "Opschaling Conditie",
-                                "en": "Opschaling Condition"
+                                "nl": "Opschaling",
+                                "en": "Upscaling"
                             }
                         },
                         {
                             "id": "prio_condition",
                             "title": {
-                                "nl": "Prio Conditie",
-                                "en": "Prio Condition"
+                                "nl": "Prio",
+                                "en": "Priority"
                             }
                         },
                         {
@@ -2977,8 +2985,8 @@
                         {
                             "id": "soortopschaling_condition",
                             "title": {
-                                "nl": "soortopschaling Conditie",
-                                "en": "Soortopschaling Condition"
+                                "nl": "Soort opschaling",
+                                "en": "Type of upscaling"
                             }
                         },
                         {
@@ -2993,8 +3001,8 @@
                         {
                             "id": "send_to_dashboard_widget",
                             "title": {
-                                "nl": "Stuur melding naar Lifeliner widgets",
-                                "en": "Send message to Lifeliner widgets"
+                                "nl": "Stuur melding naar P2000 widgets",
+                                "en": "Send message to P2000 widgets"
                             }
                         }
                     ]
@@ -3008,8 +3016,7 @@
                 "homepage": "https://p2000.xyz",
                 "support": "https://community.homey.app/t/app-pro-lifeline-alerts-for-homey/83742",
                 "category": "internet",
-                "live": "6.1.2",
-                "test": "6.1.3"
+                "live": "6.1.3"
             },
             "nlOnly": true,
             "added": "2026-10-24"
@@ -3028,7 +3035,7 @@
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
             },
-            "rating": 5,
+            "rating": 5.0,
             "history": [
                 {
                     "version": "4.3.5",
