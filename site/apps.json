@@ -45,7 +45,7 @@
             "size": "2,2 MB",
             "languages": "NL",
             "nlOnly": true,
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 1
         },
         {
@@ -191,7 +191,7 @@
                 {
                     "version": "2.0.1",
                     "date": "2026-11-17",
-                    "notes": {}
+                    "notes": []
                 }
             ],
             "icon": "img/nl-lrvdlinden-aalerts.webp",
@@ -276,7 +276,7 @@
             "size": "14,2 MB",
             "nlOnly": true,
             "added": "2026-11-02",
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 2
         },
         {
@@ -412,7 +412,7 @@
                 "nl": "Live tv, films en series uit je eigen IPTV-abonnement of mediaserver. Ondersteunt Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS via SMB en XMLTV. Met tv-gids, profielen, Multiview tot vier streams en synchronisatie tussen je apparaten.",
                 "en": "Live TV, movies and series from your own IPTV subscription or media server. Supports Xtream Codes, M3U, MAC Portal, Plex, Jellyfin, Emby, Stremio, NAS over SMB and XMLTV. With a TV guide, profiles, Multiview for up to four streams and sync across your devices."
             },
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 4,
             "size": "118,4 MB",
             "languages": "NL + 10",
@@ -555,7 +555,7 @@
                     }
                 }
             ],
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 2,
             "promo": {
                 "image": {
@@ -739,7 +739,7 @@
                 "nl": "Evenementen en activiteiten in Park Zuidbroek: kinderevents, festivals, thema-avonden en kerstmarkten in Apeldoorn.",
                 "en": "Events and activities in Park Zuidbroek: kids' events, festivals, theme nights and Christmas markets in Apeldoorn."
             },
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 1,
             "size": "23,1 MB",
             "languages": "EN",
@@ -785,7 +785,7 @@
                 "nl": "Doorzoek wereldwijd onderzeese kabels met gedetailleerde netwerk- en providerprofielen.",
                 "en": "Browse submarine cables worldwide with detailed network and provider profiles."
             },
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 15,
             "size": "15,3 MB",
             "languages": "EN",
@@ -1341,7 +1341,7 @@
                 "nl": "Leer schaken op een eenvoudige manier. Met dark mode en verschillende bordthema's.",
                 "en": "Learn chess the easy way. With dark mode and several board themes."
             },
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 3,
             "size": "1,7 MB",
             "languages": "NL + 3",
@@ -1416,7 +1416,7 @@
                 {
                     "version": "1.0.0",
                     "date": "2026-11-16",
-                    "notes": {}
+                    "notes": []
                 }
             ],
             "icon": "img/noodpakket.webp",
@@ -1438,7 +1438,7 @@
             "added": "2026-11-13",
             "size": "2,9 MB",
             "languages": "NL + 1",
-            "rating": 5.0,
+            "rating": 5,
             "reviews": 1
         },
         {
@@ -1477,7 +1477,7 @@
             }
         },
         {
-            "id": "pasr-zakelijk",
+            "id": "app-lrvdlinden-pasr-zakelijk",
             "name": "Pasr Zakelijk",
             "section": "ios",
             "status": "live",
@@ -1486,20 +1486,23 @@
                 "en": "With Pasr Zakelijk you add stamps to your customers' stamp cards: scan their QR code at the till and redeem rewards. You also create your own stamp card and see daily stamps and new members."
             },
             "links": {
-                "appstore": "https://apps.apple.com/nl/app/pasr-zakelijk/id6837907454"
+                "appstore": "https://apps.apple.com/nl/app/pasr-zakelijk/id6837907454",
+                "website": "https://pasr.nl/zakelijk"
             },
             "history": [
                 {
                     "version": "1.0.0",
                     "date": "2026-11-23",
-                    "notes": {}
+                    "notes": []
                 }
             ],
             "added": "2026-11-23",
             "category": "business",
             "platforms": [
                 "iPhone",
-                "iPad"
+                "iPad",
+                "Android",
+                "Web"
             ],
             "icon": "img/pasr-zakelijk.png",
             "subtitle": {
@@ -1508,11 +1511,12 @@
             },
             "size": "2,6 MB",
             "languages": "NL + 1",
+            "nlOnly": true,
             "promo": {
                 "image": {
-                    "nl": "app-content/pasr-zakelijk/promo-nl.webp",
-                    "en": "app-content/pasr-zakelijk/promo-en.webp"
-                }
+                    "nl": "img/promo-app-lrvdlinden-pasr-zakelijk-nl.webp"
+                },
+                "show": true
             }
         },
         {
@@ -2718,7 +2722,7 @@
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/",
                 "homeyTest": "https://homey.app/nl-nl/app/nl.lrvdlinden.lifeliner/Lifeliner/test/"
             },
-            "rating": 5.0,
+            "rating": 5,
             "history": [
                 {
                     "version": "6.1.2",
@@ -3021,7 +3025,7 @@
             "links": {
                 "homey": "https://homey.app/nl-nl/app/nl.lrvdlinden.knmi-weerwaarschuwing/"
             },
-            "rating": 5.0,
+            "rating": 5,
             "history": [
                 {
                     "version": "4.3.5",
