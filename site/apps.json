@@ -221,7 +221,7 @@
             "size": "23,3 MB",
             "chart": {
                 "nl": {
-                    "rank": 146,
+                    "rank": 158,
                     "genre": "Nieuws"
                 }
             }
@@ -1522,6 +1522,16 @@
                 "website": "https://pasr.nl/zakelijk"
             },
             "history": [
+                {
+                    "version": "1.0.2",
+                    "date": "2026-11-24",
+                    "notes": {
+                        "nl": "We werken Pasr Zakelijk regelmatig bij om je spaarkaarten nog makkelijker te beheren."
+                    },
+                    "_src": {
+                        "nl": "We werken Pasr Zakelijk regelmatig bij om je spaarkaarten nog makkelijker te beheren."
+                    }
+                },
                 {
                     "version": "1.0.0",
                     "date": "2026-11-23",
