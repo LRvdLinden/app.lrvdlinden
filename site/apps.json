@@ -221,7 +221,7 @@
             "size": "23,3 MB",
             "chart": {
                 "nl": {
-                    "rank": 158,
+                    "rank": 146,
                     "genre": "Nieuws"
                 }
             }
@@ -249,6 +249,16 @@
                 "appstore": "https://apps.apple.com/nl/app/pasr-klantenkaarten/id6829229123"
             },
             "history": [
+                {
+                    "version": "1.0.3",
+                    "date": "2026-11-24",
+                    "notes": {
+                        "nl": "We werken Pasr regelmatig bij om je kaarten nog makkelijker bij de hand te hebben. \n\nDit is er nieuw:\n• Stempelkaarten: spaar stempels bij je bakker, kapper of koffiebar. Zoek de zaak in Pasr of scan de QR-code bij de kassa. De ondernemer zet de stempel, jij ziet je stand direct\n• Je Wallet-pas werkt zichzelf bij, ook als er een stempel bij komt\n• Verjaardagsvoordeel: vul je verjaardag in en Pasr laat je weten bij welke winkels je iets extra's krijgt\n• Nieuws over mijn kaarten: zet het aan en ontvang alleen berichten over winkels waarvan je een kaart hebt\n• Een gedeelde kaart ziet er op pasr.nl nog beter uit, nu ook voor tickets, abonnementen en stempelkaarten\n• Kleine verbeteringen en oplossingen"
+                    },
+                    "_src": {
+                        "nl": "We werken Pasr regelmatig bij om je kaarten nog makkelijker bij de hand te hebben. \n\nDit is er nieuw:\n• Stempelkaarten: spaar stempels bij je bakker, kapper of koffiebar. Zoek de zaak in Pasr of scan de QR-code bij de kassa. De ondernemer zet de stempel, jij ziet je stand direct\n• Je Wallet-pas werkt zichzelf bij, ook als er een stempel bij komt\n• Verjaardagsvoordeel: vul je verjaardag in en Pasr laat je weten bij welke winkels je iets extra's krijgt\n• Nieuws over mijn kaarten: zet het aan en ontvang alleen berichten over winkels waarvan je een kaart hebt\n• Een gedeelde kaart ziet er op pasr.nl nog beter uit, nu ook voor tickets, abonnementen en stempelkaarten\n• Kleine verbeteringen en oplossingen"
+                    }
+                },
                 {
                     "version": "1.0.2",
                     "date": "2026-11-22",
@@ -283,12 +293,12 @@
                 },
                 "show": true
             },
-            "languages": "NL",
+            "languages": "NL + 1",
             "subtitle": {
                 "nl": "Al je pasjes in één app",
                 "en": "All your cards in one app"
             },
-            "size": "14,2 MB",
+            "size": "15,7 MB",
             "nlOnly": true,
             "added": "2026-11-02",
             "rating": 5.0,
