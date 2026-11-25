@@ -148,7 +148,8 @@
             },
             "added": "2026-11-04",
             "reviews": 0,
-            "size": "12,9 MB"
+            "size": "12,9 MB",
+            "featured": true
         },
         {
             "id": "nl-lrvdlinden-aalerts",
@@ -218,7 +219,8 @@
             "added": "2026-11-08",
             "size": "23,3 MB",
             "rating": 5,
-            "reviews": 1
+            "reviews": 1,
+            "featured": true
         },
         {
             "id": "nl-lrvdlinden-pasr",
@@ -1577,8 +1579,7 @@
                 "show": true
             },
             "rating": 5,
-            "reviews": 1,
-            "featured": true
+            "reviews": 1
         },
         {
             "id": "homey-appstoreconnect",
