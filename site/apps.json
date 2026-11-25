@@ -1579,7 +1579,8 @@
                 "show": true
             },
             "rating": 5,
-            "reviews": 1
+            "reviews": 1,
+            "featured": true
         },
         {
             "id": "homey-appstoreconnect",
