@@ -7,7 +7,6 @@
             "added": "2026-11-11",
             "section": "ios",
             "status": "live",
-            "featured": true,
             "category": "utilities",
             "platforms": [
                 "iPhone",
@@ -150,8 +149,7 @@
             },
             "added": "2026-11-04",
             "reviews": 0,
-            "size": "12,9 MB",
-            "featured": true
+            "size": "12,9 MB"
         },
         {
             "id": "nl-lrvdlinden-aalerts",
@@ -1495,8 +1493,7 @@
             "size": "2,9 MB",
             "languages": "NL + 1",
             "rating": 5,
-            "reviews": 1,
-            "featured": true
+            "reviews": 1
         },
         {
             "id": "112heli",
@@ -1595,8 +1592,7 @@
                 "show": true
             },
             "rating": 5,
-            "reviews": 1,
-            "featured": true
+            "reviews": 1
         },
         {
             "id": "homey-appstoreconnect",
