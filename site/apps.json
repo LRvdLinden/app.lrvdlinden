@@ -150,7 +150,8 @@
             },
             "added": "2026-11-04",
             "reviews": 0,
-            "size": "12,9 MB"
+            "size": "12,9 MB",
+            "featured": true
         },
         {
             "id": "nl-lrvdlinden-aalerts",
@@ -1494,7 +1495,8 @@
             "size": "2,9 MB",
             "languages": "NL + 1",
             "rating": 5,
-            "reviews": 1
+            "reviews": 1,
+            "featured": true
         },
         {
             "id": "112heli",
