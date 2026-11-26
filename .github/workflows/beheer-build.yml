@@ -71,3 +71,12 @@ jobs:
         run: |
           echo "iOS: ${{ steps.ios.outcome }}, Mac Catalyst: ${{ steps.mac.outcome }}"
           [ "${{ steps.ios.outcome }}" = success ] && [ "${{ steps.mac.outcome }}" = success ]
+
+      - name: Maak Xcode ZIP
+        run: |
+          git archive --format=zip --output="$RUNNER_TEMP/LRbeheer-Xcode-build65.zip" HEAD beheer
+          unzip -tq "$RUNNER_TEMP/LRbeheer-Xcode-build65.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LRbeheer-Xcode-build65
+          path: ${{ runner.temp }}/LRbeheer-Xcode-build65.zip
