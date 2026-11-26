@@ -7,6 +7,7 @@
             "added": "2026-11-11",
             "section": "ios",
             "status": "live",
+            "featured": true,
             "category": "utilities",
             "platforms": [
                 "iPhone",
@@ -225,7 +226,8 @@
                     "rank": 159,
                     "genre": "Nieuws"
                 }
-            }
+            },
+            "featured": true
         },
         {
             "id": "nl-lrvdlinden-pasr",
@@ -311,7 +313,8 @@
             "nlOnly": true,
             "added": "2026-11-02",
             "rating": 5,
-            "reviews": 2
+            "reviews": 2,
+            "featured": true
         },
         {
             "id": "nl-lrvdlinden-weekdot",
@@ -417,7 +420,8 @@
             "size": "33,7 MB",
             "reviews": 9,
             "rating": 4.8,
-            "added": "2026-10-25"
+            "added": "2026-10-25",
+            "featured": true
         },
         {
             "id": "bingr",
@@ -552,7 +556,8 @@
                 },
                 "show": true
             },
-            "added": "2026-10-24"
+            "added": "2026-10-24",
+            "featured": true
         },
         {
             "id": "healthsync",
@@ -1588,7 +1593,8 @@
                 "show": true
             },
             "rating": 5,
-            "reviews": 1
+            "reviews": 1,
+            "featured": true
         },
         {
             "id": "homey-appstoreconnect",
