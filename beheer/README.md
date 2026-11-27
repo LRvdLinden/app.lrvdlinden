@@ -181,6 +181,7 @@ originele code.
 | Ondernemers aanmaken en bewerken (eigenaar via account of eigenaarslink, of zonder eigenaar), stempelkaarten aanmaken/bewerken/publiceren/verwijderen met live voorbeeld, Huisstijl ophalen, QR, link en flyer, testklant voor de App Review | ✓ (ook in web-beheer en PasrBeheer build 13) |
 | Accounts: E-mail bevestigen (onbevestigd account, bijv. review-adres); bij Nieuwe ondernemer onbevestigd account bevestigen en eigenaar maken | ✓ (ook in web-beheer en PasrBeheer build 13) |
 | Ondernemers › Acties › gezamenlijke actie: Uitnodigingen en deelnemers (status, minimum, open voor de eigen plaats), uitnodiging intrekken, deelnemer verwijderen; mail en push naar de zaak (acties `community_detail`, `community_revoke`, `community_remove`) | ✓ (build 69; ook in web-beheer en PasrBeheer build 22) |
+| Ondernemers › Details › Tickets en klantenkaarten: gratis events met aangemeld/binnen/wachtlijst/afgemeld, event afgelasten (mail en push naar elke aanmelding), klantenkaart met barcode archiveren (acties `tk_business`, `event_cancel`, `member_card_archive`) | ✓ (build 72; ook in web-beheer en PasrBeheer build 24) |
 | Gids: verjaardagsvoordeel per winkel | ✓ (ook in web-beheer en PasrBeheer build 11) |
 | Beheer-pushmeldingen (soorten, testmelding, uitleg na inloggen) | ✓ originele registratie; ontvangen na `server/patches` |
 | Instellingen met MoreAppsCard | ✓ |

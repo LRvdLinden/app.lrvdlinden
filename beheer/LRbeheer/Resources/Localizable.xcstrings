@@ -146,6 +146,22 @@
         }
       }
     },
+    "%@ kan daarna niet meer worden gescand en nieuwe klanten kunnen geen lid worden.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ can then no longer be scanned and new customers cannot join."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kan daarna niet meer worden gescand en nieuwe klanten kunnen geen lid worden."
+          }
+        }
+      }
+    },
     "%@ kan dan niet meer scannen bij %@.": {
       "localizations": {
         "en": {
@@ -174,6 +190,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ staat al in je portfolio"
+          }
+        }
+      }
+    },
+    "%@ van %@ gaat niet door. Alle tickets vervallen; iedereen die zich aanmeldde krijgt een mail en een melding.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ of %2$@ will not take place. All tickets become invalid; everyone who registered gets an email and a notification."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ van %@ gaat niet door. Alle tickets vervallen; iedereen die zich aanmeldde krijgt een mail en een melding."
           }
         }
       }
@@ -242,6 +274,22 @@
         }
       }
     },
+    "%@ · %lld/%lld aangemeld · %lld binnen · %lld wachtlijst · %lld afgemeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$lld/%3$lld registered · %4$lld checked in · %5$lld waiting · %6$lld cancelled"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld/%lld aangemeld · %lld binnen · %lld wachtlijst · %lld afgemeld"
+          }
+        }
+      }
+    },
     "%@: %lld stempels, %@": {
       "localizations": {
         "en": {
@@ -286,6 +334,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro."
+          }
+        }
+      }
+    },
+    "%lld events · %lld klantenkaarten · %lld leden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld events · %2$lld loyalty cards · %3$lld members"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld events · %lld klantenkaarten · %lld leden"
           }
         }
       }
@@ -1666,6 +1730,22 @@
         }
       }
     },
+    "Afgelasten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel event"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afgelasten"
+          }
+        }
+      }
+    },
     "Afgeleverd op iPhone en iPad": {
       "localizations": {
         "en": {
@@ -2974,6 +3054,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apps op lrvdlinden.app, store-check en logboek"
+          }
+        }
+      }
+    },
+    "Archiveren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archive"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archiveren"
           }
         }
       }
@@ -4882,6 +4978,22 @@
         }
       }
     },
+    "De klantenkaarten met barcode van de zaak: soort barcode, aantal leden, bezoeken in 30 dagen en de doelen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The business's barcode loyalty cards: barcode type, number of members, visits in 30 days and the goals"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De klantenkaarten met barcode van de zaak: soort barcode, aantal leden, bezoeken in 30 dagen en de doelen"
+          }
+        }
+      }
+    },
     "De knop Saldo checken bij een cadeaukaart in de app opent deze pagina, met het kaartnummer klaar om te plakken. Werkt ook voor winkels die al in de app zitten.": {
       "localizations": {
         "en": {
@@ -6114,6 +6226,22 @@
         }
       }
     },
+    "Een event afgelasten (iedereen krijgt een mail en een pushmelding) of een klantenkaart archiveren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel an event (everyone gets an email and a push notification) or archive a loyalty card"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een event afgelasten (iedereen krijgt een mail en een pushmelding) of een klantenkaart archiveren"
+          }
+        }
+      }
+    },
     "Een lid voor de review van Pasr Zakelijk door Apple: de reviewer scant de QR-code of typt de klantcode in de app.": {
       "localizations": {
         "en": {
@@ -6702,6 +6830,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Evenement"
+          }
+        }
+      }
+    },
+    "Event afgelasten?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel event?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event afgelasten?"
+          }
+        }
+      }
+    },
+    "Event: %@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event: %1$@ · %2$@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event: %@ · %@"
           }
         }
       }
@@ -9710,6 +9870,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Klantenkaart"
+          }
+        }
+      }
+    },
+    "Klantenkaart archiveren?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archive loyalty card?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klantenkaart archiveren?"
+          }
+        }
+      }
+    },
+    "Klantenkaart: %@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loyalty card: %1$@ · %2$@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klantenkaart: %@ · %@"
           }
         }
       }
@@ -13058,6 +13250,22 @@
         }
       }
     },
+    "Nog geen events of klantenkaarten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No events or loyalty cards yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen events of klantenkaarten."
+          }
+        }
+      }
+    },
     "Nog geen feedback": {
       "localizations": {
         "en": {
@@ -13710,6 +13918,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ondernemers › Details › Acties: bij een gezamenlijke actie Uitnodigingen en deelnemers, met de status (wacht op deelnemers of actief), het minimum en of de actie open is voor de eigen plaats"
+          }
+        }
+      }
+    },
+    "Ondernemers › Details › Tickets en klantenkaarten: per zaak de gratis events met aangemeld, binnen, wachtlijst en afgemeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Businesses › Details › Tickets and loyalty cards: per business the free events with registered, checked in, waiting list and cancelled"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondernemers › Details › Tickets en klantenkaarten: per zaak de gratis events met aangemeld, binnen, wachtlijst en afgemeld"
           }
         }
       }
@@ -15214,6 +15438,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: saldo-pagina's"
+          }
+        }
+      }
+    },
+    "Pasr: tickets en klantenkaarten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: tickets and loyalty cards"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: tickets en klantenkaarten"
           }
         }
       }
@@ -17358,6 +17598,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Text EN"
+          }
+        }
+      }
+    },
+    "Tickets en klantenkaarten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tickets and loyalty cards"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tickets en klantenkaarten"
           }
         }
       }
@@ -20386,6 +20642,38 @@
         }
       }
     },
+    "afgelast": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cancelled"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "afgelast"
+          }
+        }
+      }
+    },
+    "afgelopen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ended"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "afgelopen"
+          }
+        }
+      }
+    },
     "apps.json laden mislukt.": {
       "localizations": {
         "en": {
@@ -20466,6 +20754,22 @@
         }
       }
     },
+    "concept": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "draft"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "concept"
+          }
+        }
+      }
+    },
     "content.json kon niet geladen worden.": {
       "localizations": {
         "en": {
@@ -20526,6 +20830,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "en opgeslagen in GitHub (commit %@)"
+          }
+        }
+      }
+    },
+    "gearchiveerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "archived"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gearchiveerd"
           }
         }
       }
@@ -20782,6 +21102,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "nu"
+          }
+        }
+      }
+    },
+    "online": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "online"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "online"
           }
         }
       }

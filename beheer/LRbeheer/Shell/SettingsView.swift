@@ -92,6 +92,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: tickets en klantenkaarten") {
+                    Label("Ondernemers › Details › Tickets en klantenkaarten: per zaak de gratis events met aangemeld, binnen, wachtlijst en afgemeld", systemImage: "ticket")
+                    Label("De klantenkaarten met barcode van de zaak: soort barcode, aantal leden, bezoeken in 30 dagen en de doelen", systemImage: "creditcard")
+                    Label("Een event afgelasten (iedereen krijgt een mail en een pushmelding) of een klantenkaart archiveren", systemImage: "xmark.circle")
+                    Label("Ook op het web: beheer.pasr.nl, Ondernemers › Details", systemImage: "safari")
+                }
                 Section("Pasr: Voeg toe aan Pasr") {
                     Label("Ondernemers › stempelkaart en Winkels › winkel: de link pasr.nl/add/… en een voorbeeld van de knop Voeg toe aan Pasr (zwart, wit, nachtblauw), met Kopieer link en Open", systemImage: "plus.rectangle.on.rectangle")
                     Label("Met Pasr opent de link Toevoegen aan Pasr? in de app, anders pasr.nl met de downloadknoppen", systemImage: "link")
