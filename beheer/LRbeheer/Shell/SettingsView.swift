@@ -92,6 +92,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Bingr: Verzonden mails") {
+                    Label("Nieuw onderdeel Verzonden: welke mails de server heeft verstuurd, met ontvanger, onderwerp, bron, tijd en of de mailserver de mail aannam", systemImage: "paperplane")
+                    Label("Filter op resultaat en bron, zoeken op ontvanger of onderwerp en de totalen van 7 dagen", systemImage: "line.3.horizontal.decrease.circle")
+                    Label("Alleen ontvanger en onderwerp, nooit de inhoud; nieuwsbrief en mailings staan er niet in", systemImage: "lock")
+                    Label("Ook op het web: beheer.bingr.online, tab Verzonden", systemImage: "safari")
+                }
                 Section("Pasr: acties per zaak en de nieuwe stempel") {
                     Label("Ondernemers › Details: nieuw blok Acties met kortingsbonnen, actiecodes, gezamenlijke acties en vestigingen van de zaak, met aantallen (geen klantgegevens)", systemImage: "tag")
                     Label("Uitzetten vanuit het beheer: kortingsbon uitzetten, actiecode pauzeren, gezamenlijke actie annuleren; de historie blijft bewaard", systemImage: "hand.raised")

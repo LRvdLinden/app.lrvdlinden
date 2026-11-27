@@ -1245,5 +1245,15 @@
   "Een tik op de melding opent deze link (in de app; links van pasr.nl openen de juiste plek in Pasr).": "Tapping the notification opens this link (in the app; pasr.nl links open the right place in Pasr).",
   "Een tik opent de app; bij de doelgroep “heeft een kaart van” opent de kaart van die winkel.": "A tap opens the app; with the audience “has a card from” it opens that store's card.",
   "Meldingen aan in Pasr": "Notifications on in Pasr",
-  "Meldingen aan in Pasr Zakelijk": "Notifications on in Pasr Zakelijk"
+  "Meldingen aan in Pasr Zakelijk": "Notifications on in Pasr Zakelijk",
+  "Verzonden": "Sent",
+  "Ontvanger of onderwerp": "Recipient or subject",
+  "Geen mails gevonden.": "No mails found.",
+  "De server heeft het verzendlogboek nog niet (workflow Backend in iptv-ios-appletv).": "The server does not have the sent-mail log yet (Backend workflow in iptv-ios-appletv).",
+  "Aangenomen betekent dat de mailserver de mail accepteerde, niet dat hij is aangekomen. Nieuwsbrief en mailings staan hier niet in. Alleen ontvanger en onderwerp, nooit de inhoud; na 90 dagen weg.": "Accepted means the mail server accepted the mail, not that it arrived. Newsletter and mailings are not listed here. Only recipient and subject, never the content; removed after 90 days.",
+  "Bingr: Verzonden mails": "Bingr: Sent mails",
+  "Nieuw onderdeel Verzonden: welke mails de server heeft verstuurd, met ontvanger, onderwerp, bron, tijd en of de mailserver de mail aannam": "New section Sent: which mails the server has sent, with recipient, subject, source, time and whether the mail server accepted the mail",
+  "Filter op resultaat en bron, zoeken op ontvanger of onderwerp en de totalen van 7 dagen": "Filter by result and source, search by recipient or subject, and the 7-day totals",
+  "Alleen ontvanger en onderwerp, nooit de inhoud; nieuwsbrief en mailings staan er niet in": "Only recipient and subject, never the content; newsletter and mailings are not listed",
+  "Ook op het web: beheer.bingr.online, tab Verzonden": "Also on the web: beheer.bingr.online, tab Sent"
 }

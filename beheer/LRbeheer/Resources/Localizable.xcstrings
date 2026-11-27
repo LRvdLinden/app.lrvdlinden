@@ -1074,6 +1074,22 @@
         }
       }
     },
+    "Aangenomen betekent dat de mailserver de mail accepteerde, niet dat hij is aangekomen. Nieuwsbrief en mailings staan hier niet in. Alleen ontvanger en onderwerp, nooit de inhoud; na 90 dagen weg.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accepted means the mail server accepted the mail, not that it arrived. Newsletter and mailings are not listed here. Only recipient and subject, never the content; removed after 90 days."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aangenomen betekent dat de mailserver de mail accepteerde, niet dat hij is aangekomen. Nieuwsbrief en mailings staan hier niet in. Alleen ontvanger en onderwerp, nooit de inhoud; na 90 dagen weg."
+          }
+        }
+      }
+    },
     "Aangevuld. Geen nieuwe apps, wel beta-apps aangevuld met gegevens uit de store.": {
       "localizations": {
         "en": {
@@ -2110,6 +2126,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alleen nog de scriptcode: die past zich vanzelf aan en websites kunnen de widget niet aanpassen"
+          }
+        }
+      }
+    },
+    "Alleen ontvanger en onderwerp, nooit de inhoud; nieuwsbrief en mailings staan er niet in": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only recipient and subject, never the content; newsletter and mailings are not listed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen ontvanger en onderwerp, nooit de inhoud; nieuwsbrief en mailings staan er niet in"
           }
         }
       }
@@ -3954,6 +3986,22 @@
         }
       }
     },
+    "Bingr: Verzonden mails": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Sent mails"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Verzonden mails"
+          }
+        }
+      }
+    },
     "Bingr: nieuwe accounts eerst kopen": {
       "localizations": {
         "en": {
@@ -4750,6 +4798,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "De server gaf HTTP %lld."
+          }
+        }
+      }
+    },
+    "De server heeft het verzendlogboek nog niet (workflow Backend in iptv-ios-appletv).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The server does not have the sent-mail log yet (Backend workflow in iptv-ios-appletv)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De server heeft het verzendlogboek nog niet (workflow Backend in iptv-ios-appletv)."
           }
         }
       }
@@ -6610,6 +6674,22 @@
         }
       }
     },
+    "Filter op resultaat en bron, zoeken op ontvanger of onderwerp en de totalen van 7 dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter by result and source, search by recipient or subject, and the 7-day totals"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter op resultaat en bron, zoeken op ontvanger of onderwerp en de totalen van 7 dagen"
+          }
+        }
+      }
+    },
     "Filter op status, platform en build; details met de stacks": {
       "localizations": {
         "en": {
@@ -7102,6 +7182,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen logo"
+          }
+        }
+      }
+    },
+    "Geen mails gevonden.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No mails found."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen mails gevonden."
           }
         }
       }
@@ -11762,6 +11858,22 @@
         }
       }
     },
+    "Nieuw onderdeel Verzonden: welke mails de server heeft verstuurd, met ontvanger, onderwerp, bron, tijd en of de mailserver de mail aannam": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New section Sent: which mails the server has sent, with recipient, subject, source, time and whether the mail server accepted the mail"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw onderdeel Verzonden: welke mails de server heeft verstuurd, met ontvanger, onderwerp, bron, tijd en of de mailserver de mail aannam"
+          }
+        }
+      }
+    },
     "Nieuw onderdeel Widgets: kopieer de scriptcode van de live kaart en Verkeer nu voor andere websites, zie op welke sites ze staan met het aantal weergaven, en blokkeer een site": {
       "localizations": {
         "en": {
@@ -13346,6 +13458,22 @@
         }
       }
     },
+    "Ontvanger of onderwerp": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recipient or subject"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ontvanger of onderwerp"
+          }
+        }
+      }
+    },
     "Ontvangers": {
       "localizations": {
         "en": {
@@ -13486,6 +13614,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ook op het web: beheer.bingr.online, tab Premium"
+          }
+        }
+      }
+    },
+    "Ook op het web: beheer.bingr.online, tab Verzonden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.bingr.online, tab Sent"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.bingr.online, tab Verzonden"
           }
         }
       }
@@ -18046,6 +18190,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verzendkosten"
+          }
+        }
+      }
+    },
+    "Verzonden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verzonden"
           }
         }
       }
