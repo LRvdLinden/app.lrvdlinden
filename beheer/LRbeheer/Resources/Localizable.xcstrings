@@ -82,6 +82,22 @@
         }
       }
     },
+    "%@ doet daarna niet meer mee. De zaak krijgt een mail en een melding.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ will no longer take part. The business gets an email and a notification."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ doet daarna niet meer mee. De zaak krijgt een mail en een melding."
+          }
+        }
+      }
+    },
     "%@ echt verwijderen?": {
       "localizations": {
         "en": {
@@ -190,6 +206,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ wordt als bevestigd gemarkeerd, zonder bevestigingsmail. Doe dit alleen als je zeker weet dat dit adres klopt (bijvoorbeeld een review-account). Het wachtwoord blijft van de gebruiker."
+          }
+        }
+      }
+    },
+    "%@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@"
           }
         }
       }
@@ -494,6 +526,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld van %lld winkels."
+          }
+        }
+      }
+    },
+    "%lld van minimaal %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld of at least %2$lld"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld van minimaal %lld"
           }
         }
       }
@@ -1634,6 +1682,22 @@
         }
       }
     },
+    "Afgelopen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ended"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afgelopen"
+          }
+        }
+      }
+    },
     "Afgelopen 30 dagen": {
       "localizations": {
         "en": {
@@ -2174,6 +2238,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alleen op de Nederlandse versie"
+          }
+        }
+      }
+    },
+    "Alleen op uitnodiging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitation only"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen op uitnodiging"
           }
         }
       }
@@ -3230,6 +3310,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Beloning klaar"
+          }
+        }
+      }
+    },
+    "Beloningen uitgegeven": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rewards given"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beloningen uitgegeven"
           }
         }
       }
@@ -4930,6 +5026,22 @@
         }
       }
     },
+    "De uitnodiging vervalt. De ontvanger krijgt een mail.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The invitation lapses. The recipient gets an email."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De uitnodiging vervalt. De ontvanger krijgt een mail."
+          }
+        }
+      }
+    },
     "De vergrendeling geldt voor het overzicht, LRvdLinden en PixelForges. Bingr, Tunr, Pasr en P2000 houden hun eigen vergrendeling, in hun eigen Instellingen.": {
       "localizations": {
         "en": {
@@ -5006,6 +5118,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "De zaak kan niet meer scannen en de kaarten gaan offline. Leden zien dat de kaart niet meer actief is."
+          }
+        }
+      }
+    },
+    "Deelnemer verwijderen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove participant?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deelnemer verwijderen?"
+          }
+        }
+      }
+    },
+    "Deelnemers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Participants"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deelnemers"
           }
         }
       }
@@ -5454,6 +5598,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Doelgroep"
+          }
+        }
+      }
+    },
+    "Doet mee": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taking part"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doet mee"
           }
         }
       }
@@ -5950,6 +6110,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Een lid voor de review van Pasr Zakelijk door Apple: de reviewer scant de QR-code of typt de klantcode in de app."
+          }
+        }
+      }
+    },
+    "Een openstaande uitnodiging intrekken of een deelnemer verwijderen; de zaak krijgt een mail en een pushmelding in Pasr Zakelijk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Withdraw an open invitation or remove a participant; the business gets an email and a push notification in Pasr Zakelijk"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een openstaande uitnodiging intrekken of een deelnemer verwijderen; de zaak krijgt een mail en een pushmelding in Pasr Zakelijk"
           }
         }
       }
@@ -7662,6 +7838,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geschiedenis"
+          }
+        }
+      }
+    },
+    "Gestopt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stopped"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gestopt"
+          }
+        }
+      }
+    },
+    "Geweigerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Declined"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geweigerd"
           }
         }
       }
@@ -10754,6 +10962,22 @@
         }
       }
     },
+    "Looptijd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Runs"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looptijd"
+          }
+        }
+      }
+    },
     "Lopend": {
       "localizations": {
         "en": {
@@ -11006,6 +11230,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Medewerkers"
+          }
+        }
+      }
+    },
+    "Meedoen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Joining"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meedoen"
           }
         }
       }
@@ -12930,6 +13170,22 @@
         }
       }
     },
+    "Nog geen uitnodigingen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No invitations yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen uitnodigingen."
+          }
+        }
+      }
+    },
     "Nog geen verkopen in de afgelopen 30 dagen.": {
       "localizations": {
         "en": {
@@ -13406,6 +13662,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ondernemers"
+          }
+        }
+      }
+    },
+    "Ondernemers › Details › Acties: bij een gezamenlijke actie Uitnodigingen en deelnemers, met de status (wacht op deelnemers of actief), het minimum en of de actie open is voor de eigen plaats": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Businesses › Details › Campaigns: Invitations and participants for a joint campaign, with the status (waiting for participants or active), the minimum and whether it is open to the same town"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondernemers › Details › Acties: bij een gezamenlijke actie Uitnodigingen en deelnemers, met de status (wacht op deelnemers of actief), het minimum en of de actie open is voor de eigen plaats"
           }
         }
       }
@@ -14002,6 +14274,22 @@
         }
       }
     },
+    "Open voor dezelfde plaats": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open to the same town"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open voor dezelfde plaats"
+          }
+        }
+      }
+    },
     "Openbare statuspagina": {
       "localizations": {
         "en": {
@@ -14370,6 +14658,22 @@
         }
       }
     },
+    "Organisator": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Organiser"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Organisator"
+          }
+        }
+      }
+    },
     "Over ons": {
       "localizations": {
         "en": {
@@ -14690,6 +14994,22 @@
         }
       }
     },
+    "Pasr: gezamenlijke acties op uitnodiging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: joint campaigns by invitation"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: gezamenlijke acties op uitnodiging"
+          }
+        }
+      }
+    },
     "Pasr: gids en kaartontwerp": {
       "localizations": {
         "en": {
@@ -14846,6 +15166,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Per platform"
+          }
+        }
+      }
+    },
+    "Per uitgenodigde zaak de status: uitgenodigd, doet mee, geweigerd of ingetrokken; ook uitnodigingen per e-mail of link": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The status of each invited business: invited, taking part, declined or withdrawn; also invitations by email or link"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per uitgenodigde zaak de status: uitgenodigd, doet mee, geweigerd of ingetrokken; ook uitnodigingen per e-mail of link"
           }
         }
       }
@@ -17570,6 +17906,22 @@
         }
       }
     },
+    "Uitgenodigd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invited"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitgenodigd"
+          }
+        }
+      }
+    },
     "Uitlichten (lime rand en knop)": {
       "localizations": {
         "en": {
@@ -17698,6 +18050,22 @@
         }
       }
     },
+    "Uitnodiging intrekken?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Withdraw invitation?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitnodiging intrekken?"
+          }
+        }
+      }
+    },
     "Uitnodigingen": {
       "localizations": {
         "en": {
@@ -17710,6 +18078,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uitnodigingen"
+          }
+        }
+      }
+    },
+    "Uitnodigingen en deelnemers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitations and participants"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitnodigingen en deelnemers"
           }
         }
       }
@@ -18846,6 +19230,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wacht"
+          }
+        }
+      }
+    },
+    "Wacht op deelnemers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for participants"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wacht op deelnemers"
           }
         }
       }
@@ -20254,6 +20654,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "nu"
+          }
+        }
+      }
+    },
+    "sinds %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "since %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sinds %@"
           }
         }
       }

@@ -92,6 +92,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: gezamenlijke acties op uitnodiging") {
+                    Label("Ondernemers › Details › Acties: bij een gezamenlijke actie Uitnodigingen en deelnemers, met de status (wacht op deelnemers of actief), het minimum en of de actie open is voor de eigen plaats", systemImage: "person.2")
+                    Label("Per uitgenodigde zaak de status: uitgenodigd, doet mee, geweigerd of ingetrokken; ook uitnodigingen per e-mail of link", systemImage: "envelope.badge")
+                    Label("Een openstaande uitnodiging intrekken of een deelnemer verwijderen; de zaak krijgt een mail en een pushmelding in Pasr Zakelijk", systemImage: "person.crop.circle.badge.minus")
+                    Label("Ook op het web: beheer.pasr.nl, Ondernemers › Details", systemImage: "safari")
+                }
                 Section("Bingr: Verzonden mails") {
                     Label("Nieuw onderdeel Verzonden: welke mails de server heeft verstuurd, met ontvanger, onderwerp, bron, tijd en of de mailserver de mail aannam", systemImage: "paperplane")
                     Label("Filter op resultaat en bron, zoeken op ontvanger of onderwerp en de totalen van 7 dagen", systemImage: "line.3.horizontal.decrease.circle")
