@@ -268,6 +268,7 @@ struct RevenueView: View {
                     if d.empty { emptyCard(d) } else { content(d) }
                     if let a = d.apple { RevenueAppleCard(data: d, apple: a) { revision += 1 } }
                     RevenuePremiumCard(revision: revision)
+                    PaymentsCheckCard()
                     basis(d)
                 } else {
                     RoundedRectangle(cornerRadius: 16).fill(Color.white.opacity(0.05)).frame(height: 120)

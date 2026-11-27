@@ -1122,6 +1122,22 @@
         }
       }
     },
+    "Aandacht nodig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Needs attention"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aandacht nodig"
+          }
+        }
+      }
+    },
     "Aandeel van de meldingen van de laatste 24 uur waarin het veld is ingevuld. Opschaling staat alleen bij meldingen met GRIP of opschaling, dus een laag percentage is normaal.": {
       "localizations": {
         "en": {
@@ -1422,6 +1438,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aanvragen komen uit de app (alleen met een account). Publiceer je een winkel, dan staat hij meteen in Pasr en krijgen de aanvragers een pushmelding."
+          }
+        }
+      }
+    },
+    "Abonnementsbetaling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscription payment"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abonnementsbetaling"
           }
         }
       }
@@ -1922,6 +1954,22 @@
         }
       }
     },
+    "Al verwerkt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Already processed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al verwerkt"
+          }
+        }
+      }
+    },
     "Algemeen": {
       "localizations": {
         "en": {
@@ -2178,6 +2226,22 @@
         }
       }
     },
+    "Alleen aantallen en korte kenmerken, nooit e-mailadressen of account-id's": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only counts and short references, never email addresses or account IDs"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen aantallen en korte kenmerken, nooit e-mailadressen of account-id's"
+          }
+        }
+      }
+    },
     "Alleen aanzetten als Apple de entitlement heeft toegekend.": {
       "localizations": {
         "en": {
@@ -2414,6 +2478,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alles gepubliceerd"
+          }
+        }
+      }
+    },
+    "Alles in orde": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All good"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alles in orde"
           }
         }
       }
@@ -2926,6 +3006,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apple Kaarten (website)"
+          }
+        }
+      }
+    },
+    "Apple per dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple per day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple per dag"
           }
         }
       }
@@ -3746,6 +3842,54 @@
         }
       }
     },
+    "Betaald in Stripe (7 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paid in Stripe (7 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Betaald in Stripe (7 dagen)"
+          }
+        }
+      }
+    },
+    "Betaling achterstallig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment overdue"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Betaling achterstallig"
+          }
+        }
+      }
+    },
+    "Betalingen controleren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check payments"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Betalingen controleren"
+          }
+        }
+      }
+    },
     "Bevestig het e-mailadres alleen als je zeker weet dat het klopt. Het account wordt dan eigenaar van %@; het wachtwoord blijft van de gebruiker.": {
       "localizations": {
         "en": {
@@ -4158,6 +4302,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bingr, Tunr en Pasr blijven donker, zoals in de oorspronkelijke apps."
+          }
+        }
+      }
+    },
+    "Bingr: Betalingen controleren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Check payments"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: Betalingen controleren"
           }
         }
       }
@@ -4674,6 +4834,22 @@
         }
       }
     },
+    "Daarvan nog geen mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Of which no mail yet"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daarvan nog geen mail"
+          }
+        }
+      }
+    },
     "Dag": {
       "localizations": {
         "en": {
@@ -5086,6 +5262,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "De server heeft het verzendlogboek nog niet (workflow Backend in iptv-ios-appletv)."
+          }
+        }
+      }
+    },
+    "De server kent de betalingencontrole nog niet (functie admin in bingr-beheer).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The server does not have the payments check yet (admin function in bingr-beheer)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De server kent de betalingencontrole nog niet (functie admin in bingr-beheer)."
           }
         }
       }
@@ -7618,6 +7810,22 @@
         }
       }
     },
+    "Geen misgelopen betalingen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No missed payments."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen misgelopen betalingen."
+          }
+        }
+      }
+    },
     "Geen nieuwe apps. Alle apps uit de App Store en de Homey App Store staan al op de site.": {
       "localizations": {
         "en": {
@@ -7710,6 +7918,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen open meldingen."
+          }
+        }
+      }
+    },
+    "Geen problemen gevonden.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No problems found."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen problemen gevonden."
           }
         }
       }
@@ -10482,6 +10706,22 @@
         }
       }
     },
+    "Laatste verkoopdag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latest sales day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatste verkoopdag"
+          }
+        }
+      }
+    },
     "Label": {
       "localizations": {
         "en": {
@@ -10718,6 +10958,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lifestyle"
+          }
+        }
+      }
+    },
+    "Lifetime": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifetime"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lifetime"
           }
         }
       }
@@ -11794,6 +12050,22 @@
         }
       }
     },
+    "Misgelopen betalingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Missed payments"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Misgelopen betalingen"
+          }
+        }
+      }
+    },
     "Mislukt": {
       "localizations": {
         "en": {
@@ -12622,6 +12894,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuwe aanvraag via het contactformulier"
+          }
+        }
+      }
+    },
+    "Nieuwe abo's": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New subs"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe abo's"
           }
         }
       }
@@ -13474,6 +13762,22 @@
         }
       }
     },
+    "Nog niet aan een account gekoppeld (7 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not yet linked to an account (7 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog niet aan een account gekoppeld (7 dagen)"
+          }
+        }
+      }
+    },
     "Nog niets gebeurd.": {
       "localizations": {
         "en": {
@@ -13566,6 +13870,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nooit gezien"
+          }
+        }
+      }
+    },
+    "Notificaties (3 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications (3 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notificaties (3 dagen)"
+          }
+        }
+      }
+    },
+    "Nu controleren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check now"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu controleren"
           }
         }
       }
@@ -13794,6 +14130,22 @@
         }
       }
     },
+    "Omzet › Betalingen controleren: controleert of er betalingen zijn misgelopen, Apple (verkocht tegenover gekoppelde abonnementen en Lifetime per dag, notificaties, nog niet gekoppeld) en Stripe (betaald in Stripe tegenover wat wij hebben vastgelegd)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revenue › Check payments: checks whether any payments were missed, Apple (sold versus linked subscriptions and Lifetime per day, notifications, not yet linked) and Stripe (paid in Stripe versus what we recorded)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omzet › Betalingen controleren: controleert of er betalingen zijn misgelopen, Apple (verkocht tegenover gekoppelde abonnementen en Lifetime per dag, notificaties, nog niet gekoppeld) en Stripe (betaald in Stripe tegenover wat wij hebben vastgelegd)"
+          }
+        }
+      }
+    },
     "Omzet: per aanbieder (website via Stripe en Apple)": {
       "localizations": {
         "en": {
@@ -13838,6 +14190,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Onbekend"
+          }
+        }
+      }
+    },
+    "Onbekende aankoop": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown purchase"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onbekende aankoop"
           }
         }
       }
@@ -14194,6 +14562,22 @@
         }
       }
     },
+    "Onvolledig langer dan 1 dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Incomplete for more than 1 day"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onvolledig langer dan 1 dag"
+          }
+        }
+      }
+    },
     "Ook artikelen van 112 Nieuws per plaats (titel en intro met link), met eigen filter": {
       "localizations": {
         "en": {
@@ -14254,6 +14638,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ook op het web: beheer.bingr.online, tab Crashes"
+          }
+        }
+      }
+    },
+    "Ook op het web: beheer.bingr.online, tab Omzet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.bingr.online, Revenue tab"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.bingr.online, tab Omzet"
           }
         }
       }
@@ -14718,6 +15118,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opgeslagen."
+          }
+        }
+      }
+    },
+    "Opgezegd, nog niet gekoppeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canceled, not yet linked"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgezegd, nog niet gekoppeld"
           }
         }
       }
@@ -15758,6 +16174,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Productiviteit"
+          }
+        }
+      }
+    },
+    "Proefperiode bijgewerkt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trial updated"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proefperiode bijgewerkt"
+          }
+        }
+      }
+    },
+    "Proefperiode, nog niet gekoppeld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trial, not yet linked"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proefperiode, nog niet gekoppeld"
           }
         }
       }
@@ -17026,6 +17474,38 @@
         }
       }
     },
+    "Stripe": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stripe"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stripe"
+          }
+        }
+      }
+    },
+    "Stripe is niet bevraagd (geen sleutel of Stripe niet bereikbaar); alleen onze administratie is gecontroleerd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stripe was not queried (no key or Stripe unreachable); only our own records were checked."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stripe is niet bevraagd (geen sleutel of Stripe niet bereikbaar); alleen onze administratie is gecontroleerd."
+          }
+        }
+      }
+    },
     "Stripe-kosten / Apple-commissie": {
       "localizations": {
         "en": {
@@ -17378,6 +17858,22 @@
         }
       }
     },
+    "Test": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test"
+          }
+        }
+      }
+    },
     "Test naar mijn LRbeheer": {
       "localizations": {
         "en": {
@@ -17630,6 +18126,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tijdlijn (nieuwste boven)"
+          }
+        }
+      }
+    },
+    "Tik op Nu controleren.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap Check now."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tik op Nu controleren."
           }
         }
       }
@@ -18434,6 +18946,22 @@
         }
       }
     },
+    "Uitslag Alles in orde of Aandacht nodig, met de lijst van problemen en de misgelopen betalingen (soort, kort kenmerk, bedrag en tijd)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Result All good or Needs attention, with the list of problems and the missed payments (kind, short reference, amount and time)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitslag Alles in orde of Aandacht nodig, met de lijst van problemen en de misgelopen betalingen (soort, kort kenmerk, bedrag en tijd)"
+          }
+        }
+      }
+    },
     "Update": {
       "localizations": {
         "en": {
@@ -18542,6 +19070,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vaste koersen (EUR per 1 eenheid, één per regel)"
+          }
+        }
+      }
+    },
+    "Vastgelegd bij ons (7 dagen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recorded by us (7 days)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vastgelegd bij ons (7 dagen)"
           }
         }
       }
@@ -18750,6 +19294,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verkeerde gemeente"
+          }
+        }
+      }
+    },
+    "Verkocht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sold"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verkocht"
+          }
+        }
+      }
+    },
+    "Verkocht komt van App Store Connect (loopt een dag achter); nieuwe abonnementen en Lifetime uit onze administratie.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sold comes from App Store Connect (a day behind); new subscriptions and Lifetime from our records."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verkocht komt van App Store Connect (loopt een dag achter); nieuwe abonnementen en Lifetime uit onze administratie."
           }
         }
       }
@@ -19602,6 +20178,22 @@
         }
       }
     },
+    "Wacht al langer dan 1 uur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for more than 1 hour"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wacht al langer dan 1 uur"
+          }
+        }
+      }
+    },
     "Wacht op deelnemers": {
       "localizations": {
         "en": {
@@ -20398,6 +20990,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Zet per weerartikel, Burgernet, AMBER Alert, NL-Alert en Vermist Kind zelf aan of het een liveblog is: dan staat er \"Liveblog\" bij en LIVEBLOG op de afbeelding (standaard uit). NL-Alert krijgt nu ook een artikel"
+          }
+        }
+      }
+    },
+    "Zijn er betalingen misgelopen? Apple en Stripe tegen onze administratie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have any payments been missed? Apple and Stripe against our records"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zijn er betalingen misgelopen? Apple en Stripe tegen onze administratie"
           }
         }
       }

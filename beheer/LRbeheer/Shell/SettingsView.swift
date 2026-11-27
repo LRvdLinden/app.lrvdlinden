@@ -109,6 +109,12 @@ struct WhatsNewView: View {
                     Label("Een openstaande uitnodiging intrekken of een deelnemer verwijderen; de zaak krijgt een mail en een pushmelding in Pasr Zakelijk", systemImage: "person.crop.circle.badge.minus")
                     Label("Ook op het web: beheer.pasr.nl, Ondernemers › Details", systemImage: "safari")
                 }
+                Section("Bingr: Betalingen controleren") {
+                    Label("Omzet › Betalingen controleren: controleert of er betalingen zijn misgelopen, Apple (verkocht tegenover gekoppelde abonnementen en Lifetime per dag, notificaties, nog niet gekoppeld) en Stripe (betaald in Stripe tegenover wat wij hebben vastgelegd)", systemImage: "checkmark.shield")
+                    Label("Uitslag Alles in orde of Aandacht nodig, met de lijst van problemen en de misgelopen betalingen (soort, kort kenmerk, bedrag en tijd)", systemImage: "list.bullet.clipboard")
+                    Label("Alleen aantallen en korte kenmerken, nooit e-mailadressen of account-id's", systemImage: "lock")
+                    Label("Ook op het web: beheer.bingr.online, tab Omzet", systemImage: "safari")
+                }
                 Section("Bingr: Verzonden mails") {
                     Label("Nieuw onderdeel Verzonden: welke mails de server heeft verstuurd, met ontvanger, onderwerp, bron, tijd en of de mailserver de mail aannam", systemImage: "paperplane")
                     Label("Filter op resultaat en bron, zoeken op ontvanger of onderwerp en de totalen van 7 dagen", systemImage: "line.3.horizontal.decrease.circle")
