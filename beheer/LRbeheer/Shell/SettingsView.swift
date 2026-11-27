@@ -92,6 +92,11 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: acties per zaak en de nieuwe stempel") {
+                    Label("Ondernemers › Details: nieuw blok Acties met kortingsbonnen, actiecodes, gezamenlijke acties en vestigingen van de zaak, met aantallen (geen klantgegevens)", systemImage: "tag")
+                    Label("Uitzetten vanuit het beheer: kortingsbon uitzetten, actiecode pauzeren, gezamenlijke actie annuleren; de historie blijft bewaard", systemImage: "hand.raised")
+                    Label("Stempelkaart-voorbeeld met de officiële Pasr-stempel in de merkkleur van de kaart, zoals in de apps en op pasr.nl", systemImage: "seal")
+                }
                 Section("Pasr: bericht aan iedereen, met link") {
                     Label("Bericht sturen: nieuwe doelgroep Iedereen met meldingen aan (Pasr, Pasr Zakelijk of beide), ook zonder opt-in voor nieuws; alleen voor belangrijke berichten, geen reclame", systemImage: "megaphone")
                     Label("Kies Alles, Apple of Android, voor elke doelgroep", systemImage: "iphone.gen3")
