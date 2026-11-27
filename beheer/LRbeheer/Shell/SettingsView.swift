@@ -98,6 +98,10 @@ struct WhatsNewView: View {
                     Label("Alleen ontvanger en onderwerp, nooit de inhoud; nieuwsbrief en mailings staan er niet in", systemImage: "lock")
                     Label("Ook op het web: beheer.bingr.online, tab Verzonden", systemImage: "safari")
                 }
+                Section("Pasr: tickets als echte eventtickets") {
+                    Label("Winkels › ticket: nieuw blok Evenement met titel, merk, soort ticket, toelichting, datum(s), toegangstijden, locatie, plaats, adres, infopagina en tekst-/labelkleur, zoals op beheer.pasr.nl", systemImage: "ticket")
+                    Label("Pasr toont tickets daarmee als Apple Wallet-eventticket, en tickets van hetzelfde evenement en dezelfde dag als één groep om door te vegen", systemImage: "rectangle.stack")
+                }
                 Section("Pasr: acties per zaak en de nieuwe stempel") {
                     Label("Ondernemers › Details: nieuw blok Acties met kortingsbonnen, actiecodes, gezamenlijke acties en vestigingen van de zaak, met aantallen (geen klantgegevens)", systemImage: "tag")
                     Label("Uitzetten vanuit het beheer: kortingsbon uitzetten, actiecode pauzeren, gezamenlijke actie annuleren; de historie blijft bewaard", systemImage: "hand.raised")

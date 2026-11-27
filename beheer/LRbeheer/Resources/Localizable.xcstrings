@@ -1522,6 +1522,22 @@
         }
       }
     },
+    "Adres voor de route": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address for directions"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adres voor de route"
+          }
+        }
+      }
+    },
     "Afbeelding": {
       "localizations": {
         "en": {
@@ -2158,6 +2174,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alleen op de Nederlandse versie"
+          }
+        }
+      }
+    },
+    "Alleen van de officiële site van het evenement; onbekend leeg laten. Logo en kaartkleur hierboven zijn de huisstijl van het ticket.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only from the event's official site; leave unknown fields empty. The logo and card colour above are the ticket's branding."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen van de officiële site van het evenement; onbekend leeg laten. Logo en kaartkleur hierboven zijn de huisstijl van het ticket."
           }
         }
       }
@@ -4562,6 +4594,22 @@
         }
       }
     },
+    "Datum (JJJJ-MM-DD)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date (YYYY-MM-DD)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datum (JJJJ-MM-DD)"
+          }
+        }
+      }
+    },
     "De APNs-sleutel mag geen meldingen sturen voor app.lrvdlinden.noodpakket. Zet de sleutel in Apple Developer op het hele team (of voeg deze app toe).": {
       "localizations": {
         "en": {
@@ -6446,6 +6494,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Euro"
+          }
+        }
+      }
+    },
+    "Evenement": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Evenement"
           }
         }
       }
@@ -9954,6 +10018,22 @@
         }
       }
     },
+    "Laatste dag (meerdaags)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last day (multi-day)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatste dag (meerdaags)"
+          }
+        }
+      }
+    },
     "Laatste dag van App Store Connect: %@": {
       "localizations": {
         "en": {
@@ -10046,6 +10126,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Label boven de kop"
+          }
+        }
+      }
+    },
+    "Labelkleur #RRGGBB (leeg = automatisch)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Label colour #RRGGBB (empty = automatic)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Labelkleur #RRGGBB (leeg = automatisch)"
           }
         }
       }
@@ -11294,6 +11390,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Naam"
+          }
+        }
+      }
+    },
+    "Naam naast het logo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name next to the logo"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naam naast het logo"
           }
         }
       }
@@ -15826,6 +15938,22 @@
         }
       }
     },
+    "Soort ticket": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ticket type"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soort ticket"
+          }
+        }
+      }
+    },
     "Sport": {
       "localizations": {
         "en": {
@@ -16514,6 +16642,22 @@
         }
       }
     },
+    "Tekstkleur #RRGGBB (leeg = automatisch)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text colour #RRGGBB (empty = automatic)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekstkleur #RRGGBB (leeg = automatisch)"
+          }
+        }
+      }
+    },
     "Telefoon": {
       "localizations": {
         "en": {
@@ -16898,6 +17042,22 @@
         }
       }
     },
+    "Titel op het ticket": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Title on the ticket"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Titel op het ticket"
+          }
+        }
+      }
+    },
     "Titel van je bericht": {
       "localizations": {
         "en": {
@@ -16946,6 +17106,38 @@
         }
       }
     },
+    "Toegang tot (UU:MM)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entry until (HH:MM)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toegang tot (UU:MM)"
+          }
+        }
+      }
+    },
+    "Toegang vanaf (UU:MM)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entry from (HH:MM)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toegang vanaf (UU:MM)"
+          }
+        }
+      }
+    },
     "Toegevoegd": {
       "localizations": {
         "en": {
@@ -16958,6 +17150,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toegevoegd"
+          }
+        }
+      }
+    },
+    "Toelichting, bijv. t/m 14 jaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Note, e.g. up to age 14"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toelichting, bijv. t/m 14 jaar"
           }
         }
       }
@@ -18798,6 +19006,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Website of TestFlight"
+          }
+        }
+      }
+    },
+    "Website of infopagina (https)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Website or info page (https)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Website of infopagina (https)"
           }
         }
       }
