@@ -4898,6 +4898,22 @@
         }
       }
     },
+    "De knop voor websites, mails en QR-codes. Met Pasr opent de link Toevoegen aan Pasr?, anders pasr.nl met de downloadknoppen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The button for websites, mails and QR codes. With Pasr the link opens Add to Pasr?, otherwise pasr.nl with the download buttons."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De knop voor websites, mails en QR-codes. Met Pasr opent de link Toevoegen aan Pasr?, anders pasr.nl met de downloadknoppen."
+          }
+        }
+      }
+    },
     "De link moet met https:// beginnen.": {
       "localizations": {
         "en": {
@@ -11522,6 +11538,22 @@
         }
       }
     },
+    "Met Pasr opent de link Toevoegen aan Pasr? in de app, anders pasr.nl met de downloadknoppen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With Pasr the link opens Add to Pasr? in the app, otherwise pasr.nl with the download buttons"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Met Pasr opent de link Toevoegen aan Pasr? in de app, anders pasr.nl met de downloadknoppen"
+          }
+        }
+      }
+    },
     "Met opt-in": {
       "localizations": {
         "en": {
@@ -13698,6 +13730,22 @@
         }
       }
     },
+    "Ondernemers › stempelkaart en Winkels › winkel: de link pasr.nl/add/… en een voorbeeld van de knop Voeg toe aan Pasr (zwart, wit, nachtblauw), met Kopieer link en Open": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Businesses › stamp card and Stores › store: the link pasr.nl/add/… and a preview of the Voeg toe aan Pasr button (black, white, midnight blue), with Copy link and Open"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondernemers › stempelkaart en Winkels › winkel: de link pasr.nl/add/… en een voorbeeld van de knop Voeg toe aan Pasr (zwart, wit, nachtblauw), met Kopieer link en Open"
+          }
+        }
+      }
+    },
     "Ondernemers › zaak: instellingen (afkoeltijd, max stempels per scan, vindbaar in Pasr, adres)": {
       "localizations": {
         "en": {
@@ -14062,6 +14110,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ook op het web: beheer.pasr.nl, Overzicht en Insights"
+          }
+        }
+      }
+    },
+    "Ook op het web: beheer.pasr.nl, bij de stempelkaart en in de winkel-editor": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.pasr.nl, with the stamp card and in the store editor"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.pasr.nl, bij de stempelkaart en in de winkel-editor"
           }
         }
       }
@@ -14942,6 +15006,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr-account"
+          }
+        }
+      }
+    },
+    "Pasr: Voeg toe aan Pasr": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: Add to Pasr (Voeg toe aan Pasr)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: Voeg toe aan Pasr"
           }
         }
       }
@@ -18914,6 +18994,38 @@
         }
       }
     },
+    "Voeg toe aan Pasr": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add to Pasr"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voeg toe aan Pasr"
+          }
+        }
+      }
+    },
+    "Voeg toe aan Pasr (%@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add to Pasr (%@)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voeg toe aan Pasr (%@)"
+          }
+        }
+      }
+    },
     "Vol": {
       "localizations": {
         "en": {
@@ -19598,6 +19710,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Werkt ook voor winkels die al in de app zitten, zonder app-update"
+          }
+        }
+      }
+    },
+    "Werkt zodra het item online staat.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works once the item is online."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Werkt zodra het item online staat."
           }
         }
       }

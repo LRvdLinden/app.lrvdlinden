@@ -92,6 +92,11 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: Voeg toe aan Pasr") {
+                    Label("Ondernemers › stempelkaart en Winkels › winkel: de link pasr.nl/add/… en een voorbeeld van de knop Voeg toe aan Pasr (zwart, wit, nachtblauw), met Kopieer link en Open", systemImage: "plus.rectangle.on.rectangle")
+                    Label("Met Pasr opent de link Toevoegen aan Pasr? in de app, anders pasr.nl met de downloadknoppen", systemImage: "link")
+                    Label("Ook op het web: beheer.pasr.nl, bij de stempelkaart en in de winkel-editor", systemImage: "safari")
+                }
                 Section("Pasr: gezamenlijke acties op uitnodiging") {
                     Label("Ondernemers › Details › Acties: bij een gezamenlijke actie Uitnodigingen en deelnemers, met de status (wacht op deelnemers of actief), het minimum en of de actie open is voor de eigen plaats", systemImage: "person.2")
                     Label("Per uitgenodigde zaak de status: uitgenodigd, doet mee, geweigerd of ingetrokken; ook uitnodigingen per e-mail of link", systemImage: "envelope.badge")
