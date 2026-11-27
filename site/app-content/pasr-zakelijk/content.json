@@ -37,6 +37,11 @@
     "src": "shot-nl-07.webp",
     "w": 540,
     "h": 1174
+   },
+   {
+    "src": "shot-nl-08.webp",
+    "w": 540,
+    "h": 1174
    }
   ],
   "en": [
@@ -74,6 +79,11 @@
     "src": "shot-en-07.webp",
     "w": 540,
     "h": 1174
+   },
+   {
+    "src": "shot-en-08.webp",
+    "w": 540,
+    "h": 1174
    }
   ]
  },
@@ -94,32 +104,34 @@
   "en": "og-en.jpg"
  },
  "sources": {
-  "shot-nl-01.webp": "d370a01e1117e45cf39c2eab350f475f03850ff3",
-  "shot-nl-02.webp": "0a7adb2d6d9ecbcd147e2f2f8691eda52adfbc73",
-  "shot-nl-03.webp": "a39ff60fc3e8819fa8c711dd5fce09a539249dd5",
-  "shot-nl-04.webp": "ae14ce3435f09a1621adbd584fbffd0389771d15",
+  "shot-nl-01.webp": "03a841873723d48171d0b669b137f2a9f207389c",
+  "shot-nl-02.webp": "92a7ee45ec22ee032d4cafea266653b49306edf2",
+  "shot-nl-03.webp": "0ce6a4ef42a713318f2e4aa7b60763c0becb88f2",
+  "shot-nl-04.webp": "77bc16df8a46961e46ef102b1fdd64729bd0a6d6",
   "shot-nl-05.webp": "f885c5de56f91ad2aa06cabd2a2e74ee7cfdf376",
   "shot-nl-06.webp": "f886356364d5805b18be7d7c0a8eb44d0dd12cd2",
-  "shot-nl-07.webp": "ff18875f72c5e0ed3226ba03f3f202012467094f",
-  "shot-en-01.webp": "aabb9d101eb2dcbfb158d69fb9495062bc22155e",
-  "shot-en-02.webp": "3fa3e46308f2448353385d0014c525b49914be7b",
-  "shot-en-03.webp": "16109ed24976d25a811c9571e34f3ac178e914a2",
-  "shot-en-04.webp": "d579f8ab8150e17a66454f6c0e07c2c8f13258d8",
+  "shot-nl-07.webp": "766571870f136b8df0a33df25a5059e52b5ad4cd",
+  "shot-nl-08.webp": "ea4bc5dcbbcdaa0d002b5288320aa5dbedf9f724",
+  "shot-en-01.webp": "9ee23d2aa9e30afdc4dd9a6096b319ffcb287955",
+  "shot-en-02.webp": "5435eb3e7f73678e9440908d4c88586e24761a8b",
+  "shot-en-03.webp": "ae021e117dd2eb63bba363ab1f58222c471fcf78",
+  "shot-en-04.webp": "8b1451024ce67cdfbb69e8b9c01849c5e7f4d9a8",
   "shot-en-05.webp": "cd3cdcdbc02d42c1849bc4e91b43f74bbb18fd36",
   "shot-en-06.webp": "27192a84d64b2b90f485c8448fc877b0103bff1d",
-  "shot-en-07.webp": "77e0d82deac8aef881ee5e00139edcbb17943fbe",
+  "shot-en-07.webp": "1498532bc9a6320d7b988824298c78025731f5e3",
+  "shot-en-08.webp": "00db7113ce89a3bdeea0d3f2d7e12a196f95906b",
   "text-nl-description": "1db021ec32d68c3d1d070e35aca0535e68c7b8d6",
   "text-nl-promotional_text": "0ff38687743f4df97dfcf1f84ddb37816891cd20",
   "text-nl-subtitle": "c04dc0d4d494597a252c43b9480d993480622b3d",
   "text-en-description": "dba72e076437726e0b8154154a03d065fa82395f",
   "text-en-promotional_text": "f82bd99797cd06b8988af8e984cddfe4acd0dc61",
   "text-en-subtitle": "81a42928a340a8b3a68bf1f7644fca5b90f0ea5e",
-  "promo-nl.webp": "4530661d193aef564f175346813eb2e891ae4762",
+  "promo-nl.webp": "d1baba991e7306bd06b6c5e83080b9807545d9b8",
   "og-nl.jpg": "gen:a452e425151837f3f701b9cbb302df25c5bd4099",
   "og-en.jpg": "gen:f2d3f8f6ae24864da9180446e2ccf62d795a5dee"
  },
  "folder": "Pasr Zakelijk",
- "source": "Pasr Zakelijk/AppStore/2026-11-22",
+ "source": "Pasr Zakelijk/AppStore/2026-11-27",
  "promo": {
   "nl": "promo-nl.webp"
  }
