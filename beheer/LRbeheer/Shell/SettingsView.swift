@@ -96,6 +96,11 @@ struct WhatsNewView: View {
                     Label("Gebruikers: bij elk account staat precies wat het heeft: Gratis, Oude Lifetime, Lifetime (gekocht), Gratis Lifetime gegeven, Maand, Halfjaar of Jaar, met proefperiode, test, einddatum en Stripe of Apple erbij", systemImage: "creditcard")
                     Label("Gebruikers: filter Abonnement op die soorten (ook alle Premium-abonnementen samen) met aantallen", systemImage: "line.3.horizontal.decrease.circle")
                 }
+                Section("Pasr: ondernemer verwijderen") {
+                    Label("Ondernemers › Details › Gevaarlijke zone › Verwijderen…: een zaak en alles eraan definitief weghalen (stempelkaarten en leden, medewerkers, events en tickets, klantenkaarten, bonnen en codes, gezamenlijke acties, log), naast Blokkeren", systemImage: "trash")
+                    Label("Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens. De eigenaar krijgt geen e-mail", systemImage: "checkmark.shield")
+                    Label("Klanten zien de stempelkaart van de zaak verdwijnen bij het volgende verversen in Pasr; eigen kaarten van klanten blijven. Ook op het web: beheer.pasr.nl", systemImage: "safari")
+                }
                 Section("Bingr: sandbox-aankopen en betaaltrechter") {
                     Label("Gebruikers: filter Sandbox en een label Sandbox bij accounts met toegang via een Apple-testaankoop (niet betaald); intrekken bij Abonnement van het account", systemImage: "testtube.2")
                     Label("Omzet › Betalingen controleren: tegel met het aantal accounts met Lifetime via sandbox (tik opent die accounts), actief in 7 dagen en tijdelijke toegang", systemImage: "checkmark.shield")

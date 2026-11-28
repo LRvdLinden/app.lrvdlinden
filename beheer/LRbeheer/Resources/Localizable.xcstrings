@@ -290,6 +290,22 @@
         }
       }
     },
+    "%@ verwijderen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete %@?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ verwijderen?"
+          }
+        }
+      }
+    },
     "%@ wordt als bevestigd gemarkeerd, zonder bevestigingsmail. Doe dit alleen als je zeker weet dat dit adres klopt (bijvoorbeeld een review-account). Het wachtwoord blijft van de gebruiker.": {
       "localizations": {
         "en": {
@@ -302,6 +318,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ wordt als bevestigd gemarkeerd, zonder bevestigingsmail. Doe dit alleen als je zeker weet dat dit adres klopt (bijvoorbeeld een review-account). Het wachtwoord blijft van de gebruiker."
+          }
+        }
+      }
+    },
+    "%@ wordt permanent verwijderd, met alles wat eraan hangt. Dit kan niet ongedaan worden gemaakt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ will be permanently deleted, along with everything attached to it. This cannot be undone."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ wordt permanent verwijderd, met alles wat eraan hangt. Dit kan niet ongedaan worden gemaakt."
           }
         }
       }
@@ -1518,6 +1550,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aangevuld. Geen nieuwe apps, wel beta-apps aangevuld met gegevens uit de store."
+          }
+        }
+      }
+    },
+    "Aankomende events die nog open staan: %@. Aanmelders krijgen geen bericht; annuleer die eerst als je ze wilt laten weten dat het niet doorgaat.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upcoming events still open: %@. People who signed up are not notified; cancel those first if you want them to know it is not going ahead."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aankomende events die nog open staan: %@. Aanmelders krijgen geen bericht; annuleer die eerst als je ze wilt laten weten dat het niet doorgaat."
           }
         }
       }
@@ -5106,6 +5154,22 @@
         }
       }
     },
+    "Blokkeren zet de kaarten offline en houdt alle gegevens. Verwijderen haalt de zaak en alles eraan definitief weg.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocking takes the cards offline and keeps all data. Deleting permanently removes the business and everything attached to it."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blokkeren zet de kaarten offline en houdt alle gegevens. Verwijderen haalt de zaak en alles eraan definitief weg."
+          }
+        }
+      }
+    },
     "Boeken": {
       "localizations": {
         "en": {
@@ -5810,6 +5874,22 @@
         }
       }
     },
+    "De eigenaar krijgt geen e-mail. Het Pasr-account van de eigenaar en de medewerkers blijft bestaan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The owner does not get an email. The Pasr accounts of the owner and the staff are kept."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De eigenaar krijgt geen e-mail. Het Pasr-account van de eigenaar en de medewerkers blijft bestaan."
+          }
+        }
+      }
+    },
     "De gebruiker vindt het toestel-ID in de app bij Instellingen, onder Disclaimer.": {
       "localizations": {
         "en": {
@@ -6242,6 +6322,22 @@
         }
       }
     },
+    "De zaak is nu nog goedgekeurd en wordt direct geblokkeerd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The business is still approved and will be blocked immediately."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De zaak is nu nog goedgekeurd en wordt direct geblokkeerd."
+          }
+        }
+      }
+    },
     "De zaak kan niet meer scannen en de kaarten gaan offline. Leden zien dat de kaart niet meer actief is.": {
       "localizations": {
         "en": {
@@ -6254,6 +6350,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "De zaak kan niet meer scannen en de kaarten gaan offline. Leden zien dat de kaart niet meer actief is."
+          }
+        }
+      }
+    },
+    "De zaak zelf (er hangt verder niets aan)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The business itself (nothing else is attached)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De zaak zelf (er hangt verder niets aan)"
+          }
+        }
+      }
+    },
+    "Deelname aan acties van andere zaken: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Participation in campaigns of other businesses: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deelname aan acties van andere zaken: %@"
           }
         }
       }
@@ -6302,6 +6430,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Defensie"
+          }
+        }
+      }
+    },
+    "Definitief verwijderen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete permanently"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definitief verwijderen"
           }
         }
       }
@@ -6766,6 +6910,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dit pushbericht nu versturen?"
+          }
+        }
+      }
+    },
+    "Dit verdwijnt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This will be removed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit verdwijnt"
           }
         }
       }
@@ -7522,6 +7682,22 @@
         }
       }
     },
+    "Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens. De eigenaar krijgt geen e-mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First you see in numbers what will be removed; then tick the box and retype the name of the business. The server checks the name again. The owner does not get an email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens. De eigenaar krijgt geen e-mail"
+          }
+        }
+      }
+    },
     "Eerste downloads": {
       "localizations": {
         "en": {
@@ -8046,6 +8222,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Event: %@ · %@"
+          }
+        }
+      }
+    },
+    "Events: %@, met %@ tickets, inclusief de gegevens van de aanmeldingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Events: %1$@, with %2$@ tickets, including the details of the sign-ups"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Events: %@, met %@ tickets, inclusief de gegevens van de aanmeldingen"
           }
         }
       }
@@ -9538,6 +9730,22 @@
         }
       }
     },
+    "Gevaarlijke zone": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Danger zone"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gevaarlijke zone"
+          }
+        }
+      }
+    },
     "Geweigerd": {
       "localizations": {
         "en": {
@@ -9550,6 +9758,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geweigerd"
+          }
+        }
+      }
+    },
+    "Gezamenlijke acties van deze zaak: %@ (worden geannuleerd, deelnemers krijgen geen bericht)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Joint campaigns of this business: %@ (cancelled, participants are not notified)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gezamenlijke acties van deze zaak: %@ (worden geannuleerd, deelnemers krijgen geen bericht)"
           }
         }
       }
@@ -10526,6 +10750,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Iedereen met opt-in"
+          }
+        }
+      }
+    },
+    "Ik begrijp dat dit definitief is en niet ongedaan kan worden gemaakt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I understand this is final and cannot be undone."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ik begrijp dat dit definitief is en niet ongedaan kan worden gemaakt."
           }
         }
       }
@@ -11554,6 +11794,22 @@
         }
       }
     },
+    "Klanten zien de stempelkaart van de zaak verdwijnen bij het volgende verversen in Pasr; eigen kaarten van klanten blijven. Ook op het web: beheer.pasr.nl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Customers see the business's stamp card disappear the next time Pasr refreshes; customers' own cards stay. Also on the web: beheer.pasr.nl"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klanten zien de stempelkaart van de zaak verdwijnen bij het volgende verversen in Pasr; eigen kaarten van klanten blijven. Ook op het web: beheer.pasr.nl"
+          }
+        }
+      }
+    },
     "Klantenkaart": {
       "localizations": {
         "en": {
@@ -11598,6 +11854,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Klantenkaart: %@ · %@"
+          }
+        }
+      }
+    },
+    "Klantenkaarten: %@, met %@ leden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Customer cards: %1$@, with %2$@ members"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klantenkaarten: %@, met %@ leden"
           }
         }
       }
@@ -11950,6 +12222,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Korting: %lld%%"
+          }
+        }
+      }
+    },
+    "Kortingsbonnen en actiecodes: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discount coupons and promo codes: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kortingsbonnen en actiecodes: %@"
           }
         }
       }
@@ -12318,6 +12606,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Labels"
+          }
+        }
+      }
+    },
+    "Laden…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laden…"
           }
         }
       }
@@ -12962,6 +13266,22 @@
         }
       }
     },
+    "Logregels: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log entries: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logregels: %@"
+          }
+        }
+      }
+    },
     "Looptijd": {
       "localizations": {
         "en": {
@@ -13342,6 +13662,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Medewerkers"
+          }
+        }
+      }
+    },
+    "Medewerkers: %@ (kunnen niet meer inloggen bij deze zaak)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Staff: %@ (can no longer sign in to this business)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medewerkers: %@ (kunnen niet meer inloggen bij deze zaak)"
           }
         }
       }
@@ -16178,6 +16514,22 @@
         }
       }
     },
+    "Ondernemers › Details › Gevaarlijke zone › Verwijderen…: een zaak en alles eraan definitief weghalen (stempelkaarten en leden, medewerkers, events en tickets, klantenkaarten, bonnen en codes, gezamenlijke acties, log), naast Blokkeren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Businesses › Details › Danger zone › Delete…: permanently remove a business and everything attached to it (stamp cards and members, staff, events and tickets, customer cards, coupons and codes, joint campaigns, log), next to Block"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondernemers › Details › Gevaarlijke zone › Verwijderen…: een zaak en alles eraan definitief weghalen (stempelkaarten en leden, medewerkers, events en tickets, klantenkaarten, bonnen en codes, gezamenlijke acties, log), naast Blokkeren"
+          }
+        }
+      }
+    },
     "Ondernemers › Details › Tickets en klantenkaarten: per zaak de gratis events met aangemeld, binnen, wachtlijst en afgemeld": {
       "localizations": {
         "en": {
@@ -17774,6 +18126,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: iOS en Android"
+          }
+        }
+      }
+    },
+    "Pasr: ondernemer verwijderen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: delete a business"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: ondernemer verwijderen"
           }
         }
       }
@@ -19410,6 +19778,22 @@
         }
       }
     },
+    "Stempelkaarten: %@, met in totaal %@ leden. De kaart verdwijnt bij de klant bij het volgende verversen in Pasr.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stamp cards: %1$@, with %2$@ members in total. The card disappears for the customer the next time Pasr refreshes."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stempelkaarten: %@, met in totaal %@ leden. De kaart verdwijnt bij de klant bij het volgende verversen in Pasr."
+          }
+        }
+      }
+    },
     "Stempels": {
       "localizations": {
         "en": {
@@ -20866,6 +21250,22 @@
         }
       }
     },
+    "Typ de naam van de zaak om te bevestigen:": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type the name of the business to confirm:"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typ de naam van de zaak om te bevestigen:"
+          }
+        }
+      }
+    },
     "Uit de dagelijkse verkoopoverzichten van App Store Connect; die komen een dag later binnen.": {
       "localizations": {
         "en": {
@@ -21950,6 +22350,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verwijderen"
+          }
+        }
+      }
+    },
+    "Verwijderen…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijderen…"
           }
         }
       }
