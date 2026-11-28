@@ -18,6 +18,38 @@
         }
       }
     },
+    " en %lld bcc": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " and %lld bcc"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " en %lld bcc"
+          }
+        }
+      }
+    },
+    " en %lld cc": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " and %lld cc"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " en %lld cc"
+          }
+        }
+      }
+    },
     "\"%@\" verwijderen?": {
       "localizations": {
         "en": {
@@ -226,6 +258,22 @@
         }
       }
     },
+    "%@ van %@ verstuurd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ of %2$@ sent"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ van %@ verstuurd"
+          }
+        }
+      }
+    },
     "%@ verwijderd": {
       "localizations": {
         "en": {
@@ -306,6 +354,22 @@
         }
       }
     },
+    "%@, als %@. Dit kan niet worden teruggedraaid.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, as %2$@. This cannot be undone."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, als %@. Dit kan niet worden teruggedraaid."
+          }
+        }
+      }
+    },
     "%@: %lld stempels, %@": {
       "localizations": {
         "en": {
@@ -338,6 +402,38 @@
         }
       }
     },
+    "%lld adressen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld addresses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld adressen"
+          }
+        }
+      }
+    },
+    "%lld adressen (aan %lld, cc %lld, bcc %lld), als %@. Dit kan niet worden teruggedraaid.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld addresses (to %2$lld, cc %3$lld, bcc %4$lld), as %5$@. This cannot be undone."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld adressen (aan %lld, cc %lld, bcc %lld), als %@. Dit kan niet worden teruggedraaid."
+          }
+        }
+      }
+    },
     "%lld dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro.": {
       "localizations": {
         "en": {
@@ -350,6 +446,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld dag(en) in een valuta zonder ECB-koers; niet meegeteld in euro."
+          }
+        }
+      }
+    },
+    "%lld dubbele adressen genegeerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld duplicate addresses ignored"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dubbele adressen genegeerd"
           }
         }
       }
@@ -434,6 +546,38 @@
         }
       }
     },
+    "%lld mails": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld emails"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld mails"
+          }
+        }
+      }
+    },
+    "%lld mails verwerkt (%lld nieuw, %lld reacties).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld emails processed (%2$lld new, %3$lld replies)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld mails verwerkt (%lld nieuw, %lld reacties)."
+          }
+        }
+      }
+    },
     "%lld met meldingen aan": {
       "localizations": {
         "en": {
@@ -462,6 +606,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld min"
+          }
+        }
+      }
+    },
+    "%lld mislukt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld failed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld mislukt"
+          }
+        }
+      }
+    },
+    "%lld mislukt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld failed."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld mislukt."
           }
         }
       }
@@ -718,6 +894,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "+%lld niet bevestigd"
+          }
+        }
+      }
+    },
+    ". Dit kan niet worden teruggedraaid.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ". This cannot be undone."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ". Dit kan niet worden teruggedraaid."
+          }
+        }
+      }
+    },
+    "1 adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 address"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 adres"
+          }
+        }
+      }
+    },
+    "1 mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 mail"
           }
         }
       }
@@ -1138,6 +1362,38 @@
         }
       }
     },
+    "Aan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aan"
+          }
+        }
+      }
+    },
+    "Aan %lld · cc %lld · bcc %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To %1$lld · cc %2$lld · bcc %3$lld"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aan %lld · cc %lld · bcc %lld"
+          }
+        }
+      }
+    },
     "Aandacht nodig": {
       "localizations": {
         "en": {
@@ -1182,6 +1438,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aangemaakt"
+          }
+        }
+      }
+    },
+    "Aangemaakt %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Created %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aangemaakt %@"
           }
         }
       }
@@ -1698,6 +1970,38 @@
         }
       }
     },
+    "Adressen (komma, spatie of regel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addresses (comma, space or new line)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adressen (komma, spatie of regel)"
+          }
+        }
+      }
+    },
+    "Adressen in kopie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addresses in copy"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adressen in kopie"
+          }
+        }
+      }
+    },
     "Afbeelding": {
       "localizations": {
         "en": {
@@ -1954,6 +2258,38 @@
         }
       }
     },
+    "Afzender en onderwerp": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sender and subject"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afzender en onderwerp"
+          }
+        }
+      }
+    },
+    "Afzender: ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sender: "
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afzender: "
+          }
+        }
+      }
+    },
     "Al je platformen op één plek": {
       "localizations": {
         "en": {
@@ -2126,6 +2462,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alle functies van BingrBeheer, BeheerTunr, PasrBeheer en P2000Beheer"
+          }
+        }
+      }
+    },
+    "Alle merken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All brands"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle merken"
           }
         }
       }
@@ -2462,6 +2814,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alleen voor belangrijke berichten, geen reclame. Dit kan niet worden teruggedraaid."
+          }
+        }
+      }
+    },
+    "Alleen zichtbaar in het beheer…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only visible in the admin…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alleen zichtbaar in het beheer…"
           }
         }
       }
@@ -2814,6 +3182,70 @@
           "stringUnit": {
             "state": "translated",
             "value": "Antwoord"
+          }
+        }
+      }
+    },
+    "Antwoord aan klant": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reply to customer"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antwoord aan klant"
+          }
+        }
+      }
+    },
+    "Antwoord versturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send reply"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antwoord versturen"
+          }
+        }
+      }
+    },
+    "Antwoord versturen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send reply?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antwoord versturen?"
+          }
+        }
+      }
+    },
+    "Antwoorden komen in de inbox als ticket #%lld.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Replies arrive in the inbox as ticket #%lld."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antwoorden komen in de inbox als ticket #%lld."
           }
         }
       }
@@ -4242,6 +4674,38 @@
         }
       }
     },
+    "Bijlage verwijderen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove attachment"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bijlage verwijderen"
+          }
+        }
+      }
+    },
+    "Bijlagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attachments"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bijlagen"
+          }
+        }
+      }
+    },
     "Bijv. /maand": {
       "localizations": {
         "en": {
@@ -4754,6 +5218,22 @@
         }
       }
     },
+    "Citaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Citaat"
+          }
+        }
+      }
+    },
     "Code": {
       "localizations": {
         "en": {
@@ -4834,6 +5314,22 @@
         }
       }
     },
+    "Contact": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact"
+          }
+        }
+      }
+    },
     "Contact & bedrijf": {
       "localizations": {
         "en": {
@@ -4910,6 +5406,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crashes"
+          }
+        }
+      }
+    },
+    "Cursief": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Italic"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cursief"
           }
         }
       }
@@ -5138,6 +5650,22 @@
         }
       }
     },
+    "De bijlagen zijn samen te groot (maximaal 10 MB).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The attachments are too large together (at most 10 MB)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De bijlagen zijn samen te groot (maximaal 10 MB)."
+          }
+        }
+      }
+    },
     "De controle op GitHub is mislukt. Bekijk de details in het logboek.": {
       "localizations": {
         "en": {
@@ -5202,6 +5730,22 @@
         }
       }
     },
+    "De inbox (IMAP) is nog niet ingesteld (PASR_IMAP_*): mails komen niet automatisch binnen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The inbox (IMAP) is not set up yet (PASR_IMAP_*): emails do not arrive automatically."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De inbox (IMAP) is nog niet ingesteld (PASR_IMAP_*): mails komen niet automatisch binnen."
+          }
+        }
+      }
+    },
     "De kaart en alle leden met hun stempels gaan weg. Dit kan niet ongedaan worden gemaakt. De log blijft.": {
       "localizations": {
         "en": {
@@ -5230,6 +5774,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "De kaart is nog een concept: link, QR-code en flyer werken zodra hij online staat."
+          }
+        }
+      }
+    },
+    "De klant krijgt een mail met #%lld in het onderwerp; antwoorden komen weer in dit ticket.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The customer receives an email with #%lld in the subject; replies come back in this ticket."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De klant krijgt een mail met #%lld in het onderwerp; antwoorden komen weer in dit ticket."
           }
         }
       }
@@ -5310,6 +5870,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "De link moet met https:// beginnen."
+          }
+        }
+      }
+    },
+    "De nieuwsbrief wordt verstuurd naar %@ ontvangers.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The newsletter is being sent to %@ recipients."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De nieuwsbrief wordt verstuurd naar %@ ontvangers."
           }
         }
       }
@@ -5650,6 +6226,38 @@
         }
       }
     },
+    "Deze bijlage kan niet worden geopend.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This attachment cannot be opened."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze bijlage kan niet worden geopend."
+          }
+        }
+      }
+    },
+    "Deze foto kan niet worden geladen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This photo cannot be loaded."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deze foto kan niet worden geladen."
+          }
+        }
+      }
+    },
     "Deze maand": {
       "localizations": {
         "en": {
@@ -5902,6 +6510,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dit bestand is geen geldige apps.json"
+          }
+        }
+      }
+    },
+    "Dit bestand is te groot of kan niet worden gelezen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This file is too large or cannot be read."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit bestand is te groot of kan niet worden gelezen."
           }
         }
       }
@@ -6322,6 +6946,22 @@
         }
       }
     },
+    "Dringend": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Urgent"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dringend"
+          }
+        }
+      }
+    },
     "Dupliceren": {
       "localizations": {
         "en": {
@@ -6370,6 +7010,22 @@
         }
       }
     },
+    "E-mail is op de server nog niet ingericht (PASR_SMTP_*).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email is not set up on the server yet (PASR_SMTP_*)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-mail is op de server nog niet ingericht (PASR_SMTP_*)."
+          }
+        }
+      }
+    },
     "E-mail van de eigenaar": {
       "localizations": {
         "en": {
@@ -6382,6 +7038,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "E-mail van de eigenaar"
+          }
+        }
+      }
+    },
+    "E-mail versturen is nog niet ingesteld (PASR_SMTP_*): antwoorden worden opgeslagen maar niet verstuurd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sending email is not set up yet (PASR_SMTP_*): replies are saved but not sent."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-mail versturen is nog niet ingesteld (PASR_SMTP_*): antwoorden worden opgeslagen maar niet verstuurd."
+          }
+        }
+      }
+    },
+    "E-mail versturen is op de server nog niet ingesteld.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sending email is not set up on the server yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-mail versturen is op de server nog niet ingesteld."
           }
         }
       }
@@ -6546,6 +7234,22 @@
         }
       }
     },
+    "Een of meer e-mailadressen kloppen niet.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One or more email addresses are not valid."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een of meer e-mailadressen kloppen niet."
+          }
+        }
+      }
+    },
     "Een openstaande uitnodiging intrekken of een deelnemer verwijderen; de zaak krijgt een mail en een pushmelding in Pasr Zakelijk": {
       "localizations": {
         "en": {
@@ -6638,6 +7342,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Een zaak uit de lijst in Pasr halen: Vindbaar in Pasr uit"
+          }
+        }
+      }
+    },
+    "Eerdere nieuwsbrieven": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous newsletters"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eerdere nieuwsbrieven"
           }
         }
       }
@@ -7122,6 +7842,22 @@
         }
       }
     },
+    "Even wachten: er zijn te veel mails verstuurd. Probeer het zo opnieuw.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please wait: too many emails were sent. Try again shortly."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Even wachten: er zijn te veel mails verstuurd. Probeer het zo opnieuw."
+          }
+        }
+      }
+    },
     "Evenement": {
       "localizations": {
         "en": {
@@ -7166,6 +7902,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Event: %@ · %@"
+          }
+        }
+      }
+    },
+    "Extra adressen (komma, spatie of regel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extra addresses (comma, space or new line)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extra adressen (komma, spatie of regel)"
           }
         }
       }
@@ -7554,6 +8306,22 @@
         }
       }
     },
+    "Gebruikers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruikers"
+          }
+        }
+      }
+    },
     "Gebruikers melden dit anoniem via \"Klopt deze melding niet?\" onderaan een melding.": {
       "localizations": {
         "en": {
@@ -7582,6 +8350,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gebruikers, support, push, nieuwsbrief en omzet"
+          }
+        }
+      }
+    },
+    "Gebruikers: bevestigde Pasr-accounts. Ondernemers: eigenaren en medewerkers van een zaak. Wie zich heeft afgemeld, krijgt niets. Je ziet alleen aantallen, nooit adressen. Elke mail krijgt zelf een afmeldlink.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users: confirmed Pasr accounts. Business owners: owners and staff of a business. Anyone who unsubscribed gets nothing. You only see counts, never addresses. Every email gets its own unsubscribe link."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruikers: bevestigde Pasr-accounts. Ondernemers: eigenaren en medewerkers van een zaak. Wie zich heeft afgemeld, krijgt niets. Je ziet alleen aantallen, nooit adressen. Elke mail krijgt zelf een afmeldlink."
           }
         }
       }
@@ -7842,6 +8626,22 @@
         }
       }
     },
+    "Geen berichten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No messages."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen berichten."
+          }
+        }
+      }
+    },
     "Geen crashrapporten. Mooi zo.": {
       "localizations": {
         "en": {
@@ -7954,6 +8754,22 @@
         }
       }
     },
+    "Geen mails.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No emails."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen mails."
+          }
+        }
+      }
+    },
     "Geen misgelopen betalingen.": {
       "localizations": {
         "en": {
@@ -7998,6 +8814,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen nieuwe feedback"
+          }
+        }
+      }
+    },
+    "Geen nieuwe mails (%lld bekeken).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No new emails (%lld checked)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen nieuwe mails (%lld bekeken)."
           }
         }
       }
@@ -8062,6 +8894,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen open meldingen."
+          }
+        }
+      }
+    },
+    "Geen openstaande mails.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No open emails."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen openstaande mails."
           }
         }
       }
@@ -8382,6 +9230,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geschiedenis"
+          }
+        }
+      }
+    },
+    "Gesloten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Closed"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesloten"
+          }
+        }
+      }
+    },
+    "Gesprek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversation"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesprek"
           }
         }
       }
@@ -9010,6 +9890,38 @@
         }
       }
     },
+    "Het antwoord gaat per mail als %@ naar de klant": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The reply is emailed to the customer as %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het antwoord gaat per mail als %@ naar de klant"
+          }
+        }
+      }
+    },
+    "Het antwoord is opgeslagen, maar de mail is niet verstuurd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The reply was saved, but the email was not sent."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het antwoord is opgeslagen, maar de mail is niet verstuurd."
+          }
+        }
+      }
+    },
     "Het bericht klopt niet.": {
       "localizations": {
         "en": {
@@ -9090,6 +10002,22 @@
         }
       }
     },
+    "Het voorbeeld verschijnt zodra je iets schrijft.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The preview appears as soon as you write something."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het voorbeeld verschijnt zodra je iets schrijft."
+          }
+        }
+      }
+    },
     "Hoe wil je de app toevoegen?": {
       "localizations": {
         "en": {
@@ -9150,6 +10078,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Homey App Store"
+          }
+        }
+      }
+    },
+    "Hoog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoog"
+          }
+        }
+      }
+    },
+    "Hoogstens 200 adressen per mail. Ontvangers in BCC zien elkaar niet. Zonder Aan gaat de mail naar de afzender zelf, met de BCC-adressen verborgen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At most 200 addresses per email. Recipients in BCC cannot see each other. Without a To address the email goes to the sender itself, with the BCC addresses hidden."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoogstens 200 adressen per mail. Ontvangers in BCC zien elkaar niet. Zonder Aan gaat de mail naar de afzender zelf, met de BCC-adressen verborgen."
           }
         }
       }
@@ -9246,6 +10206,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "ID (uniek, zonder spaties)"
+          }
+        }
+      }
+    },
+    "IMAP is niet ingesteld.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IMAP is not set up."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IMAP is niet ingesteld."
           }
         }
       }
@@ -9470,6 +10446,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inactief (30 dagen)"
+          }
+        }
+      }
+    },
+    "Inbox": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inbox"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inbox"
+          }
+        }
+      }
+    },
+    "Inbox: laatst opgehaald %@ · %lld geïmporteerd van %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inbox: last fetched %1$@ · %2$lld imported of %3$lld"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inbox: laatst opgehaald %@ · %lld geïmporteerd van %lld"
           }
         }
       }
@@ -9726,6 +10734,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Instellingen…"
+          }
+        }
+      }
+    },
+    "Interne notitie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Internal note"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interne notitie"
           }
         }
       }
@@ -10370,6 +11394,22 @@
         }
       }
     },
+    "Knop": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Button"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Knop"
+          }
+        }
+      }
+    },
     "Knop 1": {
       "localizations": {
         "en": {
@@ -10818,6 +11858,22 @@
         }
       }
     },
+    "Laag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laag"
+          }
+        }
+      }
+    },
     "Laatst gebruikt": {
       "localizations": {
         "en": {
@@ -11246,6 +12302,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Liggend beeld, ideaal 1600 × 900 pixels. Upload per taal een eigen banner, of één voor beide. Laat de titel leeg om de appnaam te tonen."
+          }
+        }
+      }
+    },
+    "Lijn": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Line"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lijn"
+          }
+        }
+      }
+    },
+    "Lijst": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "List"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lijst"
           }
         }
       }
@@ -11730,6 +12818,22 @@
         }
       }
     },
+    "Mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail"
+          }
+        }
+      }
+    },
     "Mail Bingr wordt Lifetime testen en versturen, en de herinnering": {
       "localizations": {
         "en": {
@@ -11778,6 +12882,22 @@
         }
       }
     },
+    "Mail versturen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send email?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail versturen?"
+          }
+        }
+      }
+    },
     "Mail “Bingr wordt Lifetime”": {
       "localizations": {
         "en": {
@@ -11790,6 +12910,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mail “Bingr wordt Lifetime”"
+          }
+        }
+      }
+    },
+    "Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 10 MB), live voorbeeld en testmail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail › New email: To, CC and BCC always visible, each with multiple pasted addresses, a counter and invalid addresses marked; brand Pasr or Pasr Zakelijk, subject, Markdown with toolbar, attachments (10 MB in total), live preview and test email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 10 MB), live voorbeeld en testmail"
+          }
+        }
+      }
+    },
+    "Mail › Nieuwsbrief naar Gebruikers of Ondernemers (met aantal), merk, voorbeeld, testmail, versturen met bevestiging en het overzicht van eerdere nieuwsbrieven met voortgang en annuleren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail › Newsletter to Users or Business owners (with count), brand, preview, test email, send with confirmation and the overview of previous newsletters with progress and cancel"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail › Nieuwsbrief naar Gebruikers of Ondernemers (met aantal), merk, voorbeeld, testmail, versturen met bevestiging en het overzicht van eerdere nieuwsbrieven met voortgang en annuleren"
           }
         }
       }
@@ -11810,6 +12962,22 @@
         }
       }
     },
+    "Mails die al zijn verstuurd, blijven verstuurd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emails that were already sent stay sent."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mails die al zijn verstuurd, blijven verstuurd."
+          }
+        }
+      }
+    },
     "Marechaussee": {
       "localizations": {
         "en": {
@@ -11822,6 +12990,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marechaussee"
+          }
+        }
+      }
+    },
+    "Markdown: **vet**, *cursief*, lijsten, > citaat, [tekst](https://…), knop [[Knoptekst|https://…]] en afbeelding ![](https://…). Andere HTML wordt niet gebruikt. {{voornaam}} wordt de voornaam van de ontvanger.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markdown: **bold**, *italic*, lists, > quote, [text](https://…), button [[Label|https://…]] and image ![](https://…). Other HTML is not used. {{voornaam}} becomes the recipient's first name."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Markdown: **vet**, *cursief*, lijsten, > citaat, [tekst](https://…), knop [[Knoptekst|https://…]] en afbeelding ![](https://…). Andere HTML wordt niet gebruikt. {{voornaam}} wordt de voornaam van de ontvanger."
           }
         }
       }
@@ -12190,6 +13374,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meldingen, waarschuwingen, push en statistieken"
+          }
+        }
+      }
+    },
+    "Merk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brand"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merk"
           }
         }
       }
@@ -12674,6 +13874,22 @@
         }
       }
     },
+    "Niet gevonden.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not found."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet gevonden."
+          }
+        }
+      }
+    },
     "Niet ingelogd": {
       "localizations": {
         "en": {
@@ -13058,6 +14274,22 @@
         }
       }
     },
+    "Nieuw tabblad Mail › Inbox: mails als tickets met filter, zoeken, ongelezen-stip, gesprek met antwoord, interne notitie, status en prioriteit; bijlagen openen en delen; Nu ophalen en de status van de inbox": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Mail tab › Inbox: emails as tickets with filter, search, unread dot, conversation with reply, internal note, status and priority; open and share attachments; Fetch now and the inbox status"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuw tabblad Mail › Inbox: mails als tickets met filter, zoeken, ongelezen-stip, gesprek met antwoord, interne notitie, status en prioriteit; bijlagen openen en delen; Nu ophalen en de status van de inbox"
+          }
+        }
+      }
+    },
     "Nieuw tabblad Nieuws: politieberichten over Apeldoorn en omgeving, weerartikelen en liveblogs bij Burgernet, AMBER Alert en Vermist Kind Alert": {
       "localizations": {
         "en": {
@@ -13394,6 +14626,22 @@
         }
       }
     },
+    "Nieuwe mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwe mail"
+          }
+        }
+      }
+    },
     "Nieuwe meldingen (centraal)": {
       "localizations": {
         "en": {
@@ -13630,6 +14878,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nieuws"
+          }
+        }
+      }
+    },
+    "Nieuwsbrief": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newsletter"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwsbrief"
+          }
+        }
+      }
+    },
+    "Nieuwsbrief versturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send newsletter"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwsbrief versturen"
+          }
+        }
+      }
+    },
+    "Nieuwsbrief versturen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send newsletter?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieuwsbrief versturen?"
           }
         }
       }
@@ -14114,6 +15410,22 @@
         }
       }
     },
+    "Normaal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normaal"
+          }
+        }
+      }
+    },
     "Notificaties (3 dagen)": {
       "localizations": {
         "en": {
@@ -14126,6 +15438,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notificaties (3 dagen)"
+          }
+        }
+      }
+    },
+    "Notitie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Note"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notitie"
+          }
+        }
+      }
+    },
+    "Notitie opslaan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save note"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notitie opslaan"
           }
         }
       }
@@ -14174,6 +15518,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nu in de lucht"
+          }
+        }
+      }
+    },
+    "Nu ophalen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetch now"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu ophalen"
           }
         }
       }
@@ -14626,6 +15986,22 @@
         }
       }
     },
+    "Onderwerp": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subject"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onderwerp"
+          }
+        }
+      }
+    },
     "Onderwijs": {
       "localizations": {
         "en": {
@@ -14638,6 +16014,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Onderwijs"
+          }
+        }
+      }
+    },
+    "Ongeldig:": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invalid:"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ongeldig:"
+          }
+        }
+      }
+    },
+    "Ongelezen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unread"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ongelezen"
           }
         }
       }
@@ -14734,6 +16142,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ontgrendel met %@"
+          }
+        }
+      }
+    },
+    "Ontvangen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Received"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ontvangen"
           }
         }
       }
@@ -15006,6 +16430,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ook op het web: beheer.pasr.nl, bij de stempelkaart en in de winkel-editor"
+          }
+        }
+      }
+    },
+    "Ook op het web: beheer.pasr.nl, tab Mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.pasr.nl, Mail tab"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.pasr.nl, tab Mail"
           }
         }
       }
@@ -15342,6 +16782,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opgelost in build"
+          }
+        }
+      }
+    },
+    "Opgemaakt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formatted"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opgemaakt"
           }
         }
       }
@@ -15902,6 +17358,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr-account"
+          }
+        }
+      }
+    },
+    "Pasr: Mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: Mail"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: Mail"
           }
         }
       }
@@ -17106,6 +18578,22 @@
         }
       }
     },
+    "Samen hoogstens 10 MB.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At most 10 MB in total."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Samen hoogstens 10 MB."
+          }
+        }
+      }
+    },
     "Sandbox": {
       "localizations": {
         "en": {
@@ -17150,6 +18638,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Schakelaars met uitleg en bevestiging, prijzen, Stripe-producten aanmaken (droog en echt) en testaccounts"
+          }
+        }
+      }
+    },
+    "Schrijf een bericht.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write a message."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrijf een bericht."
           }
         }
       }
@@ -17294,6 +18798,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Soort"
+          }
+        }
+      }
+    },
+    "Soort bericht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type of message"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soort bericht"
           }
         }
       }
@@ -17502,6 +19022,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Status"
+          }
+        }
+      }
+    },
+    "Status na verzenden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status after sending"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status na verzenden"
           }
         }
       }
@@ -17954,6 +19490,22 @@
         }
       }
     },
+    "Te veel ontvangers (maximaal 200 per keer).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Too many recipients (at most 200 at a time)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Te veel ontvangers (maximaal 200 per keer)."
+          }
+        }
+      }
+    },
     "Te veel pogingen. Probeer het over een kwartier opnieuw.": {
       "localizations": {
         "en": {
@@ -18178,6 +19730,22 @@
         }
       }
     },
+    "Testadres (jijzelf)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test address (yourself)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testadres (jijzelf)"
+          }
+        }
+      }
+    },
     "Testklant (App Review)": {
       "localizations": {
         "en": {
@@ -18274,6 +19842,22 @@
         }
       }
     },
+    "Testmail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testmail"
+          }
+        }
+      }
+    },
     "Testmail naar (leeg = beheeradres)": {
       "localizations": {
         "en": {
@@ -18302,6 +19886,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Testmail naar (leeg = beheeradres, support@)"
+          }
+        }
+      }
+    },
+    "Testmail sturen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send test email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testmail sturen"
+          }
+        }
+      }
+    },
+    "Testmail verstuurd. Hij komt zo binnen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test email sent. It will arrive shortly."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testmail verstuurd. Hij komt zo binnen."
           }
         }
       }
@@ -19522,6 +21138,38 @@
         }
       }
     },
+    "Verborgen adressen (komma, spatie of regel)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hidden addresses (comma, space or new line)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verborgen adressen (komma, spatie of regel)"
+          }
+        }
+      }
+    },
+    "Verborgen adressen: plak hier een hele lijst": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hidden addresses: paste a whole list here"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verborgen adressen: plak hier een hele lijst"
+          }
+        }
+      }
+    },
     "Vergrendelen met %@": {
       "localizations": {
         "en": {
@@ -19778,6 +21426,22 @@
         }
       }
     },
+    "Versturen naar %@ ontvangers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send to %@ recipients"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versturen naar %@ ontvangers"
+          }
+        }
+      }
+    },
     "Verstuurd": {
       "localizations": {
         "en": {
@@ -19870,6 +21534,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verstuurd. Android-toestellen halen het bericht meestal binnen een kwartier op."
+          }
+        }
+      }
+    },
+    "Verstuurd: %lld mails.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sent: %lld emails."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verstuurd: %lld mails."
           }
         }
       }
@@ -19986,6 +21666,22 @@
         }
       }
     },
+    "Verzenden annuleren?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel sending?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verzenden annuleren?"
+          }
+        }
+      }
+    },
     "Verzendkosten": {
       "localizations": {
         "en": {
@@ -20014,6 +21710,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verzonden"
+          }
+        }
+      }
+    },
+    "Vet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bold"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vet"
           }
         }
       }
@@ -20258,6 +21970,22 @@
         }
       }
     },
+    "Voorbeeld tonen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show preview"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voorbeeld tonen"
+          }
+        }
+      }
+    },
     "Voornaam": {
       "localizations": {
         "en": {
@@ -20322,6 +22050,22 @@
         }
       }
     },
+    "Vul een geldig testadres, een onderwerp en een bericht in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter a valid test address, a subject and a message."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vul een geldig testadres, een onderwerp en een bericht in."
+          }
+        }
+      }
+    },
     "Vul een geldige link in.": {
       "localizations": {
         "en": {
@@ -20350,6 +22094,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vul een liveblog aan met tekst, foto en link, met een pushmelding naar wie die bron volgt; wijzig of verwijder eigen berichten"
+          }
+        }
+      }
+    },
+    "Vul een onderwerp in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter a subject."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vul een onderwerp in."
           }
         }
       }
@@ -20526,6 +22286,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wacht op goedkeuring"
+          }
+        }
+      }
+    },
+    "Wacht op reactie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for reply"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wacht op reactie"
           }
         }
       }
@@ -21442,6 +23218,22 @@
         }
       }
     },
+    "Zoek op #nummer, onderwerp, naam of adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search by #number, subject, name or address"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek op #nummer, onderwerp, naam of adres"
+          }
+        }
+      }
+    },
     "Zoek op naam, registratie, roepnaam of hex": {
       "localizations": {
         "en": {
@@ -21746,6 +23538,22 @@
         }
       }
     },
+    "geannuleerd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cancelled"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "geannuleerd"
+          }
+        }
+      }
+    },
     "gearchiveerd": {
       "localizations": {
         "en": {
@@ -21758,6 +23566,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "gearchiveerd"
+          }
+        }
+      }
+    },
+    "geen adressen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no addresses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "geen adressen"
           }
         }
       }
@@ -22082,6 +23906,22 @@
         }
       }
     },
+    "verstuurd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sent"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "verstuurd"
+          }
+        }
+      }
+    },
     "wijziging": {
       "localizations": {
         "en": {
@@ -22110,6 +23950,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "wijzigingen"
+          }
+        }
+      }
+    },
+    "wordt verstuurd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "being sent"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "wordt verstuurd"
+          }
+        }
+      }
+    },
+    "· %lld ongeldig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· %lld invalid"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "· %lld ongeldig"
           }
         }
       }

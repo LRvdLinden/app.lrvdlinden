@@ -97,6 +97,12 @@ struct WhatsNewView: View {
                     Label("Omzet › Betalingen controleren: tegel met het aantal accounts met Lifetime via sandbox (tik opent die accounts), actief in 7 dagen en tijdelijke toegang", systemImage: "checkmark.shield")
                     Label("Betaaltrechter per dag voor Apple, Android en web: betaalscherm getoond, koop gestart, gelukt, mislukt en geannuleerd, met de meest voorkomende fouten", systemImage: "chart.bar.doc.horizontal")
                 }
+                Section("Pasr: Mail") {
+                    Label("Nieuw tabblad Mail › Inbox: mails als tickets met filter, zoeken, ongelezen-stip, gesprek met antwoord, interne notitie, status en prioriteit; bijlagen openen en delen; Nu ophalen en de status van de inbox", systemImage: "envelope")
+                    Label("Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 10 MB), live voorbeeld en testmail", systemImage: "square.and.pencil")
+                    Label("Mail › Nieuwsbrief naar Gebruikers of Ondernemers (met aantal), merk, voorbeeld, testmail, versturen met bevestiging en het overzicht van eerdere nieuwsbrieven met voortgang en annuleren", systemImage: "newspaper")
+                    Label("Ook op het web: beheer.pasr.nl, tab Mail", systemImage: "safari")
+                }
                 Section("Pasr: tickets en klantenkaarten") {
                     Label("Ondernemers › Details › Tickets en klantenkaarten: per zaak de gratis events met aangemeld, binnen, wachtlijst en afgemeld", systemImage: "ticket")
                     Label("De klantenkaarten met barcode van de zaak: soort barcode, aantal leden, bezoeken in 30 dagen en de doelen", systemImage: "creditcard")
