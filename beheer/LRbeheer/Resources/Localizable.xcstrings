@@ -16754,6 +16754,22 @@
         }
       }
     },
+    "Ondernemers › zaak › Open als ondernemer: opent het Pasr Zakelijk-dashboard van de zaak namens de eigenaar (eenmalige sleutel, geen wachtwoord), in een eigen tabblad met een balk Je werkt namens; stoppen wist de sessie en het staat in het logboek van de zaak. Ook op het web: beheer.pasr.nl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Businesses › business › Open as business owner: opens the business's Pasr Zakelijk dashboard on behalf of the owner (one-time key, no password), in its own tab with a Working on behalf of bar; stopping clears the session and it is logged on the business. Also on the web: beheer.pasr.nl"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondernemers › zaak › Open als ondernemer: opent het Pasr Zakelijk-dashboard van de zaak namens de eigenaar (eenmalige sleutel, geen wachtwoord), in een eigen tabblad met een balk Je werkt namens; stoppen wist de sessie en het staat in het logboek van de zaak. Ook op het web: beheer.pasr.nl"
+          }
+        }
+      }
+    },
     "Ondernemers › zaak: instellingen (afkoeltijd, max stempels per scan, vindbaar in Pasr, adres)": {
       "localizations": {
         "en": {
@@ -18350,6 +18366,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: iOS en Android"
+          }
+        }
+      }
+    },
+    "Pasr: namens een ondernemer werken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: work on behalf of a business"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: namens een ondernemer werken"
           }
         }
       }

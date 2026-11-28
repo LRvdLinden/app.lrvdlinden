@@ -92,6 +92,9 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: namens een ondernemer werken") {
+                    Label("Ondernemers › zaak › Open als ondernemer: opent het Pasr Zakelijk-dashboard van de zaak namens de eigenaar (eenmalige sleutel, geen wachtwoord), in een eigen tabblad met een balk Je werkt namens; stoppen wist de sessie en het staat in het logboek van de zaak. Ook op het web: beheer.pasr.nl", systemImage: "person.badge.key")
+                }
                 Section("Pasr: nieuwe indeling van het beheer") {
                     Label("Vandaag, Gebruikers, Ondernemers, Winkelcatalogus, Postvak Support, Pushberichten, Postvak Ondernemers, Inzichten en Instellingen; op de iPhone vijf tabs (Vandaag, Mensen, Berichten, Cijfers, Meer), op iPad en Mac een zijbalk met kopjes", systemImage: "square.grid.2x2")
                     Label("Vandaag begint met Aandacht nodig: ondernemers die op goedkeuring wachten en ongelezen mail per postvak; de verdelingen (bots, landen, delen, platformen) staan nu onder Inzichten", systemImage: "exclamationmark.circle")
