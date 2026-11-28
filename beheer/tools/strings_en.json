@@ -1381,5 +1381,13 @@
   "Bingr: sandbox-aankopen en betaaltrechter": "Bingr: sandbox purchases and payment funnel",
   "Gebruikers: filter Sandbox en een label Sandbox bij accounts met toegang via een Apple-testaankoop (niet betaald); intrekken bij Abonnement van het account": "Users: Sandbox filter and a Sandbox label on accounts with access through an Apple test purchase (not paid); revoke under the account's Plan",
   "Omzet › Betalingen controleren: tegel met het aantal accounts met Lifetime via sandbox (tik opent die accounts), actief in 7 dagen en tijdelijke toegang": "Revenue › Check payments: tile with the number of accounts with Lifetime via sandbox (tap opens those accounts), active in 7 days and temporary access",
-  "Betaaltrechter per dag voor Apple, Android en web: betaalscherm getoond, koop gestart, gelukt, mislukt en geannuleerd, met de meest voorkomende fouten": "Payment funnel per day for Apple, Android and web: paywall shown, purchase started, succeeded, failed and cancelled, with the most common errors"
+  "Betaaltrechter per dag voor Apple, Android en web: betaalscherm getoond, koop gestart, gelukt, mislukt en geannuleerd, met de meest voorkomende fouten": "Payment funnel per day for Apple, Android and web: paywall shown, purchase started, succeeded, failed and cancelled, with the most common errors",
+  "Bingr: abonnement per account": "Bingr: plan per account",
+  "Gebruikers: bij elk account staat precies wat het heeft: Gratis, Oude Lifetime, Lifetime (gekocht), Gratis Lifetime gegeven, Maand, Halfjaar of Jaar, met proefperiode, test, einddatum en Stripe of Apple erbij": "Users: every account shows exactly what it has: Free, Old Lifetime, Lifetime (purchased), Lifetime given for free, Monthly, Half-year or Yearly, with trial, test, end date and Stripe or Apple",
+  "Gebruikers: filter Abonnement op die soorten (ook alle Premium-abonnementen samen) met aantallen": "Users: Plan filter on those kinds (also all Premium subscriptions together) with counts",
+  "De server kent dit filter nog niet.": "The server does not know this filter yet.",
+  "Geen accounts met dit abonnement.": "No accounts with this plan.",
+  "Filter op abonnement": "Filter by plan",
+  "Alle abonnementen": "All plans",
+  "Abonnement": "Plan"
 }
