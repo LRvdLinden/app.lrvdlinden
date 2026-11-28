@@ -217,17 +217,23 @@ jobs:
               echo "::error::apps.json is niet leesbaar op de live site"; exit 1
             fi
           fi
-          # /beheer.html mag doorsturen naar /beheer; daarna moet altijd een login volgen
-          for u in beheer beheer.html; do
-            b=$(curl -sL -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$u")
-            echo "/$u zonder login (na doorsturen): HTTP $b"
-            case "$b" in 401|403) ;; *) echo "::error::/$u is bereikbaar zonder login (HTTP $b)."; exit 1 ;; esac
-          done
-          for f in publish.php store-refresh.php store-log.php translate.php .publish-config.php .translate-config.php .htpasswd; do
-            c=$(curl -s -o /dev/null -w '%{http_code}' "https://lrvdlinden.app/$f")
-            echo "$f zonder login: HTTP $c"
-            case "$c" in 401|403) ;; *) echo "::error::$f is bereikbaar zonder login (HTTP $c)."; exit 1 ;; esac
-          done
+          # /beheer.html mag doorsturen naar /beheer; daarna moet altijd een login volgen.
+          # Toont de hosting een botcontrole ("One moment, please...") in plaats van de pagina, dan kan GitHub het niet
+          # controleren: dat wordt een waarschuwing, maar alleen als de inhoud echt de botcontrole is en niets van beheer.
+          guard() {  # guard <pad> <curl-opties>
+            local u="$1"; shift
+            local code; code=$(curl -s "$@" -o /tmp/guard.html -w '%{http_code}' "https://lrvdlinden.app/$u")
+            echo "/$u zonder login: HTTP $code"
+            case "$code" in 401|403) return 0 ;; esac
+            if [ "$code" = "200" ] && grep -qiE "<title>[^<]*(one moment|just a moment|verif)" /tmp/guard.html \
+               && ! grep -qiE "publiceren|beheer|<\?php|PUBLISH|password|AuthUserFile" /tmp/guard.html; then
+              echo "::warning::/$u: de hosting toont een botcontrole aan GitHub, login kon niet worden gecontroleerd."
+              return 0
+            fi
+            echo "::error::/$u is bereikbaar zonder login (HTTP $code)."; exit 1
+          }
+          for u in beheer beheer.html; do guard "$u" -L; done
+          for f in publish.php store-refresh.php store-log.php translate.php .publish-config.php .translate-config.php .htpasswd; do guard "$f"; done
 
       - name: Maak zip
         id: zip
