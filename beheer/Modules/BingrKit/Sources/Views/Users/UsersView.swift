@@ -13,6 +13,7 @@ struct UsersView: View {
     @State private var blockedTotal: Int?
     @State private var freeTotal: Int?
     @State private var lifetimeTotal: Int?
+    @State private var sandboxTotal: Int?
     @State private var countries: CountryStats?
 
     private let pageSize = 50
@@ -67,11 +68,11 @@ struct UsersView: View {
     }
 
     private static let filters: [Option] = [
-        .init("", "Alle accounts"), .init("free", "Gratis"), .init("lifetime", "Lifetime"), .init("custom", "Eigen limieten"), .init("blocked", "Geblokkeerd"),
+        .init("", "Alle accounts"), .init("free", "Gratis"), .init("lifetime", "Lifetime"), .init("sandbox", "Sandbox"), .init("custom", "Eigen limieten"), .init("blocked", "Geblokkeerd"),
     ]
     private static let emptyText = [
         "blocked": "Geen geblokkeerde accounts.", "free": "Geen Gratis-accounts gevonden.", "lifetime": "Geen Lifetime-accounts gevonden.",
-        "custom": "Geen accounts met eigen limieten.",
+        "custom": "Geen accounts met eigen limieten.", "sandbox": "Geen accounts met een sandbox-aankoop.",
     ]
 
     private func count(_ key: String) -> Int? {
@@ -79,6 +80,7 @@ struct UsersView: View {
         case "blocked": return blockedTotal
         case "free": return freeTotal
         case "lifetime": return lifetimeTotal
+        case "sandbox": return sandboxTotal
         default: return nil
         }
     }
@@ -173,6 +175,7 @@ struct UsersView: View {
             if let b = r["blocked_total"].int { blockedTotal = b }
             if let n = r["free_total"].int { freeTotal = n }
             if let n = r["lifetime_total"].int { lifetimeTotal = n }
+            if let n = r["sandbox_total"].int { sandboxTotal = n }
             page = p
             if replace { items = rows } else { items += rows.filter { n in !items.contains { $0.id == n.id } } }
             error = nil
@@ -205,6 +208,7 @@ struct UserRowView: View {
                 if user.newsletter == false { Chip(text: "Geen nieuwsbrief", icon: "envelope.badge") }
                 if user.isBlocked { Chip(text: "Geblokkeerd", tone: .bad, icon: "nosign") }
                 PlanChip(plan: user.plan)
+                if user.sandbox { Chip(text: "Sandbox", tone: .warn, icon: "testtube.2") }
                 if let c = user.country { Text(Country.flag(c)).font(.caption).accessibilityLabel(Country.name(c)) }
             }
             HStack(spacing: 10) {

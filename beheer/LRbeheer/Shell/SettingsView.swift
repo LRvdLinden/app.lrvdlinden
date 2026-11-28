@@ -92,6 +92,11 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Bingr: sandbox-aankopen en betaaltrechter") {
+                    Label("Gebruikers: filter Sandbox en een label Sandbox bij accounts met toegang via een Apple-testaankoop (niet betaald); intrekken bij Abonnement van het account", systemImage: "testtube.2")
+                    Label("Omzet › Betalingen controleren: tegel met het aantal accounts met Lifetime via sandbox (tik opent die accounts), actief in 7 dagen en tijdelijke toegang", systemImage: "checkmark.shield")
+                    Label("Betaaltrechter per dag voor Apple, Android en web: betaalscherm getoond, koop gestart, gelukt, mislukt en geannuleerd, met de meest voorkomende fouten", systemImage: "chart.bar.doc.horizontal")
+                }
                 Section("Pasr: tickets en klantenkaarten") {
                     Label("Ondernemers › Details › Tickets en klantenkaarten: per zaak de gratis events met aangemeld, binnen, wachtlijst en afgemeld", systemImage: "ticket")
                     Label("De klantenkaarten met barcode van de zaak: soort barcode, aantal leden, bezoeken in 30 dagen en de doelen", systemImage: "creditcard")

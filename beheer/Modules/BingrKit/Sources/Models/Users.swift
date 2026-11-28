@@ -30,9 +30,12 @@ struct UserRow: Identifiable, Hashable {
     let newsletter: Bool?
     /// Laatst gezien land (`country`, alleen de landcode); nil = onbekend.
     let country: String?
+    /// Toegang via een Apple-sandboxaankoop (testaankoop, niet betaald): `sandbox` (of `plan_sandbox`), anders de notitie van het plan.
+    let sandbox: Bool
 
     init(_ j: JSON) {
         id = j["id"].text ?? UUID().uuidString
+        sandbox = j["sandbox"].bool ?? j["plan_sandbox"].bool ?? j["plan"]["sandbox"].bool ?? AccountPlan(j["plan"]).sandboxNote
         country = j["country"].text
         newsletter = j["newsletter"].bool
         plan = AccountPlan(j["plan"])
@@ -205,6 +208,8 @@ struct AccountPlan: Hashable {
     }
 
     var isLifetime: Bool { plan == "lifetime" }
+    /// De notitie van een Apple-sandboxaankoop ("Apple sandbox …"): testaankoop, er is niet voor betaald.
+    var sandboxNote: Bool { (note ?? "").lowercased().hasPrefix("apple sandbox") }
     var isCustom: Bool { maxStreams != nil || maxDevices != nil }
     var name: String { isLifetime ? "Lifetime" : "Gratis" }
     var streams: Int { maxStreams ?? AccountPlan.defaults[plan]!.streams }

@@ -82,6 +82,22 @@
         }
       }
     },
+    "%@ accounts met Lifetime via sandbox": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ accounts with Lifetime via sandbox"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ accounts met Lifetime via sandbox"
+          }
+        }
+      }
+    },
     "%@ doet daarna niet meer mee. De zaak krijgt een mail en een melding.": {
       "localizations": {
         "en": {
@@ -3426,6 +3442,22 @@
         }
       }
     },
+    "Bekijk deze accounts in Gebruikers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View these accounts in Users"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bekijk deze accounts in Gebruikers"
+          }
+        }
+      }
+    },
     "Bekijk in logboek": {
       "localizations": {
         "en": {
@@ -3854,6 +3886,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Betaald in Stripe (7 dagen)"
+          }
+        }
+      }
+    },
+    "Betaaltrechter": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment funnel"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Betaaltrechter"
+          }
+        }
+      }
+    },
+    "Betaaltrechter per dag voor Apple, Android en web: betaalscherm getoond, koop gestart, gelukt, mislukt en geannuleerd, met de meest voorkomende fouten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment funnel per day for Apple, Android and web: paywall shown, purchase started, succeeded, failed and cancelled, with the most common errors"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Betaaltrechter per dag voor Apple, Android en web: betaalscherm getoond, koop gestart, gelukt, mislukt en geannuleerd, met de meest voorkomende fouten"
           }
         }
       }
@@ -4418,6 +4482,22 @@
         }
       }
     },
+    "Bingr: sandbox-aankopen en betaaltrechter": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: sandbox purchases and payment funnel"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: sandbox-aankopen en betaaltrechter"
+          }
+        }
+      }
+    },
     "Blokkeer %@": {
       "localizations": {
         "en": {
@@ -4830,6 +4910,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crashes"
+          }
+        }
+      }
+    },
+    "Daarvan actief in 7 dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Of which active in 7 days"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daarvan actief in 7 dagen"
           }
         }
       }
@@ -6466,6 +6562,22 @@
         }
       }
     },
+    "Een sandbox-aankoop is een testaankoop: er is niet voor betaald. Intrekken kan per account bij Abonnement.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A sandbox purchase is a test purchase: nothing was paid. You can revoke it per account under Plan."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een sandbox-aankoop is een testaankoop: er is niet voor betaald. Intrekken kan per account bij Abonnement."
+          }
+        }
+      }
+    },
     "Een tik op de melding opent deze link (in de app; links van pasr.nl openen de juiste plek in Pasr).": {
       "localizations": {
         "en": {
@@ -7474,6 +7586,22 @@
         }
       }
     },
+    "Gebruikers: filter Sandbox en een label Sandbox bij accounts met toegang via een Apple-testaankoop (niet betaald); intrekken bij Abonnement van het account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users: Sandbox filter and a Sandbox label on accounts with access through an Apple test purchase (not paid); revoke under the account's Plan"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruikers: filter Sandbox en een label Sandbox bij accounts met toegang via een Apple-testaankoop (niet betaald); intrekken bij Abonnement van het account"
+          }
+        }
+      }
+    },
     "Gebruikers: kortingscode en status bij het account": {
       "localizations": {
         "en": {
@@ -7662,6 +7790,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen aanmeldingen die wachten"
+          }
+        }
+      }
+    },
+    "Geen accounts met een sandbox-aankoop.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No accounts with a sandbox purchase."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen accounts met een sandbox-aankoop."
           }
         }
       }
@@ -8242,6 +8386,22 @@
         }
       }
     },
+    "Gestart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Started"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gestart"
+          }
+        }
+      }
+    },
     "Gestopt": {
       "localizations": {
         "en": {
@@ -8254,6 +8414,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gestopt"
+          }
+        }
+      }
+    },
+    "Getoond": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shown"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Getoond"
+          }
+        }
+      }
+    },
+    "Getoond = het betaalscherm is geopend; gestart = op kopen gedrukt; gelukt = de aankoop is toegekend.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shown = the paywall was opened; started = buy was tapped; succeeded = the purchase was granted."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Getoond = het betaalscherm is geopend; gestart = op kopen gedrukt; gelukt = de aankoop is toegekend."
           }
         }
       }
@@ -8446,6 +8638,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Grafisch en ontwerp"
+          }
+        }
+      }
+    },
+    "Groep": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Group"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Groep"
           }
         }
       }
@@ -11730,6 +11938,22 @@
         }
       }
     },
+    "Meest voorkomende fouten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most common errors"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meest voorkomende fouten"
+          }
+        }
+      }
+    },
     "Melding": {
       "localizations": {
         "en": {
@@ -13602,6 +13826,22 @@
         }
       }
     },
+    "Nog geen metingen. De apps melden dit vanaf de build met de trechter.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No measurements yet. The apps report this from the build with the funnel."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen metingen. De apps melden dit vanaf de build met de trechter."
+          }
+        }
+      }
+    },
     "Nog geen nieuws.": {
       "localizations": {
         "en": {
@@ -14142,6 +14382,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Omzet › Betalingen controleren: controleert of er betalingen zijn misgelopen, Apple (verkocht tegenover gekoppelde abonnementen en Lifetime per dag, notificaties, nog niet gekoppeld) en Stripe (betaald in Stripe tegenover wat wij hebben vastgelegd)"
+          }
+        }
+      }
+    },
+    "Omzet › Betalingen controleren: tegel met het aantal accounts met Lifetime via sandbox (tik opent die accounts), actief in 7 dagen en tijdelijke toegang": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revenue › Check payments: tile with the number of accounts with Lifetime via sandbox (tap opens those accounts), active in 7 days and temporary access"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omzet › Betalingen controleren: tegel met het aantal accounts met Lifetime via sandbox (tik opent die accounts), actief in 7 dagen en tijdelijke toegang"
           }
         }
       }
@@ -16850,6 +17106,38 @@
         }
       }
     },
+    "Sandbox": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sandbox"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sandbox"
+          }
+        }
+      }
+    },
+    "Sandbox (testaankopen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sandbox (test purchases)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sandbox (testaankopen)"
+          }
+        }
+      }
+    },
     "Schakelaars met uitleg en bevestiging, prijzen, Stripe-producten aanmaken (droog en echt) en testaccounts": {
       "localizations": {
         "en": {
@@ -18110,6 +18398,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tickets en klantenkaarten"
+          }
+        }
+      }
+    },
+    "Tijdelijke toegang (testaccounts)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temporary access (test accounts)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tijdelijke toegang (testaccounts)"
           }
         }
       }

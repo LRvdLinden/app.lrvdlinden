@@ -39,6 +39,8 @@ struct PaymentsCheckCard: View {
                 if !d.days.isEmpty { daysTable(d.days) }
                 apple(d)
                 stripe(d)
+                if d.hasSandbox { sandbox(d) }
+                if d.hasFunnel { funnel(d) }
             } else if let note {
                 EmptyText(text: note)
             } else if busy {
@@ -114,6 +116,76 @@ struct PaymentsCheckCard: View {
                         Spacer(minLength: 8)
                         Text("\(Fmt.euro(m.amountCents)) · \(Fmt.dateTime(m.paidAt))").font(.caption).foregroundStyle(Color.textSecondary)
                     }
+                }
+            }
+        }
+        .font(.callout)
+    }
+
+    /// Accounts met toegang via een Apple-sandboxaankoop (testaankoop, niet betaald); tik = de accountlijst met dat filter.
+    private func sandbox(_ d: PaymentsCheck) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Sandbox (testaankopen)").font(.subheadline.weight(.semibold))
+            Button {
+                session.usersFilter = "sandbox"
+                session.section = .users
+            } label: {
+                HStack(spacing: 8) {
+                    Image(systemName: "testtube.2").foregroundStyle(Color.tone(d.sandboxLifetime > 0 ? .warn : .good))
+                    VStack(alignment: .leading, spacing: 1) {
+                        Text("\(Fmt.num(d.sandboxLifetime)) accounts met Lifetime via sandbox").font(.callout.weight(.semibold))
+                        Text("Bekijk deze accounts in Gebruikers").font(.caption).foregroundStyle(Color.textSecondary)
+                    }
+                    Spacer(minLength: 8)
+                    Image(systemName: "chevron.right").font(.caption.weight(.bold)).foregroundStyle(Color.textDim)
+                }
+                .padding(10)
+                .background(RoundedRectangle(cornerRadius: 10).fill(Color.surface2))
+            }
+            .buttonStyle(.plain)
+            LabeledContent("Daarvan actief in 7 dagen", value: Fmt.num(d.sandboxActive7d))
+            LabeledContent("Tijdelijke toegang (testaccounts)", value: Fmt.num(d.sandboxTemporary))
+            Text("Een sandbox-aankoop is een testaankoop: er is niet voor betaald. Intrekken kan per account bij Abonnement.")
+                .font(.caption2).foregroundStyle(Color.textDim)
+        }
+        .font(.callout)
+    }
+
+    /// Betaaltrechter per dag en groep: betaalscherm getoond, koop gestart, gelukt; daarnaast mislukt en geannuleerd.
+    private func funnel(_ d: PaymentsCheck) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Betaaltrechter").font(.subheadline.weight(.semibold))
+            if d.funnelDays.isEmpty {
+                Text("Nog geen metingen. De apps melden dit vanaf de build met de trechter.").font(.caption).foregroundStyle(Color.textDim)
+            } else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    Grid(alignment: .trailing, horizontalSpacing: 12, verticalSpacing: 4) {
+                        GridRow {
+                            Text("Dag").gridColumnAlignment(.leading)
+                            Text("Groep").gridColumnAlignment(.leading)
+                            Text("Getoond"); Text("Gestart"); Text("Gelukt"); Text("Mislukt"); Text("Geannuleerd")
+                        }
+                        .font(.caption.weight(.semibold)).foregroundStyle(Color.textDim)
+                        ForEach(d.funnelDays) { f in
+                            GridRow {
+                                Text(f.shortDate).gridColumnAlignment(.leading)
+                                Text(f.groupText).gridColumnAlignment(.leading)
+                                Text(Fmt.num(f.shown)); Text(Fmt.num(f.started))
+                                Text(Fmt.num(f.ok)).foregroundStyle(Color.tone(f.ok > 0 ? .good : .neutral))
+                                Text(Fmt.num(f.failed)).foregroundStyle(Color.tone(f.failed > 0 ? .bad : .neutral))
+                                Text(Fmt.num(f.cancelled))
+                            }
+                            .font(.caption).monospacedDigit()
+                        }
+                    }
+                }
+                Text("Getoond = het betaalscherm is geopend; gestart = op kopen gedrukt; gelukt = de aankoop is toegekend.")
+                    .font(.caption2).foregroundStyle(Color.textDim)
+            }
+            if !d.funnelErrors.isEmpty {
+                Text("Meest voorkomende fouten").font(.caption).foregroundStyle(Color.textDim)
+                ForEach(d.funnelErrors) { e in
+                    LabeledContent(e.error, value: Fmt.num(e.count))
                 }
             }
         }

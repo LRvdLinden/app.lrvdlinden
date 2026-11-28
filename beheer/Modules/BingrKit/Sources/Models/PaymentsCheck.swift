@@ -56,6 +56,42 @@ struct PaymentsCheck {
         var kindText: String { kind == "invoice" ? "Abonnementsbetaling" : "Lifetime" }
     }
 
+    /// Betaaltrechter per dag en groep (`funnel.days`): betaalscherm getoond, koop gestart, gelukt, mislukt, geannuleerd.
+    struct FunnelDay: Identifiable, Hashable {
+        let date: String
+        let group: String
+        let shown: Int
+        let started: Int
+        let ok: Int
+        let failed: Int
+        let cancelled: Int
+        var id: String { "\(date)|\(group)" }
+        init(_ j: JSON) {
+            date = j["date"].text ?? ""
+            group = j["group"].text ?? ""
+            shown = j["shown"].int ?? 0
+            started = j["started"].int ?? 0
+            ok = j["ok"].int ?? 0
+            failed = j["failed"].int ?? 0
+            cancelled = j["cancelled"].int ?? 0
+        }
+        var groupText: String { ["apple": "Apple", "android": "Android", "web": "Web"][group] ?? (group.isEmpty ? "—" : group) }
+        /// "26 nov" uit "2026-11-26".
+        var shortDate: String {
+            let p = date.split(separator: "-")
+            guard p.count == 3, let m = Int(p[1]), let d = Int(p[2]), (1...12).contains(m) else { return date }
+            let names = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
+            return "\(d) \(names[m - 1])"
+        }
+    }
+
+    /// Meest voorkomende foutcode in de trechter (`funnel.top_errors`).
+    struct FunnelError: Identifiable, Hashable {
+        let error: String
+        let count: Int
+        var id: String { error }
+    }
+
     struct Notif: Identifiable, Hashable {
         let key: String
         let count: Int
@@ -79,8 +115,29 @@ struct PaymentsCheck {
     let pendingOver1h: Int
     let incompleteOver1d: Int
     let pastDue: Int
+    // Sandbox (testaankopen): nil = de server stuurt het blok nog niet
+    let hasSandbox: Bool
+    let sandboxLifetime: Int
+    let sandboxActive7d: Int
+    let sandboxTemporary: Int
+    // Betaaltrechter: leeg = nog niet gemeten of de server stuurt hem nog niet
+    let hasFunnel: Bool
+    let funnelDays: [FunnelDay]
+    let funnelErrors: [FunnelError]
 
     init(_ j: JSON) {
+        let sb = j["sandbox"]
+        hasSandbox = sb.object != nil
+        sandboxLifetime = sb["lifetime_accounts"].int ?? 0
+        sandboxActive7d = sb["active_7d"].int ?? 0
+        sandboxTemporary = sb["temporary"].int ?? 0
+        let f = j["funnel"]
+        hasFunnel = f.object != nil
+        funnelDays = f["days"].array.map(FunnelDay.init).sorted { $0.date != $1.date ? $0.date > $1.date : $0.group < $1.group }
+        funnelErrors = f["top_errors"].array.compactMap { (e: JSON) -> FunnelError? in
+            guard let name = e["error"].text, !name.isEmpty else { return nil }
+            return FunnelError(error: name, count: e["n"].int ?? 0)
+        }
         checkedAt = j["checked_at"].date
         attention = (j["verdict"].text ?? "ok") != "ok"
         issues = j["issues"].array.enumerated().map { Issue($1, $0) }
