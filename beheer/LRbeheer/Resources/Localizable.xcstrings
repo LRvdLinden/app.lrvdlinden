@@ -5938,6 +5938,22 @@
         }
       }
     },
+    "De handtekening staat als afbeelding onder de tekst en boven de afmeldregel, en als regel \"Team Pasr\" met de site in de platte tekst; het voorbeeld, de testmail en de bevestiging tonen hem ook": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The signature is an image below the text and above the unsubscribe line, and a \"Team Pasr\" line with the site in the plain text; the preview, test mail and confirmation show it too"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De handtekening staat als afbeelding onder de tekst en boven de afmeldregel, en als regel \"Team Pasr\" met de site in de platte tekst; het voorbeeld, de testmail en de bevestiging tonen hem ook"
+          }
+        }
+      }
+    },
     "De inbox (IMAP) is nog niet ingesteld (PASR_IMAP_*): mails komen niet automatisch binnen.": {
       "localizations": {
         "en": {
@@ -10082,6 +10098,38 @@
         }
       }
     },
+    "Handtekening Team Pasr Zakelijk toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add Team Pasr Zakelijk signature"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handtekening Team Pasr Zakelijk toevoegen"
+          }
+        }
+      }
+    },
+    "Handtekening Team Pasr toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add Team Pasr signature"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handtekening Team Pasr toevoegen"
+          }
+        }
+      }
+    },
     "Hang de QR-code bij de kassa of deel de link. De flyer is een A4 om te printen.": {
       "localizations": {
         "en": {
@@ -13474,6 +13522,22 @@
         }
       }
     },
+    "Mail › Nieuwe mail, Antwoord en Nieuwsbrief: schakelaar Handtekening Team Pasr (of Team Pasr Zakelijk) toevoegen, standaard aan; de naam volgt het gekozen merk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail › New mail, Reply and Newsletter: switch Add Team Pasr (or Team Pasr Zakelijk) signature, on by default; the name follows the chosen brand"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail › Nieuwe mail, Antwoord en Nieuwsbrief: schakelaar Handtekening Team Pasr (of Team Pasr Zakelijk) toevoegen, standaard aan; de naam volgt het gekozen merk"
+          }
+        }
+      }
+    },
     "Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 20 MB), live voorbeeld en testmail": {
       "localizations": {
         "en": {
@@ -14014,6 +14078,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Met Pasr opent de link Toevoegen aan Pasr? in de app, anders pasr.nl met de downloadknoppen"
+          }
+        }
+      }
+    },
+    "Met handtekening %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With signature %@."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Met handtekening %@."
           }
         }
       }
@@ -17074,6 +17154,22 @@
         }
       }
     },
+    "Ook op het web: beheer.pasr.nl, tab Mail (Nieuwe mail, Antwoord en Nieuwsbrief)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also on the web: beheer.pasr.nl, Mail tab (New mail, Reply and Newsletter)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook op het web: beheer.pasr.nl, tab Mail (Nieuwe mail, Antwoord en Nieuwsbrief)"
+          }
+        }
+      }
+    },
     "Ook op het web: beheer.pasr.nl, tabs Berichten en Ondernemers": {
       "localizations": {
         "en": {
@@ -18110,6 +18206,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasr: gids en kaartontwerp"
+          }
+        }
+      }
+    },
+    "Pasr: handtekening onder elke mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: signature under every email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: handtekening onder elke mail"
           }
         }
       }

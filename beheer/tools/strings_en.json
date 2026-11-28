@@ -1543,5 +1543,12 @@
   "Filter op abonnement": "Filter by plan",
   "Alle abonnementen": "All plans",
   "Abonnement": "Plan",
-  "· link moet met https:// beginnen": "· link must start with https://"
+  "· link moet met https:// beginnen": "· link must start with https://",
+  "Handtekening Team Pasr toevoegen": "Add Team Pasr signature",
+  "Handtekening Team Pasr Zakelijk toevoegen": "Add Team Pasr Zakelijk signature",
+  "Met handtekening %@.": "With signature %@.",
+  "Pasr: handtekening onder elke mail": "Pasr: signature under every email",
+  "Mail › Nieuwe mail, Antwoord en Nieuwsbrief: schakelaar Handtekening Team Pasr (of Team Pasr Zakelijk) toevoegen, standaard aan; de naam volgt het gekozen merk": "Mail › New mail, Reply and Newsletter: switch Add Team Pasr (or Team Pasr Zakelijk) signature, on by default; the name follows the chosen brand",
+  "De handtekening staat als afbeelding onder de tekst en boven de afmeldregel, en als regel \"Team Pasr\" met de site in de platte tekst; het voorbeeld, de testmail en de bevestiging tonen hem ook": "The signature is an image below the text and above the unsubscribe line, and a \"Team Pasr\" line with the site in the plain text; the preview, test mail and confirmation show it too",
+  "Ook op het web: beheer.pasr.nl, tab Mail (Nieuwe mail, Antwoord en Nieuwsbrief)": "Also on the web: beheer.pasr.nl, Mail tab (New mail, Reply and Newsletter)"
 }

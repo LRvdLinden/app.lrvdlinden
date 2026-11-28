@@ -92,6 +92,11 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: handtekening onder elke mail") {
+                    Label("Mail › Nieuwe mail, Antwoord en Nieuwsbrief: schakelaar Handtekening Team Pasr (of Team Pasr Zakelijk) toevoegen, standaard aan; de naam volgt het gekozen merk", systemImage: "signature")
+                    Label("De handtekening staat als afbeelding onder de tekst en boven de afmeldregel, en als regel \"Team Pasr\" met de site in de platte tekst; het voorbeeld, de testmail en de bevestiging tonen hem ook", systemImage: "photo")
+                    Label("Ook op het web: beheer.pasr.nl, tab Mail (Nieuwe mail, Antwoord en Nieuwsbrief)", systemImage: "safari")
+                }
                 Section("Bingr: abonnement per account") {
                     Label("Gebruikers: bij elk account staat precies wat het heeft: Gratis, Oude Lifetime, Lifetime (gekocht), Gratis Lifetime gegeven, Maand, Halfjaar of Jaar, met proefperiode, test, einddatum en Stripe of Apple erbij", systemImage: "creditcard")
                     Label("Gebruikers: filter Abonnement op die soorten (ook alle Premium-abonnementen samen) met aantallen", systemImage: "line.3.horizontal.decrease.circle")
