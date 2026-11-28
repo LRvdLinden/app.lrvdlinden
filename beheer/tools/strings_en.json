@@ -475,7 +475,6 @@
   "Een zaak uit de lijst in Pasr halen: Vindbaar in Pasr uit": "Remove a business from the list in Pasr: turn off Findable in Pasr",
   "Eerdere nieuwsbrieven": "Previous newsletters",
   "Eerst gezien": "First seen",
-  "Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens. De eigenaar krijgt geen e-mail": "First you see in numbers what will be removed; then tick the box and retype the name of the business. The server checks the name again. The owner does not get an email",
   "Eerste downloads": "First-time downloads",
   "Eigen afbeelding kiezen": "Choose own image",
   "Eigen afbeelding weghalen": "Remove own image",
@@ -601,7 +600,6 @@
   "Getoond = het betaalscherm is geopend; gestart = op kopen gedrukt; gelukt = de aankoop is toegekend.": "Shown = the paywall was opened; started = buy was tapped; succeeded = the purchase was granted.",
   "Gevaarlijke zone": "Danger zone",
   "Geweigerd": "Declined",
-  "Gezamenlijke acties van deze zaak: %@ (worden geannuleerd, deelnemers krijgen geen bericht)": "Joint campaigns of this business: %@ (cancelled, participants are not notified)",
   "Gezondheid": "Health",
   "Gids: cadeaubon-gids": "Guide: gift card guide",
   "Gids: programmagids": "Guide: program guide",
@@ -1550,5 +1548,15 @@
   "Pasr: handtekening onder elke mail": "Pasr: signature under every email",
   "Mail › Nieuwe mail, Antwoord en Nieuwsbrief: schakelaar Handtekening Team Pasr (of Team Pasr Zakelijk) toevoegen, standaard aan; de naam volgt het gekozen merk": "Mail › New mail, Reply and Newsletter: switch Add Team Pasr (or Team Pasr Zakelijk) signature, on by default; the name follows the chosen brand",
   "De handtekening staat als afbeelding onder de tekst en boven de afmeldregel, en als regel \"Team Pasr\" met de site in de platte tekst; het voorbeeld, de testmail en de bevestiging tonen hem ook": "The signature is an image below the text and above the unsubscribe line, and a \"Team Pasr\" line with the site in the plain text; the preview, test mail and confirmation show it too",
-  "Ook op het web: beheer.pasr.nl, tab Mail (Nieuwe mail, Antwoord en Nieuwsbrief)": "Also on the web: beheer.pasr.nl, Mail tab (New mail, Reply and Newsletter)"
+  "Ook op het web: beheer.pasr.nl, tab Mail (Nieuwe mail, Antwoord en Nieuwsbrief)": "Also on the web: beheer.pasr.nl, Mail tab (New mail, Reply and Newsletter)",
+  "Gezamenlijke acties van deze zaak: %@ (worden geannuleerd, de deelnemers krijgen een mail)": "Joint campaigns of this business: %@ (cancelled, participants get an email)",
+  "Stuur de eigenaar een mail": "Send the owner an email",
+  "Er is geen e-mailadres van de eigenaar bekend: er gaat geen mail naar de eigenaar.": "No email address is known for the owner: no email is sent to the owner.",
+  "Aantal deelnemers en organisatoren van gezamenlijke acties dat een mail krijgt: %@ (de actie is geannuleerd).": "Participants and organisers of joint campaigns who get an email: %@ (the campaign is cancelled).",
+  "%@ van %@ mails zijn verstuurd; %@ mislukt.": "%@ of %@ emails were sent; %@ failed.",
+  "De mail aan de eigenaar is er ook niet bij.": "The email to the owner is among the failed ones.",
+  "Verwijderen kan niet worden teruggedraaid; stuur de mislukte berichten zo nodig zelf (Mail › Nieuwe mail).": "Deleting cannot be undone; send the failed messages yourself if needed (Mail › New mail).",
+  "%@ is verwijderd.": "%@ has been deleted.",
+  "Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens": "First you see in numbers what will be removed; then tick the box and retype the name of the business. The server checks the name again",
+  "Mails in Pasr Zakelijk: de eigenaar hoort dat de zaak is verwijderd (schakelaar Stuur de eigenaar een mail, standaard aan); de eigenaren van deelnemende en uitgenodigde zaken krijgen \"De gezamenlijke actie is geannuleerd\"; een organisator hoort dat een deelnemer is weggevallen. Mislukte mails zie je meteen in het venster": "Emails in Pasr Zakelijk: the owner is told the business was deleted (switch Send the owner an email, on by default); the owners of participating and invited businesses get \"The joint campaign has been cancelled\"; an organiser hears that a participant dropped out. Failed emails show up right away in the window"
 }

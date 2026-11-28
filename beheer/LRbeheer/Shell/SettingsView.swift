@@ -103,7 +103,8 @@ struct WhatsNewView: View {
                 }
                 Section("Pasr: ondernemer verwijderen") {
                     Label("Ondernemers › Details › Gevaarlijke zone › Verwijderen…: een zaak en alles eraan definitief weghalen (stempelkaarten en leden, medewerkers, events en tickets, klantenkaarten, bonnen en codes, gezamenlijke acties, log), naast Blokkeren", systemImage: "trash")
-                    Label("Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens. De eigenaar krijgt geen e-mail", systemImage: "checkmark.shield")
+                    Label("Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens", systemImage: "checkmark.shield")
+                    Label("Mails in Pasr Zakelijk: de eigenaar hoort dat de zaak is verwijderd (schakelaar Stuur de eigenaar een mail, standaard aan); de eigenaren van deelnemende en uitgenodigde zaken krijgen \"De gezamenlijke actie is geannuleerd\"; een organisator hoort dat een deelnemer is weggevallen. Mislukte mails zie je meteen in het venster", systemImage: "envelope")
                     Label("Klanten zien de stempelkaart van de zaak verdwijnen bij het volgende verversen in Pasr; eigen kaarten van klanten blijven. Ook op het web: beheer.pasr.nl", systemImage: "safari")
                 }
                 Section("Bingr: sandbox-aankopen en betaaltrechter") {

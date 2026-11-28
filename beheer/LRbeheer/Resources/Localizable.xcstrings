@@ -194,6 +194,22 @@
         }
       }
     },
+    "%@ is verwijderd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ has been deleted."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is verwijderd."
+          }
+        }
+      }
+    },
     "%@ kan daarna niet meer worden gescand en nieuwe klanten kunnen geen lid worden.": {
       "localizations": {
         "en": {
@@ -254,6 +270,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ van %@ gaat niet door. Alle tickets vervallen; iedereen die zich aanmeldde krijgt een mail en een melding."
+          }
+        }
+      }
+    },
+    "%@ van %@ mails zijn verstuurd; %@ mislukt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ of %@ emails were sent; %@ failed."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ van %@ mails zijn verstuurd; %@ mislukt."
           }
         }
       }
@@ -1694,6 +1726,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aantal"
+          }
+        }
+      }
+    },
+    "Aantal deelnemers en organisatoren van gezamenlijke acties dat een mail krijgt: %@ (de actie is geannuleerd).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Participants and organisers of joint campaigns who get an email: %@ (the campaign is cancelled)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aantal deelnemers en organisatoren van gezamenlijke acties dat een mail krijgt: %@ (de actie is geannuleerd)."
           }
         }
       }
@@ -6098,6 +6146,22 @@
         }
       }
     },
+    "De mail aan de eigenaar is er ook niet bij.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The email to the owner is among the failed ones."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De mail aan de eigenaar is er ook niet bij."
+          }
+        }
+      }
+    },
     "De nieuwsbrief wordt verstuurd naar %@ ontvangers.": {
       "localizations": {
         "en": {
@@ -7698,18 +7762,18 @@
         }
       }
     },
-    "Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens. De eigenaar krijgt geen e-mail": {
+    "Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "First you see in numbers what will be removed; then tick the box and retype the name of the business. The server checks the name again. The owner does not get an email"
+            "value": "First you see in numbers what will be removed; then tick the box and retype the name of the business. The server checks the name again"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens. De eigenaar krijgt geen e-mail"
+            "value": "Eerst zie je met aantallen wat er verdwijnt; daarna een vinkje en de naam van de zaak overtypen. De server controleert de naam nog eens"
           }
         }
       }
@@ -8078,6 +8142,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Er bestaat al een Pasr-account met dit adres, maar het e-mailadres is niet bevestigd."
+          }
+        }
+      }
+    },
+    "Er is geen e-mailadres van de eigenaar bekend: er gaat geen mail naar de eigenaar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No email address is known for the owner: no email is sent to the owner."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is geen e-mailadres van de eigenaar bekend: er gaat geen mail naar de eigenaar."
           }
         }
       }
@@ -9778,18 +9858,18 @@
         }
       }
     },
-    "Gezamenlijke acties van deze zaak: %@ (worden geannuleerd, deelnemers krijgen geen bericht)": {
+    "Gezamenlijke acties van deze zaak: %@ (worden geannuleerd, de deelnemers krijgen een mail)": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Joint campaigns of this business: %@ (cancelled, participants are not notified)"
+            "value": "Joint campaigns of this business: %@ (cancelled, participants get an email)"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gezamenlijke acties van deze zaak: %@ (worden geannuleerd, deelnemers krijgen geen bericht)"
+            "value": "Gezamenlijke acties van deze zaak: %@ (worden geannuleerd, de deelnemers krijgen een mail)"
           }
         }
       }
@@ -13614,6 +13694,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mails die al zijn verstuurd, blijven verstuurd."
+          }
+        }
+      }
+    },
+    "Mails in Pasr Zakelijk: de eigenaar hoort dat de zaak is verwijderd (schakelaar Stuur de eigenaar een mail, standaard aan); de eigenaren van deelnemende en uitgenodigde zaken krijgen \"De gezamenlijke actie is geannuleerd\"; een organisator hoort dat een deelnemer is weggevallen. Mislukte mails zie je meteen in het venster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emails in Pasr Zakelijk: the owner is told the business was deleted (switch Send the owner an email, on by default); the owners of participating and invited businesses get \"The joint campaign has been cancelled\"; an organiser hears that a participant dropped out. Failed emails show up right away in the window"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mails in Pasr Zakelijk: de eigenaar hoort dat de zaak is verwijderd (schakelaar Stuur de eigenaar een mail, standaard aan); de eigenaren van deelnemende en uitgenodigde zaken krijgen \"De gezamenlijke actie is geannuleerd\"; een organisator hoort dat een deelnemer is weggevallen. Mislukte mails zie je meteen in het venster"
           }
         }
       }
@@ -20146,6 +20242,22 @@
         }
       }
     },
+    "Stuur de eigenaar een mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send the owner an email"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur de eigenaar een mail"
+          }
+        }
+      }
+    },
     "Stuur een testmelding": {
       "localizations": {
         "en": {
@@ -22462,6 +22574,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verwijderen"
+          }
+        }
+      }
+    },
+    "Verwijderen kan niet worden teruggedraaid; stuur de mislukte berichten zo nodig zelf (Mail › Nieuwe mail).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deleting cannot be undone; send the failed messages yourself if needed (Mail › New mail)."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijderen kan niet worden teruggedraaid; stuur de mislukte berichten zo nodig zelf (Mail › Nieuwe mail)."
           }
         }
       }
