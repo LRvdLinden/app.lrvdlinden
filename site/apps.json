@@ -428,6 +428,11 @@
         },
         {
             "id": "bingr",
+            "pricing": {
+                "nl": "Eerste 3 dagen gratis",
+                "en": "Free for the first 3 days"
+            },
+            "pricingUrl": "https://bingr.online/upgrade",
             "name": "Bingr",
             "section": "ios",
             "status": "live",
@@ -1518,6 +1523,11 @@
         },
         {
             "id": "112heli",
+            "price": {
+                "amount": 1.99,
+                "nl": "€ 1,99",
+                "en": "$1.99"
+            },
             "name": "112Heli",
             "section": "ios",
             "status": "live",

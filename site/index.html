@@ -524,9 +524,15 @@ function icon(a, cls=""){
   const init = esc(a.name.replace(/[^A-Za-z0-9]/g,"").slice(0,2));
   return `<span class="icon ${cls}">${init}${a.icon?`<img src="${esc(a.icon)}" alt="${esc(a.name)}" width="256" height="256" loading="lazy" decoding="async" onerror="this.remove()">`:""}</span>`;
 }
+// Knoptekst: met prijs voor betaalde apps, "Download" bij een proefperiode/abonnement, anders gratis
+function storeLabel(a){
+  if (a.price && a.price.amount) return (lang === "en" ? "{p} on the App Store" : "{p} in de App Store").replace("{p}", a.price[lang] || a.price.nl);
+  if (a.pricing) return lang === "en" ? "Download on the App Store" : "Download in de App Store";
+  return t("appstore");
+}
 function ctas(a, max=9){
   const l = a.links || {}, out = [];
-  if (l.appstore)   out.push([l.appstore, t("appstore")]);
+  if (l.appstore)   out.push([l.appstore, storeLabel(a)]);
   if (l.testflight) out.push([l.testflight, t("testflight")]);
   if (l.website)    out.push([l.website, t("website")]);
   return out.slice(0,max).map(([u,label],i)=>`<a class="btn ${i===0?"primary":""}" href="${esc(u)}" target="_blank" rel="noopener">${esc(label)}</a>`).join("");

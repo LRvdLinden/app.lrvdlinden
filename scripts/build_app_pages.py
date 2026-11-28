@@ -21,7 +21,7 @@ OUT = sys.argv[1] if len(sys.argv) > 1 else "build"
 apps = json.load(open(os.path.join(OUT, "apps.json"), encoding="utf-8")).get("apps", [])
 
 T = {
-    "nl": dict(by="Léon van der Linden", back="Alle apps", chart="Hitlijst", appstore="Gratis in de App Store", review="Geef sterren", testflight="Doe mee via TestFlight",
+    "nl": dict(by="Léon van der Linden", back="Alle apps", chart="Hitlijst", price="Prijs", gratis="Gratis", paid_btn="{p} in de App Store", dl_btn="Download in de App Store", prices="Bekijk de prijzen", appstore="Gratis in de App Store", review="Geef sterren", testflight="Doe mee via TestFlight",
                website="Website", homey="Bekijk in de Homey App Store", homeyTest="Testversie installeren", shots="Screenshots",
                about="Over {n}", news="Wat is nieuw", more="Meer apps", devices="Apparaten", widgets="Widgets",
                flow="Flow-kaarten", when="Als…", andd="En…", then="Dan…", rating="Beoordeling", reviews="beoordelingen",
@@ -30,7 +30,7 @@ T = {
                hlive="Live", htest="Test", donate="Doneren", privacy="Privacy", support="Steun mijn apps",
                nlonly="Deze app is alleen in het Nederlands beschikbaar.", allv="Toon alle versies", lessv="Toon minder",
                allc="Toon alle {n}", support_link="Ondersteuning"),
-    "en": dict(by="Léon van der Linden", back="All apps", chart="Top charts", appstore="Free on the App Store", review="Give stars", testflight="Join on TestFlight",
+    "en": dict(by="Léon van der Linden", back="All apps", chart="Top charts", price="Price", gratis="Free", paid_btn="{p} on the App Store", dl_btn="Download on the App Store", prices="See pricing", appstore="Free on the App Store", review="Give stars", testflight="Join on TestFlight",
                website="Website", homey="View in the Homey App Store", homeyTest="Install test version", shots="Screenshots",
                about="About {n}", news="What's new", more="More apps", devices="Devices", widgets="Widgets",
                flow="Flow cards", when="When…", andd="And…", then="Then…", rating="Rating", reviews="ratings",
@@ -136,7 +136,7 @@ def buttons(a, lang):
             out.append((turl.replace("/nl-nl/", "/nl-nl/" if lang == "nl" else "/en-us/"), f'{t["homeyTest"]} v{test}', "" if out else "primary"))
     else:
         if l.get("appstore"):
-            out.append((l["appstore"], t["appstore"], "primary"))
+            out.append((l["appstore"], store_label(a, lang), "primary"))
             m = re.search(r"/id(\d+)", l["appstore"])
             if m:  # direct naar beoordelen in de App Store
                 out.append((f'https://apps.apple.com/{"nl" if lang == "nl" else "us"}/app/id{m.group(1)}?action=write-review',
@@ -155,6 +155,30 @@ def buttons(a, lang):
             '<path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/></svg>')
     return "".join(f'<a class="btn {c}" href="{e(u)}" target="_blank" rel="noopener">{star if c == "review" else ""}{e(x)}</a>'
                    for u, x, c in out)
+
+
+def L_(v, lang):
+    return v.get(lang) or v.get("nl") or v.get("en") if isinstance(v, dict) else (v or "")
+
+
+def store_label(a, lang):
+    """Knoptekst: gratis, met prijs (betaalde app) of gewoon Download (gratis te downloaden, met proefperiode/abonnement)."""
+    t = T[lang]
+    if (a.get("price") or {}).get("amount"):
+        return t["paid_btn"].format(p=a["price"].get(lang) or a["price"].get("nl"))
+    if a.get("pricing"):
+        return t["dl_btn"]
+    return t["appstore"]
+
+
+def price_note(a, lang):
+    """Regel onder de knoppen, bijv. 'Eerste 3 dagen gratis. Bekijk de prijzen' (alleen als er pricing is ingevuld)."""
+    if not a.get("pricing") or a.get("section") == "homey":
+        return ""
+    txt = e(L_(a["pricing"], lang))
+    url = a.get("pricingUrl")
+    link = f' <a href="{e(url)}" target="_blank" rel="noopener">{e(T[lang]["prices"])}</a>' if url else ""
+    return f'<p class="pricenote">{txt}.{link}</p>'
 
 
 def status_pill(a, lang):
@@ -179,6 +203,10 @@ def facts(a, lang):
     cat = (a.get("homey") or {}).get("category") if a.get("section") == "homey" else a.get("category")
     if cat:
         rows.append((t["category"], e(CATS[lang].get(cat, cat))))
+    if a.get("section") != "homey" and (a.get("links") or {}).get("appstore"):
+        pr = a.get("price") or {}
+        rows.append((t["price"], e(pr.get(lang) or pr.get("nl")) if pr.get("amount")
+                     else e(L_(a["pricing"], lang)) if a.get("pricing") else e(t["gratis"])))
     ch = (a.get("chart") or {}).get(lang)
     if ch and a.get("section") != "homey":
         rows.append((t["chart"], f'<b>{"Nr." if lang == "nl" else "No."} {int(ch["rank"])}</b> in {e(ch["genre"])}'))
@@ -246,7 +274,7 @@ def page_content(a, c, lang, others):
         <div class="by">{e(t["by"])} {status_pill(a, lang)}</div>
       </div>
     </div>
-    <div class="btns">{buttons(a, lang)}</div>
+    <div class="btns">{buttons(a, lang)}</div>{price_note(a, lang)}
     <dl class="facts">{facts(a, lang)}</dl>
     {f'<div class="plat"><span class="lbl">{e(t["platforms"])}</span>' + "".join(f'<span class="tag ostag">{plat_svg(p)}{e(plat_name(p))}</span>' for p in plats) + "</div>" if plats else ""}
     {f'<p class="note">{e(t["nlonly"])}</p>' if a.get("nlOnly") and lang == "en" else ""}
@@ -311,7 +339,8 @@ def page(a, c, others, lang):
               "applicationCategory": "HomeApplication" if homey else CAT_LD.get(a.get("category"), "UtilitiesApplication"),
               "operatingSystem": "Homey" if homey else ", ".join(p for p in (a.get("platforms") or ["iOS"]) if p) or "iOS",
               "author": {"@type": "Person", "name": "Léon van der Linden", "url": BASE + "/"},
-              "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}
+              "offers": {"@type": "Offer", "price": f'{(a.get("price") or {}).get("amount") or 0:.2f}' if (a.get("price") or {}).get("amount") else "0",
+                         "priceCurrency": "EUR"}}
     if a.get("icon"):
         ld_app["image"] = f"{BASE}/{a['icon']}"
     shots = (c.get("shots") or {}).get(lang) or (c.get("shots") or {}).get("nl") or []
@@ -440,6 +469,8 @@ header.top{padding-block:24px 8px}
 .pill.live{background:var(--accent-soft);color:var(--accent)}.pill.beta{background:var(--beta-soft);color:var(--beta)}
 .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.pricenote{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.pricenote a{color:var(--accent);font-weight:600}
 .btn .star{width:18px;height:18px;flex:none;color:var(--star)}
 .btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--f-body);padding:11px 20px;border-radius:99px;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
 .btn:hover{border-color:var(--muted)}.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}

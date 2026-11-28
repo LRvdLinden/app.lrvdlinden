@@ -90,7 +90,8 @@ for a in apps:
            "applicationCategory": "HomeApplication" if homey else CAT.get(a.get("category"), "UtilitiesApplication"),
            "operatingSystem": "Homey" if homey else "iOS",
            "url": url, "author": {"@id": BASE + "#leon"},
-           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}
+           "offers": {"@type": "Offer", "price": f'{a["price"]["amount"]:.2f}' if (a.get("price") or {}).get("amount") else "0",
+                      "priceCurrency": "EUR"}}
     if a.get("icon"):
         app["image"] = BASE + a["icon"]
     if (a.get("history") or [{}])[0].get("version"):

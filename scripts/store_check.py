@@ -256,6 +256,24 @@ def chart_from_page(cc, track_id):
     return (int(m.group(1)), unescape(m.group(2)).strip()) if m else ()
 
 
+def update_price(app, res):
+    """app["price"] = {"nl": "€ 1,99", "en": "$1.99", "amount": 1.99}; weg als de app gratis is."""
+    nl, us = res.get("nl"), res.get("us")
+    base = nl or us
+    if not base or base.get("price") is None:
+        return
+    amount = float(base.get("price") or 0)
+    if amount <= 0:
+        app.pop("price", None)
+        return
+    p = {"amount": amount, "nl": f"€ {amount:.2f}".replace(".", ",")}
+    if us and float(us.get("price") or 0) > 0:
+        p["en"] = f"${float(us['price']):.2f}"
+    else:
+        p["en"] = f"€{amount:.2f}"
+    app["price"] = p
+
+
 def update_chart(app, res):
     """app["chart"] = {"nl": {"rank": 117, "genre": "Nieuws"}, "en": {...}}; weg als de app niet in een hitlijst staat."""
     chart = {}
@@ -324,6 +342,7 @@ def check_appstore(apps, log, only=None):
         if langs:
             app["languages"] = langs
         update_chart(app, res)
+        update_price(app, res)
 
         # Wat is nieuw
         version = main.get("version")
