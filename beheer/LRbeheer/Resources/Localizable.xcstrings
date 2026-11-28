@@ -1730,6 +1730,22 @@
         }
       }
     },
+    "Abonnement": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abonnement"
+          }
+        }
+      }
+    },
     "Abonnementsbetaling": {
       "localizations": {
         "en": {
@@ -2366,6 +2382,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alle"
+          }
+        }
+      }
+    },
+    "Alle abonnementen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All plans"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle abonnementen"
           }
         }
       }
@@ -4914,6 +4946,22 @@
         }
       }
     },
+    "Bingr: abonnement per account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: plan per account"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bingr: abonnement per account"
+          }
+        }
+      }
+    },
     "Bingr: nieuwe accounts eerst kopen": {
       "localizations": {
         "en": {
@@ -5950,6 +5998,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "De server kent de betalingencontrole nog niet (functie admin in bingr-beheer)."
+          }
+        }
+      }
+    },
+    "De server kent dit filter nog niet.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The server does not know this filter yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De server kent dit filter nog niet."
           }
         }
       }
@@ -8146,6 +8210,22 @@
         }
       }
     },
+    "Filter op abonnement": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter by plan"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter op abonnement"
+          }
+        }
+      }
+    },
     "Filter op resultaat en bron, zoeken op ontvanger of onderwerp en de totalen van 7 dagen": {
       "localizations": {
         "en": {
@@ -8370,6 +8450,38 @@
         }
       }
     },
+    "Gebruikers: bij elk account staat precies wat het heeft: Gratis, Oude Lifetime, Lifetime (gekocht), Gratis Lifetime gegeven, Maand, Halfjaar of Jaar, met proefperiode, test, einddatum en Stripe of Apple erbij": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users: every account shows exactly what it has: Free, Old Lifetime, Lifetime (purchased), Lifetime given for free, Monthly, Half-year or Yearly, with trial, test, end date and Stripe or Apple"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruikers: bij elk account staat precies wat het heeft: Gratis, Oude Lifetime, Lifetime (gekocht), Gratis Lifetime gegeven, Maand, Halfjaar of Jaar, met proefperiode, test, einddatum en Stripe of Apple erbij"
+          }
+        }
+      }
+    },
+    "Gebruikers: filter Abonnement op die soorten (ook alle Premium-abonnementen samen) met aantallen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Users: Plan filter on those kinds (also all Premium subscriptions together) with counts"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gebruikers: filter Abonnement op die soorten (ook alle Premium-abonnementen samen) met aantallen"
+          }
+        }
+      }
+    },
     "Gebruikers: filter Sandbox en een label Sandbox bij accounts met toegang via een Apple-testaankoop (niet betaald); intrekken bij Abonnement van het account": {
       "localizations": {
         "en": {
@@ -8574,6 +8686,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Geen aanmeldingen die wachten"
+          }
+        }
+      }
+    },
+    "Geen accounts met dit abonnement.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No accounts with this plan."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen accounts met dit abonnement."
           }
         }
       }

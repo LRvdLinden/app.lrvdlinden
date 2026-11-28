@@ -92,6 +92,10 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Bingr: abonnement per account") {
+                    Label("Gebruikers: bij elk account staat precies wat het heeft: Gratis, Oude Lifetime, Lifetime (gekocht), Gratis Lifetime gegeven, Maand, Halfjaar of Jaar, met proefperiode, test, einddatum en Stripe of Apple erbij", systemImage: "creditcard")
+                    Label("Gebruikers: filter Abonnement op die soorten (ook alle Premium-abonnementen samen) met aantallen", systemImage: "line.3.horizontal.decrease.circle")
+                }
                 Section("Bingr: sandbox-aankopen en betaaltrechter") {
                     Label("Gebruikers: filter Sandbox en een label Sandbox bij accounts met toegang via een Apple-testaankoop (niet betaald); intrekken bij Abonnement van het account", systemImage: "testtube.2")
                     Label("Omzet › Betalingen controleren: tegel met het aantal accounts met Lifetime via sandbox (tik opent die accounts), actief in 7 dagen en tijdelijke toegang", systemImage: "checkmark.shield")
