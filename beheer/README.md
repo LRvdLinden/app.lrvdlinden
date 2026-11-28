@@ -173,6 +173,7 @@ originele code.
 | Bericht sturen aan iedereen met meldingen aan (Pasr, Pasr Zakelijk of beide), Alles/Apple/Android en optionele https-link | ✓ (build 62; ook in web-beheer en PasrBeheer build 16) |
 | Pasr: link en QR-code van een stempelkaart in de vorm `https://pasr.nl/zakelijk/kaart/<id>/` (eigen pagina met de kaart als OG-afbeelding; oude `#<id>` blijft werken) | ✓ (build 63; ook in web-beheer en PasrBeheer build 17) |
 | Winkels: aanvragen, website opzoeken, kaart maken, publiceren zonder update met push, afwijzen, offline halen | ✓ (ook in web-beheer en PasrBeheer build 5) |
+| Nieuwe indeling: Vandaag (aandacht nodig), Mensen, twee postvakken (Support en Ondernemers), Cijfers, Meer; zijbalk op iPad/Mac, vijf tabs op iPhone | ✓ (build 81; ook in web-beheer en PasrBeheer build 30) |
 | Review-account voor Apple App Review maken (voorbeeldkaarten en gedeelde Pasr, wachtwoord niet bewaard) | ✓ (ook in web-beheer en PasrBeheer build 6) |
 | Saldo-pagina's per winkel voor de knop Saldo checken (ook winkels in de app) | ✓ (ook in web-beheer en PasrBeheer build 7) |
 | Gids per winkel bewerken (cadeaubon-gids bij cadeaukaarten, programmagids bij klantenkaarten) | ✓ (ook in web-beheer en PasrBeheer build 10) |

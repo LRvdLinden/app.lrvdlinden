@@ -92,6 +92,12 @@ struct WhatsNewView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Pasr: nieuwe indeling van het beheer") {
+                    Label("Vandaag, Gebruikers, Ondernemers, Winkelcatalogus, Postvak Support, Pushberichten, Postvak Ondernemers, Inzichten en Instellingen; op de iPhone vijf tabs (Vandaag, Mensen, Berichten, Cijfers, Meer), op iPad en Mac een zijbalk met kopjes", systemImage: "square.grid.2x2")
+                    Label("Vandaag begint met Aandacht nodig: ondernemers die op goedkeuring wachten en ongelezen mail per postvak; de verdelingen (bots, landen, delen, platformen) staan nu onder Inzichten", systemImage: "exclamationmark.circle")
+                    Label("Twee aparte postvakken: Support (support@pasr.nl, gebruikers, Team Pasr) en Ondernemers (zakelijk@pasr.nl, Pasr Zakelijk), elk met eigen Inbox, Verzonden, Nieuwe mail en Nieuwsbrief en een eigen teller; de merkkeuze is vervallen, het postvak bepaalt het merk", systemImage: "tray.2")
+                    Label("Ook op het web: beheer.pasr.nl met dezelfde zijbalk en indeling", systemImage: "safari")
+                }
                 Section("Pasr: handtekening onder elke mail") {
                     Label("Mail › Nieuwe mail, Antwoord en Nieuwsbrief: schakelaar Handtekening Team Pasr (of Team Pasr Zakelijk) toevoegen, standaard aan; de naam volgt het gekozen merk", systemImage: "signature")
                     Label("De handtekening staat als afbeelding onder de tekst en boven de afmeldregel, en als regel \"Team Pasr\" met de site in de platte tekst; het voorbeeld, de testmail en de bevestiging tonen hem ook", systemImage: "photo")
