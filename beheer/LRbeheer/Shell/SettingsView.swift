@@ -101,9 +101,15 @@ struct WhatsNewView: View {
                     Label("Omzet › Betalingen controleren: tegel met het aantal accounts met Lifetime via sandbox (tik opent die accounts), actief in 7 dagen en tijdelijke toegang", systemImage: "checkmark.shield")
                     Label("Betaaltrechter per dag voor Apple, Android en web: betaalscherm getoond, koop gestart, gelukt, mislukt en geannuleerd, met de meest voorkomende fouten", systemImage: "chart.bar.doc.horizontal")
                 }
+                Section("Pasr: Mail verzonden, 20 MB en melding") {
+                    Label("Mail › Verzonden: naast Inbox de lijst met verzonden mails (aan, aantal in cc en bcc, bijlagen) en het verzonden bericht met Aan en CC; van BCC zie je alleen het aantal", systemImage: "paperplane")
+                    Label("Bijlagen mogen samen 20 MB zijn (was 10 MB)", systemImage: "paperclip")
+                    Label("Instellingen › Pushmeldingen: schakelaar Nieuwe mail voor een nieuw ticket of een antwoord van een klant; een tik opent Mail", systemImage: "bell.badge")
+                    Label("In de Inbox zie je welke mails al zijn beantwoord", systemImage: "arrowshape.turn.up.left")
+                }
                 Section("Pasr: Mail") {
                     Label("Nieuw tabblad Mail › Inbox: mails als tickets met filter, zoeken, ongelezen-stip, gesprek met antwoord, interne notitie, status en prioriteit; bijlagen openen en delen; Nu ophalen en de status van de inbox", systemImage: "envelope")
-                    Label("Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 10 MB), live voorbeeld en testmail", systemImage: "square.and.pencil")
+                    Label("Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 20 MB), live voorbeeld en testmail", systemImage: "square.and.pencil")
                     Label("Mail › Nieuwsbrief naar Gebruikers of Ondernemers (met aantal), merk, voorbeeld, testmail, versturen met bevestiging en het overzicht van eerdere nieuwsbrieven met voortgang en annuleren", systemImage: "newspaper")
                     Label("Ook op het web: beheer.pasr.nl, tab Mail", systemImage: "safari")
                 }

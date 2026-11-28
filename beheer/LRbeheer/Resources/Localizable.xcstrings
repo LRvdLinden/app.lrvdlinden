@@ -1378,18 +1378,18 @@
         }
       }
     },
-    "Aan %lld · cc %lld · bcc %lld": {
+    "Aan: ": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "To %1$lld · cc %2$lld · bcc %3$lld"
+            "value": "To: "
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aan %lld · cc %lld · bcc %lld"
+            "value": "Aan: "
           }
         }
       }
@@ -3682,6 +3682,38 @@
         }
       }
     },
+    "BCC: %lld adressen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BCC: %lld addresses"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BCC: %lld adressen"
+          }
+        }
+      }
+    },
+    "BCC: 1 adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BCC: 1 address"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BCC: 1 adres"
+          }
+        }
+      }
+    },
     "Banner %@ klaar. Publiceer om hem live te zetten.": {
       "localizations": {
         "en": {
@@ -3710,6 +3742,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Banner %@ uploaden"
+          }
+        }
+      }
+    },
+    "Beantwoord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Answered"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beantwoord"
           }
         }
       }
@@ -4738,6 +4786,22 @@
         }
       }
     },
+    "Bijlagen mogen samen 20 MB zijn (was 10 MB)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attachments may be 20 MB in total (was 10 MB)"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bijlagen mogen samen 20 MB zijn (was 10 MB)"
+          }
+        }
+      }
+    },
     "Bijv. /maand": {
       "localizations": {
         "en": {
@@ -5182,6 +5246,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bundle ID (Homey)"
+          }
+        }
+      }
+    },
+    "CC: ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CC: "
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CC: "
           }
         }
       }
@@ -5698,18 +5778,18 @@
         }
       }
     },
-    "De bijlagen zijn samen te groot (maximaal 10 MB).": {
+    "De bijlagen zijn samen te groot (maximaal 20 MB).": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The attachments are too large together (at most 10 MB)."
+            "value": "The attachments are too large together (at most 20 MB)."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "De bijlagen zijn samen te groot (maximaal 10 MB)."
+            "value": "De bijlagen zijn samen te groot (maximaal 20 MB)."
           }
         }
       }
@@ -10450,6 +10530,22 @@
         }
       }
     },
+    "In de Inbox zie je welke mails al zijn beantwoord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Inbox shows which emails have been answered"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In de Inbox zie je welke mails al zijn beantwoord"
+          }
+        }
+      }
+    },
     "In de app en op pasr.nl. Alleen officiële bronnen; onbekend leeg laten. Alleen een gewijzigde gids wordt opgeslagen; leeg laten houdt de bestaande gids.": {
       "localizations": {
         "en": {
@@ -10830,6 +10926,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Instellingen van LRbeheer"
+          }
+        }
+      }
+    },
+    "Instellingen › Pushmeldingen: schakelaar Nieuwe mail voor een nieuw ticket of een antwoord van een klant; een tik opent Mail": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings › Push notifications: Nieuwe mail switch for a new ticket or a customer reply; a tap opens Mail"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instellingen › Pushmeldingen: schakelaar Nieuwe mail voor een nieuw ticket of een antwoord van een klant; een tik opent Mail"
           }
         }
       }
@@ -13042,18 +13154,18 @@
         }
       }
     },
-    "Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 10 MB), live voorbeeld en testmail": {
+    "Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 20 MB), live voorbeeld en testmail": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mail › New email: To, CC and BCC always visible, each with multiple pasted addresses, a counter and invalid addresses marked; brand Pasr or Pasr Zakelijk, subject, Markdown with toolbar, attachments (10 MB in total), live preview and test email"
+            "value": "Mail › New email: To, CC and BCC always visible, each with multiple pasted addresses, a counter and invalid addresses marked; brand Pasr or Pasr Zakelijk, subject, Markdown with toolbar, attachments (20 MB in total), live preview and test email"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 10 MB), live voorbeeld en testmail"
+            "value": "Mail › Nieuwe mail: Aan, CC en BCC altijd zichtbaar, elk met meerdere geplakte adressen, teller en markering van ongeldige adressen; merk Pasr of Pasr Zakelijk, onderwerp, Markdown met werkbalk, bijlagen (samen 20 MB), live voorbeeld en testmail"
           }
         }
       }
@@ -13070,6 +13182,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mail › Nieuwsbrief naar Gebruikers of Ondernemers (met aantal), merk, voorbeeld, testmail, versturen met bevestiging en het overzicht van eerdere nieuwsbrieven met voortgang en annuleren"
+          }
+        }
+      }
+    },
+    "Mail › Verzonden: naast Inbox de lijst met verzonden mails (aan, aantal in cc en bcc, bijlagen) en het verzonden bericht met Aan en CC; van BCC zie je alleen het aantal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail › Sent: next to Inbox the list of sent emails (to, number in cc and bcc, attachments) and the sent message with To and CC; for BCC you only see the count"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail › Verzonden: naast Inbox de lijst met verzonden mails (aan, aantal in cc en bcc, bijlagen) en het verzonden bericht met Aan en CC; van BCC zie je alleen het aantal"
           }
         }
       }
@@ -15394,6 +15522,22 @@
         }
       }
     },
+    "Nog geen verzonden mails.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No sent emails yet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen verzonden mails."
+          }
+        }
+      }
+    },
     "Nog geen vluchten.": {
       "localizations": {
         "en": {
@@ -17506,6 +17650,22 @@
         }
       }
     },
+    "Pasr: Mail verzonden, 20 MB en melding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: Mail sent, 20 MB and notification"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasr: Mail verzonden, 20 MB en melding"
+          }
+        }
+      }
+    },
     "Pasr: Voeg toe aan Pasr": {
       "localizations": {
         "en": {
@@ -18706,18 +18866,18 @@
         }
       }
     },
-    "Samen hoogstens 10 MB.": {
+    "Samen hoogstens 20 MB.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "At most 10 MB in total."
+            "value": "At most 20 MB in total."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Samen hoogstens 10 MB."
+            "value": "Samen hoogstens 20 MB."
           }
         }
       }
@@ -23582,6 +23742,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "beta"
+          }
+        }
+      }
+    },
+    "cc %lld · bcc %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cc %1$lld · bcc %2$lld"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cc %lld · bcc %lld"
           }
         }
       }
