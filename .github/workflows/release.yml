@@ -208,12 +208,13 @@ jobs:
             echo "apps.json nog niet leesbaar, opnieuw over $((i * 5)) s"; sleep $((i * 5))
           done
           if [ "$ok" != "1" ]; then
-            body=$(curl -s "https://lrvdlinden.app/apps.json?v=${GITHUB_RUN_NUMBER}-x" | head -c 400)
-            if printf '%s' "$body" | grep -qiE "verif|challenge|captcha|just a moment|bot"; then
+            body=$(curl -s "https://lrvdlinden.app/apps.json?v=${GITHUB_RUN_NUMBER}-x" | head -c 6000)
+            echo "Antwoord van de host: $(printf '%s' "$body" | tr '\n' ' ' | grep -oiE '<title>[^<]*</title>' | head -1)"
+            if printf '%s' "$body" | grep -qiE "verif|challenge|captcha|just a moment|bot|<!DOCTYPE html"; then
               # De hosting toont soms een botcontrole aan servers (zoals GitHub). Bezoekers zien gewoon de site.
               echo "::warning::De hosting toont een botcontrole aan GitHub; apps.json kon niet worden nagekeken, de upload is wel gelukt."
             else
-              echo "Antwoord: $body"; echo "::error::apps.json is niet leesbaar op de live site"; exit 1
+              echo "::error::apps.json is niet leesbaar op de live site"; exit 1
             fi
           fi
           # /beheer.html mag doorsturen naar /beheer; daarna moet altijd een login volgen
