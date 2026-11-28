@@ -304,7 +304,7 @@
             "promo": {
                 "show": true,
                 "image": {
-                    "nl": "img/promo-nl-lrvdlinden-pasr-nl.webp"
+                    "nl": "app-content/pasr/promo-nl.webp"
                 }
             },
             "languages": "NL + 1",
@@ -1628,7 +1628,7 @@
             "promo": {
                 "show": true,
                 "image": {
-                    "nl": "img/promo-app-lrvdlinden-pasr-zakelijk-nl.webp"
+                    "nl": "app-content/pasr-zakelijk/promo-nl.webp"
                 }
             },
             "rating": 5.0,
